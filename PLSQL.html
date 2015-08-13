@@ -1,0 +1,2454 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+
+<html>
+<head>
+	
+	<meta http-equiv="content-type" content="text/html; charset=utf-8">
+	<title></title>
+	<meta name="generator" content="LibreOffice 4.2.8.2 (Linux)">
+	<meta name="created" content="20130122;121009000000000">
+	<meta name="changed" content="20130327;110803000000000">
+	
+	<style type="text/css"><!-- 
+		body,div,table,thead,tbody,tfoot,tr,th,td,p { font-family:"Arial"; font-size:large }
+		 -->
+table, th, td {
+   border: 1px solid black;
+   border-width:thin;
+}
+	</style>
+	
+</head>
+
+<body text="#000000">
+<hr>
+	<p><center>
+		<h1>Overview</h1>
+		<A HREF="#table0">Pl-SQL-General</A><br>
+		<A HREF="#table1">DataType</A><br>
+		<A HREF="#table2">composite types</A><br>
+		<A HREF="#table3">Cursor</A><br>
+		<A HREF="#table4">Anaymous </A><br>
+		<A HREF="#table5">Exception</A><br>
+		<A HREF="#table6">Function</A><br>
+		<A HREF="#table7">Procedure</A><br>
+		<A HREF="#table8">Triggers</A><br>
+		<A HREF="#table9">Package</A><br>
+		<A HREF="#table10">DNS-Dynamic Native query</A><br>
+		<A HREF="#table11">LOB</A><br>
+		<A HREF="#table12">Built-in Packages</A><br>
+		<A HREF="#table13">Pragma</A><br>
+		<A HREF="#table14">ObjectType</A><br>
+		<A HREF="#table15">JavaLibrary</A><br>
+		<A HREF="#table16">intersession</A><br>
+		
+	</center></p>
+<hr>
+<A NAME="table0"><h1> 1: <em>Pl-SQL-General</em></h1></A>
+<table cellspacing="0" border="1">
+	<colgroup width="86"></colgroup>
+	<colgroup width="674"></colgroup>
+	<colgroup span="2" width="86"></colgroup>
+	<tr>
+		<td height="16" align="left" valign=bottom>PL/SQL</td>
+		<td align="left" valign=bottom>it is interpreted and operating system Independent like Java programing environment</td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+	</tr>
+	<tr>
+		<td height="16" align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom>it started its life around 1980.</td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+	</tr>
+	<tr>
+		<td height="17" align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom>after oracle 9i release 2, PL/SQL is both procedural and OOPs language</td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+	</tr>
+	<tr>
+		<td height="17" align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom>it is case-insenstive language</td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+	</tr>
+	<tr>
+		<td height="16" align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom>PL / SQL is extend from ADA language, which itself extend from Pascal language</td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+	</tr>
+	<tr>
+		<td height="16" align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom>As a PL / SQL developer, we should be familiar with most of built-in packages. It s like library</td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+	</tr>
+	<tr>
+		<td height="16" align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom>PL/SQL version is same as oracle product version like 10.2, 11.1,11.2 and etc.</td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+	</tr>
+	<tr>
+		<td height="17" align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+	</tr>
+	<tr>
+		<td height="17" align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+	</tr>
+	<tr>
+		<td height="17" align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+	</tr>
+	<tr>
+		<td height="16" align="left" valign=bottom>c</td>
+		<td align="left" valign=bottom>Structured Programming</td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+	</tr>
+	<tr>
+		<td height="17" align="left" valign=bottom>Java</td>
+		<td align="left" valign=bottom>OOPs programming</td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+	</tr>
+	<tr>
+		<td height="16" align="left" valign=bottom>ETL</td>
+		<td align="left" valign=bottom>Component Oriented Programming</td>
+		<td align="left" valign=bottom>version</td>
+		<td align="left" valign=bottom>procedure</td>
+	</tr>
+	<tr>
+		<td height="17" align="left" valign=bottom>PL/sql</td>
+		<td align="left" valign=bottom>Block/Structured oriented Programming</td>
+		<td align="left" valign=bottom>object type</td>
+		<td align="left" valign=bottom>native code</td>
+	</tr>
+	<tr>
+		<td height="16" align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom>external</td>
+		<td align="left" valign=bottom><br></td>
+	</tr>
+	<tr>
+		<td height="16" align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom>PL/SQL General</td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+	</tr>
+	<tr>
+		<td height="17" align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom>function/pricdure/block intro</td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+	</tr>
+	<tr>
+		<td height="16" align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom>11g new feature</td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+	</tr>
+	<tr>
+		<td height="16" align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom>10 g new feature</td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+	</tr>
+</table>
+<!-- ************************************************************************** -->
+<hr>
+<A NAME="table1"><h1> 2: <em>DataType</em></h1></A>
+<table cellspacing="0" border="0">
+	<colgroup width="33"></colgroup>
+	<colgroup width="155"></colgroup>
+	<colgroup width="456"></colgroup>
+	<colgroup width="334"></colgroup>
+	<colgroup width="142"></colgroup>
+	<tr>
+		<td height="17" align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom bgcolor="#C0C0C0"><b>Base Type</b></td>
+		<td align="left" valign=bottom bgcolor="#C0C0C0"><b>SubType / Intermediate Base Type</b></td>
+		<td align="left" valign=bottom bgcolor="#C0C0C0"><b>SubType</b></td>
+		<td align="left" valign=bottom bgcolor="#C0C0C0"><b>Globalization</b></td>
+	</tr>
+	<tr>
+		<td height="17" align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+	</tr>
+	<tr>
+		<td height="16" align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom>VARCHAR2</td>
+		<td align="left" valign=bottom>VARCHAR, STRING</td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom>NVARCHAR2</td>
+	</tr>
+	<tr>
+		<td height="16" align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom>CHAR</td>
+		<td align="left" valign=bottom>CHARACTOR</td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom>NCHAR</td>
+	</tr>
+	<tr>
+		<td height="16" align="left" valign=bottom bgcolor="#B3B3B3"><br></td>
+		<td align="left" valign=bottom bgcolor="#B3B3B3"><br></td>
+		<td align="left" valign=bottom bgcolor="#B3B3B3"><br></td>
+		<td align="left" valign=bottom bgcolor="#B3B3B3"><br></td>
+		<td align="left" valign=bottom bgcolor="#B3B3B3"><br></td>
+	</tr>
+	<tr>
+		<td height="16" align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom>ROWID, UROWID</td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+	</tr>
+	<tr>
+		<td height="16" align="left" valign=bottom bgcolor="#B3B3B3"><br></td>
+		<td align="left" valign=bottom bgcolor="#B3B3B3"><br></td>
+		<td align="left" valign=bottom bgcolor="#B3B3B3"><br></td>
+		<td align="left" valign=bottom bgcolor="#B3B3B3"><br></td>
+		<td align="left" valign=bottom bgcolor="#B3B3B3"><br></td>
+	</tr>
+	<tr>
+		<td height="16" align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom>LANG,LANG RAW</td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+	</tr>
+	<tr>
+		<td height="16" align="left" valign=bottom bgcolor="#B3B3B3"><br></td>
+		<td align="left" valign=bottom bgcolor="#B3B3B3"><br></td>
+		<td align="left" valign=bottom bgcolor="#B3B3B3"><br></td>
+		<td align="left" valign=bottom bgcolor="#B3B3B3"><br></td>
+		<td align="left" valign=bottom bgcolor="#B3B3B3"><br></td>
+	</tr>
+	<tr>
+		<td height="16" align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom>DATE</td>
+		<td align="left" valign=bottom>INTERVAL DAY TO SECOND,  INTERVAL YEAR TO MONTH</td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+	</tr>
+	<tr>
+		<td height="16" align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom>TIMESTAMP</td>
+		<td align="left" valign=bottom>TIMESTAMP[(precision)] WITH TIME ZONE</td>
+		<td align="left" valign=bottom><br></td>
+	</tr>
+	<tr>
+		<td height="16" align="left" valign=bottom bgcolor="#B3B3B3"><br></td>
+		<td align="left" valign=bottom bgcolor="#B3B3B3"><br></td>
+		<td align="left" valign=bottom bgcolor="#B3B3B3"><br></td>
+		<td align="left" valign=bottom bgcolor="#B3B3B3"><br></td>
+		<td align="left" valign=bottom bgcolor="#B3B3B3"><br></td>
+	</tr>
+	<tr>
+		<td height="32" align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom bgcolor="#00FF00">BINARY_INTEGER<br>/ PLS_INTEGER</td>
+		<td align="left" valign=bottom>NATURAL, POSITIVE, NATURALN, POSITIVEN, SIGNTYPE, SIMPLE_INTEGER</td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+	</tr>
+	<tr>
+		<td height="17" align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+	</tr>
+	<tr>
+		<td height="16" align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom bgcolor="#EB613D">BINARY_DOUBLE</td>
+		<td align="left" valign=bottom><b><font color="#2323DC">SIMPLE_DOUBLE</font></b></td>
+		<td align="left" valign=bottom>IEE-754  data type</td>
+		<td align="left" valign=bottom><br></td>
+	</tr>
+	<tr>
+		<td height="16" align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom bgcolor="#EB613D">BINARY_FLOAT</td>
+		<td align="left" valign=bottom><b><font color="#0047FF">SIMPLE_FLOAT</font></b></td>
+		<td align="left" valign=bottom>IEE-754  data type</td>
+		<td align="left" valign=bottom><br></td>
+	</tr>
+	<tr>
+		<td height="17" align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+	</tr>
+	<tr>
+		<td height="16" align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom>NUMBER</td>
+		<td align="left" valign=bottom>DEC, DECIMAL, NUMERIC</td>
+		<td align="left" valign=bottom>fixed point</td>
+		<td align="left" valign=bottom><br></td>
+	</tr>
+	<tr>
+		<td height="16" align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom>INTEGER, INT, SMALLINT</td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+	</tr>
+	<tr>
+		<td height="16" align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom>REAL</td>
+		<td align="left" valign=bottom>Floating-point</td>
+		<td align="left" valign=bottom><br></td>
+	</tr>
+	<tr>
+		<td height="16" align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom>DOUBLE PRECISION</td>
+		<td align="left" valign=bottom>Floating-point</td>
+		<td align="left" valign=bottom><br></td>
+	</tr>
+	<tr>
+		<td height="16" align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom>FLOAT</td>
+		<td align="left" valign=bottom>Floating-point</td>
+		<td align="left" valign=bottom><br></td>
+	</tr>
+	<tr>
+		<td height="16" align="left" valign=bottom bgcolor="#B3B3B3"><br></td>
+		<td align="left" valign=bottom bgcolor="#B3B3B3"><br></td>
+		<td align="left" valign=bottom bgcolor="#B3B3B3"><br></td>
+		<td align="left" valign=bottom bgcolor="#B3B3B3"><br></td>
+		<td align="left" valign=bottom bgcolor="#B3B3B3"><br></td>
+	</tr>
+	<tr>
+		<td height="16" align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom>BFILE</td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+	</tr>
+	<tr>
+		<td height="16" align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom>BLOB</td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+	</tr>
+	<tr>
+		<td height="16" align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom>CLOB</td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+	</tr>
+	<tr>
+		<td height="16" align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom>NCLOB</td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+	</tr>
+</table>
+<!-- ************************************************************************** -->
+<hr>
+<A NAME="table2"><h1> 3: <em>composite types</em></h1></A>
+<table cellspacing="0" border="0">
+	<colgroup width="236"></colgroup>
+	<colgroup width="571"></colgroup>
+	<colgroup span="2" width="282"></colgroup>
+	<colgroup width="86"></colgroup>
+	<colgroup width="165"></colgroup>
+	<colgroup width="106"></colgroup>
+	<tr>
+		<td height="18" align="left" valign=bottom>Record structure ( PLSQL only)</td>
+		<td align="left" valign=bottom><font face="Monospace" color="#0000FF">TYPE employeeRecord IS RECORD (x number,y varchar2(23));</font></td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+	</tr>
+	<tr>
+		<td height="18" align="left" valign=bottom>Varray ( SQL and PLSQL )</td>
+		<td align="left" valign=bottom><font face="Monospace" color="#999999">[CREATE OR REPLACE] TYPE myNumbers IS/AS VARRAY (20) OF NUMBER;</font></td>
+		<td align="left" valign=bottom>fixed size of element</td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+	</tr>
+	<tr>
+		<td height="18" align="left" valign=bottom>Nested Table. ( SQL and PLSQL )</td>
+		<td align="left" valign=bottom><font face="Monospace" color="#999999">[CREATE OR REPLACE]TYPE ordinalCollection IS TABLE OF VARCHAR2 (30);</font></td>
+		<td align="left" valign=bottom>variable size of element</td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+	</tr>
+	<tr>
+		<td height="34" align="left" valign=bottom>Associated Array ( PLSQL only)</td>
+		<td align="left" valign=bottom><font face="Monospace" color="#C0C0C0">[CREATE OR REPLACE TYPE] type_name AS TABLE OF element_type [ NOT NULL ] <br>INDEX BY [ PLS_INTEGER | BINARY_INTEGER | VARCHAR2(size) ];</font></td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+	</tr>
+	<tr>
+		<td height="24" align="left" valign=bottom>reference cursor</td>
+		<td align="left" valign=bottom><font face="Monospace" color="#0000FF">TYPE ref_cursor IS REF CURSOR [RETURN { catalog_row | record_structure }]</font></td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+	</tr>
+	<tr>
+		<td height="16" align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><font face="Monospace" color="#0000FF"><br></font></td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+	</tr>
+	<tr>
+		<td height="16" align="left" valign=bottom bgcolor="#77216F"><br></td>
+		<td align="left" valign=bottom bgcolor="#77216F"><br></td>
+		<td align="left" valign=bottom bgcolor="#77216F"><br></td>
+		<td align="left" valign=bottom bgcolor="#77216F"><br></td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+	</tr>
+	<tr>
+		<td height="16" align="left" valign=bottom>collection API</td>
+		<td align="left" valign=bottom>Introduced in Oracle 8i</td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+	</tr>
+	<tr>
+		<td height="16" align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom bgcolor="#E6E6E6">SIZE</td>
+		<td align="left" valign=bottom bgcolor="#E6E6E6"><br></td>
+		<td align="left" valign=bottom bgcolor="#E6E6E6"><br></td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+	</tr>
+	<tr>
+		<td height="17" align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom bgcolor="#E6E6E6">LIMIT</td>
+		<td align="left" valign=bottom bgcolor="#E6E6E6">total size of array</td>
+		<td align="left" valign=bottom bgcolor="#E6E6E6">used only  in varray</td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+	</tr>
+	<tr>
+		<td height="17" align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom bgcolor="#E6E6E6">COUNT</td>
+		<td align="left" valign=bottom bgcolor="#E6E6E6">no. of element Initialized in collection</td>
+		<td align="left" valign=bottom bgcolor="#E6E6E6"><b>used in both varray and nested table</b></td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+	</tr>
+	<tr>
+		<td height="23" align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom bgcolor="#B3B3B3">EXTEND</td>
+		<td align="left" valign=bottom bgcolor="#B3B3B3">allocate SPACE for one or more element</td>
+		<td align="left" valign=bottom bgcolor="#B3B3B3">used in varray and nested table</td>
+		<td align="left" valign=bottom>i cannot call extend method on same array continously. it will give error. so, extend-assignvalue-then-extend..</td>
+		<td align="left" valign=bottom><font size=3 color="#FF0000">i must initialize at least as empty for varray and nested table before to call EXTEND method. otherwise i will get error. i tested</font></td>
+		<td align="left" valign=bottom><br></td>
+	</tr>
+	<tr>
+		<td height="16" align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom bgcolor="#B3B3B3">TRIM</td>
+		<td align="left" valign=bottom bgcolor="#B3B3B3">deallocate  SPACE for one or more elements</td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+	</tr>
+	<tr>
+		<td height="16" align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom>DELETE</td>
+		<td align="left" valign=bottom>delete one or more element</td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+	</tr>
+	<tr>
+		<td height="16" align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom>EXISTS</td>
+		<td align="left" valign=bottom>to check a element in collection</td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+	</tr>
+	<tr>
+		<td height="17" align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom>CAST</td>
+		<td align="left" valign=bottom>use to cast varray to nested table</td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+	</tr>
+	<tr>
+		<td height="17" align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom bgcolor="#CFE7F5">LAST</td>
+		<td align="left" valign=bottom bgcolor="#CFE7F5">highest index of collection</td>
+		<td align="left" valign=bottom bgcolor="#CFE7F5">used in varray and nested table associative array</td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+	</tr>
+	<tr>
+		<td height="17" align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom bgcolor="#CFE7F5">FIRST</td>
+		<td align="left" valign=bottom bgcolor="#CFE7F5">lowest index of collection</td>
+		<td align="left" valign=bottom bgcolor="#CFE7F5">used in varray and nested table associative array</td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+	</tr>
+	<tr>
+		<td height="17" align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom bgcolor="#CFE7F5">NEXT</td>
+		<td align="left" valign=bottom bgcolor="#CFE7F5">return next index or false</td>
+		<td align="left" valign=bottom bgcolor="#CFE7F5">used in varray and nested table associative array</td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+	</tr>
+	<tr>
+		<td height="17" align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom bgcolor="#CFE7F5">PRIOR</td>
+		<td align="left" valign=bottom bgcolor="#CFE7F5">previous index or false</td>
+		<td align="left" valign=bottom bgcolor="#CFE7F5">used in varray and nested table associative array</td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+	</tr>
+	<tr>
+		<td height="17" align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+	</tr>
+	<tr>
+		<td height="16" align="left" valign=bottom bgcolor="#77216F"><br></td>
+		<td align="left" valign=bottom bgcolor="#77216F"><br></td>
+		<td align="left" valign=bottom bgcolor="#77216F"><br></td>
+		<td align="left" valign=bottom bgcolor="#77216F"><br></td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+	</tr>
+	<tr>
+		<td height="16" align="left" valign=bottom>collection set operator</td>
+		<td align="left" valign=bottom>CARDINALITY</td>
+		<td rowspan=2 align="center" valign=middle>I can use these set operator in IF statement. only for scala typed varray or nested table</td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+	</tr>
+	<tr>
+		<td height="16" align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom>EMPTY</td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+	</tr>
+	<tr>
+		<td height="16" align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom>MEMBER OF</td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+	</tr>
+	<tr>
+		<td height="16" align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom>MULTISET EXCEPT</td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+	</tr>
+	<tr>
+		<td height="16" align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom>MULTISET INTERSECT</td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+	</tr>
+	<tr>
+		<td height="16" align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom>MULTISET UNION</td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+	</tr>
+	<tr>
+		<td height="16" align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom>SET</td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+	</tr>
+	<tr>
+		<td height="16" align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom>SUBMULTISET</td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+	</tr>
+	<tr>
+		<td height="17" align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+	</tr>
+	<tr>
+		<td height="16" align="left" valign=bottom bgcolor="#77216F"><br></td>
+		<td align="left" valign=bottom bgcolor="#77216F"><br></td>
+		<td align="left" valign=bottom bgcolor="#77216F"><br></td>
+		<td align="left" valign=bottom bgcolor="#77216F"><br></td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+	</tr>
+	<tr>
+		<td height="17" align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+	</tr>
+	<tr>
+		<td height="16" align="left" valign=bottom>collection exception( 5 )</td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+	</tr>
+	<tr>
+		<td height="16" align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom>COLLECTION_IS_NULL</td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+	</tr>
+	<tr>
+		<td height="16" align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom>NO_DATA_FOUND</td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom>used in associative array</td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+	</tr>
+	<tr>
+		<td height="17" align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom>SUBSCRIPT_BEYOND_COUNT</td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom>used in varray and nested table</td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+	</tr>
+	<tr>
+		<td height="17" align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom>SUBSCRIPT_OUTSIDE_LIMIT</td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom>used in varray and nested table</td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+	</tr>
+	<tr>
+		<td height="16" align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom>VALUE_ERROR</td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+	</tr>
+	<tr>
+		<td height="16" align="left" valign=bottom bgcolor="#77216F"><br></td>
+		<td align="left" valign=bottom bgcolor="#77216F"><br></td>
+		<td align="left" valign=bottom bgcolor="#77216F"><br></td>
+		<td align="left" valign=bottom bgcolor="#77216F"><br></td>
+		<td align="left" valign=bottom bgcolor="#77216F"><br></td>
+		<td align="left" valign=bottom bgcolor="#77216F"><br></td>
+		<td align="left" valign=bottom bgcolor="#77216F"><br></td>
+	</tr>
+	<tr>
+		<td height="17" align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+	</tr>
+	<tr>
+		<td height="17" align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+	</tr>
+	<tr>
+		<td style="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000" height="16" align="left" valign=bottom><b><font color="#00AE00">composite data type</font></b></td>
+		<td style="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000" align="left" valign=bottom><b><font color="#0047FF">is Object Type</font></b></td>
+		<td style="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000" align="left" valign=bottom><b><font color="#0047FF">is available for SQL</font></b></td>
+		<td style="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000" align="left" valign=bottom><b><font color="#0047FF">is available for PL-SQL</font></b></td>
+		<td style="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000" align="left" valign=bottom><b><font color="#0047FF">fixed Size</font></b></td>
+		<td style="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000" align="left" valign=bottom><b><font color="#0047FF">can use Object or record</font></b></td>
+		<td style="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000" align="left" valign=bottom><b><font color="#0047FF">remove element</font></b></td>
+	</tr>
+	<tr>
+		<td style="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000" height="16" align="left" valign=bottom><b><font color="#C5000B">Record</font></b></td>
+		<td style="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000" align="left" valign=bottom>no</td>
+		<td style="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000" align="left" valign=bottom>no</td>
+		<td style="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000" align="left" valign=bottom>yes</td>
+		<td style="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000" align="left" valign=bottom>N/A</td>
+		<td style="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000" align="left" valign=bottom>N/A</td>
+		<td style="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000" align="left" valign=bottom>N/A</td>
+	</tr>
+	<tr>
+		<td style="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000" height="17" align="left" valign=bottom><b><font color="#C5000B">Varray</font></b></td>
+		<td style="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000" align="left" valign=bottom>yes</td>
+		<td style="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000" align="left" valign=bottom>yes</td>
+		<td style="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000" align="left" valign=bottom>yes</td>
+		<td style="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000" align="left" valign=bottom>yes</td>
+		<td style="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000" align="left" valign=bottom>yes</td>
+		<td style="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000" align="left" valign=bottom>No</td>
+	</tr>
+	<tr>
+		<td style="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000" height="16" align="left" valign=bottom><b><font color="#C5000B">Nested Table</font></b></td>
+		<td style="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000" align="left" valign=bottom>yes</td>
+		<td style="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000" align="left" valign=bottom>yes</td>
+		<td style="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000" align="left" valign=bottom>yes</td>
+		<td style="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000" align="left" valign=bottom>no</td>
+		<td style="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000" align="left" valign=bottom>yes</td>
+		<td style="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000" align="left" valign=bottom>Yes</td>
+	</tr>
+	<tr>
+		<td style="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000" height="16" align="left" valign=bottom><b><font color="#C5000B">associated Array</font></b></td>
+		<td style="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000" align="left" valign=bottom>no</td>
+		<td style="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000" align="left" valign=bottom>no</td>
+		<td style="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000" align="left" valign=bottom>yes</td>
+		<td style="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000" align="left" valign=bottom>no</td>
+		<td style="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000" align="left" valign=bottom>yes</td>
+		<td style="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000" align="left" valign=bottom>Yes</td>
+	</tr>
+</table>
+<!-- ************************************************************************** -->
+<hr>
+<A NAME="table3"><h1> 4: <em>Cursor</em></h1></A>
+<table cellspacing="0" border="0">
+	<colgroup width="30"></colgroup>
+	<colgroup width="251"></colgroup>
+	<colgroup width="228"></colgroup>
+	<colgroup width="183"></colgroup>
+	<colgroup width="254"></colgroup>
+	<tr>
+		<td height="16" align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom>it is read-only structure</td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+	</tr>
+	<tr>
+		<td height="17" align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom>cursor is pointer to private SQL Area</td>
+		<td align="left" valign=bottom>it is also called locally defined cursor</td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+	</tr>
+	<tr>
+		<td height="17" align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+	</tr>
+	<tr>
+		<td height="16" align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom>explicit cursor ( static / dynamic )</td>
+		<td align="left" valign=bottom><font face="Monospace" color="#0000FF"><br></font></td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+	</tr>
+	<tr>
+		<td height="16" align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom>6- attributes to know status of cursor</td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+	</tr>
+	<tr>
+		<td height="16" align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><font color="#6B0094">%FOUND</font></td>
+		<td align="left" valign=bottom>Used in Simple loop</td>
+		<td align="left" valign=bottom>available for implicit cursor</td>
+	</tr>
+	<tr>
+		<td height="16" align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><font color="#6B0094">%NOTFOUND</font></td>
+		<td align="left" valign=bottom>Used in Simple loop</td>
+		<td align="left" valign=bottom>available for implicit cursor</td>
+	</tr>
+	<tr>
+		<td height="16" align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><font color="#6B0094">%ISOPEN</font></td>
+		<td align="left" valign=bottom>Used in Simple loop</td>
+		<td align="left" valign=bottom>available for implicit cursor</td>
+	</tr>
+	<tr>
+		<td height="16" align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><font color="#6B0094">%ROWCOUNT</font></td>
+		<td align="left" valign=bottom>Used in Simple loop</td>
+		<td align="left" valign=bottom>available for implicit cursor</td>
+	</tr>
+	<tr>
+		<td height="16" align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom bgcolor="#CCCCCC"><br></td>
+		<td align="left" valign=bottom bgcolor="#CCCCCC"><font color="#6B0094"><br></font></td>
+		<td align="left" valign=bottom bgcolor="#CCCCCC"><br></td>
+		<td align="left" valign=bottom bgcolor="#CCCCCC"><br></td>
+	</tr>
+	<tr>
+		<td height="17" align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom>Reference Cursor</td>
+		<td align="left" valign=bottom>SYS_REFCURSOR</td>
+		<td align="left" valign=bottom>it is structure stored in system. Ie in SGA</td>
+		<td align="left" valign=bottom><br></td>
+	</tr>
+	<tr>
+		<td height="16" align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom>Reference cursor only can return to CLIENT.</td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+	</tr>
+	<tr>
+		<td height="16" align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom>Reference cursor can be passed subroutine to subroutine.</td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+	</tr>
+	<tr>
+		<td height="16" align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom>Reference cursor cannot be global</td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+	</tr>
+	<tr>
+		<td height="17" align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom>it is WEAK cursor, since it can point to any sql query dynamically.</td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+	</tr>
+	<tr>
+		<td height="17" align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom>OPEN curser FOR &lt;DynamicSQL&gt;</td>
+		<td align="left" valign=bottom>this is the syntax to open reference or sys reference cursor</td>
+		<td align="left" valign=bottom><br></td>
+	</tr>
+	<tr>
+		<td height="16" align="left" valign=bottom bgcolor="#CCCCCC"><br></td>
+		<td align="left" valign=bottom bgcolor="#CCCCCC"><br></td>
+		<td align="left" valign=bottom bgcolor="#CCCCCC"><br></td>
+		<td align="left" valign=bottom bgcolor="#CCCCCC"><br></td>
+		<td align="left" valign=bottom bgcolor="#CCCCCC"><br></td>
+	</tr>
+	<tr>
+		<td height="16" align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom>Explicit Cursor ( Local Cursor )</td>
+		<td align="left" valign=bottom>defined in Declaration block</td>
+		<td align="left" valign=bottom>stored session</td>
+		<td align="left" valign=bottom><br></td>
+	</tr>
+	<tr>
+		<td height="16" align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom>Implicit cursor ( Local Cursor )</td>
+		<td align="left" valign=bottom>it is any of DML or Select query in for loop</td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+	</tr>
+	<tr>
+		<td height="16" align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom>Local cursor, can be used only with in PL/SQL</td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+	</tr>
+	<tr>
+		<td height="16" align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><b>Local cursor, cannot be passed or return among subroutine</b></td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+	</tr>
+	<tr>
+		<td height="16" align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom bgcolor="#B3B3B3"><br></td>
+		<td align="left" valign=bottom bgcolor="#B3B3B3"><br></td>
+		<td align="left" valign=bottom bgcolor="#B3B3B3"><br></td>
+		<td align="left" valign=bottom bgcolor="#B3B3B3"><br></td>
+	</tr>
+	<tr>
+		<td height="16" align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom>Exception</td>
+		<td align="left" valign=bottom>INVALID_CURSOR</td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+	</tr>
+	<tr>
+		<td height="16" align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom>CURSOR_ALREADY_OPEN</td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+	</tr>
+	<tr>
+		<td height="16" align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom>ROWTYPE_MISMATCH</td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+	</tr>
+	<tr>
+		<td height="16" align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom bgcolor="#CCCCCC"><br></td>
+		<td align="left" valign=bottom bgcolor="#CCCCCC"><br></td>
+		<td align="left" valign=bottom bgcolor="#CCCCCC"><br></td>
+		<td align="left" valign=bottom bgcolor="#CCCCCC"><br></td>
+	</tr>
+</table>
+<!-- ************************************************************************** -->
+<hr>
+<A NAME="table4"><h1> 5: <em>Anaymous </em></h1></A>
+<table cellspacing="0" border="0">
+	<colgroup width="637"></colgroup>
+	<tr>
+		<td height="16" align="left" valign=bottom>use this for on-time operations</td>
+	</tr>
+	<tr>
+		<td height="16" align="left" valign=bottom>there is no Separate compilation activity o
+ for anonymous block</td>
+	</tr>
+</table>
+<!-- ************************************************************************** -->
+<hr>
+<A NAME="table5"><h1> 6: <em>Exception</em></h1></A>
+<table cellspacing="0" border="0">
+	<colgroup width="217"></colgroup>
+	<colgroup width="651"></colgroup>
+	<tr>
+		<td height="17" align="left" valign=bottom>RAISE &lt;any exception object&gt;</td>
+		<td align="left" valign=bottom>to manually raise any SYSTEM(pre defined) exception in execution block</td>
+	</tr>
+	<tr>
+		<td height="16" align="left" valign=bottom>RAISE</td>
+		<td align="left" valign=bottom>to re-though a exception in EXCEPTION block</td>
+	</tr>
+	<tr>
+		<td height="16" align="left" valign=bottom>RAISE_APPLICATION_ERROR</td>
+		<td align="left" valign=bottom>to manually raise Dynamic User Defined exception along with error code and error message</td>
+	</tr>
+	<tr>
+		<td height="17" align="left" valign=bottom>INLINE</td>
+		<td align="left" valign=bottom>to import another programe content into current programe</td>
+	</tr>
+	<tr>
+		<td height="17" align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+	</tr>
+	<tr>
+		<td height="17" align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+	</tr>
+	<tr>
+		<td height="17" align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+	</tr>
+	<tr>
+		<td height="16" align="left" valign=bottom>SQLERRM</td>
+		<td align="left" valign=bottom>exception error message</td>
+	</tr>
+	<tr>
+		<td height="16" align="left" valign=bottom>SQLCODE</td>
+		<td align="left" valign=bottom>error code</td>
+	</tr>
+</table>
+<!-- ************************************************************************** -->
+<hr>
+<A NAME="table6"><h1> 7: <em>Function</em></h1></A>
+<table cellspacing="0" border="0">
+	<colgroup width="131"></colgroup>
+	<colgroup width="215"></colgroup>
+	<colgroup width="515"></colgroup>
+	<colgroup width="304"></colgroup>
+	<tr>
+		<td height="17" align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom>it can do only SELECT, But cannot do Insert/ update / delete statemet</td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+	</tr>
+	<tr>
+		<td height="17" align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom bgcolor="#00B8FF">it can be called by SQL command line only when it does not use Pl/sql data type</td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+	</tr>
+	<tr>
+		<td height="16" align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom>CALL INTO → to assign values into a variable, it cannot be used inside of procedure. I tested</td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+	</tr>
+	<tr>
+		<td height="16" align="center" valign=bottom>Creation Option</td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+	</tr>
+	<tr>
+		<td height="16" align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><font face="MLMHBK+CourierNewPSMT">AUTHID</font></td>
+		<td align="left" valign=bottom>either definer permissions or invoker permissions</td>
+		<td align="left" valign=bottom><br></td>
+	</tr>
+	<tr>
+		<td height="32" align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom>DETERMINISTIC</td>
+		<td align="left" valign=bottom>used when function based index, materilized vies and Dont use this when it depend on any Session level variables</td>
+		<td align="left" valign=bottom>it always return same value irrespective of parameters</td>
+	</tr>
+	<tr>
+		<td height="17" align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom>PARALLEL_ENABLED</td>
+		<td align="left" valign=bottom>when a function planned to invoke from SQL and parellel</td>
+		<td align="left" valign=bottom><br></td>
+	</tr>
+	<tr>
+		<td height="17" align="center" valign=bottom>P</td>
+		<td align="left" valign=bottom>PIPELINED</td>
+		<td align="left" valign=bottom>when a function return array, nested tables or reference cursor</td>
+		<td align="left" valign=bottom>it improve the performance</td>
+	</tr>
+	<tr>
+		<td height="17" align="center" valign=bottom>P</td>
+		<td align="left" valign=bottom>RESULT_CACHE</td>
+		<td align="left" valign=bottom>store the results, actual parameters in SGA, so it will be shared across sessions</td>
+		<td align="left" valign=bottom>these function MUST  not have any OUT parameter</td>
+	</tr>
+	<tr>
+		<td height="17" align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+	</tr>
+	<tr>
+		<td height="17" align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+	</tr>
+	<tr>
+		<td height="17" align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+	</tr>
+	<tr>
+		<td height="16" align="center" valign=bottom>Thumb Rules</td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+	</tr>
+	<tr>
+		<td height="16" align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom>A function can call in SQL, when it is NOT return or accept PL/SQL type</td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+	</tr>
+	<tr>
+		<td height="16" align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom>A function CANNOT call in SQL, when it is doing DML</td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+	</tr>
+	<tr>
+		<td height="16" align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom>A PIPELINED function can be used only in SQL statements and it cannot be used in PL/SQL</td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+	</tr>
+	<tr>
+		<td height="17" align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+	</tr>
+	<tr>
+		<td height="17" align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+	</tr>
+	<tr>
+		<td height="16" align="center" valign=bottom>compile  manually</td>
+		<td align="left" valign=bottom>ALTER FUNCTION pf COMPILE;</td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+	</tr>
+</table>
+<!-- ************************************************************************** -->
+<hr>
+<A NAME="table7"><h1> 8: <em>Procedure</em></h1></A>
+<table cellspacing="0" border="0">
+	<colgroup width="152"></colgroup>
+	<colgroup width="387"></colgroup>
+	<tr>
+		<td height="16" align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom>it can do any type of operations like DML/DQL/DCL/Call external library</td>
+	</tr>
+	<tr>
+		<td height="16" align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom>it cannot return a type</td>
+	</tr>
+	<tr>
+		<td height="16" align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom bgcolor="#00B8FF">it can be invoked only by PL/SQL blocks</td>
+	</tr>
+	<tr>
+		<td height="17" align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+	</tr>
+	<tr>
+		<td height="17" align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+	</tr>
+	<tr>
+		<td height="16" align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom>CALL or EXECUTE → to execute the procedure</td>
+	</tr>
+	<tr>
+		<td height="17" align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+	</tr>
+	<tr>
+		<td height="16" align="center" valign=bottom>creation option</td>
+		<td align="left" valign=bottom><br></td>
+	</tr>
+	<tr>
+		<td height="16" align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom>AUTHID</td>
+	</tr>
+	<tr>
+		<td height="17" align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+	</tr>
+	<tr>
+		<td height="16" align="center" valign=bottom>Thumb Rules</td>
+		<td align="left" valign=bottom>procedure cannot be used as right operand or in SQL queries</td>
+	</tr>
+</table>
+<!-- ************************************************************************** -->
+<hr>
+<A NAME="table8"><h1> 9: <em>Triggers</em></h1></A>
+<table cellspacing="0" border="0">
+	<colgroup width="328"></colgroup>
+	<colgroup width="265"></colgroup>
+	<colgroup width="57"></colgroup>
+	<colgroup width="393"></colgroup>
+	<colgroup span="2" width="86"></colgroup>
+	<tr>
+		<td height="16" align="left" valign=bottom>it is event based programming, only system defined events</td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+	</tr>
+	<tr>
+		<td height="16" align="left" valign=bottom>we cannot define our own event</td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+	</tr>
+	<tr>
+		<td height="16" align="left" valign=bottom>triggers can be used to enforce many good practice</td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+	</tr>
+	<tr>
+		<td height="16" align="left" valign=bottom>triggers can be used to debugging</td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+	</tr>
+	<tr>
+		<td height="16" align="left" valign=bottom>u can enable or disable whenever u need</td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+	</tr>
+	<tr>
+		<td height="16" align="left" valign=bottom bgcolor="#CCCCCC"><br></td>
+		<td align="left" valign=bottom bgcolor="#CCCCCC"><br></td>
+		<td align="left" valign=bottom bgcolor="#CCCCCC"><br></td>
+		<td align="left" valign=bottom bgcolor="#CCCCCC"><br></td>
+		<td align="left" valign=bottom bgcolor="#CCCCCC"><br></td>
+		<td align="left" valign=bottom bgcolor="#CCCCCC"><br></td>
+	</tr>
+	<tr>
+		<td height="17" align="left" valign=bottom>to compile a trigger</td>
+		<td align="left" valign=bottom>ALTER TRIGGER trigger_name COMPILE</td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+	</tr>
+	<tr>
+		<td height="16" align="left" valign=bottom>Triggers can be</td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+	</tr>
+	<tr>
+		<td height="16" align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom>in PL/SQL</td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+	</tr>
+	<tr>
+		<td height="16" align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom>in JAVA</td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+	</tr>
+	<tr>
+		<td height="16" align="left" valign=bottom bgcolor="#CCCCCC"><br></td>
+		<td align="left" valign=bottom bgcolor="#CCCCCC"><br></td>
+		<td align="left" valign=bottom bgcolor="#CCCCCC"><br></td>
+		<td align="left" valign=bottom bgcolor="#CCCCCC"><br></td>
+		<td align="left" valign=bottom bgcolor="#CCCCCC"><br></td>
+		<td align="left" valign=bottom><br></td>
+	</tr>
+	<tr>
+		<td height="16" align="left" valign=bottom>DDL Triggers</td>
+		<td align="left" valign=bottom>BEFORE</td>
+		<td align="left" valign=bottom>AFTER</td>
+		<td align="left" valign=bottom>fire when create or remove or change a object in schema</td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+	</tr>
+	<tr>
+		<td height="16" align="left" valign=bottom>DML Triggers</td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom>depends on table or view</td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+	</tr>
+	<tr>
+		<td height="16" align="left" valign=bottom>Compound Triggers</td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+	</tr>
+	<tr>
+		<td height="16" align="left" valign=bottom>Instead-Of Triggers</td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+	</tr>
+	<tr>
+		<td height="16" align="left" valign=bottom>System or Database Event triggers</td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+	</tr>
+	<tr>
+		<td height="17" align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+	</tr>
+	<tr>
+		<td height="16" align="left" valign=bottom bgcolor="#CCCCCC"><br></td>
+		<td align="left" valign=bottom bgcolor="#CCCCCC"><br></td>
+		<td align="left" valign=bottom bgcolor="#CCCCCC"><br></td>
+		<td align="left" valign=bottom bgcolor="#CCCCCC"><br></td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+	</tr>
+	<tr>
+		<td height="17" align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+	</tr>
+	<tr>
+		<td height="17" align="left" valign=bottom>PeseduoRecords</td>
+		<td align="left" valign=bottom>OLD</td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+	</tr>
+	<tr>
+		<td height="16" align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom>NEW</td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+	</tr>
+	<tr>
+		<td height="16" align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom>PARENT</td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom>for view</td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+	</tr>
+	<tr>
+		<td height="16" align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom>OBJECT_VALUE</td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom>for object type</td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+	</tr>
+</table>
+<!-- ************************************************************************** -->
+<hr>
+<A NAME="table9"><h1> 10: <em>Package</em></h1></A>
+<table cellspacing="0" border="0">
+	<colgroup width="185"></colgroup>
+	<colgroup width="564"></colgroup>
+	<colgroup span="2" width="86"></colgroup>
+	<tr>
+		<td height="16" align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom>overloading function – supports</td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+	</tr>
+	<tr>
+		<td height="16" align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom>Defining user exception is really good feature in package</td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+	</tr>
+	<tr>
+		<td height="16" align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom>ALTER PACKAGE package_variables COMPILE SPECIFICATION;</td>
+		<td align="left" valign=bottom>to forcibly recompile the package</td>
+		<td align="left" valign=bottom><br></td>
+	</tr>
+	<tr>
+		<td height="17" align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+	</tr>
+	<tr>
+		<td height="16" align="left" valign=bottom bgcolor="#CCCCCC"><br></td>
+		<td align="left" valign=bottom bgcolor="#CCCCCC"><br></td>
+		<td align="left" valign=bottom bgcolor="#CCCCCC"><br></td>
+		<td align="left" valign=bottom bgcolor="#CCCCCC"><br></td>
+	</tr>
+	<tr>
+		<td height="17" align="left" valign=bottom>creational option</td>
+		<td align="left" valign=bottom>AUTHID</td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+	</tr>
+	<tr>
+		<td height="16" align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><font face="MLNFPF+CourierNewPS-BoldMT" size=1>PRAGMA SERIALLY_REUSABLE</font></td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+	</tr>
+	<tr>
+		<td height="17" align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+	</tr>
+	<tr>
+		<td height="16" align="left" valign=bottom bgcolor="#B3B3B3"><br></td>
+		<td align="left" valign=bottom bgcolor="#B3B3B3"><br></td>
+		<td align="left" valign=bottom bgcolor="#B3B3B3"><br></td>
+		<td align="left" valign=bottom bgcolor="#B3B3B3"><br></td>
+	</tr>
+	<tr>
+		<td height="16" align="left" valign=bottom>Recommended order</td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+	</tr>
+	<tr>
+		<td height="17" align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom>variable declration</td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+	</tr>
+	<tr>
+		<td height="16" align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom>type declaration</td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+	</tr>
+	<tr>
+		<td height="16" align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom>cursor declaration</td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+	</tr>
+	<tr>
+		<td height="16" align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom>ref cursor declaration</td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+	</tr>
+	<tr>
+		<td height="16" align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom>user exception</td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+	</tr>
+	<tr>
+		<td height="17" align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom>pragma</td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+	</tr>
+	<tr>
+		<td height="16" align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom>function</td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+	</tr>
+	<tr>
+		<td height="16" align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom>procedure</td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+	</tr>
+	<tr>
+		<td height="16" align="left" valign=bottom bgcolor="#CCCCCC"><br></td>
+		<td align="left" valign=bottom bgcolor="#CCCCCC"><br></td>
+		<td align="left" valign=bottom bgcolor="#CCCCCC"><br></td>
+		<td align="left" valign=bottom bgcolor="#CCCCCC"><br></td>
+	</tr>
+</table>
+<!-- ************************************************************************** -->
+<hr>
+<A NAME="table10"><h1> 11: <em>DNS-Dynamic Native query</em></h1></A>
+<table cellspacing="0" border="0">
+	<colgroup width="263"></colgroup>
+	<colgroup width="458"></colgroup>
+	<colgroup width="223"></colgroup>
+	<tr>
+		<td height="16" align="left" valign=bottom>it helps create and execute SQL at runtime</td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+	</tr>
+	<tr>
+		<td height="17" align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+	</tr>
+	<tr>
+		<td height="17" align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+	</tr>
+	<tr>
+		<td height="16" align="left" valign=bottom bgcolor="#99CCFF">two approach</td>
+		<td align="left" valign=bottom bgcolor="#99CCFF">DNS approach</td>
+		<td align="left" valign=bottom bgcolor="#99CCFF">it is latest one</td>
+	</tr>
+	<tr>
+		<td height="16" align="left" valign=bottom bgcolor="#99CCFF"><br></td>
+		<td align="left" valign=bottom bgcolor="#99CCFF">using old DMBS_SQL package usage</td>
+		<td align="left" valign=bottom bgcolor="#99CCFF">it is from Oracle 7 onwards</td>
+	</tr>
+	<tr>
+		<td height="17" align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+	</tr>
+	<tr>
+		<td height="17" align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+	</tr>
+	<tr>
+		<td height="16" align="left" valign=bottom>Dynamic DDL statement</td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+	</tr>
+	<tr>
+		<td height="17" align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+	</tr>
+	<tr>
+		<td height="17" align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+	</tr>
+	<tr>
+		<td height="16" align="left" valign=bottom>Dynamic DML statement</td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+	</tr>
+	<tr>
+		<td height="17" align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+	</tr>
+	<tr>
+		<td height="17" align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+	</tr>
+	<tr>
+		<td height="16" align="left" valign=bottom bgcolor="#99CCFF"><font face="Courier New">USING</font></td>
+		<td align="left" valign=bottom bgcolor="#99CCFF">use this for in-bind variables</td>
+		<td align="left" valign=bottom><br></td>
+	</tr>
+	<tr>
+		<td height="16" align="left" valign=bottom bgcolor="#EB613D"><font face="Courier New">INTO</font></td>
+		<td align="left" valign=bottom bgcolor="#EB613D">use this for out-bind variables</td>
+		<td align="left" valign=bottom><br></td>
+	</tr>
+	<tr>
+		<td height="16" align="left" valign=bottom bgcolor="#EB613D"><font face="Courier New">BULK COLLECT INTO</font></td>
+		<td align="left" valign=bottom bgcolor="#EB613D">use this for out-bind variables, when more than one row return</td>
+		<td align="left" valign=bottom><br></td>
+	</tr>
+	<tr>
+		<td height="16" align="left" valign=bottom bgcolor="#EB613D"><font face="Courier New">RETURNING INTO</font></td>
+		<td align="left" valign=bottom bgcolor="#EB613D">use this for out-bind variables, for DML statement</td>
+		<td align="left" valign=bottom><br></td>
+	</tr>
+</table>
+<!-- ************************************************************************** -->
+<hr>
+<A NAME="table11"><h1> 12: <em>LOB</em></h1></A>
+<table cellspacing="0" border="0">
+	<colgroup width="151"></colgroup>
+	<colgroup width="321"></colgroup>
+	<colgroup width="156"></colgroup>
+	<colgroup width="343"></colgroup>
+	<tr>
+		<td height="17" align="left" valign=bottom>CLOB</td>
+		<td align="left" valign=bottom>empty_clob()</td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+	</tr>
+	<tr>
+		<td height="16" align="left" valign=bottom>NCLOB</td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+	</tr>
+	<tr>
+		<td height="16" align="left" valign=bottom>BLOB</td>
+		<td align="left" valign=bottom>empty_blob()</td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+	</tr>
+	<tr>
+		<td height="17" align="left" valign=bottom>BFILE</td>
+		<td align="left" valign=bottom>I did not read properly about this in my pdf</td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+	</tr>
+	<tr>
+		<td height="16" align="left" valign=bottom bgcolor="#CCCCCC"><br></td>
+		<td align="left" valign=bottom bgcolor="#CCCCCC"><br></td>
+		<td align="left" valign=bottom bgcolor="#CCCCCC"><br></td>
+		<td align="left" valign=bottom bgcolor="#CCCCCC"><br></td>
+	</tr>
+	<tr>
+		<td height="17" align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+	</tr>
+	<tr>
+		<td height="16" align="left" valign=bottom>Three different ways</td>
+		<td align="left" valign=bottom>Read and Write in  SQL statement</td>
+		<td align="left" valign=bottom>for small amount of data</td>
+		<td align="left" valign=bottom><br></td>
+	</tr>
+	<tr>
+		<td height="16" align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom>Load server side file in PL/SQL</td>
+		<td align="left" valign=bottom>for large volume of data</td>
+		<td align="left" valign=bottom>RETURNING INTO</td>
+	</tr>
+	<tr>
+		<td height="16" align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom>Load external program( JDBC) along with PL/SQL</td>
+		<td align="left" valign=bottom>for large volume of data</td>
+		<td align="left" valign=bottom>RETURNING INTO</td>
+	</tr>
+	<tr>
+		<td height="16" align="left" valign=bottom bgcolor="#B3B3B3"><br></td>
+		<td align="left" valign=bottom bgcolor="#B3B3B3"><br></td>
+		<td align="left" valign=bottom bgcolor="#B3B3B3"><br></td>
+		<td align="left" valign=bottom bgcolor="#B3B3B3"><br></td>
+	</tr>
+	<tr>
+		<td height="16" align="left" valign=bottom>DBMS_LOB</td>
+		<td align="left" valign=bottom>GET_STORAGE_LIMIT</td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+	</tr>
+	<tr>
+		<td height="16" align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom>ISOPEN</td>
+		<td align="left" valign=bottom>check whether LOB is opened or not</td>
+		<td align="left" valign=bottom><br></td>
+	</tr>
+	<tr>
+		<td height="16" align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom>LOB_READONLY</td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+	</tr>
+	<tr>
+		<td height="16" align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom>OPEN</td>
+		<td align="left" valign=bottom>open a LOB</td>
+		<td align="left" valign=bottom><br></td>
+	</tr>
+	<tr>
+		<td height="16" align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom>LOADCLOBFROMFILE</td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+	</tr>
+	<tr>
+		<td height="16" align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom>LOADBLOBFROMFILE</td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+	</tr>
+	<tr>
+		<td height="16" align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom>LOADFROMFILE</td>
+		<td align="left" valign=bottom>load a file into CLOB OR BLOB OR NCLOB</td>
+		<td align="left" valign=bottom><br></td>
+	</tr>
+	<tr>
+		<td height="16" align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom>CLOSE</td>
+		<td align="left" valign=bottom>close the LOB object</td>
+		<td align="left" valign=bottom><br></td>
+	</tr>
+	<tr>
+		<td height="16" align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom>OPERATION_FAILED</td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+	</tr>
+	<tr>
+		<td height="16" align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom>APPEND</td>
+		<td align="left" valign=bottom>append one stream at end of another steam</td>
+		<td align="left" valign=bottom><br></td>
+	</tr>
+	<tr>
+		<td height="17" align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom>WRITEAPPEND</td>
+		<td align="left" valign=bottom>it append only for blob and clob</td>
+		<td align="left" valign=bottom><br></td>
+	</tr>
+	<tr>
+		<td height="17" align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom>CONVERTTOBLOB</td>
+		<td align="left" valign=bottom>convert clob or nclob to blob</td>
+		<td align="left" valign=bottom><br></td>
+	</tr>
+	<tr>
+		<td height="17" align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom>CONVERTTOCLOB</td>
+		<td align="left" valign=bottom>convert blob to clob</td>
+		<td align="left" valign=bottom><br></td>
+	</tr>
+	<tr>
+		<td height="17" align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom>COPY</td>
+		<td align="left" valign=bottom>copy blob to clob or blob or nclob</td>
+		<td align="left" valign=bottom><br></td>
+	</tr>
+	<tr>
+		<td height="17" align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom>ERASE</td>
+		<td align="left" valign=bottom>erase junck of data from blob or clob or nclob</td>
+		<td align="left" valign=bottom><br></td>
+	</tr>
+	<tr>
+		<td height="17" align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom>FRAGMENT_DELETE</td>
+		<td align="left" valign=bottom>delete junck of data from blob or clob or nclob</td>
+		<td align="left" valign=bottom><br></td>
+	</tr>
+	<tr>
+		<td height="17" align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom>FRAGMENT_INSERT</td>
+		<td align="left" valign=bottom>insert junkc of data into blob or clob or nclob</td>
+		<td align="left" valign=bottom><br></td>
+	</tr>
+	<tr>
+		<td height="17" align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom>FRAGMENT_MOVE</td>
+		<td align="left" valign=bottom>move junck of data from one location to another location in same lob</td>
+		<td align="left" valign=bottom><br></td>
+	</tr>
+	<tr>
+		<td height="16" align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom>FRAGMENT_REPLACE</td>
+		<td align="left" valign=bottom>it is like find and replace</td>
+		<td align="left" valign=bottom><br></td>
+	</tr>
+	<tr>
+		<td height="17" align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom>ISSECURE_FILE</td>
+		<td align="left" valign=bottom>check if blob, clob and nclob either secured or not</td>
+		<td align="left" valign=bottom><br></td>
+	</tr>
+	<tr>
+		<td height="16" align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom>SETOPTIONS</td>
+		<td align="left" valign=bottom>to set setting for any LOB</td>
+		<td align="left" valign=bottom><br></td>
+	</tr>
+	<tr>
+		<td height="16" align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom>TRIM</td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+	</tr>
+	<tr>
+		<td height="16" align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom>WRITE</td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+	</tr>
+	<tr>
+		<td height="16" align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom>CREATETEMPORTY</td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+	</tr>
+	<tr>
+		<td height="16" align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom>ISTEMPORARY</td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+	</tr>
+	<tr>
+		<td height="16" align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom>FREETEMPORTY</td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+	</tr>
+	<tr>
+		<td height="16" align="left" valign=bottom bgcolor="#B3B3B3"><br></td>
+		<td align="left" valign=bottom bgcolor="#B3B3B3"><br></td>
+		<td align="left" valign=bottom bgcolor="#B3B3B3"><br></td>
+		<td align="left" valign=bottom bgcolor="#B3B3B3"><br></td>
+	</tr>
+	<tr>
+		<td height="16" align="left" valign=bottom>introspection methods</td>
+		<td align="left" valign=bottom>COMPARE</td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+	</tr>
+	<tr>
+		<td height="16" align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom>GETCHUNKSIZE</td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+	</tr>
+	<tr>
+		<td height="16" align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom>GET_DEDUPLICATED_REGIONS</td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+	</tr>
+	<tr>
+		<td height="16" align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom>GETLENGTH</td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+	</tr>
+	<tr>
+		<td height="16" align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom>GETOPTIONS</td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+	</tr>
+	<tr>
+		<td height="16" align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom>GET_STORAGE_LIMIT</td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+	</tr>
+	<tr>
+		<td height="16" align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom>INSTR</td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+	</tr>
+	<tr>
+		<td height="16" align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom>READ</td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+	</tr>
+	<tr>
+		<td height="16" align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom>SUBSTR</td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+	</tr>
+	<tr>
+		<td height="16" align="left" valign=bottom bgcolor="#CCCCCC"><br></td>
+		<td align="left" valign=bottom bgcolor="#CCCCCC"><br></td>
+		<td align="left" valign=bottom bgcolor="#CCCCCC"><br></td>
+		<td align="left" valign=bottom bgcolor="#CCCCCC"><br></td>
+	</tr>
+	<tr>
+		<td height="16" align="left" valign=bottom>BFILE methods</td>
+		<td align="left" valign=bottom>FILECLOSEALL</td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+	</tr>
+	<tr>
+		<td height="16" align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom>FILEISOPEN</td>
+		<td align="left" valign=bottom>check the file is open for BFILE</td>
+		<td align="left" valign=bottom><br></td>
+	</tr>
+	<tr>
+		<td height="16" align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom>FILEEXISTS</td>
+		<td align="left" valign=bottom>check the physical file is there or not in file system</td>
+		<td align="left" valign=bottom><br></td>
+	</tr>
+	<tr>
+		<td height="16" align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom>FILEGETNAME</td>
+		<td align="left" valign=bottom>get file name</td>
+		<td align="left" valign=bottom><br></td>
+	</tr>
+	<tr>
+		<td height="16" align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+	</tr>
+	<tr>
+		<td height="16" align="left" valign=bottom bgcolor="#CCCCCC"><br></td>
+		<td align="left" valign=bottom bgcolor="#CCCCCC"><br></td>
+		<td align="left" valign=bottom bgcolor="#CCCCCC"><br></td>
+		<td align="left" valign=bottom bgcolor="#CCCCCC"><br></td>
+	</tr>
+	<tr>
+		<td height="16" align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom>Record structure</td>
+		<td align="left" valign=bottom>BLOB_DEDUPLICATE_REGION</td>
+		<td align="left" valign=bottom><br></td>
+	</tr>
+	<tr>
+		<td height="16" align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom>CLOB_DEDUPLICATE_REGION</td>
+		<td align="left" valign=bottom><br></td>
+	</tr>
+	<tr>
+		<td height="16" align="left" valign=bottom bgcolor="#CCCCCC"><br></td>
+		<td align="left" valign=bottom bgcolor="#CCCCCC"><br></td>
+		<td align="left" valign=bottom bgcolor="#CCCCCC"><br></td>
+		<td align="left" valign=bottom bgcolor="#CCCCCC"><br></td>
+	</tr>
+	<tr>
+		<td height="16" align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom>Exception defined in this package</td>
+		<td align="left" valign=bottom>there are 8  exceptions</td>
+		<td align="left" valign=bottom><br></td>
+	</tr>
+</table>
+<!-- ************************************************************************** -->
+<hr>
+<A NAME="table12"><h1> 13: <em>Built-in Packages</em></h1></A>
+<table cellspacing="0" border="0">
+	<colgroup width="152"></colgroup>
+	<colgroup width="209"></colgroup>
+	<colgroup width="252"></colgroup>
+	<colgroup width="318"></colgroup>
+	<tr>
+		<td height="16" align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom>DBMS_PREPROCESSOR</td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+	</tr>
+	<tr>
+		<td height="16" align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom>DBMS_DB_VERSION</td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+	</tr>
+	<tr>
+		<td height="16" align="center" valign=bottom bgcolor="#E6E6E6"><br></td>
+		<td align="left" valign=bottom bgcolor="#E6E6E6"><br></td>
+		<td align="left" valign=bottom bgcolor="#E6E6E6"><br></td>
+		<td align="left" valign=bottom bgcolor="#E6E6E6"><br></td>
+	</tr>
+	<tr>
+		<td height="16" align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom>DBMS_STANDARD</td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+	</tr>
+	<tr>
+		<td height="16" align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom>SYS.STANDARD</td>
+		<td align="left" valign=bottom>this is for exception handling</td>
+		<td align="left" valign=bottom>value_error</td>
+	</tr>
+	<tr>
+		<td height="17" align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom>STANDARD</td>
+		<td align="left" valign=bottom>it is like java.lang package in java.</td>
+		<td align="left" valign=bottom>it has many used by PL/SQL engine itself</td>
+	</tr>
+	<tr>
+		<td height="16" align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom>LENGTH()</td>
+		<td align="left" valign=bottom><br></td>
+	</tr>
+	<tr>
+		<td height="16" align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><font color="#0047FF">ROWIDTOCHAR()</font></td>
+		<td align="left" valign=bottom>convert row id to 18-char</td>
+	</tr>
+	<tr>
+		<td height="16" align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><font color="#0047FF">CHARTOROWID()</font></td>
+		<td align="left" valign=bottom><br></td>
+	</tr>
+	<tr>
+		<td height="16" align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><font color="#800000">SYSDATE()</font></td>
+		<td align="left" valign=bottom><br></td>
+	</tr>
+	<tr>
+		<td height="16" align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><font color="#800000">SYSTIMESTAMP()</font></td>
+		<td align="left" valign=bottom><br></td>
+	</tr>
+	<tr>
+		<td height="16" align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><font color="#800000">TO_DATE()</font></td>
+		<td align="left" valign=bottom><br></td>
+	</tr>
+	<tr>
+		<td height="16" align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><font color="#800000">CAST()</font></td>
+		<td align="left" valign=bottom><br></td>
+	</tr>
+	<tr>
+		<td height="16" align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><font color="#800000">EXTRACT()</font></td>
+		<td align="left" valign=bottom><br></td>
+	</tr>
+	<tr>
+		<td height="17" align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+	</tr>
+	<tr>
+		<td height="16" align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom>HEXTORAW()</td>
+		<td align="left" valign=bottom><br></td>
+	</tr>
+	<tr>
+		<td height="16" align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom>EMPTY_BLOB()</td>
+		<td align="left" valign=bottom><br></td>
+	</tr>
+	<tr>
+		<td height="16" align="center" valign=bottom bgcolor="#C0C0C0"><br></td>
+		<td align="left" valign=bottom bgcolor="#C0C0C0"><br></td>
+		<td align="left" valign=bottom bgcolor="#C0C0C0"><br></td>
+		<td align="left" valign=bottom bgcolor="#C0C0C0"><br></td>
+	</tr>
+	<tr>
+		<td height="16" align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom>DBMS_ROWID</td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+	</tr>
+	<tr>
+		<td height="16" align="center" valign=bottom bgcolor="#CCCCCC"><br></td>
+		<td align="left" valign=bottom bgcolor="#CCCCCC"><br></td>
+		<td align="left" valign=bottom bgcolor="#CCCCCC"><br></td>
+		<td align="left" valign=bottom bgcolor="#CCCCCC"><br></td>
+	</tr>
+	<tr>
+		<td height="16" align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom>DBMS_LOCK</td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+	</tr>
+	<tr>
+		<td height="16" align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom>DBMS_APPLICATION_INFO</td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+	</tr>
+	<tr>
+		<td height="16" align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom>DBMS_SQL</td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+	</tr>
+	<tr>
+		<td height="16" align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom>DBMS_ASSERT</td>
+		<td align="left" valign=bottom>SIMPLE_SQL_NAME</td>
+		<td align="left" valign=bottom>Its for avoid SQL injection attack</td>
+	</tr>
+	<tr>
+		<td height="16" align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom>DBMS_JAVA</td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom>to set security and policy for JVM run inside of DB</td>
+	</tr>
+	<tr>
+		<td height="17" align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom>DBMS_UTILITY</td>
+		<td align="left" valign=bottom>FORMAT_ERROR_BACKTRACE</td>
+		<td align="left" valign=bottom>to format error stack trace like java</td>
+	</tr>
+	<tr>
+		<td height="16" align="center" valign=bottom bgcolor="#CCCCCC"><br></td>
+		<td align="left" valign=bottom bgcolor="#CCCCCC"><br></td>
+		<td align="left" valign=bottom bgcolor="#CCCCCC"><br></td>
+		<td align="left" valign=bottom bgcolor="#CCCCCC"><br></td>
+	</tr>
+	<tr>
+		<td height="16" align="center" valign=bottom>it is I/O Package</td>
+		<td align="left" valign=bottom>DBMS_OUTPUT</td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom>usually we use for debugging</td>
+	</tr>
+	<tr>
+		<td height="16" align="center" valign=bottom>it is I/O Package</td>
+		<td align="left" valign=bottom>UTIL_FILE</td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom>used to read/write file in OS's  File system</td>
+	</tr>
+	<tr>
+		<td height="16" align="center" valign=bottom bgcolor="#CCCCCC"><br></td>
+		<td align="left" valign=bottom bgcolor="#CCCCCC"><br></td>
+		<td align="left" valign=bottom bgcolor="#CCCCCC"><br></td>
+		<td align="left" valign=bottom bgcolor="#CCCCCC"><br></td>
+	</tr>
+	<tr>
+		<td height="16" align="center" valign=bottom>inter session</td>
+		<td align="left" valign=bottom>DBMS_PIPE</td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom>to communicate between session in same instance</td>
+	</tr>
+	<tr>
+		<td height="16" align="center" valign=bottom>inter session</td>
+		<td align="left" valign=bottom>DBMS_ALERT</td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+	</tr>
+	<tr>
+		<td height="16" align="center" valign=bottom bgcolor="#CCCCCC"><br></td>
+		<td align="left" valign=bottom bgcolor="#CCCCCC"><br></td>
+		<td align="left" valign=bottom bgcolor="#CCCCCC"><br></td>
+		<td align="left" valign=bottom bgcolor="#CCCCCC"><br></td>
+	</tr>
+	<tr>
+		<td height="16" align="center" valign=bottom>mail</td>
+		<td align="left" valign=bottom>UTL_SMTP</td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom>to send email</td>
+	</tr>
+	<tr>
+		<td height="16" align="center" valign=bottom bgcolor="#E6E6E6"><br></td>
+		<td align="left" valign=bottom bgcolor="#E6E6E6"><br></td>
+		<td align="left" valign=bottom bgcolor="#E6E6E6"><br></td>
+		<td align="left" valign=bottom bgcolor="#E6E6E6"><br></td>
+	</tr>
+	<tr>
+		<td height="16" align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom>DBMS_LOCK</td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+	</tr>
+	<tr>
+		<td height="16" align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom>DBMS_DDL</td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom>wrap stored procedure</td>
+	</tr>
+	<tr>
+		<td height="16" align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom>DBMS_LOB</td>
+		<td align="left" valign=bottom>for large object handling</td>
+		<td align="left" valign=bottom><br></td>
+	</tr>
+	<tr>
+		<td height="16" align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom>FILEGETNAME()</td>
+		<td align="left" valign=bottom><br></td>
+	</tr>
+	<tr>
+		<td height="16" align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+	</tr>
+	<tr>
+		<td height="16" align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+	</tr>
+	<tr>
+		<td height="16" align="center" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+	</tr>
+	<tr>
+		<td height="16" align="center" valign=bottom bgcolor="#E6E6E6"><br></td>
+		<td align="left" valign=bottom bgcolor="#E6E6E6"><br></td>
+		<td align="left" valign=bottom bgcolor="#E6E6E6"><br></td>
+		<td align="left" valign=bottom bgcolor="#E6E6E6"><br></td>
+	</tr>
+	<tr>
+		<td height="16" align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom>DBMS_RESULT_CACHE</td>
+		<td align="left" valign=bottom>for function result cache</td>
+		<td align="left" valign=bottom><br></td>
+	</tr>
+	<tr>
+		<td height="16" align="center" valign=bottom bgcolor="#E6E6E6"><br></td>
+		<td align="left" valign=bottom bgcolor="#E6E6E6"><br></td>
+		<td align="left" valign=bottom bgcolor="#E6E6E6"><br></td>
+		<td align="left" valign=bottom bgcolor="#E6E6E6"><br></td>
+	</tr>
+	<tr>
+		<td height="16" align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom>DBMS_AQ</td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+	</tr>
+	<tr>
+		<td height="16" align="center" valign=bottom bgcolor="#E6E6E6"><br></td>
+		<td align="left" valign=bottom bgcolor="#E6E6E6"><br></td>
+		<td align="left" valign=bottom bgcolor="#E6E6E6"><br></td>
+		<td align="left" valign=bottom bgcolor="#E6E6E6"><br></td>
+	</tr>
+	<tr>
+		<td height="17" align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom>DBMS_MONITOR</td>
+		<td align="left" valign=bottom>it used for gathering statistic and trace info about a session. It is like java profiling</td>
+		<td align="left" valign=bottom><br></td>
+	</tr>
+	<tr>
+		<td height="16" align="center" valign=bottom bgcolor="#E6E6E6"><br></td>
+		<td align="left" valign=bottom bgcolor="#E6E6E6"><br></td>
+		<td align="left" valign=bottom bgcolor="#E6E6E6"><br></td>
+		<td align="left" valign=bottom bgcolor="#E6E6E6"><br></td>
+	</tr>
+	<tr>
+		<td height="17" align="center" valign=bottom>P</td>
+		<td align="left" valign=bottom><font face="MLMHBK+CourierNewPSMT">DBMS_CONNECTION_POOL</font></td>
+		<td align="left" valign=bottom>used to create connection pool in DB server itelf. It improve the memory</td>
+		<td align="left" valign=bottom><br></td>
+	</tr>
+</table>
+<!-- ************************************************************************** -->
+<hr>
+<A NAME="table13"><h1> 14: <em>Pragma</em></h1></A>
+<table cellspacing="0" border="0">
+	<colgroup width="41"></colgroup>
+	<colgroup width="215"></colgroup>
+	<colgroup width="674"></colgroup>
+	<tr>
+		<td height="17" align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom>it is compiler directives and a pragma is an instruction to the compiler that it processes at compile time</td>
+		<td align="left" valign=bottom><br></td>
+	</tr>
+	<tr>
+		<td height="17" align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+	</tr>
+	<tr>
+		<td height="16" align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom>AUTONOMOUS_TRANSACTION</td>
+		<td align="left" valign=bottom>it allow run in separate transaction</td>
+	</tr>
+	<tr>
+		<td height="17" align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom>EXCEPTION_INIT</td>
+		<td align="left" valign=bottom>it map a errorcode to a exception</td>
+	</tr>
+	<tr>
+		<td height="17" align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom>RESTRICT_REFERENCES</td>
+		<td align="left" valign=bottom>This pragma asserts that a function does not read or write database tables or package variables</td>
+	</tr>
+	<tr>
+		<td height="16" align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom>TRUST</td>
+		<td align="left" valign=bottom>it is allow to call a restricted function to call non-restricted function</td>
+	</tr>
+	<tr>
+		<td height="17" align="left" valign=bottom>P</td>
+		<td align="left" valign=bottom>INLINE</td>
+		<td align="left" valign=bottom>to import another programe content into current programe</td>
+	</tr>
+	<tr>
+		<td height="16" align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom>SERIALLY_REUSABLE</td>
+		<td align="left" valign=bottom>it can be used only in package. It must be used spec and body of package. Use to share the value</td>
+	</tr>
+</table>
+<!-- ************************************************************************** -->
+<hr>
+<A NAME="table14"><h1> 15: <em>ObjectType</em></h1></A>
+<table cellspacing="0" border="0">
+	<colgroup width="137"></colgroup>
+	<colgroup width="429"></colgroup>
+	<tr>
+		<td height="17" align="left" valign=bottom>creational option</td>
+		<td align="left" valign=bottom><br></td>
+	</tr>
+	<tr>
+		<td height="16" align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom>AUTHIID</td>
+	</tr>
+	<tr>
+		<td height="17" align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+	</tr>
+	<tr>
+		<td height="17" align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+	</tr>
+	<tr>
+		<td height="17" align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+	</tr>
+	<tr>
+		<td height="17" align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+	</tr>
+	<tr>
+		<td height="16" align="left" valign=bottom>TREAT</td>
+		<td align="left" valign=bottom>function to read object from tables where the instance actually stored</td>
+	</tr>
+</table>
+<!-- ************************************************************************** -->
+<hr>
+<A NAME="table15"><h1> 16: <em>JavaLibrary</em></h1></A>
+<table cellspacing="0" border="0">
+	<colgroup width="69"></colgroup>
+	<colgroup width="412"></colgroup>
+	<tr>
+		<td height="17" align="left" valign=bottom>loadjava</td>
+		<td align="left" valign=bottom>load java class files into database instance</td>
+	</tr>
+	<tr>
+		<td height="17" align="left" valign=bottom>dropjava,</td>
+		<td align="left" valign=bottom>unload java class from db instance</td>
+	</tr>
+	<tr>
+		<td height="17" align="left" valign=bottom>ojvmmtc</td>
+		<td align="left" valign=bottom><br></td>
+	</tr>
+	<tr>
+		<td height="17" align="left" valign=bottom>ojvmjava</td>
+		<td align="left" valign=bottom><br></td>
+	</tr>
+	<tr>
+		<td height="17" align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+	</tr>
+	<tr>
+		<td height="17" align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+	</tr>
+	<tr>
+		<td height="16" align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom>RESOLVE JAVA SOURCE NAMED</td>
+	</tr>
+</table>
+<!-- ************************************************************************** -->
+<hr>
+<A NAME="table16"><h1> 17: <em>intersession</em></h1></A>
+<table cellspacing="0" border="0">
+	<colgroup width="269"></colgroup>
+	<colgroup width="137"></colgroup>
+	<tr>
+		<td height="16" align="left" valign=bottom>private buffer</td>
+		<td align="left" valign=bottom><br></td>
+	</tr>
+	<tr>
+		<td height="16" align="left" valign=bottom>private pipe</td>
+		<td align="left" valign=bottom><br></td>
+	</tr>
+	<tr>
+		<td height="16" align="left" valign=bottom>public pipe</td>
+		<td align="left" valign=bottom><br></td>
+	</tr>
+	<tr>
+		<td height="17" align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+	</tr>
+	<tr>
+		<td height="17" align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+	</tr>
+	<tr>
+		<td height="16" align="left" valign=bottom>DBMS_PIPE</td>
+		<td align="left" valign=bottom>CREATE_PIPE</td>
+	</tr>
+	<tr>
+		<td height="16" align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom>NEXT_ITEM_TYPE</td>
+	</tr>
+	<tr>
+		<td height="16" align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom>PACK_MESSAGE</td>
+	</tr>
+	<tr>
+		<td height="16" align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom>PACK_MESSAGE_RAW</td>
+	</tr>
+</table>
+<!-- ************************************************************************** -->
+</body>
+
+</html>
