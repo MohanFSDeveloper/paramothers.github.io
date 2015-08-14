@@ -1,0 +1,28 @@
+source: mydoc
+destination: _site
+timezone: Asia/Calcutta
+exclude : [java, oracle, etc]
+lsi: true
+port: 4000
+
+defaults:
+
+ -
+
+  scope:
+    path: ""
+    type: "posts"
+  values:
+   layout: "my-site"
+   
+ -
+ 
+  scope:
+        path: "projects"
+        type: "pages"
+  
+  values:
+  
+         layout: "project-layout"
+         author: "Paramasivam k"
+    
