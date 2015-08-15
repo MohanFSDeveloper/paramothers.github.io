@@ -243,3 +243,8 @@ a {
 @media screen and (max-width: 42em) {
   .site-footer {
     font-size: 0.9rem; } }
+    
+  table, th, td {
+   border: 1px solid black;
+   border-width:thin;
+}
