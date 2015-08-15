@@ -1,0 +1,1001 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+
+<html>
+<head>
+	
+	<meta http-equiv="content-type" content="text/html; charset=utf-8">
+	<title></title>
+	<meta name="generator" content="LibreOffice 4.2.8.2 (Linux)">
+	<meta name="created" content="0;0">
+	<meta name="changed" content="0;0">
+	
+	<style type="text/css"><!-- 
+		body,div,table,thead,tbody,tfoot,tr,th,td,p { font-family:"Arial"; font-size:x-small }
+		 -->
+	</style>
+	
+</head>
+
+<body text="#000000">
+		 <a href="index.html"> Back </a><br/>
+<hr>
+	<p><center>
+		<h1>Overview</h1>
+		<A HREF="#table0">Command usage idea</A><br>
+		<A HREF="#table1">Permission</A><br>
+		<A HREF="#table2">File</A><br>
+		<A HREF="#table3">directory</A><br>
+		<A HREF="#table4">Shell</A><br>
+		<A HREF="#table5">archieve</A><br>
+		<A HREF="#table6">search</A><br>
+		<A HREF="#table7">System info</A><br>
+		<A HREF="#table8">Process </A><br>
+		<A HREF="#table9">Schedule</A><br>
+		<A HREF="#table10">help</A><br>
+		<A HREF="#table11">Maths</A><br>
+		<A HREF="#table12">User</A><br>
+		<A HREF="#table13">Hardware</A><br>
+		<A HREF="#table14">Useful command</A><br>
+		<A HREF="#table15">Others</A><br>
+		<A HREF="#table16">Network</A><br>
+		
+	</center></p>
+<hr>
+<A NAME="table0"><h1>Sheet 1: <em>Command usage idea</em></h1></A>
+<table cellspacing="0" border="0">
+	<colgroup width="204"></colgroup>
+	<colgroup width="755"></colgroup>
+	<tr>
+		<td height="17" align="left" valign=bottom>ls command usage</td>
+		<td align="left" valign=bottom>ls -l * ( to display all the directory along with its content )</td>
+	</tr>
+	<tr>
+		<td height="17" align="left" valign=bottom>file command usage</td>
+		<td align="left" valign=bottom>File * ( to display type of all the child of current directory )</td>
+	</tr>
+	<tr>
+		<td height="17" align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom>File *.jar ( to display info about the jar files only )</td>
+	</tr>
+	<tr>
+		<td height="17" align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom>File * | grep link</td>
+	</tr>
+</table>
+<!-- ************************************************************************** -->
+<hr>
+<A NAME="table1"><h1>Sheet 2: <em>Permission</em></h1></A>
+<table cellspacing="0" border="0">
+	<colgroup width="371"></colgroup>
+	<colgroup span="2" width="86"></colgroup>
+	<tr>
+		<td height="19" align="left" valign=bottom bgcolor="#E6E6FF"><font face="Calibri" color="#000000">change permission on a file</font></td>
+		<td align="left" valign=bottom bgcolor="#E6E6FF"><font face="Calibri" color="#000000">chmod</font></td>
+		<td align="left" valign=bottom bgcolor="#E6E6FF"><font face="Calibri" color="#000000"><br></font></td>
+	</tr>
+	<tr>
+		<td height="19" align="left" valign=bottom bgcolor="#E6E6FF"><font face="Calibri" color="#000000">change group of a file</font></td>
+		<td align="left" valign=bottom bgcolor="#E6E6FF"><font face="Calibri" color="#000000">chgrp</font></td>
+		<td align="left" valign=bottom bgcolor="#E6E6FF"><font face="Calibri" color="#000000"><br></font></td>
+	</tr>
+	<tr>
+		<td height="19" align="left" valign=bottom bgcolor="#E6E6FF"><font face="Calibri" color="#000000">change owner of a file( only super user )</font></td>
+		<td align="left" valign=bottom bgcolor="#E6E6FF"><font face="Calibri" color="#000000">chown</font></td>
+		<td align="left" valign=bottom bgcolor="#E6E6FF"><font face="Calibri" color="#000000"><br></font></td>
+	</tr>
+</table>
+<!-- ************************************************************************** -->
+<hr>
+<A NAME="table2"><h1>Sheet 3: <em>File</em></h1></A>
+<table cellspacing="0" border="0">
+	<colgroup width="393"></colgroup>
+	<colgroup width="154"></colgroup>
+	<colgroup width="368"></colgroup>
+	<tr>
+		<td height="20" align="left" valign=bottom bgcolor="#CCCCCC"><font face="Calibri" color="#000000">used to view the large file</font></td>
+		<td align="left" valign=bottom bgcolor="#CCCCCC"><font face="Calibri" color="#000000">More &amp; less</font></td>
+		<td align="left" valign=bottom bgcolor="#CCCCCC"><font face="Calibri" color="#000000">it is do scroll bar task of windows</font></td>
+	</tr>
+	<tr>
+		<td height="19" align="left" valign=bottom bgcolor="#CCCCCC"><font face="Calibri" color="#000000"><br></font></td>
+		<td align="left" valign=bottom bgcolor="#CCCCCC"><font face="Calibri" color="#000000">pg</font></td>
+		<td align="left" valign=bottom bgcolor="#CCCCCC"><font face="Calibri" color="#000000"><br></font></td>
+	</tr>
+	<tr>
+		<td height="20" align="left" valign=bottom bgcolor="#CCCCCC"><b><font face="Calibri" color="#000000">display first or last given no. Of lines of file</font></b></td>
+		<td align="left" valign=bottom bgcolor="#CCCCCC"><font face="Calibri" color="#000000">Head &amp; tail</font></td>
+		<td align="left" valign=bottom bgcolor="#CCCCCC"><font face="Calibri" color="#000000"><br></font></td>
+	</tr>
+	<tr>
+		<td height="20" align="left" valign=bottom bgcolor="#CCCCCC"><b><font face="Calibri" color="#000000">display content of file</font></b></td>
+		<td align="left" valign=bottom bgcolor="#CCCCCC"><font face="Calibri" color="#000000">cat</font></td>
+		<td align="left" valign=bottom bgcolor="#CCCCCC"><font face="Calibri" color="#000000"><br></font></td>
+	</tr>
+	<tr>
+		<td height="19" align="left" valign=bottom><font face="Calibri" color="#000000"><br></font></td>
+		<td align="left" valign=bottom><font face="Calibri" color="#000000"><br></font></td>
+		<td align="left" valign=bottom><font face="Calibri" color="#000000"><br></font></td>
+	</tr>
+	<tr>
+		<td height="19" align="left" valign=bottom bgcolor="#FF8080"><font face="Calibri" color="#000000">sort the file content</font></td>
+		<td align="left" valign=bottom bgcolor="#FF8080"><font face="Calibri" color="#000000">sort</font></td>
+		<td align="left" valign=bottom bgcolor="#FF8080"><font face="Calibri" color="#000000"><br></font></td>
+	</tr>
+	<tr>
+		<td height="19" align="left" valign=bottom bgcolor="#FF8080"><font face="Calibri" color="#000000">remove duplicate line of given file</font></td>
+		<td align="left" valign=bottom bgcolor="#FF8080"><font face="Calibri" color="#000000">uniq</font></td>
+		<td align="left" valign=bottom bgcolor="#FF8080"><font face="Calibri" color="#000000"><br></font></td>
+	</tr>
+	<tr>
+		<td height="19" align="left" valign=bottom bgcolor="#FF8080"><font face="Calibri" color="#000000">create a empty file in given name</font></td>
+		<td align="left" valign=bottom bgcolor="#FF8080"><font face="Calibri" color="#000000">touch</font></td>
+		<td align="left" valign=bottom bgcolor="#FF8080"><font face="Calibri" color="#000000">c</font></td>
+	</tr>
+	<tr>
+		<td height="19" align="left" valign=bottom bgcolor="#FF8080"><font face="Calibri" color="#000000">display content type of a file</font></td>
+		<td align="left" valign=bottom bgcolor="#FF8080"><font face="Calibri" color="#000000">file</font></td>
+		<td align="left" valign=bottom bgcolor="#FF8080"><font face="Calibri" color="#000000"><br></font></td>
+	</tr>
+	<tr>
+		<td height="19" align="left" valign=bottom bgcolor="#FF8080"><font face="Calibri" color="#000000">get only file without path</font></td>
+		<td align="left" valign=bottom bgcolor="#FF8080"><font face="Calibri" color="#000000">basename</font></td>
+		<td align="left" valign=bottom bgcolor="#FF8080"><font face="Calibri" color="#000000"><br></font></td>
+	</tr>
+	<tr>
+		<td height="17" align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+	</tr>
+	<tr>
+		<td height="17" align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+	</tr>
+	<tr>
+		<td height="19" align="left" valign=bottom bgcolor="#9966CC"><font face="Calibri" color="#000000"><br></font></td>
+		<td align="left" valign=bottom bgcolor="#9966CC"><font face="Calibri" color="#000000">mv</font></td>
+		<td align="left" valign=bottom bgcolor="#9966CC"><font face="Calibri" color="#000000"><br></font></td>
+	</tr>
+	<tr>
+		<td height="19" align="left" valign=bottom bgcolor="#9966CC"><font face="Calibri" color="#000000"><br></font></td>
+		<td align="left" valign=bottom bgcolor="#9966CC"><font face="Calibri" color="#000000">rm</font></td>
+		<td align="left" valign=bottom bgcolor="#9966CC"><font face="Calibri" color="#000000"><br></font></td>
+	</tr>
+	<tr>
+		<td height="19" align="left" valign=bottom bgcolor="#9966CC"><font face="Calibri" color="#000000">copy file</font></td>
+		<td align="left" valign=bottom bgcolor="#9966CC"><font face="Calibri" color="#000000">cp</font></td>
+		<td align="left" valign=bottom bgcolor="#9966CC"><font face="Calibri" color="#000000"><br></font></td>
+	</tr>
+</table>
+<!-- ************************************************************************** -->
+<hr>
+<A NAME="table3"><h1>Sheet 4: <em>directory</em></h1></A>
+<table cellspacing="0" border="0">
+	<colgroup width="250"></colgroup>
+	<colgroup width="90"></colgroup>
+	<colgroup width="789"></colgroup>
+	<tr>
+		<td height="19" align="left" valign=bottom bgcolor="#94BD5E"><font face="Calibri" color="#000000">present working directory</font></td>
+		<td align="left" valign=bottom bgcolor="#94BD5E"><font face="Calibri" color="#000000">pwd</font></td>
+		<td align="left" valign=bottom><br></td>
+	</tr>
+	<tr>
+		<td height="19" align="left" valign=bottom bgcolor="#94BD5E"><font face="Calibri" color="#000000">change directory</font></td>
+		<td align="left" valign=bottom bgcolor="#94BD5E"><font face="Calibri" color="#000000">cd</font></td>
+		<td align="left" valign=bottom><br></td>
+	</tr>
+	<tr>
+		<td height="19" align="left" valign=bottom bgcolor="#94BD5E"><font face="Calibri" color="#000000">list directory &amp; files</font></td>
+		<td align="left" valign=bottom bgcolor="#94BD5E"><font face="Calibri" color="#000000">ls</font></td>
+		<td align="left" valign=bottom>a(also display hidden files ), i ( i-node no. ), p ( display directory name with slash ), R ( recursively display of sub direcory )</td>
+	</tr>
+	<tr>
+		<td height="19" align="left" valign=bottom bgcolor="#94BD5E"><font face="Calibri" color="#000000">create directory</font></td>
+		<td align="left" valign=bottom bgcolor="#94BD5E"><font face="Calibri" color="#000000">mkdir</font></td>
+		<td align="left" valign=bottom><br></td>
+	</tr>
+	<tr>
+		<td height="19" align="left" valign=bottom bgcolor="#94BD5E"><font face="Calibri" color="#000000">delete directory</font></td>
+		<td align="left" valign=bottom bgcolor="#94BD5E"><font face="Calibri" color="#000000">rmdir</font></td>
+		<td align="left" valign=bottom><br></td>
+	</tr>
+</table>
+<!-- ************************************************************************** -->
+<hr>
+<A NAME="table4"><h1>Sheet 5: <em>Shell</em></h1></A>
+<table cellspacing="0" border="0">
+	<colgroup width="874"></colgroup>
+	<colgroup width="121"></colgroup>
+	<colgroup width="65"></colgroup>
+	<tr>
+		<td height="19" align="left" valign=bottom bgcolor="#9966CC"><font face="Calibri" color="#000000">change the default login shell</font></td>
+		<td align="left" valign=bottom bgcolor="#9966CC"><font face="Calibri" color="#000000">chsh</font></td>
+		<td align="left" valign=bottom><br></td>
+	</tr>
+	<tr>
+		<td height="19" align="left" valign=bottom bgcolor="#9966CC"><font face="Calibri" color="#000000">list the command history of shell</font></td>
+		<td align="left" valign=bottom bgcolor="#9966CC"><font face="Calibri" color="#000000">fc</font></td>
+		<td align="left" valign=bottom>l</td>
+	</tr>
+	<tr>
+		<td height="19" align="left" valign=bottom bgcolor="#9966CC"><font face="Calibri" color="#000000">recently used commands</font></td>
+		<td align="left" valign=bottom bgcolor="#9966CC"><font face="Calibri" color="#000000">history</font></td>
+		<td align="left" valign=bottom><br></td>
+	</tr>
+	<tr>
+		<td height="19" align="left" valign=bottom bgcolor="#9966CC"><font face="Calibri" color="#000000">I am not clear</font></td>
+		<td align="left" valign=bottom bgcolor="#9966CC"><font face="Calibri" color="#000000">stty</font></td>
+		<td align="left" valign=bottom><br></td>
+	</tr>
+	<tr>
+		<td height="19" align="left" valign=bottom bgcolor="#9966CC"><font face="Calibri" color="#000000"><br></font></td>
+		<td align="left" valign=bottom bgcolor="#9966CC"><font face="Calibri" color="#000000"><br></font></td>
+		<td align="left" valign=bottom><br></td>
+	</tr>
+	<tr>
+		<td height="19" align="left" valign=bottom bgcolor="#9966CC"><font face="Calibri" color="#000000">to record current session in a file ( it will useful to give another developer wht to do )</font></td>
+		<td align="left" valign=bottom bgcolor="#9966CC"><font face="Calibri" color="#000000">Script &amp; exit</font></td>
+		<td align="left" valign=bottom>-a</td>
+	</tr>
+	<tr>
+		<td height="19" align="left" valign=bottom bgcolor="#9966CC"><font face="Calibri" color="#000000"><br></font></td>
+		<td align="left" valign=bottom bgcolor="#9966CC"><font face="Calibri" color="#000000"><br></font></td>
+		<td align="left" valign=bottom><br></td>
+	</tr>
+	<tr>
+		<td height="17" align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+	</tr>
+	<tr>
+		<td height="19" align="left" valign=bottom bgcolor="#99CCFF"><font face="Calibri" color="#000000">to lanuch another command</font></td>
+		<td align="left" valign=bottom bgcolor="#99CCFF"><font face="Calibri" color="#000000">exec</font></td>
+		<td align="left" valign=bottom><br></td>
+	</tr>
+	<tr>
+		<td height="19" align="left" valign=bottom bgcolor="#99CCFF"><font face="Calibri" color="#000000">config network devices</font></td>
+		<td align="left" valign=bottom bgcolor="#99CCFF"><font face="Calibri" color="#000000">ifconfig</font></td>
+		<td align="left" valign=bottom><br></td>
+	</tr>
+	<tr>
+		<td height="19" align="left" valign=bottom bgcolor="#99CCFF"><font face="Calibri" color="#000000">to reflect configuration file changes to current session without logout</font></td>
+		<td align="left" valign=bottom bgcolor="#99CCFF"><font face="Calibri" color="#000000">source</font></td>
+		<td align="left" valign=bottom><br></td>
+	</tr>
+	<tr>
+		<td height="19" align="left" valign=bottom bgcolor="#99CCFF"><font face="Calibri" color="#000000">shell sleep for given seconds</font></td>
+		<td align="left" valign=bottom bgcolor="#99CCFF"><font face="Calibri" color="#000000">sleep</font></td>
+		<td align="left" valign=bottom><br></td>
+	</tr>
+	<tr>
+		<td height="19" align="left" valign=bottom bgcolor="#99CCFF"><font face="Calibri" color="#000000">to terminate shell script execution</font></td>
+		<td align="left" valign=bottom bgcolor="#99CCFF"><font face="Calibri" color="#000000">exit</font></td>
+		<td align="left" valign=bottom><br></td>
+	</tr>
+	<tr>
+		<td height="19" align="left" valign=bottom bgcolor="#99CCFF"><font face="Calibri" color="#000000">make is command to create binary file ( like ant )</font></td>
+		<td align="left" valign=bottom bgcolor="#99CCFF"><font face="Calibri" color="#000000">make</font></td>
+		<td align="left" valign=bottom><br></td>
+	</tr>
+	<tr>
+		<td height="19" align="left" valign=bottom><font face="Calibri" color="#000000"><br></font></td>
+		<td align="left" valign=bottom><font face="Calibri" color="#000000"><br></font></td>
+		<td align="left" valign=bottom><br></td>
+	</tr>
+	<tr>
+		<td height="19" align="left" valign=bottom bgcolor="#99CCFF"><font face="Calibri" color="#000000">always return true used in shell scripting  (Built in command in shell itself . No binary file for this command)</font></td>
+		<td align="right" valign=bottom bgcolor="#99CCFF" sdval="1" sdnum="16393;"><font face="Calibri" color="#000000">1</font></td>
+		<td align="left" valign=bottom><br></td>
+	</tr>
+	<tr>
+		<td height="19" align="left" valign=bottom bgcolor="#99CCFF"><font face="Calibri" color="#000000">always return true used in shell scripting  (Built in command in shell itself . No binary file for this command)</font></td>
+		<td align="right" valign=bottom bgcolor="#99CCFF" sdval="0" sdnum="16393;"><font face="Calibri" color="#000000">0</font></td>
+		<td align="left" valign=bottom><br></td>
+	</tr>
+	<tr>
+		<td height="19" align="left" valign=bottom bgcolor="#99CCFF"><font face="Calibri" color="#000000"><br></font></td>
+		<td align="left" valign=bottom bgcolor="#99CCFF"><font face="Calibri" color="#000000">case</font></td>
+		<td align="left" valign=bottom><br></td>
+	</tr>
+	<tr>
+		<td height="19" align="left" valign=bottom bgcolor="#99CCFF"><font face="Calibri" color="#000000"><br></font></td>
+		<td align="left" valign=bottom bgcolor="#99CCFF"><font face="Calibri" color="#000000">while</font></td>
+		<td align="left" valign=bottom><br></td>
+	</tr>
+	<tr>
+		<td height="19" align="left" valign=bottom bgcolor="#99CCFF"><font face="Calibri" color="#000000"><br></font></td>
+		<td align="left" valign=bottom bgcolor="#99CCFF"><font face="Calibri" color="#000000">for</font></td>
+		<td align="left" valign=bottom><br></td>
+	</tr>
+	<tr>
+		<td height="19" align="left" valign=bottom bgcolor="#99CCFF"><font face="Calibri" color="#000000"><br></font></td>
+		<td align="left" valign=bottom bgcolor="#99CCFF"><font face="Calibri" color="#000000">if</font></td>
+		<td align="left" valign=bottom><br></td>
+	</tr>
+	<tr>
+		<td height="19" align="left" valign=bottom bgcolor="#99CCFF"><font face="Calibri" color="#000000">Built in command in shell itself for test numeric, string and file comparision . No binary file for this command in system.</font></td>
+		<td align="left" valign=bottom bgcolor="#99CCFF" sdnum="16393;0;&quot;TRUE&quot;;&quot;TRUE&quot;;&quot;FALSE&quot;"><font face="Calibri" color="#000000">test</font></td>
+		<td align="left" valign=bottom><br></td>
+	</tr>
+	<tr>
+		<td height="19" align="left" valign=bottom bgcolor="#99CCFF"><font face="Calibri" color="#000000">it used to identity shell built in commands like true, false, test, [, etc. type itself built in command</font></td>
+		<td align="left" valign=bottom bgcolor="#99CCFF" sdnum="16393;0;&quot;TRUE&quot;;&quot;TRUE&quot;;&quot;FALSE&quot;"><font face="Calibri" color="#000000">type</font></td>
+		<td align="left" valign=bottom>ex: type test, type true</td>
+	</tr>
+	<tr>
+		<td height="19" align="left" valign=bottom bgcolor="#99CCFF"><font face="Calibri" color="#000000">it is used to define a function</font></td>
+		<td align="left" valign=bottom bgcolor="#99CCFF" sdnum="16393;0;&quot;TRUE&quot;;&quot;TRUE&quot;;&quot;FALSE&quot;"><font face="Calibri" color="#000000">declare</font></td>
+		<td align="left" valign=bottom>f</td>
+	</tr>
+	<tr>
+		<td height="19" align="left" valign=bottom bgcolor="#99CCFF"><font face="Calibri" color="#000000">null command ( colon )</font></td>
+		<td align="left" valign=bottom bgcolor="#99CCFF" sdnum="16393;0;&quot;TRUE&quot;;&quot;TRUE&quot;;&quot;FALSE&quot;"><font face="Calibri" color="#000000">:</font></td>
+		<td align="left" valign=bottom><br></td>
+	</tr>
+	<tr>
+		<td height="19" align="left" valign=bottom bgcolor="#99CCFF"><font face="Calibri" color="#000000">execute shell script file ( dot )</font></td>
+		<td align="left" valign=bottom bgcolor="#99CCFF" sdnum="16393;0;&quot;TRUE&quot;;&quot;TRUE&quot;;&quot;FALSE&quot;"><font face="Calibri" color="#000000">.</font></td>
+		<td align="left" valign=bottom><br></td>
+	</tr>
+	<tr>
+		<td height="19" align="left" valign=bottom bgcolor="#99CCFF"><font face="Calibri" color="#000000">change directory to home directory ( note. No argument )</font></td>
+		<td align="left" valign=bottom bgcolor="#99CCFF" sdnum="16393;0;&quot;TRUE&quot;;&quot;TRUE&quot;;&quot;FALSE&quot;"><font face="Calibri" color="#000000">cd</font></td>
+		<td align="left" valign=bottom><br></td>
+	</tr>
+	<tr>
+		<td height="19" align="left" valign=bottom bgcolor="#99CCFF"><font face="Calibri" color="#000000"><br></font></td>
+		<td align="left" valign=bottom bgcolor="#99CCFF" sdnum="16393;0;&quot;TRUE&quot;;&quot;TRUE&quot;;&quot;FALSE&quot;"><font face="Calibri" color="#000000">echo</font></td>
+		<td align="left" valign=bottom><br></td>
+	</tr>
+	<tr>
+		<td height="19" align="left" valign=bottom bgcolor="#99CCFF"><font face="Calibri" color="#000000"><br></font></td>
+		<td align="left" valign=bottom bgcolor="#99CCFF" sdnum="16393;0;&quot;TRUE&quot;;&quot;TRUE&quot;;&quot;FALSE&quot;"><font face="Calibri" color="#000000">eval</font></td>
+		<td align="left" valign=bottom><br></td>
+	</tr>
+	<tr>
+		<td height="19" align="left" valign=bottom bgcolor="#99CCFF"><font face="Calibri" color="#000000"><br></font></td>
+		<td align="left" valign=bottom bgcolor="#99CCFF" sdnum="16393;0;&quot;TRUE&quot;;&quot;TRUE&quot;;&quot;FALSE&quot;"><font face="Calibri" color="#000000">exec</font></td>
+		<td align="left" valign=bottom><br></td>
+	</tr>
+	<tr>
+		<td height="19" align="left" valign=bottom bgcolor="#99CCFF"><font face="Calibri" color="#000000">exit the current shell</font></td>
+		<td align="left" valign=bottom bgcolor="#99CCFF" sdnum="16393;0;&quot;TRUE&quot;;&quot;TRUE&quot;;&quot;FALSE&quot;"><font face="Calibri" color="#000000">exit</font></td>
+		<td align="left" valign=bottom><br></td>
+	</tr>
+	<tr>
+		<td height="19" align="left" valign=bottom bgcolor="#99CCFF"><font face="Calibri" color="#000000">to make avilable a variable for sub shell</font></td>
+		<td align="left" valign=bottom bgcolor="#99CCFF" sdnum="16393;0;&quot;TRUE&quot;;&quot;TRUE&quot;;&quot;FALSE&quot;"><font face="Calibri" color="#000000">export</font></td>
+		<td align="left" valign=bottom><br></td>
+	</tr>
+	<tr>
+		<td height="19" align="left" valign=bottom bgcolor="#99CCFF"><font face="Calibri" color="#000000"><br></font></td>
+		<td align="left" valign=bottom bgcolor="#99CCFF" sdnum="16393;0;&quot;TRUE&quot;;&quot;TRUE&quot;;&quot;FALSE&quot;"><font face="Calibri" color="#000000">pwd</font></td>
+		<td align="left" valign=bottom><br></td>
+	</tr>
+	<tr>
+		<td height="19" align="left" valign=bottom bgcolor="#99CCFF"><font face="Calibri" color="#000000"><br></font></td>
+		<td align="left" valign=bottom bgcolor="#99CCFF" sdnum="16393;0;&quot;TRUE&quot;;&quot;TRUE&quot;;&quot;FALSE&quot;"><font face="Calibri" color="#000000">read</font></td>
+		<td align="left" valign=bottom><br></td>
+	</tr>
+	<tr>
+		<td height="19" align="left" valign=bottom bgcolor="#99CCFF"><font face="Calibri" color="#000000"><br></font></td>
+		<td align="left" valign=bottom bgcolor="#99CCFF" sdnum="16393;0;&quot;TRUE&quot;;&quot;TRUE&quot;;&quot;FALSE&quot;"><font face="Calibri" color="#000000">set</font></td>
+		<td align="left" valign=bottom><br></td>
+	</tr>
+	<tr>
+		<td height="19" align="left" valign=bottom bgcolor="#99CCFF"><font face="Calibri" color="#000000"><br></font></td>
+		<td align="left" valign=bottom bgcolor="#99CCFF" sdnum="16393;0;&quot;TRUE&quot;;&quot;TRUE&quot;;&quot;FALSE&quot;"><font face="Calibri" color="#000000">trap</font></td>
+		<td align="left" valign=bottom><br></td>
+	</tr>
+	<tr>
+		<td height="19" align="left" valign=bottom bgcolor="#99CCFF">all the user defined alias stored in  .bashrc file for bash shell</td>
+		<td align="left" valign=bottom bgcolor="#99CCFF" sdnum="16393;0;&quot;TRUE&quot;;&quot;TRUE&quot;;&quot;FALSE&quot;"><font face="Calibri" color="#000000">alias</font></td>
+		<td align="left" valign=bottom><br></td>
+	</tr>
+	<tr>
+		<td height="19" align="left" valign=bottom bgcolor="#99CCFF"><font face="Calibri" color="#000000"><br></font></td>
+		<td align="left" valign=bottom bgcolor="#99CCFF" sdnum="16393;0;&quot;TRUE&quot;;&quot;TRUE&quot;;&quot;FALSE&quot;"><font face="Calibri" color="#000000"><br></font></td>
+		<td align="left" valign=bottom><br></td>
+	</tr>
+	<tr>
+		<td height="19" align="left" valign=bottom bgcolor="#99CCFF"><font face="Calibri" color="#000000"><br></font></td>
+		<td align="left" valign=bottom bgcolor="#99CCFF" sdnum="16393;0;&quot;TRUE&quot;;&quot;TRUE&quot;;&quot;FALSE&quot;"><font face="Calibri" color="#000000"><br></font></td>
+		<td align="left" valign=bottom><br></td>
+	</tr>
+	<tr>
+		<td height="19" align="left" valign=bottom bgcolor="#99CCFF"><font face="Calibri" color="#000000"><br></font></td>
+		<td align="left" valign=bottom bgcolor="#99CCFF" sdnum="16393;0;&quot;TRUE&quot;;&quot;TRUE&quot;;&quot;FALSE&quot;"><font face="Calibri" color="#000000"><br></font></td>
+		<td align="left" valign=bottom><br></td>
+	</tr>
+	<tr>
+		<td height="17" align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+	</tr>
+	<tr>
+		<td height="19" align="left" valign=bottom bgcolor="#33A3A3"><font face="Calibri" color="#000000">test command's alternative</font></td>
+		<td align="left" valign=bottom bgcolor="#33A3A3"><font face="Calibri" color="#000000">[</font></td>
+		<td align="left" valign=bottom><br></td>
+	</tr>
+	<tr>
+		<td height="19" align="left" valign=bottom bgcolor="#33A3A3"><font face="Calibri" color="#000000">truncate the file</font></td>
+		<td align="left" valign=bottom bgcolor="#33A3A3"><font face="Calibri" color="#000000">&gt;or : &gt;</font></td>
+		<td align="left" valign=bottom><br></td>
+	</tr>
+	<tr>
+		<td height="19" align="left" valign=bottom bgcolor="#33A3A3"><font face="Calibri" color="#000000">continuation for command line</font></td>
+		<td align="left" valign=bottom bgcolor="#33A3A3"><font face="Calibri" color="#000000">\</font></td>
+		<td align="left" valign=bottom><br></td>
+	</tr>
+	<tr>
+		<td height="19" align="left" valign=bottom bgcolor="#33A3A3"><font face="Calibri" color="#000000">input rediirect from a file</font></td>
+		<td align="left" valign=bottom bgcolor="#33A3A3"><font face="Calibri" color="#000000">&lt;</font></td>
+		<td align="left" valign=bottom><br></td>
+	</tr>
+	<tr>
+		<td height="19" align="left" valign=bottom bgcolor="#33A3A3"><font face="Calibri" color="#000000">redirect output and append if a file alreay</font></td>
+		<td align="left" valign=bottom bgcolor="#33A3A3"><font face="Calibri" color="#000000">&gt;&gt;</font></td>
+		<td align="left" valign=bottom><br></td>
+	</tr>
+	<tr>
+		<td height="19" align="left" valign=bottom bgcolor="#33A3A3"><font face="Calibri" color="#000000">redirect output and truncate if file already</font></td>
+		<td align="left" valign=bottom bgcolor="#33A3A3"><font face="Calibri" color="#000000">&gt;</font></td>
+		<td align="left" valign=bottom><br></td>
+	</tr>
+	<tr>
+		<td height="19" align="left" valign=bottom bgcolor="#33A3A3"><font face="Calibri" color="#000000">recirect output of a command to ANOTHER COMMAND</font></td>
+		<td align="left" valign=bottom bgcolor="#33A3A3"><font face="Calibri" color="#000000">|</font></td>
+		<td align="left" valign=bottom><br></td>
+	</tr>
+	<tr>
+		<td height="19" align="left" valign=bottom bgcolor="#33A3A3"><font face="Calibri" color="#000000">to run a command in background mode</font></td>
+		<td align="left" valign=bottom bgcolor="#33A3A3"><font face="Calibri" color="#000000">&amp;</font></td>
+		<td align="left" valign=bottom><br></td>
+	</tr>
+	<tr>
+		<td height="19" align="left" valign=bottom bgcolor="#33A3A3"><font face="Calibri" color="#000000">current process id</font></td>
+		<td align="left" valign=bottom bgcolor="#33A3A3"><font face="Calibri" color="#000000">$$</font></td>
+		<td align="left" valign=bottom><br></td>
+	</tr>
+	<tr>
+		<td height="19" align="left" valign=bottom bgcolor="#33A3A3"><font face="Calibri" color="#000000">recent background process id</font></td>
+		<td align="left" valign=bottom bgcolor="#33A3A3"><font face="Calibri" color="#000000">$!</font></td>
+		<td align="left" valign=bottom><br></td>
+	</tr>
+	<tr>
+		<td height="19" align="left" valign=bottom bgcolor="#33A3A3"><font face="Calibri" color="#000000">recent process or command's exit status</font></td>
+		<td align="left" valign=bottom bgcolor="#33A3A3"><font face="Calibri" color="#000000">$?</font></td>
+		<td align="left" valign=bottom><br></td>
+	</tr>
+	<tr>
+		<td height="19" align="left" valign=bottom><font face="Calibri" color="#000000"><br></font></td>
+		<td align="left" valign=bottom><font face="Calibri" color="#000000"><br></font></td>
+		<td align="left" valign=bottom><br></td>
+	</tr>
+	<tr>
+		<td height="19" align="left" valign=bottom>diplay only  GLOBAL the environment variable</td>
+		<td align="left" valign=bottom bgcolor="#999999"><font face="Calibri" color="#000000">env</font></td>
+		<td align="left" valign=bottom><br></td>
+	</tr>
+	<tr>
+		<td height="19" align="left" valign=bottom>diplay only  GLOBAL the environment variable</td>
+		<td align="left" valign=bottom bgcolor="#999999"><font face="Calibri" color="#000000">printenv</font></td>
+		<td align="left" valign=bottom><br></td>
+	</tr>
+	<tr>
+		<td height="19" align="left" valign=bottom>diplay all LOCAL as well as  ENVIRONMENT (exported ) the environment variable</td>
+		<td align="left" valign=bottom bgcolor="#999999"><font face="Calibri" color="#000000">set</font></td>
+		<td align="left" valign=bottom><br></td>
+	</tr>
+	<tr>
+		<td height="17" align="left" valign=bottom>Make unavailable variable name and any user defined function</td>
+		<td align="left" valign=bottom>unset</td>
+		<td align="left" valign=bottom><br></td>
+	</tr>
+	<tr>
+		<td height="19" align="left" valign=bottom>diplay only  GLOBAL the environment variable</td>
+		<td align="left" valign=bottom bgcolor="#999999"><font face="Calibri" color="#000000">env</font></td>
+		<td align="left" valign=bottom><br></td>
+	</tr>
+</table>
+<!-- ************************************************************************** -->
+<hr>
+<A NAME="table5"><h1>Sheet 6: <em>archieve</em></h1></A>
+<table cellspacing="0" border="0">
+	<colgroup width="563"></colgroup>
+	<colgroup width="159"></colgroup>
+	<colgroup width="65"></colgroup>
+	<tr>
+		<td height="19" align="left" valign=bottom bgcolor="#99CCFF"><font face="Calibri" color="#000000">make many file to single file</font></td>
+		<td align="left" valign=bottom bgcolor="#99CCFF"><font face="Calibri" color="#000000">tar</font></td>
+		<td align="left" valign=bottom>c, f</td>
+	</tr>
+	<tr>
+		<td height="19" align="left" valign=bottom bgcolor="#99CCFF"><font face="Calibri" color="#000000">compress and expand utility</font></td>
+		<td align="left" valign=bottom bgcolor="#99CCFF"><font face="Calibri" color="#000000">zcat</font></td>
+		<td align="left" valign=bottom><br></td>
+	</tr>
+	<tr>
+		<td height="19" align="left" valign=bottom bgcolor="#99CCFF"><font face="Calibri" color="#000000">data dumper</font></td>
+		<td align="left" valign=bottom bgcolor="#99CCFF"><font face="Calibri" color="#000000">dd</font></td>
+		<td align="left" valign=bottom><br></td>
+	</tr>
+	<tr>
+		<td height="19" align="left" valign=bottom bgcolor="#99CCFF"><font face="Calibri" color="#000000">compress while creating archieve file</font></td>
+		<td align="left" valign=bottom bgcolor="#99CCFF"><font face="Calibri" color="#000000">compress</font></td>
+		<td align="left" valign=bottom><br></td>
+	</tr>
+	<tr>
+		<td height="19" align="left" valign=bottom bgcolor="#99CCFF"><font face="Calibri" color="#000000">uncompress while extracting archieve file</font></td>
+		<td align="left" valign=bottom bgcolor="#99CCFF"><font face="Calibri" color="#000000">uncompress</font></td>
+		<td align="left" valign=bottom><br></td>
+	</tr>
+	<tr>
+		<td height="19" align="left" valign=bottom bgcolor="#99CCFF"><font face="Calibri" color="#000000">it is best compare with compress command. It take a tar file to compress</font></td>
+		<td align="left" valign=bottom bgcolor="#99CCFF"><font face="Calibri" color="#000000">gzip</font></td>
+		<td align="left" valign=bottom><br></td>
+	</tr>
+	<tr>
+		<td height="19" align="left" valign=bottom bgcolor="#99CCFF"><font face="Calibri" color="#000000">it is lates of gzip</font></td>
+		<td align="left" valign=bottom bgcolor="#99CCFF"><font face="Calibri" color="#000000">bzip2</font></td>
+		<td align="left" valign=bottom><br></td>
+	</tr>
+	<tr>
+		<td height="19" align="left" valign=bottom bgcolor="#99CCFF"><font face="Calibri" color="#000000">to un compress a compressed file by gzip</font></td>
+		<td align="left" valign=bottom bgcolor="#99CCFF"><font face="Calibri" color="#000000">gunzip</font></td>
+		<td align="left" valign=bottom><br></td>
+	</tr>
+	<tr>
+		<td height="19" align="left" valign=bottom bgcolor="#99CCFF"><font face="Calibri" color="#000000">it has both create and compress the archieve file. It useful to if file used in window os</font></td>
+		<td align="left" valign=bottom bgcolor="#99CCFF"><font face="Calibri" color="#000000">zip</font></td>
+		<td align="left" valign=bottom><br></td>
+	</tr>
+</table>
+<!-- ************************************************************************** -->
+<hr>
+<A NAME="table6"><h1>Sheet 7: <em>search</em></h1></A>
+<table cellspacing="0" border="0">
+	<colgroup width="675"></colgroup>
+	<colgroup width="178"></colgroup>
+	<colgroup width="65"></colgroup>
+	<tr>
+		<td height="19" align="left" valign=bottom bgcolor="#94BD5E"><font face="Calibri" color="#000000">search a given file in computer using metadata but not by content of file( it check all dir/subdirecory )</font></td>
+		<td align="left" valign=bottom bgcolor="#94BD5E"><font face="Calibri" color="#000000">find</font></td>
+		<td align="left" valign=bottom bgcolor="#94BD5E"><font face="Calibri" color="#000000"><br></font></td>
+	</tr>
+	<tr>
+		<td height="19" align="left" valign=bottom bgcolor="#94BD5E"><font face="Calibri" color="#000000">quick search in system database for given file ( check only PATH value )</font></td>
+		<td align="left" valign=bottom bgcolor="#94BD5E"><font face="Calibri" color="#000000">locate</font></td>
+		<td align="left" valign=bottom bgcolor="#94BD5E"><font face="Calibri" color="#000000"><br></font></td>
+	</tr>
+	<tr>
+		<td height="19" align="left" valign=bottom><font face="Calibri" color="#000000"><br></font></td>
+		<td align="left" valign=bottom><font face="Calibri" color="#000000"><br></font></td>
+		<td align="left" valign=bottom><font face="Calibri" color="#000000"><br></font></td>
+	</tr>
+	<tr>
+		<td height="19" align="left" valign=bottom><font face="Calibri" color="#000000"><br></font></td>
+		<td align="left" valign=bottom><font face="Calibri" color="#000000"><br></font></td>
+		<td align="left" valign=bottom><font face="Calibri" color="#000000"><br></font></td>
+	</tr>
+	<tr>
+		<td height="19" align="left" valign=bottom bgcolor="#E6E6FF"><font face="Calibri" color="#000000">search a line in file for given regular expression</font></td>
+		<td align="left" valign=bottom bgcolor="#E6E6FF"><font face="Calibri" color="#000000">grep</font></td>
+		<td align="left" valign=bottom bgcolor="#E6E6FF"><font face="Calibri" color="#000000">I,v,n,c</font></td>
+	</tr>
+	<tr>
+		<td height="19" align="left" valign=bottom bgcolor="#E6E6FF"><font face="Calibri" color="#000000">extended grep</font></td>
+		<td align="left" valign=bottom bgcolor="#E6E6FF"><font face="Calibri" color="#000000">egrep</font></td>
+		<td align="left" valign=bottom bgcolor="#E6E6FF"><font face="Calibri" color="#000000"><br></font></td>
+	</tr>
+	<tr>
+		<td height="19" align="left" valign=bottom bgcolor="#E6E6FF"><font face="Calibri" color="#000000">used to search for given TEXT for given files</font></td>
+		<td align="left" valign=bottom bgcolor="#E6E6FF"><font face="Calibri" color="#000000">fgrep</font></td>
+		<td align="left" valign=bottom bgcolor="#E6E6FF"><font face="Calibri" color="#000000">I,v,n</font></td>
+	</tr>
+	<tr>
+		<td height="19" align="left" valign=bottom bgcolor="#E6E6FF"><font face="Calibri" color="#000000">translate SINGLE charactors usually, special \n, \t, or any alphanumic charactor</font></td>
+		<td align="left" valign=bottom bgcolor="#E6E6FF"><font face="Calibri" color="#000000">tr</font></td>
+		<td align="left" valign=bottom bgcolor="#E6E6FF"><font face="Calibri" color="#000000"><br></font></td>
+	</tr>
+	<tr>
+		<td height="19" align="left" valign=bottom bgcolor="#E6E6E6"><font face="Calibri" color="#000000">used to find/replace/search MORE THAN One Charactor</font></td>
+		<td align="left" valign=bottom bgcolor="#E6E6E6"><font face="Calibri" color="#000000">sed</font></td>
+		<td align="left" valign=bottom bgcolor="#E6E6E6"><font face="Calibri" color="#000000">e</font></td>
+	</tr>
+	<tr>
+		<td height="19" align="left" valign=bottom bgcolor="#E6E6E6"><font face="Calibri" color="#000000">another popular stream editor like sed</font></td>
+		<td align="left" valign=bottom bgcolor="#E6E6E6"><font face="Calibri" color="#000000">awk/gawk</font></td>
+		<td align="left" valign=bottom bgcolor="#E6E6E6"><font face="Calibri" color="#000000"><br></font></td>
+	</tr>
+	<tr>
+		<td height="19" align="left" valign=bottom bgcolor="#E6E6E6"><font face="Calibri" color="#000000">find printable string in a file</font></td>
+		<td align="left" valign=bottom bgcolor="#E6E6E6"><font face="Calibri" color="#000000">strings</font></td>
+		<td align="left" valign=bottom bgcolor="#E6E6E6"><font face="Calibri" color="#000000"><br></font></td>
+	</tr>
+</table>
+<!-- ************************************************************************** -->
+<hr>
+<A NAME="table7"><h1>Sheet 8: <em>System info</em></h1></A>
+<table cellspacing="0" border="0">
+	<colgroup width="517"></colgroup>
+	<colgroup span="2" width="65"></colgroup>
+	<tr>
+		<td height="17" align="left" valign=bottom>to list name of installed package, it is debian specific</td>
+		<td align="left" valign=bottom>dpkg -l</td>
+		<td align="left" valign=bottom>RedHad and suse are mostly used in industries</td>
+	</tr>
+	<tr>
+		<td height="17" align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+	</tr>
+	<tr>
+		<td style="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000" height="19" align="left" valign=bottom bgcolor="#E6E6E6"><font face="Calibri" color="#000000">who are all logged in, administrative command</font></td>
+		<td style="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000" align="left" valign=bottom bgcolor="#E6E6E6"><font face="Calibri" color="#000000">Who &amp; W</font></td>
+		<td align="left" valign=bottom><br></td>
+	</tr>
+	<tr>
+		<td style="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000" height="19" align="left" valign=bottom bgcolor="#E6E6E6"><font face="Calibri" color="#000000">who are all logged in, administrative command</font></td>
+		<td style="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000" align="left" valign=bottom bgcolor="#E6E6E6"><font face="Calibri" color="#000000">finger</font></td>
+		<td align="left" valign=bottom><br></td>
+	</tr>
+	<tr>
+		<td style="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000" height="19" align="left" valign=bottom bgcolor="#E6E6E6"><font face="Calibri" color="#000000">display the current user</font></td>
+		<td style="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000" align="left" valign=bottom bgcolor="#E6E6E6"><font face="Calibri" color="#000000">whoami</font></td>
+		<td align="left" valign=bottom><br></td>
+	</tr>
+	<tr>
+		<td height="17" align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+	</tr>
+	<tr>
+		<td height="19" align="left" valign=bottom bgcolor="#CCCC00"><font face="Calibri" color="#000000">to log off from system</font></td>
+		<td align="left" valign=bottom bgcolor="#CCCC00"><font face="Calibri" color="#000000">logout</font></td>
+		<td align="left" valign=bottom><br></td>
+	</tr>
+	<tr>
+		<td height="17" align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+	</tr>
+	<tr>
+		<td height="17" align="left" valign=bottom>to know how long a given command executed</td>
+		<td align="left" valign=bottom>time</td>
+		<td align="left" valign=bottom><br></td>
+	</tr>
+</table>
+<!-- ************************************************************************** -->
+<hr>
+<A NAME="table8"><h1>Sheet 9: <em>Process </em></h1></A>
+<table cellspacing="0" border="0">
+	<colgroup width="362"></colgroup>
+	<colgroup width="65"></colgroup>
+	<colgroup width="170"></colgroup>
+	<colgroup width="65"></colgroup>
+	<tr>
+		<td height="19" align="left" valign=bottom bgcolor="#B3B3B3"><font face="Calibri" color="#000000">to list name of process</font></td>
+		<td align="left" valign=bottom bgcolor="#B3B3B3"><font face="Calibri" color="#000000">ps</font></td>
+		<td align="left" valign=bottom bgcolor="#B3B3B3"><font face="Calibri" color="#000000">e, f, a, u, x</font></td>
+		<td align="left" valign=bottom>forest</td>
+	</tr>
+	<tr>
+		<td height="19" align="left" valign=bottom bgcolor="#B3B3B3"><font face="Calibri" color="#000000">to send ANY singal to running process</font></td>
+		<td align="left" valign=bottom bgcolor="#B3B3B3"><font face="Calibri" color="#000000">kill</font></td>
+		<td align="left" valign=bottom bgcolor="#B3B3B3"><font face="Calibri" color="#000000">l</font></td>
+		<td align="left" valign=bottom><br></td>
+	</tr>
+	<tr>
+		<td height="19" align="left" valign=bottom bgcolor="#B3B3B3"><font face="Calibri" color="#000000">display the process in tree structure</font></td>
+		<td align="left" valign=bottom bgcolor="#B3B3B3"><font face="Calibri" color="#000000">pstree</font></td>
+		<td align="left" valign=bottom bgcolor="#B3B3B3"><font face="Calibri" color="#000000"><br></font></td>
+		<td align="left" valign=bottom><br></td>
+	</tr>
+	<tr>
+		<td height="19" align="left" valign=bottom bgcolor="#B3B3B3"><font face="Calibri" color="#000000">display top 5 proecess</font></td>
+		<td align="left" valign=bottom bgcolor="#B3B3B3"><font face="Calibri" color="#000000">top</font></td>
+		<td align="left" valign=bottom bgcolor="#B3B3B3"><font face="Calibri" color="#000000"><br></font></td>
+		<td align="left" valign=bottom><br></td>
+	</tr>
+	<tr>
+		<td height="19" align="left" valign=bottom bgcolor="#B3B3B3"><font face="Calibri" color="#000000">show virutual memory statuss</font></td>
+		<td align="left" valign=bottom bgcolor="#B3B3B3"><font face="Calibri" color="#000000">vmstat</font></td>
+		<td align="left" valign=bottom bgcolor="#B3B3B3"><font face="Calibri" color="#000000"><br></font></td>
+		<td align="left" valign=bottom><br></td>
+	</tr>
+	<tr>
+		<td height="17" align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+	</tr>
+	<tr>
+		<td height="17" align="left" valign=bottom>to bring a background process to forgroound</td>
+		<td align="left" valign=bottom>fg</td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+	</tr>
+	<tr>
+		<td height="17" align="left" valign=bottom>to move a foreground process to background</td>
+		<td align="left" valign=bottom>bg</td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+	</tr>
+	<tr>
+		<td height="17" align="left" valign=bottom>to run any process in background</td>
+		<td align="left" valign=bottom>[command]&amp;</td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+	</tr>
+	<tr>
+		<td height="17" align="left" valign=bottom>size of memory segment of a process</td>
+		<td align="left" valign=bottom>size</td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+	</tr>
+	<tr>
+		<td height="17" align="left" valign=bottom>usage of shared library</td>
+		<td align="left" valign=bottom>ldd</td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+	</tr>
+	<tr>
+		<td height="17" align="left" valign=bottom>i dont know</td>
+		<td align="left" valign=bottom>ulimit</td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+	</tr>
+</table>
+<!-- ************************************************************************** -->
+<hr>
+<A NAME="table9"><h1>Sheet 10: <em>Schedule</em></h1></A>
+<table cellspacing="0" border="0">
+	<colgroup width="564"></colgroup>
+	<colgroup width="65"></colgroup>
+	<tr>
+		<td height="19" align="left" valign=bottom bgcolor="#008080"><font face="Calibri" color="#000000">used to  edit etc/crontab file,</font></td>
+		<td align="left" valign=bottom bgcolor="#008080"><font face="Calibri" color="#000000">crontab</font></td>
+	</tr>
+	<tr>
+		<td height="20" align="left" valign=bottom bgcolor="#008080"><font face="Calibri" color="#000000">it is process thread, check periodically etc/crontab file</font></td>
+		<td align="left" valign=bottom bgcolor="#008080"><font face="Calibri" color="#000000">cron</font></td>
+	</tr>
+	<tr>
+		<td height="17" align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+	</tr>
+	<tr>
+		<td height="17" align="left" valign=bottom>run a task at specfic (run only one) time, it is deamon process</td>
+		<td align="left" valign=bottom>atd</td>
+	</tr>
+</table>
+<!-- ************************************************************************** -->
+<hr>
+<A NAME="table10"><h1>Sheet 11: <em>help</em></h1></A>
+<table cellspacing="0" border="0">
+	<colgroup width="560"></colgroup>
+	<colgroup width="88"></colgroup>
+	<colgroup width="194"></colgroup>
+	<tr>
+		<td height="17" align="left" valign=bottom>to know path of a command (that is existence of command in os )</td>
+		<td align="left" valign=bottom>which</td>
+		<td align="left" valign=bottom>which ls/cd/mv/etc.</td>
+	</tr>
+	<tr>
+		<td height="17" align="left" valign=bottom>to know all  path of a command (  binary, source, man page )</td>
+		<td align="left" valign=bottom>whereis</td>
+		<td align="left" valign=bottom>s,b,m</td>
+	</tr>
+	<tr>
+		<td height="17" align="left" valign=bottom>to know the command information</td>
+		<td align="left" valign=bottom>apropos</td>
+		<td align="left" valign=bottom><br></td>
+	</tr>
+	<tr>
+		<td height="19" align="left" valign=bottom bgcolor="#FFFFCC"><font face="Calibri" color="#000000">short version of a command</font></td>
+		<td align="left" valign=bottom bgcolor="#FFFFCC"><font face="Calibri" color="#000000">info</font></td>
+		<td align="left" valign=bottom bgcolor="#FFFFCC"><font face="Calibri" color="#000000"><br></font></td>
+	</tr>
+	<tr>
+		<td height="19" align="left" valign=bottom bgcolor="#FFFFCC"><font face="Calibri" color="#000000">Display detail help content of a command</font></td>
+		<td align="left" valign=bottom bgcolor="#FFFFCC"><font face="Calibri" color="#000000">man</font></td>
+		<td align="left" valign=bottom bgcolor="#FFFFCC"><font face="Calibri" color="#000000">-k</font></td>
+	</tr>
+</table>
+<!-- ************************************************************************** -->
+<hr>
+<A NAME="table11"><h1>Sheet 12: <em>Maths</em></h1></A>
+<table cellspacing="0" border="0">
+	<colgroup width="456"></colgroup>
+	<colgroup width="65"></colgroup>
+	<tr>
+		<td height="19" align="left" valign=bottom bgcolor="#E6E6FF"><font face="Calibri" color="#000000">desktop calucator ( like our calc )</font></td>
+		<td align="left" valign=bottom bgcolor="#E6E6FF"><font face="Calibri" color="#000000">dc</font></td>
+	</tr>
+	<tr>
+		<td height="19" align="left" valign=bottom bgcolor="#E6E6FF"><font face="Calibri" color="#000000">more complex float or double artimetic operation</font></td>
+		<td align="left" valign=bottom bgcolor="#E6E6FF"><font face="Calibri" color="#000000">bc</font></td>
+	</tr>
+	<tr>
+		<td height="19" align="left" valign=bottom bgcolor="#E6E6FF"><font face="Calibri" color="#000000">expression evaluation</font></td>
+		<td align="left" valign=bottom bgcolor="#E6E6FF"><font face="Calibri" color="#000000">expr</font></td>
+	</tr>
+	<tr>
+		<td height="17" align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+	</tr>
+	<tr>
+		<td height="17" align="left" valign=bottom>open GUI calculator</td>
+		<td align="left" valign=bottom>xcalc</td>
+	</tr>
+</table>
+<!-- ************************************************************************** -->
+<hr>
+<A NAME="table12"><h1>Sheet 13: <em>User</em></h1></A>
+<table cellspacing="0" border="0">
+	<colgroup width="379"></colgroup>
+	<colgroup width="65"></colgroup>
+	<colgroup width="552"></colgroup>
+	<tr>
+		<td height="19" align="left" valign=bottom bgcolor="#FFCC99"><font face="Calibri" color="#000000">change the password</font></td>
+		<td align="left" valign=bottom bgcolor="#FFCC99"><font face="Calibri" color="#000000">passwd</font></td>
+		<td align="left" valign=bottom bgcolor="#FFCC99"><font face="Calibri" color="#000000">vmc server install in linux , and use client in window machine.</font></td>
+	</tr>
+	<tr>
+		<td height="19" align="left" valign=bottom bgcolor="#FFCC99"><font face="Calibri" color="#000000">id of current user</font></td>
+		<td align="left" valign=bottom bgcolor="#FFCC99"><font face="Calibri" color="#000000">id</font></td>
+		<td align="left" valign=bottom bgcolor="#FFCC99"><font face="Calibri" color="#000000">it just a mechanism to manage the users</font></td>
+	</tr>
+	<tr>
+		<td height="19" align="left" valign=bottom bgcolor="#FFCC99"><font face="Calibri" color="#000000">to list name of groups in system</font></td>
+		<td align="left" valign=bottom bgcolor="#FFCC99"><font face="Calibri" color="#000000">groups</font></td>
+		<td align="left" valign=bottom bgcolor="#FFCC99"><font face="Calibri" color="#000000">it just a mechanism to manage the users</font></td>
+	</tr>
+</table>
+<!-- ************************************************************************** -->
+<hr>
+<A NAME="table13"><h1>Sheet 14: <em>Hardware</em></h1></A>
+<table cellspacing="0" border="0">
+	<colgroup width="595"></colgroup>
+	<colgroup width="137"></colgroup>
+	<colgroup width="203"></colgroup>
+	<tr>
+		<td height="19" align="left" valign=bottom bgcolor="#9999FF"><font face="Calibri" color="#000000">disk free information of each disk or partition</font></td>
+		<td align="left" valign=bottom bgcolor="#9999FF"><font face="Calibri" color="#000000">df</font></td>
+		<td align="left" valign=bottom><br></td>
+	</tr>
+	<tr>
+		<td height="19" align="left" valign=bottom bgcolor="#9999FF"><font face="Calibri" color="#000000">size of current folder / file</font></td>
+		<td align="left" valign=bottom bgcolor="#9999FF"><font face="Calibri" color="#000000">du -hs</font></td>
+		<td align="left" valign=bottom><br></td>
+	</tr>
+	<tr>
+		<td height="17" align="left" valign=bottom>to check the file system for inconsistency( any dirty )</td>
+		<td align="left" valign=bottom>fsck</td>
+		<td align="left" valign=bottom><br></td>
+	</tr>
+	<tr>
+		<td height="17" align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom>scandisk</td>
+		<td align="left" valign=bottom><br></td>
+	</tr>
+	<tr>
+		<td style="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000" height="19" align="left" valign=bottom bgcolor="#E6E6E6"><font face="Calibri" color="#000000">display the OS name, processor, mother board architecure, etc,</font></td>
+		<td style="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000" align="left" valign=bottom bgcolor="#E6E6E6"><font face="Calibri" color="#000000">uname</font></td>
+		<td align="left" valign=bottom>o, hardware-platform, p,a, all</td>
+	</tr>
+	<tr>
+		<td style="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000" height="19" align="left" valign=bottom bgcolor="#E6E6E6"><font face="Calibri" color="#000000">give name of computer</font></td>
+		<td style="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000" align="left" valign=bottom bgcolor="#E6E6E6"><font face="Calibri" color="#000000">hostname</font></td>
+		<td align="left" valign=bottom><br></td>
+	</tr>
+	<tr>
+		<td height="47" align="left" valign=bottom>mount a file system under unix file system. It can be any file system<br>We should mount any file system like floppy, cd, pen drive, other hard disk partition, before to <br>To use. Now a days it  happed on single click instead running commands</td>
+		<td align="left" valign=bottom>mount</td>
+		<td align="left" valign=bottom><br></td>
+	</tr>
+	<tr>
+		<td height="17" align="left" valign=bottom>un mount a file system under unix file system</td>
+		<td align="left" valign=bottom>umount</td>
+		<td align="left" valign=bottom><br></td>
+	</tr>
+	<tr>
+		<td height="17" align="left" valign=bottom>display x widget package</td>
+		<td align="left" valign=bottom>xdpyinfo</td>
+		<td align="left" valign=bottom><br></td>
+	</tr>
+	<tr>
+		<td height="17" align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom>dd</td>
+		<td align="left" valign=bottom><br></td>
+	</tr>
+	<tr>
+		<td height="17" align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom>mksf</td>
+		<td align="left" valign=bottom><br></td>
+	</tr>
+	<tr>
+		<td height="17" align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom>newfs</td>
+		<td align="left" valign=bottom><br></td>
+	</tr>
+	<tr>
+		<td height="17" align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom>dcopy</td>
+		<td align="left" valign=bottom><br></td>
+	</tr>
+</table>
+<!-- ************************************************************************** -->
+<hr>
+<A NAME="table14"><h1>Sheet 15: <em>Useful command</em></h1></A>
+<table cellspacing="0" border="0">
+	<colgroup width="128"></colgroup>
+	<colgroup width="734"></colgroup>
+	<tr>
+		<td height="17" align="left" valign=bottom>find delete files</td>
+		<td align="left" valign=bottom>find . -type f -name &quot;FILE-TO-FIND&quot; -exec rm -f {} \;</td>
+	</tr>
+</table>
+<!-- ************************************************************************** -->
+<hr>
+<A NAME="table15"><h1>Sheet 16: <em>Others</em></h1></A>
+<table cellspacing="0" border="0">
+	<colgroup width="586"></colgroup>
+	<colgroup width="53"></colgroup>
+	<tr>
+		<td height="17" align="left" valign=bottom>translate SINGLE charactors usually, special \n, \t, or any alphanumic charactor</td>
+		<td align="left" valign=bottom>tr</td>
+	</tr>
+	<tr>
+		<td height="17" align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+	</tr>
+	<tr>
+		<td height="17" align="left" valign=bottom>screen shot</td>
+		<td align="left" valign=bottom>xv</td>
+	</tr>
+	<tr>
+		<td height="17" align="left" valign=bottom>screen shot</td>
+		<td align="left" valign=bottom>xwd</td>
+	</tr>
+	<tr>
+		<td height="17" align="left" valign=bottom>screen shot</td>
+		<td align="left" valign=bottom>gimp</td>
+	</tr>
+	<tr>
+		<td height="17" align="left" valign=bottom>screen shot</td>
+		<td align="left" valign=bottom>xeyes</td>
+	</tr>
+</table>
+<!-- ************************************************************************** -->
+<hr>
+<A NAME="table16"><h1>Sheet 17: <em>Network</em></h1></A>
+<table cellspacing="0" border="0">
+	<colgroup width="479"></colgroup>
+	<colgroup width="89"></colgroup>
+	<tr>
+		<td height="17" align="left" valign=bottom>email utility</td>
+		<td align="left" valign=bottom>mail</td>
+	</tr>
+	<tr>
+		<td height="17" align="left" valign=bottom>email utility</td>
+		<td align="left" valign=bottom>mailx</td>
+	</tr>
+	<tr>
+		<td height="17" align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+	</tr>
+	<tr>
+		<td height="17" align="left" valign=bottom>utility to convert rpm package to deb package</td>
+		<td align="left" valign=bottom>alien</td>
+	</tr>
+	<tr>
+		<td height="17" align="left" valign=bottom>used by oracle installation</td>
+		<td align="left" valign=bottom>libaio1</td>
+	</tr>
+</table>
+<!-- ************************************************************************** -->
+</body>
+
+</html>

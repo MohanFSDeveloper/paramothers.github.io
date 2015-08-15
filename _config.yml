@@ -1,4 +1,4 @@
-source: mydoc
+source: src
 destination: _site
 timezone: Asia/Calcutta
 exclude : [java, oracle, etc]
