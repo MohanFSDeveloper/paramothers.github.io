@@ -1,0 +1,3301 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+
+<html>
+<head>
+	
+	<meta http-equiv="content-type" content="text/html; charset=utf-8">
+	<title></title>
+	<meta name="generator" content="LibreOffice 4.2.8.2 (Linux)">
+	<meta name="created" content="20130122;120831000000000">
+	<meta name="changed" content="20130508;130600000000000">
+	
+<link rel="stylesheet" type="text/css" href="/stylesheets/stylesheet.css" media="screen">
+	
+</head>
+
+<body text="#000000">
+	<a href="index.html"> Back </a><br/>
+<hr>
+	<p><center>
+		<h1>Overview</h1>
+		<A HREF="#table0">Expesss Edition 11g install</A><br>
+		<A HREF="#table1">Oralce Install Step</A><br>
+		<A HREF="#table2">Oracle Installation Directory</A><br>
+		<A HREF="#table3">Instance parameter</A><br>
+		<A HREF="#table4">DBA-Commands</A><br>
+		<A HREF="#table5">ClientTool</A><br>
+		<A HREF="#table6">version</A><br>
+		<A HREF="#table7">Oracle DB Utility</A><br>
+		<A HREF="#table8">DB Instance</A><br>
+		<A HREF="#table9">DB Instance 2</A><br>
+		<A HREF="#table10">DB Listener Net8 Service</A><br>
+		<A HREF="#table11">ConfigurationFiles</A><br>
+		<A HREF="#table12">OCP</A><br>
+		<A HREF="#table13">System Tables</A><br>
+		<A HREF="#table14">Temporary tables</A><br>
+		
+	</center></p>
+<hr>
+<A NAME="table0"><h1>Sheet 1: <em>Expesss Edition 11g install</em></h1></A>
+<table cellspacing="0" border="0">
+	<colgroup width="86"></colgroup>
+	<colgroup width="220"></colgroup>
+	<colgroup width="360"></colgroup>
+	<tr>
+		<td height="121" align="left" valign=bottom>super user</td>
+		<td align="left" valign=bottom><b>modify kernal parameter<br>( directly run on command prompt )</b></td>
+		<td align="left" valign=bottom>cat &gt; /etc/sysctl.d/60-oracle.conf &lt;&lt;-EOF<br># Oracle 11g XE kernel parameters<br>fs.file-max=6815744<br>net.ipv4.ip_local_port_range=9000 65500<br>kernel.sem=250 32000 100 128<br># kernel.shmmax=429496729<br>kernel.shmmax=107374183<br>EOF</td>
+	</tr>
+	<tr>
+		<td height="77" align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom>load and verfiy kernal parameter</td>
+		<td align="left" valign=bottom>service procps start<br>sudo sysctl -q fs.file-max<br>sudo sysctl -q kernel.shmmax<br>sudo sysctl -q net.ipv4.ip_local_port_range<br>sudo sysctl -q kernel.sem</td>
+	</tr>
+</table>
+<!-- ************************************************************************** -->
+<hr>
+<A NAME="table1"><h1>Sheet 2: <em>Oralce Install Step</em></h1></A>
+<table cellspacing="0" border="0">
+	<colgroup width="336"></colgroup>
+	<colgroup width="326"></colgroup>
+	<colgroup width="498"></colgroup>
+	<tr>
+		<td height="16" align="left" valign=bottom>Install Oracle</td>
+		<td align="left" valign=bottom>in Shell Prompt</td>
+		<td align="left" valign=bottom><br></td>
+	</tr>
+	<tr>
+		<td height="17" align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+	</tr>
+	<tr>
+		<td height="17" align="left" valign=bottom>export environment variable</td>
+		<td align="left" valign=bottom>in Shell Prompt</td>
+		<td align="left" valign=bottom><font color="#B84700">/usr/lib/oracle/xe/app/oracle/product/10.2.0/server/bin/oracle_env.sh</font></td>
+	</tr>
+	<tr>
+		<td height="17" align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+	</tr>
+	<tr>
+		<td height="17" align="left" valign=bottom>Configure DB Instance, it is shell script</td>
+		<td align="left" valign=bottom>/etc/init.d/oracle-xe {options}</td>
+		<td align="left" valign=bottom>Say no to run on boot</td>
+	</tr>
+	<tr>
+		<td height="16" align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom>it has many option. Just evaluate all the options</td>
+		<td align="left" valign=bottom><br></td>
+	</tr>
+	<tr>
+		<td height="17" align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+	</tr>
+	<tr>
+		<td height="17" align="left" valign=bottom>Start  DB Instance</td>
+		<td align="left" valign=bottom>in Sql * plus</td>
+		<td align="left" valign=bottom>Run only when Oracle DB need, not on Boot</td>
+	</tr>
+	<tr>
+		<td height="17" align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+	</tr>
+	<tr>
+		<td height="17" align="left" valign=bottom>Create one user, unlock and give privileges</td>
+		<td align="left" valign=bottom>in Sql * plus</td>
+		<td align="left" valign=bottom><br></td>
+	</tr>
+	<tr>
+		<td height="17" align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+	</tr>
+	<tr>
+		<td height="16" align="left" valign=bottom>Start  Net8 Listener Service</td>
+		<td align="left" valign=bottom>in Shell Prompt</td>
+		<td align="left" valign=bottom>Run only when Oracle DB need, not on Boot</td>
+	</tr>
+	<tr>
+		<td height="17" align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+	</tr>
+	<tr>
+		<td height="16" align="left" valign=bottom>connect by Eclipse or any other  and run sample query</td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+	</tr>
+</table>
+<!-- ************************************************************************** -->
+<hr>
+<A NAME="table2"><h1>Sheet 3: <em>Oracle Installation Directory</em></h1></A>
+<table cellspacing="0" border="0">
+	<colgroup width="216"></colgroup>
+	<colgroup width="447"></colgroup>
+	<colgroup width="245"></colgroup>
+	<tr>
+		<td height="17" align="left" valign=bottom>$ORACLE_HOME</td>
+		<td align="left" valign=bottom>/usr/lib/oracle/xe/app/oracle/product/10.2.0/server</td>
+		<td align="left" valign=bottom>/u01/app/oracle/product/11.2.0/xe</td>
+	</tr>
+	<tr>
+		<td height="17" align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+	</tr>
+	<tr>
+		<td height="17" align="left" valign=bottom>Parameter file directory</td>
+		<td align="left" valign=bottom><b>$ORACLE_HOME/dbs</b></td>
+		<td align="left" valign=bottom><br></td>
+	</tr>
+	<tr>
+		<td height="17" align="left" valign=bottom>Net8 Listener configuration files</td>
+		<td align="left" valign=bottom><b>$ORACLE_HOME/network/admin</b></td>
+		<td align="left" valign=bottom><br></td>
+	</tr>
+	<tr>
+		<td height="17" align="left" valign=bottom>script to set environment variable</td>
+		<td align="left" valign=bottom><b>$ORACLE_HOME/bin/oracle_env.sh</b></td>
+		<td align="left" valign=bottom><br></td>
+	</tr>
+	<tr>
+		<td height="16" align="left" valign=bottom>storage clause</td>
+		<td align="left" valign=bottom>a physical location in file system, where oracle instance store it data file</td>
+		<td align="left" valign=bottom><br></td>
+	</tr>
+	<tr>
+		<td height="16" align="left" valign=bottom>Table space</td>
+		<td align="left" valign=bottom>it is logical structure, act as Portal for one or more physical data files</td>
+		<td align="left" valign=bottom><br></td>
+	</tr>
+	<tr>
+		<td height="17" align="left" valign=bottom>profile table creation scipt</td>
+		<td align="left" valign=bottom><b>$ORACLE_HOME/rdbms/admin/dbmshptab.sql</b></td>
+		<td align="left" valign=bottom><br></td>
+	</tr>
+	<tr>
+		<td height="17" align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+	</tr>
+	<tr>
+		<td height="17" align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+	</tr>
+	<tr>
+		<td height="17" align="left" valign=bottom>weak sys_refcuror</td>
+		<td align="left" valign=bottom><font face="Times New Roman">%ORACLE_HOME%\rdbms\admin\stdspec.sql</font></td>
+		<td align="left" valign=bottom><br></td>
+	</tr>
+</table>
+<!-- ************************************************************************** -->
+<hr>
+<A NAME="table3"><h1>Sheet 4: <em>Instance parameter</em></h1></A>
+<table cellspacing="0" border="0">
+	<colgroup width="79"></colgroup>
+	<colgroup width="285"></colgroup>
+	<colgroup width="277"></colgroup>
+	<colgroup width="746"></colgroup>
+	<tr>
+		<td height="20" align="left" valign=bottom><b><font face="Calibri" color="#000000">STATIC</font></b></td>
+		<td align="left" valign=bottom><b><font face="Calibri" color="#000000">Name of parameter</font></b></td>
+		<td align="left" valign=bottom><b><font face="Calibri" color="#000000">possible value</font></b></td>
+		<td align="left" valign=bottom><b><font face="Calibri" color="#000000">description</font></b></td>
+	</tr>
+	<tr>
+		<td height="17" align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+	</tr>
+	<tr>
+		<td height="20" align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><font face="Bitstream Charter" size=3 color="#000000">AUDIT_SYS_OPERATIONS</font></td>
+		<td align="left" valign=bottom><font face="Calibri" color="#000000">true/false</font></td>
+		<td align="left" valign=bottom><font face="Calibri" color="#000000">it store what are all the commend executed by SYS/ SYSOPER user</font></td>
+	</tr>
+	<tr>
+		<td height="20" align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><font face="Bitstream Charter" size=3 color="#000000">AUDIT_FILE_DEST</font></td>
+		<td align="left" valign=bottom><font face="Calibri" color="#000000">a unix directory path</font></td>
+		<td align="left" valign=bottom><font face="Calibri" color="#000000">it says, location of SYS / SYSOPER audit log files path</font></td>
+	</tr>
+	<tr>
+		<td height="20" align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><font face="Bitstream Charter" size=3 color="#000000">AUDIT_TRAIL</font></td>
+		<td align="left" valign=bottom><font face="Calibri" color="#000000">NONE/OS/DB/DB_EXTENDED/XML</font></td>
+		<td align="left" valign=bottom><font face="Calibri" color="#000000">it used to set database audit trial setting</font></td>
+	</tr>
+	<tr>
+		<td height="16" align="left" valign=bottom bgcolor="#CCCCCC"><br></td>
+		<td align="left" valign=bottom bgcolor="#CCCCCC"><font face="Bitstream Charter" size=3 color="#000000"><br></font></td>
+		<td align="left" valign=bottom bgcolor="#CCCCCC"><font face="Calibri" color="#000000"><br></font></td>
+		<td align="left" valign=bottom bgcolor="#CCCCCC"><font face="Calibri" color="#000000"><br></font></td>
+	</tr>
+	<tr>
+		<td height="20" align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><font face="Bitstream Charter" size=3 color="#000000">STATISTIC_LEVEL</font></td>
+		<td align="left" valign=bottom><font face="Calibri" color="#000000">BASIC/ TYPICAL/ ALL</font></td>
+		<td align="left" valign=bottom><font face="Calibri" color="#000000">it control the gathering statistic</font></td>
+	</tr>
+	<tr>
+		<td height="20" align="left" valign=bottom><font face="Calibri" color="#000000">static</font></td>
+		<td align="left" valign=bottom><font face="Bitstream Charter" size=3 color="#000000">MEMORY_MAX_TARGET</font></td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+	</tr>
+	<tr>
+		<td height="20" align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><font face="Bitstream Charter" size=3 color="#000000">WORK_AREA_POLICY</font></td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+	</tr>
+	<tr>
+		<td height="20" align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom bgcolor="#CFE7E5"><font face="Bitstream Charter" size=3 color="#000000">PGA_AGGREGATE_TARGET</font></td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom bgcolor="#CFE7E5"><font face="Calibri" color="#000000">it enable PGA automatic management</font></td>
+	</tr>
+	<tr>
+		<td height="20" align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom bgcolor="#CFE7E5"><font face="Bitstream Charter" size=3 color="#000000">SGA_TARGET</font></td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom bgcolor="#CFE7E5"><font face="Calibri" color="#000000">it enable SGA (shared memory ) automatic management</font></td>
+	</tr>
+	<tr>
+		<td height="20" align="left" valign=bottom bgcolor="#CFE7E5"><font face="Calibri" color="#000000">dynamic</font></td>
+		<td align="left" valign=bottom bgcolor="#CFE7E5"><font face="Bitstream Charter" size=3 color="#000000">MEMORY_TARGET</font></td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom bgcolor="#CFE7E5"><font face="Calibri" color="#000000">maximum size can be allocated by a instance, enable automatic memory management</font></td>
+	</tr>
+	<tr>
+		<td height="20" align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><font face="Bitstream Charter" size=3 color="#000000">SHARED_POOL_SIZE</font></td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+	</tr>
+	<tr>
+		<td height="20" align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><font face="Bitstream Charter" size=3>RESULT_CACHE_MAX_SIZE</font></td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom>used by result cache function</td>
+	</tr>
+	<tr>
+		<td height="20" align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><font face="Bitstream Charter" size=3>RESULT_CACHE_MAX_RESULT</font></td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom>used by result cache function</td>
+	</tr>
+	<tr>
+		<td height="20" align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><font face="Bitstream Charter" size=3 color="#000000">DB_CACHE_SIZE</font></td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+	</tr>
+	<tr>
+		<td height="20" align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><font face="Bitstream Charter" size=3 color="#000000">LARGE_POOL_SIZE</font></td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+	</tr>
+	<tr>
+		<td height="20" align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><font face="Bitstream Charter" size=3 color="#000000">STREAM_POOL_SIZE</font></td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+	</tr>
+	<tr>
+		<td height="20" align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><font face="Bitstream Charter" size=3 color="#000000">JAVA_POOL_SIZE</font></td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+	</tr>
+	<tr>
+		<td height="20" align="left" valign=bottom><font face="Calibri" color="#000000">static</font></td>
+		<td align="left" valign=bottom><font face="Bitstream Charter" size=3 color="#000000">LOG_BUFFER</font></td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+	</tr>
+	<tr>
+		<td height="20" align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><font face="Bitstream Charter" size=3 color="#000000">SKIP_UNUSABLE_INDEXS</font></td>
+		<td align="left" valign=bottom><font face="Calibri" color="#000000">TRUE/FALSE</font></td>
+		<td align="left" valign=bottom><font face="Calibri" color="#000000">to skip if a index is invalid for a SQL statement</font></td>
+	</tr>
+	<tr>
+		<td height="20" align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><font face="Bitstream Charter" size=3 color="#000000">FAST_START_MTTR_TARGET</font></td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><font face="Calibri" color="#000000">helps to know the time will be take to insance recover in advance</font></td>
+	</tr>
+	<tr>
+		<td height="20" align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><font face="Bitstream Charter" size=3 color="#000000">LOG_ARCHIVE_START</font></td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><font face="Calibri" color="#000000">to start archiver mode of DB for redo log files</font></td>
+	</tr>
+	<tr>
+		<td height="17" align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+	</tr>
+	<tr>
+		<td height="20" align="left" valign=bottom bgcolor="#CCCCCC"><br></td>
+		<td align="left" valign=bottom bgcolor="#CCCCCC"><font face="Bitstream Charter" size=3><br></font></td>
+		<td align="left" valign=bottom bgcolor="#CCCCCC"><br></td>
+		<td align="left" valign=bottom bgcolor="#CCCCCC"><font face="Calibri" color="#000000"><br></font></td>
+	</tr>
+	<tr>
+		<td height="17" align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><font face="Bitstream Charter" size=3>plsql_warnings</font></td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom>enable pl/sql compile time warning</td>
+	</tr>
+	<tr>
+		<td height="17" align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><font face="Bitstream Charter" size=3>PLSQL_OPTIMIZE_LEVEL</font></td>
+		<td align="left" valign=bottom>1 or 2 or 3</td>
+		<td align="left" valign=bottom>2, is default, and we use prgma But 3 compiler itself try to indentiy inline function AND, 1 is enable debuging in PL/SQL unit</td>
+	</tr>
+	<tr>
+		<td height="17" align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><font face="Bitstream Charter" size=3>PLSQL_CCFLAGS</font></td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom>it is used for define custom name=value pair, those used for conditional compilation</td>
+	</tr>
+	<tr>
+		<td height="17" align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><font face="Bitstream Charter" size=3>PLSQL_NATIVE_LIBRARY_DIR</font></td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom>keep the platform specific natively generated code from PL/SQL code</td>
+	</tr>
+	<tr>
+		<td height="17" align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><font face="Bitstream Charter" size=3>PLSCOPE_SETTINGS</font></td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom>it is used to indentify behaviour and usage of variables.</td>
+	</tr>
+	<tr>
+		<td height="17" align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><font face="Bitstream Charter" size=3>PLSQL_CODE_TYPE</font></td>
+		<td align="left" valign=bottom>NATIVE / INTERPRETED</td>
+		<td align="left" valign=bottom>when native, simple_integer, simple_double and simple_float typed operation will be faster</td>
+	</tr>
+	<tr>
+		<td height="17" align="left" valign=bottom bgcolor="#CCCCCC"><br></td>
+		<td align="left" valign=bottom bgcolor="#CCCCCC"><font face="Bitstream Charter" size=3><br></font></td>
+		<td align="left" valign=bottom bgcolor="#CCCCCC"><br></td>
+		<td align="left" valign=bottom bgcolor="#CCCCCC"><br></td>
+	</tr>
+	<tr>
+		<td height="20" align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><font face="Bitstream Charter" size=3 color="#000000">db_recovery_file_dest</font></td>
+		<td align="right" valign=bottom><br></td>
+		<td align="left" valign=bottom><font face="Calibri" color="#000000">flash recovery file destination</font></td>
+	</tr>
+	<tr>
+		<td height="20" align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><font face="Bitstream Charter" size=3 color="#000000">db_recovery_file_dest_size</font></td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><font face="Calibri" color="#000000">Available space for flash recovery</font></td>
+	</tr>
+	<tr>
+		<td height="17" align="left" valign=bottom bgcolor="#CCCCCC"><br></td>
+		<td align="left" valign=bottom bgcolor="#CCCCCC"><br></td>
+		<td align="left" valign=bottom bgcolor="#CCCCCC"><br></td>
+		<td align="left" valign=bottom bgcolor="#CCCCCC"><br></td>
+	</tr>
+	<tr>
+		<td height="20" align="left" valign=bottom><font face="Calibri" color="#000000">static</font></td>
+		<td align="left" valign=bottom><font face="Bitstream Charter" size=3 color="#000000">DB_BLOCK_SIZE</font></td>
+		<td align="left" valign=bottom><font face="Calibri" color="#000000"><br></font></td>
+		<td align="left" valign=bottom><font face="Calibri" color="#000000">oracle datafile block size, used in ( BLOB, CLOB, NCLOB )</font></td>
+	</tr>
+	<tr>
+		<td height="20" align="left" valign=bottom><font face="Calibri" color="#000000"><br></font></td>
+		<td align="left" valign=bottom><font face="Bitstream Charter" size=3 color="#000000">session_max_open_files</font></td>
+		<td align="left" valign=bottom><font face="Calibri" color="#000000">how many BFILE can be opened at a time for a session</font></td>
+		<td align="left" valign=bottom><font face="Calibri" color="#000000"><br></font></td>
+	</tr>
+	<tr>
+		<td height="20" align="left" valign=bottom><font face="Calibri" color="#000000">static</font></td>
+		<td align="left" valign=bottom><font face="Bitstream Charter" size=3 color="#000000">CONTROL_FILES</font></td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><font face="Calibri" color="#000000">no. of control files for this instance</font></td>
+	</tr>
+	<tr>
+		<td height="20" align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><font face="Bitstream Charter" size=3 color="#000000">BACKGROUND_DUMP_TEST</font></td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><font face="Calibri" color="#000000">path to alert log file for background process</font></td>
+	</tr>
+	<tr>
+		<td height="20" align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><font face="Bitstream Charter" size=3 color="#000000">USER_DUMP_TEST</font></td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><font face="Calibri" color="#000000">path to alert log file for user session process</font></td>
+	</tr>
+	<tr>
+		<td height="20" align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><font face="Bitstream Charter" size=3 color="#000000">DIAGNOSTIC_DEST</font></td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><font face="Calibri" color="#000000">the location, where  Health monitor place the result</font></td>
+	</tr>
+	<tr>
+		<td height="20" align="left" valign=bottom><font face="Calibri" color="#000000">stATIC</font></td>
+		<td align="left" valign=bottom><font face="Bitstream Charter" size=3 color="#000000">UTL_FILE_DIR</font></td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><font face="Calibri" color="#000000">util package procedure use this directory path</font></td>
+	</tr>
+	<tr>
+		<td height="17" align="left" valign=bottom bgcolor="#CCCCCC"><br></td>
+		<td align="left" valign=bottom bgcolor="#CCCCCC"><br></td>
+		<td align="left" valign=bottom bgcolor="#CCCCCC"><br></td>
+		<td align="left" valign=bottom bgcolor="#CCCCCC"><br></td>
+	</tr>
+	<tr>
+		<td height="20" align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><font face="Bitstream Charter" size=3 color="#000000">NLS_DATE_FORMAT</font></td>
+		<td align="left" valign=bottom>default data mask</td>
+		<td align="left" valign=bottom><font face="Calibri" color="#000000">specifiy the default data display format</font></td>
+	</tr>
+	<tr>
+		<td height="20" align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><font face="Bitstream Charter" size=3 color="#000000">NLS_DATE_LANGUAGE</font></td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><font face="Calibri" color="#000000">it is used to define language char used in date manipulation function. Esp. Next_day</font></td>
+	</tr>
+	<tr>
+		<td height="20" align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><font face="Bitstream Charter" size=3 color="#000000">NLS_LENGTH_SEMANTICS</font></td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><font face="Calibri" color="#000000">specify the length in CHAR and VARCHAR2 is either byte or char</font></td>
+	</tr>
+	<tr>
+		<td height="20" align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><font face="Bitstream Charter" size=3 color="#000000">NLS_SORT</font></td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><font face="Calibri" color="#000000">used when NLS_COMP = ANSI, BINARY_CI, XGERMAN_CI, TAMIL, BINARY_AI or FRENCH_M_AI</font></td>
+	</tr>
+	<tr>
+		<td height="20" align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><font face="Bitstream Charter" size=3 color="#000000">NLS_COMP</font></td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><font face="Calibri" color="#000000">how to string comparision</font></td>
+	</tr>
+	<tr>
+		<td height="20" align="left" valign=bottom bgcolor="#CCCCCC"><br></td>
+		<td align="left" valign=bottom bgcolor="#CCCCCC"><font face="Bitstream Charter" size=3 color="#000000"><br></font></td>
+		<td align="left" valign=bottom bgcolor="#CCCCCC"><br></td>
+		<td align="left" valign=bottom bgcolor="#CCCCCC"><font face="Calibri" color="#000000"><br></font></td>
+	</tr>
+	<tr>
+		<td height="20" align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><font face="Bitstream Charter" size=3 color="#000000">STAR_TRANSFORMATION_ENABLED</font></td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><font face="Calibri" color="#000000">it is used to sub-query execution instead of join when more than one table used for data retrieval</font></td>
+	</tr>
+	<tr>
+		<td height="19" align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><font face="Bitstream Charter" size=3>TRANSACTIONS</font></td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom>specify the number of concurrent transaction</td>
+	</tr>
+	<tr>
+		<td height="17" align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+	</tr>
+	<tr>
+		<td height="20" align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><font face="Bitstream Charter" size=3 color="#000000">DATA_PUMP_DIRECTORY</font></td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><font face="Calibri" color="#000000">directory used by Data Pump tool as default location to write files</font></td>
+	</tr>
+	<tr>
+		<td height="16" align="left" valign=bottom bgcolor="#C0C0C0"><br></td>
+		<td align="left" valign=bottom bgcolor="#C0C0C0"><br></td>
+		<td align="left" valign=bottom bgcolor="#C0C0C0"><br></td>
+		<td align="left" valign=bottom bgcolor="#C0C0C0"><br></td>
+	</tr>
+	<tr>
+		<td height="16" align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom>DB_Name</td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom>it is used in distributed data base network</td>
+	</tr>
+	<tr>
+		<td height="16" align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom>DB_Domain</td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+	</tr>
+</table>
+<!-- ************************************************************************** -->
+<hr>
+<A NAME="table4"><h1>Sheet 5: <em>DBA-Commands</em></h1></A>
+<table cellspacing="0" border="0">
+	<colgroup width="138"></colgroup>
+	<colgroup width="371"></colgroup>
+	<colgroup width="344"></colgroup>
+	<colgroup width="323"></colgroup>
+	<tr>
+		<td height="17" align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><font face="Calibri" color="#B84700">for my local machine, I want manually start both listener and instance, WHENEVER need to save machine speed</font></td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+	</tr>
+	<tr>
+		<td height="17" align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><font face="Calibri" color="#B84700">for local mahine db access, listener itself no need, if I prefer to work as SYSDBA role , and ONLY want to use SQL * Plus as client.</font></td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+	</tr>
+	<tr>
+		<td height="17" align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><font face="Calibri" color="#B84700"><br></font></td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+	</tr>
+	<tr>
+		<td height="20" align="left" valign=bottom bgcolor="#B3B3B3"><br></td>
+		<td align="left" valign=bottom bgcolor="#B3B3B3"><br></td>
+		<td align="left" valign=bottom bgcolor="#B3B3B3"><br></td>
+		<td align="left" valign=bottom bgcolor="#B3B3B3"><br></td>
+	</tr>
+	<tr>
+		<td height="20" align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><font face="Calibri" color="#000000">sho parameter background</font></td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><font face="Calibri" color="#000000">see the initialization parameter</font></td>
+	</tr>
+	<tr>
+		<td height="20" align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><font face="Calibri" color="#000000">emctl status dbconsole</font></td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><font face="Calibri" color="#000000">database control</font></td>
+	</tr>
+	<tr>
+		<td height="20" align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><font face="Calibri" color="#000000">@?/rdbms/admin/utlrp</font></td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><font face="Calibri" color="#000000">use this Utility tool to compile a bulk of PL / SQL object</font></td>
+	</tr>
+	<tr>
+		<td height="20" align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom bgcolor="#47B8B8"><font face="Calibri" color="#000000">Restricted Session</font></td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+	</tr>
+	<tr>
+		<td height="20" align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><font face="Calibri" color="#000000">ALTER object_type object_name COMPILE ;</font></td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><font face="Calibri" color="#000000">to compile all the procedure, ex: alter procedure hr.add_reg compile</font></td>
+	</tr>
+	<tr>
+		<td height="20" align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><font face="Calibri" color="#000000">AUDIT</font></td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><font face="Calibri" color="#000000">to start  a audit</font></td>
+	</tr>
+	<tr>
+		<td height="20" align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><font face="Calibri" color="#000000">ANALYSIS</font></td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><font face="Calibri" color="#000000">to start to gather statistic</font></td>
+	</tr>
+	<tr>
+		<td height="17" align="left" valign=bottom bgcolor="#999999"><br></td>
+		<td align="left" valign=bottom bgcolor="#999999"><br></td>
+		<td align="left" valign=bottom bgcolor="#999999"><br></td>
+		<td align="left" valign=bottom bgcolor="#999999"><br></td>
+	</tr>
+	<tr>
+		<td height="17" align="left" valign=bottom>my current installation</td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+	</tr>
+	<tr>
+		<td height="17" align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom>My current installation is 10.2 g</td>
+		<td align="left" valign=bottom>My normal schema is hr/hr</td>
+		<td align="left" valign=bottom>My oracle 11g super user password is “padhu” ( SYS / SYSTEM )</td>
+	</tr>
+	<tr>
+		<td height="17" align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom>another user oracle/oracle</td>
+	</tr>
+	<tr>
+		<td height="17" align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom>param/param,  hr/hr, padhu/padhu, SYS/padhu</td>
+	</tr>
+	<tr>
+		<td height="17" align="left" valign=bottom bgcolor="#B3B3B3"><br></td>
+		<td align="left" valign=bottom bgcolor="#B3B3B3"><br></td>
+		<td align="left" valign=bottom bgcolor="#B3B3B3"><br></td>
+		<td align="left" valign=bottom bgcolor="#B3B3B3"><br></td>
+	</tr>
+	<tr>
+		<td height="17" align="left" valign=bottom>installation</td>
+		<td align="left" valign=bottom>put these entry in .profile or .bashrc file on user's home</td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+	</tr>
+	<tr>
+		<td height="17" align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+	</tr>
+	<tr>
+		<td height="16" align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom>export set ORACLE_HOME=/usr/lib/oracle/xe/app/oracle/product/10.2.0/server</td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom>it is the linux/unix enviornment variable, to point to oracle installation directory</td>
+	</tr>
+	<tr>
+		<td height="16" align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom>export set PATH=$PATH:$ORACLE_HOME/bin:.</td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom>it is for run sqlplus command</td>
+	</tr>
+	<tr>
+		<td height="16" align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom>export set ORACLE_SID=XE</td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom>it is used by sqlplus when connect sid as default</td>
+	</tr>
+	<tr>
+		<td height="16" align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom>export set LD_LIBRARY_PATH=/usr/lib/openwin/lib:$ORACLE_HOME/lib</td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom>it use when java program want to run inside of DB instance( used in listener.ora file )</td>
+	</tr>
+	<tr>
+		<td height="17" align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+	</tr>
+	<tr>
+		<td height="16" align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom>SID – it is system indentifier of a Instance, usually “orcl” is default one during installation</td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+	</tr>
+	<tr>
+		<td height="16" align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom>/etc/init.d/oracle-xe {start|stop|restart|configure|status}</td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom>it is used for configure a DB instance also</td>
+	</tr>
+	<tr>
+		<td height="17" align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+	</tr>
+	<tr>
+		<td height="17" align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+	</tr>
+	<tr>
+		<td height="16" align="left" valign=bottom bgcolor="#AEA79F"><br></td>
+		<td align="left" valign=bottom bgcolor="#AEA79F"><br></td>
+		<td align="left" valign=bottom bgcolor="#AEA79F"><br></td>
+		<td align="left" valign=bottom bgcolor="#AEA79F"><br></td>
+	</tr>
+	<tr>
+		<td height="16" align="left" valign=bottom>create user account</td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+	</tr>
+	<tr>
+		<td height="17" align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+	</tr>
+	<tr>
+		<td height="17" align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+	</tr>
+	<tr>
+		<td height="16" align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom>SYS – privileged user account in Oracle. It is super user in oracle</td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+	</tr>
+	<tr>
+		<td height="16" align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom>SYSTEM – another privileged user account in oracle</td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+	</tr>
+	<tr>
+		<td height="17" align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+	</tr>
+	<tr>
+		<td height="16" align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom>SYSDBA – is special role for administrative task. Usually SYS user will login as SYSDBA role</td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+	</tr>
+	<tr>
+		<td height="16" align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom bgcolor="#B3B3B3"><br></td>
+		<td align="left" valign=bottom bgcolor="#B3B3B3"><br></td>
+		<td align="left" valign=bottom bgcolor="#B3B3B3"><br></td>
+	</tr>
+	<tr>
+		<td height="16" align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom>DROP USER plsql CASCADE</td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+	</tr>
+	<tr>
+		<td height="16" align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom>CREATE USER plsql IDENTIFIED BY plsql</td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+	</tr>
+	<tr>
+		<td height="16" align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom>ALTER USER plsql ACCOUNT UNLOCK IDENTIFIED BY password;</td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom>to unlock a account and change password</td>
+	</tr>
+	<tr>
+		<td height="17" align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom>ALTER USER plsql IDENTIFIED BY secret_password</td>
+		<td align="left" valign=bottom>to change password of a user</td>
+		<td align="left" valign=bottom><br></td>
+	</tr>
+	<tr>
+		<td height="16" align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom>GRANT connect TO plsql</td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+	</tr>
+	<tr>
+		<td height="16" align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom>GRANT resource TO plsql</td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+	</tr>
+	<tr>
+		<td height="17" align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+	</tr>
+	<tr>
+		<td height="16" align="left" valign=bottom bgcolor="#B3B3B3"><br></td>
+		<td align="left" valign=bottom bgcolor="#B3B3B3"><br></td>
+		<td align="left" valign=bottom bgcolor="#B3B3B3"><br></td>
+		<td align="left" valign=bottom bgcolor="#B3B3B3"><br></td>
+	</tr>
+	<tr>
+		<td height="16" align="left" valign=bottom>start/stop a instance</td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+	</tr>
+	<tr>
+		<td height="17" align="left" valign=bottom>on shell prompt</td>
+		<td align="left" valign=bottom bgcolor="#33CC66">/etc/init.d/oracle-xe {start|stop|restart|configure|status}</td>
+		<td align="left" valign=bottom bgcolor="#33CC66">to start or stop or configure or status of a oracle XE instance ( run as OS super user )</td>
+		<td align="left" valign=bottom><br></td>
+	</tr>
+	<tr>
+		<td height="16" align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+	</tr>
+	<tr>
+		<td height="16" align="left" valign=bottom bgcolor="#B3B3B3"><br></td>
+		<td align="left" valign=bottom bgcolor="#B3B3B3"><br></td>
+		<td align="left" valign=bottom bgcolor="#B3B3B3"><br></td>
+		<td align="left" valign=bottom bgcolor="#B3B3B3"><br></td>
+	</tr>
+	<tr>
+		<td height="20" align="left" valign=bottom>I have to be logged in as normal user in linux</td>
+		<td align="left" valign=bottom><b><font face="Calibri" color="#000000">sqlplus '/ as sysdba'</font></b></td>
+		<td align="left" valign=bottom><font face="Calibri" color="#000000">connect like this to startup the instance manually in the SAME machine as  SYS user</font></td>
+		<td align="left" valign=bottom><br></td>
+	</tr>
+	<tr>
+		<td height="20" align="left" valign=bottom>on sqlplus</td>
+		<td align="left" valign=bottom bgcolor="#7DA647"><font face="Calibri" color="#000000">startup nomount</font></td>
+		<td align="left" valign=bottom bgcolor="#7DA647"><font face="Calibri" color="#000000">To startup  instance in FRESH installation or backup and recovery</font></td>
+		<td align="left" valign=bottom><br></td>
+	</tr>
+	<tr>
+		<td height="20" align="left" valign=bottom>on sqlplus</td>
+		<td align="left" valign=bottom bgcolor="#7DA647"><font face="Calibri" color="#000000">ALTER DATABASE MOUNT;</font></td>
+		<td align="left" valign=bottom bgcolor="#7DA647"><font face="Calibri" color="#000000">to move instance to mount state, if it is started by “nomount”</font></td>
+		<td align="left" valign=bottom><br></td>
+	</tr>
+	<tr>
+		<td height="20" align="left" valign=bottom>on sqlplus</td>
+		<td align="left" valign=bottom bgcolor="#7DA647"><font face="Calibri" color="#000000">ALTER DATABASE OPEN;</font></td>
+		<td align="left" valign=bottom bgcolor="#7DA647"><font face="Calibri" color="#000000">to move instance to open state, if it is started by “nomount”</font></td>
+		<td align="left" valign=bottom><br></td>
+	</tr>
+	<tr>
+		<td height="20" align="left" valign=bottom>on sqlplus</td>
+		<td align="left" valign=bottom bgcolor="#B3B300"><font face="Calibri" color="#000000">STARTUP mount</font></td>
+		<td align="left" valign=bottom bgcolor="#B3B300"><font face="Calibri" color="#000000">To startup  instance for recovery or rename of data file</font></td>
+		<td align="left" valign=bottom><br></td>
+	</tr>
+	<tr>
+		<td height="20" align="left" valign=bottom>on sqlplus</td>
+		<td align="left" valign=bottom bgcolor="#B3B300"><font face="Calibri" color="#000000">startup open</font></td>
+		<td align="left" valign=bottom bgcolor="#B3B300"><font face="Calibri" color="#000000">this is default, use this for normal strartup of instance</font></td>
+		<td align="left" valign=bottom><br></td>
+	</tr>
+	<tr>
+		<td height="20" align="left" valign=bottom>on sqlplus</td>
+		<td align="left" valign=bottom bgcolor="#99CCFF"><font face="Calibri" color="#000000">Shutdown {immediate|abort|transactional|normal}</font></td>
+		<td align="left" valign=bottom bgcolor="#99CCFF">shut down the current connected db instance</td>
+		<td align="left" valign=bottom><br></td>
+	</tr>
+</table>
+<!-- ************************************************************************** -->
+<hr>
+<A NAME="table5"><h1>Sheet 6: <em>ClientTool</em></h1></A>
+<table cellspacing="0" border="0">
+	<colgroup width="212"></colgroup>
+	<colgroup width="403"></colgroup>
+	<colgroup width="379"></colgroup>
+	<tr>
+		<td height="17" align="left" valign=bottom>oracle Thick-Client</td>
+		<td align="left" valign=bottom>it used by Toad</td>
+		<td align="left" valign=bottom><br></td>
+	</tr>
+	<tr>
+		<td height="17" align="left" valign=bottom bgcolor="#00FFFF"><br></td>
+		<td align="left" valign=bottom bgcolor="#00FFFF"><br></td>
+		<td align="left" valign=bottom bgcolor="#00FFFF"><br></td>
+	</tr>
+	<tr>
+		<td height="20" align="left" valign=bottom><font face="Calibri" color="#000000">On-line Client tool</font></td>
+		<td align="left" valign=bottom><font face="Calibri" color="#000000">http://apex.oracle.com</font></td>
+		<td align="left" valign=bottom><br></td>
+	</tr>
+	<tr>
+		<td height="17" align="left" valign=bottom bgcolor="#00B8FF"><br></td>
+		<td align="left" valign=bottom bgcolor="#00B8FF"><br></td>
+		<td align="left" valign=bottom bgcolor="#00B8FF"><br></td>
+	</tr>
+	<tr>
+		<td height="20" align="left" valign=bottom><font face="Calibri" color="#000000">SQL * Plus</font></td>
+		<td align="left" valign=bottom><font face="Calibri" color="#000000">For admin related activities and execute procedure</font></td>
+		<td align="left" valign=bottom><br></td>
+	</tr>
+	<tr>
+		<td height="17" align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+	</tr>
+	<tr>
+		<td height="20" align="left" valign=bottom><font face="Calibri" color="#000000">SQL * Plus Commands</font></td>
+		<td align="left" valign=bottom><font face="Calibri" color="#000000">connect</font></td>
+		<td align="left" valign=bottom>Used to connect with data base</td>
+	</tr>
+	<tr>
+		<td height="20" align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><font face="Calibri" color="#000000">desc/ describe</font></td>
+		<td align="left" valign=bottom>Describe the Table /  View</td>
+	</tr>
+	<tr>
+		<td height="20" align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom bgcolor="#B3B3B3"><font face="Calibri" color="#000000">show error</font></td>
+		<td align="left" valign=bottom bgcolor="#B3B3B3"><font face="Calibri" color="#000000">it will show compilation error of PL/ SQL object</font></td>
+	</tr>
+	<tr>
+		<td height="20" align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom bgcolor="#B3B3B3"><font face="Calibri" color="#000000">show user</font></td>
+		<td align="left" valign=bottom bgcolor="#B3B3B3"><font face="Calibri" color="#000000">display the current session user name</font></td>
+	</tr>
+	<tr>
+		<td height="20" align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom bgcolor="#B3B3B3"><font face="Calibri" color="#000000">show sga</font></td>
+		<td align="left" valign=bottom bgcolor="#B3B3B3"><font face="Calibri" color="#000000">display the SGA values</font></td>
+	</tr>
+	<tr>
+		<td height="20" align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom bgcolor="#B3B3B3"><font face="Calibri" color="#000000">show Parameters</font></td>
+		<td align="left" valign=bottom bgcolor="#B3B3B3"><font face="Calibri" color="#000000">display the initialization and compilation parameters value</font></td>
+	</tr>
+	<tr>
+		<td height="20" align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom bgcolor="#99CCFF"><font face="Calibri" color="#000000">spool on</font></td>
+		<td align="left" valign=bottom bgcolor="#99CCFF"><font face="Calibri" color="#000000">split the command output to a file and console</font></td>
+	</tr>
+	<tr>
+		<td height="20" align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom bgcolor="#99CCFF"><font face="Calibri" color="#000000">spool off</font></td>
+		<td align="left" valign=bottom bgcolor="#99CCFF">End the export the commands to output file</td>
+	</tr>
+	<tr>
+		<td height="20" align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><font face="Calibri" color="#000000">set serveroutput on</font></td>
+		<td align="left" valign=bottom><br></td>
+	</tr>
+	<tr>
+		<td height="20" align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><font face="Calibri" color="#000000">password</font></td>
+		<td align="left" valign=bottom>to change password</td>
+	</tr>
+	<tr>
+		<td height="20" align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><font face="Calibri" color="#000000">?</font></td>
+		<td align="left" valign=bottom><font face="Calibri" color="#000000">it is variable will expand to ORACLE_HOME</font></td>
+	</tr>
+	<tr>
+		<td height="20" align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><font face="Calibri" color="#000000">quit</font></td>
+		<td align="left" valign=bottom><font face="Calibri" color="#000000">to exit sql * plus command prompt</font></td>
+	</tr>
+	<tr>
+		<td height="20" align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><font face="Calibri" color="#000000">UNDEFINE</font></td>
+		<td align="left" valign=bottom><font face="Calibri" color="#000000">to undefine a session automatically build a variable from substitution query</font></td>
+	</tr>
+	<tr>
+		<td height="20" align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><font face="Calibri" color="#000000">DEFINE</font></td>
+		<td align="left" valign=bottom><font face="Calibri" color="#000000">to define a session variable explicitly</font></td>
+	</tr>
+	<tr>
+		<td height="20" align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><font face="Calibri" color="#000000">VERIFY</font></td>
+		<td align="left" valign=bottom><font face="Calibri" color="#000000">to notify user secreen about session variable before to use in substitution query</font></td>
+	</tr>
+	<tr>
+		<td height="20" align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><font face="Calibri" color="#000000">VARIABLE</font></td>
+		<td align="left" valign=bottom><font face="Calibri" color="#000000">to define a session variable</font></td>
+	</tr>
+	<tr>
+		<td height="20" align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><font face="Calibri" color="#000000">SET AUTOCOMMIT ON/OFF</font></td>
+		<td align="left" valign=bottom><br></td>
+	</tr>
+	<tr>
+		<td height="20" align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><font face="Calibri" color="#000000">/nolog</font></td>
+		<td align="left" valign=bottom><br></td>
+	</tr>
+	<tr>
+		<td height="20" align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><font face="Calibri" color="#000000">PROMPT</font></td>
+		<td align="left" valign=bottom>to get input from keyboard</td>
+	</tr>
+	<tr>
+		<td height="20" align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><font face="Calibri" color="#000000">ACCECPT</font></td>
+		<td align="left" valign=bottom><br></td>
+	</tr>
+	<tr>
+		<td height="20" align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom bgcolor="#CCCCCC"><font face="Calibri" color="#000000">@&lt;fileName along with path&gt;</font></td>
+		<td align="left" valign=bottom bgcolor="#CCCCCC">used to load and run a script file</td>
+	</tr>
+	<tr>
+		<td height="20" align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom bgcolor="#CCCCCC"><font face="Calibri" color="#000000">GET</font></td>
+		<td align="left" valign=bottom bgcolor="#CCCCCC">used to load and run a script file</td>
+	</tr>
+	<tr>
+		<td height="17" align="left" valign=bottom bgcolor="#0099FF"><br></td>
+		<td align="left" valign=bottom bgcolor="#0099FF"><br></td>
+		<td align="left" valign=bottom bgcolor="#0099FF"><br></td>
+	</tr>
+	<tr>
+		<td height="20" align="left" valign=bottom><font face="Calibri" color="#000000">Use Eclipse DTP perspective</font></td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+	</tr>
+	<tr>
+		<td height="20" align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><font face="Calibri" color="#000000">For query during development , function call</font></td>
+		<td align="left" valign=bottom><br></td>
+	</tr>
+	<tr>
+		<td height="20" align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><font face="Calibri" color="#000000">it has facility to keep the queries in file</font></td>
+		<td align="left" valign=bottom><br></td>
+	</tr>
+	<tr>
+		<td height="20" align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><font face="Calibri" color="#000000">it has shortcut to run</font></td>
+		<td align="left" valign=bottom><br></td>
+	</tr>
+	<tr>
+		<td height="20" align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><font face="Calibri" color="#000000">it has filter each schema objects</font></td>
+		<td align="left" valign=bottom><br></td>
+	</tr>
+	<tr>
+		<td height="20" align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><font face="Calibri" color="#000000">it has facility to keep History of queries result</font></td>
+		<td align="left" valign=bottom><br></td>
+	</tr>
+	<tr>
+		<td height="20" align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><font face="Calibri" color="#7E0021">there is no option to format query</font></td>
+		<td align="left" valign=bottom><br></td>
+	</tr>
+	<tr>
+		<td height="20" align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><font face="Calibri" color="#7E0021">there Is no option to move query from history to editor</font></td>
+		<td align="left" valign=bottom><br></td>
+	</tr>
+	<tr>
+		<td height="20" align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><font face="Calibri" color="#7E0021">content assistent still to improve for displaying builtin function, column, alias</font></td>
+		<td align="left" valign=bottom><br></td>
+	</tr>
+	<tr>
+		<td height="20" align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><font face="Calibri" color="#000000"><br></font></td>
+		<td align="left" valign=bottom><br></td>
+	</tr>
+	<tr>
+		<td height="20" align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><font face="Calibri" color="#000000"><br></font></td>
+		<td align="left" valign=bottom><br></td>
+	</tr>
+	<tr>
+		<td height="17" align="left" valign=bottom bgcolor="#0099FF"><br></td>
+		<td align="left" valign=bottom bgcolor="#0099FF"><br></td>
+		<td align="left" valign=bottom bgcolor="#0099FF"><br></td>
+	</tr>
+	<tr>
+		<td height="17" align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+	</tr>
+	<tr>
+		<td height="20" align="left" valign=bottom><font face="Calibri" color="#000000">Use Eclipse Toad Extension plug-in</font></td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+	</tr>
+	<tr>
+		<td height="20" align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><font face="Calibri" color="#000000">For PL/SQL Editing</font></td>
+		<td align="left" valign=bottom><br></td>
+	</tr>
+	<tr>
+		<td height="20" align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><font face="Calibri" color="#000000">SQL writing with content assistance for column name, built in function</font></td>
+		<td align="left" valign=bottom><br></td>
+	</tr>
+	<tr>
+		<td height="20" align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><font face="Calibri" color="#000000">SQL Format facility there</font></td>
+		<td align="left" valign=bottom><br></td>
+	</tr>
+	<tr>
+		<td height="20" align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><font face="Calibri" color="#000000">SQL Template is good</font></td>
+		<td align="left" valign=bottom><br></td>
+	</tr>
+	<tr>
+		<td height="20" align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><font face="Calibri" color="#C90016">it is not support key board shortcut to run the current or selected SQL</font></td>
+		<td align="left" valign=bottom><br></td>
+	</tr>
+	<tr>
+		<td height="20" align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><font face="Calibri" color="#C90016">Not available, SQL statement always in file and execute from there</font></td>
+		<td align="left" valign=bottom><br></td>
+	</tr>
+	<tr>
+		<td height="20" align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><font face="Calibri" color="#C90016">It is not maintaining SQL History result</font></td>
+		<td align="left" valign=bottom><br></td>
+	</tr>
+	<tr>
+		<td height="20" align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><font face="Calibri" color="#C90016">No filter by selection for every object type node like schema filter,</font></td>
+		<td align="left" valign=bottom><br></td>
+	</tr>
+	<tr>
+		<td height="17" align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+	</tr>
+	<tr>
+		<td height="17" align="left" valign=bottom bgcolor="#0099FF"><br></td>
+		<td align="left" valign=bottom bgcolor="#0099FF"><br></td>
+		<td align="left" valign=bottom bgcolor="#0099FF"><br></td>
+	</tr>
+	<tr>
+		<td height="17" align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+	</tr>
+	<tr>
+		<td height="20" align="left" valign=bottom><font face="Calibri" color="#000000">iSQL*Plus</font></td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+	</tr>
+	<tr>
+		<td height="20" align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><font face="Calibri" color="#000000">it is introduced in 9i and dropped in 11g</font></td>
+		<td align="left" valign=bottom><br></td>
+	</tr>
+	<tr>
+		<td height="17" align="left" valign=bottom bgcolor="#0099FF"><br></td>
+		<td align="left" valign=bottom bgcolor="#0099FF"><br></td>
+		<td align="left" valign=bottom bgcolor="#0099FF"><br></td>
+	</tr>
+	<tr>
+		<td height="20" align="left" valign=bottom><font face="Calibri" color="#000000">SQL Developer</font></td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+	</tr>
+	<tr>
+		<td height="17" align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+	</tr>
+	<tr>
+		<td height="17" align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+	</tr>
+	<tr>
+		<td height="17" align="left" valign=bottom>Dbeaver eclipse plugin</td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+	</tr>
+</table>
+<!-- ************************************************************************** -->
+<hr>
+<A NAME="table6"><h1>Sheet 7: <em>version</em></h1></A>
+<table cellspacing="0" border="0">
+	<colgroup width="65"></colgroup>
+	<colgroup width="184"></colgroup>
+	<colgroup width="253"></colgroup>
+	<colgroup width="267"></colgroup>
+	<colgroup width="225"></colgroup>
+	<colgroup width="65"></colgroup>
+	<tr>
+		<td height="19" align="left" valign=bottom><br></td>
+		<td style="border-bottom: 2px solid #000000" align="left" valign=bottom><br></td>
+		<td style="border-bottom: 2px solid #000000" align="left" valign=bottom><br></td>
+		<td style="border-bottom: 2px solid #000000" align="left" valign=bottom><br></td>
+		<td style="border-bottom: 2px solid #000000" align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+	</tr>
+	<tr>
+		<td style="border-right: 2px solid #000000" height="20" align="left" valign=bottom><br></td>
+		<td style="border-top: 2px solid #000000; border-bottom: 2px solid #000000; border-left: 2px solid #000000; border-right: 2px solid #000000" align="center" valign=bottom bgcolor="#FFFF00"><b><font face="Calibri" color="#000000">Version</font></b></td>
+		<td style="border-top: 2px solid #000000; border-bottom: 2px solid #000000; border-left: 2px solid #000000; border-right: 2px solid #000000" align="center" valign=bottom bgcolor="#FFFF00"><b><font face="Calibri" color="#000000">Released on</font></b></td>
+		<td style="border-top: 2px solid #000000; border-bottom: 2px solid #000000; border-left: 2px solid #000000; border-right: 2px solid #000000" align="center" valign=bottom bgcolor="#FFFF00"><b><font face="Calibri" color="#000000">Salient Features 1</font></b></td>
+		<td style="border-top: 2px solid #000000; border-bottom: 2px solid #000000; border-left: 2px solid #000000; border-right: 2px solid #000000" align="center" valign=bottom bgcolor="#FFFF00"><b><font face="Calibri" color="#000000">Salient Features 2</font></b></td>
+		<td style="border-left: 2px solid #000000" align="left" valign=bottom><br></td>
+	</tr>
+	<tr>
+		<td style="border-right: 2px solid #000000" height="20" align="left" valign=bottom><br></td>
+		<td style="border-top: 2px solid #000000; border-bottom: 2px solid #000000; border-left: 2px solid #000000; border-right: 2px solid #000000" align="left" valign=bottom><font face="Calibri" color="#000000">Oracle  1</font></td>
+		<td style="border-top: 2px solid #000000; border-bottom: 2px solid #000000; border-left: 2px solid #000000; border-right: 2px solid #000000" align="right" valign=bottom sdval="1978" sdnum="16393;"><font face="Calibri" color="#000000">1978</font></td>
+		<td style="border-top: 2px solid #000000; border-bottom: 2px solid #000000; border-left: 2px solid #000000; border-right: 2px solid #000000" align="left" valign=bottom><font face="Calibri" color="#000000"><br></font></td>
+		<td style="border-top: 2px solid #000000; border-bottom: 2px solid #000000; border-left: 2px solid #000000; border-right: 2px solid #000000" align="left" valign=bottom><font face="Calibri" color="#000000"><br></font></td>
+		<td style="border-left: 2px solid #000000" align="left" valign=bottom><br></td>
+	</tr>
+	<tr>
+		<td style="border-right: 2px solid #000000" height="20" align="left" valign=bottom><br></td>
+		<td style="border-top: 2px solid #000000; border-bottom: 2px solid #000000; border-left: 2px solid #000000; border-right: 2px solid #000000" align="left" valign=bottom><font face="Calibri" color="#000000">Oracle  2</font></td>
+		<td style="border-top: 2px solid #000000; border-bottom: 2px solid #000000; border-left: 2px solid #000000; border-right: 2px solid #000000" align="right" valign=bottom sdval="1979" sdnum="16393;"><font face="Calibri" color="#000000">1979</font></td>
+		<td style="border-top: 2px solid #000000; border-bottom: 2px solid #000000; border-left: 2px solid #000000; border-right: 2px solid #000000" align="left" valign=bottom><font face="Calibri" color="#000000"><br></font></td>
+		<td style="border-top: 2px solid #000000; border-bottom: 2px solid #000000; border-left: 2px solid #000000; border-right: 2px solid #000000" align="left" valign=bottom><font face="Calibri" color="#000000"><br></font></td>
+		<td style="border-left: 2px solid #000000" align="left" valign=bottom><br></td>
+	</tr>
+	<tr>
+		<td style="border-right: 2px solid #000000" height="20" align="left" valign=bottom><br></td>
+		<td style="border-top: 2px solid #000000; border-bottom: 2px solid #000000; border-left: 2px solid #000000; border-right: 2px solid #000000" align="left" valign=bottom><font face="Calibri" color="#000000">Oracle  4</font></td>
+		<td style="border-top: 2px solid #000000; border-bottom: 2px solid #000000; border-left: 2px solid #000000; border-right: 2px solid #000000" align="right" valign=bottom sdval="1984" sdnum="16393;"><font face="Calibri" color="#000000">1984</font></td>
+		<td style="border-top: 2px solid #000000; border-bottom: 2px solid #000000; border-left: 2px solid #000000; border-right: 2px solid #000000" align="left" valign=bottom><font face="Calibri" color="#000000"><br></font></td>
+		<td style="border-top: 2px solid #000000; border-bottom: 2px solid #000000; border-left: 2px solid #000000; border-right: 2px solid #000000" align="left" valign=bottom><font face="Calibri" color="#000000"><br></font></td>
+		<td style="border-left: 2px solid #000000" align="left" valign=bottom><br></td>
+	</tr>
+	<tr>
+		<td style="border-right: 2px solid #000000" height="20" align="left" valign=bottom><br></td>
+		<td style="border-top: 2px solid #000000; border-bottom: 2px solid #000000; border-left: 2px solid #000000; border-right: 2px solid #000000" align="left" valign=bottom><font face="Calibri" color="#000000">Oracle  5</font></td>
+		<td style="border-top: 2px solid #000000; border-bottom: 2px solid #000000; border-left: 2px solid #000000; border-right: 2px solid #000000" align="right" valign=bottom sdval="1986" sdnum="16393;"><font face="Calibri" color="#000000">1986</font></td>
+		<td style="border-top: 2px solid #000000; border-bottom: 2px solid #000000; border-left: 2px solid #000000; border-right: 2px solid #000000" align="left" valign=bottom><font face="Calibri" color="#000000"><br></font></td>
+		<td style="border-top: 2px solid #000000; border-bottom: 2px solid #000000; border-left: 2px solid #000000; border-right: 2px solid #000000" align="left" valign=bottom><font face="Calibri" color="#000000"><br></font></td>
+		<td style="border-left: 2px solid #000000" align="left" valign=bottom><br></td>
+	</tr>
+	<tr>
+		<td style="border-right: 2px solid #000000" height="20" align="left" valign=bottom><br></td>
+		<td style="border-top: 2px solid #000000; border-bottom: 2px solid #000000; border-left: 2px solid #000000; border-right: 2px solid #000000" align="left" valign=bottom><font face="Calibri" color="#000000">Oracle  6</font></td>
+		<td style="border-top: 2px solid #000000; border-bottom: 2px solid #000000; border-left: 2px solid #000000; border-right: 2px solid #000000" align="left" valign=bottom><font face="Calibri" color="#000000"><br></font></td>
+		<td style="border-top: 2px solid #000000; border-bottom: 2px solid #000000; border-left: 2px solid #000000; border-right: 2px solid #000000" align="left" valign=bottom><font face="Calibri" color="#000000">it introduce pl/sql 1.0</font></td>
+		<td style="border-top: 2px solid #000000; border-bottom: 2px solid #000000; border-left: 2px solid #000000; border-right: 2px solid #000000" align="left" valign=bottom><font face="Calibri" color="#000000"><br></font></td>
+		<td style="border-left: 2px solid #000000" align="left" valign=bottom><br></td>
+	</tr>
+	<tr>
+		<td style="border-right: 2px solid #000000" height="20" align="left" valign=bottom><br></td>
+		<td style="border-top: 2px solid #000000; border-bottom: 2px solid #000000; border-left: 2px solid #000000; border-right: 2px solid #000000" align="left" valign=bottom bgcolor="#99CCFF"><font face="Calibri" color="#000000">Oracle  7</font></td>
+		<td style="border-top: 2px solid #000000; border-bottom: 2px solid #000000; border-left: 2px solid #000000; border-right: 2px solid #000000" align="left" valign=bottom bgcolor="#99CCFF"><font face="Calibri" color="#000000"><br></font></td>
+		<td align="left" valign=bottom>it introduce pl/sql 2.0</td>
+		<td style="border-top: 2px solid #000000; border-bottom: 2px solid #000000; border-left: 2px solid #000000; border-right: 2px solid #000000" align="left" valign=bottom><font face="Calibri" color="#000000"><br></font></td>
+		<td style="border-left: 2px solid #000000" align="left" valign=bottom><br></td>
+	</tr>
+	<tr>
+		<td style="border-right: 2px solid #000000" height="20" align="left" valign=bottom><br></td>
+		<td style="border-top: 2px solid #000000; border-bottom: 2px solid #000000; border-left: 2px solid #000000; border-right: 2px solid #000000" align="left" valign=bottom bgcolor="#99CCFF"><font face="Calibri" color="#000000">Oracle 8i</font></td>
+		<td style="border-top: 2px solid #000000; border-bottom: 2px solid #000000; border-left: 2px solid #000000; border-right: 2px solid #000000" align="left" valign=bottom bgcolor="#99CCFF"><font face="Calibri" color="#000000"><br></font></td>
+		<td style="border-top: 2px solid #000000; border-bottom: 2px solid #000000; border-left: 2px solid #000000; border-right: 2px solid #000000" align="left" valign=bottom><font face="Calibri" color="#000000">it introduce java stored procedure</font></td>
+		<td style="border-top: 2px solid #000000; border-bottom: 2px solid #000000; border-left: 2px solid #000000; border-right: 2px solid #000000" align="left" valign=bottom><font face="Calibri" color="#000000"><br></font></td>
+		<td style="border-left: 2px solid #000000" align="left" valign=bottom><br></td>
+	</tr>
+	<tr>
+		<td style="border-right: 2px solid #000000" height="20" align="left" valign=bottom><br></td>
+		<td style="border-top: 2px solid #000000; border-bottom: 2px solid #000000; border-left: 2px solid #000000; border-right: 2px solid #000000" align="left" valign=bottom bgcolor="#99CCFF"><font face="Calibri" color="#000000">Oracle 9i ( i stands for Internet )</font></td>
+		<td style="border-top: 2px solid #000000; border-bottom: 2px solid #000000; border-left: 2px solid #000000; border-right: 2px solid #000000" align="right" valign=bottom bgcolor="#99CCFF" sdval="2001" sdnum="16393;"><font face="Calibri" color="#000000">2001</font></td>
+		<td style="border-top: 2px solid #000000; border-bottom: 2px solid #000000; border-left: 2px solid #000000; border-right: 2px solid #000000" align="left" valign=bottom><font face="Calibri" color="#000000">it support SQL- 1999 standard</font></td>
+		<td style="border-top: 2px solid #000000; border-bottom: 2px solid #000000; border-left: 2px solid #000000; border-right: 2px solid #000000" align="left" valign=bottom><font face="Calibri" color="#000000">introduce MERGE command</font></td>
+		<td style="border-left: 2px solid #000000" align="left" valign=bottom><br></td>
+	</tr>
+	<tr>
+		<td style="border-right: 2px solid #000000" height="20" align="left" valign=bottom><br></td>
+		<td style="border-top: 2px solid #000000; border-bottom: 2px solid #000000; border-left: 2px solid #000000; border-right: 2px solid #000000" align="left" valign=bottom bgcolor="#99CCFF"><font face="Calibri" color="#000000">Oracle 10g</font></td>
+		<td style="border-top: 2px solid #000000; border-bottom: 2px solid #000000; border-left: 2px solid #000000; border-right: 2px solid #000000" align="right" valign=bottom bgcolor="#99CCFF" sdval="2003" sdnum="16393;"><font face="Calibri" color="#000000">2003</font></td>
+		<td style="border-top: 2px solid #000000; border-bottom: 2px solid #000000; border-left: 2px solid #000000; border-right: 2px solid #000000" align="left" valign=bottom><font face="Calibri" color="#000000">it support SQL-2003 standard</font></td>
+		<td style="border-top: 2px solid #000000; border-bottom: 2px solid #000000; border-left: 2px solid #000000; border-right: 2px solid #000000" align="left" valign=bottom><font face="Calibri" color="#000000"><br></font></td>
+		<td style="border-left: 2px solid #000000" align="left" valign=bottom><br></td>
+	</tr>
+	<tr>
+		<td style="border-right: 2px solid #000000" height="20" align="left" valign=bottom><br></td>
+		<td style="border-top: 2px solid #000000; border-bottom: 2px solid #000000; border-left: 2px solid #000000; border-right: 2px solid #000000" align="left" valign=bottom bgcolor="#99CCFF"><font face="Calibri" color="#000000">Oracle 11g ( g stands for GRID )</font></td>
+		<td style="border-top: 2px solid #000000; border-bottom: 2px solid #000000; border-left: 2px solid #000000; border-right: 2px solid #000000" align="right" valign=bottom bgcolor="#99CCFF" sdval="2007" sdnum="16393;"><font face="Calibri" color="#000000">2007</font></td>
+		<td style="border-top: 2px solid #000000; border-bottom: 2px solid #000000; border-left: 2px solid #000000; border-right: 2px solid #000000" align="left" valign=bottom><font face="Calibri" color="#000000">Regular Expression support</font></td>
+		<td style="border-top: 2px solid #000000; border-bottom: 2px solid #000000; border-left: 2px solid #000000; border-right: 2px solid #000000" align="left" valign=bottom><font face="Calibri" color="#000000">pl/sql 11.1</font></td>
+		<td style="border-left: 2px solid #000000" align="left" valign=bottom><br></td>
+	</tr>
+	<tr>
+		<td height="19" align="left" valign=bottom><br></td>
+		<td style="border-top: 2px solid #000000" align="left" valign=bottom><br></td>
+		<td style="border-top: 2px solid #000000" align="left" valign=bottom><br></td>
+		<td style="border-top: 2px solid #000000" align="left" valign=bottom><br></td>
+		<td style="border-top: 2px solid #000000" align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+	</tr>
+	<tr>
+		<td height="20" align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><font face="Calibri" color="#000000">Oracle Documentation Library</font></td>
+		<td align="right" valign=bottom sdval="0" sdnum="16393;"><font face="Calibri" color="#000000">0</font></td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+	</tr>
+	<tr>
+		<td height="17" align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom>books</td>
+		<td align="left" valign=bottom><font color="#0000FF"><a href="http://www.oracle-base.com/misc/OCPCertification.php#11g">http://www.oracle-base.com/misc/OCPCertification.php#11g</a></font></td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+	</tr>
+	<tr>
+		<td height="17" align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><font color="#0000FF"><a href="http://www.choudhari.net/Certifications/11g/">http://www.choudhari.net/Certifications/11g/</a></font></td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+	</tr>
+	<tr>
+		<td height="19" align="left" valign=bottom><br></td>
+		<td style="border-bottom: 2px solid #000000" align="left" valign=bottom><br></td>
+		<td style="border-bottom: 2px solid #000000" align="left" valign=bottom><br></td>
+		<td style="border-bottom: 2px solid #000000" align="left" valign=bottom><br></td>
+		<td style="border-bottom: 2px solid #000000" align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+	</tr>
+	<tr>
+		<td style="border-right: 2px solid #000000" height="20" align="left" valign=bottom><br></td>
+		<td style="border-top: 2px solid #000000; border-bottom: 2px solid #000000; border-left: 2px solid #000000; border-right: 2px solid #000000" align="left" valign=bottom bgcolor="#94BD5E"><font face="Calibri" color="#000000">Oracle Product</font></td>
+		<td style="border-top: 2px solid #000000; border-bottom: 2px solid #000000; border-left: 2px solid #000000; border-right: 2px solid #000000" align="left" valign=bottom bgcolor="#94BD5E"><font face="Calibri" color="#000000">Oracle Database Server</font></td>
+		<td style="border-top: 2px solid #000000; border-bottom: 2px solid #000000; border-left: 2px solid #000000; border-right: 2px solid #000000" align="left" valign=bottom bgcolor="#94BD5E"><font face="Calibri" color="#000000">actual DB</font></td>
+		<td style="border-top: 2px solid #000000; border-bottom: 2px solid #000000; border-left: 2px solid #000000; border-right: 2px solid #000000" align="left" valign=bottom bgcolor="#94BD5E"><font face="Calibri" color="#000000"><br></font></td>
+		<td style="border-left: 2px solid #000000" align="left" valign=bottom><br></td>
+	</tr>
+	<tr>
+		<td style="border-right: 2px solid #000000" height="20" align="left" valign=bottom><br></td>
+		<td style="border-top: 2px solid #000000; border-bottom: 2px solid #000000; border-left: 2px solid #000000; border-right: 2px solid #000000" align="left" valign=bottom bgcolor="#94BD5E"><font face="Calibri" color="#000000"><br></font></td>
+		<td style="border-top: 2px solid #000000; border-bottom: 2px solid #000000; border-left: 2px solid #000000; border-right: 2px solid #000000" align="left" valign=bottom bgcolor="#94BD5E"><font face="Calibri" color="#000000">Oracle Application Server</font></td>
+		<td style="border-top: 2px solid #000000; border-bottom: 2px solid #000000; border-left: 2px solid #000000; border-right: 2px solid #000000" align="left" valign=bottom bgcolor="#94BD5E"><font face="Calibri" color="#000000">For Web, same like WebSphere, WebLogic and etc</font></td>
+		<td style="border-top: 2px solid #000000; border-bottom: 2px solid #000000; border-left: 2px solid #000000; border-right: 2px solid #000000" align="left" valign=bottom bgcolor="#94BD5E"><font face="Calibri" color="#000000"><br></font></td>
+		<td style="border-left: 2px solid #000000" align="left" valign=bottom><br></td>
+	</tr>
+	<tr>
+		<td style="border-right: 2px solid #000000" height="20" align="left" valign=bottom><br></td>
+		<td style="border-top: 2px solid #000000; border-bottom: 2px solid #000000; border-left: 2px solid #000000; border-right: 2px solid #000000" align="left" valign=bottom bgcolor="#94BD5E"><font face="Calibri" color="#000000"><br></font></td>
+		<td style="border-top: 2px solid #000000; border-bottom: 2px solid #000000; border-left: 2px solid #000000; border-right: 2px solid #000000" align="left" valign=bottom bgcolor="#EB613D"><font face="Calibri" color="#000000">Oracle Enterprise Manager</font></td>
+		<td style="border-top: 2px solid #000000; border-bottom: 2px solid #000000; border-left: 2px solid #000000; border-right: 2px solid #000000" align="left" valign=bottom bgcolor="#94BD5E"><font face="Calibri" color="#000000">Web based Database Admin tool for single database, deployed in Oracle Application Server</font></td>
+		<td style="border-top: 2px solid #000000; border-bottom: 2px solid #000000; border-left: 2px solid #000000; border-right: 2px solid #000000" align="left" valign=bottom bgcolor="#94BD5E"><font face="Calibri" color="#000000"><br></font></td>
+		<td style="border-left: 2px solid #000000" align="left" valign=bottom><br></td>
+	</tr>
+	<tr>
+		<td style="border-right: 2px solid #000000" height="20" align="left" valign=bottom><br></td>
+		<td style="border-top: 2px solid #000000; border-bottom: 2px solid #000000; border-left: 2px solid #000000; border-right: 2px solid #000000" align="left" valign=bottom bgcolor="#94BD5E"><font face="Calibri" color="#000000"><br></font></td>
+		<td style="border-top: 2px solid #000000; border-bottom: 2px solid #000000; border-left: 2px solid #000000; border-right: 2px solid #000000" align="left" valign=bottom bgcolor="#EB613D"><font face="Calibri" color="#000000">Oracle Grid Control</font></td>
+		<td style="border-top: 2px solid #000000; border-bottom: 2px solid #000000; border-left: 2px solid #000000; border-right: 2px solid #000000" align="left" valign=bottom bgcolor="#94BD5E"><font face="Calibri" color="#000000">Web based Database Admin tool for multiple/clustered database, deployed in Oracle Application Server</font></td>
+		<td style="border-top: 2px solid #000000; border-bottom: 2px solid #000000; border-left: 2px solid #000000; border-right: 2px solid #000000" align="left" valign=bottom bgcolor="#94BD5E"><font face="Calibri" color="#000000"><br></font></td>
+		<td style="border-left: 2px solid #000000" align="left" valign=bottom><br></td>
+	</tr>
+	<tr>
+		<td style="border-right: 2px solid #000000" height="20" align="left" valign=bottom><br></td>
+		<td style="border-top: 2px solid #000000; border-bottom: 2px solid #000000; border-left: 2px solid #000000; border-right: 2px solid #000000" align="left" valign=bottom bgcolor="#94BD5E"><font face="Calibri" color="#000000"><br></font></td>
+		<td style="border-top: 2px solid #000000; border-bottom: 2px solid #000000; border-left: 2px solid #000000; border-right: 2px solid #000000" align="left" valign=bottom bgcolor="#94BD5E"><font face="Calibri" color="#000000">Oracle E-business Suite</font></td>
+		<td style="border-top: 2px solid #000000; border-bottom: 2px solid #000000; border-left: 2px solid #000000; border-right: 2px solid #000000" align="left" valign=bottom bgcolor="#94BD5E"><font face="Calibri" color="#000000"><br></font></td>
+		<td style="border-top: 2px solid #000000; border-bottom: 2px solid #000000; border-left: 2px solid #000000; border-right: 2px solid #000000" align="left" valign=bottom bgcolor="#94BD5E"><font face="Calibri" color="#000000"><br></font></td>
+		<td style="border-left: 2px solid #000000" align="left" valign=bottom><br></td>
+	</tr>
+	<tr>
+		<td style="border-right: 2px solid #000000" height="20" align="left" valign=bottom><br></td>
+		<td style="border-top: 2px solid #000000; border-bottom: 2px solid #000000; border-left: 2px solid #000000; border-right: 2px solid #000000" align="left" valign=bottom bgcolor="#94BD5E"><font face="Calibri" color="#000000"><br></font></td>
+		<td style="border-top: 2px solid #000000; border-bottom: 2px solid #000000; border-left: 2px solid #000000; border-right: 2px solid #000000" align="left" valign=bottom bgcolor="#94BD5E"><font face="Calibri" color="#000000">Oracle Collaboration Suite</font></td>
+		<td style="border-top: 2px solid #000000; border-bottom: 2px solid #000000; border-left: 2px solid #000000; border-right: 2px solid #000000" align="left" valign=bottom bgcolor="#94BD5E"><font face="Calibri" color="#000000"><br></font></td>
+		<td style="border-top: 2px solid #000000; border-bottom: 2px solid #000000; border-left: 2px solid #000000; border-right: 2px solid #000000" align="left" valign=bottom bgcolor="#94BD5E"><font face="Calibri" color="#000000"><br></font></td>
+		<td style="border-left: 2px solid #000000" align="left" valign=bottom><br></td>
+	</tr>
+	<tr>
+		<td style="border-right: 2px solid #000000" height="20" align="left" valign=bottom><br></td>
+		<td style="border-top: 2px solid #000000; border-bottom: 2px solid #000000; border-left: 2px solid #000000; border-right: 2px solid #000000" align="left" valign=bottom bgcolor="#94BD5E"><font face="Calibri" color="#000000"><br></font></td>
+		<td style="border-top: 2px solid #000000; border-bottom: 2px solid #000000; border-left: 2px solid #000000; border-right: 2px solid #000000" align="left" valign=bottom bgcolor="#94BD5E"><font face="Calibri" color="#000000">Oracle Net</font></td>
+		<td style="border-top: 2px solid #000000; border-bottom: 2px solid #000000; border-left: 2px solid #000000; border-right: 2px solid #000000" align="left" valign=bottom bgcolor="#94BD5E"><font face="Calibri" color="#000000">it is Oracle's proprietary protocol, used between client and DB instance</font></td>
+		<td style="border-top: 2px solid #000000; border-bottom: 2px solid #000000; border-left: 2px solid #000000; border-right: 2px solid #000000" align="left" valign=bottom bgcolor="#94BD5E"><font face="Calibri" color="#000000"><br></font></td>
+		<td style="border-left: 2px solid #000000" align="left" valign=bottom><br></td>
+	</tr>
+	<tr>
+		<td height="19" align="left" valign=bottom><br></td>
+		<td style="border-top: 2px solid #000000" align="left" valign=bottom><br></td>
+		<td style="border-top: 2px solid #000000" align="left" valign=bottom><br></td>
+		<td style="border-top: 2px solid #000000" align="left" valign=bottom><br></td>
+		<td style="border-top: 2px solid #000000" align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+	</tr>
+	<tr>
+		<td height="19" align="left" valign=bottom><br></td>
+		<td style="border-bottom: 2px solid #000000" align="left" valign=bottom><br></td>
+		<td style="border-bottom: 2px solid #000000" align="left" valign=bottom><br></td>
+		<td style="border-bottom: 2px solid #000000" align="left" valign=bottom><br></td>
+		<td style="border-bottom: 2px solid #000000" align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+	</tr>
+	<tr>
+		<td style="border-right: 2px solid #000000" height="20" align="left" valign=bottom><br></td>
+		<td style="border-top: 2px solid #000000; border-bottom: 2px solid #000000; border-left: 2px solid #000000; border-right: 2px solid #000000" align="left" valign=bottom><b><font face="Calibri" color="#000000">Environment variable need in linux</font></b></td>
+		<td style="border-top: 2px solid #000000; border-bottom: 2px solid #000000; border-left: 2px solid #000000; border-right: 2px solid #000000" align="left" valign=bottom><font face="Calibri" color="#000000"><br></font></td>
+		<td style="border-top: 2px solid #000000; border-bottom: 2px solid #000000; border-left: 2px solid #000000; border-right: 2px solid #000000" align="left" valign=bottom><font face="Calibri" color="#000000"><br></font></td>
+		<td style="border-top: 2px solid #000000; border-bottom: 2px solid #000000; border-left: 2px solid #000000; border-right: 2px solid #000000" align="left" valign=bottom><font face="Calibri" color="#000000"><br></font></td>
+		<td style="border-left: 2px solid #000000" align="left" valign=bottom><br></td>
+	</tr>
+	<tr>
+		<td style="border-right: 2px solid #000000" height="20" align="left" valign=bottom><br></td>
+		<td style="border-top: 2px solid #000000; border-bottom: 2px solid #000000; border-left: 2px solid #000000; border-right: 2px solid #000000" align="left" valign=bottom><font face="Calibri" color="#000000"><br></font></td>
+		<td style="border-top: 2px solid #000000; border-bottom: 2px solid #000000; border-left: 2px solid #000000; border-right: 2px solid #000000" align="left" valign=bottom><font face="Calibri" color="#000000">ORACLE_SID</font></td>
+		<td style="border-top: 2px solid #000000; border-bottom: 2px solid #000000; border-left: 2px solid #000000; border-right: 2px solid #000000" align="left" valign=bottom><font face="Calibri" color="#000000">XE</font></td>
+		<td style="border-top: 2px solid #000000; border-bottom: 2px solid #000000; border-left: 2px solid #000000; border-right: 2px solid #000000" align="left" valign=bottom><font face="Calibri" color="#000000"><br></font></td>
+		<td style="border-left: 2px solid #000000" align="left" valign=bottom><br></td>
+	</tr>
+	<tr>
+		<td style="border-right: 2px solid #000000" height="20" align="left" valign=bottom><br></td>
+		<td style="border-top: 2px solid #000000; border-bottom: 2px solid #000000; border-left: 2px solid #000000; border-right: 2px solid #000000" align="left" valign=bottom><font face="Calibri" color="#000000"><br></font></td>
+		<td style="border-top: 2px solid #000000; border-bottom: 2px solid #000000; border-left: 2px solid #000000; border-right: 2px solid #000000" align="left" valign=bottom><font face="Calibri" color="#000000">ORACLE_BASE</font></td>
+		<td style="border-top: 2px solid #000000; border-bottom: 2px solid #000000; border-left: 2px solid #000000; border-right: 2px solid #000000" align="left" valign=bottom><font face="Calibri" color="#000000">/u01/app/oracle</font></td>
+		<td style="border-top: 2px solid #000000; border-bottom: 2px solid #000000; border-left: 2px solid #000000; border-right: 2px solid #000000" align="left" valign=bottom><font face="Calibri" color="#000000"><br></font></td>
+		<td style="border-left: 2px solid #000000" align="left" valign=bottom><br></td>
+	</tr>
+	<tr>
+		<td style="border-right: 2px solid #000000" height="20" align="left" valign=bottom><br></td>
+		<td style="border-top: 2px solid #000000; border-bottom: 2px solid #000000; border-left: 2px solid #000000; border-right: 2px solid #000000" align="left" valign=bottom><font face="Calibri" color="#000000"><br></font></td>
+		<td style="border-top: 2px solid #000000; border-bottom: 2px solid #000000; border-left: 2px solid #000000; border-right: 2px solid #000000" align="left" valign=bottom><font face="Calibri" color="#000000">ORACLE_HOME</font></td>
+		<td style="border-top: 2px solid #000000; border-bottom: 2px solid #000000; border-left: 2px solid #000000; border-right: 2px solid #000000" align="left" valign=bottom><font face="Calibri" color="#000000">/u01/app/oracle/product/11.2.0/xe</font></td>
+		<td style="border-top: 2px solid #000000; border-bottom: 2px solid #000000; border-left: 2px solid #000000; border-right: 2px solid #000000" align="left" valign=bottom><font face="Calibri" color="#000000"><br></font></td>
+		<td style="border-left: 2px solid #000000" align="left" valign=bottom><br></td>
+	</tr>
+	<tr>
+		<td height="17" align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+	</tr>
+	<tr>
+		<td height="16" align="left" valign=bottom><br></td>
+		<td style="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000" align="left" valign=bottom bgcolor="#99CCFF">SQL</td>
+		<td style="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000" align="left" valign=bottom bgcolor="#99CCFF"><br></td>
+		<td style="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000" align="left" valign=bottom bgcolor="#99CCFF"><br></td>
+		<td style="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000" align="left" valign=bottom bgcolor="#99CCFF"><br></td>
+		<td align="left" valign=bottom><br></td>
+	</tr>
+	<tr>
+		<td height="18" align="left" valign=bottom><br></td>
+		<td style="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000" align="left" valign=bottom bgcolor="#99CCFF"><br></td>
+		<td style="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000" align="left" valign=bottom bgcolor="#99CCFF"><font face="Calibri" color="#000000">founder of SQL</font></td>
+		<td style="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000" align="left" valign=bottom bgcolor="#99CCFF"><font face="Calibri" color="#000000">Donald Chamberlain and Raymond Boyce in the early 1970s</font></td>
+		<td style="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000" align="left" valign=bottom bgcolor="#99CCFF"><br></td>
+		<td align="left" valign=bottom><br></td>
+	</tr>
+	<tr>
+		<td height="18" align="left" valign=bottom><br></td>
+		<td style="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000" align="left" valign=bottom bgcolor="#99CCFF"><br></td>
+		<td style="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000" align="left" valign=bottom bgcolor="#99CCFF"><font face="Calibri" color="#000000">The current ANSI SQL Standard SQL-2008</font></td>
+		<td style="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000" align="left" valign=bottom bgcolor="#99CCFF"><br></td>
+		<td style="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000" align="left" valign=bottom bgcolor="#99CCFF"><br></td>
+		<td align="left" valign=bottom><br></td>
+	</tr>
+	<tr>
+		<td height="18" align="left" valign=bottom><br></td>
+		<td style="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000" align="left" valign=bottom bgcolor="#99CCFF"><br></td>
+		<td style="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000" align="left" valign=bottom bgcolor="#99CCFF"><font face="Calibri" color="#000000">the SQL first used in IBM's RDBMS</font></td>
+		<td style="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000" align="left" valign=bottom bgcolor="#99CCFF"><br></td>
+		<td style="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000" align="left" valign=bottom bgcolor="#99CCFF"><br></td>
+		<td align="left" valign=bottom><br></td>
+	</tr>
+	<tr>
+		<td height="22" align="left" valign=bottom><br></td>
+		<td style="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000" align="left" valign=bottom bgcolor="#99CCFF"><br></td>
+		<td style="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000" align="left" valign=bottom bgcolor="#99CCFF"><font face="Calibri" color="#000000">SQL controlled by ISO and ANSI</font></td>
+		<td style="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000" align="left" valign=bottom bgcolor="#99CCFF"><br></td>
+		<td style="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000" align="left" valign=bottom bgcolor="#99CCFF"><br></td>
+		<td align="left" valign=bottom><br></td>
+	</tr>
+	<tr>
+		<td height="17" align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+	</tr>
+	<tr>
+		<td height="17" align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+	</tr>
+	<tr>
+		<td height="17" align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+	</tr>
+	<tr>
+		<td height="16" align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom>Oracle Editions ( 11g )</td>
+		<td align="left" valign=bottom>Oracle Express Edition ( XE )</td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+	</tr>
+	<tr>
+		<td height="16" align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom>Oracle Standard Edition ( SE )</td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+	</tr>
+	<tr>
+		<td height="16" align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom>Oracle Enterprise Edition (EE )</td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+	</tr>
+	<tr>
+		<td height="17" align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+	</tr>
+	<tr>
+		<td colspan=5 rowspan=28 height="478" align="left" valign=bottom><br><img src="ParamOracleDBA_html_6294baf9.png" width=941 height=466 hspace=29 vspace=19>
+		</td>
+		<td align="left" valign=bottom><br></td>
+	</tr>
+	<tr>
+		<td align="left" valign=bottom><br></td>
+	</tr>
+	<tr>
+		<td align="left" valign=bottom><br></td>
+	</tr>
+	<tr>
+		<td align="left" valign=bottom><br></td>
+	</tr>
+	<tr>
+		<td align="left" valign=bottom><br></td>
+	</tr>
+	<tr>
+		<td align="left" valign=bottom><br></td>
+	</tr>
+	<tr>
+		<td align="left" valign=bottom><br></td>
+	</tr>
+	<tr>
+		<td align="left" valign=bottom><br></td>
+	</tr>
+	<tr>
+		<td align="left" valign=bottom><br></td>
+	</tr>
+	<tr>
+		<td align="left" valign=bottom><br></td>
+	</tr>
+	<tr>
+		<td align="left" valign=bottom><br></td>
+	</tr>
+	<tr>
+		<td align="left" valign=bottom><br></td>
+	</tr>
+	<tr>
+		<td align="left" valign=bottom><br></td>
+	</tr>
+	<tr>
+		<td align="left" valign=bottom><br></td>
+	</tr>
+	<tr>
+		<td align="left" valign=bottom><br></td>
+	</tr>
+	<tr>
+		<td align="left" valign=bottom><br></td>
+	</tr>
+	<tr>
+		<td align="left" valign=bottom><br></td>
+	</tr>
+	<tr>
+		<td align="left" valign=bottom><br></td>
+	</tr>
+	<tr>
+		<td align="left" valign=bottom><br></td>
+	</tr>
+	<tr>
+		<td align="left" valign=bottom><br></td>
+	</tr>
+	<tr>
+		<td align="left" valign=bottom><br></td>
+	</tr>
+	<tr>
+		<td align="left" valign=bottom><br></td>
+	</tr>
+	<tr>
+		<td align="left" valign=bottom><br></td>
+	</tr>
+	<tr>
+		<td align="left" valign=bottom><br></td>
+	</tr>
+	<tr>
+		<td align="left" valign=bottom><br></td>
+	</tr>
+	<tr>
+		<td align="left" valign=bottom><br></td>
+	</tr>
+	<tr>
+		<td align="left" valign=bottom><br></td>
+	</tr>
+	<tr>
+		<td align="left" valign=bottom><br></td>
+	</tr>
+</table>
+<!-- ************************************************************************** -->
+<hr>
+<A NAME="table7"><h1>Sheet 8: <em>Oracle DB Utility</em></h1></A>
+<table cellspacing="0" border="0">
+	<colgroup width="370"></colgroup>
+	<colgroup width="436"></colgroup>
+	<tr>
+		<td height="20" align="left" valign=bottom bgcolor="#94BD5E"><font face="Calibri" color="#000000">Oracle Universal Installer ( OUI )</font></td>
+		<td align="left" valign=bottom bgcolor="#94BD5E"><font face="Calibri" color="#000000">it is for oracle installation</font></td>
+	</tr>
+	<tr>
+		<td height="20" align="left" valign=bottom bgcolor="#94BD5E"><font face="Calibri" color="#000000"><br></font></td>
+		<td align="left" valign=bottom bgcolor="#94BD5E"><font face="Calibri" color="#000000">it is developed JDK 1.5</font></td>
+	</tr>
+	<tr>
+		<td height="20" align="left" valign=bottom bgcolor="#94BD5E"><font face="Calibri" color="#000000"><br></font></td>
+		<td align="left" valign=bottom bgcolor="#94BD5E"><font face="Calibri" color="#000000"><br></font></td>
+	</tr>
+	<tr>
+		<td height="20" align="left" valign=bottom bgcolor="#94BD5E"><font face="Calibri" color="#000000">Database Upgrade Assistent ( DBUA )</font></td>
+		<td align="left" valign=bottom bgcolor="#94BD5E"><font face="Calibri" color="#000000">it is developed JDK 1.5</font></td>
+	</tr>
+	<tr>
+		<td height="20" align="left" valign=bottom bgcolor="#94BD5E"><font face="Calibri" color="#000000"><br></font></td>
+		<td align="left" valign=bottom bgcolor="#94BD5E"><font face="Calibri" color="#000000">it is used to upgrade a DB to higher version</font></td>
+	</tr>
+	<tr>
+		<td height="17" align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+	</tr>
+	<tr>
+		<td height="20" align="left" valign=bottom bgcolor="#B3B3B3"><font face="Calibri" color="#000000">Database Configuration Asssitent ( DBCA )</font></td>
+		<td align="left" valign=bottom bgcolor="#B3B3B3"><font face="Calibri" color="#000000">it is developed JDK 1.5</font></td>
+	</tr>
+	<tr>
+		<td height="20" align="left" valign=bottom bgcolor="#B3B3B3"><font face="Calibri" color="#000000"><br></font></td>
+		<td align="left" valign=bottom bgcolor="#B3B3B3"><font face="Calibri" color="#000000">it is used to configure database after installation</font></td>
+	</tr>
+	<tr>
+		<td height="17" align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+	</tr>
+	<tr>
+		<td height="20" align="left" valign=bottom bgcolor="#47B8B8"><font face="Calibri" color="#000000">SQL * Plus</font></td>
+		<td align="left" valign=bottom bgcolor="#47B8B8"><font face="Calibri" color="#000000">it is for running query/ pl sql</font></td>
+	</tr>
+	<tr>
+		<td height="20" align="left" valign=bottom bgcolor="#47B8B8"><font face="Calibri" color="#000000">SQL Developer</font></td>
+		<td align="left" valign=bottom bgcolor="#47B8B8"><font face="Calibri" color="#000000">it is developed JDK 1.5</font></td>
+	</tr>
+	<tr>
+		<td height="17" align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+	</tr>
+	<tr>
+		<td height="17" align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+	</tr>
+	<tr>
+		<td height="20" align="left" valign=bottom bgcolor="#83CAFF"><b><font face="Calibri" color="#000000">Oracle Enterprise Manager ( 3 below )</font></b></td>
+		<td align="left" valign=bottom bgcolor="#83CAFF"><font face="Calibri" color="#000000">( it is web UI for DBA task, it is same as web console for websphere, weblogic</font></td>
+	</tr>
+	<tr>
+		<td height="20" align="left" valign=bottom bgcolor="#83CAFF"><font face="Calibri" color="#7E0021">Grid control ( Web application )</font></td>
+		<td align="left" valign=bottom bgcolor="#83CAFF"><font face="Calibri" color="#000000">for many database, to control / monitor Grid computing environment of Oracle Database</font></td>
+	</tr>
+	<tr>
+		<td height="20" align="left" valign=bottom bgcolor="#83CAFF"><font face="Calibri" color="#7E0021">Application Server Control ( Web application )</font></td>
+		<td align="left" valign=bottom bgcolor="#83CAFF"><font face="Calibri" color="#000000">for J2EE server console</font></td>
+	</tr>
+	<tr>
+		<td height="20" align="left" valign=bottom bgcolor="#83CAFF"><font face="Calibri" color="#7E0021">Database Control ( Web application )</font></td>
+		<td align="left" valign=bottom bgcolor="#83CAFF"><font face="Calibri" color="#000000">for single database</font></td>
+	</tr>
+	<tr>
+		<td height="17" align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+	</tr>
+	<tr>
+		<td height="20" align="left" valign=bottom bgcolor="#FFFFCC"><font face="Calibri" color="#000000">Oracle Net Manager</font></td>
+		<td align="left" valign=bottom bgcolor="#FFFFCC"><font face="Calibri" color="#000000">it is developed JDK 1.5</font></td>
+	</tr>
+	<tr>
+		<td height="20" align="left" valign=bottom bgcolor="#FFFFCC"><font face="Calibri" color="#000000"><br></font></td>
+		<td align="left" valign=bottom bgcolor="#FFFFCC"><font face="Calibri" color="#000000">it is for Network management for oracle</font></td>
+	</tr>
+	<tr>
+		<td height="20" align="left" valign=bottom bgcolor="#FFFFCC"><font face="Calibri" color="#000000">Oracle Net Manager Configuration Assistant</font></td>
+		<td align="left" valign=bottom bgcolor="#FFFFCC"><font face="Calibri" color="#000000">it is developed JDK 1.5</font></td>
+	</tr>
+	<tr>
+		<td height="17" align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+	</tr>
+	<tr>
+		<td height="20" align="left" valign=bottom bgcolor="#99CCFF"><font face="Calibri" color="#000000">Datapump</font></td>
+		<td align="left" valign=bottom bgcolor="#99CCFF"><font face="Calibri" color="#000000">it is introduced Oracle 10g</font></td>
+	</tr>
+	<tr>
+		<td height="20" align="left" valign=bottom bgcolor="#99CCFF"><font face="Calibri" color="#000000"><br></font></td>
+		<td align="left" valign=bottom bgcolor="#99CCFF"><font face="Calibri" color="#000000">used for data loading and unloading</font></td>
+	</tr>
+	<tr>
+		<td height="20" align="left" valign=bottom bgcolor="#99CCFF"><font face="Calibri" color="#000000">SQL * Loader</font></td>
+		<td align="left" valign=bottom bgcolor="#99CCFF"><font face="Calibri" color="#000000">used for data loading and unloading</font></td>
+	</tr>
+	<tr>
+		<td height="17" align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+	</tr>
+	<tr>
+		<td height="20" align="left" valign=bottom bgcolor="#666600"><font face="Calibri" color="#000000">RMON( Recover Monitor )</font></td>
+		<td align="left" valign=bottom bgcolor="#666600"><font face="Calibri" color="#000000">it is for backup and restore the database</font></td>
+	</tr>
+	<tr>
+		<td height="20" align="left" valign=bottom bgcolor="#666600"><font face="Calibri" color="#000000">Oracle Secure Backup</font></td>
+		<td align="left" valign=bottom bgcolor="#666600"><font face="Calibri" color="#000000"><br></font></td>
+	</tr>
+	<tr>
+		<td height="17" align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+	</tr>
+	<tr>
+		<td height="17" align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+	</tr>
+	<tr>
+		<td height="20" align="left" valign=bottom><font face="Calibri" color="#000000">Resource Manager</font></td>
+		<td align="left" valign=bottom><font face="Calibri" color="#000000">tool used to prioritize the users session</font></td>
+	</tr>
+	<tr>
+		<td height="17" align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+	</tr>
+	<tr>
+		<td height="17" align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+	</tr>
+	<tr>
+		<td height="17" align="left" valign=bottom>Oracle Utility programe</td>
+		<td align="left" valign=bottom><br></td>
+	</tr>
+	<tr>
+		<td height="16" align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom>backup</td>
+	</tr>
+	<tr>
+		<td height="16" align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom>recover</td>
+	</tr>
+	<tr>
+		<td height="16" align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom>db verify utility</td>
+	</tr>
+	<tr>
+		<td height="16" align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom>data import</td>
+	</tr>
+	<tr>
+		<td height="16" align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom>data export</td>
+	</tr>
+	<tr>
+		<td height="16" align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom>network protocol stack</td>
+	</tr>
+</table>
+<!-- ************************************************************************** -->
+<hr>
+<A NAME="table8"><h1>Sheet 9: <em>DB Instance</em></h1></A>
+<table cellspacing="0" border="0">
+	<colgroup width="201"></colgroup>
+	<colgroup width="544"></colgroup>
+	<tr>
+		<td height="17" align="left" valign=bottom>instance means – consist of memory structure and set of background process. OCI8 Net services or listener service is not part of listener</td>
+		<td align="left" valign=bottom><br></td>
+	</tr>
+	<tr>
+		<td height="17" align="left" valign=bottom>every instance is identified by SID ( System Identifier )</td>
+		<td align="left" valign=bottom><br></td>
+	</tr>
+	<tr>
+		<td height="17" align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+	</tr>
+	<tr>
+		<td height="17" align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+	</tr>
+	<tr>
+		<td height="20" align="left" valign=bottom><b><font face="Calibri" color="#000000">Memory Structure</font></b></td>
+		<td align="left" valign=bottom><br></td>
+	</tr>
+	<tr>
+		<td height="17" align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+	</tr>
+	<tr>
+		<td height="20" align="left" valign=bottom><font face="Calibri" color="#000000">Database Buffer Cache</font></td>
+		<td align="left" valign=bottom><font face="Calibri" color="#000000">can be changed dynamically without restart instance by DBA</font></td>
+	</tr>
+	<tr>
+		<td height="20" align="left" valign=bottom><font face="Calibri" color="#000000">Log buffer</font></td>
+		<td align="left" valign=bottom><font face="Calibri" color="#000000">size is static, if changed, the instance has to restart</font></td>
+	</tr>
+	<tr>
+		<td height="20" align="left" valign=bottom><font face="Calibri" color="#000000">Shared Pool</font></td>
+		<td align="left" valign=bottom><br></td>
+	</tr>
+	<tr>
+		<td height="17" align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+	</tr>
+	<tr>
+		<td height="20" align="left" valign=bottom><font face="Calibri" color="#000000">Undo segments</font></td>
+		<td align="left" valign=bottom><font face="Calibri" color="#000000">it is used to REVERSE the effect of DML ( UPDDATE/ DELETE/ INSERT )</font></td>
+	</tr>
+	<tr>
+		<td height="20" align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><font face="Calibri" color="#000000">segment introduce at Oracle 9i</font></td>
+	</tr>
+	<tr>
+		<td height="20" align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><font face="Calibri" color="#000000">it help to achieve CONSISTENCE in ACID</font></td>
+	</tr>
+	<tr>
+		<td height="20" align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><font face="Calibri" color="#000000">it help to achieve previous image after rollback</font></td>
+	</tr>
+	<tr>
+		<td height="20" align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><font face="Calibri" color="#000000">it help to achieve ISOLATION in ACID</font></td>
+	</tr>
+	<tr>
+		<td height="20" align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><font face="Calibri" color="#000000">it used by flashback query</font></td>
+	</tr>
+	<tr>
+		<td height="17" align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+	</tr>
+	<tr>
+		<td height="17" align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+	</tr>
+	<tr>
+		<td height="20" align="left" valign=bottom><font face="Calibri" color="#000000">Shared Pool Structure</font></td>
+		<td align="left" valign=bottom><br></td>
+	</tr>
+	<tr>
+		<td height="20" align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><font face="Calibri" color="#000000">size is dynamic and change can be without restart instance, Oralce 9i onwards</font></td>
+	</tr>
+	<tr>
+		<td height="20" align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><font face="Calibri" color="#000000">dozen of different structure, few are</font></td>
+	</tr>
+	<tr>
+		<td height="20" align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><font face="Calibri" color="#000000">1. Library cache</font></td>
+	</tr>
+	<tr>
+		<td height="20" align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><font face="Calibri" color="#000000">2. Data dictionary cache</font></td>
+	</tr>
+	<tr>
+		<td height="20" align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><font face="Calibri" color="#000000">3. PL/SQL area</font></td>
+	</tr>
+	<tr>
+		<td height="20" align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><font face="Calibri" color="#000000">4. SQL Query, PL/SQL function result cache</font></td>
+	</tr>
+	<tr>
+		<td height="17" align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+	</tr>
+	<tr>
+		<td height="17" align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+	</tr>
+	<tr>
+		<td height="20" align="left" valign=bottom><font face="Calibri" color="#000000">Library cache</font></td>
+		<td align="left" valign=bottom><font face="Calibri" color="#000000">keep recently parsed SQL code, the Prepared statement</font></td>
+	</tr>
+	<tr>
+		<td height="17" align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+	</tr>
+	<tr>
+		<td height="20" align="left" valign=bottom><font face="Calibri" color="#000000">Data Dictionary cache</font></td>
+		<td align="left" valign=bottom><font face="Calibri" color="#000000">it keep the data dictionary row in cache for faster parsing of a query</font></td>
+	</tr>
+	<tr>
+		<td height="20" align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><font face="Calibri" color="#000000">its size managed by  Oracle and most of time same size of libray cache</font></td>
+	</tr>
+	<tr>
+		<td height="17" align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+	</tr>
+	<tr>
+		<td height="20" align="left" valign=bottom><font face="Calibri" color="#000000">Pl/SQL area</font></td>
+		<td align="left" valign=bottom><font face="Calibri" color="#000000">it is used to cache Pl/ SQL stored objects like func, proc, pack, trig, object Types</font></td>
+	</tr>
+	<tr>
+		<td height="20" align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><font face="Calibri" color="#000000">it is read from data dictionary and stored in PL/SQL cache but not in  Data dictionary Cached</font></td>
+	</tr>
+	<tr>
+		<td height="17" align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+	</tr>
+	<tr>
+		<td height="20" align="left" valign=bottom><font face="Calibri" color="#000000">SQL query &amp; PL/SQL FUNCTION Result cache</font></td>
+		<td align="left" valign=bottom><br></td>
+	</tr>
+	<tr>
+		<td height="20" align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><font face="Calibri" color="#000000">it is new in 11g, to cache query result</font></td>
+	</tr>
+	<tr>
+		<td height="20" align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><font face="Calibri" color="#000000">its size can controlled by DBA</font></td>
+	</tr>
+	<tr>
+		<td height="17" align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+	</tr>
+	<tr>
+		<td height="20" align="left" valign=bottom><font face="Calibri" color="#000000">Larger pool</font></td>
+		<td align="left" valign=bottom><font face="Calibri" color="#000000">it is optional</font></td>
+	</tr>
+	<tr>
+		<td height="20" align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><font face="Calibri" color="#000000">its size dynamic and automatically resized</font></td>
+	</tr>
+	<tr>
+		<td height="20" align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><font face="Calibri" color="#000000">it is used by shared servers, parallel process, recovery manager</font></td>
+	</tr>
+	<tr>
+		<td height="17" align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+	</tr>
+	<tr>
+		<td height="17" align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+	</tr>
+	<tr>
+		<td height="20" align="left" valign=bottom><font face="Calibri" color="#000000">java pool</font></td>
+		<td align="left" valign=bottom><font face="Calibri" color="#000000">it is used by java-stored procedure</font></td>
+	</tr>
+	<tr>
+		<td height="20" align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><font face="Calibri" color="#000000">its size dynamic and automatically resized</font></td>
+	</tr>
+	<tr>
+		<td height="17" align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+	</tr>
+	<tr>
+		<td height="17" align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+	</tr>
+	<tr>
+		<td height="20" align="left" valign=bottom><font face="Calibri" color="#000000">stream pool</font></td>
+		<td align="left" valign=bottom><font face="Calibri" color="#000000">it is used by Oracle Stream</font></td>
+	</tr>
+	<tr>
+		<td height="20" align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><font face="Calibri" color="#000000">its size dynamic and automatically resized</font></td>
+	</tr>
+	<tr>
+		<td height="17" align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+	</tr>
+	<tr>
+		<td height="17" align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+	</tr>
+	<tr>
+		<td height="17" align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+	</tr>
+	<tr>
+		<td height="20" align="left" valign=bottom><b><font face="Calibri" color="#000000">Background process</font></b></td>
+		<td align="left" valign=bottom><font face="Calibri" color="#000000">System Monitor ( SMON )</font></td>
+	</tr>
+	<tr>
+		<td height="20" align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><font face="Calibri" color="#000000">Process  Monitor ( PMON )</font></td>
+	</tr>
+	<tr>
+		<td height="20" align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><font face="Calibri" color="#000000">Database Writer ( DBW)</font></td>
+	</tr>
+	<tr>
+		<td height="20" align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><font face="Calibri" color="#000000">Log Writer ( LGWR )</font></td>
+	</tr>
+	<tr>
+		<td height="20" align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><font face="Calibri" color="#000000">Checkpoint Process ( CKPT )</font></td>
+	</tr>
+	<tr>
+		<td height="20" align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><font face="Calibri" color="#000000">Managability Monitor ( MMON )</font></td>
+	</tr>
+	<tr>
+		<td height="20" align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><font face="Calibri" color="#000000">Memory Manager ( MMAN )</font></td>
+	</tr>
+	<tr>
+		<td height="20" align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><font face="Calibri" color="#000000">Archiever ( ARCn )</font></td>
+	</tr>
+	<tr>
+		<td height="20" align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><font face="Calibri" color="#000000">Recoverer ( RECO )</font></td>
+	</tr>
+	<tr>
+		<td height="17" align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+	</tr>
+	<tr>
+		<td height="20" align="left" valign=bottom><font face="Calibri" color="#000000">Server Process</font></td>
+		<td align="left" valign=bottom><br></td>
+	</tr>
+	<tr>
+		<td height="20" align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><font face="Calibri" color="#000000">it load the data from data file to data base buffer cache</font></td>
+	</tr>
+	<tr>
+		<td height="20" align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><font face="Calibri" color="#000000">parse, execute user SQL query</font></td>
+	</tr>
+	<tr>
+		<td height="17" align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+	</tr>
+	<tr>
+		<td height="17" align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+	</tr>
+	<tr>
+		<td height="20" align="left" valign=bottom><font face="Calibri" color="#000000">System Monitor ( SMON )</font></td>
+		<td align="left" valign=bottom><br></td>
+	</tr>
+	<tr>
+		<td height="20" align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><font face="Calibri" color="#000000">it mount and open control file</font></td>
+	</tr>
+	<tr>
+		<td height="20" align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><font face="Calibri" color="#000000">it open data file and online log file</font></td>
+	</tr>
+	<tr>
+		<td height="17" align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+	</tr>
+	<tr>
+		<td height="20" align="left" valign=bottom><font face="Calibri" color="#000000">Process Monitor ( PMON )</font></td>
+		<td align="left" valign=bottom><br></td>
+	</tr>
+	<tr>
+		<td height="20" align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><font face="Calibri" color="#000000">it monitor server process for every user session  process</font></td>
+	</tr>
+	<tr>
+		<td height="20" align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><font face="Calibri" color="#000000">if a user process has terminated, its server process killed by PMON</font></td>
+	</tr>
+	<tr>
+		<td height="20" align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><font face="Calibri" color="#000000">if a user process terminated abnormally, his transaction rolledback by PMON</font></td>
+	</tr>
+	<tr>
+		<td height="17" align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+	</tr>
+	<tr>
+		<td height="20" align="left" valign=bottom><font face="Calibri" color="#000000">Database Writer</font></td>
+		<td align="left" valign=bottom><font face="Calibri" color="#000000">it write data from  database buffer cache to disk datafile</font></td>
+	</tr>
+	<tr>
+		<td height="20" align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><font face="Calibri" color="#000000">this process count may be from 1 to 20.</font></td>
+	</tr>
+	<tr>
+		<td height="17" align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+	</tr>
+	<tr>
+		<td height="20" align="left" valign=bottom><font face="Calibri" color="#000000">Log writer</font></td>
+		<td align="left" valign=bottom><font face="Calibri" color="#000000">write log bugger content to log files on disk</font></td>
+	</tr>
+	<tr>
+		<td height="17" align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+	</tr>
+	<tr>
+		<td height="17" align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+	</tr>
+	<tr>
+		<td height="20" align="left" valign=bottom><font face="Calibri" color="#000000">check point process</font></td>
+		<td align="left" valign=bottom><font face="Calibri" color="#000000">it minimize the change vector in redo log  and save time during recovery process</font></td>
+	</tr>
+	<tr>
+		<td height="17" align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+	</tr>
+	<tr>
+		<td height="17" align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+	</tr>
+	<tr>
+		<td height="20" align="left" valign=bottom><font face="Calibri" color="#000000">Manageability Monitor</font></td>
+		<td align="left" valign=bottom><font face="Calibri" color="#000000">introduced at Oracle 10g</font></td>
+	</tr>
+	<tr>
+		<td height="20" align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><font face="Calibri" color="#000000">it collect statistic of various process and launches ADDM</font></td>
+	</tr>
+	<tr>
+		<td height="20" align="left" valign=bottom><font face="Calibri" color="#000000">Manageability Monitor Lite</font></td>
+		<td align="left" valign=bottom><font face="Calibri" color="#000000">it assist to Manageability monitor</font></td>
+	</tr>
+	<tr>
+		<td height="17" align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+	</tr>
+	<tr>
+		<td height="20" align="left" valign=bottom><font face="Calibri" color="#000000">Memory Manager</font></td>
+		<td align="left" valign=bottom><font face="Calibri" color="#000000">introduced at Oracle 10g</font></td>
+	</tr>
+	<tr>
+		<td height="20" align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><font face="Calibri" color="#000000">it monitor PGA memory allocation on demand</font></td>
+	</tr>
+	<tr>
+		<td height="20" align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><font face="Calibri" color="#000000">it monitor SGA memory allocation on demand</font></td>
+	</tr>
+	<tr>
+		<td height="17" align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+	</tr>
+	<tr>
+		<td height="20" align="left" valign=bottom><font face="Calibri" color="#000000">Archiver</font></td>
+		<td align="left" valign=bottom><font face="Calibri" color="#000000">it works with Log writer</font></td>
+	</tr>
+	<tr>
+		<td height="20" align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><font face="Calibri" color="#000000">it archive online redo log files</font></td>
+	</tr>
+	<tr>
+		<td height="17" align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+	</tr>
+	<tr>
+		<td height="20" align="left" valign=bottom><font face="Calibri" color="#000000">Recoverer</font></td>
+		<td align="left" valign=bottom><font face="Calibri" color="#000000">it is used in distributed transaction</font></td>
+	</tr>
+	<tr>
+		<td height="17" align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+	</tr>
+	<tr>
+		<td height="17" align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+	</tr>
+	<tr>
+		<td height="17" align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+	</tr>
+	<tr>
+		<td height="20" align="left" valign=bottom><b><font face="Calibri" color="#000000">Storage Structure</font></b></td>
+		<td align="left" valign=bottom><br></td>
+	</tr>
+	<tr>
+		<td height="17" align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+	</tr>
+	<tr>
+		<td height="20" align="left" valign=bottom><font face="Calibri" color="#000000">required files are</font></td>
+		<td align="left" valign=bottom><font face="Calibri" color="#000000">datafile, control file, online redo logs</font></td>
+	</tr>
+	<tr>
+		<td height="20" align="left" valign=bottom><font face="Calibri" color="#000000">optional files are</font></td>
+		<td align="left" valign=bottom><font face="Calibri" color="#000000">archive log file, password file, initialization parameter file, log file, trace file</font></td>
+	</tr>
+	<tr>
+		<td height="17" align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+	</tr>
+	<tr>
+		<td height="17" align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+	</tr>
+	<tr>
+		<td height="20" align="left" valign=bottom><font face="Calibri" color="#000000">data file</font></td>
+		<td align="left" valign=bottom><font face="Calibri" color="#000000">from 10g onward it need 2 data file</font></td>
+	</tr>
+	<tr>
+		<td height="17" align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+	</tr>
+	<tr>
+		<td height="20" align="left" valign=bottom><font face="Calibri" color="#000000">instance parameter file</font></td>
+		<td align="left" valign=bottom><br></td>
+	</tr>
+	<tr>
+		<td height="20" align="left" valign=bottom><font face="Calibri" color="#000000">Archive redo log files</font></td>
+		<td align="left" valign=bottom><br></td>
+	</tr>
+	<tr>
+		<td height="20" align="left" valign=bottom><font face="Calibri" color="#000000">Alert Log and Trace Log</font></td>
+		<td align="left" valign=bottom><br></td>
+	</tr>
+	<tr>
+		<td height="17" align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+	</tr>
+	<tr>
+		<td height="17" align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+	</tr>
+	<tr>
+		<td height="17" align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+	</tr>
+	<tr>
+		<td height="20" align="left" valign=bottom><b><font face="Calibri" color="#000000">Logical database structure</font></b></td>
+		<td align="left" valign=bottom><br></td>
+	</tr>
+	<tr>
+		<td height="17" align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+	</tr>
+	<tr>
+		<td height="20" align="left" valign=bottom><b><font face="Calibri" color="#000000">data dictionary</font></b></td>
+		<td align="left" valign=bottom><br></td>
+	</tr>
+	<tr>
+		<td height="20" align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><font face="Calibri" color="#000000">USER_</font></td>
+	</tr>
+	<tr>
+		<td height="20" align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><font face="Calibri" color="#000000">ALL_</font></td>
+	</tr>
+	<tr>
+		<td height="20" align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><font face="Calibri" color="#000000">DBA_</font></td>
+	</tr>
+</table>
+<!-- ************************************************************************** -->
+<hr>
+<A NAME="table9"><h1>Sheet 10: <em>DB Instance 2</em></h1></A>
+<table cellspacing="0" border="0">
+	<colgroup width="32"></colgroup>
+	<colgroup width="116"></colgroup>
+	<colgroup width="177"></colgroup>
+	<colgroup width="86"></colgroup>
+	<colgroup width="280"></colgroup>
+	<colgroup width="184"></colgroup>
+	<colgroup width="224"></colgroup>
+	<colgroup width="252"></colgroup>
+	<tr>
+		<td height="17" align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom>Orace Database</td>
+		<td align="left" valign=bottom>files stored in disk</td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom bgcolor="#FFFF00"><b>Oracle Logical Storage Structure</b></td>
+		<td align="left" valign=bottom bgcolor="#FFFF00"><b>Logical Database Structure</b></td>
+		<td align="left" valign=bottom bgcolor="#FFFF00"><b> Physical (File) Storage Structure</b></td>
+		<td align="left" valign=bottom bgcolor="#FFFF00"><b> Physical (Memory) Storage Structure</b></td>
+	</tr>
+	<tr>
+		<td height="17" align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+	</tr>
+	<tr>
+		<td height="16" align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom>Oracle Instance</td>
+		<td align="left" valign=bottom>reside in memory as block</td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom>Table Space (group of one or more data files)</td>
+		<td style="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000" align="left" valign=bottom bgcolor="#E6E64C">Table</td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom>SGA</td>
+	</tr>
+	<tr>
+		<td height="16" align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom>Segment</td>
+		<td style="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000" align="left" valign=bottom bgcolor="#E6E64C">Relational Table</td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom>PGA</td>
+	</tr>
+	<tr>
+		<td height="16" align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom>Extend</td>
+		<td style="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000" align="left" valign=bottom bgcolor="#E6E64C"><b>Temporary Table</b></td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+	</tr>
+	<tr>
+		<td height="16" align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom>block</td>
+		<td style="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000" align="left" valign=bottom bgcolor="#E6E64C"><b><font color="#008000">Index Organized Table</font></b></td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+	</tr>
+	<tr>
+		<td height="16" align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+		<td style="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000" align="left" valign=bottom bgcolor="#E6E64C"><font color="#FF00FF">Object Table</font></td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+	</tr>
+	<tr>
+		<td colspan=5 rowspan=23 height="371" align="left" valign=bottom><br><img src="ParamOracleDBA_html_53c7cad5.png" width=616 height=340 hspace=39 vspace=26>
+		</td>
+		<td style="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000" align="left" valign=bottom bgcolor="#E6E64C"><font color="#280099">External Table</font></td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+	</tr>
+	<tr>
+		<td style="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000" align="left" valign=bottom bgcolor="#E6E64C"><font color="#DC2300">Clustered Table</font></td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+	</tr>
+	<tr>
+		<td style="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000" align="left" valign=bottom bgcolor="#E6E64C">Hash Cluster Table</td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+	</tr>
+	<tr>
+		<td style="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000" align="left" valign=bottom bgcolor="#E6E64C">Stored Hash Cluster</td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+	</tr>
+	<tr>
+		<td style="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000" align="left" valign=bottom bgcolor="#E6E64C">Partitioned Table</td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+	</tr>
+	<tr>
+		<td align="left" valign=bottom>Constraint – 6 categories</td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+	</tr>
+	<tr>
+		<td align="left" valign=bottom>Index – 5 categories</td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+	</tr>
+	<tr>
+		<td style="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000" align="left" valign=bottom bgcolor="#47B8B8">Views</td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+	</tr>
+	<tr>
+		<td style="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000" align="left" valign=bottom bgcolor="#47B8B8">Regular View</td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+	</tr>
+	<tr>
+		<td style="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000" align="left" valign=bottom bgcolor="#47B8B8">Materialized View</td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+	</tr>
+	<tr>
+		<td style="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000" align="left" valign=bottom bgcolor="#47B8B8">Object View</td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+	</tr>
+	<tr>
+		<td align="left" valign=bottom>User &amp; Schema</td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+	</tr>
+	<tr>
+		<td align="left" valign=bottom bgcolor="#00FFFF">Profile</td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+	</tr>
+	<tr>
+		<td align="left" valign=bottom bgcolor="#FF00FF">Sequence</td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+	</tr>
+	<tr>
+		<td align="left" valign=bottom>dataTypes</td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+	</tr>
+	<tr>
+		<td align="left" valign=bottom bgcolor="#FF00FF">Synonyms</td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+	</tr>
+	<tr>
+		<td align="left" valign=bottom>DB Link &amp; Remote database</td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+	</tr>
+	<tr>
+		<td align="left" valign=bottom bgcolor="#FFCC99">PL/SQL</td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+	</tr>
+	<tr>
+		<td align="left" valign=bottom bgcolor="#FFCC99">Procedure</td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+	</tr>
+	<tr>
+		<td align="left" valign=bottom bgcolor="#FFCC99">Function</td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+	</tr>
+	<tr>
+		<td align="left" valign=bottom bgcolor="#FFCC99">Package</td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+	</tr>
+	<tr>
+		<td align="left" valign=bottom bgcolor="#FFCC99">Triggers</td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+	</tr>
+	<tr>
+		<td align="left" valign=bottom bgcolor="#00FF00">External File</td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+	</tr>
+</table>
+<!-- ************************************************************************** -->
+<hr>
+<A NAME="table10"><h1>Sheet 11: <em>DB Listener Net8 Service</em></h1></A>
+<table cellspacing="0" border="0">
+	<colgroup width="86"></colgroup>
+	<colgroup width="532"></colgroup>
+	<colgroup span="2" width="86"></colgroup>
+	<tr>
+		<td height="17" align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><b><font color="#DC2300">usually listner service name and DB instance name will be same, though it is not necessary</font></b></td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+	</tr>
+	<tr>
+		<td height="16" align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom>Net8 – is not considered as of part of DB Instance</td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+	</tr>
+	<tr>
+		<td height="16" align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom>Net8 – listener service run on a port, usually 1521</td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+	</tr>
+	<tr>
+		<td height="17" align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+	</tr>
+	<tr>
+		<td height="16" align="left" valign=bottom bgcolor="#B3B3B3"><br></td>
+		<td align="left" valign=bottom bgcolor="#B3B3B3"><br></td>
+		<td align="left" valign=bottom bgcolor="#B3B3B3"><br></td>
+		<td align="left" valign=bottom bgcolor="#B3B3B3"><br></td>
+	</tr>
+	<tr>
+		<td height="17" align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+	</tr>
+	<tr>
+		<td height="17" align="left" valign=bottom>lsnrctl</td>
+		<td align="left" valign=bottom>is command tool for Net8 service to start or stop or status listener service</td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+	</tr>
+	<tr>
+		<td height="18" align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><font face="Calibri" color="#000000">lsnrctl status/START [name of listener, by default LISTENER ]</font></td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><font face="Calibri" color="#000000">database listener</font></td>
+	</tr>
+	<tr>
+		<td height="18" align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><font face="Calibri" color="#000000">lsnrctl status</font></td>
+		<td align="left" valign=bottom>to get status and properties detail of listener</td>
+		<td align="left" valign=bottom><font face="Calibri" color="#000000"><br></font></td>
+	</tr>
+	<tr>
+		<td height="18" align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><font face="Calibri" color="#000000">lsnrctl start</font></td>
+		<td align="left" valign=bottom>to start a listener</td>
+		<td align="left" valign=bottom><font face="Calibri" color="#000000"><br></font></td>
+	</tr>
+	<tr>
+		<td height="18" align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><font face="Calibri" color="#000000">lsnrctl stop</font></td>
+		<td align="left" valign=bottom>to stop a listener</td>
+		<td align="left" valign=bottom><font face="Calibri" color="#000000"><br></font></td>
+	</tr>
+	<tr>
+		<td height="18" align="left" valign=bottom bgcolor="#B3B3B3"><br></td>
+		<td align="left" valign=bottom bgcolor="#B3B3B3"><font face="Calibri" color="#000000"><br></font></td>
+		<td align="left" valign=bottom bgcolor="#B3B3B3"><br></td>
+		<td align="left" valign=bottom bgcolor="#B3B3B3"><font face="Calibri" color="#000000"><br></font></td>
+	</tr>
+	<tr>
+		<td height="18" align="left" valign=bottom>tnsping</td>
+		<td align="left" valign=bottom><font face="Calibri" color="#000000">it is used to check whether able to ping listener service that is Net8 connection layer</font></td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><font face="Calibri" color="#000000"><br></font></td>
+	</tr>
+	<tr>
+		<td height="18" align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><font face="Calibri" color="#000000">tnsping XE</font></td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><font face="Calibri" color="#000000"><br></font></td>
+	</tr>
+	<tr>
+		<td height="18" align="left" valign=bottom bgcolor="#B3B3B3"><br></td>
+		<td align="left" valign=bottom bgcolor="#B3B3B3"><font face="Calibri" color="#000000"><br></font></td>
+		<td align="left" valign=bottom bgcolor="#B3B3B3"><br></td>
+		<td align="left" valign=bottom bgcolor="#B3B3B3"><font face="Calibri" color="#000000"><br></font></td>
+	</tr>
+	<tr>
+		<td height="18" align="left" valign=bottom>log file path</td>
+		<td align="left" valign=bottom><font face="Calibri" color="#000000">/usr/lib/oracle/xe/app/oracle/product/10.2.0/server/network/log</font></td>
+		<td align="left" valign=bottom>it has complete history of listner service info.</td>
+		<td align="left" valign=bottom><font face="Calibri" color="#000000"><br></font></td>
+	</tr>
+	<tr>
+		<td height="18" align="left" valign=bottom bgcolor="#B3B3B3"><br></td>
+		<td align="left" valign=bottom bgcolor="#B3B3B3"><font face="Calibri" color="#000000"><br></font></td>
+		<td align="left" valign=bottom bgcolor="#B3B3B3"><br></td>
+		<td align="left" valign=bottom bgcolor="#B3B3B3"><font face="Calibri" color="#000000"><br></font></td>
+	</tr>
+	<tr>
+		<td height="18" align="left" valign=bottom>ORCL</td>
+		<td align="left" valign=bottom><font face="Calibri" color="#000000">it is the default listener name in standard or enterprise edition</font></td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><font face="Calibri" color="#000000"><br></font></td>
+	</tr>
+	<tr>
+		<td height="18" align="left" valign=bottom>XE</td>
+		<td align="left" valign=bottom><font face="Calibri" color="#000000">it is the default listener name in XE edition</font></td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><font face="Calibri" color="#000000"><br></font></td>
+	</tr>
+	<tr>
+		<td height="18" align="left" valign=bottom bgcolor="#B3B3B3"><br></td>
+		<td align="left" valign=bottom bgcolor="#B3B3B3"><font face="Calibri" color="#000000"><br></font></td>
+		<td align="left" valign=bottom bgcolor="#B3B3B3"><br></td>
+		<td align="left" valign=bottom bgcolor="#B3B3B3"><font face="Calibri" color="#000000"><br></font></td>
+	</tr>
+	<tr>
+		<td height="17" align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom>Net8 service use different listerner name for TCP or IPC ( same m/c ), usually.</td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+	</tr>
+	<tr>
+		<td height="16" align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom>but share most of cases</td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+	</tr>
+</table>
+<!-- ************************************************************************** -->
+<hr>
+<A NAME="table11"><h1>Sheet 12: <em>ConfigurationFiles</em></h1></A>
+<table cellspacing="0" border="0">
+	<colgroup width="147"></colgroup>
+	<colgroup width="570"></colgroup>
+	<tr>
+		<td height="17" align="left" valign=bottom>pfile.ora</td>
+		<td align="left" valign=bottom>use to configure depenceny mode</td>
+	</tr>
+	<tr>
+		<td height="17" align="left" valign=bottom>spfile.ora</td>
+		<td align="left" valign=bottom>use to configure depenceny mode</td>
+	</tr>
+</table>
+<!-- ************************************************************************** -->
+<hr>
+<A NAME="table12"><h1>Sheet 13: <em>OCP</em></h1></A>
+<table cellspacing="0" border="0">
+	<colgroup width="413"></colgroup>
+	<tr>
+		<td height="20" align="left" valign=bottom><font face="Calibri" color="#000000">About Alert system</font></td>
+	</tr>
+	<tr>
+		<td height="20" align="left" valign=bottom><font face="Calibri" color="#000000">About Job schedule</font></td>
+	</tr>
+	<tr>
+		<td height="20" align="left" valign=bottom><font face="Calibri" color="#000000">Use of Resource Manager</font></td>
+	</tr>
+	<tr>
+		<td height="20" align="left" valign=bottom><font face="Calibri" color="#000000">Oracle Streams</font></td>
+	</tr>
+	<tr>
+		<td height="17" align="left" valign=bottom><br></td>
+	</tr>
+	<tr>
+		<td height="20" align="left" valign=bottom><font face="Calibri" color="#000000">usage of Oracle Enterprise Manager</font></td>
+	</tr>
+	<tr>
+		<td height="17" align="left" valign=bottom><br></td>
+	</tr>
+	<tr>
+		<td height="20" align="left" valign=bottom><font face="Calibri" color="#000000">usage of Recovery Manager</font></td>
+	</tr>
+	<tr>
+		<td height="17" align="left" valign=bottom><br></td>
+	</tr>
+	<tr>
+		<td height="20" align="left" valign=bottom><font face="Calibri" color="#000000">Character Set</font></td>
+	</tr>
+	<tr>
+		<td height="17" align="left" valign=bottom><br></td>
+	</tr>
+	<tr>
+		<td height="20" align="left" valign=bottom><font face="Calibri" color="#000000">Shared Server ( Oracle Net )</font></td>
+	</tr>
+	<tr>
+		<td height="17" align="left" valign=bottom><br></td>
+	</tr>
+	<tr>
+		<td height="20" align="left" valign=bottom><font face="Calibri" color="#000000">use of  Directory service</font></td>
+	</tr>
+	<tr>
+		<td height="17" align="left" valign=bottom><br></td>
+	</tr>
+	<tr>
+		<td height="20" align="left" valign=bottom><font face="Calibri" color="#000000">Automatic Storage Management</font></td>
+	</tr>
+	<tr>
+		<td height="17" align="left" valign=bottom><br></td>
+	</tr>
+	<tr>
+		<td height="20" align="left" valign=bottom><font face="Calibri" color="#000000">Object Type</font></td>
+	</tr>
+	<tr>
+		<td height="20" align="left" valign=bottom><font face="Calibri" color="#000000">Detail and use of all Advisor ( 7 type )</font></td>
+	</tr>
+	<tr>
+		<td height="17" align="left" valign=bottom><br></td>
+	</tr>
+	<tr>
+		<td height="20" align="left" valign=bottom><font face="Calibri" color="#000000">Performance management in Detail</font></td>
+	</tr>
+	<tr>
+		<td height="20" align="left" valign=bottom><font face="Calibri" color="#000000">More about Recover, Backup</font></td>
+	</tr>
+</table>
+<!-- ************************************************************************** -->
+<hr>
+<A NAME="table13"><h1>Sheet 14: <em>System Tables</em></h1></A>
+<table cellspacing="0" border="0">
+	<colgroup width="153"></colgroup>
+	<colgroup width="250"></colgroup>
+	<colgroup width="423"></colgroup>
+	<tr>
+		<td height="20" align="left" valign=bottom><font face="Calibri" color="#000000">Dynamic View</font></td>
+		<td align="left" valign=bottom><font face="Calibri" color="#000000">V$PARAMETER</font></td>
+		<td align="left" valign=bottom><font face="Calibri" color="#000000">name and value of initialization parameters used by a running instance</font></td>
+	</tr>
+	<tr>
+		<td height="20" align="left" valign=bottom><font face="Calibri" color="#000000">Dynamic View</font></td>
+		<td align="left" valign=bottom><font face="Calibri" color="#000000">V$SPPARAMETER</font></td>
+		<td align="left" valign=bottom><font face="Calibri" color="#000000">name and value of initialization parameters defined in spfile and used by running instance</font></td>
+	</tr>
+	<tr>
+		<td height="20" align="left" valign=bottom><font face="Calibri" color="#000000">Dynamic View</font></td>
+		<td align="left" valign=bottom><font face="Calibri" color="#000000">V$PROGRAM</font></td>
+		<td align="left" valign=bottom><br></td>
+	</tr>
+	<tr>
+		<td height="20" align="left" valign=bottom><font face="Calibri" color="#000000">Dynamic View</font></td>
+		<td align="left" valign=bottom><font face="Calibri" color="#000000">V$PROCESS</font></td>
+		<td align="left" valign=bottom><br></td>
+	</tr>
+	<tr>
+		<td height="20" align="left" valign=bottom><font face="Calibri" color="#000000">Dynamic View</font></td>
+		<td align="left" valign=bottom><font face="Calibri" color="#000000">V$TRANSACTION</font></td>
+		<td align="left" valign=bottom><br></td>
+	</tr>
+	<tr>
+		<td height="20" align="left" valign=bottom><font face="Calibri" color="#000000">Dynamic View</font></td>
+		<td align="left" valign=bottom><font face="Calibri" color="#000000">V$SESSION</font></td>
+		<td align="left" valign=bottom><br></td>
+	</tr>
+	<tr>
+		<td height="20" align="left" valign=bottom><font face="Calibri" color="#000000">Dynamic View</font></td>
+		<td align="left" valign=bottom><font face="Calibri" color="#000000">V$ROLLSTAT</font></td>
+		<td align="left" valign=bottom><font face="Calibri" color="#000000">which give size of segments</font></td>
+	</tr>
+	<tr>
+		<td height="20" align="left" valign=bottom><font face="Calibri" color="#000000">Dynamic View</font></td>
+		<td align="left" valign=bottom><font face="Calibri" color="#000000">V$UNDOSTAT</font></td>
+		<td align="left" valign=bottom><br></td>
+	</tr>
+	<tr>
+		<td height="20" align="left" valign=bottom><font face="Calibri" color="#000000">Dynamic View</font></td>
+		<td align="left" valign=bottom><font face="Calibri" color="#000000">V$pgastat</font></td>
+		<td align="left" valign=bottom><br></td>
+	</tr>
+	<tr>
+		<td height="20" align="left" valign=bottom><font face="Calibri" color="#000000">Dynamic View</font></td>
+		<td align="left" valign=bottom><font face="Calibri" color="#000000">V$SGASTAT</font></td>
+		<td align="left" valign=bottom><br></td>
+	</tr>
+	<tr>
+		<td height="20" align="left" valign=bottom><font face="Calibri" color="#000000">Dynamic View</font></td>
+		<td align="left" valign=bottom><font face="Calibri" color="#000000">V$SESSTAT</font></td>
+		<td align="left" valign=bottom><br></td>
+	</tr>
+	<tr>
+		<td height="20" align="left" valign=bottom><font face="Calibri" color="#000000">Dynamic View</font></td>
+		<td align="left" valign=bottom><font face="Calibri" color="#000000">V$STATNAME</font></td>
+		<td align="left" valign=bottom><br></td>
+	</tr>
+	<tr>
+		<td height="20" align="left" valign=bottom><font face="Calibri" color="#000000">Dynamic View</font></td>
+		<td align="left" valign=bottom><font face="Calibri" color="#000000">V$sga_dynamic_components</font></td>
+		<td align="left" valign=bottom><br></td>
+	</tr>
+	<tr>
+		<td height="20" align="left" valign=bottom><font face="Calibri" color="#000000">Dynamic View</font></td>
+		<td align="left" valign=bottom><font face="Calibri" color="#000000">v$sga_target_advice</font></td>
+		<td align="left" valign=bottom><font face="Calibri" color="#000000">Sga Memory advisor information for automatic memory management</font></td>
+	</tr>
+	<tr>
+		<td height="20" align="left" valign=bottom><font face="Calibri" color="#000000">Dynamic View</font></td>
+		<td align="left" valign=bottom><font face="Calibri" color="#000000">v$pga_target_advice</font></td>
+		<td align="left" valign=bottom><font face="Calibri" color="#000000">PGA Memory advisor information for automatic memory management</font></td>
+	</tr>
+	<tr>
+		<td height="20" align="left" valign=bottom><font face="Calibri" color="#000000">Dynamic View</font></td>
+		<td align="left" valign=bottom><font face="Calibri" color="#000000">v$memory_target_Advice</font></td>
+		<td align="left" valign=bottom><font face="Calibri" color="#000000">total memory advisor, it is sum of PGA and SGA</font></td>
+	</tr>
+	<tr>
+		<td height="20" align="left" valign=bottom><font face="Calibri" color="#000000">Dynamic View</font></td>
+		<td align="left" valign=bottom><font face="Calibri" color="#000000">v$shared_pool_advice</font></td>
+		<td align="left" valign=bottom><br></td>
+	</tr>
+	<tr>
+		<td height="20" align="left" valign=bottom><font face="Calibri" color="#000000">Dynamic View</font></td>
+		<td align="left" valign=bottom><font face="Calibri" color="#000000">V$database</font></td>
+		<td align="left" valign=bottom><font face="Calibri" color="#000000">it store database details</font></td>
+	</tr>
+	<tr>
+		<td height="20" align="left" valign=bottom><font face="Calibri" color="#000000">Dynamic View</font></td>
+		<td align="left" valign=bottom><font face="Calibri" color="#000000">V$instance</font></td>
+		<td align="left" valign=bottom><font face="Calibri" color="#000000">it stored instance details</font></td>
+	</tr>
+	<tr>
+		<td height="20" align="left" valign=bottom><font face="Calibri" color="#000000">Dynamic View</font></td>
+		<td align="left" valign=bottom><font face="Calibri" color="#000000">v$tablespace</font></td>
+		<td align="left" valign=bottom><br></td>
+	</tr>
+	<tr>
+		<td height="20" align="left" valign=bottom><font face="Calibri" color="#000000">Dynamic View</font></td>
+		<td align="left" valign=bottom><font face="Calibri" color="#000000">V$Datafile</font></td>
+		<td align="left" valign=bottom><font face="Calibri" color="#000000">it store datafiles information, it will show physical structure of file</font></td>
+	</tr>
+	<tr>
+		<td height="20" align="left" valign=bottom><font face="Calibri" color="#000000">Dynamic View</font></td>
+		<td align="left" valign=bottom><font face="Calibri" color="#000000">V$CONTROLFILE</font></td>
+		<td align="left" valign=bottom><font face="Calibri" color="#000000">list the available control files details</font></td>
+	</tr>
+	<tr>
+		<td height="20" align="left" valign=bottom><font face="Calibri" color="#000000">Dynamic View</font></td>
+		<td align="left" valign=bottom><font face="Calibri" color="#000000">V$tempfile</font></td>
+		<td align="left" valign=bottom><br></td>
+	</tr>
+	<tr>
+		<td height="20" align="left" valign=bottom><font face="Calibri" color="#000000">Dynamic View</font></td>
+		<td align="left" valign=bottom><font face="Calibri" color="#000000">v$log</font></td>
+		<td align="left" valign=bottom><font face="Calibri" color="#000000">it is used along with V$logfile, display redo log group</font></td>
+	</tr>
+	<tr>
+		<td height="20" align="left" valign=bottom><font face="Calibri" color="#000000">Dynamic View</font></td>
+		<td align="left" valign=bottom><font face="Calibri" color="#000000">v$logfile</font></td>
+		<td align="left" valign=bottom><font face="Calibri" color="#000000">it will show physical structure of log file, redo log files in every group</font></td>
+	</tr>
+	<tr>
+		<td height="20" align="left" valign=bottom><font face="Calibri" color="#000000">Dynamic View</font></td>
+		<td align="left" valign=bottom><font face="Calibri" color="#000000">-------</font></td>
+		<td align="left" valign=bottom><font face="Calibri" color="#000000">use ps -ef|grep oracle|wc -l in Linux to how many oracle process running</font></td>
+	</tr>
+	<tr>
+		<td height="20" align="left" valign=bottom><font face="Calibri" color="#000000">Dynamic View</font></td>
+		<td align="left" valign=bottom><font face="Calibri" color="#000000">v$sql</font></td>
+		<td align="left" valign=bottom><font face="Calibri" color="#000000">Recent SQL stored in shared pool</font></td>
+	</tr>
+	<tr>
+		<td height="20" align="left" valign=bottom><font face="Calibri" color="#000000">Dynamic View</font></td>
+		<td align="left" valign=bottom><font face="Calibri" color="#000000">v$pwfile_users</font></td>
+		<td align="left" valign=bottom><font face="Calibri" color="#000000">show the users who have sysdba, sysasm, sysoper permission</font></td>
+	</tr>
+	<tr>
+		<td height="20" align="left" valign=bottom><font face="Calibri" color="#000000">Dynamic View</font></td>
+		<td align="left" valign=bottom><font face="Calibri" color="#000000">v$SYSAUX_OCCUPANTS</font></td>
+		<td align="left" valign=bottom><font face="Calibri" color="#000000">list all the component installed in this SYSAUX table-space</font></td>
+	</tr>
+	<tr>
+		<td height="20" align="left" valign=bottom><font face="Calibri" color="#000000">Dynamic View</font></td>
+		<td align="left" valign=bottom><font face="Calibri" color="#000000">V$METRICNAME</font></td>
+		<td align="left" valign=bottom><br></td>
+	</tr>
+	<tr>
+		<td height="20" align="left" valign=bottom><font face="Calibri" color="#000000">Dynamic View</font></td>
+		<td align="left" valign=bottom><font face="Calibri" color="#000000">V$INSTANCE_RECOVERY</font></td>
+		<td align="left" valign=bottom><font face="Calibri" color="#000000">it says how much time, block, IO operation need if instance crashed now</font></td>
+	</tr>
+	<tr>
+		<td height="20" align="left" valign=bottom><font face="Calibri" color="#000000">Dynamic View</font></td>
+		<td align="left" valign=bottom><font face="Calibri" color="#000000">v$archived_log</font></td>
+		<td align="left" valign=bottom><font face="Calibri" color="#000000">flash recovery area</font></td>
+	</tr>
+	<tr>
+		<td height="20" align="left" valign=bottom><font face="Calibri" color="#000000">Dynamic View</font></td>
+		<td align="left" valign=bottom><font face="Calibri" color="#000000">V$RECOVERY_FILE_DEST</font></td>
+		<td align="left" valign=bottom><font face="Calibri" color="#000000">Report about backup related details</font></td>
+	</tr>
+	<tr>
+		<td height="20" align="left" valign=bottom><font face="Calibri" color="#000000">Dynamic View</font></td>
+		<td align="left" valign=bottom><font face="Calibri" color="#000000">V$FLASH_RECOVERY_AREA_USAGE</font></td>
+		<td align="left" valign=bottom><font face="Calibri" color="#000000">Report about backup related details</font></td>
+	</tr>
+	<tr>
+		<td height="20" align="left" valign=bottom><font face="Calibri" color="#000000">Dynamic View</font></td>
+		<td align="left" valign=bottom><font face="Calibri" color="#000000">v$version</font></td>
+		<td align="left" valign=bottom><font face="Calibri" color="#000000">show oracle product version details</font></td>
+	</tr>
+	<tr>
+		<td height="20" align="left" valign=bottom><font face="Calibri" color="#000000">Dynamic View</font></td>
+		<td align="left" valign=bottom><font face="Calibri" color="#000000">v$Open_cursor</font></td>
+		<td align="left" valign=bottom><font face="Calibri" color="#000000">show list of curser in current session</font></td>
+	</tr>
+	<tr>
+		<td height="17" align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><font face="Calibri" color="#000000">NLS_SESSION_PARAMETERS</font></td>
+		<td align="left" valign=bottom><font face="Calibri" color="#000000">this view has all the NLS parameters for current session are defined</font></td>
+	</tr>
+	<tr>
+		<td height="17" align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><font face="Calibri" color="#000000">database_properties</font></td>
+		<td align="left" valign=bottom><font face="Calibri" color="#000000">it name and value pair of some default properties of DB</font></td>
+	</tr>
+	<tr>
+		<td height="17" align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><font face="Calibri" color="#000000">INDEX_STATS</font></td>
+		<td align="left" valign=bottom><font face="Calibri" color="#000000">explicitly gathered statistics whenever analysis a index</font></td>
+	</tr>
+	<tr>
+		<td height="20" align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom bgcolor="#33CC66"><font face="Calibri" color="#000000">dba_data_files</font></td>
+		<td align="left" valign=bottom bgcolor="#33CC66"><font face="Calibri" color="#000000">store data file location and name</font></td>
+	</tr>
+	<tr>
+		<td height="20" align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><font face="Calibri" color="#000000">DBA_FREE_SPACE</font></td>
+		<td align="left" valign=bottom><font face="Calibri" color="#000000">list the available free space in each table-space</font></td>
+	</tr>
+	<tr>
+		<td height="20" align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><font face="Calibri" color="#000000">DBA_TEMP_FILES</font></td>
+		<td align="left" valign=bottom><br></td>
+	</tr>
+	<tr>
+		<td height="20" align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom bgcolor="#33CC66"><font face="Calibri" color="#000000">dba_tablespace</font></td>
+		<td align="left" valign=bottom bgcolor="#33CC66"><font face="Calibri" color="#000000">list all the table-space details</font></td>
+	</tr>
+	<tr>
+		<td height="20" align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom bgcolor="#33CC66"><font face="Calibri" color="#000000">DBA_SEGMENTS</font></td>
+		<td align="left" valign=bottom bgcolor="#33CC66"><font face="Calibri" color="#000000">list all the segments available in database</font></td>
+	</tr>
+	<tr>
+		<td height="20" align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom bgcolor="#33CC66"><font face="Calibri" color="#000000">DBA_EXTENDS</font></td>
+		<td align="left" valign=bottom bgcolor="#33CC66"><font face="Calibri" color="#000000">it will have all the extends details,</font></td>
+	</tr>
+	<tr>
+		<td height="20" align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom bgcolor="#33CC66"><font face="Calibri" color="#000000">DBA_ROLLBACK_SEGS</font></td>
+		<td align="left" valign=bottom bgcolor="#33CC66"><font face="Calibri" color="#000000"><br></font></td>
+	</tr>
+	<tr>
+		<td height="20" align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><font face="Calibri" color="#000000">DBA_USERS</font></td>
+		<td align="left" valign=bottom><font face="Calibri" color="#000000">list all the users available in DB</font></td>
+	</tr>
+	<tr>
+		<td height="20" align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><font face="Calibri" color="#000000">DBA_TS_QUOTAS</font></td>
+		<td align="left" valign=bottom><br></td>
+	</tr>
+	<tr>
+		<td height="20" align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><font face="Calibri" color="#000000">DBA_SYS_PRIVS</font></td>
+		<td align="left" valign=bottom><font face="Calibri" color="#000000">list users and their SYSTEM privileges</font></td>
+	</tr>
+	<tr>
+		<td height="20" align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><font face="Calibri" color="#000000">DBA_TAB_PRIVS</font></td>
+		<td align="left" valign=bottom><font face="Calibri" color="#000000">list users and their OBJECT privileges</font></td>
+	</tr>
+	<tr>
+		<td height="20" align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><font face="Calibri" color="#000000">DBA_ROLES</font></td>
+		<td align="left" valign=bottom><font face="Calibri" color="#000000">list available roles in database</font></td>
+	</tr>
+	<tr>
+		<td height="20" align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><font face="Calibri" color="#000000">DBA_ROLE_PRIVS</font></td>
+		<td align="left" valign=bottom><font face="Calibri" color="#000000">list all the role and its privileges</font></td>
+	</tr>
+	<tr>
+		<td height="20" align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><font face="Calibri" color="#000000">DBA_PROFILES</font></td>
+		<td align="left" valign=bottom><br></td>
+	</tr>
+	<tr>
+		<td height="20" align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><font face="Calibri" color="#000000">DBA_Tables</font></td>
+		<td align="left" valign=bottom><font face="Calibri" color="#000000">statistics obtained for a table whenever analysis a table</font></td>
+	</tr>
+	<tr>
+		<td height="20" align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><font face="Calibri" color="#000000">DBA_TAB_COLUMNS</font></td>
+		<td align="left" valign=bottom><font face="Calibri" color="#000000">Statistics obtained for a column whenever analysis a table</font></td>
+	</tr>
+	<tr>
+		<td height="20" align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><font face="Calibri" color="#000000">DBA_INDEXS</font></td>
+		<td align="left" valign=bottom><font face="Calibri" color="#000000">Statistics obtained for indexes whenever analysis a table, valid or invalid of a indexes</font></td>
+	</tr>
+	<tr>
+		<td height="11" align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><font face="Calibri" color="#000000"><br></font></td>
+		<td align="left" valign=bottom><font face="Calibri" color="#000000"><br></font></td>
+	</tr>
+	<tr>
+		<td height="20" align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom bgcolor="#CCCCCC"><font face="Calibri" color="#000000">DBA_AUDIT_TRAIL</font></td>
+		<td align="left" valign=bottom bgcolor="#CCCCCC"><font face="Calibri" color="#000000">it will have all the audit logs if it is enabled and directed to DB</font></td>
+	</tr>
+	<tr>
+		<td height="20" align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom bgcolor="#CCCCCC"><font face="Calibri" color="#000000">DBA_AUDIT_OBJECT</font></td>
+		<td align="left" valign=bottom bgcolor="#CCCCCC"><br></td>
+	</tr>
+	<tr>
+		<td height="20" align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom bgcolor="#CCCCCC"><font face="Calibri" color="#000000">DBA_AUDIT_STATEMENT</font></td>
+		<td align="left" valign=bottom bgcolor="#CCCCCC"><br></td>
+	</tr>
+	<tr>
+		<td height="20" align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom bgcolor="#CCCCCC"><font face="Calibri" color="#000000">DBA_AUDIT_SESSION</font></td>
+		<td align="left" valign=bottom bgcolor="#CCCCCC"><br></td>
+	</tr>
+	<tr>
+		<td height="20" align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom bgcolor="#CCCCCC"><font face="Calibri" color="#000000">DBA_COMMON_AUDIT_TRAIL</font></td>
+		<td align="left" valign=bottom bgcolor="#CCCCCC"><font face="Calibri" color="#000000">it will have both FGA and DB audit trials</font></td>
+	</tr>
+	<tr>
+		<td height="20" align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom bgcolor="#CCCCCC"><font face="Calibri" color="#000000">DBA_FGA_AUDIT_TRAIL</font></td>
+		<td align="left" valign=bottom bgcolor="#CCCCCC"><font face="Calibri" color="#000000">it capture FGA audit trails</font></td>
+	</tr>
+	<tr>
+		<td height="13" align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><font face="Calibri" color="#000000"><br></font></td>
+		<td align="left" valign=bottom><font face="Calibri" color="#000000"><br></font></td>
+	</tr>
+	<tr>
+		<td height="20" align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><font face="Calibri" color="#000000">DBA_DIRECTORIES</font></td>
+		<td align="left" valign=bottom><font face="Calibri" color="#000000">it list all the  directory path accessible by all session</font></td>
+	</tr>
+	<tr>
+		<td height="11" align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><font face="Calibri" color="#000000"><br></font></td>
+		<td align="left" valign=bottom><font face="Calibri" color="#000000"><br></font></td>
+	</tr>
+	<tr>
+		<td height="20" align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><font face="Calibri" color="#000000">DBA_OUTSTANDING_ALERTS</font></td>
+		<td align="left" valign=bottom><br></td>
+	</tr>
+	<tr>
+		<td height="20" align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><font face="Calibri" color="#000000">DBA_ALERT_HISTORY</font></td>
+		<td align="left" valign=bottom><br></td>
+	</tr>
+	<tr>
+		<td height="12" align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><font face="Calibri" color="#000000"><br></font></td>
+		<td align="left" valign=bottom><br></td>
+	</tr>
+	<tr>
+		<td height="20" align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom bgcolor="#EB613D"><font face="Calibri" color="#000000">DBA_OBJECTS</font></td>
+		<td align="left" valign=bottom bgcolor="#EB613D"><font face="Calibri" color="#000000">it give no. of object type support by current database</font></td>
+	</tr>
+	<tr>
+		<td height="20" align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom bgcolor="#EB613D"><font face="Calibri" color="#000000">ALL_OBJECTS</font></td>
+		<td align="left" valign=bottom bgcolor="#EB613D"><font face="Calibri" color="#000000">it will give all the objects have permission to view including current user objects</font></td>
+	</tr>
+	<tr>
+		<td height="20" align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom bgcolor="#EB613D"><font face="Calibri" color="#000000">USER_OBJECTS</font></td>
+		<td align="left" valign=bottom bgcolor="#EB613D"><font face="Calibri" color="#000000">give list of object owned by user</font></td>
+	</tr>
+	<tr>
+		<td height="12" align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><font face="Calibri" color="#000000"><br></font></td>
+		<td align="left" valign=bottom><font face="Calibri" color="#000000"><br></font></td>
+	</tr>
+	<tr>
+		<td height="20" align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><font face="Calibri" color="#000000">DBA_constraints</font></td>
+		<td align="left" valign=bottom><br></td>
+	</tr>
+	<tr>
+		<td height="20" align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom bgcolor="#CCCCCC"><font face="Calibri" color="#000000">User_constraints</font></td>
+		<td align="left" valign=bottom>to get columns constraints</td>
+	</tr>
+	<tr>
+		<td height="20" align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom bgcolor="#CCCCCC"><font face="Calibri" color="#000000">User_cons_columns</font></td>
+		<td align="left" valign=bottom>to get columns constraints</td>
+	</tr>
+	<tr>
+		<td height="13" align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><font face="Calibri" color="#000000"><br></font></td>
+		<td align="left" valign=bottom><br></td>
+	</tr>
+	<tr>
+		<td height="20" align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom bgcolor="#33A3A3"><font face="Calibri" color="#000000">user_indexes</font></td>
+		<td align="left" valign=bottom><br></td>
+	</tr>
+	<tr>
+		<td height="20" align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom bgcolor="#33A3A3"><font face="Calibri" color="#000000">user_ind_columns</font></td>
+		<td align="left" valign=bottom><br></td>
+	</tr>
+	<tr>
+		<td height="20" align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom bgcolor="#CFE7F5"><font face="Calibri" color="#000000">user_tables</font></td>
+		<td align="left" valign=bottom><font face="Calibri" color="#000000">it will list only the tables for current user</font></td>
+	</tr>
+	<tr>
+		<td height="20" align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom bgcolor="#CFE7F5"><font face="Calibri" color="#000000">user_tab_columns</font></td>
+		<td align="left" valign=bottom><font face="Calibri" color="#000000">to get columns of tables</font></td>
+	</tr>
+	<tr>
+		<td height="12" align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><font face="Calibri" color="#000000"><br></font></td>
+		<td align="left" valign=bottom><font face="Calibri" color="#000000"><br></font></td>
+	</tr>
+	<tr>
+		<td height="16" align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom bgcolor="#9966CC">all_source</td>
+		<td align="left" valign=bottom bgcolor="#9966CC"><br></td>
+	</tr>
+	<tr>
+		<td height="16" align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom bgcolor="#9966CC">dba_source</td>
+		<td align="left" valign=bottom bgcolor="#9966CC"><br></td>
+	</tr>
+	<tr>
+		<td height="16" align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom bgcolor="#9966CC">user_source</td>
+		<td align="left" valign=bottom bgcolor="#9966CC"><br></td>
+	</tr>
+	<tr>
+		<td height="11" align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+	</tr>
+	<tr>
+		<td height="16" align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom bgcolor="#CCCCCC">all_dependencies</td>
+		<td align="left" valign=bottom bgcolor="#CCCCCC"><br></td>
+	</tr>
+	<tr>
+		<td height="16" align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom bgcolor="#CCCCCC">dba_dependencies</td>
+		<td align="left" valign=bottom bgcolor="#CCCCCC"><br></td>
+	</tr>
+	<tr>
+		<td height="16" align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom bgcolor="#CCCCCC">user_dependencies</td>
+		<td align="left" valign=bottom bgcolor="#CCCCCC"><br></td>
+	</tr>
+	<tr>
+		<td height="11" align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+	</tr>
+	<tr>
+		<td height="16" align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom bgcolor="#99CCFF">all_arguments</td>
+		<td align="left" valign=bottom bgcolor="#99CCFF"><br></td>
+	</tr>
+	<tr>
+		<td height="16" align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom bgcolor="#99CCFF">dba_arguments</td>
+		<td align="left" valign=bottom bgcolor="#99CCFF"><br></td>
+	</tr>
+	<tr>
+		<td height="16" align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom bgcolor="#99CCFF">user_arguments</td>
+		<td align="left" valign=bottom bgcolor="#99CCFF"><br></td>
+	</tr>
+	<tr>
+		<td height="17" align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+	</tr>
+	<tr>
+		<td height="16" align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom bgcolor="#CCCCCC">ALL_IDENTIFIERS</td>
+		<td align="left" valign=bottom bgcolor="#CCCCCC"><br></td>
+	</tr>
+	<tr>
+		<td height="16" align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom bgcolor="#CCCCCC">DBA_IDENTIFIERS</td>
+		<td align="left" valign=bottom bgcolor="#CCCCCC"><br></td>
+	</tr>
+	<tr>
+		<td height="16" align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom bgcolor="#CCCCCC">USER_IDENTIFIERS</td>
+		<td align="left" valign=bottom bgcolor="#CCCCCC"><br></td>
+	</tr>
+	<tr>
+		<td height="17" align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+	</tr>
+	<tr>
+		<td height="16" align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom>ALL_PLSQL_OBJECT_SETTINGS</td>
+		<td align="left" valign=bottom>to get compilation parameter setting</td>
+	</tr>
+	<tr>
+		<td height="17" align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+	</tr>
+	<tr>
+		<td height="16" align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom bgcolor="#9966CC">V$RESULT_CACHE_STATISTICS</td>
+		<td align="left" valign=bottom bgcolor="#9966CC"><br></td>
+	</tr>
+	<tr>
+		<td height="16" align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom bgcolor="#9966CC">V$RESULT_CACHE_MEMORY</td>
+		<td align="left" valign=bottom bgcolor="#9966CC"><br></td>
+	</tr>
+	<tr>
+		<td height="16" align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom bgcolor="#9966CC">V$RESULT_CACHE_OBJECTS</td>
+		<td align="left" valign=bottom bgcolor="#9966CC"><br></td>
+	</tr>
+	<tr>
+		<td height="16" align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom bgcolor="#9966CC">V$RESULT_CACHE_DEPENDENCY</td>
+		<td align="left" valign=bottom bgcolor="#9966CC"><br></td>
+	</tr>
+</table>
+<!-- ************************************************************************** -->
+<hr>
+<A NAME="table14"><h1>Sheet 15: <em>Temporary tables</em></h1></A>
+<table cellspacing="0" border="0">
+	<colgroup width="86"></colgroup>
+	<colgroup width="209"></colgroup>
+	<colgroup width="296"></colgroup>
+	<colgroup width="183"></colgroup>
+	<colgroup width="283"></colgroup>
+	<tr>
+		<td height="16" align="right" valign=bottom sdval="1" sdnum="16393;">1</td>
+		<td align="left" valign=bottom>it got introduced in oracle 8i</td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+	</tr>
+	<tr>
+		<td height="16" align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom>table is permanent with respect to DB. But data is temporary since it is not stored in data file, will be in memory scope of transaction or session</td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+	</tr>
+	<tr>
+		<td height="16" align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom>every user will see only their own data only, even trancate also</td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+	</tr>
+	<tr>
+		<td height="16" align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom bgcolor="#FFFF00"><font color="#800000">command</font></td>
+		<td align="left" valign=bottom><font color="#800000">create global temporary table</font></td>
+		<td align="left" valign=bottom><font face="DJLCGE+Optima-Bold" color="#800000">on commit delete rows</font></td>
+		<td align="left" valign=bottom><font color="#800000">delete data when transaction commit/rollback</font></td>
+	</tr>
+	<tr>
+		<td height="16" align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><font color="#800000"><br></font></td>
+		<td align="left" valign=bottom><font color="#800000"><br></font></td>
+		<td align="left" valign=bottom><font face="DJLCGE+Optima-Bold" color="#800000">on commit preserve rows</font></td>
+		<td align="left" valign=bottom><font color="#800000">delete data when session timeout</font></td>
+	</tr>
+</table>
+<!-- ************************************************************************** -->
+</body>
+
+</html>

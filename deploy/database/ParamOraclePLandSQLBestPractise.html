@@ -1,0 +1,478 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+
+<html>
+<head>
+	
+	<meta http-equiv="content-type" content="text/html; charset=utf-8">
+	<title></title>
+	<meta name="generator" content="LibreOffice 4.2.8.2 (Linux)">
+	<meta name="created" content="20130204;234623000000000">
+	<meta name="changed" content="20130430;232444000000000">
+	
+<link rel="stylesheet" type="text/css" href="/stylesheets/stylesheet.css" media="screen">
+	
+</head>
+
+<body text="#000000">
+	<a href="index.html"> Back </a><br/>
+<hr>
+	<p><center>
+		<h1>Overview</h1>
+		<A HREF="#table0">misc</A><br>
+		<A HREF="#table1">Cursor</A><br>
+		<A HREF="#table2">Variable</A><br>
+		<A HREF="#table3">function</A><br>
+		<A HREF="#table4">UnitTest</A><br>
+		<A HREF="#table5">Package</A><br>
+		<A HREF="#table6">Trigger</A><br>
+		<A HREF="#table7">Collection</A><br>
+		<A HREF="#table8">loop</A><br>
+		<A HREF="#table9">branching</A><br>
+		<A HREF="#table10">anonymous</A><br>
+		<A HREF="#table11">exception</A><br>
+		
+	</center></p>
+<hr>
+<A NAME="table0"><h1>Sheet 1: <em>misc</em></h1></A>
+<table cellspacing="0" border="0">
+	<colgroup width="35"></colgroup>
+	<colgroup width="944"></colgroup>
+	<tr>
+		<td height="17" align="left" valign=bottom>M/R</td>
+		<td align="left" valign=bottom><b>use conditional compilation to add entry and exiting logs for every procedure. If need put for block also ( Use eclipe template for quick typing )</b></td>
+	</tr>
+	<tr>
+		<td height="17" align="left" valign=bottom>M/R</td>
+		<td align="left" valign=bottom><b>use conditional compilation to add more logs like entry, exit, printing input values, return values. ( Use eclipe template for quick typing )</b></td>
+	</tr>
+	<tr>
+		<td height="16" align="left" valign=bottom>Pr</td>
+		<td align="left" valign=bottom><font face="MLMHBK+CourierNewPSMT" size=1>ALTER SESSION SET PLSQL_CCFLAGS = 'debug:1'; it enable debug level like Log4j Level in Java</font></td>
+	</tr>
+	<tr>
+		<td height="16" align="left" valign=bottom>Pr</td>
+		<td align="left" valign=bottom><font face="MLMHBK+CourierNewPSMT" size=1>ALTER SESSION SET PLSQL_CCFLAGS = 'debug:true,info:false';</font></td>
+	</tr>
+	<tr>
+		<td height="16" align="left" valign=bottom>R</td>
+		<td align="left" valign=bottom>when you have optional parameters, best to use named parameres</td>
+	</tr>
+	<tr>
+		<td height="16" align="left" valign=bottom>R</td>
+		<td align="left" valign=bottom>declare all optional parameter always at last order in header</td>
+	</tr>
+	<tr>
+		<td height="16" align="left" valign=bottom>Pr</td>
+		<td align="left" valign=bottom>add frequently used PL/SQL statement as  Template in eclipse</td>
+	</tr>
+	<tr>
+		<td height="16" align="left" valign=bottom>Pr</td>
+		<td align="left" valign=bottom>when type block like loop, if, case, while and etc, type immediately close keyword also</td>
+	</tr>
+	<tr>
+		<td height="16" align="left" valign=bottom>Pr</td>
+		<td align="left" valign=bottom><font face="MLMHBK+CourierNewPSMT" size=1>ALTER SESSION SET plsql_warnings = 'enable:all';  it enable compile time warning.</font></td>
+	</tr>
+	<tr>
+		<td height="16" align="left" valign=bottom>M</td>
+		<td align="left" valign=bottom>have alter script, to compile all the pl/sql unit, many time some of function and procedure become invalid</td>
+	</tr>
+	<tr>
+		<td height="16" align="left" valign=bottom>R</td>
+		<td align="left" valign=bottom>use q'()' to print single quoted that is apostrophe word.</td>
+	</tr>
+	<tr>
+		<td height="17" align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+	</tr>
+	<tr>
+		<td height="16" align="left" valign=bottom>M</td>
+		<td align="left" valign=bottom>first, identify package name in a project</td>
+	</tr>
+	<tr>
+		<td height="16" align="left" valign=bottom>M</td>
+		<td align="left" valign=bottom>second,  define a package for constant values</td>
+	</tr>
+	<tr>
+		<td height="16" align="left" valign=bottom>M</td>
+		<td align="left" valign=bottom>second, identify function name in a project</td>
+	</tr>
+	<tr>
+		<td height="16" align="left" valign=bottom>M</td>
+		<td align="left" valign=bottom>third, identify procedure</td>
+	</tr>
+	<tr>
+		<td height="16" align="left" valign=bottom>M</td>
+		<td align="left" valign=bottom>fouth, write db script to compile all packages/function/procedure</td>
+	</tr>
+	<tr>
+		<td height="16" align="left" valign=bottom>M</td>
+		<td align="left" valign=bottom>fifth, write unit test FUNCTION for every business function and procedure</td>
+	</tr>
+	<tr>
+		<td height="17" align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+	</tr>
+	<tr>
+		<td height="16" align="left" valign=bottom>P</td>
+		<td align="left" valign=bottom>translate  PL/SQL code to native code. It improve the performance double</td>
+	</tr>
+	<tr>
+		<td height="16" align="left" valign=bottom>P</td>
+		<td align="left" valign=bottom>to improve consider table column type is not having non-null constraint, if need define sub type accordingly and use them.</td>
+	</tr>
+	<tr>
+		<td height="16" align="left" valign=bottom>M</td>
+		<td align="left" valign=bottom>have separate function to any convert date to any format, almost application wide</td>
+	</tr>
+	<tr>
+		<td height="17" align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+	</tr>
+	<tr>
+		<td height="16" align="left" valign=bottom>P</td>
+		<td align="left" valign=bottom>keep separate temporary table space for sorting kind of operations, it will reduce I/O operations while tables are used from different table space</td>
+	</tr>
+	<tr>
+		<td height="17" align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+	</tr>
+	<tr>
+		<td height="17" align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+	</tr>
+	<tr>
+		<td height="17" align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+	</tr>
+	<tr>
+		<td height="17" align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+	</tr>
+	<tr>
+		<td height="17" align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+	</tr>
+	<tr>
+		<td height="17" align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+	</tr>
+	<tr>
+		<td height="17" align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+	</tr>
+	<tr>
+		<td height="17" align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+	</tr>
+	<tr>
+		<td height="17" align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+	</tr>
+	<tr>
+		<td height="17" align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+	</tr>
+	<tr>
+		<td height="17" align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+	</tr>
+	<tr>
+		<td height="17" align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+	</tr>
+	<tr>
+		<td height="17" align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+	</tr>
+	<tr>
+		<td height="17" align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+	</tr>
+	<tr>
+		<td height="16" align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom>M – Maintenance</td>
+	</tr>
+	<tr>
+		<td height="16" align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom>P – Performance</td>
+	</tr>
+	<tr>
+		<td height="16" align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom>R - Readability</td>
+	</tr>
+	<tr>
+		<td height="16" align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom>Pr – Productivity</td>
+	</tr>
+</table>
+<!-- ************************************************************************** -->
+<hr>
+<A NAME="table1"><h1>Sheet 2: <em>Cursor</em></h1></A>
+<table cellspacing="0" border="0">
+	<colgroup width="34"></colgroup>
+	<colgroup width="827"></colgroup>
+	<tr>
+		<td height="16" align="left" valign=bottom>R/M</td>
+		<td align="left" valign=bottom>whenever possible to use IMPLICIT cursor to keep the code clean, no need to explicitly close or open or fetch</td>
+	</tr>
+	<tr>
+		<td height="16" align="left" valign=bottom>R/M</td>
+		<td align="left" valign=bottom>Either implicit or explicit cursor, always use FOR loop to read, avoid me to open, close, fetch from cursors and use of local variables</td>
+	</tr>
+	<tr>
+		<td height="16" align="left" valign=bottom>P</td>
+		<td align="left" valign=bottom>when you want to stop the iteration of cursor based on some condition use WHILE/SIMPLE loop.</td>
+	</tr>
+	<tr>
+		<td height="16" align="left" valign=bottom>R</td>
+		<td align="left" valign=bottom>when you type open cursor, immediately type close cursor statement to avoid missing to close the cursor</td>
+	</tr>
+	<tr>
+		<td height="17" align="left" valign=bottom>P</td>
+		<td align="left" valign=bottom>if possble give preference to read BULK COLLECT, but need collection/records</td>
+	</tr>
+</table>
+<!-- ************************************************************************** -->
+<hr>
+<A NAME="table2"><h1>Sheet 3: <em>Variable</em></h1></A>
+<table cellspacing="0" border="0">
+	<colgroup width="33"></colgroup>
+	<colgroup width="779"></colgroup>
+	<tr>
+		<td height="17" align="left" valign=bottom>M/R</td>
+		<td align="left" valign=bottom>use Anchored Data type for variable whenever possible( scalar variables %TYPE, record structure %ROWTYPE ), to inherit data type and size</td>
+	</tr>
+	<tr>
+		<td height="16" align="left" valign=bottom>R</td>
+		<td align="left" valign=bottom>better use DEFAULT keyword  rather than assignment operator to initialization, for more readability</td>
+	</tr>
+	<tr>
+		<td height="17" align="left" valign=bottom>R</td>
+		<td align="left" valign=bottom>do literal assignment only in declaration block. If it is dynamic assignment plz do in execution block, easy for exception handling</td>
+	</tr>
+	<tr>
+		<td height="16" align="left" valign=bottom>M/R</td>
+		<td align="left" valign=bottom>boolean variable must be initialized either false or true . Never allow NULL, it may lead to unexpected or serious bug</td>
+	</tr>
+	<tr>
+		<td height="17" align="left" valign=bottom>M/P</td>
+		<td align="left" valign=bottom>Dont use LONG, LONG ROW data type. Its going to be deprecated, use CLOB instead of lengthy string value</td>
+	</tr>
+	<tr>
+		<td height="16" align="left" valign=bottom>M</td>
+		<td align="left" valign=bottom>use UROWID instead of ROWID</td>
+	</tr>
+	<tr>
+		<td height="16" align="left" valign=bottom>R</td>
+		<td align="left" valign=bottom>add at end # for variable name those are going to have number</td>
+	</tr>
+	<tr>
+		<td height="16" align="left" valign=bottom>R</td>
+		<td align="left" valign=bottom>always assign some value whenever you declare variables</td>
+	</tr>
+	<tr>
+		<td height="16" align="left" valign=bottom>P</td>
+		<td align="left" valign=bottom>use SIMPLE_FLOAT, SIMPLE_DOUBLE,SIMPLE_INTEGER whenever VALUE never be null, it improve the performance.</td>
+	</tr>
+	<tr>
+		<td height="17" align="left" valign=bottom>P</td>
+		<td align="left" valign=bottom>Always use perfect data type for variables. (Please keep printout of all datatype  in  every resource desk )</td>
+	</tr>
+	<tr>
+		<td height="17" align="left" valign=bottom>R</td>
+		<td align="left" valign=bottom>use or define subtype as many as you want in project specfic</td>
+	</tr>
+	<tr>
+		<td height="16" align="left" valign=bottom>R</td>
+		<td align="left" valign=bottom>define “SUBTYPE flag is CHAR(1)” for flag type variable in application</td>
+	</tr>
+	<tr>
+		<td height="32" align="left" valign=bottom>R/M</td>
+		<td align="left" valign=bottom>define “SUBTYPE” for varchar2 to add constraint like not null.<br> It is best to define subtype some id like VIN, PIN,SSN, PHONE like that in your project for appropriate field</td>
+	</tr>
+</table>
+<!-- ************************************************************************** -->
+<hr>
+<A NAME="table3"><h1>Sheet 4: <em>function</em></h1></A>
+<table cellspacing="0" border="0">
+	<colgroup width="86"></colgroup>
+	<colgroup width="684"></colgroup>
+	<tr>
+		<td height="16" align="left" valign=bottom>Readability</td>
+		<td align="left" valign=bottom>write one function to put entry logs statement with time</td>
+	</tr>
+	<tr>
+		<td height="16" align="left" valign=bottom>Readability</td>
+		<td align="left" valign=bottom>write one function to put exit logs statement with time</td>
+	</tr>
+	<tr>
+		<td height="16" align="left" valign=bottom>Readability</td>
+		<td align="left" valign=bottom>write one function to put exception logs statement with time</td>
+	</tr>
+	<tr>
+		<td height="16" align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom>so, it is good to avoid use of function for any DML. Best always use for read purpose</td>
+	</tr>
+	<tr>
+		<td height="16" align="left" valign=bottom>Performance</td>
+		<td align="left" valign=bottom>enable functions for parallel operation when they qualify</td>
+	</tr>
+	<tr>
+		<td height="17" align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom>use a single function accept sequence name as parameter, to get nextval from any sequence.</td>
+	</tr>
+	<tr>
+		<td height="17" align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom>write a function for append or concatination of string data instead of use pipe symbol in every pl/sql code</td>
+	</tr>
+</table>
+<!-- ************************************************************************** -->
+<hr>
+<A NAME="table4"><h1>Sheet 5: <em>UnitTest</em></h1></A>
+<table cellspacing="0" border="0">
+	<colgroup width="577"></colgroup>
+	<tr>
+		<td height="16" align="left" valign=bottom>write one function to test actual procedures and functions</td>
+	</tr>
+	<tr>
+		<td height="16" align="left" valign=bottom>that testing function should test all possible happy and alternative paths</td>
+	</tr>
+	<tr>
+		<td height="16" align="left" valign=bottom>that testing function should not accept any parameters, so it is easy to call from SQL client.</td>
+	</tr>
+	<tr>
+		<td height="16" align="left" valign=bottom>I can use these test function to identify how much time is taken by every procedure</td>
+	</tr>
+</table>
+<!-- ************************************************************************** -->
+<hr>
+<A NAME="table5"><h1>Sheet 6: <em>Package</em></h1></A>
+<table cellspacing="0" border="0">
+	<colgroup width="57"></colgroup>
+	<colgroup width="905"></colgroup>
+	<tr>
+		<td height="17" align="left" valign=bottom>P</td>
+		<td align="left" valign=bottom>declare all hard coded values like constant util used in java, since literal character values are case-SESITIVE</td>
+	</tr>
+	<tr>
+		<td height="16" align="left" valign=bottom>P</td>
+		<td align="left" valign=bottom>variable declared in package going to run only one time, where as if those declared as CONSTANT in declaration block it will run every run. We can avoid</td>
+	</tr>
+	<tr>
+		<td height="17" align="left" valign=bottom>M/R</td>
+		<td align="left" valign=bottom>use package to define sub-programe, so that we can have overloaded methods</td>
+	</tr>
+	<tr>
+		<td height="17" align="left" valign=bottom>M/R</td>
+		<td align="left" valign=bottom>have a package named “util” to keep ulitility functions and constant variable declaration. These function can be Re-used by more than one project</td>
+	</tr>
+	<tr>
+		<td height="17" align="left" valign=bottom>M/R</td>
+		<td align="left" valign=bottom>Have a package named “admin” to keep  functions and any anonymous block , compile statement for all procedure/functions/package and etc.</td>
+	</tr>
+	<tr>
+		<td height="16" align="left" valign=bottom>M/R</td>
+		<td align="left" valign=bottom>Have a package named “test” to keep  functions to unit test all procedure/functions/package and etc.</td>
+	</tr>
+	<tr>
+		<td height="16" align="left" valign=bottom>M/R</td>
+		<td align="left" valign=bottom>have a package named “exception” to keep all the exception handling or exception definitions</td>
+	</tr>
+</table>
+<!-- ************************************************************************** -->
+<hr>
+<A NAME="table6"><h1>Sheet 7: <em>Trigger</em></h1></A>
+<table cellspacing="0" border="0">
+	<colgroup width="86"></colgroup>
+	<colgroup width="327"></colgroup>
+	<tr>
+		<td height="16" align="left" valign=bottom>readability</td>
+		<td align="left" valign=bottom>use trigger to enforce any good practice</td>
+	</tr>
+	<tr>
+		<td height="16" align="left" valign=bottom>debugging</td>
+		<td align="left" valign=bottom>enable and disable accordingly</td>
+	</tr>
+</table>
+<!-- ************************************************************************** -->
+<hr>
+<A NAME="table7"><h1>Sheet 8: <em>Collection</em></h1></A>
+<table cellspacing="0" border="0">
+	<colgroup width="32"></colgroup>
+	<colgroup width="572"></colgroup>
+	<tr>
+		<td height="16" align="left" valign=bottom>R/M</td>
+		<td align="left" valign=bottom>use RECORD-Type for SELECT-INTO implicit cursor even single record.</td>
+	</tr>
+	<tr>
+		<td height="16" align="left" valign=bottom>P</td>
+		<td align="left" valign=bottom>use oracle collection rather than temporary table</td>
+	</tr>
+	<tr>
+		<td height="16" align="left" valign=bottom>P</td>
+		<td align="left" valign=bottom>use Associative array, to keep in memory itself for any control tables, which often used</td>
+	</tr>
+</table>
+<!-- ************************************************************************** -->
+<hr>
+<A NAME="table8"><h1>Sheet 9: <em>loop</em></h1></A>
+<table cellspacing="0" border="0">
+	<colgroup width="36"></colgroup>
+	<colgroup width="620"></colgroup>
+	<tr>
+		<td height="16" align="left" valign=bottom>R</td>
+		<td align="left" valign=bottom>better put &lt;&lt;lable&gt;&gt; on loops if u have very big statements inside of loops or at least one nested loops.</td>
+	</tr>
+	<tr>
+		<td height="16" align="left" valign=bottom>P</td>
+		<td align="left" valign=bottom>always put commit after loop, not inside of any type loops</td>
+	</tr>
+	<tr>
+		<td height="16" align="left" valign=bottom>R</td>
+		<td align="left" valign=bottom>use EXIT-WHEN Or CONTINUE-WHEN instead of having if statement to EXIT Or CONTINUE</td>
+	</tr>
+	<tr>
+		<td height="16" align="left" valign=bottom>R</td>
+		<td align="left" valign=bottom>use EXIT-WHEN Or CONTINUE-WHEN along with LABEL ,  instead of GOTO with label</td>
+	</tr>
+	<tr>
+		<td height="16" align="left" valign=bottom>R/M</td>
+		<td align="left" valign=bottom>Dont use GOTO, it may take control outside of loop or anywhere else.</td>
+	</tr>
+</table>
+<!-- ************************************************************************** -->
+<hr>
+<A NAME="table9"><h1>Sheet 10: <em>branching</em></h1></A>
+<table cellspacing="0" border="0">
+	<colgroup width="32"></colgroup>
+	<colgroup width="651"></colgroup>
+	<tr>
+		<td height="16" align="left" valign=bottom>R</td>
+		<td align="left" valign=bottom>use searched case when for a variable many possible value instead of selector case.</td>
+	</tr>
+</table>
+<!-- ************************************************************************** -->
+<hr>
+<A NAME="table10"><h1>Sheet 11: <em>anonymous</em></h1></A>
+<table cellspacing="0" border="0">
+	<colgroup width="462"></colgroup>
+	<tr>
+		<td height="16" align="left" valign=bottom>use for one time processing, otherwise go for procedure or function</td>
+	</tr>
+</table>
+<!-- ************************************************************************** -->
+<hr>
+<A NAME="table11"><h1>Sheet 12: <em>exception</em></h1></A>
+<table cellspacing="0" border="0">
+	<colgroup width="32"></colgroup>
+	<colgroup width="592"></colgroup>
+	<tr>
+		<td height="17" align="left" valign=bottom>Pr</td>
+		<td align="left" valign=bottom>always add “ EXCEPTION when others then sysout()” in every function/procedure</td>
+	</tr>
+</table>
+<!-- ************************************************************************** -->
+</body>
+
+</html>
