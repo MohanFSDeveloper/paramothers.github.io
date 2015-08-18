@@ -1,0 +1,1555 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+
+<html>
+<head>
+	
+	<meta http-equiv="content-type" content="text/html; charset=utf-8">
+	<title></title>
+	<meta name="generator" content="LibreOffice 4.2.8.2 (Linux)">
+	<meta name="created" content="20130710;121517000000000">
+	<meta name="changed" content="20130723;212225000000000">
+<link rel="style" type="text/css" href="/styles/stylesheet.css" media="screen">
+	
+</head>
+
+<body text="#000000">
+	<a href="index.html">SCM Page</a><br/>
+<hr>
+	<p><center>
+		<h1>Overview</h1>
+		<A HREF="#table0">How Git Differ from others</A><br>
+		<A HREF="#table1">git config parameter</A><br>
+		<A HREF="#table2">Hooks</A><br>
+		<A HREF="#table3">Git commands</A><br>
+		
+	</center></p>
+<hr>
+<A NAME="table0"><h1> 1: <em>How Git Differ from others</em></h1></A>
+<table cellspacing="0" border="0">
+	<colgroup width="86"></colgroup>
+	<colgroup width="304"></colgroup>
+	<colgroup width="817"></colgroup>
+	<tr>
+		<td height="16" align="right" valign=bottom sdval="1" sdnum="16393;">1</td>
+		<td align="left" valign=bottom>Repository without any dedicated server process</td>
+		<td align="left" valign=bottom><br></td>
+	</tr>
+	<tr>
+		<td height="16" align="right" valign=bottom sdval="2" sdnum="16393;">2</td>
+		<td align="left" valign=bottom>Convenient Work flow on daily</td>
+		<td align="left" valign=bottom>it is awesome</td>
+	</tr>
+	<tr>
+		<td height="16" align="right" valign=bottom sdval="3" sdnum="16393;">3</td>
+		<td align="left" valign=bottom>stash</td>
+		<td align="left" valign=bottom>switch branch without commit – but dont use,  follow proper work flow or use ammed commit technic</td>
+	</tr>
+	<tr>
+		<td height="16" align="right" valign=bottom sdval="4" sdnum="16393;">4</td>
+		<td align="left" valign=bottom>it is implemented as JGIT</td>
+		<td align="left" valign=bottom><br></td>
+	</tr>
+	<tr>
+		<td height="16" align="right" valign=bottom sdval="5" sdnum="16393;">5</td>
+		<td align="left" valign=bottom>can work multiple repo. At a time</td>
+		<td align="left" valign=bottom>i can pull the changes from many repo. At a time</td>
+	</tr>
+	<tr>
+		<td height="16" align="right" valign=bottom sdval="6" sdnum="16393;">6</td>
+		<td align="left" valign=bottom>Partial commit</td>
+		<td align="left" valign=bottom>it will give more clear idea when other check out commits and also  for self peer review,  at most logical seperation of commiting files</td>
+	</tr>
+	<tr>
+		<td height="16" align="right" valign=bottom sdval="7" sdnum="16393;">7</td>
+		<td align="left" valign=bottom>amend commit</td>
+		<td align="left" valign=bottom>to rewrite either commite message or files included in that particular commit</td>
+	</tr>
+	<tr>
+		<td height="16" align="right" valign=bottom sdval="8" sdnum="16393;">8</td>
+		<td align="left" valign=bottom>Rebase</td>
+		<td align="left" valign=bottom>to include series of commit on the HEAD, even after the commit occured once the branch created</td>
+	</tr>
+	<tr>
+		<td height="16" align="right" valign=bottom sdval="9" sdnum="16393;">9</td>
+		<td align="left" valign=bottom>Cherry – Pick</td>
+		<td align="left" valign=bottom>include changes of a particular commit alone into current checkout commit</td>
+	</tr>
+	<tr>
+		<td height="16" align="right" valign=bottom sdval="10" sdnum="16393;">10</td>
+		<td align="left" valign=bottom>hooks</td>
+		<td align="left" valign=bottom>usage of hooks in client and server side., it is like event handler, actually, hook is provide a lot opportunites to automate, enforce many practise and policiy</td>
+	</tr>
+	<tr>
+		<td height="16" align="right" valign=bottom sdval="11" sdnum="16393;">11</td>
+		<td align="left" valign=bottom>Custom Extend</td>
+		<td align="left" valign=bottom>Jgit is implemented in java, so it is possible to extern any logic or module as per my wish</td>
+	</tr>
+	<tr>
+		<td height="16" align="right" valign=bottom sdval="12" sdnum="16393;">12</td>
+		<td align="left" valign=bottom>integration with Gerrit, Mylyn</td>
+		<td align="left" valign=bottom>it is amazing, by auto fill commit message, come to know time taken by a task.</td>
+	</tr>
+	<tr>
+		<td height="16" align="right" valign=bottom sdval="13" sdnum="16393;">13</td>
+		<td align="left" valign=bottom>squash</td>
+		<td align="left" valign=bottom>combining many commit into single commit. It may helps to developer in his local repo.</td>
+	</tr>
+	<tr>
+		<td height="16" align="right" valign=bottom sdval="14" sdnum="16393;">14</td>
+		<td align="left" valign=bottom>Binary search in commit history</td>
+		<td align="left" valign=bottom>it is extradinary, to come to know easily, which and who has tampered the code</td>
+	</tr>
+	<tr>
+		<td height="16" align="right" valign=bottom sdval="15" sdnum="16393;">15</td>
+		<td align="left" valign=bottom>last commit – push</td>
+		<td align="left" valign=bottom>we can have any number of commit at local and we may happpy to push only the last and final commit to remote repo.</td>
+	</tr>
+	<tr>
+		<td height="16" align="right" valign=bottom sdval="16" sdnum="16393;">16</td>
+		<td align="left" valign=bottom>Removing a file from EVERY commit</td>
+		<td align="left" valign=bottom>if you put some unwanted file in most of commit, but it actually no need, u can remove that file from every commit..</td>
+	</tr>
+	<tr>
+		<td height="16" align="right" valign=bottom sdval="17" sdnum="16393;">17</td>
+		<td align="left" valign=bottom>branch switch – without check out</td>
+		<td align="left" valign=bottom>i can switch branches frequently even in fast, with check out or simply change</td>
+	</tr>
+	<tr>
+		<td height="16" align="right" valign=bottom sdval="18" sdnum="16393;">18</td>
+		<td align="left" valign=bottom>Merge at client side</td>
+		<td align="left" valign=bottom>merging happning at client side rahter than server side like other VCS</td>
+	</tr>
+	<tr>
+		<td height="16" align="right" valign=bottom sdval="19" sdnum="16393;">19</td>
+		<td align="left" valign=bottom>svn 2-way bridge</td>
+		<td align="left" valign=bottom>helps to use git local with all of its feature and finally push to remote SVN.</td>
+	</tr>
+	<tr>
+		<td height="16" align="right" valign=bottom sdval="20" sdnum="16393;">20</td>
+		<td align="left" valign=bottom><b><font color="#FF420E">Freely – private branch creation</font></b></td>
+		<td align="left" valign=bottom><b><font color="#FF420E">i can create any no, of branch in my local repo, without distrub the remote repo. Usually, i must not create branch in remote repo. To represent that day or a particular bug fix changes.. but i can in local without considering anythingk</font></b></td>
+	</tr>
+	<tr>
+		<td height="16" align="right" valign=bottom sdval="21" sdnum="16393;">21</td>
+		<td align="left" valign=bottom>architecture of branch creation</td>
+		<td align="left" valign=bottom>it make developer extreemly happy and convenient to work.. create any no. Of branch whatever he want without worry about remote repo. Or company standard usage of VCS</td>
+	</tr>
+	<tr>
+		<td height="16" align="right" valign=bottom sdval="22" sdnum="16393;">22</td>
+		<td align="left" valign=bottom>architecture of branch creation</td>
+		<td align="left" valign=bottom>it give huge possiblity of logical seperation  of commits, task,</td>
+	</tr>
+	<tr>
+		<td height="16" align="right" valign=bottom sdval="23" sdnum="16393;">23</td>
+		<td align="left" valign=bottom>3 -way merge</td>
+		<td align="left" valign=bottom>it is happen automatically in git, where is SVN, developer has to identify &amp; tell which is common ancestor</td>
+	</tr>
+	<tr>
+		<td height="17" align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+	</tr>
+	<tr>
+		<td height="17" align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+	</tr>
+	<tr>
+		<td height="16" align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom>Nag kalani..</td>
+		<td align="left" valign=bottom><br></td>
+	</tr>
+	<tr>
+		<td height="16" align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom>maana</td>
+		<td align="left" valign=bottom><br></td>
+	</tr>
+	<tr>
+		<td height="16" align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom>laksmi</td>
+		<td align="left" valign=bottom><br></td>
+	</tr>
+	<tr>
+		<td height="17" align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+	</tr>
+	<tr>
+		<td height="16" align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom>9842 22 5419</td>
+		<td align="left" valign=bottom><br></td>
+	</tr>
+	<tr>
+		<td height="17" align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+	</tr>
+	<tr>
+		<td height="17" align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+	</tr>
+	<tr>
+		<td height="16" align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom>99 40 58 2171</td>
+		<td align="left" valign=bottom><br></td>
+	</tr>
+	<tr>
+		<td height="16" align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom>kalita</td>
+		<td align="left" valign=bottom><br></td>
+	</tr>
+	<tr>
+		<td height="16" align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom>sassikala</td>
+		<td align="left" valign=bottom><br></td>
+	</tr>
+	<tr>
+		<td height="17" align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+	</tr>
+	<tr>
+		<td height="17" align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+	</tr>
+	<tr>
+		<td height="17" align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+	</tr>
+	<tr>
+		<td height="17" align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+	</tr>
+	<tr>
+		<td height="16" align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom>n800</td>
+		<td align="left" valign=bottom><br></td>
+	</tr>
+	<tr>
+		<td height="16" align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom>5mp/led flash</td>
+		<td align="left" valign=bottom><br></td>
+	</tr>
+	<tr>
+		<td height="16" align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom>calig</td>
+		<td align="left" valign=bottom><br></td>
+	</tr>
+	<tr>
+		<td height="16" align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom>2gb ram</td>
+		<td align="left" valign=bottom><br></td>
+	</tr>
+	<tr>
+		<td height="16" align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom>32 gb</td>
+		<td align="left" valign=bottom><br></td>
+	</tr>
+	<tr>
+		<td height="16" align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom>gray</td>
+		<td align="left" valign=bottom><br></td>
+	</tr>
+</table>
+<!-- ************************************************************************** -->
+<hr>
+<A NAME="table1"><h1> 2: <em>git config parameter</em></h1></A>
+<table cellspacing="0" border="0">
+	<colgroup width="86"></colgroup>
+	<colgroup width="206"></colgroup>
+	<colgroup width="395"></colgroup>
+	<tr>
+		<td height="16" align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom>/etc/gitconfig</td>
+		<td align="left" valign=bottom>it is system wide configuration used for all the user</td>
+	</tr>
+	<tr>
+		<td height="16" align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom>~/gitconfig</td>
+		<td align="left" valign=bottom>it is global configuration for specific user</td>
+	</tr>
+	<tr>
+		<td height="16" align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom>.git/config</td>
+		<td align="left" valign=bottom>it is repository level configuration</td>
+	</tr>
+	<tr>
+		<td height="16" align="left" valign=bottom bgcolor="#CCCCCC"><br></td>
+		<td align="left" valign=bottom bgcolor="#CCCCCC"><br></td>
+		<td align="left" valign=bottom bgcolor="#CCCCCC"><br></td>
+	</tr>
+	<tr>
+		<td height="16" align="left" valign=bottom>client side</td>
+		<td align="left" valign=bottom>core.whitespace</td>
+		<td align="left" valign=bottom>find and fix white space issue</td>
+	</tr>
+	<tr>
+		<td height="16" align="left" valign=bottom>client side</td>
+		<td align="left" valign=bottom>core.autocrlf</td>
+		<td align="left" valign=bottom>it  is useful line seprator issue among OS, for window set TRUE, for linux set INPUT</td>
+	</tr>
+	<tr>
+		<td height="16" align="left" valign=bottom>client side</td>
+		<td align="left" valign=bottom><font color="#800000">commit.template</font></td>
+		<td align="left" valign=bottom><font color="#800000">template message for commit-  i should use this</font></td>
+	</tr>
+	<tr>
+		<td height="16" align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom>gc.auto</td>
+		<td align="left" valign=bottom>how many loose object should be there to fire real gc</td>
+	</tr>
+	<tr>
+		<td height="16" align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom>gc.autopacklimit</td>
+		<td align="left" valign=bottom>how many packed file should be there to fire real gc</td>
+	</tr>
+	<tr>
+		<td height="16" align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom>branch.autosetuprebase</td>
+		<td align="left" valign=bottom><br></td>
+	</tr>
+	<tr>
+		<td height="16" align="left" valign=bottom bgcolor="#CCCCCC"><br></td>
+		<td align="left" valign=bottom bgcolor="#CCCCCC"><br></td>
+		<td align="left" valign=bottom bgcolor="#CCCCCC"><br></td>
+	</tr>
+	<tr>
+		<td height="16" align="left" valign=bottom><b>below options are useful only Command line Git usage</b></td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+	</tr>
+	<tr>
+		<td height="16" align="left" valign=bottom bgcolor="#CCCCCC"><br></td>
+		<td align="left" valign=bottom bgcolor="#CCCCCC"><br></td>
+		<td align="left" valign=bottom bgcolor="#CCCCCC"><br></td>
+	</tr>
+	<tr>
+		<td height="16" align="left" valign=bottom>client side</td>
+		<td align="left" valign=bottom>color.ui</td>
+		<td align="left" valign=bottom>colored output in terminal, but i will use Egit.</td>
+	</tr>
+	<tr>
+		<td height="16" align="left" valign=bottom>client side</td>
+		<td align="left" valign=bottom>help.autocorrect</td>
+		<td align="left" valign=bottom>it may help only in command line use of GIT</td>
+	</tr>
+	<tr>
+		<td height="16" align="left" valign=bottom>client side</td>
+		<td align="left" valign=bottom>core.pager</td>
+		<td align="left" valign=bottom>either more | less command or disable while log / diff printing</td>
+	</tr>
+	<tr>
+		<td height="16" align="left" valign=bottom>client side</td>
+		<td align="left" valign=bottom>core.editor</td>
+		<td align="left" valign=bottom>default editor for git commits messge</td>
+	</tr>
+	<tr>
+		<td height="16" align="left" valign=bottom>client side</td>
+		<td align="left" valign=bottom>diff.external</td>
+		<td align="left" valign=bottom>diff tool name to be used</td>
+	</tr>
+	<tr>
+		<td height="16" align="left" valign=bottom>client side</td>
+		<td align="left" valign=bottom>user.signingkey</td>
+		<td align="left" valign=bottom>for annotated tag creation</td>
+	</tr>
+	<tr>
+		<td height="16" align="left" valign=bottom>client side</td>
+		<td align="left" valign=bottom>core.excludesfile</td>
+		<td align="left" valign=bottom>it is similar to .gitignore file, but globally can reuse</td>
+	</tr>
+	<tr>
+		<td height="16" align="left" valign=bottom>client side</td>
+		<td align="left" valign=bottom>merge.tool</td>
+		<td align="left" valign=bottom>merge tool to be used</td>
+	</tr>
+	<tr>
+		<td height="16" align="left" valign=bottom bgcolor="#CCCCCC"><br></td>
+		<td align="left" valign=bottom bgcolor="#CCCCCC"><br></td>
+		<td align="left" valign=bottom bgcolor="#CCCCCC"><br></td>
+	</tr>
+	<tr>
+		<td height="16" align="left" valign=bottom>server side</td>
+		<td align="left" valign=bottom>receive.fsckObjects</td>
+		<td align="left" valign=bottom>force server git, to check object consistence with SHA-1</td>
+	</tr>
+	<tr>
+		<td height="16" align="left" valign=bottom>server side</td>
+		<td align="left" valign=bottom>receive.denyNonFastForwards</td>
+		<td align="left" valign=bottom><br></td>
+	</tr>
+	<tr>
+		<td height="16" align="left" valign=bottom>server side</td>
+		<td align="left" valign=bottom><font color="#800000">receive.denyDeletes</font></td>
+		<td align="left" valign=bottom><font color="#800000">it will deny to delete any branch or tag on server side from client</font></td>
+	</tr>
+</table>
+<!-- ************************************************************************** -->
+<hr>
+<A NAME="table2"><h1> 3: <em>Hooks</em></h1></A>
+<table cellspacing="0" border="0">
+	<colgroup width="86"></colgroup>
+	<colgroup width="172"></colgroup>
+	<colgroup width="137"></colgroup>
+	<colgroup width="395"></colgroup>
+	<tr>
+		<td height="16" align="left" valign=bottom>client side</td>
+		<td align="left" valign=bottom>Commiting-workflow hooks</td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+	</tr>
+	<tr>
+		<td height="16" align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom>Pre-commit</td>
+		<td align="left" valign=bottom>it used to verify the snopshot of commit object</td>
+	</tr>
+	<tr>
+		<td height="16" align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom>Prepare-commit-msg</td>
+		<td align="left" valign=bottom>used to edit or change the default commit message</td>
+	</tr>
+	<tr>
+		<td height="16" align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom>Commit-msg</td>
+		<td align="left" valign=bottom>we can use to validate the commit message pattern</td>
+	</tr>
+	<tr>
+		<td height="16" align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom>Post-commit</td>
+		<td align="left" valign=bottom>we can use to send mail after commit</td>
+	</tr>
+	<tr>
+		<td height="16" align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom bgcolor="#CCCCCC"><br></td>
+		<td align="left" valign=bottom bgcolor="#CCCCCC"><br></td>
+		<td align="left" valign=bottom bgcolor="#CCCCCC"><br></td>
+	</tr>
+	<tr>
+		<td height="16" align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom>Email workflow hooks</td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+	</tr>
+	<tr>
+		<td height="16" align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom>Applypatch-msg</td>
+		<td align="left" valign=bottom>proposed commit message file when applying patch</td>
+	</tr>
+	<tr>
+		<td height="16" align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom>Pre-applypatch</td>
+		<td align="left" valign=bottom>just before to commit the patch changes, can do any type of test</td>
+	</tr>
+	<tr>
+		<td height="16" align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom>Post-applypatch</td>
+		<td align="left" valign=bottom><br></td>
+	</tr>
+	<tr>
+		<td height="16" align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom bgcolor="#CCCCCC"><br></td>
+		<td align="left" valign=bottom bgcolor="#CCCCCC"><br></td>
+		<td align="left" valign=bottom bgcolor="#CCCCCC"><br></td>
+	</tr>
+	<tr>
+		<td height="16" align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom>other client workflow</td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+	</tr>
+	<tr>
+		<td height="16" align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom>Pre-rebase</td>
+		<td align="left" valign=bottom><br></td>
+	</tr>
+	<tr>
+		<td height="16" align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom>Post-checkout</td>
+		<td align="left" valign=bottom><br></td>
+	</tr>
+	<tr>
+		<td height="16" align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom>Post-merge</td>
+		<td align="left" valign=bottom><br></td>
+	</tr>
+	<tr>
+		<td height="16" align="left" valign=bottom bgcolor="#CCCCCC"><br></td>
+		<td align="left" valign=bottom bgcolor="#CCCCCC"><br></td>
+		<td align="left" valign=bottom bgcolor="#CCCCCC"><br></td>
+		<td align="left" valign=bottom bgcolor="#CCCCCC"><br></td>
+	</tr>
+	<tr>
+		<td height="16" align="left" valign=bottom>server side</td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+	</tr>
+	<tr>
+		<td height="16" align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom>Pre-receive</td>
+		<td align="left" valign=bottom>validate any thing on push</td>
+	</tr>
+	<tr>
+		<td height="16" align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom>Post-receive</td>
+		<td align="left" valign=bottom>any kind of automation or nofication</td>
+	</tr>
+	<tr>
+		<td height="16" align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom>update</td>
+		<td align="left" valign=bottom><br></td>
+	</tr>
+</table>
+<!-- ************************************************************************** -->
+<hr>
+<A NAME="table3"><h1> 4: <em>Git commands</em></h1></A>
+<table cellspacing="0" border="0">
+	<colgroup width="34"></colgroup>
+	<colgroup width="137"></colgroup>
+	<colgroup width="103"></colgroup>
+	<colgroup width="120"></colgroup>
+	<colgroup width="103"></colgroup>
+	<colgroup width="446"></colgroup>
+	<colgroup span="4" width="86"></colgroup>
+	<tr>
+		<td height="16" align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom>git</td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+	</tr>
+	<tr>
+		<td height="17" align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+	</tr>
+	<tr>
+		<td height="16" align="left" valign=bottom bgcolor="#CCCCCC"><br></td>
+		<td align="left" valign=bottom bgcolor="#CCCCCC"><br></td>
+		<td align="left" valign=bottom bgcolor="#CCCCCC"><br></td>
+		<td align="left" valign=bottom bgcolor="#CCCCCC"><br></td>
+		<td align="left" valign=bottom bgcolor="#CCCCCC"><br></td>
+		<td align="left" valign=bottom bgcolor="#CCCCCC"><br></td>
+		<td align="left" valign=bottom bgcolor="#CCCCCC"><br></td>
+		<td align="left" valign=bottom bgcolor="#CCCCCC"><br></td>
+		<td align="left" valign=bottom bgcolor="#CCCCCC"><br></td>
+		<td align="left" valign=bottom bgcolor="#CCCCCC"><br></td>
+	</tr>
+	<tr>
+		<td height="16" align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom>Hash-object</td>
+		<td align="left" valign=bottom>-w</td>
+		<td align="left" valign=bottom>&lt;filename&gt;</td>
+		<td align="left" valign=bottom>to add file content  to repo</td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+	</tr>
+	<tr>
+		<td height="16" align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom>-w</td>
+		<td align="left" valign=bottom>--stdin</td>
+		<td align="left" valign=bottom>to add key board input into repo.</td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+	</tr>
+	<tr>
+		<td height="16" align="left" valign=bottom bgcolor="#CCCCCC"><br></td>
+		<td align="left" valign=bottom bgcolor="#CCCCCC"><br></td>
+		<td align="left" valign=bottom bgcolor="#CCCCCC"><br></td>
+		<td align="left" valign=bottom bgcolor="#CCCCCC"><br></td>
+		<td align="left" valign=bottom bgcolor="#CCCCCC"><br></td>
+		<td align="left" valign=bottom bgcolor="#CCCCCC"><br></td>
+		<td align="left" valign=bottom bgcolor="#CCCCCC"><br></td>
+		<td align="left" valign=bottom bgcolor="#CCCCCC"><br></td>
+		<td align="left" valign=bottom bgcolor="#CCCCCC"><br></td>
+		<td align="left" valign=bottom bgcolor="#CCCCCC"><br></td>
+	</tr>
+	<tr>
+		<td height="16" align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom>Cat-file</td>
+		<td align="left" valign=bottom>-p</td>
+		<td align="left" valign=bottom>&lt;hashkey&gt;</td>
+		<td align="left" valign=bottom>it will print the content of object indentified by given key.. key may point to blob, tree, commit object</td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+	</tr>
+	<tr>
+		<td height="16" align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom>-t</td>
+		<td align="left" valign=bottom>&lt;hashkey&gt;</td>
+		<td align="left" valign=bottom>print type of object like blob/tree/commit</td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+	</tr>
+	<tr>
+		<td height="16" align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom>-p</td>
+		<td align="left" valign=bottom>master^{tree}</td>
+		<td align="left" valign=bottom>print content of a tree object</td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+	</tr>
+	<tr>
+		<td height="16" align="left" valign=bottom bgcolor="#CCCCCC"><br></td>
+		<td align="left" valign=bottom bgcolor="#CCCCCC"><br></td>
+		<td align="left" valign=bottom bgcolor="#CCCCCC"><br></td>
+		<td align="left" valign=bottom bgcolor="#CCCCCC"><br></td>
+		<td align="left" valign=bottom bgcolor="#CCCCCC"><br></td>
+		<td align="left" valign=bottom bgcolor="#CCCCCC"><br></td>
+		<td align="left" valign=bottom bgcolor="#CCCCCC"><br></td>
+		<td align="left" valign=bottom bgcolor="#CCCCCC"><br></td>
+		<td align="left" valign=bottom bgcolor="#CCCCCC"><br></td>
+		<td align="left" valign=bottom bgcolor="#CCCCCC"><br></td>
+	</tr>
+	<tr>
+		<td height="16" align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom>Update-index</td>
+		<td align="left" valign=bottom>--add</td>
+		<td align="left" valign=bottom>--cacheinfo</td>
+		<td align="left" valign=bottom>add a file to stage</td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+	</tr>
+	<tr>
+		<td height="16" align="left" valign=bottom bgcolor="#CCCCCC"><br></td>
+		<td align="left" valign=bottom bgcolor="#CCCCCC"><br></td>
+		<td align="left" valign=bottom bgcolor="#CCCCCC"><br></td>
+		<td align="left" valign=bottom bgcolor="#CCCCCC"><br></td>
+		<td align="left" valign=bottom bgcolor="#CCCCCC"><br></td>
+		<td align="left" valign=bottom bgcolor="#CCCCCC"><br></td>
+		<td align="left" valign=bottom bgcolor="#CCCCCC"><br></td>
+		<td align="left" valign=bottom bgcolor="#CCCCCC"><br></td>
+		<td align="left" valign=bottom bgcolor="#CCCCCC"><br></td>
+		<td align="left" valign=bottom bgcolor="#CCCCCC"><br></td>
+	</tr>
+	<tr>
+		<td height="16" align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom>Write-tree</td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom>create a tree object from index if is not already there</td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+	</tr>
+	<tr>
+		<td height="16" align="left" valign=bottom bgcolor="#CCCCCC"><br></td>
+		<td align="left" valign=bottom bgcolor="#CCCCCC"><br></td>
+		<td align="left" valign=bottom bgcolor="#CCCCCC"><br></td>
+		<td align="left" valign=bottom bgcolor="#CCCCCC"><br></td>
+		<td align="left" valign=bottom bgcolor="#CCCCCC"><br></td>
+		<td align="left" valign=bottom bgcolor="#CCCCCC"><br></td>
+		<td align="left" valign=bottom bgcolor="#CCCCCC"><br></td>
+		<td align="left" valign=bottom bgcolor="#CCCCCC"><br></td>
+		<td align="left" valign=bottom bgcolor="#CCCCCC"><br></td>
+		<td align="left" valign=bottom bgcolor="#CCCCCC"><br></td>
+	</tr>
+	<tr>
+		<td height="16" align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom>Read-tree</td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom>read a tree object from repo. To index/stage area</td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+	</tr>
+	<tr>
+		<td height="16" align="left" valign=bottom bgcolor="#CCCCCC"><br></td>
+		<td align="left" valign=bottom bgcolor="#CCCCCC"><br></td>
+		<td align="left" valign=bottom bgcolor="#CCCCCC"><br></td>
+		<td align="left" valign=bottom bgcolor="#CCCCCC"><br></td>
+		<td align="left" valign=bottom bgcolor="#CCCCCC"><br></td>
+		<td align="left" valign=bottom bgcolor="#CCCCCC"><br></td>
+		<td align="left" valign=bottom bgcolor="#CCCCCC"><br></td>
+		<td align="left" valign=bottom bgcolor="#CCCCCC"><br></td>
+		<td align="left" valign=bottom bgcolor="#CCCCCC"><br></td>
+		<td align="left" valign=bottom bgcolor="#CCCCCC"><br></td>
+	</tr>
+	<tr>
+		<td height="16" align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom>Commit-tree</td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom>&lt;hashkey&gt;</td>
+		<td align="left" valign=bottom>hash key of a TREE object</td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+	</tr>
+	<tr>
+		<td height="16" align="left" valign=bottom bgcolor="#CCCCCC"><br></td>
+		<td align="left" valign=bottom bgcolor="#CCCCCC"><br></td>
+		<td align="left" valign=bottom bgcolor="#CCCCCC"><br></td>
+		<td align="left" valign=bottom bgcolor="#CCCCCC"><br></td>
+		<td align="left" valign=bottom bgcolor="#CCCCCC"><br></td>
+		<td align="left" valign=bottom bgcolor="#CCCCCC"><br></td>
+		<td align="left" valign=bottom bgcolor="#CCCCCC"><br></td>
+		<td align="left" valign=bottom bgcolor="#CCCCCC"><br></td>
+		<td align="left" valign=bottom bgcolor="#CCCCCC"><br></td>
+		<td align="left" valign=bottom bgcolor="#CCCCCC"><br></td>
+	</tr>
+	<tr>
+		<td height="16" align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom>log</td>
+		<td align="left" valign=bottom>--stat</td>
+		<td align="left" valign=bottom>&lt;hashkey&gt;</td>
+		<td align="left" valign=bottom>print the logs</td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+	</tr>
+	<tr>
+		<td height="16" align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom>--abbrev-commit</td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+	</tr>
+	<tr>
+		<td height="16" align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom>--pretty=oneline</td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+	</tr>
+	<tr>
+		<td height="16" align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom>-g</td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+	</tr>
+	<tr>
+		<td height="16" align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom>--no-merge</td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom>to display the log message with nice format</td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+	</tr>
+	<tr>
+		<td height="16" align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom>reflog</td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+	</tr>
+	<tr>
+		<td height="16" align="left" valign=bottom bgcolor="#CCCCCC"><br></td>
+		<td align="left" valign=bottom bgcolor="#CCCCCC"><br></td>
+		<td align="left" valign=bottom bgcolor="#CCCCCC"><br></td>
+		<td align="left" valign=bottom bgcolor="#CCCCCC"><br></td>
+		<td align="left" valign=bottom bgcolor="#CCCCCC"><br></td>
+		<td align="left" valign=bottom bgcolor="#CCCCCC"><br></td>
+		<td align="left" valign=bottom bgcolor="#CCCCCC"><br></td>
+		<td align="left" valign=bottom bgcolor="#CCCCCC"><br></td>
+		<td align="left" valign=bottom bgcolor="#CCCCCC"><br></td>
+		<td align="left" valign=bottom bgcolor="#CCCCCC"><br></td>
+	</tr>
+	<tr>
+		<td height="16" align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom>Update-ref</td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom>to update reference file with a hash key</td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+	</tr>
+	<tr>
+		<td height="16" align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom>Symbolic-ref</td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom>to print value of symbolic reference, usally HEAD</td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+	</tr>
+	<tr>
+		<td height="16" align="left" valign=bottom bgcolor="#CCCCCC"><br></td>
+		<td align="left" valign=bottom bgcolor="#CCCCCC"><br></td>
+		<td align="left" valign=bottom bgcolor="#CCCCCC"><br></td>
+		<td align="left" valign=bottom bgcolor="#CCCCCC"><br></td>
+		<td align="left" valign=bottom bgcolor="#CCCCCC"><br></td>
+		<td align="left" valign=bottom bgcolor="#CCCCCC"><br></td>
+		<td align="left" valign=bottom bgcolor="#CCCCCC"><br></td>
+		<td align="left" valign=bottom bgcolor="#CCCCCC"><br></td>
+		<td align="left" valign=bottom bgcolor="#CCCCCC"><br></td>
+		<td align="left" valign=bottom bgcolor="#CCCCCC"><br></td>
+	</tr>
+	<tr>
+		<td height="16" align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom>Verify-pack</td>
+		<td align="left" valign=bottom>-v</td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+	</tr>
+	<tr>
+		<td height="16" align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom>add</td>
+		<td align="left" valign=bottom>-i</td>
+		<td align="left" valign=bottom>--interactive</td>
+		<td align="left" valign=bottom>It is like partially staging in Egit</td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+	</tr>
+	<tr>
+		<td height="16" align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom>remote</td>
+		<td align="left" valign=bottom>&lt;loalFolder&gt;</td>
+		<td align="left" valign=bottom>&lt;url&gt;</td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+	</tr>
+	<tr>
+		<td height="16" align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom>tag</td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+	</tr>
+	<tr>
+		<td height="16" align="left" valign=bottom bgcolor="#CCCCCC"><br></td>
+		<td align="left" valign=bottom bgcolor="#CCCCCC"><br></td>
+		<td align="left" valign=bottom bgcolor="#CCCCCC"><br></td>
+		<td align="left" valign=bottom bgcolor="#CCCCCC"><br></td>
+		<td align="left" valign=bottom bgcolor="#CCCCCC"><br></td>
+		<td align="left" valign=bottom bgcolor="#CCCCCC"><br></td>
+		<td align="left" valign=bottom bgcolor="#CCCCCC"><br></td>
+		<td align="left" valign=bottom bgcolor="#CCCCCC"><br></td>
+		<td align="left" valign=bottom bgcolor="#CCCCCC"><br></td>
+		<td align="left" valign=bottom bgcolor="#CCCCCC"><br></td>
+	</tr>
+	<tr>
+		<td height="16" align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom>commit</td>
+		<td align="left" valign=bottom>--amend</td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+	</tr>
+	<tr>
+		<td height="16" align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom>branch</td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom>&lt;branchNme&gt;</td>
+		<td align="left" valign=bottom>create a branch</td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+	</tr>
+	<tr>
+		<td height="16" align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom>-d</td>
+		<td align="left" valign=bottom>&lt;branchNme&gt;</td>
+		<td align="left" valign=bottom>delete the given branch</td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+	</tr>
+	<tr>
+		<td height="16" align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom>-v</td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom>print last commit on every branch</td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+	</tr>
+	<tr>
+		<td height="16" align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom>--merged</td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom>print list of branches are merged into currently checked out</td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+	</tr>
+	<tr>
+		<td height="16" align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom>--no-merged</td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom>print list of branches are not yet merged into currently checked out</td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+	</tr>
+	<tr>
+		<td height="16" align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom>-DDD</td>
+		<td align="left" valign=bottom>&lt;branchNme&gt;</td>
+		<td align="left" valign=bottom>forcefully delete the given branch</td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+	</tr>
+	<tr>
+		<td height="16" align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom>checkout</td>
+		<td align="left" valign=bottom>-b</td>
+		<td align="left" valign=bottom>&lt;branchNme&gt;</td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+	</tr>
+	<tr>
+		<td height="16" align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom>merge</td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom>&lt;branchNme&gt;</td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+	</tr>
+	<tr>
+		<td height="16" align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom>mergetool</td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom>start merge tool</td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+	</tr>
+	<tr>
+		<td height="16" align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom>gc</td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+	</tr>
+	<tr>
+		<td height="16" align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom>Count-object</td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+	</tr>
+	<tr>
+		<td height="16" align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom>prune</td>
+		<td align="left" valign=bottom>--expire</td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+	</tr>
+	<tr>
+		<td height="16" align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom>Filter-branch</td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom>to remove a file from every commit</td>
+		<td align="right" valign=bottom sdval="1" sdnum="16393;">1</td>
+		<td align="left" valign=bottom>bad</td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+	</tr>
+	<tr>
+		<td height="16" align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom>config</td>
+		<td align="left" valign=bottom>--list</td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom>configuration of git</td>
+		<td align="right" valign=bottom sdval="2" sdnum="16393;">2</td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+	</tr>
+	<tr>
+		<td height="16" align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom>archive</td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom>to release project from Egit</td>
+		<td align="right" valign=bottom sdval="3" sdnum="16393;">3</td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom>middle</td>
+		<td align="left" valign=bottom>bad</td>
+	</tr>
+	<tr>
+		<td height="16" align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom>am</td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom>hook for email workflow</td>
+		<td align="right" valign=bottom sdval="4" sdnum="16393;">4</td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+	</tr>
+	<tr>
+		<td height="16" align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom>show</td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+		<td align="right" valign=bottom sdval="5" sdnum="16393;">5</td>
+		<td align="left" valign=bottom>middle</td>
+		<td align="left" valign=bottom>good</td>
+		<td align="left" valign=bottom><br></td>
+	</tr>
+	<tr>
+		<td height="16" align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom>status</td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom>to see any confilict file</td>
+		<td align="right" valign=bottom sdval="6" sdnum="16393;">6</td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+	</tr>
+	<tr>
+		<td height="16" align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom>stash</td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom>create a stash for current changes</td>
+		<td align="right" valign=bottom sdval="7" sdnum="16393;">7</td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+	</tr>
+	<tr>
+		<td height="16" align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom>list</td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom>list all the stash in a repo.</td>
+		<td align="right" valign=bottom sdval="8" sdnum="16393;">8</td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+	</tr>
+	<tr>
+		<td height="16" align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom>apply</td>
+		<td align="left" valign=bottom>stash@2</td>
+		<td align="left" valign=bottom><br></td>
+		<td align="right" valign=bottom sdval="9" sdnum="16393;">9</td>
+		<td align="left" valign=bottom>good</td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+	</tr>
+	<tr>
+		<td height="16" align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom>--index</td>
+		<td align="left" valign=bottom>to re-stage file when apply a stash</td>
+		<td align="right" valign=bottom sdval="10" sdnum="16393;">10</td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+	</tr>
+	<tr>
+		<td height="16" align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom>drop</td>
+		<td align="left" valign=bottom>Stash@{2}</td>
+		<td align="left" valign=bottom>delete the give stash</td>
+		<td align="right" valign=bottom sdval="11" sdnum="16393;">11</td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+	</tr>
+	<tr>
+		<td height="16" align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom>pop</td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom>apply the stash and drop it immediatly</td>
+		<td align="right" valign=bottom sdval="12" sdnum="16393;">12</td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+	</tr>
+	<tr>
+		<td height="16" align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom>branch</td>
+		<td align="left" valign=bottom>&lt;branchNme&gt;</td>
+		<td align="left" valign=bottom>create a branch from a stash</td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+	</tr>
+	<tr>
+		<td height="16" align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom>rebase</td>
+		<td align="left" valign=bottom>-i</td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom>interactive rebase</td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+	</tr>
+	<tr>
+		<td height="16" align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom>blame</td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+	</tr>
+	<tr>
+		<td height="16" align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom>bisect</td>
+		<td align="left" valign=bottom>start</td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+	</tr>
+	<tr>
+		<td height="16" align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom>bad</td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+	</tr>
+	<tr>
+		<td height="16" align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom>good</td>
+		<td align="left" valign=bottom>&lt;hashkey&gt;</td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+	</tr>
+	<tr>
+		<td height="16" align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom>reset</td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+	</tr>
+	<tr>
+		<td height="16" align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom>clone</td>
+		<td align="left" valign=bottom>--bare</td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom>to create a bare repo.</td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+	</tr>
+	<tr>
+		<td height="16" align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom>init</td>
+		<td align="left" valign=bottom>--bare</td>
+		<td align="left" valign=bottom>--shared</td>
+		<td align="left" valign=bottom>initialize the git repository</td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+	</tr>
+	<tr>
+		<td height="16" align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom>fetch</td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+	</tr>
+	<tr>
+		<td height="16" align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><font color="#FF420E">Request-pull</font></td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+	</tr>
+	<tr>
+		<td height="16" align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><font color="#FF420E">Format-batch</font></td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom>it is best way to creat patch</td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+	</tr>
+	<tr>
+		<td height="16" align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><font color="#FF420E">Send-email</font></td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+	</tr>
+	<tr>
+		<td height="16" align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom>Merge-base</td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+	</tr>
+	<tr>
+		<td height="16" align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom>describe</td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom>to generate a valid tag name</td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+	</tr>
+	<tr>
+		<td height="16" align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom>shortlog</td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom>to prepare a change list from commit</td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+	</tr>
+	<tr>
+		<td height="16" align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom>push</td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+	</tr>
+	<tr>
+		<td height="17" align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+	</tr>
+	<tr>
+		<td height="16" align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom>find .git/objects</td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom>print list of object availabe in current git repository</td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+	</tr>
+	<tr>
+		<td height="16" align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom>find .git/objects -type f</td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom>it print type of objects in the give folder</td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+	</tr>
+	<tr>
+		<td height="16" align="left" valign=bottom bgcolor="#CCCCCC"><br></td>
+		<td align="left" valign=bottom bgcolor="#CCCCCC"><br></td>
+		<td align="left" valign=bottom bgcolor="#CCCCCC"><br></td>
+		<td align="left" valign=bottom bgcolor="#CCCCCC"><br></td>
+		<td align="left" valign=bottom bgcolor="#CCCCCC"><br></td>
+		<td align="left" valign=bottom bgcolor="#CCCCCC"><br></td>
+		<td align="left" valign=bottom bgcolor="#CCCCCC"><br></td>
+		<td align="left" valign=bottom bgcolor="#CCCCCC"><br></td>
+		<td align="left" valign=bottom bgcolor="#CCCCCC"><br></td>
+		<td align="left" valign=bottom bgcolor="#CCCCCC"><br></td>
+	</tr>
+	<tr>
+		<td height="17" align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+	</tr>
+	<tr>
+		<td height="16" align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom bgcolor="#00FF00"><font color="#800000">Server Tool</font></td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+	</tr>
+	<tr>
+		<td height="16" align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom>Git-shell</td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom>git provided shell</td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+	</tr>
+	<tr>
+		<td height="16" align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom bgcolor="#99CCFF">gitweb</td>
+		<td align="left" valign=bottom bgcolor="#99CCFF"><br></td>
+		<td align="left" valign=bottom bgcolor="#99CCFF"><br></td>
+		<td align="left" valign=bottom bgcolor="#99CCFF">cgi script provided by git, to give good WEB-UI for repos.</td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+	</tr>
+	<tr>
+		<td height="16" align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom>gitosis</td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom>git provided tool to manage for large no. Of user and theri access level</td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+	</tr>
+	<tr>
+		<td height="16" align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom>daemon</td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom>git provided daemon process to give public git protocol-read access</td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+	</tr>
+</table>
+<!-- ************************************************************************** -->
+</body>
+
+</html>

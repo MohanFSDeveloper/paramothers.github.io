@@ -1,0 +1,315 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+
+<html>
+<head>
+	
+	<meta http-equiv="content-type" content="text/html; charset=utf-8">
+	<title></title>
+	<meta name="generator" content="LibreOffice 4.2.8.2 (Linux)">
+	<meta name="created" content="20130129;24058000000000">
+	<meta name="changed" content="20130130;152910000000000">
+	
+	<style type="text/css"><!-- 
+		body,div,table,thead,tbody,tfoot,tr,th,td,p { font-family:"Arial"; font-size:x-small }
+		 -->
+	</style>
+	
+</head>
+
+<body text="#000000">
+<hr>
+	<p><center>
+		<h1>Overview</h1>
+		<A HREF="#table0">Variable Declaration</A><br>
+		<A HREF="#table1">Branching</A><br>
+		<A HREF="#table2">Method</A><br>
+		<A HREF="#table3">Loops</A><br>
+		<A HREF="#table4">Collection</A><br>
+		<A HREF="#table5">Formating</A><br>
+		<A HREF="#table6">Log and Out</A><br>
+		<A HREF="#table7">Misc</A><br>
+		<A HREF="#table8">DB</A><br>
+		<A HREF="#table9">API</A><br>
+		
+	</center></p>
+<hr>
+<A NAME="table0"><h1> 1: <em>Variable Declaration</em></h1></A>
+<table cellspacing="0" border="0">
+	<colgroup width="26"></colgroup>
+	<colgroup width="637"></colgroup>
+	<tr>
+		<td height="17" align="right" valign=bottom sdval="1" sdnum="16393;">1</td>
+		<td align="left" valign=bottom>Use CamelCase naming convention for Class, Interface, Methods and Variables.</td>
+	</tr>
+	<tr>
+		<td height="16" align="right" valign=bottom sdval="2" sdnum="16393;">2</td>
+		<td align="left" valign=bottom>Proper names for class, methods and variables.</td>
+	</tr>
+	<tr>
+		<td height="16" align="right" valign=bottom sdval="3" sdnum="16393;">3</td>
+		<td align="left" valign=bottom>Prefer reference variable as Interface type in method parameter and return type.</td>
+	</tr>
+	<tr>
+		<td height="16" align="right" valign=bottom sdval="4" sdnum="16393;">4</td>
+		<td align="left" valign=bottom>Reference variable should  be same as class name with first letter in lower case.</td>
+	</tr>
+	<tr>
+		<td height="16" align="right" valign=bottom sdval="5" sdnum="16393;">5</td>
+		<td align="left" valign=bottom>Use appropriate Access Specifier for variable instead of keeping them in default visibility.</td>
+	</tr>
+	<tr>
+		<td height="16" align="right" valign=bottom sdval="6" sdnum="16393;">6</td>
+		<td align="left" valign=bottom>Never do Primitive parsing and wrapping, instead use auto-boxing.</td>
+	</tr>
+	<tr>
+		<td height="16" align="right" valign=bottom sdval="7" sdnum="16393;">7</td>
+		<td align="left" valign=bottom>Use Wrapper for primitive.</td>
+	</tr>
+	<tr>
+		<td height="16" align="right" valign=bottom sdval="8" sdnum="16393;">8</td>
+		<td align="left" valign=bottom>Never declare any variable in class scope unless it is mandatory.</td>
+	</tr>
+	<tr>
+		<td height="16" align="right" valign=bottom sdval="9" sdnum="16393;">9</td>
+		<td align="left" valign=bottom>Don't declare reference or primitive variable then and there. Put all of them in beginning of method.</td>
+	</tr>
+</table>
+<!-- ************************************************************************** -->
+<hr>
+<A NAME="table1"><h1> 2: <em>Branching</em></h1></A>
+<table cellspacing="0" border="0">
+	<colgroup width="45"></colgroup>
+	<colgroup width="821"></colgroup>
+	<tr>
+		<td height="16" align="right" valign=bottom sdval="1" sdnum="16393;">1</td>
+		<td align="left" valign=bottom>Give one line space after any control statement.</td>
+	</tr>
+	<tr>
+		<td height="16" align="right" valign=bottom sdval="2" sdnum="16393;">2</td>
+		<td align="left" valign=bottom>If-else block always should have { } braces even if it have a single statement.</td>
+	</tr>
+	<tr>
+		<td height="16" align="right" valign=bottom sdval="3" sdnum="16393;">3</td>
+		<td align="left" valign=bottom>Put logger to print the value before any branching.</td>
+	</tr>
+	<tr>
+		<td height="16" align="right" valign=bottom sdval="4" sdnum="16393;">4</td>
+		<td align="left" valign=bottom>Put negative validation in beginning of your method definition instead of placing it in the middle/end.</td>
+	</tr>
+	<tr>
+		<td height="16" align="right" valign=bottom sdval="5" sdnum="16393;">5</td>
+		<td align="left" valign=bottom>Use if statement in a nested manner instead of using many conditions in a single statement.</td>
+	</tr>
+	<tr>
+		<td height="16" align="right" valign=bottom sdval="6" sdnum="16393;">6</td>
+		<td align="left" valign=bottom>Switch-Case must have default block, though it is not mandatory.</td>
+	</tr>
+	<tr>
+		<td height="16" align="right" valign=bottom sdval="7" sdnum="16393;">7</td>
+		<td align="left" valign=bottom>Minimize the number of statements in case block, if more logic need then, write it in separate method and invoke that in case block.</td>
+	</tr>
+</table>
+<!-- ************************************************************************** -->
+<hr>
+<A NAME="table2"><h1> 3: <em>Method</em></h1></A>
+<table cellspacing="0" border="0">
+	<colgroup width="47"></colgroup>
+	<colgroup width="694"></colgroup>
+	<tr>
+		<td height="16" align="right" valign=bottom sdval="1" sdnum="16393;">1</td>
+		<td align="left" valign=bottom>Method name should be appropriate, first letter should be lowercase.</td>
+	</tr>
+	<tr>
+		<td height="16" align="right" valign=bottom sdval="2" sdnum="16393;">2</td>
+		<td align="left" valign=bottom>Service layer method name should start like “save”, “create”, “remove”, “list”.</td>
+	</tr>
+	<tr>
+		<td height="16" align="right" valign=bottom sdval="3" sdnum="16393;">3</td>
+		<td align="left" valign=bottom>DAO layer method name should start like “delete, update, select, insert”.</td>
+	</tr>
+	<tr>
+		<td height="18" align="right" valign=bottom sdval="4" sdnum="16393;">4</td>
+		<td align="left" valign=bottom><font face="Calibri" color="#000000">Prefer chain method call instead of declaring many reference variable and import statements.</font></td>
+	</tr>
+	<tr>
+		<td height="16" align="right" valign=bottom sdval="5" sdnum="16393;">5</td>
+		<td align="left" valign=bottom>Do input parameter validation in very beginning itself and have it in a separate method.</td>
+	</tr>
+	<tr>
+		<td height="17" align="right" valign=bottom sdval="6" sdnum="16393;">6</td>
+		<td align="left" valign=bottom>Use equalIgnoreCase method to compare your command line input parameters.</td>
+	</tr>
+	<tr>
+		<td height="16" align="right" valign=bottom sdval="7" sdnum="16393;">7</td>
+		<td align="left" valign=bottom>Use appropriate Access Specifier for method instead of keeping them in default visibility.</td>
+	</tr>
+	<tr>
+		<td height="16" align="right" valign=bottom sdval="8" sdnum="16393;">8</td>
+		<td align="left" valign=bottom>Declare and use boolean variable to return appropriate flag instead of having return statement then and there.</td>
+	</tr>
+	<tr>
+		<td height="16" align="right" valign=bottom sdval="9" sdnum="16393;">9</td>
+		<td align="left" valign=bottom>In any method, there should be a single return statement at the end.</td>
+	</tr>
+	<tr>
+		<td height="16" align="right" valign=bottom sdval="10" sdnum="16393;">10</td>
+		<td align="left" valign=bottom>Entire method definition must be in a try-catch block.</td>
+	</tr>
+	<tr>
+		<td height="16" align="right" valign=bottom sdval="11" sdnum="16393;">11</td>
+		<td align="left" valign=bottom><b>Please don't add any business logic in catch block except handling the exception or printing stack trace.</b></td>
+	</tr>
+	<tr>
+		<td height="16" align="right" valign=bottom sdval="12" sdnum="16393;">12</td>
+		<td align="left" valign=bottom><b>Every method should have entry, exit and error logs.</b></td>
+	</tr>
+	<tr>
+		<td height="16" align="right" valign=bottom sdval="13" sdnum="16393;">13</td>
+		<td align="left" valign=bottom>Variable declaration must be in the beginning of methods as well as before the try statement.</td>
+	</tr>
+	<tr>
+		<td height="16" align="right" valign=bottom sdval="14" sdnum="16393;">14</td>
+		<td align="left" valign=bottom>Every public method should have proper document.</td>
+	</tr>
+	<tr>
+		<td height="16" align="right" valign=bottom sdval="15" sdnum="16393;">15</td>
+		<td align="left" valign=bottom>Keep method definition within 20 lines.</td>
+	</tr>
+</table>
+<!-- ************************************************************************** -->
+<hr>
+<A NAME="table3"><h1> 4: <em>Loops</em></h1></A>
+<table cellspacing="0" border="0">
+	<colgroup width="40"></colgroup>
+	<colgroup width="436"></colgroup>
+	<tr>
+		<td height="16" align="right" valign=bottom sdval="1" sdnum="16393;">1</td>
+		<td align="left" valign=bottom>Use For-in loops for more readability.</td>
+	</tr>
+	<tr>
+		<td height="16" align="right" valign=bottom sdval="2" sdnum="16393;">2</td>
+		<td align="left" valign=bottom>Try to use For loop whenever possible instead of while and do-while.</td>
+	</tr>
+</table>
+<!-- ************************************************************************** -->
+<hr>
+<A NAME="table4"><h1> 5: <em>Collection</em></h1></A>
+<table cellspacing="0" border="0">
+	<colgroup width="37"></colgroup>
+	<colgroup width="311"></colgroup>
+	<tr>
+		<td height="18" align="right" valign=bottom sdval="1" sdnum="16393;">1</td>
+		<td align="left" valign=bottom><font face="Calibri" color="#000000">Prefer SET to avoid duplicates.</font></td>
+	</tr>
+	<tr>
+		<td height="18" align="right" valign=bottom sdval="2" sdnum="16393;">2</td>
+		<td align="left" valign=bottom><font face="Calibri" color="#000000">Use Java Generics to avoid type casting and exceptions at run-time.</font></td>
+	</tr>
+	<tr>
+		<td height="20" align="right" valign=bottom sdval="3" sdnum="16393;">3</td>
+		<td align="left" valign=bottom><font face="Calibri" color="#000000">Don't use Vector, HashTable and Dictionary which have been depricated.</font></td>
+	</tr>
+	<tr>
+		<td height="16" align="right" valign=bottom sdval="4" sdnum="16393;">4</td>
+		<td align="left" valign=bottom>Use Collections API for manipulating different collection objects in JAVA.</td>
+	</tr>
+</table>
+<!-- ************************************************************************** -->
+<hr>
+<A NAME="table5"><h1> 6: <em>Formating</em></h1></A>
+<table cellspacing="0" border="0">
+	<colgroup width="38"></colgroup>
+	<colgroup width="157"></colgroup>
+	<tr>
+		<td height="16" align="right" valign=bottom sdval="1" sdnum="16393;">1</td>
+		<td align="left" valign=bottom>Give proper indentation.</td>
+	</tr>
+</table>
+<!-- ************************************************************************** -->
+<hr>
+<A NAME="table6"><h1> 7: <em>Log and Out</em></h1></A>
+<table cellspacing="0" border="0">
+	<colgroup width="39"></colgroup>
+	<colgroup width="530"></colgroup>
+	<tr>
+		<td height="17" align="right" valign=bottom sdval="1" sdnum="16393;">1</td>
+		<td align="left" valign=bottom>Proper usage of console “out” statement to differentiate sysout/error/debug/info/warn.</td>
+	</tr>
+	<tr>
+		<td height="18" align="right" valign=bottom sdval="2" sdnum="16393;">2</td>
+		<td align="left" valign=bottom><font face="Calibri" color="#000000">Give proper log message, variable name along with its value.</font></td>
+	</tr>
+	<tr>
+		<td height="18" align="right" valign=bottom sdval="3" sdnum="16393;">3</td>
+		<td align="left" valign=bottom><font face="Calibri" color="#000000">Keep print stack trace method till UAT for debugging.</font></td>
+	</tr>
+</table>
+<!-- ************************************************************************** -->
+<hr>
+<A NAME="table7"><h1> 8: <em>Misc</em></h1></A>
+<table cellspacing="0" border="0">
+	<colgroup width="38"></colgroup>
+	<colgroup width="634"></colgroup>
+	<tr>
+		<td height="16" align="right" valign=bottom sdval="1" sdnum="16393;">1</td>
+		<td align="left" valign=bottom>Delete unused and commented source codes and files.</td>
+	</tr>
+	<tr>
+		<td height="16" align="right" valign=bottom sdval="2" sdnum="16393;">2</td>
+		<td align="left" valign=bottom>Use of System.exit() must be in one place only in your application. Should not use then and there.</td>
+	</tr>
+	<tr>
+		<td height="16" align="right" valign=bottom sdval="3" sdnum="16393;">3</td>
+		<td align="left" valign=bottom>Use finally block to close any resources like I/O, DB, Network, etc.</td>
+	</tr>
+	<tr>
+		<td height="16" align="right" valign=bottom sdval="4" sdnum="16393;">4</td>
+		<td align="left" valign=bottom>Change char count in a line to 300.</td>
+	</tr>
+	<tr>
+		<td height="16" align="right" valign=bottom sdval="5" sdnum="16393;">5</td>
+		<td align="left" valign=bottom>Format your coding, fix import in eclipse before delivery.</td>
+	</tr>
+</table>
+<!-- ************************************************************************** -->
+<hr>
+<A NAME="table8"><h1> 9: <em>DB</em></h1></A>
+<table cellspacing="0" border="0">
+	<colgroup width="39"></colgroup>
+	<colgroup width="589"></colgroup>
+	<tr>
+		<td height="16" align="right" valign=bottom sdval="1" sdnum="16393;">1</td>
+		<td align="left" valign=bottom>Keep DB related information or any configuration values in Property file instead of java file itself.</td>
+	</tr>
+</table>
+<!-- ************************************************************************** -->
+<hr>
+<A NAME="table9"><h1> 10: <em>API</em></h1></A>
+<table cellspacing="0" border="0">
+	<colgroup width="43"></colgroup>
+	<colgroup width="615"></colgroup>
+	<tr>
+		<td height="16" align="right" valign=bottom sdval="1" sdnum="16393;">1</td>
+		<td align="left" valign=bottom>Use Calendar class instead of creating many date object for date manipulation.</td>
+	</tr>
+	<tr>
+		<td height="16" align="right" valign=bottom sdval="2" sdnum="16393;">2</td>
+		<td align="left" valign=bottom>Use one instance of *formatter object for entire application and set its pattern before usage.</td>
+	</tr>
+	<tr>
+		<td height="17" align="right" valign=bottom sdval="3" sdnum="16393;">3</td>
+		<td align="left" valign=bottom>Usage of DateFormat, NumberFormat should be in static class.</td>
+	</tr>
+	<tr>
+		<td height="17" align="right" valign=bottom sdval="4" sdnum="16393;">4</td>
+		<td align="left" valign=bottom>Use StringBuilder instead of StringBuffer for string manipulation for single-threaded process.</td>
+	</tr>
+	<tr>
+		<td height="17" align="right" valign=bottom sdval="5" sdnum="16393;">5</td>
+		<td align="left" valign=bottom>Use String.split() method only once to tokenize a string.</td>
+	</tr>
+</table>
+<!-- ************************************************************************** -->
+</body>
+
+</html>

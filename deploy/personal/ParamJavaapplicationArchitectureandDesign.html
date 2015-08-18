@@ -1,0 +1,833 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+
+<html>
+<head>
+	
+	<meta http-equiv="content-type" content="text/html; charset=utf-8">
+	<title></title>
+	<meta name="generator" content="LibreOffice 4.2.8.2 (Linux)">
+	<meta name="author" content=" ">
+	<meta name="created" content="20080222;55128000000000">
+	<meta name="changed" content="20130129;41838000000000">
+	
+	<style type="text/css"><!-- 
+		body,div,table,thead,tbody,tfoot,tr,th,td,p { font-family:"Calibri"; font-size:x-small }
+		 -->
+	</style>
+	
+</head>
+
+<body text="#000000">
+<hr>
+	<p><center>
+		<h1>Overview</h1>
+		<A HREF="#table0">0. Package Structure</A><br>
+		<A HREF="#table1">1. DTO layer</A><br>
+		<A HREF="#table2">2. DAO Layer</A><br>
+		<A HREF="#table3">Service Layer</A><br>
+		<A HREF="#table4">Web-Layer</A><br>
+		<A HREF="#table5">Util Layer</A><br>
+		<A HREF="#table6">Class &amp; Interface</A><br>
+		<A HREF="#table7">Exception </A><br>
+		<A HREF="#table8">Thread</A><br>
+		<A HREF="#table9">Validation</A><br>
+		<A HREF="#table10">Common Architecture</A><br>
+		<A HREF="#table11">Usage Design Pattern</A><br>
+		<A HREF="#table12">configuration and Property files For</A><br>
+		<A HREF="#table13">DB</A><br>
+		
+	</center></p>
+<hr>
+<A NAME="table0"><h1> 1: <em>0. Package Structure</em></h1></A>
+<table cellspacing="0" border="0">
+	<colgroup width="145"></colgroup>
+	<tr>
+		<td height="18" align="left" valign=bottom><font color="#000000">use module wise package structure</font></td>
+	</tr>
+	<tr>
+		<td height="18" align="left" valign=bottom><font color="#000000"><br></font></td>
+	</tr>
+	<tr>
+		<td height="19" align="left" valign=bottom><font color="#000000">have seperate src for unit test</font></td>
+	</tr>
+	<tr>
+		<td height="18" align="left" valign=bottom><font color="#000000"><br></font></td>
+	</tr>
+	<tr>
+		<td height="18" align="left" valign=bottom><font color="#000000">have ant build script to build application for deployment</font></td>
+	</tr>
+</table>
+<!-- ************************************************************************** -->
+<hr>
+<A NAME="table1"><h1> 2: <em>1. DTO layer</em></h1></A>
+<table cellspacing="0" border="0">
+	<colgroup width="200"></colgroup>
+	<colgroup width="439"></colgroup>
+	<tr>
+		<td height="18" align="left" valign=bottom><font color="#000000">one Abstract DTO class</font></td>
+		<td align="left" valign=bottom><font color="#000000"><br></font></td>
+	</tr>
+	<tr>
+		<td height="18" align="left" valign=bottom><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom><font color="#000000">implements Serialization in one place instead of every DTO</font></td>
+	</tr>
+	<tr>
+		<td height="18" align="left" valign=bottom bgcolor="#CCCCCC"><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom bgcolor="#CCCCCC"><font color="#000000"><br></font></td>
+	</tr>
+	<tr>
+		<td height="18" align="left" valign=bottom><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom><font color="#000000"><br></font></td>
+	</tr>
+	<tr>
+		<td height="38" align="left" valign=bottom><font color="#000000">DTO for every tables</font></td>
+		<td align="left" valign=bottom><font color="#000000">Declare primitive attribute as wrapper instead of primitive data type</font></td>
+	</tr>
+	<tr>
+		<td height="18" align="left" valign=bottom><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom><font color="#000000"><br></font></td>
+	</tr>
+	<tr>
+		<td height="18" align="left" valign=bottom bgcolor="#CCCCCC"><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom bgcolor="#CCCCCC"><font color="#000000"><br></font></td>
+	</tr>
+	<tr>
+		<td height="18" align="left" valign=bottom><font color="#000000">In DTO keep getter/setter method at end instead mingle them with variable declaration</font></td>
+		<td align="left" valign=bottom><font color="#000000"><br></font></td>
+	</tr>
+</table>
+<!-- ************************************************************************** -->
+<hr>
+<A NAME="table2"><h1> 3: <em>2. DAO Layer</em></h1></A>
+<table cellspacing="0" border="0">
+	<colgroup width="135"></colgroup>
+	<colgroup width="495"></colgroup>
+	<colgroup width="293"></colgroup>
+	<tr>
+		<td height="20" align="left" valign=bottom><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom><font color="#000000">one abstract super class though it will have common methods</font></td>
+		<td align="left" valign=bottom><font color="#000000"><br></font></td>
+	</tr>
+	<tr>
+		<td height="20" align="left" valign=bottom><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom><font color="#000000">mtd to close resultSet</font></td>
+	</tr>
+	<tr>
+		<td height="20" align="left" valign=bottom><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom><font color="#000000">mtd to close statement</font></td>
+	</tr>
+	<tr>
+		<td height="20" align="left" valign=bottom><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom><font color="#000000">any other common utility metd</font></td>
+	</tr>
+	<tr>
+		<td height="18" align="left" valign=bottom><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom><font color="#000000">common DAO operation like history table update by table name</font></td>
+	</tr>
+	<tr>
+		<td height="18" align="left" valign=bottom bgcolor="#CCCCCC"><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom bgcolor="#CCCCCC"><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom bgcolor="#CCCCCC"><font color="#000000"><br></font></td>
+	</tr>
+	<tr>
+		<td height="20" align="left" valign=bottom><font color="#000000">Per Table</font></td>
+		<td align="left" valign=bottom><font color="#000000">Create DAO for each table</font></td>
+		<td align="left" valign=bottom><font color="#000000"><br></font></td>
+	</tr>
+	<tr>
+		<td height="38" align="left" valign=bottom><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom><font color="#000000">Declare  method for select, insert, update, delete and validate with APPROPRIATE  DTO object  instance as parameter</font></td>
+		<td align="left" valign=bottom><font color="#000000"><br></font></td>
+	</tr>
+	<tr>
+		<td height="18" align="left" valign=bottom bgcolor="#CCCCCC"><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom bgcolor="#CCCCCC"><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom bgcolor="#CCCCCC"><font color="#000000"><br></font></td>
+	</tr>
+	<tr>
+		<td height="20" align="left" valign=bottom><font color="#000000">DAO Factories</font></td>
+		<td align="left" valign=bottom><font color="#000000">abstract class factory method declaration</font></td>
+		<td align="left" valign=bottom><font color="#000000">when more than one DAO Implementation</font></td>
+	</tr>
+	<tr>
+		<td height="20" align="left" valign=bottom><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom><font color="#000000">concrete class for factory</font></td>
+		<td align="left" valign=bottom><font color="#000000"><br></font></td>
+	</tr>
+	<tr>
+		<td height="18" align="left" valign=bottom bgcolor="#CCCCCC"><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom bgcolor="#CCCCCC"><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom bgcolor="#CCCCCC"><font color="#000000"><br></font></td>
+	</tr>
+	<tr>
+		<td height="38" align="left" valign=bottom><font color="#000000">DBQueryManager</font></td>
+		<td align="left" valign=bottom><font color="#000000">Have SQL query in XML file and use one class to load and render query by id</font></td>
+		<td align="left" valign=bottom><font color="#000000"><br></font></td>
+	</tr>
+	<tr>
+		<td height="20" align="left" valign=bottom><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom><font color="#000000">use this when iBATIS not used</font></td>
+	</tr>
+	<tr>
+		<td height="18" align="left" valign=bottom><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom><font color="#000000">easy to modify query.</font></td>
+	</tr>
+	<tr>
+		<td height="18" align="left" valign=bottom><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom><font color="#000000">easy to tune or debug the query</font></td>
+	</tr>
+	<tr>
+		<td height="38" align="left" valign=bottom><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom bgcolor="#93CDDD"><font color="#000000">give table name and query ID ( or ) query itself in every DAO methods</font></td>
+		<td align="left" valign=bottom><font color="#000000"><br></font></td>
+	</tr>
+	<tr>
+		<td height="18" align="left" valign=bottom bgcolor="#CCCCCC"><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom bgcolor="#CCCCCC"><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom bgcolor="#CCCCCC"><font color="#000000"><br></font></td>
+	</tr>
+	<tr>
+		<td height="18" align="left" valign=bottom><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom><font color="#000000"><br></font></td>
+	</tr>
+	<tr>
+		<td height="20" align="left" valign=bottom><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom><font color="#000000">Use DAO template [ advantageous than simply copy and paste ]</font></td>
+		<td align="left" valign=bottom><font color="#000000">when work with Plain  JDBC alone</font></td>
+	</tr>
+	<tr>
+		<td height="18" align="left" valign=bottom bgcolor="#CCCCCC"><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom bgcolor="#CCCCCC"><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom bgcolor="#CCCCCC"><font color="#000000"><br></font></td>
+	</tr>
+	<tr>
+		<td height="18" align="left" valign=bottom><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom><font color="#000000"><br></font></td>
+	</tr>
+	<tr>
+		<td height="18" align="left" valign=bottom><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom><font color="#000000"><br></font></td>
+	</tr>
+	<tr>
+		<td height="56" align="left" valign=bottom><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom><font color="#000000">Declare a  utility method on each DTO type to get id collection with comma seprated values from list of DTO; This id collection will be used in DAO to put IN-CLAUSE of SQL query</font></td>
+		<td align="left" valign=bottom><font color="#000000"><br></font></td>
+	</tr>
+	<tr>
+		<td height="18" align="left" valign=bottom bgcolor="#B3B3B3"><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom bgcolor="#B3B3B3"><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom bgcolor="#B3B3B3"><font color="#000000"><br></font></td>
+	</tr>
+	<tr>
+		<td height="18" align="left" valign=bottom><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom><font color="#000000"><br></font></td>
+	</tr>
+	<tr>
+		<td height="38" align="left" valign=bottom><font color="#000000">DB</font></td>
+		<td align="left" valign=bottom><font color="#000000">Collect the list of tables required for a test case &amp; the tables should have select/update/insert/validate permissions</font></td>
+		<td align="left" valign=bottom><font color="#000000"><br></font></td>
+	</tr>
+	<tr>
+		<td height="38" align="left" valign=bottom><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom><font color="#000000">decide the number of methods required for each table to perform the following operations:</font></td>
+		<td align="left" valign=bottom><font color="#000000"><br></font></td>
+	</tr>
+	<tr>
+		<td height="20" align="left" valign=bottom><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom><font color="#000000">Select query for different criteria</font></td>
+		<td align="left" valign=bottom><font color="#000000"><br></font></td>
+	</tr>
+	<tr>
+		<td height="20" align="left" valign=bottom><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom><font color="#000000">Insert query</font></td>
+		<td align="left" valign=bottom><font color="#000000"><br></font></td>
+	</tr>
+	<tr>
+		<td height="20" align="left" valign=bottom><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom><font color="#000000">Update query</font></td>
+		<td align="left" valign=bottom><font color="#000000"><br></font></td>
+	</tr>
+	<tr>
+		<td height="20" align="left" valign=bottom><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom><font color="#000000">Delete queries</font></td>
+		<td align="left" valign=bottom><font color="#000000"><br></font></td>
+	</tr>
+	<tr>
+		<td height="38" align="left" valign=bottom><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom><font color="#000000">Validate methods for each constraint present in the table while performing a insert operation</font></td>
+		<td align="left" valign=bottom><font color="#000000"><br></font></td>
+	</tr>
+	<tr>
+		<td height="38" align="left" valign=bottom><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom><font color="#000000">Identify SQL procedure for appropriate scenario / functionality  ( for easy coding )</font></td>
+		<td align="left" valign=bottom><font color="#000000"><br></font></td>
+	</tr>
+	<tr>
+		<td height="18" align="left" valign=bottom bgcolor="#B3B3B3"><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom bgcolor="#B3B3B3"><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom bgcolor="#B3B3B3"><font color="#000000"><br></font></td>
+	</tr>
+</table>
+<!-- ************************************************************************** -->
+<hr>
+<A NAME="table3"><h1> 4: <em>Service Layer</em></h1></A>
+<table cellspacing="0" border="0">
+	<colgroup width="347"></colgroup>
+	<colgroup width="289"></colgroup>
+	<tr>
+		<td height="18" align="left" valign=bottom bgcolor="#CCCCCC"><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom bgcolor="#CCCCCC"><font color="#000000"><br></font></td>
+	</tr>
+	<tr>
+		<td height="20" align="left" valign=bottom><font color="#000000">one Abstsract Service class</font></td>
+		<td align="left" valign=bottom><font color="#000000"><br></font></td>
+	</tr>
+	<tr>
+		<td height="38" align="left" valign=bottom><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom><font color="#000000">method to get connection &amp;close connection</font></td>
+	</tr>
+	<tr>
+		<td height="18" align="left" valign=bottom><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom><font color="#000000">global transaction start method</font></td>
+	</tr>
+	<tr>
+		<td height="18" align="left" valign=bottom><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom><font color="#000000">global transaction commit method</font></td>
+	</tr>
+	<tr>
+		<td height="18" align="left" valign=bottom><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom><font color="#000000">global transaction rollback method</font></td>
+	</tr>
+	<tr>
+		<td height="18" align="left" valign=bottom bgcolor="#CCCCCC"><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom bgcolor="#CCCCCC"><font color="#000000"><br></font></td>
+	</tr>
+	<tr>
+		<td height="18" align="left" valign=bottom><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom><font color="#000000"><br></font></td>
+	</tr>
+	<tr>
+		<td height="74" align="left" valign=bottom><font color="#000000">Create BS for each use case ( if required, you can use more than one BS for only NON-TRANSACTION methods such as SELECT/ VALIDATE operation)</font></td>
+		<td align="left" valign=bottom><font color="#000000"><br></font></td>
+	</tr>
+	<tr>
+		<td height="18" align="left" valign=bottom><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom><font color="#000000"><br></font></td>
+	</tr>
+	<tr>
+		<td height="18" align="left" valign=bottom bgcolor="#CCCCCC"><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom bgcolor="#CCCCCC"><font color="#000000"><br></font></td>
+	</tr>
+</table>
+<!-- ************************************************************************** -->
+<hr>
+<A NAME="table4"><h1> 5: <em>Web-Layer</em></h1></A>
+<table cellspacing="0" border="0">
+	<colgroup width="208"></colgroup>
+	<colgroup width="421"></colgroup>
+	<colgroup width="86"></colgroup>
+	<tr>
+		<td height="18" align="left" valign=bottom bgcolor="#CCCCCC"><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom bgcolor="#CCCCCC"><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom bgcolor="#CCCCCC"><font color="#000000"><br></font></td>
+	</tr>
+	<tr>
+		<td height="18" align="left" valign=bottom><font color="#000000">one common abstract class</font></td>
+		<td align="left" valign=bottom><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom><font color="#000000"><br></font></td>
+	</tr>
+	<tr>
+		<td height="18" align="left" valign=bottom><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom><font color="#000000">global  exception handling</font></td>
+		<td align="left" valign=bottom><font color="#000000"><br></font></td>
+	</tr>
+	<tr>
+		<td height="56" align="left" valign=bottom><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom><font color="#000000">Get HttpSession object only once from requests for WHOLE application  ( can be achieved by using a method either of super or reference class )</font></td>
+		<td align="left" valign=bottom><font color="#000000"><br></font></td>
+	</tr>
+	<tr>
+		<td height="38" align="left" valign=bottom><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom><font color="#000000">Retrieve user id  / user role / user persmission only once from session object for WHOLE application</font></td>
+		<td align="left" valign=bottom><font color="#000000"><br></font></td>
+	</tr>
+	<tr>
+		<td height="18" align="left" valign=bottom bgcolor="#CCCCCC"><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom bgcolor="#CCCCCC"><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom bgcolor="#CCCCCC"><font color="#000000"><br></font></td>
+	</tr>
+	<tr>
+		<td height="18" align="left" valign=bottom><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom><font color="#000000"><br></font></td>
+	</tr>
+	<tr>
+		<td height="20" align="left" valign=bottom><font color="#000000">Init Servlet</font></td>
+		<td align="left" valign=bottom><font color="#000000">to load any configuration files</font></td>
+		<td align="left" valign=bottom><font color="#000000"><br></font></td>
+	</tr>
+	<tr>
+		<td height="18" align="left" valign=bottom bgcolor="#CCCCCC"><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom bgcolor="#CCCCCC"><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom bgcolor="#CCCCCC"><font color="#000000"><br></font></td>
+	</tr>
+	<tr>
+		<td height="20" align="left" valign=bottom><font color="#000000">JSP</font></td>
+		<td align="left" valign=bottom><font color="#000000">Contains JSP for tiles template  (if struts-tiles is used)</font></td>
+		<td align="left" valign=bottom><font color="#000000"><br></font></td>
+	</tr>
+	<tr>
+		<td height="20" align="left" valign=bottom><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom><font color="#000000">Contains JSP for header and footer</font></td>
+		<td align="left" valign=bottom><font color="#000000"><br></font></td>
+	</tr>
+	<tr>
+		<td height="20" align="left" valign=bottom><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom><font color="#000000">Contains JSP for config info ( included in every jsp )</font></td>
+		<td align="left" valign=bottom><font color="#000000"><br></font></td>
+	</tr>
+	<tr>
+		<td height="18" align="left" valign=bottom><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom><font color="#000000"><br></font></td>
+	</tr>
+	<tr>
+		<td height="38" align="left" valign=bottom><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom><font color="#000000">Contains java variable for CONTEXT_PATH, JSP_PATH, CSS_PATH, JS_PATH</font></td>
+		<td align="left" valign=bottom><font color="#000000"><br></font></td>
+	</tr>
+	<tr>
+		<td height="20" align="left" valign=bottom><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom><font color="#000000">declare common js, css files for whole application</font></td>
+		<td align="left" valign=bottom><font color="#000000"><br></font></td>
+	</tr>
+	<tr>
+		<td height="18" align="left" valign=bottom bgcolor="#CCCCCC"><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom bgcolor="#CCCCCC"><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom bgcolor="#CCCCCC"><font color="#000000"><br></font></td>
+	</tr>
+	<tr>
+		<td height="20" align="left" valign=bottom><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom><font color="#000000">Use &lt;jsp:include&gt; action to include Form JSP and Display JSP into Main JSP</font></td>
+		<td align="left" valign=bottom><font color="#000000"><br></font></td>
+	</tr>
+	<tr>
+		<td height="18" align="left" valign=bottom><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom><font color="#000000">this is easy to debug</font></td>
+	</tr>
+	<tr>
+		<td height="18" align="left" valign=bottom><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom><font color="#000000"><br></font></td>
+	</tr>
+	<tr>
+		<td height="18" align="left" valign=bottom bgcolor="#CCCCCC"><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom bgcolor="#CCCCCC"><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom bgcolor="#CCCCCC"><font color="#000000"><br></font></td>
+	</tr>
+</table>
+<!-- ************************************************************************** -->
+<hr>
+<A NAME="table5"><h1> 6: <em>Util Layer</em></h1></A>
+<table cellspacing="0" border="0">
+	<colgroup width="177"></colgroup>
+	<colgroup width="650"></colgroup>
+	<tr>
+		<td height="20" align="left" valign=bottom><font color="#000000">PropertyFile manager</font></td>
+		<td align="left" valign=bottom><font color="#000000">This is usefule when the applications uses more than one property file</font></td>
+	</tr>
+	<tr>
+		<td height="38" align="left" valign=bottom><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom><font color="#000000">The property file name and name key are passed as parameters to the static method which returns the property key value</font></td>
+	</tr>
+	<tr>
+		<td height="18" align="left" valign=bottom bgcolor="#CCCCCC"><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom bgcolor="#CCCCCC"><font color="#000000"><br></font></td>
+	</tr>
+	<tr>
+		<td height="18" align="left" valign=bottom><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom><font color="#000000"><br></font></td>
+	</tr>
+	<tr>
+		<td height="20" align="left" valign=bottom><font color="#000000">constant Util</font></td>
+		<td align="left" valign=bottom><font color="#000000">declare all constant and hardcode values</font></td>
+	</tr>
+	<tr>
+		<td height="18" align="left" valign=bottom bgcolor="#CCCCCC"><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom bgcolor="#CCCCCC"><font color="#000000"><br></font></td>
+	</tr>
+	<tr>
+		<td height="18" align="left" valign=bottom><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom><font color="#000000"><br></font></td>
+	</tr>
+	<tr>
+		<td height="20" align="left" valign=bottom><font color="#000000">AppDTODebugUtiltity</font></td>
+		<td align="left" valign=bottom><font color="#000000">declare static method for each DTO / domain with if loop</font></td>
+	</tr>
+	<tr>
+		<td height="18" align="left" valign=bottom bgcolor="#CCCCCC"><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom bgcolor="#CCCCCC"><font color="#000000"><br></font></td>
+	</tr>
+	<tr>
+		<td height="18" align="left" valign=bottom><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom><font color="#000000"><br></font></td>
+	</tr>
+	<tr>
+		<td height="20" align="left" valign=bottom><font color="#000000">DateUtility class</font></td>
+		<td align="left" valign=bottom><font color="#000000">This class uses the instance SIMPLEDATEFORMAT for the whole application</font></td>
+	</tr>
+	<tr>
+		<td height="18" align="left" valign=bottom><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom><font color="#000000">Date Formatting and Date Parsing can be done</font></td>
+	</tr>
+	<tr>
+		<td height="18" align="left" valign=bottom bgcolor="#CCCCCC"><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom bgcolor="#CCCCCC"><font color="#000000"><br></font></td>
+	</tr>
+	<tr>
+		<td height="18" align="left" valign=bottom><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom><font color="#000000"><br></font></td>
+	</tr>
+	<tr>
+		<td height="20" align="left" valign=bottom><font color="#000000">DatabaseUility  class</font></td>
+		<td align="left" valign=bottom><font color="#000000">STATIC method for each DTO type to collect id from list of DTO (as comma seperated)</font></td>
+	</tr>
+	<tr>
+		<td height="20" align="left" valign=bottom><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom><font color="#000000">STATIC method to convert util.Date of  DTO to sql.Date</font></td>
+	</tr>
+	<tr>
+		<td height="20" align="left" valign=bottom><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom><font color="#000000">STATIC method for convert sql.Date of  RESULTSET to util.Date for DTO</font></td>
+	</tr>
+	<tr>
+		<td height="18" align="left" valign=bottom bgcolor="#CCCCCC"><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom bgcolor="#CCCCCC"><font color="#000000"><br></font></td>
+	</tr>
+</table>
+<!-- ************************************************************************** -->
+<hr>
+<A NAME="table6"><h1> 7: <em>Class &amp; Interface</em></h1></A>
+<table cellspacing="0" border="0">
+	<colgroup width="125"></colgroup>
+	<colgroup width="679"></colgroup>
+	<tr>
+		<td height="18" align="left" valign=bottom><font color="#000000">Classes</font></td>
+		<td align="left" valign=bottom><font color="#000000"><br></font></td>
+	</tr>
+	<tr>
+		<td height="18" align="left" valign=bottom><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom><font color="#000000">Use abstract classes, when a task has to be implement by sub class</font></td>
+	</tr>
+	<tr>
+		<td height="18" align="left" valign=bottom><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom><font color="#000000">Give proper documentation for every classes and its role</font></td>
+	</tr>
+	<tr>
+		<td height="18" align="left" valign=bottom><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom><font color="#000000">Put generic logic in super class when need more than one place</font></td>
+	</tr>
+	<tr>
+		<td height="18" align="left" valign=bottom><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom><font color="#000000">Keep your class definition highly coherent</font></td>
+	</tr>
+	<tr>
+		<td height="18" align="left" valign=bottom><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom><font color="#000000">Never prefer to write any type of inner classes except for event programming</font></td>
+	</tr>
+	<tr>
+		<td height="18" align="left" valign=bottom><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom><font color="#000000">Instantiate any object just before to use instead at the time variable declaration</font></td>
+	</tr>
+	<tr>
+		<td height="18" align="left" valign=bottom><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom><font color="#000000">Dont have more than 500 lines in a class</font></td>
+	</tr>
+	<tr>
+		<td height="18" align="left" valign=bottom><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom><font color="#000000">Never Write Constructor unless you really need , let compiler put default constructor</font></td>
+	</tr>
+	<tr>
+		<td height="18" align="left" valign=bottom><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom><font color="#000000">use this operator only inside of constructor or method only when exactly mandatory</font></td>
+	</tr>
+	<tr>
+		<td height="18" align="left" valign=bottom><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom><font color="#000000"><br></font></td>
+	</tr>
+	<tr>
+		<td height="18" align="left" valign=bottom><font color="#000000">Interface</font></td>
+		<td align="left" valign=bottom><font color="#000000"><br></font></td>
+	</tr>
+	<tr>
+		<td height="18" align="left" valign=bottom><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom><font color="#000000">throws clause</font></td>
+	</tr>
+	<tr>
+		<td height="18" align="left" valign=bottom><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom><font color="#000000">Use Interface to achieve loosely coupling</font></td>
+	</tr>
+	<tr>
+		<td height="18" align="left" valign=bottom><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom><font color="#000000"><br></font></td>
+	</tr>
+	<tr>
+		<td height="18" align="left" valign=bottom><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom><font color="#000000"><br></font></td>
+	</tr>
+	<tr>
+		<td height="18" align="left" valign=bottom><font color="#000000">Main</font></td>
+		<td align="left" valign=bottom><font color="#000000">Keep your main method alone in separate class and keep its definition as minimum</font></td>
+	</tr>
+</table>
+<!-- ************************************************************************** -->
+<hr>
+<A NAME="table7"><h1> 8: <em>Exception </em></h1></A>
+<table cellspacing="0" border="0">
+	<colgroup width="86"></colgroup>
+	<tr>
+		<td height="18" align="left" valign=bottom><font color="#000000">Define Application specific exception and keep them as non-checked exception</font></td>
+	</tr>
+</table>
+<!-- ************************************************************************** -->
+<hr>
+<A NAME="table8"><h1> 9: <em>Thread</em></h1></A>
+<table cellspacing="0" border="0">
+	<colgroup width="523"></colgroup>
+	<tr>
+		<td height="18" align="left" valign=bottom><font color="#000000">Use Runnable interface to define task for thread</font></td>
+	</tr>
+	<tr>
+		<td height="19" align="left" valign=bottom><font color="#000000">Dont extend Thread unless you are going to override any methods</font></td>
+	</tr>
+</table>
+<!-- ************************************************************************** -->
+<hr>
+<A NAME="table9"><h1> 10: <em>Validation</em></h1></A>
+<table cellspacing="0" border="0">
+	<colgroup width="552"></colgroup>
+	<tr>
+		<td height="18" align="left" valign=bottom><font color="#000000">if you have struts, use struts – validation framework</font></td>
+	</tr>
+	<tr>
+		<td height="18" align="left" valign=bottom bgcolor="#CCCCCC"><font color="#000000"><br></font></td>
+	</tr>
+	<tr>
+		<td height="20" align="left" valign=bottom><font color="#000000">if new project, use java Bean validation annotation to validation</font></td>
+	</tr>
+	<tr>
+		<td height="18" align="left" valign=bottom bgcolor="#CCCCCC"><font color="#000000"><br></font></td>
+	</tr>
+	<tr>
+		<td height="18" align="left" valign=bottom><font color="#000000"><br></font></td>
+	</tr>
+	<tr>
+		<td height="20" align="left" valign=bottom><font color="#000000">the last option and old style, use java script to validate</font></td>
+	</tr>
+	<tr>
+		<td height="18" align="left" valign=bottom><font color="#000000"><br></font></td>
+	</tr>
+	<tr>
+		<td height="18" align="left" valign=bottom bgcolor="#CCCCCC"><font color="#000000"><br></font></td>
+	</tr>
+</table>
+<!-- ************************************************************************** -->
+<hr>
+<A NAME="table10"><h1> 11: <em>Common Architecture</em></h1></A>
+<table cellspacing="0" border="0">
+	<colgroup width="238"></colgroup>
+	<colgroup width="991"></colgroup>
+	<tr>
+		<td height="41" align="left" valign=bottom><font color="#000000">DEBUG</font></td>
+		<td align="left" valign=bottom><font color="#000000">AppDTODebuger class should have one static method for EACH type of DTO as parameter [ this looks better to code than LOG4J ]</font></td>
+	</tr>
+	<tr>
+		<td height="24" align="left" valign=bottom><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom><font color="#000000">Each Static method of AppDTODebuger should check DEBUG flag and should print the attribute of DTO</font></td>
+	</tr>
+	<tr>
+		<td height="22" align="left" valign=bottom><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom><font color="#000000">Every CATCH block should have printStrackTrace in Action and DAO classes with if check of DEBUG flag</font></td>
+	</tr>
+	<tr>
+		<td height="18" align="left" valign=bottom bgcolor="#B3B3B3"><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom bgcolor="#B3B3B3"><font color="#000000"><br></font></td>
+	</tr>
+	<tr>
+		<td height="19" align="left" valign=bottom><font color="#000000">Serialization</font></td>
+		<td align="left" valign=bottom><font color="#000000">Use Serialization if a page takes more time to display the page while doing JSP Bug Fix or JSP / Javascript testing</font></td>
+	</tr>
+	<tr>
+		<td height="21" align="left" valign=bottom><font color="#000000">CODING</font></td>
+		<td align="left" valign=bottom><font color="#000000">Start the Logger while execution to know the status of execution</font></td>
+	</tr>
+	<tr>
+		<td height="24" align="left" valign=bottom><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom><font color="#000000">The methods MUST take only OBJECT-INSTANCE as parameter. Never use primitive/wrapper as parameter</font></td>
+	</tr>
+	<tr>
+		<td height="18" align="left" valign=bottom bgcolor="#B3B3B3"><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom bgcolor="#B3B3B3"><font color="#000000"><br></font></td>
+	</tr>
+	<tr>
+		<td height="18" align="left" valign=bottom><font color="#000000">Loading singleton</font></td>
+		<td align="left" valign=bottom>it is wise, to load all the singleton object at the startup of application. It save time</td>
+	</tr>
+	<tr>
+		<td height="20" align="left" valign=bottom><font color="#000000">Property file value convert to boolean</font></td>
+		<td align="left" valign=bottom><font color="#000000">get value of given key and compare with &quot;TRUE/T/true/FALSE/F/false&quot; and give as boolean the comparision result</font></td>
+	</tr>
+	<tr>
+		<td height="20" align="left" valign=bottom><font color="#000000">exception handling</font></td>
+		<td align="left" valign=bottom><font color="#000000">instead of user getter/setter method for wrapping exception ourselves, simply rethrow when get exception at any depth layer, and use getCause method to recursively to get inner most excetion while handling excetiption</font></td>
+	</tr>
+	<tr>
+		<td height="18" align="left" valign=bottom bgcolor="#B3B3B3"><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom bgcolor="#B3B3B3"><font color="#000000"><br></font></td>
+	</tr>
+	<tr>
+		<td height="18" align="left" valign=bottom><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom><font color="#000000"><br></font></td>
+	</tr>
+	<tr>
+		<td height="20" align="left" valign=bottom><font color="#000000">integration of any framework</font></td>
+		<td align="left" valign=bottom><font color="#000000">integration of any framework like spring, struts, ibatis and etc should be single place. Super or start class is best plac</font></td>
+	</tr>
+	<tr>
+		<td height="18" align="left" valign=bottom><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom><font color="#000000">create customized annotation wherever possible</font></td>
+	</tr>
+	<tr>
+		<td height="18" align="left" valign=bottom bgcolor="#B3B3B3"><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom bgcolor="#B3B3B3"><font color="#000000"><br></font></td>
+	</tr>
+	<tr>
+		<td height="20" align="left" valign=bottom><font color="#000000">Resuse of BusinessLogic code</font></td>
+		<td align="left" valign=bottom><font color="#7030A0">to know, current call of business from either webservice / JMS/ web request, use the below idea</font></td>
+	</tr>
+	<tr>
+		<td height="18" align="left" valign=bottom><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom><font color="#7030A0">declare one interface</font></td>
+	</tr>
+	<tr>
+		<td height="20" align="left" valign=bottom><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom><font color="#7030A0">declare one enum with possible value like &quot;WEBSERVCIECALL/JMSCALL/WEBCALL&quot;</font></td>
+	</tr>
+	<tr>
+		<td height="18" align="left" valign=bottom><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom><font color="#7030A0">writing one implementation class for that interface</font></td>
+	</tr>
+	<tr>
+		<td height="20" align="left" valign=bottom><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom><font color="#7030A0">create separate insteace variable for that same impl class with each enum constants and keep it public</font></td>
+	</tr>
+	<tr>
+		<td height="18" align="left" valign=bottom><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom><font color="#7030A0">when calling business add one parameter with any of one among above</font></td>
+	</tr>
+	<tr>
+		<td height="18" align="left" valign=bottom bgcolor="#B3B3B3"><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom bgcolor="#B3B3B3"><font color="#000000"><br></font></td>
+	</tr>
+	<tr>
+		<td height="18" align="left" valign=bottom><font color="#000000">Super class</font></td>
+		<td align="left" valign=bottom>declare one STRING(for performance ) variable to hold class name of sub class. It will help if super class logging</td>
+	</tr>
+	<tr>
+		<td height="18" align="left" valign=bottom bgcolor="#B3B3B3"><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom bgcolor="#B3B3B3"><font color="#000000"><br></font></td>
+	</tr>
+	<tr>
+		<td height="18" align="left" valign=bottom><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom><font color="#000000"><br></font></td>
+	</tr>
+	<tr>
+		<td height="20" align="left" valign=bottom><font color="#000000">Message for error code like oracle</font></td>
+		<td align="left" valign=bottom>use of property file and one enum used and one utility java file. Use of that utility file get message from property file using int value</td>
+	</tr>
+	<tr>
+		<td height="109" align="left" valign=bottom><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom><font color="#FF0000">public enum MessageId {<br><br> //common<br>    V_INVALID_DEAL_IDENTIFIER (1),<br>    V_NO_MATCHING_RECORD_FOUND(1008),<br>    V_SERVICE_FAILED(1007),</font></td>
+	</tr>
+	<tr>
+		<td height="18" align="left" valign=bottom bgcolor="#B3B3B3"><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom bgcolor="#B3B3B3"><font color="#000000"><br></font></td>
+	</tr>
+</table>
+<!-- ************************************************************************** -->
+<hr>
+<A NAME="table11"><h1> 12: <em>Usage Design Pattern</em></h1></A>
+<table cellspacing="0" border="0">
+	<colgroup width="151"></colgroup>
+	<colgroup width="688"></colgroup>
+	<tr>
+		<td height="20" align="left" valign=bottom><font color="#000000">Adaptor Pattern</font></td>
+		<td align="left" valign=bottom><font color="#000000">Use when, want to use different team's code</font></td>
+	</tr>
+	<tr>
+		<td height="20" align="left" valign=bottom><font color="#000000">Composite pattern</font></td>
+		<td align="left" valign=bottom><font color="#000000">when want work parent and child , child inturn parent for other. That is tree data structure</font></td>
+	</tr>
+</table>
+<!-- ************************************************************************** -->
+<hr>
+<A NAME="table12"><h1> 13: <em>configuration and Property files For</em></h1></A>
+<table cellspacing="0" border="0">
+	<colgroup width="33"></colgroup>
+	<colgroup width="229"></colgroup>
+	<colgroup width="393"></colgroup>
+	<tr>
+		<td height="18" align="right" valign=bottom sdval="1" sdnum="16393;"><font color="#000000">1</font></td>
+		<td align="left" valign=bottom><font color="#000000">Log4j.properties</font></td>
+		<td align="left" valign=bottom><font color="#000000">always use this file in class path to configure log 4j</font></td>
+	</tr>
+	<tr>
+		<td height="20" align="right" valign=bottom sdval="2" sdnum="16393;"><font color="#000000">2</font></td>
+		<td align="left" valign=bottom><font color="#000000">db.&lt;dev/uat/prod&gt;.properties</font></td>
+		<td align="left" valign=bottom><font color="#000000">database configuration file</font></td>
+	</tr>
+	<tr>
+		<td height="20" align="right" valign=bottom sdval="3" sdnum="16393;"><font color="#000000">3</font></td>
+		<td align="left" valign=bottom><font color="#000000">mailserver.properties</font></td>
+		<td align="left" valign=bottom><font color="#000000">to configure mail server detaikls</font></td>
+	</tr>
+	<tr>
+		<td height="18" align="right" valign=bottom sdval="4" sdnum="16393;"><font color="#000000">4</font></td>
+		<td align="left" valign=bottom><font color="#000000">message properties</font></td>
+		<td align="left" valign=bottom><font color="#000000">to configure JSP messages support internationalization</font></td>
+	</tr>
+</table>
+<!-- ************************************************************************** -->
+<hr>
+<A NAME="table13"><h1> 14: <em>DB</em></h1></A>
+<table cellspacing="0" border="0">
+	<colgroup width="36"></colgroup>
+	<colgroup width="81"></colgroup>
+	<colgroup width="809"></colgroup>
+	<tr>
+		<td height="18" align="right" valign=bottom sdval="1" sdnum="16393;"><font color="#000000">1</font></td>
+		<td align="left" valign=bottom><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom><font color="#000000">add on column in every table for  Active/inactive flag.</font></td>
+	</tr>
+	<tr>
+		<td height="18" align="left" valign=bottom><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom><font color="#000000">this is good for development as well as for business</font></td>
+	</tr>
+</table>
+<!-- ************************************************************************** -->
+</body>
+
+</html>

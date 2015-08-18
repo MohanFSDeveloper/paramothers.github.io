@@ -1,0 +1,654 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+
+<html>
+<head>
+	
+	<meta http-equiv="content-type" content="text/html; charset=utf-8">
+	<title></title>
+	<meta name="generator" content="LibreOffice 4.2.8.2 (Linux)">
+	<meta name="created" content="20120725;190325000000000">
+	<meta name="changed" content="20120729;125643000000000">
+	
+<link rel="style" type="text/css" href="/styles/stylesheet.css" media="screen">
+	
+</head>
+
+<body text="#000000">
+	<a href="index.html">SCM Page</a><br/>
+<hr>
+	<p><center>
+		<h1>Overview</h1>
+		<A HREF="#table0">General</A><br>
+		<A HREF="#table1">Architecture</A><br>
+		<A HREF="#table2">Subversion server</A><br>
+		<A HREF="#table3">SVN Commands</A><br>
+		<A HREF="#table4">Help url</A><br>
+		
+	</center></p>
+<hr>
+<A NAME="table0"><h1> 1: <em>General</em></h1></A>
+<table cellspacing="0" border="0">
+	<colgroup width="167"></colgroup>
+	<colgroup width="303"></colgroup>
+	<colgroup width="512"></colgroup>
+	<tr>
+		<td height="16" align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom>Subversion was created by CollabNet Inc</td>
+		<td align="left" valign=bottom><br></td>
+	</tr>
+	<tr>
+		<td height="16" align="left" valign=bottom>History</td>
+		<td align="left" valign=bottom>2000, CollabNet, Inc</td>
+		<td align="left" valign=bottom>CollabNet Enterprise Edition (CEE), of which one component was version control</td>
+	</tr>
+	<tr>
+		<td height="16" align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom>2010, Subversion was fully adopted into the ASF</td>
+		<td align="left" valign=bottom>Apache Software Foundation (ASF)</td>
+	</tr>
+	<tr>
+		<td height="16" align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><font face="Times New Roman" color="#0000FF"><a href="http://subversion.apache.org/">http://subversion.apache.org,</a></font></td>
+		<td align="left" valign=bottom>home page of subersion</td>
+	</tr>
+	<tr>
+		<td height="16" align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom>subversion and SVN both are same</td>
+		<td align="left" valign=bottom><br></td>
+	</tr>
+	<tr>
+		<td height="18" align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+	</tr>
+	<tr>
+		<td height="18" align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+	</tr>
+	<tr>
+		<td height="16" align="left" valign=bottom>client</td>
+		<td align="left" valign=bottom>Command line (svn )</td>
+		<td align="left" valign=bottom><br></td>
+	</tr>
+	<tr>
+		<td height="16" align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom>GUI client application</td>
+		<td align="left" valign=bottom>I use eclipse plugin</td>
+	</tr>
+	<tr>
+		<td height="18" align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+	</tr>
+	<tr>
+		<td height="18" align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+	</tr>
+	<tr>
+		<td height="16" align="left" valign=bottom>Component of Subversion</td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+	</tr>
+	<tr>
+		<td height="16" align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom>SVN</td>
+		<td align="left" valign=bottom>command line client tool</td>
+	</tr>
+	<tr>
+		<td height="16" align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><font face="Times New Roman">svnversion</font></td>
+		<td align="left" valign=bottom>A program for reporting the state (in terms of revisions of the items present) of a working copy</td>
+	</tr>
+	<tr>
+		<td height="16" align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom>svnlook</td>
+		<td align="left" valign=bottom>A tool for directly inspecting a Subversion repository</td>
+	</tr>
+	<tr>
+		<td height="16" align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom>svnadmin</td>
+		<td align="left" valign=bottom>A tool for creating, tweaking, or repairing a Subversion repository</td>
+	</tr>
+	<tr>
+		<td height="16" align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom>mod_dav_svn</td>
+		<td align="left" valign=bottom>A plug-in module for the Apache HTTP Server, used to make your repository available to others over a network</td>
+	</tr>
+	<tr>
+		<td height="16" align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom>svnserve</td>
+		<td align="left" valign=bottom>A custom standalone server program, runnable as a daemon process or invokable by SSH; another way to make your repository available to others over a network</td>
+	</tr>
+	<tr>
+		<td height="16" align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom>svndumpfilter</td>
+		<td align="left" valign=bottom>A program for filtering Subversion repository dump streams</td>
+	</tr>
+	<tr>
+		<td height="16" align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom>Svnsync ( We may not use at all )</td>
+		<td align="left" valign=bottom>A program for incrementally mirroring one repository to another over a network. Introduced at Subversion 1.4</td>
+	</tr>
+	<tr>
+		<td height="18" align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+	</tr>
+	<tr>
+		<td height="16" align="left" valign=bottom>version history</td>
+		<td align="left" valign=bottom>Subversion 1.1 (September 2004)</td>
+		<td align="left" valign=bottom><br></td>
+	</tr>
+	<tr>
+		<td height="16" align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom>Subversion 1.2 (May 2005)</td>
+		<td align="left" valign=bottom><br></td>
+	</tr>
+	<tr>
+		<td height="16" align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom>Subversion 1.3 (December 2005)</td>
+		<td align="left" valign=bottom><br></td>
+	</tr>
+	<tr>
+		<td height="16" align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom>Subversion 1.4 (September 2006)</td>
+		<td align="left" valign=bottom><br></td>
+	</tr>
+	<tr>
+		<td height="16" align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom>Subversion 1.5 (June 2008)</td>
+		<td align="left" valign=bottom><br></td>
+	</tr>
+	<tr>
+		<td height="17" align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><font face="Times New Roman">Subversion 1.6 (March 2009)</font></td>
+		<td align="left" valign=bottom><br></td>
+	</tr>
+	<tr>
+		<td height="16" align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom>1.7.5  (May 17, 2012)</td>
+		<td align="left" valign=bottom><br></td>
+	</tr>
+	<tr>
+		<td height="18" align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+	</tr>
+	<tr>
+		<td height="16" align="left" valign=bottom>SVN developed in C language</td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+	</tr>
+	<tr>
+		<td height="16" align="left" valign=bottom>it is cross platform</td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+	</tr>
+</table>
+<!-- ************************************************************************** -->
+<hr>
+<A NAME="table1"><h1> 2: <em>Architecture</em></h1></A>
+<table cellspacing="0" border="0">
+	<colgroup span="8" width="86"></colgroup>
+	<tr>
+		<td colspan=8 rowspan=36 height="653" align="left" valign=bottom><br><img src="ParamSVN_html_5a7054e3.png" width=534 height=626 hspace=79 vspace=31>
+		</td>
+		</tr>
+	<tr>
+		</tr>
+	<tr>
+		</tr>
+	<tr>
+		</tr>
+	<tr>
+		</tr>
+	<tr>
+		</tr>
+	<tr>
+		</tr>
+	<tr>
+		</tr>
+	<tr>
+		</tr>
+	<tr>
+		</tr>
+	<tr>
+		</tr>
+	<tr>
+		</tr>
+	<tr>
+		</tr>
+	<tr>
+		</tr>
+	<tr>
+		</tr>
+	<tr>
+		</tr>
+	<tr>
+		</tr>
+	<tr>
+		</tr>
+	<tr>
+		</tr>
+	<tr>
+		</tr>
+	<tr>
+		</tr>
+	<tr>
+		</tr>
+	<tr>
+		</tr>
+	<tr>
+		</tr>
+	<tr>
+		</tr>
+	<tr>
+		</tr>
+	<tr>
+		</tr>
+	<tr>
+		</tr>
+	<tr>
+		</tr>
+	<tr>
+		</tr>
+	<tr>
+		</tr>
+	<tr>
+		</tr>
+	<tr>
+		</tr>
+	<tr>
+		</tr>
+	<tr>
+		</tr>
+	<tr>
+		</tr>
+</table>
+<!-- ************************************************************************** -->
+<hr>
+<A NAME="table2"><h1> 3: <em>Subversion server</em></h1></A>
+<table cellspacing="0" border="0">
+	<colgroup width="132"></colgroup>
+	<colgroup width="86"></colgroup>
+	<colgroup width="230"></colgroup>
+	<tr>
+		<td style="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000" height="17" align="left" valign=bottom bgcolor="#FFD320">name</td>
+		<td style="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000" align="left" valign=bottom bgcolor="#FFD320">protocol</td>
+		<td style="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000" align="left" valign=bottom bgcolor="#FFD320">descrition</td>
+	</tr>
+	<tr>
+		<td style="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000" height="17" align="left" valign=bottom>svnserve</td>
+		<td style="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000" align="left" valign=bottom>svn</td>
+		<td style="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000" align="left" valign=bottom>it is simple server for subversion</td>
+	</tr>
+	<tr>
+		<td style="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000" height="17" align="left" valign=bottom>appache web server</td>
+		<td style="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000" align="left" valign=bottom>Http or https</td>
+		<td style="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000" align="left" valign=bottom><br></td>
+	</tr>
+	<tr>
+		<td style="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000" height="16" align="left" valign=bottom><br></td>
+		<td style="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000" align="left" valign=bottom><br></td>
+		<td style="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000" align="left" valign=bottom><br></td>
+	</tr>
+	<tr>
+		<td style="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000" height="16" align="left" valign=bottom><br></td>
+		<td style="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000" align="left" valign=bottom><br></td>
+		<td style="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000" align="left" valign=bottom><br></td>
+	</tr>
+</table>
+<!-- ************************************************************************** -->
+<hr>
+<A NAME="table3"><h1> 4: <em>SVN Commands</em></h1></A>
+<table cellspacing="0" border="0">
+	<colgroup width="135"></colgroup>
+	<colgroup width="69"></colgroup>
+	<colgroup width="132"></colgroup>
+	<colgroup width="313"></colgroup>
+	<colgroup width="319"></colgroup>
+	<tr>
+		<td height="17" align="left" valign=bottom><b><font color="#00AE00">For detailed help for these commands available in “help content” of eclipse plugin “Subclipse” title “Quick reference for command line users”</font></b></td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+	</tr>
+	<tr>
+		<td height="18" align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+	</tr>
+	<tr>
+		<td height="17" align="left" valign=bottom>initialize repository</td>
+		<td align="left" valign=bottom>svnadmin</td>
+		<td align="left" valign=bottom><font color="#0047FF">Create ( 1 )</font></td>
+		<td align="left" valign=bottom>ex: svnadmin create /var/some/dir</td>
+		<td align="left" valign=bottom>I just create set of directory in repositary</td>
+	</tr>
+	<tr>
+		<td height="17" align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><font color="#0047FF">Dump ( 21 )</font></td>
+		<td align="left" valign=bottom>take blind back up of repositary</td>
+		<td align="left" valign=bottom>svnadmin dump /home/svn/myrepos &gt; param.dump</td>
+	</tr>
+	<tr>
+		<td height="17" align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><font color="#0047FF">Load ( 23 )</font></td>
+		<td align="left" valign=bottom>restore from backup</td>
+		<td align="left" valign=bottom>svnadmin load /home/svn/myrepos2 &lt; param.dump</td>
+	</tr>
+	<tr>
+		<td height="17" align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><font color="#0047FF">Verify ( 22 )</font></td>
+		<td align="left" valign=bottom>to verify the repositary</td>
+		<td align="left" valign=bottom><br></td>
+	</tr>
+	<tr>
+		<td height="17" align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom>svnlook</td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+	</tr>
+	<tr>
+		<td height="17" align="left" valign=bottom>subversion client</td>
+		<td align="left" valign=bottom>svn</td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom>--version</td>
+		<td align="left" valign=bottom>to get version of Subversion version</td>
+	</tr>
+	<tr>
+		<td height="17" align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom>difff</td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><b>History commands</b></td>
+	</tr>
+	<tr>
+		<td height="16" align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom>cat</td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><b>History commands</b></td>
+	</tr>
+	<tr>
+		<td height="16" align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom>list</td>
+		<td align="left" valign=bottom>just display the list the directory in repository</td>
+		<td align="left" valign=bottom><b>History commands</b></td>
+	</tr>
+	<tr>
+		<td height="16" align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom>revert</td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+	</tr>
+	<tr>
+		<td height="17" align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><font color="#0047FF">Mkdir ( 2 )</font></td>
+		<td align="left" valign=bottom>used to create project folder if more than one project share single repository</td>
+		<td align="left" valign=bottom>Used to create Trunc, Branches, Tag folder</td>
+	</tr>
+	<tr>
+		<td height="17" align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><font color="#0047FF">Import ( 3 )</font></td>
+		<td align="left" valign=bottom>export the files and directory of current machine to repositary</td>
+		<td align="left" valign=bottom><br></td>
+	</tr>
+	<tr>
+		<td height="17" align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><font color="#0047FF">Checkout ( 4 )</font></td>
+		<td align="left" valign=bottom>it just create working copy of repositary</td>
+		<td align="left" valign=bottom><br></td>
+	</tr>
+	<tr>
+		<td height="17" align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><font color="#0047FF">Status ( 5 )</font></td>
+		<td align="left" valign=bottom>show file and directroy level difference, But not difference in content of a file</td>
+		<td align="left" valign=bottom><br></td>
+	</tr>
+	<tr>
+		<td height="16" align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><font color="#0047FF">Commit ( 6 )</font></td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+	</tr>
+	<tr>
+		<td height="17" align="left" valign=bottom>Two – phase process</td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><font color="#0047FF">Add ( 7 )</font></td>
+		<td align="left" valign=bottom>adding files / directories from working copy . It need a commit to reflect in repositary</td>
+		<td align="left" valign=bottom><br></td>
+	</tr>
+	<tr>
+		<td height="17" align="left" valign=bottom>Two – phase process</td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><font color="#0047FF">Delete ( 8 )</font></td>
+		<td align="left" valign=bottom>removing files/ driectory from  working copy and it need to commit to reflect in repositary</td>
+		<td align="left" valign=bottom><br></td>
+	</tr>
+	<tr>
+		<td height="17" align="left" valign=bottom>Two – phase process</td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><font color="#0047FF">Mv ( 9 )</font></td>
+		<td align="left" valign=bottom>move the files / folder and rename them</td>
+		<td align="left" valign=bottom><br></td>
+	</tr>
+	<tr>
+		<td height="16" align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><font color="#0047FF">Update ( 10 )</font></td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+	</tr>
+	<tr>
+		<td height="16" align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><font color="#0047FF">Resolve ( 11 )</font></td>
+		<td align="left" valign=bottom>mark conflict are resolved</td>
+		<td align="left" valign=bottom><br></td>
+	</tr>
+	<tr>
+		<td height="16" align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><font color="#0047FF">Log ( 12 )</font></td>
+		<td align="left" valign=bottom>show all the logs</td>
+		<td align="left" valign=bottom><br></td>
+	</tr>
+	<tr>
+		<td height="16" align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><font color="#0047FF">Blame ( 13 )</font></td>
+		<td align="left" valign=bottom>it is really super. It will display who modified which line for given file</td>
+		<td align="left" valign=bottom><br></td>
+	</tr>
+	<tr>
+		<td height="16" align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><font color="#0047FF">Copy ( 14 )</font></td>
+		<td align="left" valign=bottom>used to create branch / tag</td>
+		<td align="left" valign=bottom><br></td>
+	</tr>
+	<tr>
+		<td height="17" align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><font color="#0047FF">Switch ( 15 )</font></td>
+		<td align="left" valign=bottom>switch the local working copy point to different braches or trunk</td>
+		<td align="left" valign=bottom><br></td>
+	</tr>
+	<tr>
+		<td height="17" align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><font color="#0047FF">Info ( 16 )</font></td>
+		<td align="left" valign=bottom>it provide information about repositary</td>
+		<td align="left" valign=bottom><br></td>
+	</tr>
+	<tr>
+		<td height="16" align="left" valign=bottom>Two – phase process</td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><font color="#0047FF">Merge ( 17 )</font></td>
+		<td align="left" valign=bottom>opposite to branches</td>
+		<td align="left" valign=bottom><br></td>
+	</tr>
+	<tr>
+		<td height="17" align="left" valign=bottom>Two – phase process</td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><font color="#0047FF">Propset ( 18 )</font></td>
+		<td align="left" valign=bottom>to add a property to a file</td>
+		<td align="left" valign=bottom><br></td>
+	</tr>
+	<tr>
+		<td height="17" align="left" valign=bottom>Two – phase process</td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><font color="#0047FF">Propdel ( 18 )</font></td>
+		<td align="left" valign=bottom>to delete a property from a file</td>
+		<td align="left" valign=bottom><br></td>
+	</tr>
+	<tr>
+		<td height="17" align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><font color="#0047FF">propedit</font></td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+	</tr>
+	<tr>
+		<td height="17" align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><font color="#0047FF">propget</font></td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+	</tr>
+	<tr>
+		<td height="17" align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><font color="#0047FF">proplist</font></td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+	</tr>
+	<tr>
+		<td height="16" align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><font color="#0047FF">Lock ( 19 )</font></td>
+		<td align="left" valign=bottom>lock a file</td>
+		<td align="left" valign=bottom><br></td>
+	</tr>
+	<tr>
+		<td height="16" align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><font color="#0047FF">Unlock ( 20 )</font></td>
+		<td align="left" valign=bottom>unlock a file</td>
+		<td align="left" valign=bottom><br></td>
+	</tr>
+	<tr>
+		<td height="16" align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><font color="#0047FF"><br></font></td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+	</tr>
+	<tr>
+		<td height="16" align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom>help</td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+	</tr>
+	<tr>
+		<td height="16" align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom>export</td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+	</tr>
+	<tr>
+		<td height="16" align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom>cleanup</td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+	</tr>
+	<tr>
+		<td height="16" align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom>patch</td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+	</tr>
+</table>
+<!-- ************************************************************************** -->
+<hr>
+<A NAME="table4"><h1> 5: <em>Help url</em></h1></A>
+<table cellspacing="0" border="0">
+	<colgroup width="305"></colgroup>
+	<colgroup width="360"></colgroup>
+	<colgroup width="86"></colgroup>
+	<tr>
+		<td height="17" align="left" valign=bottom><font color="#0000FF"><a href="http://svnbook.red-bean.com/en/1.6/index.html">http://svnbook.red-bean.com/en/1.6/index.html</a></font></td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+	</tr>
+	<tr>
+		<td height="18" align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+	</tr>
+	<tr>
+		<td height="18" align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+	</tr>
+	<tr>
+		<td height="18" align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+	</tr>
+	<tr>
+		<td height="16" align="left" valign=bottom><font color="#0000FF"><a href="http://subclipse.tigris.org/wiki/JavaHL">http://subclipse.tigris.org/wiki/JavaHL</a></font></td>
+		<td align="left" valign=bottom>Use this page to resolve subeclipse error ( JavaHL )</td>
+		<td align="left" valign=bottom><br></td>
+	</tr>
+	<tr>
+		<td height="32" align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom>-vmargs<br>-Djava.library.path=/usr/lib/x86_64-linux-gnu/jni</td>
+		<td align="left" valign=bottom>eclipse.ini</td>
+	</tr>
+	<tr>
+		<td height="18" align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+	</tr>
+	<tr>
+		<td height="16" align="left" valign=bottom>$ apt-get install libsvn-java</td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+	</tr>
+	<tr>
+		<td height="18" align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+	</tr>
+	<tr>
+		<td height="16" align="left" valign=bottom>$ find / -name libsvnjavahl-1.so</td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+	</tr>
+</table>
+<!-- ************************************************************************** -->
+</body>
+
+</html>
