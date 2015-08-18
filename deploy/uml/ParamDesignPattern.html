@@ -1,0 +1,1485 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+
+<html>
+<head>
+	
+	<meta http-equiv="content-type" content="text/html; charset=utf-8">
+	<title></title>
+	<meta name="generator" content="LibreOffice 4.2.8.2 (Linux)">
+	<meta name="author" content=" ">
+	<meta name="created" content="20071020;95800000000000">
+	<meta name="changedby" content="Paramasivam">
+	<meta name="changed" content="20100616;53040000000000">
+	<meta name="AppVersion" content="12.0000">
+	<meta name="DocSecurity" content="0">
+	<meta name="HyperlinksChanged" content="false">
+	<meta name="LinksUpToDate" content="false">
+	<meta name="ScaleCrop" content="false">
+	<meta name="ShareDoc" content="false">
+	
+<link rel="style" type="text/css" href="/styles/style.css" media="screen">
+	
+</head>
+
+<body text="#000000">
+		<a href="index.html">UML Page</a><br/>
+<hr>
+	<p><center>
+		<h1>Overview</h1>
+		<A HREF="#table0">design principle</A><br>
+		<A HREF="#table1">Design pattern apply</A><br>
+		<A HREF="#table2">core java 23 pattern</A><br>
+		<A HREF="#table3">pattern shot</A><br>
+		<A HREF="#table4">Study History</A><br>
+		
+	</center></p>
+<hr>
+<A NAME="table0"><h1>Sheet 1: <em>design principle</em></h1></A>
+<table cellspacing="0" border="0">
+	<colgroup width="680"></colgroup>
+	<colgroup width="95"></colgroup>
+	<tr>
+		<td height="17" align="left" valign=bottom><b>Design principles ( From Head First )</b></td>
+		<td align="left" valign=bottom><br></td>
+	</tr>
+	<tr>
+		<td height="17" align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+	</tr>
+	<tr>
+		<td height="17" align="left" valign=bottom>encapsulate what vaires into a separate classes ( easy to change and reuse )</td>
+		<td align="left" valign=bottom>startegy</td>
+	</tr>
+	<tr>
+		<td height="17" align="left" valign=bottom>Program to an interface, not implementation ( that is either abstract class / interface. Both almost same )</td>
+		<td align="left" valign=bottom>startegy</td>
+	</tr>
+	<tr>
+		<td height="17" align="left" valign=bottom>Favor composition over inheritance ( allow to change behavour dynamically as well as reuse)( one level subclass ok )</td>
+		<td align="left" valign=bottom>startegy</td>
+	</tr>
+	<tr>
+		<td height="17" align="left" valign=bottom>Strive for loosly coupled design between objects that interact each other</td>
+		<td align="left" valign=bottom>observer</td>
+	</tr>
+	<tr>
+		<td height="17" align="left" valign=bottom>classes should open for extension but closed for modification</td>
+		<td align="left" valign=bottom>decorator</td>
+	</tr>
+	<tr>
+		<td height="17" align="left" valign=bottom>Depends on abstractions. Dont depends on concrete class</td>
+		<td align="left" valign=bottom>factory</td>
+	</tr>
+	<tr>
+		<td height="17" align="left" valign=bottom>the above rule says, abstract/ interface should use other interfaces/abstract class. But not concrete class</td>
+		<td align="left" valign=bottom>factory</td>
+	</tr>
+	<tr>
+		<td height="17" align="left" valign=bottom>Priniciple of Least Knowledge - talk only your immediate friends ( try to minimize more number class usage in a class )</td>
+		<td align="left" valign=bottom>facede</td>
+	</tr>
+	<tr>
+		<td height="17" align="left" valign=bottom>Hollywood principle - Does not call us. We will call you</td>
+		<td align="left" valign=bottom>Template method</td>
+	</tr>
+	<tr>
+		<td height="17" align="left" valign=bottom>A class should have only one reason to change</td>
+		<td align="left" valign=bottom>Iterator pattern</td>
+	</tr>
+	<tr>
+		<td height="17" align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+	</tr>
+	<tr>
+		<td height="17" align="left" valign=bottom>Explain and discuss as design pattern level to the team and manager for easy and more gain</td>
+		<td align="left" valign=bottom><br></td>
+	</tr>
+	<tr>
+		<td height="17" align="left" valign=bottom>one level inheritance is for to get runtime polimorphism</td>
+		<td align="left" valign=bottom><br></td>
+	</tr>
+</table>
+<!-- ************************************************************************** -->
+<hr>
+<A NAME="table1"><h1>Sheet 2: <em>Design pattern apply</em></h1></A>
+<table cellspacing="0" border="0">
+	<colgroup width="23"></colgroup>
+	<colgroup width="143"></colgroup>
+	<colgroup width="503"></colgroup>
+	<colgroup width="51"></colgroup>
+	<tr>
+		<td height="17" align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom>Pattern</td>
+		<td align="left" valign=bottom>Application of pattern</td>
+		<td align="left" valign=bottom><br></td>
+	</tr>
+	<tr>
+		<td height="17" align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+	</tr>
+	<tr>
+		<td height="17" align="right" valign=bottom sdval="1" sdnum="16393;">1</td>
+		<td align="left" valign=bottom>Front Controler</td>
+		<td align="left" valign=bottom>Web</td>
+		<td align="left" valign=bottom>J2EE</td>
+	</tr>
+	<tr>
+		<td height="17" align="right" valign=bottom sdval="2" sdnum="16393;">2</td>
+		<td align="left" valign=bottom>Composite View </td>
+		<td align="left" valign=bottom>JSP ( Tiles framwork )</td>
+		<td align="left" valign=bottom>J2EE</td>
+	</tr>
+	<tr>
+		<td height="17" align="right" valign=bottom sdval="3" sdnum="16393;">3</td>
+		<td align="left" valign=bottom>Intercepting Filter</td>
+		<td align="left" valign=bottom>Web-filter / JSE -handler</td>
+		<td align="left" valign=bottom>J2EE</td>
+	</tr>
+	<tr>
+		<td height="17" align="right" valign=bottom sdval="4" sdnum="16393;">4</td>
+		<td align="left" valign=bottom>Business Delegator</td>
+		<td align="left" valign=bottom>between web and ejb tier</td>
+		<td align="left" valign=bottom>J2EE</td>
+	</tr>
+	<tr>
+		<td height="17" align="right" valign=bottom sdval="5" sdnum="16393;">5</td>
+		<td align="left" valign=bottom>Transfer Object</td>
+		<td align="left" valign=bottom>between web and ejb tier ( used with SessionFacede pattern )</td>
+		<td align="left" valign=bottom>J2EE</td>
+	</tr>
+	<tr>
+		<td height="17" align="right" valign=bottom sdval="6" sdnum="16393;">6</td>
+		<td align="left" valign=bottom>Value List Handler</td>
+		<td align="left" valign=bottom>Pagination when to show more number of records.( WEB / EJB tier )</td>
+		<td align="left" valign=bottom>J2EE</td>
+	</tr>
+	<tr>
+		<td height="17" align="right" valign=bottom sdval="7" sdnum="16393;">7</td>
+		<td align="left" valign=bottom>SessionFacede</td>
+		<td align="left" valign=bottom>EJB's Session Bean</td>
+		<td align="left" valign=bottom>J2EE</td>
+	</tr>
+	<tr>
+		<td height="17" align="right" valign=bottom sdval="8" sdnum="16393;">8</td>
+		<td align="left" valign=bottom>Composite Entity</td>
+		<td align="left" valign=bottom>EJB's Entity Bean</td>
+		<td align="left" valign=bottom>J2EE</td>
+	</tr>
+	<tr>
+		<td height="17" align="right" valign=bottom sdval="9" sdnum="16393;">9</td>
+		<td align="left" valign=bottom>Fast lane Reader</td>
+		<td align="left" valign=bottom>used with DAO for alternative to use EJB's Entity Bean</td>
+		<td align="left" valign=bottom>J2EE</td>
+	</tr>
+	<tr>
+		<td height="17" align="right" valign=bottom sdval="10" sdnum="16393;">10</td>
+		<td align="left" valign=bottom>Data Access Object</td>
+		<td align="left" valign=bottom>any CA implementation ( JMS / JDBC )</td>
+		<td align="left" valign=bottom>J2EE</td>
+	</tr>
+	<tr>
+		<td height="17" align="right" valign=bottom sdval="11" sdnum="16393;">11</td>
+		<td align="left" valign=bottom>Model View Controller</td>
+		<td align="left" valign=bottom>Swing component ( as design pattern ) / J2EE application ( as architecture )</td>
+		<td align="left" valign=bottom>J2EE</td>
+	</tr>
+	<tr>
+		<td height="17" align="right" valign=bottom sdval="12" sdnum="16393;">12</td>
+		<td align="left" valign=bottom>Service Locator</td>
+		<td align="left" valign=bottom>JNDI access</td>
+		<td align="left" valign=bottom>J2EE</td>
+	</tr>
+	<tr>
+		<td height="17" align="right" valign=bottom sdval="13" sdnum="16393;">13</td>
+		<td align="left" valign=bottom>Value Helper</td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom>J2EE</td>
+	</tr>
+	<tr>
+		<td height="17" align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+	</tr>
+	<tr>
+		<td height="17" align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+	</tr>
+	<tr>
+		<td height="17" align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+	</tr>
+	<tr>
+		<td height="17" align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom>Startegy pattern</td>
+		<td align="left" valign=bottom>to change behaviour dynamically of a objet</td>
+		<td align="left" valign=bottom>J2SE</td>
+	</tr>
+	<tr>
+		<td height="17" align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+	</tr>
+	<tr>
+		<td height="17" align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom>Observer pattern</td>
+		<td align="left" valign=bottom>to get notification when state of object gets changed</td>
+		<td align="left" valign=bottom>J2SE</td>
+	</tr>
+	<tr>
+		<td height="17" align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+	</tr>
+	<tr>
+		<td height="17" align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom>Decorator pattern</td>
+		<td align="left" valign=bottom>to add behaviour to an object without change source code</td>
+		<td align="left" valign=bottom>J2SE</td>
+	</tr>
+	<tr>
+		<td height="17" align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom>need 2 family of algorithm by abstract class rather than interface</td>
+		<td align="left" valign=bottom><br></td>
+	</tr>
+	<tr>
+		<td height="17" align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom>one familiy will have concrete decorator, used f0r decorator others</td>
+		<td align="left" valign=bottom><br></td>
+	</tr>
+	<tr>
+		<td height="17" align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom>another one family will have concrete objects, can be decorate</td>
+		<td align="left" valign=bottom><br></td>
+	</tr>
+	<tr>
+		<td height="17" align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+	</tr>
+	<tr>
+		<td height="17" align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom>The disadvantage of Decorator pattern is, possible more number of small classes </td>
+		<td align="left" valign=bottom><br></td>
+	</tr>
+	<tr>
+		<td height="17" align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+	</tr>
+	<tr>
+		<td height="17" align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom>Factory Method pattern</td>
+		<td align="left" valign=bottom>need one abstract class as super class</td>
+		<td align="left" valign=bottom><br></td>
+	</tr>
+	<tr>
+		<td height="17" align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom>abstract class has one abstract method to object creation</td>
+		<td align="left" valign=bottom><br></td>
+	</tr>
+	<tr>
+		<td height="17" align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom>sub class has to implement that abstract method for object creation</td>
+		<td align="left" valign=bottom><br></td>
+	</tr>
+	<tr>
+		<td height="17" align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom>it create object by inheritance</td>
+		<td align="left" valign=bottom><br></td>
+	</tr>
+	<tr>
+		<td height="17" align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom>so, the client talk with abstract class rather than concrete sub classes</td>
+		<td align="left" valign=bottom><br></td>
+	</tr>
+	<tr>
+		<td height="17" align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom>it create only one object</td>
+		<td align="left" valign=bottom><br></td>
+	</tr>
+	<tr>
+		<td height="17" align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom>need just one method to create that sigle object</td>
+		<td align="left" valign=bottom><br></td>
+	</tr>
+	<tr>
+		<td height="17" align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+	</tr>
+	<tr>
+		<td height="17" align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom>Abstract Factory</td>
+		<td align="left" valign=bottom>it create object by composition reference</td>
+		<td align="left" valign=bottom><br></td>
+	</tr>
+	<tr>
+		<td height="17" align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom>it groups together related objects  ( products )</td>
+		<td align="left" valign=bottom><br></td>
+	</tr>
+	<tr>
+		<td height="17" align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom>need a separate interface to create objects</td>
+		<td align="left" valign=bottom><br></td>
+	</tr>
+	<tr>
+		<td height="17" align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+	</tr>
+	<tr>
+		<td height="17" align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+	</tr>
+	<tr>
+		<td height="17" align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom>simple factory</td>
+		<td align="left" valign=bottom>just encapsulate the object creation instead of using sub classes</td>
+		<td align="left" valign=bottom><br></td>
+	</tr>
+	<tr>
+		<td height="17" align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom>i guess, this is not standard pattern in j2ses</td>
+		<td align="left" valign=bottom><br></td>
+	</tr>
+	<tr>
+		<td height="17" align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+	</tr>
+	<tr>
+		<td height="17" align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+	</tr>
+	<tr>
+		<td height="17" align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom>Singleton pattern</td>
+		<td align="left" valign=bottom>static variable</td>
+		<td align="left" valign=bottom><br></td>
+	</tr>
+	<tr>
+		<td height="17" align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom>private constructor</td>
+		<td align="left" valign=bottom><br></td>
+	</tr>
+	<tr>
+		<td height="17" align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom>public static method</td>
+		<td align="left" valign=bottom><br></td>
+	</tr>
+	<tr>
+		<td height="17" align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom>do lazy instantiation, if the resource is expensive and taken care about multi thread</td>
+		<td align="left" valign=bottom><br></td>
+	</tr>
+	<tr>
+		<td height="17" align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom>instantiation at class loading, if resource is expensive and multi thread is fixed</td>
+		<td align="left" valign=bottom><br></td>
+	</tr>
+	<tr>
+		<td height="17" align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom>dont think method can be static instead of singleton, just be in object world</td>
+		<td align="left" valign=bottom><br></td>
+	</tr>
+	<tr>
+		<td height="17" align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom>usually static is not allow to extend the functionality</td>
+		<td align="left" valign=bottom><br></td>
+	</tr>
+	<tr>
+		<td height="17" align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom>if more than class loader used, plz specify the classload to load the single patter to avoid more than one object</td>
+		<td align="left" valign=bottom><br></td>
+	</tr>
+	<tr>
+		<td height="17" align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom>singleton garbage collection is fixed, so that single instance is not garbagged</td>
+		<td align="left" valign=bottom><br></td>
+	</tr>
+	<tr>
+		<td height="17" align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom>Dont try to subclass the singleton class. It might give more problem as unexpected</td>
+		<td align="left" valign=bottom><br></td>
+	</tr>
+	<tr>
+		<td height="17" align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom>avoid to use static variable for valueable object in constant util and go for singleton pattern</td>
+		<td align="left" valign=bottom><br></td>
+	</tr>
+	<tr>
+		<td height="17" align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+	</tr>
+	<tr>
+		<td height="17" align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+	</tr>
+	<tr>
+		<td height="17" align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom>command pattern</td>
+		<td align="left" valign=bottom>encapsulate the method invokation</td>
+		<td align="left" valign=bottom><br></td>
+	</tr>
+	<tr>
+		<td height="17" align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom>decouple the object, which is requester and object which is actually perform actions</td>
+		<td align="left" valign=bottom><br></td>
+	</tr>
+	<tr>
+		<td height="17" align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom>the command object,which actually perform the separation.</td>
+		<td align="left" valign=bottom><br></td>
+	</tr>
+	<tr>
+		<td height="17" align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom>the command object is actually a family of algorithm to achieve the runtime polimarphism</td>
+		<td align="left" valign=bottom><br></td>
+	</tr>
+	<tr>
+		<td height="17" align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom>each command object of that family must have reference its OWN object which is the actual performer</td>
+		<td align="left" valign=bottom><br></td>
+	</tr>
+	<tr>
+		<td height="17" align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom>that command object must have parametered constrcutor with the actuall task perform object  ( receiver)</td>
+		<td align="left" valign=bottom><br></td>
+	</tr>
+	<tr>
+		<td height="17" align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom>dont believe setter method of receiver on command object. This might occure incusistence</td>
+		<td align="left" valign=bottom><br></td>
+	</tr>
+	<tr>
+		<td height="17" align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom>i guess,  it is best if we want to introduce any loggig functionality to the existing application like calls for important resource</td>
+		<td align="left" valign=bottom><br></td>
+	</tr>
+	<tr>
+		<td height="17" align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom>this is better design pattern for IMPLEMETNATION OF queue and logging faciilitye</td>
+		<td align="left" valign=bottom><br></td>
+	</tr>
+	<tr>
+		<td height="17" align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+	</tr>
+	<tr>
+		<td height="17" align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom>macro command pattern</td>
+		<td align="left" valign=bottom> used to execute a set of command objects as bulk instead of one for each action</td>
+		<td align="left" valign=bottom><br></td>
+	</tr>
+	<tr>
+		<td height="17" align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom>it is just act as collection for command objects. Nothing special</td>
+		<td align="left" valign=bottom><br></td>
+	</tr>
+	<tr>
+		<td height="17" align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+	</tr>
+	<tr>
+		<td height="17" align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom>Adaptor pattern</td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+	</tr>
+	<tr>
+		<td height="17" align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom>the aim of this pattern to convert one interface to another one interface</td>
+		<td align="left" valign=bottom><br></td>
+	</tr>
+	<tr>
+		<td height="17" align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom>if need to adapt more than one go to facede pattern</td>
+		<td align="left" valign=bottom><br></td>
+	</tr>
+	<tr>
+		<td height="17" align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom>it is adapt ONLY one adaptee. But not more than one</td>
+		<td align="left" valign=bottom><br></td>
+	</tr>
+	<tr>
+		<td height="17" align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+	</tr>
+	<tr>
+		<td height="17" align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom>Facede pattern</td>
+		<td align="left" valign=bottom>the intention of facede pattern is to simplify the client access</td>
+		<td align="left" valign=bottom><br></td>
+	</tr>
+	<tr>
+		<td height="17" align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom>but both adaptor and facede pattern wrap multiple object</td>
+		<td align="left" valign=bottom><br></td>
+	</tr>
+	<tr>
+		<td height="17" align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom>usually singe class is enough to implement this pattern. </td>
+		<td align="left" valign=bottom><br></td>
+	</tr>
+	<tr>
+		<td height="17" align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom>if need we can use more than one facede class like 2 or 3 , if n e e d</td>
+		<td align="left" valign=bottom><br></td>
+	</tr>
+	<tr>
+		<td height="17" align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+	</tr>
+	<tr>
+		<td height="17" align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom>Facede wrap, few or more object to simplify</td>
+		<td align="left" valign=bottom><br></td>
+	</tr>
+	<tr>
+		<td height="17" align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom>Adaptor wrap a object to convert its interface</td>
+		<td align="left" valign=bottom><br></td>
+	</tr>
+	<tr>
+		<td height="17" align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom>Decorator wrap a object to add behaviour and responsibility to that object</td>
+		<td align="left" valign=bottom><br></td>
+	</tr>
+	<tr>
+		<td height="17" align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom>THE BUSINESS LOGIC ALSO HIDEN AND CAN BE swithed any implementation without affect or knowledge of client. Almost it is like purpose of Factory method pattern for DAO class</td>
+		<td align="left" valign=bottom><br></td>
+	</tr>
+	<tr>
+		<td height="17" align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+	</tr>
+	<tr>
+		<td height="17" align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom>Template method patt.</td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+	</tr>
+	<tr>
+		<td height="17" align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+	</tr>
+	<tr>
+		<td height="17" align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+	</tr>
+	<tr>
+		<td height="17" align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+	</tr>
+	<tr>
+		<td height="17" align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+	</tr>
+	<tr>
+		<td height="17" align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+	</tr>
+	<tr>
+		<td height="17" align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom>Null object pattern. </td>
+		<td align="left" valign=bottom>see the sample implementation of null object pattern in Command pattern</td>
+		<td align="left" valign=bottom><br></td>
+	</tr>
+</table>
+<!-- ************************************************************************** -->
+<hr>
+<A NAME="table2"><h1>Sheet 3: <em>core java 23 pattern</em></h1></A>
+<table align="left" cellspacing="0" border="0">
+	<colgroup width="41"></colgroup>
+	<colgroup width="114"></colgroup>
+	<colgroup width="57"></colgroup>
+	<colgroup width="189"></colgroup>
+	<colgroup width="329"></colgroup>
+	<colgroup width="161"></colgroup>
+	<tr>
+		<td height="17" align="left" valign=bottom bgcolor="#FFFF00"><b><br></b></td>
+		<td align="left" valign=bottom bgcolor="#FFFF00"><b>Patterns</b></td>
+		<td align="left" valign=bottom bgcolor="#FFFF00"><b><font color="#17375E">Built-in Java</font></b></td>
+		<td align="left" valign=bottom bgcolor="#FFFF00"><b><font color="#FF0000">Intensions</font></b></td>
+		<td align="left" valign=bottom bgcolor="#FFFF00"><b><font color="#17375E">addional 1</font></b></td>
+		<td align="left" valign=bottom bgcolor="#FFFF00"><b><font color="#17375E">addional 2</font></b></td>
+	</tr>
+	<tr>
+		<td height="17" align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+	</tr>
+	<tr>
+		<td height="17" align="left" valign=bottom bgcolor="#948A54">cre 1</td>
+		<td align="left" valign=bottom>Factory mtd</td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><font color="#FF0000">create one object based on hint</font></td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><font color="#FF0000">we use in DAO creation</font></td>
+	</tr>
+	<tr>
+		<td height="17" align="left" valign=bottom bgcolor="#948A54">cre 2</td>
+		<td align="left" valign=bottom>Abstract Factory </td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><font color="#FF0000">Produce family of products</font></td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><font color="#FF0000">we use in DAO creation</font></td>
+	</tr>
+	<tr>
+		<td height="17" align="left" valign=bottom bgcolor="#948A54">cre 3</td>
+		<td align="left" valign=bottom>Singleton </td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><font color="#FF0000">to ensure only one object for a class</font></td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><font color="#FF0000">mostly use</font></td>
+	</tr>
+	<tr>
+		<td height="17" align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+	</tr>
+	<tr>
+		<td height="17" align="left" valign=bottom bgcolor="#558ED5">str 1</td>
+		<td align="left" valign=bottom>Adaptor </td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><font color="#FF0000">convert one interface into another different interface</font></td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><font color="#FF0000">always we use</font></td>
+	</tr>
+	<tr>
+		<td height="17" align="left" valign=bottom bgcolor="#558ED5">str 2</td>
+		<td align="left" valign=bottom>Decorator  ( wrapper)</td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><font color="#FF0000">add new functionality and behaviour without changing exiting code</font></td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><font color="#FF0000">used in IO package</font></td>
+	</tr>
+	<tr>
+		<td height="17" align="left" valign=bottom bgcolor="#558ED5">str 3</td>
+		<td align="left" valign=bottom>Facede </td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><font color="#FF0000">make similicity for client when need many subsystem usage</font></td>
+		<td align="left" valign=bottom><font color="#17375E">all the hollow API follow the facade pattern</font></td>
+		<td align="left" valign=bottom><font color="#FF0000">always we use</font></td>
+	</tr>
+	<tr>
+		<td height="17" align="left" valign=bottom bgcolor="#558ED5">str 4</td>
+		<td align="left" valign=bottom>Proxy</td>
+		<td align="left" valign=bottom><font color="#17375E">Yes</font></td>
+		<td align="left" valign=bottom><font color="#FF0000">port pone the costly object creation until, really it is need</font></td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+	</tr>
+	<tr>
+		<td height="17" align="left" valign=bottom bgcolor="#953735">beh 1</td>
+		<td align="left" valign=bottom>Command  ( data driven  )</td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><font color="#FF0000">encapsulate the method invocation</font></td>
+		<td align="left" valign=bottom><font color="#17375E">it contain both, composition object (keep ref. To individual nodes ) and individual node object</font></td>
+		<td align="left" valign=bottom><br></td>
+	</tr>
+	<tr>
+		<td height="17" align="left" valign=bottom bgcolor="#953735">beh 2</td>
+		<td align="left" valign=bottom>Iterator </td>
+		<td align="left" valign=bottom><font color="#17375E">Yes</font></td>
+		<td align="left" valign=bottom><font color="#FF0000">access a collection through another object ( iterator impl )</font></td>
+		<td align="left" valign=bottom><font color="#17375E">it makes, the client code easy to maintain and simple.</font></td>
+		<td align="left" valign=bottom><br></td>
+	</tr>
+	<tr>
+		<td height="18" align="left" valign=bottom bgcolor="#558ED5">str 5</td>
+		<td align="left" valign=bottom>Composite </td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><font color="#FF0000">Allow compose the object in tree structure</font></td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><font color="#FF0000">in real time i used many times</font></td>
+	</tr>
+	<tr>
+		<td height="17" align="left" valign=bottom bgcolor="#953735">beh 3</td>
+		<td align="left" valign=bottom>Observer  ( pull or push built in  )</td>
+		<td align="left" valign=bottom><font color="#17375E">Yes</font></td>
+		<td align="left" valign=bottom><font color="#FF0000">it is event handling listener </font></td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+	</tr>
+	<tr>
+		<td height="17" align="left" valign=bottom bgcolor="#953735">beh 4</td>
+		<td align="left" valign=bottom>Startegy </td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><font color="#FF0000">family of algorithm works togher, change the behaviour at runtime</font></td>
+		<td align="left" valign=bottom><font color="#17375E">it is alternative to subclassing</font></td>
+		<td align="left" valign=bottom><br></td>
+	</tr>
+	<tr>
+		<td height="17" align="left" valign=bottom bgcolor="#953735">beh 5</td>
+		<td align="left" valign=bottom>State </td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><font color="#FF0000">encapsulate state-based behaviour and delegate behaviour to the current state</font></td>
+		<td align="left" valign=bottom><font color="#17375E">it is alternative to put lot of if condition in context</font></td>
+		<td align="left" valign=bottom><br></td>
+	</tr>
+	<tr>
+		<td height="17" align="left" valign=bottom><font color="#FF0000"> --</font></td>
+		<td align="left" valign=bottom><font color="#FF0000"> --</font></td>
+		<td align="left" valign=bottom><font color="#FF0000"> --</font></td>
+		<td align="left" valign=bottom><font color="#FF0000"> --</font></td>
+		<td align="left" valign=bottom><font color="#17375E">As startegy pattern, it is dynamically change the status.</font></td>
+		<td align="left" valign=bottom><br></td>
+	</tr>
+	<tr>
+		<td height="17" align="left" valign=bottom><font color="#FF0000"> --</font></td>
+		<td align="left" valign=bottom><font color="#FF0000"> --</font></td>
+		<td align="left" valign=bottom><font color="#FF0000"> --</font></td>
+		<td align="left" valign=bottom><font color="#FF0000"> --</font></td>
+		<td align="left" valign=bottom><font color="#17375E">it is easy to add any more state without any modification on existing code</font></td>
+		<td align="left" valign=bottom><br></td>
+	</tr>
+	<tr>
+		<td height="17" align="left" valign=bottom bgcolor="#953735">beh 6</td>
+		<td align="left" valign=bottom>Template mtd</td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><font color="#FF0000">provide a algorithmic step as controled manner in abstract class</font></td>
+		<td align="left" valign=bottom><font color="#17375E">using hook facility further customize the algorithm steps</font></td>
+		<td align="left" valign=bottom><br></td>
+	</tr>
+	<tr>
+		<td height="17" align="left" valign=bottom><font color="#FF0000"> --</font></td>
+		<td align="left" valign=bottom><font color="#FF0000"> --</font></td>
+		<td align="left" valign=bottom><font color="#FF0000"> --</font></td>
+		<td align="left" valign=bottom><font color="#FF0000"> --</font></td>
+		<td align="left" valign=bottom><font color="#17375E">use hook to implement optional step of a algorthims</font></td>
+		<td align="left" valign=bottom><br></td>
+	</tr>
+	<tr>
+		<td height="17" align="left" valign=bottom><font color="#FF0000"> --</font></td>
+		<td align="left" valign=bottom><font color="#FF0000"> --</font></td>
+		<td align="left" valign=bottom><font color="#FF0000"> --</font></td>
+		<td align="left" valign=bottom><font color="#FF0000"> --</font></td>
+		<td align="left" valign=bottom><font color="#17375E">hook is different from Calback method, since hook is always is optional, but callback method existence is mandatory for some time</font></td>
+		<td align="left" valign=bottom><br></td>
+	</tr>
+	<tr>
+		<td height="17" align="left" valign=bottom><font color="#FF0000"> --</font></td>
+		<td align="left" valign=bottom><font color="#FF0000"> --</font></td>
+		<td align="left" valign=bottom><font color="#FF0000"> --</font></td>
+		<td align="left" valign=bottom><font color="#FF0000"> --</font></td>
+		<td align="left" valign=bottom><font color="#17375E">sub class decide how to implement the algorithm steps</font></td>
+		<td align="left" valign=bottom><br></td>
+	</tr>
+	<tr>
+		<td height="17" align="left" valign=bottom bgcolor="#558ED5">str 6</td>
+		<td align="left" valign=bottom bgcolor="#D9D9D9">Flyweight </td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><font color="#FF0000">one instace of a class can be used to provide many 'virtual instances'</font></td>
+		<td align="left" valign=bottom><font color="#17375E">it save the memory</font></td>
+		<td align="left" valign=bottom><br></td>
+	</tr>
+	<tr>
+		<td height="17" align="left" valign=bottom bgcolor="#558ED5">str 7</td>
+		<td align="left" valign=bottom bgcolor="#D9D9D9">Bridge </td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><font color="#FF0000">allow to VARY not only implementation and also vary the abstraction</font></td>
+		<td align="left" valign=bottom><font color="#17375E"><br></font></td>
+		<td align="left" valign=bottom><font color="#FF0000">always we use</font></td>
+	</tr>
+	<tr>
+		<td height="17" align="left" valign=bottom bgcolor="#953735">beh 9 </td>
+		<td align="left" valign=bottom bgcolor="#D9D9D9">Momento </td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><font color="#FF0000">to be able to return an object return ONE OF ITS PREVIOUS states, ex: undo operation</font></td>
+		<td align="left" valign=bottom><font color="#17375E"><br></font></td>
+		<td align="left" valign=bottom><br></td>
+	</tr>
+	<tr>
+		<td height="19" align="left" valign=bottom bgcolor="#953735">beh10</td>
+		<td align="left" valign=bottom bgcolor="#D9D9D9">Chain of responsibility ( data driven   )</td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><font color="#FF0000">want to give more than one object chance to handle a request</font></td>
+		<td align="left" valign=bottom><font color="#17375E"><br></font></td>
+		<td align="left" valign=bottom><br></td>
+	</tr>
+	<tr>
+		<td height="17" align="left" valign=bottom bgcolor="#948A54">cre 5</td>
+		<td align="left" valign=bottom bgcolor="#D9D9D9">Builder </td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><font color="#FF0000">encapsulate A product creation  and allow it happen in multiple steps instead of single step as other factory pattersn</font></td>
+		<td align="left" valign=bottom><font color="#17375E"><br></font></td>
+		<td align="left" valign=bottom><font color="#FF0000">not used</font></td>
+	</tr>
+	<tr>
+		<td height="17" align="left" valign=bottom bgcolor="#953735">beh 7</td>
+		<td align="left" valign=bottom>Visitor </td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><font color="#FF0000">To add capabilite to a COMPOSITE structure, while encapsulation is not important </font></td>
+		<td align="left" valign=bottom><font color="#17375E"><br></font></td>
+		<td align="left" valign=bottom><br></td>
+	</tr>
+	<tr>
+		<td height="17" align="left" valign=bottom bgcolor="#953735">beh 8</td>
+		<td align="left" valign=bottom>Mediator </td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><font color="#FF0000">centralize the COMPLEX communication and CONTROL between related objects</font></td>
+		<td align="left" valign=bottom><font color="#17375E"><br></font></td>
+		<td align="left" valign=bottom><br></td>
+	</tr>
+	<tr>
+		<td height="17" align="left" valign=bottom bgcolor="#953735">beh11</td>
+		<td align="left" valign=bottom bgcolor="#595959">Interpreter </td>
+		<td align="left" valign=bottom bgcolor="#595959"><font color="#17375E"><br></font></td>
+		<td align="left" valign=bottom bgcolor="#595959"><font color="#FF0000">change the client msg, to able understand server compoenent</font></td>
+		<td align="left" valign=bottom><font color="#17375E"><br></font></td>
+		<td align="left" valign=bottom><br></td>
+	</tr>
+	<tr>
+		<td height="17" align="left" valign=bottom bgcolor="#948A54">cre 4</td>
+		<td align="left" valign=bottom>Prototype </td>
+		<td align="left" valign=bottom><font color="#17375E"><br></font></td>
+		<td align="left" valign=bottom><font color="#FF0000">cloning the complex object instead of creation at every time</font></td>
+		<td align="left" valign=bottom><font color="#17375E"><br></font></td>
+		<td align="left" valign=bottom><font color="#FF0000">not used</font></td>
+	</tr>
+	<tr>
+		<td height="17" align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><font color="#17375E"><br></font></td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><font color="#17375E"><br></font></td>
+		<td align="left" valign=bottom><font color="#FF0000"><br></font></td>
+	</tr>
+	<tr>
+		<td height="17" align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom>Collecting Parameter</td>
+		<td align="left" valign=bottom><font color="#17375E"><br></font></td>
+		<td align="left" valign=bottom><font color="#FF0000">it is used to collect result of servery method execution as cumulativly</font></td>
+		<td align="left" valign=bottom><font color="#17375E"><br></font></td>
+		<td align="left" valign=bottom><font color="#FF0000"><br></font></td>
+	</tr>
+</table>
+<img src="ParamDesignPattern_html_558416f3.png" width=301 height=92>
+<br clear=left>
+<!-- ************************************************************************** -->
+<hr>
+<A NAME="table3"><h1>Sheet 4: <em>pattern shot</em></h1></A>
+<table cellspacing="0" border="0">
+	<colgroup span="14" width="65"></colgroup>
+	<tr>
+		<td colspan=11 rowspan=8 height="136" align="left" valign=bottom><br><img src="ParamDesignPattern_html_2ddd56ea.png" width=674 height=134 hspace=24 vspace=4>
+		</td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+	</tr>
+	<tr>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+	</tr>
+	<tr>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+	</tr>
+	<tr>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+	</tr>
+	<tr>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+	</tr>
+	<tr>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+	</tr>
+	<tr>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+	</tr>
+	<tr>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+	</tr>
+	<tr>
+		<td height="17" align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+	</tr>
+	<tr>
+		<td colspan=7 rowspan=8 height="136" align="left" valign=bottom><br><img src="ParamDesignPattern_html_72ef1af0.png" width=403 height=117 hspace=28 vspace=13>
+		</td>
+		<td colspan=6 rowspan=8 align="left" valign=bottom><br><img src="ParamDesignPattern_html_b504e194.png" width=338 height=106 hspace=27 vspace=18>
+		</td>
+		<td align="left" valign=bottom><br></td>
+	</tr>
+	<tr>
+		<td align="left" valign=bottom><br></td>
+	</tr>
+	<tr>
+		<td align="left" valign=bottom><br></td>
+	</tr>
+	<tr>
+		<td align="left" valign=bottom><br></td>
+	</tr>
+	<tr>
+		<td align="left" valign=bottom><br></td>
+	</tr>
+	<tr>
+		<td align="left" valign=bottom><br></td>
+	</tr>
+	<tr>
+		<td align="left" valign=bottom><br></td>
+	</tr>
+	<tr>
+		<td align="left" valign=bottom><br></td>
+	</tr>
+	<tr>
+		<td height="17" align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+		<td colspan=7 rowspan=6 align="left" valign=bottom><br><img src="ParamDesignPattern_html_2bf93b41.png" width=407 height=85 hspace=26 vspace=11>
+		</td>
+		</tr>
+	<tr>
+		<td colspan=7 rowspan=8 height="136" align="left" valign=bottom><br><img src="ParamDesignPattern_html_2cbf6178.png" width=407 height=112 hspace=26 vspace=15>
+		</td>
+		</tr>
+	<tr>
+		</tr>
+	<tr>
+		</tr>
+	<tr>
+		</tr>
+	<tr>
+		</tr>
+	<tr>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+	</tr>
+	<tr>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+	</tr>
+	<tr>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+	</tr>
+	<tr>
+		<td colspan=7 rowspan=6 height="102" align="left" valign=bottom><br><img src="ParamDesignPattern_html_c15d56fd.png" width=427 height=87 hspace=16 vspace=10>
+		</td>
+		<td colspan=7 rowspan=8 align="left" valign=bottom><br><img src="ParamDesignPattern_html_785d8aa8.png" width=415 height=108 hspace=22 vspace=17>
+		</td>
+		</tr>
+	<tr>
+		</tr>
+	<tr>
+		</tr>
+	<tr>
+		</tr>
+	<tr>
+		</tr>
+	<tr>
+		</tr>
+	<tr>
+		<td height="17" align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+		</tr>
+	<tr>
+		<td colspan=7 rowspan=9 height="153" align="left" valign=bottom><br><img src="ParamDesignPattern_html_6629ac8d.png" width=427 height=123 hspace=16 vspace=19>
+		</td>
+		</tr>
+	<tr>
+		<td colspan=7 rowspan=8 align="left" valign=bottom><br><img src="ParamDesignPattern_html_52b8e129.png" width=423 height=109 hspace=18 vspace=17>
+		</td>
+		</tr>
+	<tr>
+		</tr>
+	<tr>
+		</tr>
+	<tr>
+		</tr>
+	<tr>
+		</tr>
+	<tr>
+		</tr>
+	<tr>
+		</tr>
+	<tr>
+		</tr>
+	<tr>
+		<td colspan=5 rowspan=7 align="left" valign=bottom><br><img src="ParamDesignPattern_html_933a0f79.png" width=310 height=102 hspace=9 vspace=11>
+		</td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+	</tr>
+	<tr>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+	</tr>
+	<tr>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+	</tr>
+	<tr>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+	</tr>
+	<tr>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+	</tr>
+	<tr>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+	</tr>
+	<tr>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+	</tr>
+	<tr>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+	</tr>
+	<tr>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+	</tr>
+	<tr>
+		<td colspan=6 rowspan=9 height="153" align="left" valign=bottom><br><img src="ParamDesignPattern_html_a5b4b7f.png" width=342 height=129 hspace=25 vspace=16>
+		</td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+	</tr>
+	<tr>
+		<td colspan=7 rowspan=7 align="left" valign=bottom><br><img src="ParamDesignPattern_html_ae38b61.png" width=403 height=88 hspace=28 vspace=18>
+		</td>
+		<td align="left" valign=bottom><br></td>
+	</tr>
+	<tr>
+		<td align="left" valign=bottom><br></td>
+	</tr>
+	<tr>
+		<td align="left" valign=bottom><br></td>
+	</tr>
+	<tr>
+		<td align="left" valign=bottom><br></td>
+	</tr>
+	<tr>
+		<td align="left" valign=bottom><br></td>
+	</tr>
+	<tr>
+		<td align="left" valign=bottom><br></td>
+	</tr>
+	<tr>
+		<td align="left" valign=bottom><br></td>
+	</tr>
+	<tr>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+	</tr>
+	<tr>
+		<td colspan=7 rowspan=6 height="102" align="left" valign=bottom><br><img src="ParamDesignPattern_html_60638fc7.png" width=435 height=85 hspace=12 vspace=11>
+		</td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+	</tr>
+	<tr>
+		<td colspan=7 rowspan=8 align="left" valign=bottom><br><img src="ParamDesignPattern_html_94a4da27.png" width=419 height=108 hspace=20 vspace=17>
+		</td>
+		</tr>
+	<tr>
+		</tr>
+	<tr>
+		</tr>
+	<tr>
+		</tr>
+	<tr>
+		</tr>
+	<tr>
+		<td height="17" align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+		</tr>
+	<tr>
+		<td height="17" align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+		</tr>
+	<tr>
+		<td height="17" align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+		</tr>
+</table>
+<img src="ParamDesignPattern_html_d8386f92.png" width=419 height=141 hspace=20 vspace=19>
+<!-- ************************************************************************** -->
+<hr>
+<A NAME="table4"><h1>Sheet 5: <em>Study History</em></h1></A>
+<table cellspacing="0" border="0">
+	<colgroup width="151"></colgroup>
+	<colgroup width="101"></colgroup>
+	<colgroup width="142"></colgroup>
+	<colgroup width="157"></colgroup>
+	<colgroup width="250"></colgroup>
+	<tr>
+		<td height="17" align="left" valign=bottom bgcolor="#FFFF00"><b><font color="#FF0000">21 - Oct - 07 - started</font></b></td>
+		<td align="left" valign=bottom><b><font color="#FF0000"><br></font></b></td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+	</tr>
+	<tr>
+		<td height="17" align="left" valign=bottom bgcolor="#FFFF00"><b><font color="#FF0000"><br></font></b></td>
+		<td align="left" valign=bottom><b><font color="#FF0000"><br></font></b></td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+	</tr>
+	<tr>
+		<td height="17" align="left" valign=bottom bgcolor="#FFFF00"><b><font color="#3366FF">date</font></b></td>
+		<td align="left" valign=bottom bgcolor="#FFFF00"><b><font color="#3366FF">Hours</font></b></td>
+		<td align="left" valign=bottom bgcolor="#FFFF00"><b><font color="#3366FF">Time slice 1</font></b></td>
+		<td align="left" valign=bottom bgcolor="#FFFF00"><b><font color="#3366FF">Time slice 2</font></b></td>
+		<td align="left" valign=bottom bgcolor="#FFFF00"><b><font color="#3366FF">Study description</font></b></td>
+	</tr>
+	<tr>
+		<td height="17" align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+	</tr>
+	<tr>
+		<td height="17" align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+	</tr>
+	<tr>
+		<td height="17" align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+	</tr>
+	<tr>
+		<td height="17" align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+	</tr>
+	<tr>
+		<td height="17" align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+	</tr>
+	<tr>
+		<td height="17" align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+	</tr>
+	<tr>
+		<td height="17" align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+	</tr>
+	<tr>
+		<td height="17" align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+	</tr>
+	<tr>
+		<td height="17" align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+	</tr>
+	<tr>
+		<td height="17" align="right" valign=bottom sdval="39376" sdnum="16393;0;D MMM YY">21 Oct 07</td>
+		<td align="left" valign=bottom sdnum="16393;0;D MMM YY">1  . 5</td>
+		<td align="left" valign=bottom>6.14 PM - 8.00 PM</td>
+		<td align="left" valign=bottom><br></td>
+		<td rowspan=3 align="left" valign=bottom>covered first chapter</td>
+	</tr>
+	<tr>
+		<td height="17" align="right" valign=bottom sdval="39377" sdnum="16393;0;D MMM YY">22 Oct 07</td>
+		<td align="left" valign=bottom>1. 5</td>
+		<td align="left" valign=bottom>10. 00 AM - 11.23 AM</td>
+		<td align="left" valign=bottom><br></td>
+		</tr>
+	<tr>
+		<td height="17" align="right" valign=bottom sdval="39382" sdnum="16393;0;D MMM YY">27 Oct 07</td>
+		<td align="left" valign=bottom sdval="2" sdnum="16393;">2</td>
+		<td align="left" valign=bottom>3.18 PM - 5.18 PM</td>
+		<td align="left" valign=bottom><br></td>
+		</tr>
+	<tr>
+		<td height="17" align="right" valign=bottom sdval="39383" sdnum="16393;0;D MMM YY">28 Oct 07</td>
+		<td align="left" valign=bottom sdval="4.22" sdnum="16393;">4.22</td>
+		<td align="left" valign=bottom>10.30 A.M - 12.44 PM</td>
+		<td align="left" valign=bottom>4.00 PM - 6.22 PM</td>
+		<td align="left" valign=bottom>covered second chapter</td>
+	</tr>
+	<tr>
+		<td height="17" align="right" valign=bottom sdval="39383" sdnum="16393;0;D MMM YY">28 Oct 07</td>
+		<td align="left" valign=bottom sdval="2" sdnum="16393;">2</td>
+		<td align="left" valign=bottom>8.00 PM - 9. PM</td>
+		<td align="left" valign=bottom>11.23 PM - 12.08 Pm</td>
+		<td align="left" valign=bottom>Covered Third chapter</td>
+	</tr>
+	<tr>
+		<td height="17" align="right" valign=bottom sdval="39384" sdnum="16393;0;D MMM YY">29 Oct 07</td>
+		<td align="left" valign=bottom sdval="1" sdnum="16393;">1</td>
+		<td align="left" valign=bottom>11.0 AM - 12.00 PM</td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom>Covered fourth chapter</td>
+	</tr>
+	<tr>
+		<td height="17" align="right" valign=bottom sdval="39385" sdnum="16393;0;D MMM YY">30 Oct 07</td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom>4.23 AM</td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom>Covered fourth chapter</td>
+	</tr>
+	<tr>
+		<td height="17" align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+	</tr>
+	<tr>
+		<td height="17" align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+	</tr>
+	<tr>
+		<td height="17" align="left" valign=bottom sdnum="16393;0;DD/MM/YY HH:MM">1/2/2008  10:09:00 PM     - Started</td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+	</tr>
+	<tr>
+		<td height="17" align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+	</tr>
+	<tr>
+		<td height="17" align="right" valign=bottom sdval="39449" sdnum="16393;0;DD/MM/YYYY">02/01/2008</td>
+		<td align="left" valign=bottom><br></td>
+		<td align="right" valign=bottom sdval="0.923611111111111" sdnum="16393;0;HH:MM AM/PM">10:10 PM</td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+	</tr>
+	<tr>
+		<td height="17" align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+	</tr>
+	<tr>
+		<td height="17" align="right" valign=bottom bgcolor="#FFFF00" sdval="39984" sdnum="16393;0;DD/MM/YYYY">20/06/2009</td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom>head first book first round STARTED</td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+	</tr>
+	<tr>
+		<td height="17" align="right" valign=bottom bgcolor="#FFFF00" sdval="40007" sdnum="16393;0;DD/MM/YYYY">13/07/2009</td>
+		<td align="left" valign=bottom sdval="0.846527777777778" sdnum="16393;0;HH:MM AM/PM">08:19 PM</td>
+		<td align="left" valign=bottom>head first book first round FINISHED</td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+	</tr>
+</table>
+<!-- ************************************************************************** -->
+</body>
+
+</html>

@@ -1,0 +1,1090 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+
+<html>
+<head>
+	
+	<meta http-equiv="content-type" content="text/html; charset=utf-8">
+	<title></title>
+	<meta name="generator" content="LibreOffice 4.2.8.2 (Linux)">
+	<meta name="author" content=" ">
+	<meta name="created" content="20070816;145427000000000">
+	<meta name="changedby" content=" ">
+	<meta name="changed" content="20070823;212330000000000">
+<link rel="style" type="text/css" href="/styles/style.css" media="screen">
+	
+</head>
+
+<body text="#000000">
+		<a href="index.html">UML Page</a><br/>
+<hr>
+	<p><center>
+		<h1>Overview</h1>
+		<A HREF="#table0">General</A><br>
+		<A HREF="#table1">Apply OO</A><br>
+		<A HREF="#table2">UseCase</A><br>
+		<A HREF="#table3">Analysis</A><br>
+		<A HREF="#table4">Design Class Dia</A><br>
+		<A HREF="#table5">Architect Analysis of Big Appli</A><br>
+		<A HREF="#table6">Design Principle</A><br>
+		<A HREF="#table7">How to start coding</A><br>
+		
+	</center></p>
+<hr>
+<A NAME="table0"><h1>Sheet 1: <em>General</em></h1></A>
+<table cellspacing="0" border="0">
+	<colgroup width="228"></colgroup>
+	<colgroup width="963"></colgroup>
+	<tr>
+		<td height="51" align="left">Great Software</td>
+		<td align="left">To full fill the customer requirement<br>Object oriented way of conding like reuse code, avoid duplicate<br>Use Good Design pattern, Easy for extension </td>
+	</tr>
+	<tr>
+		<td height="51" align="left">Three coat for great software</td>
+		<td align="left">1. Make sure your software does what the customer wants it to do.<br>2. Apply basic OO principal to add flexibility<br>3. Strive for a maintainable, reusable design</td>
+	</tr>
+</table>
+<!-- ************************************************************************** -->
+<hr>
+<A NAME="table1"><h1>Sheet 2: <em>Apply OO</em></h1></A>
+<table cellspacing="0" border="0">
+	<colgroup width="186"></colgroup>
+	<colgroup width="998"></colgroup>
+	<tr>
+		<td height="17" align="left">Once the customer satified </td>
+		<td align="left"><br></td>
+	</tr>
+	<tr>
+		<td height="17" align="left"><br></td>
+		<td align="left">Try to cohesive  each class.</td>
+	</tr>
+	<tr>
+		<td height="17" align="left"><br></td>
+		<td align="left">Try to apply  encapsulation  to all class. Since encapsulation allow to group logical parts of application.</td>
+	</tr>
+	<tr>
+		<td height="17" align="left"><br></td>
+		<td align="left">Wherever need value saftey for properties use enum</td>
+	</tr>
+	<tr>
+		<td height="17" align="left"><br></td>
+		<td align="left">Try to avoid duplicate code among class</td>
+	</tr>
+	<tr>
+		<td height="17" align="left"><br></td>
+		<td align="left">Try to find, any think can be delegated and reused. Since delegation helps when changes one object no need to change others.</td>
+	</tr>
+	<tr>
+		<td height="17" align="left"><br></td>
+		<td align="left"><b>Comparing two instance of same type, put that comparision code in that same class. That is class type of instance</b></td>
+	</tr>
+	<tr>
+		<td height="17" align="left"><br></td>
+		<td align="left"><br></td>
+	</tr>
+	<tr>
+		<td height="17" align="left"><br></td>
+		<td align="left"><br></td>
+	</tr>
+	<tr>
+		<td height="17" align="left">System ( in OOAD world )</td>
+		<td align="left">it is the complete application or  project we are working on.</td>
+	</tr>
+</table>
+<!-- ************************************************************************** -->
+<hr>
+<A NAME="table2"><h1>Sheet 3: <em>UseCase</em></h1></A>
+<table cellspacing="0" border="0">
+	<colgroup width="235"></colgroup>
+	<colgroup width="866"></colgroup>
+	<colgroup span="3" width="67"></colgroup>
+	<tr>
+		<td height="17" align="left">what is use case document</td>
+		<td align="left">It is represent, what we understand as requirement to a project from customer</td>
+		<td align="left"><br></td>
+		<td align="left"><br></td>
+		<td align="left"><br></td>
+	</tr>
+	<tr>
+		<td height="17" align="left"><br></td>
+		<td align="left"><br></td>
+		<td align="left"><br></td>
+		<td align="left"><br></td>
+		<td align="left"><br></td>
+	</tr>
+	<tr>
+		<td height="17" align="left"><br></td>
+		<td align="left"><br></td>
+		<td align="left"><br></td>
+		<td align="left"><br></td>
+		<td align="left"><br></td>
+	</tr>
+	<tr>
+		<td height="34" align="left">How to gathering requirment</td>
+		<td align="left">let the customer to talk first.<br>Simply listen the customer. Don’t think right now about how to implementation or mapping to any other application.</td>
+		<td align="left"><br></td>
+		<td align="left"><br></td>
+		<td align="left"><br></td>
+	</tr>
+	<tr>
+		<td height="85" align="left">Whenever the requirement change</td>
+		<td align="left">Whenever the requirement change start from change the use case. <br>Then alter requirement document. <br>Then find all alternate path of use case.<br>Then try to find all the scenario of use case.<br> Then only has to start to change source code</td>
+		<td align="left"><br></td>
+		<td align="left"><br></td>
+		<td align="left"><br></td>
+	</tr>
+	<tr>
+		<td height="17" align="left"><br></td>
+		<td align="left"><br></td>
+		<td align="left"><br></td>
+		<td align="left"><br></td>
+		<td align="left"><br></td>
+	</tr>
+	<tr>
+		<td height="17" align="left"><br></td>
+		<td align="left"><br></td>
+		<td align="left"><br></td>
+		<td align="left"><br></td>
+		<td align="left"><br></td>
+	</tr>
+	<tr>
+		<td height="17" align="left"><br></td>
+		<td align="left"><br></td>
+		<td align="left"><br></td>
+		<td align="left"><br></td>
+		<td align="left"><br></td>
+	</tr>
+	<tr>
+		<td height="17" align="left"><br></td>
+		<td align="left"><br></td>
+		<td align="left"><br></td>
+		<td align="left"><br></td>
+		<td align="left"><br></td>
+	</tr>
+	<tr>
+		<td height="17" align="left"><br></td>
+		<td colspan=4 rowspan=39 align="left"><br><img src="ParamOOAD_html_c718079b.jpg" width=1000 height=660 hspace=35 vspace=20>
+		</td>
+		</tr>
+	<tr>
+		<td height="17" align="left"><br></td>
+		</tr>
+	<tr>
+		<td height="17" align="left"><br></td>
+		</tr>
+	<tr>
+		<td height="17" align="left"><br></td>
+		</tr>
+	<tr>
+		<td height="17" align="left"><br></td>
+		</tr>
+	<tr>
+		<td height="17" align="left"><br></td>
+		</tr>
+	<tr>
+		<td height="17" align="left"><br></td>
+		</tr>
+	<tr>
+		<td height="17" align="left"><br></td>
+		</tr>
+	<tr>
+		<td height="17" align="left"><br></td>
+		</tr>
+	<tr>
+		<td height="17" align="left"><br></td>
+		</tr>
+	<tr>
+		<td height="17" align="left"><br></td>
+		</tr>
+	<tr>
+		<td height="17" align="left"><br></td>
+		</tr>
+	<tr>
+		<td height="17" align="left"><br></td>
+		</tr>
+	<tr>
+		<td height="17" align="left"><br></td>
+		</tr>
+	<tr>
+		<td height="17" align="left"><br></td>
+		</tr>
+	<tr>
+		<td height="17" align="left"><br></td>
+		</tr>
+	<tr>
+		<td height="17" align="left"><br></td>
+		</tr>
+	<tr>
+		<td height="17" align="left"><br></td>
+		</tr>
+	<tr>
+		<td height="17" align="left"><br></td>
+		</tr>
+	<tr>
+		<td height="17" align="left"><br></td>
+		</tr>
+	<tr>
+		<td height="17" align="left"><br></td>
+		</tr>
+	<tr>
+		<td height="17" align="left"><br></td>
+		</tr>
+	<tr>
+		<td height="17" align="left"><br></td>
+		</tr>
+	<tr>
+		<td height="17" align="left"><br></td>
+		</tr>
+	<tr>
+		<td height="17" align="left"><br></td>
+		</tr>
+	<tr>
+		<td height="17" align="left"><br></td>
+		</tr>
+	<tr>
+		<td height="17" align="left"><br></td>
+		</tr>
+	<tr>
+		<td height="17" align="left"><br></td>
+		</tr>
+	<tr>
+		<td height="17" align="left"><br></td>
+		</tr>
+	<tr>
+		<td height="17" align="left"><br></td>
+		</tr>
+	<tr>
+		<td height="17" align="left"><br></td>
+		</tr>
+	<tr>
+		<td height="17" align="left"><br></td>
+		</tr>
+	<tr>
+		<td height="17" align="left"><br></td>
+		</tr>
+	<tr>
+		<td height="17" align="left"><br></td>
+		</tr>
+	<tr>
+		<td height="17" align="left"><br></td>
+		</tr>
+	<tr>
+		<td height="17" align="left"><br></td>
+		</tr>
+	<tr>
+		<td height="17" align="left"><br></td>
+		</tr>
+	<tr>
+		<td height="17" align="left"><br></td>
+		</tr>
+	<tr>
+		<td height="17" align="left"><br></td>
+		</tr>
+</table>
+<!-- ************************************************************************** -->
+<hr>
+<A NAME="table3"><h1>Sheet 4: <em>Analysis</em></h1></A>
+<table align="left" cellspacing="0" border="0">
+	<colgroup width="142"></colgroup>
+	<colgroup width="881"></colgroup>
+	<tr>
+		<td height="17" align="left">What is analysis</td>
+		<td align="left">Identify the potential problem of real world context to a application.</td>
+	</tr>
+	<tr>
+		<td height="17" align="left"><br></td>
+		<td align="left">Analysis start from Use Cases.</td>
+	</tr>
+	<tr>
+		<td height="17" align="left"><br></td>
+		<td align="left"><b>Collect all nouns with these are singular or plural</b></td>
+	</tr>
+	<tr>
+		<td height="17" align="left"><br></td>
+		<td align="left"><b>From use cases, some of nouns are does not used to represent our system. Just leave those nouns.</b></td>
+	</tr>
+	<tr>
+		<td height="17" align="left"><br></td>
+		<td align="left"><b>From use cases, some of nouns are part of other nouns. Just leave those nouns also.</b></td>
+	</tr>
+	<tr>
+		<td height="17" align="left"><br></td>
+		<td align="left">This is called textual analysis.</td>
+	</tr>
+	<tr>
+		<td height="17" align="left"><br></td>
+		<td align="left"><b>Once textual analysis over, we start to define class diagram</b></td>
+	</tr>
+	<tr>
+		<td height="17" align="left"><br></td>
+		<td align="left"><br></td>
+	</tr>
+	<tr>
+		<td height="17" align="left"><br></td>
+		<td align="left"><br></td>
+	</tr>
+	<tr>
+		<td height="17" align="left"><br></td>
+		<td align="left"><br></td>
+	</tr>
+	<tr>
+		<td height="17" align="left"><br></td>
+		<td align="left"><br></td>
+	</tr>
+	<tr>
+		<td height="17" align="left"><br></td>
+		<td align="left"><br></td>
+	</tr>
+	<tr>
+		<td height="17" align="left"><br></td>
+		<td align="left"><br></td>
+	</tr>
+	<tr>
+		<td height="17" align="left"><br></td>
+		<td align="left"><br></td>
+	</tr>
+	<tr>
+		<td height="17" align="left"><br></td>
+		<td align="left"><br></td>
+	</tr>
+	<tr>
+		<td height="17" align="left"><br></td>
+		<td align="left"><br></td>
+	</tr>
+	<tr>
+		<td height="17" align="left"><br></td>
+		<td align="left"><br></td>
+	</tr>
+	<tr>
+		<td height="17" align="left"><br></td>
+		<td align="left"><br></td>
+	</tr>
+	<tr>
+		<td height="17" align="left"><br></td>
+		<td align="left"><br></td>
+	</tr>
+	<tr>
+		<td height="17" align="left"><br></td>
+		<td align="left"><br></td>
+	</tr>
+	<tr>
+		<td height="17" align="left"><br></td>
+		<td align="left"><br></td>
+	</tr>
+	<tr>
+		<td height="17" align="left"><br></td>
+		<td align="left"><br></td>
+	</tr>
+	<tr>
+		<td height="17" align="left"><br></td>
+		<td align="left"><br></td>
+	</tr>
+	<tr>
+		<td height="17" align="left"><br></td>
+		<td align="left"><br></td>
+	</tr>
+	<tr>
+		<td height="17" align="left"><br></td>
+		<td align="left"> </td>
+	</tr>
+	<tr>
+		<td height="17" align="left"><br></td>
+		<td align="left"><br></td>
+	</tr>
+	<tr>
+		<td height="17" align="left"><br></td>
+		<td align="left"><br></td>
+	</tr>
+	<tr>
+		<td height="17" align="left"><br></td>
+		<td align="left"><br></td>
+	</tr>
+	<tr>
+		<td height="17" align="left"><br></td>
+		<td align="left"><br></td>
+	</tr>
+	<tr>
+		<td height="17" align="left"><br></td>
+		<td align="left"><br></td>
+	</tr>
+	<tr>
+		<td height="17" align="left"><br></td>
+		<td align="left"><br></td>
+	</tr>
+	<tr>
+		<td height="17" align="left"><br></td>
+		<td align="left"><br></td>
+	</tr>
+	<tr>
+		<td height="17" align="left"><br></td>
+		<td align="left"><br></td>
+	</tr>
+	<tr>
+		<td height="17" align="left"><br></td>
+		<td align="left"><br></td>
+	</tr>
+	<tr>
+		<td height="17" align="left"><br></td>
+		<td align="left"><br></td>
+	</tr>
+	<tr>
+		<td height="17" align="left"><br></td>
+		<td align="left"><br></td>
+	</tr>
+	<tr>
+		<td height="17" align="left"><br></td>
+		<td align="left"><br></td>
+	</tr>
+	<tr>
+		<td height="17" align="left"><br></td>
+		<td align="left"><br></td>
+	</tr>
+	<tr>
+		<td height="17" align="left"><br></td>
+		<td align="left"><br></td>
+	</tr>
+	<tr>
+		<td height="17" align="left"><br></td>
+		<td align="left"><br></td>
+	</tr>
+	<tr>
+		<td height="17" align="left"><br></td>
+		<td align="left"><br></td>
+	</tr>
+	<tr>
+		<td height="17" align="left"><br></td>
+		<td align="left"><br></td>
+	</tr>
+	<tr>
+		<td height="17" align="left"><br></td>
+		<td align="left"><br></td>
+	</tr>
+	<tr>
+		<td height="17" align="left"><br></td>
+		<td align="left"><br></td>
+	</tr>
+	<tr>
+		<td height="17" align="left"><br></td>
+		<td align="left"><br></td>
+	</tr>
+	<tr>
+		<td height="17" align="left"><br></td>
+		<td align="left"><br></td>
+	</tr>
+	<tr>
+		<td height="17" align="left"><br></td>
+		<td align="left"><br></td>
+	</tr>
+	<tr>
+		<td height="17" align="left"><br></td>
+		<td align="left"><br></td>
+	</tr>
+	<tr>
+		<td height="17" align="left"><br></td>
+		<td align="left"><br></td>
+	</tr>
+	<tr>
+		<td height="17" align="left"><br></td>
+		<td align="left"><br></td>
+	</tr>
+	<tr>
+		<td height="17" align="left"><br></td>
+		<td align="left"><br></td>
+	</tr>
+	<tr>
+		<td height="17" align="left"><br></td>
+		<td align="left"><br></td>
+	</tr>
+	<tr>
+		<td height="17" align="left"><br></td>
+		<td align="left"><br></td>
+	</tr>
+	<tr>
+		<td height="17" align="left"><br></td>
+		<td align="left"><br></td>
+	</tr>
+	<tr>
+		<td height="17" align="left"><br></td>
+		<td align="left"><br></td>
+	</tr>
+	<tr>
+		<td height="17" align="left"><br></td>
+		<td align="left"><br></td>
+	</tr>
+	<tr>
+		<td height="17" align="left"><br></td>
+		<td align="left"><br></td>
+	</tr>
+	<tr>
+		<td height="17" align="left"><br></td>
+		<td align="left"><br></td>
+	</tr>
+	<tr>
+		<td height="17" align="left"><br></td>
+		<td align="left"><br></td>
+	</tr>
+	<tr>
+		<td height="17" align="left"><br></td>
+		<td align="left"><br></td>
+	</tr>
+	<tr>
+		<td height="17" align="left"><br></td>
+		<td align="left"><br></td>
+	</tr>
+	<tr>
+		<td height="17" align="left"><br></td>
+		<td align="left"><br></td>
+	</tr>
+	<tr>
+		<td height="17" align="left"><br></td>
+		<td align="left"><br></td>
+	</tr>
+	<tr>
+		<td height="17" align="left"><br></td>
+		<td align="left"><br></td>
+	</tr>
+	<tr>
+		<td height="17" align="left"><br></td>
+		<td align="left"><br></td>
+	</tr>
+	<tr>
+		<td height="17" align="left"><br></td>
+		<td align="left"><br></td>
+	</tr>
+	<tr>
+		<td height="17" align="left"><br></td>
+		<td align="left"><br></td>
+	</tr>
+	<tr>
+		<td height="17" align="left"><br></td>
+		<td align="left"><br></td>
+	</tr>
+	<tr>
+		<td height="17" align="left"><br></td>
+		<td align="left"><br></td>
+	</tr>
+	<tr>
+		<td height="17" align="left"><br></td>
+		<td align="left"><br></td>
+	</tr>
+	<tr>
+		<td height="17" align="left"><br></td>
+		<td align="left"><br></td>
+	</tr>
+	<tr>
+		<td height="17" align="left"><br></td>
+		<td align="left"><br></td>
+	</tr>
+</table>
+<img src="ParamOOAD_html_4e3232c2.jpg" width=784 height=1051>
+<br clear=left>
+<!-- ************************************************************************** -->
+<hr>
+<A NAME="table4"><h1>Sheet 5: <em>Design Class Dia</em></h1></A>
+<table cellspacing="0" border="0">
+	<colgroup width="293"></colgroup>
+	<colgroup width="938"></colgroup>
+	<tr>
+		<td height="17" align="left">What are thing keep in mind when DESIGN</td>
+		<td align="left">1. Greate Software doesnot come in a day , So do design and then alter the design again and again</td>
+	</tr>
+	<tr>
+		<td height="17" align="left"><br></td>
+		<td align="left">2. When merging methods please look return type also. That should make sense</td>
+	</tr>
+	<tr>
+		<td rowspan=7 height="119" align="left">Applying OO Principals</td>
+		<td align="left" bgcolor="#CCFFFF">3. Think those THREE way to great software once class design over.</td>
+	</tr>
+	<tr>
+		<td align="left" bgcolor="#CCFFFF">4. Use INTERFACE  when design. This would be great when you want to extend the application.</td>
+	</tr>
+	<tr>
+		<td align="left" bgcolor="#CCFFFF">5. Try to use ENCAPSULATION when  those are vaires in a class.</td>
+	</tr>
+	<tr>
+		<td align="left" bgcolor="#CCFFFF">6. A class need to CHANGE only one reason. A class should not has to change for more than one changes in application</td>
+	</tr>
+	<tr>
+		<td align="left" bgcolor="#CCFFFF">7. When using generalization, ask what are common and different properties among super and sub classes.</td>
+	</tr>
+	<tr>
+		<td align="left" bgcolor="#CCFFFF">8. sub classes  need when we want add function  differently than super class. Just attributes difference don’t go for sub class</td>
+	</tr>
+	<tr>
+		<td align="left" bgcolor="#CCFFFF">9. Wherever the properties of class varies just pulled out and put into MAP or any Property object.</td>
+	</tr>
+	<tr>
+		<td height="17" align="left">How to apply Cohesive</td>
+		<td align="left"> Look all methods of a class. Then try to find is it doing irrevelent task or cohesive task.</td>
+	</tr>
+</table>
+<!-- ************************************************************************** -->
+<hr>
+<A NAME="table5"><h1>Sheet 6: <em>Architect Analysis of Big Appli</em></h1></A>
+<table cellspacing="0" border="0">
+	<colgroup width="67"></colgroup>
+	<colgroup width="1147"></colgroup>
+	<colgroup span="3" width="67"></colgroup>
+	<tr>
+		<td height="17" align="left"><br></td>
+		<td align="left"><br></td>
+		<td align="left"><br></td>
+		<td align="left"><br></td>
+		<td align="left"><br></td>
+	</tr>
+	<tr>
+		<td height="17" align="left"><br></td>
+		<td colspan=4 rowspan=81 align="left"><br><img src="ParamOOAD_html_e9659800.jpg" width=1309 height=1376 hspace=21 vspace=40>
+		</td>
+		</tr>
+	<tr>
+		<td height="17" align="left"><br></td>
+		</tr>
+	<tr>
+		<td height="17" align="left"><br></td>
+		</tr>
+	<tr>
+		<td height="17" align="left"><br></td>
+		</tr>
+	<tr>
+		<td height="17" align="left"><br></td>
+		</tr>
+	<tr>
+		<td height="17" align="left"><br></td>
+		</tr>
+	<tr>
+		<td height="17" align="left"><br></td>
+		</tr>
+	<tr>
+		<td height="17" align="left"><br></td>
+		</tr>
+	<tr>
+		<td height="17" align="left"><br></td>
+		</tr>
+	<tr>
+		<td height="17" align="left"><br></td>
+		</tr>
+	<tr>
+		<td height="17" align="left"><br></td>
+		</tr>
+	<tr>
+		<td height="17" align="left"><br></td>
+		</tr>
+	<tr>
+		<td height="17" align="left"><br></td>
+		</tr>
+	<tr>
+		<td height="17" align="left"><br></td>
+		</tr>
+	<tr>
+		<td height="17" align="left"><br></td>
+		</tr>
+	<tr>
+		<td height="17" align="left"><br></td>
+		</tr>
+	<tr>
+		<td height="17" align="left"><br></td>
+		</tr>
+	<tr>
+		<td height="17" align="left"><br></td>
+		</tr>
+	<tr>
+		<td height="17" align="left"><br></td>
+		</tr>
+	<tr>
+		<td height="17" align="left"><br></td>
+		</tr>
+	<tr>
+		<td height="17" align="left"><br></td>
+		</tr>
+	<tr>
+		<td height="17" align="left"><br></td>
+		</tr>
+	<tr>
+		<td height="17" align="left"><br></td>
+		</tr>
+	<tr>
+		<td height="17" align="left"><br></td>
+		</tr>
+	<tr>
+		<td height="17" align="left"><br></td>
+		</tr>
+	<tr>
+		<td height="17" align="left"><br></td>
+		</tr>
+	<tr>
+		<td height="17" align="left"><br></td>
+		</tr>
+	<tr>
+		<td height="17" align="left"><br></td>
+		</tr>
+	<tr>
+		<td height="17" align="left"><br></td>
+		</tr>
+	<tr>
+		<td height="17" align="left"><br></td>
+		</tr>
+	<tr>
+		<td height="17" align="left"><br></td>
+		</tr>
+	<tr>
+		<td height="17" align="left"><br></td>
+		</tr>
+	<tr>
+		<td height="17" align="left"><br></td>
+		</tr>
+	<tr>
+		<td height="17" align="left"><br></td>
+		</tr>
+	<tr>
+		<td height="17" align="left"><br></td>
+		</tr>
+	<tr>
+		<td height="17" align="left"><br></td>
+		</tr>
+	<tr>
+		<td height="17" align="left"><br></td>
+		</tr>
+	<tr>
+		<td height="17" align="left"><br></td>
+		</tr>
+	<tr>
+		<td height="17" align="left"><br></td>
+		</tr>
+	<tr>
+		<td height="17" align="left"><br></td>
+		</tr>
+	<tr>
+		<td height="17" align="left"><br></td>
+		</tr>
+	<tr>
+		<td height="17" align="left"><br></td>
+		</tr>
+	<tr>
+		<td height="17" align="left"><br></td>
+		</tr>
+	<tr>
+		<td height="17" align="left"><br></td>
+		</tr>
+	<tr>
+		<td height="17" align="left"><br></td>
+		</tr>
+	<tr>
+		<td height="17" align="left"><br></td>
+		</tr>
+	<tr>
+		<td height="17" align="left"><br></td>
+		</tr>
+	<tr>
+		<td height="17" align="left"><br></td>
+		</tr>
+	<tr>
+		<td height="17" align="left"><br></td>
+		</tr>
+	<tr>
+		<td height="17" align="left"><br></td>
+		</tr>
+	<tr>
+		<td height="17" align="left"><br></td>
+		</tr>
+	<tr>
+		<td height="17" align="left"><br></td>
+		</tr>
+	<tr>
+		<td height="17" align="left"><br></td>
+		</tr>
+	<tr>
+		<td height="17" align="left"><br></td>
+		</tr>
+	<tr>
+		<td height="17" align="left"><br></td>
+		</tr>
+	<tr>
+		<td height="17" align="left"><br></td>
+		</tr>
+	<tr>
+		<td height="17" align="left"><br></td>
+		</tr>
+	<tr>
+		<td height="17" align="left"><br></td>
+		</tr>
+	<tr>
+		<td height="17" align="left"><br></td>
+		</tr>
+	<tr>
+		<td height="17" align="left"><br></td>
+		</tr>
+	<tr>
+		<td height="17" align="left"><br></td>
+		</tr>
+	<tr>
+		<td height="17" align="left"><br></td>
+		</tr>
+	<tr>
+		<td height="17" align="left"><br></td>
+		</tr>
+	<tr>
+		<td height="17" align="left"><br></td>
+		</tr>
+	<tr>
+		<td height="17" align="left"><br></td>
+		</tr>
+	<tr>
+		<td height="17" align="left"><br></td>
+		</tr>
+	<tr>
+		<td height="17" align="left"><br></td>
+		</tr>
+	<tr>
+		<td height="17" align="left"><br></td>
+		</tr>
+	<tr>
+		<td height="17" align="left"><br></td>
+		</tr>
+	<tr>
+		<td height="17" align="left"><br></td>
+		</tr>
+	<tr>
+		<td height="17" align="left"><br></td>
+		</tr>
+	<tr>
+		<td height="17" align="left"><br></td>
+		</tr>
+	<tr>
+		<td height="17" align="left"><br></td>
+		</tr>
+	<tr>
+		<td height="17" align="left"><br></td>
+		</tr>
+	<tr>
+		<td height="17" align="left"><br></td>
+		</tr>
+	<tr>
+		<td height="17" align="left"><br></td>
+		</tr>
+	<tr>
+		<td height="17" align="left"><br></td>
+		</tr>
+	<tr>
+		<td height="17" align="left"><br></td>
+		</tr>
+	<tr>
+		<td height="17" align="left"><br></td>
+		</tr>
+	<tr>
+		<td height="17" align="left"><br></td>
+		</tr>
+	<tr>
+		<td height="17" align="left"><br></td>
+		</tr>
+</table>
+<!-- ************************************************************************** -->
+<hr>
+<A NAME="table6"><h1>Sheet 7: <em>Design Principle</em></h1></A>
+<table cellspacing="0" border="0">
+	<colgroup width="67"></colgroup>
+	<colgroup width="706"></colgroup>
+	<colgroup span="10" width="67"></colgroup>
+	<tr>
+		<td height="17" align="left"><br></td>
+		<td align="left"><br></td>
+		<td align="left"><br></td>
+		<td align="left"><br></td>
+		<td align="left"><br></td>
+		<td align="left"><br></td>
+		<td align="left"><br></td>
+		<td align="left"><br></td>
+		<td align="left"><br></td>
+		<td align="left"><br></td>
+		<td align="left"><br></td>
+		<td align="left"><br></td>
+	</tr>
+	<tr>
+		<td height="17" align="left"><br></td>
+		<td colspan=11 rowspan=31 align="left"><br><img src="ParamOOAD_html_c82c80d3.jpg" width=1343 height=520 hspace=21 vspace=18>
+		</td>
+		</tr>
+	<tr>
+		<td height="17" align="left"><br></td>
+		</tr>
+	<tr>
+		<td height="17" align="left"><br></td>
+		</tr>
+	<tr>
+		<td height="17" align="left"><br></td>
+		</tr>
+	<tr>
+		<td height="17" align="left"><br></td>
+		</tr>
+	<tr>
+		<td height="17" align="left"><br></td>
+		</tr>
+	<tr>
+		<td height="17" align="left"><br></td>
+		</tr>
+	<tr>
+		<td height="17" align="left"><br></td>
+		</tr>
+	<tr>
+		<td height="17" align="left"><br></td>
+		</tr>
+	<tr>
+		<td height="17" align="left"><br></td>
+		</tr>
+	<tr>
+		<td height="17" align="left"><br></td>
+		</tr>
+	<tr>
+		<td height="17" align="left"><br></td>
+		</tr>
+	<tr>
+		<td height="17" align="left"><br></td>
+		</tr>
+	<tr>
+		<td height="17" align="left"><br></td>
+		</tr>
+	<tr>
+		<td height="17" align="left"><br></td>
+		</tr>
+	<tr>
+		<td height="17" align="left"><br></td>
+		</tr>
+	<tr>
+		<td height="17" align="left"><br></td>
+		</tr>
+	<tr>
+		<td height="17" align="left"><br></td>
+		</tr>
+	<tr>
+		<td height="17" align="left"><br></td>
+		</tr>
+	<tr>
+		<td height="17" align="left"><br></td>
+		</tr>
+	<tr>
+		<td height="17" align="left"><br></td>
+		</tr>
+	<tr>
+		<td height="17" align="left"><br></td>
+		</tr>
+	<tr>
+		<td height="17" align="left"><br></td>
+		</tr>
+	<tr>
+		<td height="17" align="left"><br></td>
+		</tr>
+	<tr>
+		<td height="17" align="left"><br></td>
+		</tr>
+	<tr>
+		<td height="17" align="left"><br></td>
+		</tr>
+	<tr>
+		<td height="17" align="left"><br></td>
+		</tr>
+	<tr>
+		<td height="17" align="left"><br></td>
+		</tr>
+	<tr>
+		<td height="17" align="left"><br></td>
+		</tr>
+	<tr>
+		<td height="17" align="left"><br></td>
+		</tr>
+	<tr>
+		<td height="17" align="left"><br></td>
+		</tr>
+</table>
+<!-- ************************************************************************** -->
+<hr>
+<A NAME="table7"><h1>Sheet 8: <em>How to start coding</em></h1></A>
+<table cellspacing="0" border="0">
+	<colgroup span="16" width="67"></colgroup>
+	<tr>
+		<td height="17" align="left"><br></td>
+		<td colspan=15 rowspan=27 align="left"><br><img src="ParamOOAD_html_29046b0b.jpg" width=950 height=445 hspace=35 vspace=20>
+		</td>
+		</tr>
+	<tr>
+		<td height="17" align="left"><br></td>
+		</tr>
+	<tr>
+		<td height="17" align="left"><br></td>
+		</tr>
+	<tr>
+		<td height="17" align="left"><br></td>
+		</tr>
+	<tr>
+		<td height="17" align="left"><br></td>
+		</tr>
+	<tr>
+		<td height="17" align="left"><br></td>
+		</tr>
+	<tr>
+		<td height="17" align="left"><br></td>
+		</tr>
+	<tr>
+		<td height="17" align="left"><br></td>
+		</tr>
+	<tr>
+		<td height="17" align="left"><br></td>
+		</tr>
+	<tr>
+		<td height="17" align="left"><br></td>
+		</tr>
+	<tr>
+		<td height="17" align="left"><br></td>
+		</tr>
+	<tr>
+		<td height="17" align="left"><br></td>
+		</tr>
+	<tr>
+		<td height="17" align="left"><br></td>
+		</tr>
+	<tr>
+		<td height="17" align="left"><br></td>
+		</tr>
+	<tr>
+		<td height="17" align="left"><br></td>
+		</tr>
+	<tr>
+		<td height="17" align="left"><br></td>
+		</tr>
+	<tr>
+		<td height="17" align="left"><br></td>
+		</tr>
+	<tr>
+		<td height="17" align="left"><br></td>
+		</tr>
+	<tr>
+		<td height="17" align="left"><br></td>
+		</tr>
+	<tr>
+		<td height="17" align="left"><br></td>
+		</tr>
+	<tr>
+		<td height="17" align="left"><br></td>
+		</tr>
+	<tr>
+		<td height="17" align="left"><br></td>
+		</tr>
+	<tr>
+		<td height="17" align="left"><br></td>
+		</tr>
+	<tr>
+		<td height="17" align="left"><br></td>
+		</tr>
+	<tr>
+		<td height="17" align="left"><br></td>
+		</tr>
+	<tr>
+		<td height="17" align="left"><br></td>
+		</tr>
+	<tr>
+		<td height="17" align="left"><br></td>
+		</tr>
+</table>
+<!-- ************************************************************************** -->
+</body>
+
+</html>
