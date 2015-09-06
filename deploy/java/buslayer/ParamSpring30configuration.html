@@ -1,0 +1,2073 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+
+<html>
+<head>
+	
+	<meta http-equiv="content-type" content="text/html; charset=utf-8">
+	<title></title>
+	<meta name="generator" content="LibreOffice 4.2.8.2 (Linux)">
+	<meta name="author" content="padhu">
+	<meta name="created" content="20110617;115650000000000">
+	<meta name="changed" content="20130626;121326000000000">
+	
+	<style type="text/css"><!-- 
+		body,div,table,thead,tbody,tfoot,tr,th,td,p { font-family:"Calibri"; font-size:x-small }
+		 -->
+	</style>
+	
+</head>
+
+<body text="#000000">
+<hr>
+	<p><center>
+		<h1>Overview</h1>
+		<A HREF="#table1">bean config</A><br>
+		<A HREF="#table2">util config</A><br>
+		<A HREF="#table3">context -config</A><br>
+		<A HREF="#table4">AOP Config</A><br>
+		<A HREF="#table5">Tx config</A><br>
+		<A HREF="#table6">j2ee config</A><br>
+		<A HREF="#table7">mvc - config</A><br>
+		<A HREF="#table8">mvc-flow</A><br>
+		<A HREF="#table9">jms-config</A><br>
+		<A HREF="#table10">task-schedule</A><br>
+		<A HREF="#table11">batch</A><br>
+		<A HREF="#table12">Though annoation, xml need for</A><br>
+		
+	</center></p>
+<hr>
+<A NAME="table1"><h1>Sheet 1: <em>bean config</em></h1></A>
+<table cellspacing="0" border="0">
+	<colgroup width="193"></colgroup>
+	<colgroup width="27"></colgroup>
+	<colgroup width="28"></colgroup>
+	<colgroup width="50"></colgroup>
+	<colgroup width="130"></colgroup>
+	<colgroup width="83"></colgroup>
+	<colgroup width="36"></colgroup>
+	<colgroup width="54"></colgroup>
+	<colgroup width="25"></colgroup>
+	<colgroup width="56"></colgroup>
+	<colgroup width="66"></colgroup>
+	<colgroup width="70"></colgroup>
+	<colgroup width="48"></colgroup>
+	<colgroup width="56"></colgroup>
+	<colgroup width="123"></colgroup>
+	<colgroup width="204"></colgroup>
+	<tr>
+		<td height="18" align="left" valign=bottom><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom bgcolor="#C6D9F1"><font color="#000000">beans</font></td>
+		<td align="left" valign=bottom bgcolor="#C6D9F1"><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom bgcolor="#C6D9F1"><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom bgcolor="#C6D9F1"><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom bgcolor="#C6D9F1"><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom bgcolor="#C6D9F1"><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom bgcolor="#C6D9F1"><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom bgcolor="#C6D9F1"><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom bgcolor="#C6D9F1"><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom bgcolor="#C6D9F1"><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom bgcolor="#C6D9F1"><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom bgcolor="#C6D9F1"><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom bgcolor="#C6D9F1"><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom bgcolor="#C6D9F1"><font color="#000000">default-init-method</font></td>
+	</tr>
+	<tr>
+		<td height="18" align="left" valign=bottom><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom bgcolor="#C6D9F1"><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom bgcolor="#C6D9F1"><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom bgcolor="#C6D9F1"><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom bgcolor="#C6D9F1"><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom bgcolor="#C6D9F1"><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom bgcolor="#C6D9F1"><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom bgcolor="#C6D9F1"><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom bgcolor="#C6D9F1"><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom bgcolor="#C6D9F1"><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom bgcolor="#C6D9F1"><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom bgcolor="#C6D9F1"><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom bgcolor="#C6D9F1"><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom bgcolor="#C6D9F1"><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom bgcolor="#C6D9F1"><font color="#000000">default-lazy-init</font></td>
+	</tr>
+	<tr>
+		<td height="18" align="left" valign=bottom><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom bgcolor="#C6D9F1"><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom bgcolor="#C6D9F1"><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom bgcolor="#C6D9F1"><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom bgcolor="#C6D9F1"><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom bgcolor="#C6D9F1"><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom bgcolor="#C6D9F1"><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom bgcolor="#C6D9F1"><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom bgcolor="#C6D9F1"><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom bgcolor="#C6D9F1"><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom bgcolor="#C6D9F1"><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom bgcolor="#C6D9F1"><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom bgcolor="#C6D9F1"><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom bgcolor="#C6D9F1"><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom bgcolor="#C6D9F1"><font color="#000000">default-destroy-method</font></td>
+	</tr>
+	<tr>
+		<td height="18" align="left" valign=bottom><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom bgcolor="#C6D9F1"><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom bgcolor="#C6D9F1"><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom bgcolor="#C6D9F1"><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom bgcolor="#C6D9F1"><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom bgcolor="#C6D9F1"><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom bgcolor="#C6D9F1"><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom bgcolor="#C6D9F1"><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom bgcolor="#C6D9F1"><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom bgcolor="#C6D9F1"><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom bgcolor="#C6D9F1"><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom bgcolor="#C6D9F1"><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom bgcolor="#C6D9F1"><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom bgcolor="#C6D9F1"><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom bgcolor="#00B8FF"><font color="#000000">default-autowire</font></td>
+	</tr>
+	<tr>
+		<td height="18" align="left" valign=bottom><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom bgcolor="#D99694"><font color="#000000">bean</font></td>
+		<td align="left" valign=bottom bgcolor="#D99694"><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom bgcolor="#D99694"><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom bgcolor="#D99694"><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom bgcolor="#D99694"><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom bgcolor="#D99694"><font color="#000000">id</font></td>
+		<td align="left" valign=bottom bgcolor="#D99694"><font color="#000000">class</font></td>
+		<td align="left" valign=bottom bgcolor="#D99694"><font color="#000000">parent</font></td>
+		<td align="left" valign=bottom bgcolor="#D99694"><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom bgcolor="#D99694"><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom bgcolor="#D99694"><font color="#000000">scope</font></td>
+		<td align="left" valign=bottom bgcolor="#D99694"><font color="#000000">abstrct</font></td>
+		<td align="left" valign=bottom bgcolor="#FFFF00"><font color="#000000">init-method</font></td>
+	</tr>
+	<tr>
+		<td height="56" align="left" valign=bottom><font color="#000000">Dependency check ensure autowire happened</font></td>
+		<td align="left" valign=bottom><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom bgcolor="#D99694"><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom bgcolor="#D99694"><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom bgcolor="#D99694"><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom bgcolor="#D99694"><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom bgcolor="#D99694"><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom bgcolor="#D99694"><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom bgcolor="#D99694"><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom bgcolor="#D99694"><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom bgcolor="#D99694"><font color="#000000">depends-on</font></td>
+		<td align="left" valign=bottom bgcolor="#D99694"><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom bgcolor="#D99694"><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom bgcolor="#D99694"><font color="#000000">dependecy-check</font></td>
+		<td align="left" valign=bottom bgcolor="#FFFF00"><font color="#000000">destroy-method</font></td>
+	</tr>
+	<tr>
+		<td height="18" align="left" valign=bottom><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom bgcolor="#D99694"><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom bgcolor="#D99694"><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom bgcolor="#D99694"><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom bgcolor="#D99694"><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom bgcolor="#D99694"><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom bgcolor="#D99694"><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom bgcolor="#D99694"><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom bgcolor="#D99694"><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom bgcolor="#D99694"><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom bgcolor="#D99694"><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom bgcolor="#D99694"><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom bgcolor="#00B8FF"><font color="#000000">autowire</font></td>
+		<td align="left" valign=bottom bgcolor="#D99694"><font color="#000000">factory-bean</font></td>
+	</tr>
+	<tr>
+		<td height="18" align="left" valign=bottom><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom bgcolor="#D99694"><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom bgcolor="#D99694"><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom bgcolor="#D99694"><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom bgcolor="#D99694"><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom bgcolor="#D99694"><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom bgcolor="#D99694"><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom bgcolor="#D99694"><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom bgcolor="#D99694"><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom bgcolor="#D99694"><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom bgcolor="#D99694"><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom bgcolor="#D99694"><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom bgcolor="#D99694"><font color="#000000">lazy-init</font></td>
+		<td align="left" valign=bottom bgcolor="#D99694"><font color="#000000">factory-method</font></td>
+	</tr>
+	<tr>
+		<td height="18" align="left" valign=bottom><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom bgcolor="#D99694"><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom bgcolor="#D99694"><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom bgcolor="#D99694"><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom bgcolor="#D99694"><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom bgcolor="#D99694"><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom bgcolor="#D99694"><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom bgcolor="#D99694"><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom bgcolor="#D99694"><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom bgcolor="#D99694"><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom bgcolor="#D99694"><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom bgcolor="#D99694"><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom bgcolor="#00B8FF"><font color="#000000">primary</font></td>
+		<td align="left" valign=bottom bgcolor="#00B8FF"><font color="#000000">autowire-canditate</font></td>
+	</tr>
+	<tr>
+		<td height="18" align="left" valign=bottom><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom bgcolor="#D9D9D9"><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom bgcolor="#D9D9D9"><font color="#000000">property</font></td>
+		<td align="left" valign=bottom bgcolor="#D9D9D9"><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom bgcolor="#D9D9D9"><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom><font color="#000000">name</font></td>
+		<td align="left" valign=bottom><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom><font color="#000000">value</font></td>
+		<td align="left" valign=bottom><font color="#000000">ref</font></td>
+		<td align="left" valign=bottom><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom><font color="#000000"><br></font></td>
+	</tr>
+	<tr>
+		<td height="18" align="left" valign=bottom><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom bgcolor="#D9D9D9"><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom bgcolor="#D9D9D9"><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom bgcolor="#D9D9D9"><font color="#000000">idref</font></td>
+		<td align="left" valign=bottom bgcolor="#D9D9D9"><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom><font color="#000000">local</font></td>
+		<td align="left" valign=bottom><font color="#000000">bean</font></td>
+		<td align="left" valign=bottom><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom><font color="#000000"><br></font></td>
+	</tr>
+	<tr>
+		<td height="18" align="left" valign=bottom><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom bgcolor="#D9D9D9"><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom bgcolor="#D9D9D9"><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom bgcolor="#E46C0A"><font color="#000000">bean</font></td>
+		<td align="left" valign=bottom bgcolor="#D9D9D9"><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom><font color="#000000">id</font></td>
+		<td align="left" valign=bottom><font color="#000000">class</font></td>
+		<td align="left" valign=bottom><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom><font color="#000000"><br></font></td>
+	</tr>
+	<tr>
+		<td height="18" align="left" valign=bottom><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom bgcolor="#D9D9D9"><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom bgcolor="#D9D9D9"><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom bgcolor="#558ED5"><font color="#000000">ref</font></td>
+		<td align="left" valign=bottom bgcolor="#D9D9D9"><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom><font color="#000000">parent</font></td>
+		<td align="left" valign=bottom><font color="#000000">local</font></td>
+		<td align="left" valign=bottom><font color="#000000">bean</font></td>
+		<td align="left" valign=bottom><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom><font color="#000000"><br></font></td>
+	</tr>
+	<tr>
+		<td height="18" align="left" valign=bottom><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom bgcolor="#D9D9D9"><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom bgcolor="#D9D9D9"><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom bgcolor="#FF0000"><font color="#000000">null</font></td>
+		<td align="left" valign=bottom bgcolor="#D9D9D9"><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom><font color="#000000"><br></font></td>
+	</tr>
+	<tr>
+		<td height="18" align="left" valign=bottom><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom bgcolor="#D9D9D9"><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom bgcolor="#D9D9D9"><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom bgcolor="#D9D9D9"><font color="#000000">replace-method</font></td>
+		<td align="left" valign=bottom bgcolor="#D9D9D9"><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom><font color="#000000">name</font></td>
+		<td align="left" valign=bottom><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom><font color="#000000">replacer</font></td>
+		<td align="left" valign=bottom><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom><font color="#000000"><br></font></td>
+	</tr>
+	<tr>
+		<td height="18" align="left" valign=bottom><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom bgcolor="#D9D9D9"><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom bgcolor="#D9D9D9"><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom bgcolor="#D9D9D9"><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom bgcolor="#D9D9D9"><font color="#000000">arg-type</font></td>
+		<td align="left" valign=bottom><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom><font color="#000000"><br></font></td>
+	</tr>
+	<tr>
+		<td height="18" align="left" valign=bottom><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom bgcolor="#D9D9D9"><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom bgcolor="#D9D9D9"><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom bgcolor="#D9D9D9"><font color="#000000">lookup-method</font></td>
+		<td align="left" valign=bottom bgcolor="#D9D9D9"><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom><font color="#000000">name</font></td>
+		<td align="left" valign=bottom><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom><font color="#000000">bean</font></td>
+		<td align="left" valign=bottom><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom><font color="#000000"><br></font></td>
+	</tr>
+	<tr>
+		<td height="18" align="left" valign=bottom><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom bgcolor="#D9D9D9"><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom bgcolor="#D9D9D9"><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom bgcolor="#D9D9D9"><font color="#000000">value</font></td>
+		<td align="left" valign=bottom bgcolor="#D9D9D9"><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom><font color="#000000"><br></font></td>
+	</tr>
+	<tr>
+		<td height="18" align="left" valign=bottom><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom bgcolor="#D9D9D9"><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom bgcolor="#D9D9D9"><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom bgcolor="#D9D9D9"><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom bgcolor="#D9D9D9"><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom><font color="#000000"><br></font></td>
+	</tr>
+	<tr>
+		<td height="18" align="left" valign=bottom><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom bgcolor="#D9D9D9"><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom bgcolor="#93CDDD"><font color="#000000">constructor-arg</font></td>
+		<td align="left" valign=bottom bgcolor="#93CDDD"><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom bgcolor="#93CDDD"><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom bgcolor="#93CDDD"><font color="#000000">name</font></td>
+		<td align="left" valign=bottom bgcolor="#93CDDD"><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom bgcolor="#93CDDD"><font color="#000000">value</font></td>
+		<td align="left" valign=bottom bgcolor="#93CDDD"><font color="#000000">ref</font></td>
+		<td align="left" valign=bottom bgcolor="#93CDDD"><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom bgcolor="#93CDDD"><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom bgcolor="#93CDDD"><font color="#000000">type</font></td>
+		<td align="left" valign=bottom bgcolor="#93CDDD"><font color="#000000">index</font></td>
+		<td align="left" valign=bottom bgcolor="#93CDDD"><font color="#000000"><br></font></td>
+	</tr>
+	<tr>
+		<td height="18" align="left" valign=bottom><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom bgcolor="#D9D9D9"><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom bgcolor="#93CDDD"><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom bgcolor="#93CDDD"><font color="#000000">value</font></td>
+		<td align="left" valign=bottom bgcolor="#93CDDD"><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom bgcolor="#93CDDD"><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom bgcolor="#93CDDD"><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom bgcolor="#93CDDD"><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom bgcolor="#93CDDD"><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom bgcolor="#93CDDD"><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom bgcolor="#93CDDD"><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom bgcolor="#93CDDD"><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom bgcolor="#93CDDD"><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom bgcolor="#93CDDD"><font color="#000000"><br></font></td>
+	</tr>
+	<tr>
+		<td height="18" align="left" valign=bottom><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom bgcolor="#D9D9D9"><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom bgcolor="#93CDDD"><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom bgcolor="#E46C0A"><font color="#000000">bean</font></td>
+		<td align="left" valign=bottom bgcolor="#93CDDD"><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom bgcolor="#93CDDD"><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom bgcolor="#93CDDD"><font color="#000000">id</font></td>
+		<td align="left" valign=bottom bgcolor="#93CDDD"><font color="#000000">class</font></td>
+		<td align="left" valign=bottom bgcolor="#93CDDD"><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom bgcolor="#93CDDD"><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom bgcolor="#93CDDD"><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom bgcolor="#93CDDD"><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom bgcolor="#93CDDD"><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom bgcolor="#93CDDD"><font color="#000000"><br></font></td>
+	</tr>
+	<tr>
+		<td height="18" align="left" valign=bottom><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom bgcolor="#D9D9D9"><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom bgcolor="#93CDDD"><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom bgcolor="#93CDDD"><font color="#000000">ref</font></td>
+		<td align="left" valign=bottom bgcolor="#93CDDD"><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom bgcolor="#93CDDD"><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom bgcolor="#93CDDD"><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom bgcolor="#93CDDD"><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom bgcolor="#93CDDD"><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom bgcolor="#93CDDD"><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom bgcolor="#93CDDD"><font color="#000000">bean</font></td>
+		<td align="left" valign=bottom bgcolor="#93CDDD"><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom bgcolor="#93CDDD"><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom bgcolor="#93CDDD"><font color="#000000"><br></font></td>
+	</tr>
+	<tr>
+		<td height="18" align="left" valign=bottom><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom bgcolor="#D9D9D9"><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom bgcolor="#D99694"><font color="#000000">qualifier</font></td>
+		<td align="left" valign=bottom bgcolor="#D99694"><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom bgcolor="#D99694"><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom bgcolor="#D99694"><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom bgcolor="#D99694"><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom bgcolor="#D99694"><font color="#000000">value</font></td>
+		<td align="left" valign=bottom bgcolor="#D99694"><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom bgcolor="#D99694"><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom bgcolor="#D99694"><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom bgcolor="#D99694"><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom bgcolor="#D99694"><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom bgcolor="#D99694"><font color="#000000"><br></font></td>
+	</tr>
+	<tr>
+		<td height="18" align="left" valign=bottom><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom bgcolor="#D9D9D9"><font color="#000000">alias</font></td>
+		<td align="left" valign=bottom bgcolor="#D9D9D9"><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom bgcolor="#D9D9D9"><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom bgcolor="#D9D9D9"><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom bgcolor="#D9D9D9"><font color="#000000">name</font></td>
+		<td align="left" valign=bottom bgcolor="#D9D9D9"><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom bgcolor="#D9D9D9"><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom bgcolor="#D9D9D9"><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom bgcolor="#D9D9D9"><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom bgcolor="#D9D9D9"><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom bgcolor="#D9D9D9"><font color="#000000">alias</font></td>
+		<td align="left" valign=bottom bgcolor="#D9D9D9"><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom bgcolor="#D9D9D9"><font color="#000000"><br></font></td>
+	</tr>
+	<tr>
+		<td height="18" align="left" valign=bottom><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom bgcolor="#B3A2C7"><font color="#000000">import</font></td>
+		<td align="left" valign=bottom bgcolor="#B3A2C7"><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom bgcolor="#B3A2C7"><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom bgcolor="#B3A2C7"><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom bgcolor="#B3A2C7"><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom bgcolor="#B3A2C7"><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom bgcolor="#B3A2C7"><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom bgcolor="#B3A2C7"><font color="#000000">resource</font></td>
+		<td align="left" valign=bottom><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom bgcolor="#B3A2C7"><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom bgcolor="#B3A2C7"><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom bgcolor="#B3A2C7"><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom bgcolor="#B3A2C7"><font color="#000000"><br></font></td>
+	</tr>
+</table>
+<!-- ************************************************************************** -->
+<hr>
+<A NAME="table2"><h1>Sheet 2: <em>util config</em></h1></A>
+<table cellspacing="0" border="0">
+	<colgroup width="280"></colgroup>
+	<colgroup width="108"></colgroup>
+	<colgroup width="86"></colgroup>
+	<colgroup width="102"></colgroup>
+	<colgroup span="6" width="80"></colgroup>
+	<tr>
+		<td height="18" align="left" valign=bottom><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom bgcolor="#77933C"><font color="#000000">list</font></td>
+		<td align="left" valign=bottom bgcolor="#D9D9D9"><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom bgcolor="#D9D9D9"><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom bgcolor="#D9D9D9"><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom><font color="#000000">list-class</font></td>
+		<td align="left" valign=bottom><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom><font color="#000000"><br></font></td>
+	</tr>
+	<tr>
+		<td height="18" align="left" valign=bottom><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom bgcolor="#D9D9D9"><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom bgcolor="#D9D9D9"><font color="#000000">value</font></td>
+		<td align="left" valign=bottom bgcolor="#D9D9D9"><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom bgcolor="#D9D9D9"><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom><font color="#000000"><br></font></td>
+	</tr>
+	<tr>
+		<td height="18" align="left" valign=bottom><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom bgcolor="#D9D9D9"><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom bgcolor="#558ED5"><font color="#000000">ref</font></td>
+		<td align="left" valign=bottom bgcolor="#D9D9D9"><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom bgcolor="#D9D9D9"><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom><font color="#000000">value</font></td>
+		<td align="left" valign=bottom><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom><font color="#000000">bean</font></td>
+		<td align="left" valign=bottom><font color="#000000">null</font></td>
+	</tr>
+	<tr>
+		<td height="18" align="left" valign=bottom><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom bgcolor="#D9D9D9"><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom bgcolor="#D9D9D9"><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom bgcolor="#E46C0A"><font color="#000000">bean</font></td>
+		<td align="left" valign=bottom bgcolor="#D9D9D9"><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom><font color="#000000"><br></font></td>
+	</tr>
+	<tr>
+		<td height="18" align="left" valign=bottom><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom bgcolor="#D9D9D9"><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom bgcolor="#D9D9D9"><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom bgcolor="#D9D9D9"><font color="#000000">value</font></td>
+		<td align="left" valign=bottom bgcolor="#D9D9D9"><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom><font color="#000000"><br></font></td>
+	</tr>
+	<tr>
+		<td height="18" align="left" valign=bottom><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom bgcolor="#D9D9D9"><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom bgcolor="#D9D9D9"><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom bgcolor="#D9D9D9"><font color="#000000">null</font></td>
+		<td align="left" valign=bottom bgcolor="#D9D9D9"><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom><font color="#000000"><br></font></td>
+	</tr>
+	<tr>
+		<td height="18" align="left" valign=bottom><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom bgcolor="#77933C"><font color="#000000">set</font></td>
+		<td align="left" valign=bottom bgcolor="#D9D9D9"><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom bgcolor="#D9D9D9"><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom bgcolor="#D9D9D9"><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom><font color="#000000">set-class</font></td>
+		<td align="left" valign=bottom><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom><font color="#000000"><br></font></td>
+	</tr>
+	<tr>
+		<td height="18" align="left" valign=bottom><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom bgcolor="#D9D9D9"><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom bgcolor="#D9D9D9"><font color="#000000">value</font></td>
+		<td align="left" valign=bottom bgcolor="#D9D9D9"><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom bgcolor="#D9D9D9"><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom><font color="#000000"><br></font></td>
+	</tr>
+	<tr>
+		<td height="18" align="left" valign=bottom><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom bgcolor="#D9D9D9"><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom bgcolor="#558ED5"><font color="#000000">ref</font></td>
+		<td align="left" valign=bottom bgcolor="#D9D9D9"><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom bgcolor="#D9D9D9"><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom><font color="#000000"><br></font></td>
+	</tr>
+	<tr>
+		<td height="18" align="left" valign=bottom><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom bgcolor="#77933C"><font color="#000000">map</font></td>
+		<td align="left" valign=bottom bgcolor="#D9D9D9"><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom bgcolor="#D9D9D9"><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom bgcolor="#D9D9D9"><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom><font color="#000000">map-class</font></td>
+		<td align="left" valign=bottom><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom><font color="#000000"><br></font></td>
+	</tr>
+	<tr>
+		<td height="18" align="left" valign=bottom><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom bgcolor="#D9D9D9"><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom bgcolor="#B3B3B3"><font color="#000000">entry ( 4 )</font></td>
+		<td align="left" valign=bottom bgcolor="#B3B3B3"><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom bgcolor="#B3B3B3"><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom bgcolor="#B3B3B3"><font color="#000000">value</font></td>
+		<td align="left" valign=bottom bgcolor="#B3B3B3"><font color="#000000">key</font></td>
+		<td align="left" valign=bottom bgcolor="#B3B3B3"><font color="#000000">value-ref</font></td>
+		<td align="left" valign=bottom bgcolor="#B3B3B3"><font color="#000000">key-ref</font></td>
+		<td align="left" valign=bottom><font color="#000000"><br></font></td>
+	</tr>
+	<tr>
+		<td height="18" align="left" valign=bottom><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom bgcolor="#D9D9D9"><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom bgcolor="#D9D9D9"><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom bgcolor="#D9D9D9"><font color="#000000">key</font></td>
+		<td align="left" valign=bottom bgcolor="#D9D9D9"><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom><font color="#000000"><br></font></td>
+	</tr>
+	<tr>
+		<td height="18" align="left" valign=bottom><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom bgcolor="#D9D9D9"><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom bgcolor="#D9D9D9"><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom bgcolor="#D9D9D9"><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom bgcolor="#D9D9D9"><font color="#000000">value</font></td>
+		<td align="left" valign=bottom><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom><font color="#000000"><br></font></td>
+	</tr>
+	<tr>
+		<td height="18" align="left" valign=bottom><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom bgcolor="#D9D9D9"><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom bgcolor="#D9D9D9"><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom bgcolor="#D9D9D9"><font color="#000000">value / bean</font></td>
+		<td align="left" valign=bottom bgcolor="#D9D9D9"><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom><font color="#000000"><br></font></td>
+	</tr>
+	<tr>
+		<td height="18" align="left" valign=bottom><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom bgcolor="#77933C"><font color="#000000">props</font></td>
+		<td align="left" valign=bottom bgcolor="#D9D9D9"><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom bgcolor="#D9D9D9"><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom bgcolor="#D9D9D9"><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom><font color="#000000">merge</font></td>
+		<td align="left" valign=bottom><font color="#000000"><br></font></td>
+	</tr>
+	<tr>
+		<td height="18" align="left" valign=bottom><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom bgcolor="#D9D9D9"><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom bgcolor="#D9D9D9"><font color="#000000">prob( 1 )</font></td>
+		<td align="left" valign=bottom bgcolor="#D9D9D9"><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom bgcolor="#D9D9D9"><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom><font color="#000000">key</font></td>
+		<td align="left" valign=bottom><font color="#000000"><br></font></td>
+	</tr>
+	<tr>
+		<td height="18" align="left" valign=bottom><font color="#000000">it will load property file</font></td>
+		<td align="left" valign=bottom bgcolor="#948A54"><font color="#000000">Properties</font></td>
+		<td align="left" valign=bottom bgcolor="#948A54"><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom bgcolor="#948A54"><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom bgcolor="#948A54"><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom bgcolor="#948A54"><font color="#000000">id</font></td>
+		<td align="left" valign=bottom bgcolor="#948A54"><font color="#000000">location</font></td>
+		<td align="left" valign=bottom><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom><font color="#000000"><br></font></td>
+	</tr>
+	<tr>
+		<td height="18" align="left" valign=bottom><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom bgcolor="#D9D9D9"><font color="#000000">property-path</font></td>
+		<td align="left" valign=bottom bgcolor="#D9D9D9"><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom bgcolor="#D9D9D9"><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom bgcolor="#D9D9D9"><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom><font color="#000000">id</font></td>
+		<td align="left" valign=bottom><font color="#000000">path</font></td>
+		<td align="left" valign=bottom><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom><font color="#000000"><br></font></td>
+	</tr>
+	<tr>
+		<td height="18" align="left" valign=bottom><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom><font color="#000000">constant</font></td>
+		<td align="left" valign=bottom><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom><font color="#000000">id</font></td>
+		<td align="left" valign=bottom><font color="#000000">static-value</font></td>
+		<td align="left" valign=bottom><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom><font color="#000000"><br></font></td>
+	</tr>
+</table>
+<!-- ************************************************************************** -->
+<hr>
+<A NAME="table3"><h1>Sheet 3: <em>context -config</em></h1></A>
+<table cellspacing="0" border="0">
+	<colgroup width="275"></colgroup>
+	<colgroup width="186"></colgroup>
+	<colgroup width="131"></colgroup>
+	<colgroup width="16"></colgroup>
+	<colgroup width="116"></colgroup>
+	<colgroup span="2" width="128"></colgroup>
+	<colgroup width="141"></colgroup>
+	<colgroup width="124"></colgroup>
+	<tr>
+		<td height="127" align="left" valign=bottom><font color="#000000">  it is used to scan the bean as well as to wire among them.<br>     It AVOID use of  &lt;annotation-config&gt;. <br>    If we want to costomise name generator for auto detected bean use  “name-generator”</font></td>
+		<td align="left" valign=bottom bgcolor="#31859C"><font color="#000000">&lt;component-scan&gt;</font></td>
+		<td align="left" valign=bottom bgcolor="#31859C"><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom bgcolor="#31859C"><font color="#000000">base-package</font></td>
+		<td align="left" valign=bottom bgcolor="#31859C"><font color="#000000">use default filter</font></td>
+		<td align="left" valign=bottom bgcolor="#31859C"><font color="#000000">name-generator</font></td>
+		<td align="left" valign=bottom><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom><font color="#000000"><br></font></td>
+	</tr>
+	<tr>
+		<td height="18" align="left" valign=bottom><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom bgcolor="#31859C"><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom bgcolor="#31859C"><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom bgcolor="#31859C"><font color="#000000">scope-resolver</font></td>
+		<td align="left" valign=bottom bgcolor="#31859C"><font color="#000000">scoped-proxy</font></td>
+		<td align="left" valign=bottom bgcolor="#31859C"><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom><font color="#000000"><br></font></td>
+	</tr>
+	<tr>
+		<td height="18" align="left" valign=bottom><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom bgcolor="#31859C"><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom bgcolor="#31859C"><font color="#000000">&lt;include-filter&gt;</font></td>
+		<td align="left" valign=bottom><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom bgcolor="#31859C"><font color="#000000">type</font></td>
+		<td align="left" valign=bottom bgcolor="#31859C"><font color="#000000">expression</font></td>
+		<td align="left" valign=bottom bgcolor="#31859C"><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom><font color="#000000"><br></font></td>
+	</tr>
+	<tr>
+		<td height="18" align="left" valign=bottom><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom bgcolor="#31859C"><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom bgcolor="#31859C"><font color="#000000">&lt;exclude-filter&gt;</font></td>
+		<td align="left" valign=bottom><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom bgcolor="#31859C"><font color="#000000">type</font></td>
+		<td align="left" valign=bottom bgcolor="#31859C"><font color="#000000">expression</font></td>
+		<td align="left" valign=bottom bgcolor="#31859C"><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom><font color="#000000"><br></font></td>
+	</tr>
+	<tr>
+		<td height="109" align="left" valign=bottom><font color="#000000">it is just inform use Autowire annotation.<br>  To use Common annotation also, it is need<br> To register JPA Context Inject Post Processor</font></td>
+		<td align="left" valign=bottom bgcolor="#00B050"><font color="#000000">&lt;annotation-config&gt;</font></td>
+		<td align="left" valign=bottom><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom><font color="#000000"><br></font></td>
+	</tr>
+	<tr>
+		<td height="38" align="left" valign=bottom><font color="#000000">to use expernal property file for certain configuration</font></td>
+		<td align="left" valign=bottom><font color="#000000">&lt;property-placeholder&gt;</font></td>
+		<td align="left" valign=bottom><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom><font color="#000000">location</font></td>
+		<td align="left" valign=bottom><font color="#000000">ignore-resource-not-found</font></td>
+		<td align="left" valign=bottom><font color="#000000">ignore-unresolvable</font></td>
+		<td align="left" valign=bottom><font color="#000000">Property-ref</font></td>
+		<td align="left" valign=bottom><font color="#000000">system-properties-mode</font></td>
+	</tr>
+	<tr>
+		<td height="38" align="left" valign=bottom><font color="#000000">over ride a bean property from external property value</font></td>
+		<td align="left" valign=bottom><font color="#000000">&lt;property-overrider&gt;</font></td>
+		<td align="left" valign=bottom><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom><font color="#000000">location</font></td>
+		<td align="left" valign=bottom><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom><font color="#000000"><br></font></td>
+	</tr>
+	<tr>
+		<td height="18" align="left" valign=bottom><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom><font color="#000000"><br></font></td>
+	</tr>
+	<tr>
+		<td height="18" align="left" valign=bottom><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom><font color="#000000"><br></font></td>
+	</tr>
+	<tr>
+		<td height="18" align="left" valign=bottom><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom><font color="#000000"><br></font></td>
+	</tr>
+	<tr>
+		<td height="18" align="left" valign=bottom><font color="#000000">to support Load time vieweing</font></td>
+		<td align="left" valign=bottom><font color="#000000">&lt;Spring-configured&gt;</font></td>
+		<td align="left" valign=bottom><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom><font color="#000000"><br></font></td>
+	</tr>
+	<tr>
+		<td height="18" align="left" valign=bottom><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom><font color="#000000">&lt;load-time-weaver&gt;</font></td>
+		<td align="left" valign=bottom><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom><font color="#000000"><br></font></td>
+	</tr>
+	<tr>
+		<td height="18" align="left" valign=bottom bgcolor="#CCCCCC"><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom bgcolor="#CCCCCC"><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom bgcolor="#CCCCCC"><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom bgcolor="#CCCCCC"><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom bgcolor="#CCCCCC"><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom bgcolor="#CCCCCC"><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom bgcolor="#CCCCCC"><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom bgcolor="#CCCCCC"><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom bgcolor="#CCCCCC"><font color="#000000"><br></font></td>
+	</tr>
+	<tr>
+		<td height="18" align="left" valign=bottom><font color="#000000">configure the mbean server</font></td>
+		<td align="left" valign=bottom><font color="#000000">&lt;mbean-server&gt;</font></td>
+		<td align="left" valign=bottom><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom><font color="#000000"><br></font></td>
+	</tr>
+</table>
+<!-- ************************************************************************** -->
+<hr>
+<A NAME="table4"><h1>Sheet 4: <em>AOP Config</em></h1></A>
+<table cellspacing="0" border="0">
+	<colgroup width="241"></colgroup>
+	<colgroup width="151"></colgroup>
+	<colgroup width="145"></colgroup>
+	<colgroup width="135"></colgroup>
+	<colgroup width="12"></colgroup>
+	<colgroup width="90"></colgroup>
+	<colgroup width="86"></colgroup>
+	<colgroup width="110"></colgroup>
+	<colgroup width="96"></colgroup>
+	<colgroup width="80"></colgroup>
+	<tr>
+		<td height="37" align="left" valign=bottom><font color="#000000">it enable use of annotation to define aspects</font></td>
+		<td align="left" valign=bottom bgcolor="#92D050"><font color="#000000">aspectj-autoproxy</font></td>
+		<td align="left" valign=bottom bgcolor="#92D050"><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom bgcolor="#92D050"><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom bgcolor="#92D050"><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom bgcolor="#92D050"><font color="#000000">proxy-target-class</font></td>
+		<td align="left" valign=bottom bgcolor="#92D050"><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom bgcolor="#92D050"><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom bgcolor="#92D050"><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom bgcolor="#92D050"><font color="#000000"><br></font></td>
+	</tr>
+	<tr>
+		<td height="19" align="left" valign=bottom><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom bgcolor="#D9D9D9"><font color="#000000">config</font></td>
+		<td align="left" valign=bottom bgcolor="#D9D9D9"><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom bgcolor="#D9D9D9"><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom bgcolor="#D9D9D9"><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom bgcolor="#D9D9D9"><font color="#000000">proxy-target-class</font></td>
+		<td align="left" valign=bottom bgcolor="#D9D9D9"><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom bgcolor="#D9D9D9"><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom bgcolor="#D9D9D9"><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom bgcolor="#D9D9D9"><font color="#000000"><br></font></td>
+	</tr>
+	<tr>
+		<td height="55" align="left" valign=bottom><font color="#000000">I can define pointcut separately and refer MORE THAN ONE aspect.</font></td>
+		<td align="left" valign=bottom bgcolor="#D9D9D9"><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom bgcolor="#D99694"><font color="#FFFF00">pointcut</font></td>
+		<td align="left" valign=bottom bgcolor="#D99694"><font color="#FFFF00"><br></font></td>
+		<td align="left" valign=bottom bgcolor="#D99694"><font color="#FFFF00"><br></font></td>
+		<td align="left" valign=bottom bgcolor="#D99694"><font color="#FFFF00">id</font></td>
+		<td align="left" valign=bottom bgcolor="#D99694"><font color="#FFFF00"><br></font></td>
+		<td align="left" valign=bottom bgcolor="#D99694"><font color="#FFFF00">expression</font></td>
+		<td align="left" valign=bottom bgcolor="#D99694"><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom bgcolor="#D99694"><font color="#000000"><br></font></td>
+	</tr>
+	<tr>
+		<td height="19" align="left" valign=bottom><font color="#000000">it refer the advice bean</font></td>
+		<td align="left" valign=bottom bgcolor="#D9D9D9"><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom bgcolor="#D99694"><font color="#000000">aspect</font></td>
+		<td align="left" valign=bottom bgcolor="#D99694"><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom bgcolor="#D99694"><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom bgcolor="#D99694"><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom bgcolor="#D99694"><font color="#000000">ref ( advice bean)</font></td>
+		<td align="left" valign=bottom bgcolor="#D99694"><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom bgcolor="#D99694"><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom bgcolor="#D99694"><font color="#000000"><br></font></td>
+	</tr>
+	<tr>
+		<td height="37" align="left" valign=bottom><font color="#000000">this is can be reused within SINGLE  aspect</font></td>
+		<td align="left" valign=bottom bgcolor="#D9D9D9"><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom bgcolor="#D99694"><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom bgcolor="#D99694"><font color="#FFFF00">pointcut</font></td>
+		<td align="left" valign=bottom bgcolor="#D99694"><font color="#FFFF00"><br></font></td>
+		<td align="left" valign=bottom bgcolor="#D99694"><font color="#FFFF00">id</font></td>
+		<td align="left" valign=bottom bgcolor="#D99694"><font color="#FFFF00"><br></font></td>
+		<td align="left" valign=bottom bgcolor="#D99694"><font color="#FFFF00">expression</font></td>
+		<td align="left" valign=bottom bgcolor="#D99694"><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom bgcolor="#D99694"><font color="#000000"><br></font></td>
+	</tr>
+	<tr>
+		<td height="19" align="left" valign=bottom><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom bgcolor="#D9D9D9"><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom bgcolor="#D99694"><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom bgcolor="#D99694"><font color="#215968">before</font></td>
+		<td align="left" valign=bottom bgcolor="#D99694"><font color="#215968"><br></font></td>
+		<td align="left" valign=bottom bgcolor="#D99694"><font color="#215968">method</font></td>
+		<td align="left" valign=bottom bgcolor="#D99694"><font color="#215968">pointcut</font></td>
+		<td align="left" valign=bottom bgcolor="#D99694"><font color="#215968">pointcut-ref</font></td>
+		<td align="left" valign=bottom bgcolor="#D99694"><font color="#215968">arg-names</font></td>
+		<td align="left" valign=bottom bgcolor="#D99694"><font color="#215968"><br></font></td>
+	</tr>
+	<tr>
+		<td height="19" align="left" valign=bottom><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom bgcolor="#D9D9D9"><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom bgcolor="#D99694"><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom bgcolor="#D99694"><font color="#215968">after-returning</font></td>
+		<td align="left" valign=bottom bgcolor="#D99694"><font color="#215968"><br></font></td>
+		<td align="left" valign=bottom bgcolor="#D99694"><font color="#215968">method</font></td>
+		<td align="left" valign=bottom bgcolor="#D99694"><font color="#215968">pointcut</font></td>
+		<td align="left" valign=bottom bgcolor="#D99694"><font color="#215968">pointcut-ref</font></td>
+		<td align="left" valign=bottom bgcolor="#D99694"><font color="#215968">arg-names</font></td>
+		<td align="left" valign=bottom bgcolor="#D99694"><font color="#215968">returning</font></td>
+	</tr>
+	<tr>
+		<td height="19" align="left" valign=bottom><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom bgcolor="#D9D9D9"><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom bgcolor="#D99694"><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom bgcolor="#D99694"><font color="#215968">after-throwing</font></td>
+		<td align="left" valign=bottom bgcolor="#D99694"><font color="#215968"><br></font></td>
+		<td align="left" valign=bottom bgcolor="#D99694"><font color="#215968">method</font></td>
+		<td align="left" valign=bottom bgcolor="#D99694"><font color="#215968">pointcut</font></td>
+		<td align="left" valign=bottom bgcolor="#D99694"><font color="#215968">pointcut-ref</font></td>
+		<td align="left" valign=bottom bgcolor="#D99694"><font color="#215968"><br></font></td>
+		<td align="left" valign=bottom bgcolor="#D99694"><font color="#215968"><br></font></td>
+	</tr>
+	<tr>
+		<td height="18" align="left" valign=bottom><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom bgcolor="#D9D9D9"><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom bgcolor="#D99694"><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom bgcolor="#D99694"><font color="#215968">after</font></td>
+		<td align="left" valign=bottom bgcolor="#D99694"><font color="#215968"><br></font></td>
+		<td align="left" valign=bottom bgcolor="#D99694"><font color="#215968"><br></font></td>
+		<td align="left" valign=bottom bgcolor="#D99694"><font color="#215968"><br></font></td>
+		<td align="left" valign=bottom bgcolor="#D99694"><font color="#215968"><br></font></td>
+		<td align="left" valign=bottom bgcolor="#D99694"><font color="#215968"><br></font></td>
+		<td align="left" valign=bottom bgcolor="#D99694"><font color="#215968"><br></font></td>
+	</tr>
+	<tr>
+		<td height="18" align="left" valign=bottom><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom bgcolor="#D9D9D9"><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom bgcolor="#D99694"><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom bgcolor="#D99694"><font color="#215968">around</font></td>
+		<td align="left" valign=bottom bgcolor="#D99694"><font color="#215968"><br></font></td>
+		<td align="left" valign=bottom bgcolor="#D99694"><font color="#215968"><br></font></td>
+		<td align="left" valign=bottom bgcolor="#D99694"><font color="#215968"><br></font></td>
+		<td align="left" valign=bottom bgcolor="#D99694"><font color="#215968"><br></font></td>
+		<td align="left" valign=bottom bgcolor="#D99694"><font color="#215968"><br></font></td>
+		<td align="left" valign=bottom bgcolor="#D99694"><font color="#215968"><br></font></td>
+	</tr>
+	<tr>
+		<td height="73" align="left" valign=bottom><font color="#000000">it used to introduce new method and attribute for existing spring  bean without touch code</font></td>
+		<td align="left" valign=bottom bgcolor="#D9D9D9"><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom bgcolor="#D99694"><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom bgcolor="#D99694"><font color="#000000">declare-parents</font></td>
+		<td align="left" valign=bottom bgcolor="#D99694"><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom bgcolor="#D99694"><font color="#000000">type-matching</font></td>
+		<td align="left" valign=bottom bgcolor="#D99694"><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom bgcolor="#D99694"><font color="#000000">implement-interface</font></td>
+		<td align="left" valign=bottom bgcolor="#D99694"><font color="#000000">default-impl</font></td>
+		<td align="left" valign=bottom bgcolor="#D99694"><font color="#000000"><br></font></td>
+	</tr>
+	<tr>
+		<td height="55" align="left" valign=bottom><font color="#000000">it is used with transaction configuration, to identify the classes</font></td>
+		<td align="left" valign=bottom bgcolor="#D9D9D9"><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom bgcolor="#558ED5"><font color="#000000">advisor</font></td>
+		<td align="left" valign=bottom bgcolor="#558ED5"><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom bgcolor="#558ED5"><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom bgcolor="#558ED5"><font color="#000000">advice-ref</font></td>
+		<td align="left" valign=bottom bgcolor="#558ED5"><font color="#000000">pointcut</font></td>
+		<td align="left" valign=bottom bgcolor="#558ED5"><font color="#000000">pointcut-ref</font></td>
+		<td align="left" valign=bottom bgcolor="#558ED5"><font color="#000000">delegate-ref</font></td>
+		<td align="left" valign=bottom bgcolor="#558ED5"><font color="#000000"><br></font></td>
+	</tr>
+	<tr>
+		<td height="18" align="left" valign=bottom><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom bgcolor="#D9D9D9"><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom bgcolor="#D9D9D9"><font color="#000000">spring-configured</font></td>
+		<td align="left" valign=bottom bgcolor="#D9D9D9"><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom bgcolor="#D9D9D9"><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom bgcolor="#D9D9D9"><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom bgcolor="#D9D9D9"><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom bgcolor="#D9D9D9"><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom bgcolor="#D9D9D9"><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom bgcolor="#D9D9D9"><font color="#000000"><br></font></td>
+	</tr>
+	<tr>
+		<td height="18" align="left" valign=bottom><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom bgcolor="#FF3399"><font color="#000000">scoped-proxy</font></td>
+		<td align="left" valign=bottom><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom><font color="#000000"><br></font></td>
+	</tr>
+</table>
+<!-- ************************************************************************** -->
+<hr>
+<A NAME="table5"><h1>Sheet 5: <em>Tx config</em></h1></A>
+<table cellspacing="0" border="0">
+	<colgroup width="20"></colgroup>
+	<colgroup width="260"></colgroup>
+	<colgroup width="219"></colgroup>
+	<colgroup width="107"></colgroup>
+	<colgroup width="91"></colgroup>
+	<colgroup width="13"></colgroup>
+	<colgroup width="62"></colgroup>
+	<colgroup width="172"></colgroup>
+	<colgroup width="74"></colgroup>
+	<colgroup width="150"></colgroup>
+	<tr>
+		<td height="38" align="left" valign=bottom><font color="#000000"><br></font></td>
+		<td style="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000" align="left" valign=bottom><font color="#000000">it kick off, annotation based transaction configuration</font></td>
+		<td style="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000" align="left" valign=bottom bgcolor="#31859C"><font color="#000000">tx:annotation-driven</font></td>
+		<td style="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000" align="left" valign=bottom bgcolor="#31859C"><font color="#000000"><br></font></td>
+		<td style="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000" align="left" valign=bottom bgcolor="#31859C"><font color="#000000"><br></font></td>
+		<td style="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000" align="left" valign=bottom bgcolor="#DD4814"><font color="#000000"><br></font></td>
+		<td style="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000" align="left" valign=bottom bgcolor="#31859C"><font color="#000000"><br></font></td>
+		<td style="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000" align="left" valign=bottom bgcolor="#31859C"><font color="#000000">transaction-manager</font></td>
+		<td style="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000" align="left" valign=bottom bgcolor="#31859C"><font color="#000000">mode</font></td>
+		<td style="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000" align="left" valign=bottom bgcolor="#31859C"><font color="#000000">proxy-target-class</font></td>
+	</tr>
+	<tr>
+		<td height="18" align="left" valign=bottom bgcolor="#00AE00"><font color="#000000"><br></font></td>
+		<td style="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000" align="left" valign=bottom bgcolor="#00AE00"><font color="#000000"><br></font></td>
+		<td style="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000" align="left" valign=bottom bgcolor="#00AE00"><font color="#000000"><br></font></td>
+		<td style="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000" align="left" valign=bottom bgcolor="#00AE00"><font color="#000000"><br></font></td>
+		<td style="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000" align="left" valign=bottom bgcolor="#00AE00"><font color="#000000"><br></font></td>
+		<td style="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000" align="left" valign=bottom bgcolor="#00AE00"><font color="#000000"><br></font></td>
+		<td style="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000" align="left" valign=bottom bgcolor="#00AE00"><font color="#000000"><br></font></td>
+		<td style="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000" align="left" valign=bottom bgcolor="#00AE00"><font color="#000000"><br></font></td>
+		<td style="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000" align="left" valign=bottom bgcolor="#00AE00"><font color="#000000"><br></font></td>
+		<td style="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000" align="left" valign=bottom bgcolor="#00AE00"><font color="#000000"><br></font></td>
+	</tr>
+	<tr>
+		<td height="18" align="left" valign=bottom><font color="#000000"><br></font></td>
+		<td style="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000" align="left" valign=bottom><font color="#000000">define transaction in xml tags</font></td>
+		<td style="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000" align="left" valign=bottom bgcolor="#558ED5"><font color="#000000">tx:advice</font></td>
+		<td style="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000" align="left" valign=bottom bgcolor="#558ED5"><font color="#000000"><br></font></td>
+		<td style="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000" align="left" valign=bottom bgcolor="#558ED5"><font color="#000000"><br></font></td>
+		<td style="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000" align="left" valign=bottom bgcolor="#DD4814"><font color="#000000"><br></font></td>
+		<td style="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000" align="left" valign=bottom bgcolor="#558ED5"><font color="#000000">id</font></td>
+		<td style="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000" align="left" valign=bottom bgcolor="#558ED5"><font color="#000000">transaction-manager</font></td>
+		<td style="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000" align="left" valign=bottom bgcolor="#558ED5"><font color="#000000"><br></font></td>
+		<td style="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000" align="left" valign=bottom bgcolor="#558ED5"><font color="#000000"><br></font></td>
+	</tr>
+	<tr>
+		<td height="18" align="left" valign=bottom><font color="#000000"><br></font></td>
+		<td style="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000" align="left" valign=bottom><font color="#000000"><br></font></td>
+		<td style="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000" align="left" valign=bottom><font color="#000000"><br></font></td>
+		<td style="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000" align="left" valign=bottom bgcolor="#558ED5"><font color="#000000">tx:attributes</font></td>
+		<td style="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000" align="left" valign=bottom bgcolor="#558ED5"><font color="#000000"><br></font></td>
+		<td style="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000" align="left" valign=bottom bgcolor="#DD4814"><font color="#000000"><br></font></td>
+		<td style="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000" align="left" valign=bottom bgcolor="#558ED5"><font color="#000000"><br></font></td>
+		<td style="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000" align="left" valign=bottom bgcolor="#558ED5"><font color="#000000"><br></font></td>
+		<td style="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000" align="left" valign=bottom bgcolor="#558ED5"><font color="#000000"><br></font></td>
+		<td style="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000" align="left" valign=bottom bgcolor="#558ED5"><font color="#000000"><br></font></td>
+	</tr>
+	<tr>
+		<td height="18" align="left" valign=bottom><font color="#000000"><br></font></td>
+		<td style="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000" align="left" valign=bottom><font color="#000000">to define transactional attributes</font></td>
+		<td style="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000" align="left" valign=bottom><font color="#000000"><br></font></td>
+		<td style="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000" align="left" valign=bottom><font color="#000000"><br></font></td>
+		<td style="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000" align="left" valign=bottom bgcolor="#558ED5"><font color="#000000">tx:method</font></td>
+		<td style="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000" align="left" valign=bottom bgcolor="#DD4814"><font color="#000000"><br></font></td>
+		<td style="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000" align="left" valign=bottom bgcolor="#558ED5"><font color="#000000">name</font></td>
+		<td style="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000" align="left" valign=bottom bgcolor="#558ED5"><font color="#000000">isolation</font></td>
+		<td style="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000" align="left" valign=bottom bgcolor="#558ED5"><font color="#000000">timeout</font></td>
+		<td style="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000" align="left" valign=bottom bgcolor="#558ED5"><font color="#000000">propogation</font></td>
+	</tr>
+	<tr>
+		<td height="18" align="left" valign=bottom><font color="#000000"><br></font></td>
+		<td style="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000" align="left" valign=bottom><font color="#000000"><br></font></td>
+		<td style="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000" align="left" valign=bottom><font color="#000000"><br></font></td>
+		<td style="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000" align="left" valign=bottom><font color="#000000"><br></font></td>
+		<td style="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000" align="left" valign=bottom><font color="#000000"><br></font></td>
+		<td style="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000" align="left" valign=bottom bgcolor="#DD4814"><font color="#000000"><br></font></td>
+		<td style="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000" align="left" valign=bottom bgcolor="#558ED5"><font color="#000000"><br></font></td>
+		<td style="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000" align="left" valign=bottom bgcolor="#558ED5"><font color="#000000">read-only</font></td>
+		<td style="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000" align="left" valign=bottom bgcolor="#558ED5"><font color="#000000">rollback-for</font></td>
+		<td style="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000" align="left" valign=bottom bgcolor="#558ED5"><font color="#000000">no-rollback-for</font></td>
+	</tr>
+	<tr>
+		<td height="18" align="left" valign=bottom bgcolor="#00AE00"><font color="#000000"><br></font></td>
+		<td style="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000" align="left" valign=bottom bgcolor="#00AE00"><font color="#000000"><br></font></td>
+		<td style="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000" align="left" valign=bottom bgcolor="#00AE00"><font color="#000000"><br></font></td>
+		<td style="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000" align="left" valign=bottom bgcolor="#00AE00"><font color="#000000"><br></font></td>
+		<td style="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000" align="left" valign=bottom bgcolor="#00AE00"><font color="#000000"><br></font></td>
+		<td style="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000" align="left" valign=bottom bgcolor="#00AE00"><font color="#000000"><br></font></td>
+		<td style="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000" align="left" valign=bottom bgcolor="#00AE00"><font color="#000000"><br></font></td>
+		<td style="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000" align="left" valign=bottom bgcolor="#00AE00"><font color="#000000"><br></font></td>
+		<td style="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000" align="left" valign=bottom bgcolor="#00AE00"><font color="#000000"><br></font></td>
+		<td style="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000" align="left" valign=bottom bgcolor="#00AE00"><font color="#000000"><br></font></td>
+	</tr>
+	<tr>
+		<td height="18" align="left" valign=bottom><font color="#000000"><br></font></td>
+		<td style="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000" align="left" valign=bottom><font color="#000000"><br></font></td>
+		<td style="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000" align="left" valign=bottom bgcolor="#D99694"><font color="#000000">tx:jta-transaction-manager</font></td>
+		<td style="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000" align="left" valign=bottom bgcolor="#D99694"><font color="#000000"><br></font></td>
+		<td style="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000" align="left" valign=bottom bgcolor="#D99694"><font color="#000000"><br></font></td>
+		<td style="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000" align="left" valign=bottom bgcolor="#DD4814"><font color="#000000"><br></font></td>
+		<td style="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000" align="left" valign=bottom><font color="#000000"><br></font></td>
+		<td style="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000" align="left" valign=bottom><font color="#000000"><br></font></td>
+		<td style="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000" align="left" valign=bottom><font color="#000000"><br></font></td>
+		<td style="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000" align="left" valign=bottom><font color="#000000"><br></font></td>
+	</tr>
+</table>
+<!-- ************************************************************************** -->
+<hr>
+<A NAME="table6"><h1>Sheet 6: <em>j2ee config</em></h1></A>
+<table cellspacing="0" border="0">
+	<colgroup width="348"></colgroup>
+	<colgroup width="145"></colgroup>
+	<colgroup width="117"></colgroup>
+	<colgroup width="25"></colgroup>
+	<colgroup width="88"></colgroup>
+	<colgroup width="107"></colgroup>
+	<colgroup width="134"></colgroup>
+	<colgroup span="5" width="80"></colgroup>
+	<tr>
+		<td height="33" align="left" valign=bottom><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom><font size=5 color="#00B050">this namespace used for JNDI and EJB</font></td>
+		<td align="left" valign=bottom><font size=5 color="#00B050"><br></font></td>
+		<td align="left" valign=bottom><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom><font color="#000000"><br></font></td>
+	</tr>
+	<tr>
+		<td height="18" align="left" valign=bottom><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom><font color="#000000"><br></font></td>
+	</tr>
+	<tr>
+		<td height="92" align="left" valign=bottom><font color="#000000">it is used to retrieve any object including EJB, Datasource from JNDI.<br><br>It is really good, try to use all if these attributes</font></td>
+		<td align="left" valign=bottom><font color="#000000">&lt;jee:jndi-lookup&gt;</font></td>
+		<td align="left" valign=bottom><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom><font color="#000000">id</font></td>
+		<td align="left" valign=bottom><font color="#000000">jndi-name</font></td>
+		<td align="left" valign=bottom><font color="#000000">resource-ref</font></td>
+		<td align="left" valign=bottom><font color="#000000">expected-type</font></td>
+		<td align="left" valign=bottom><font color="#000000">cache</font></td>
+		<td align="left" valign=bottom><font color="#000000">Proxy-interface</font></td>
+		<td align="left" valign=bottom><font color="#000000">Lookup-on-startup</font></td>
+		<td align="left" valign=bottom><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom><font color="#000000">Default-ref</font></td>
+	</tr>
+	<tr>
+		<td height="18" align="left" valign=bottom><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom><font color="#000000">&lt;environment&gt;</font></td>
+		<td align="left" valign=bottom><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom><font color="#000000"><br></font></td>
+	</tr>
+	<tr>
+		<td height="18" align="left" valign=bottom bgcolor="#99CCFF"><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom bgcolor="#99CCFF"><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom bgcolor="#99CCFF"><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom bgcolor="#99CCFF"><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom bgcolor="#99CCFF"><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom bgcolor="#99CCFF"><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom bgcolor="#99CCFF"><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom bgcolor="#99CCFF"><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom bgcolor="#99CCFF"><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom bgcolor="#99CCFF"><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom bgcolor="#99CCFF"><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom bgcolor="#99CCFF"><font color="#000000"><br></font></td>
+	</tr>
+	<tr>
+		<td height="18" align="left" valign=bottom><font color="#000000">for EJB 2.x remote client</font></td>
+		<td align="left" valign=bottom><font color="#000000">&lt;jee:remote-slsb&gt;</font></td>
+		<td align="left" valign=bottom><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom><font color="#000000">id</font></td>
+		<td align="left" valign=bottom><font color="#000000">jndi-name</font></td>
+		<td align="left" valign=bottom><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom><font color="#000000"><br></font></td>
+	</tr>
+	<tr>
+		<td height="18" align="left" valign=bottom><font color="#000000">for EJB 2.x local client</font></td>
+		<td align="left" valign=bottom><font color="#000000">&lt;jee:local-slsb&gt;</font></td>
+		<td align="left" valign=bottom><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom><font color="#000000">id</font></td>
+		<td align="left" valign=bottom><font color="#000000">jndi-name</font></td>
+		<td align="left" valign=bottom><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom><font color="#000000">Business-interface</font></td>
+		<td align="left" valign=bottom><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom><font color="#000000"><br></font></td>
+	</tr>
+	<tr>
+		<td height="18" align="left" valign=bottom bgcolor="#99CCFF"><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom bgcolor="#99CCFF"><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom bgcolor="#99CCFF"><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom bgcolor="#99CCFF"><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom bgcolor="#99CCFF"><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom bgcolor="#99CCFF"><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom bgcolor="#99CCFF"><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom bgcolor="#99CCFF"><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom bgcolor="#99CCFF"><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom bgcolor="#99CCFF"><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom bgcolor="#99CCFF"><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom bgcolor="#99CCFF"><font color="#000000"><br></font></td>
+	</tr>
+</table>
+<!-- ************************************************************************** -->
+<hr>
+<A NAME="table7"><h1>Sheet 7: <em>mvc - config</em></h1></A>
+<table cellspacing="0" border="0">
+	<colgroup width="289"></colgroup>
+	<colgroup width="163"></colgroup>
+	<colgroup span="5" width="86"></colgroup>
+	<tr>
+		<td height="18" align="left" valign=bottom><font color="#000000">helps to render static web content</font></td>
+		<td align="left" valign=bottom><font color="#000000">&lt;resources&gt;</font></td>
+		<td align="left" valign=bottom><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom><font color="#000000">mapping</font></td>
+		<td align="left" valign=bottom><font color="#000000">resources</font></td>
+	</tr>
+	<tr>
+		<td height="18" align="left" valign=bottom><font color="#000000">enable annotation based  MVC</font></td>
+		<td align="left" valign=bottom><font color="#000000">&lt;annotation-driven&gt;</font></td>
+		<td align="left" valign=bottom><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom><font color="#000000"><br></font></td>
+	</tr>
+</table>
+<!-- ************************************************************************** -->
+<hr>
+<A NAME="table8"><h1>Sheet 8: <em>mvc-flow</em></h1></A>
+<table cellspacing="0" border="0">
+	<colgroup width="160"></colgroup>
+	<colgroup width="186"></colgroup>
+	<colgroup span="2" width="86"></colgroup>
+	<colgroup width="104"></colgroup>
+	<tr>
+		<td height="18" align="left" valign=bottom><font color="#000000">&lt;flow:executor&gt;</font></td>
+		<td align="left" valign=bottom><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom><font color="#000000">id</font></td>
+		<td align="left" valign=bottom><font color="#000000">Flow-registry</font></td>
+	</tr>
+	<tr>
+		<td height="18" align="left" valign=bottom><font color="#000000">&lt;flow:flow-registry&gt;</font></td>
+		<td align="left" valign=bottom><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom><font color="#000000">Base-path</font></td>
+		<td align="left" valign=bottom><font color="#000000"><br></font></td>
+	</tr>
+	<tr>
+		<td height="18" align="left" valign=bottom><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom><font color="#000000">&lt;flow-location-pattern&gt;</font></td>
+		<td align="left" valign=bottom><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom><font color="#000000">value</font></td>
+		<td align="left" valign=bottom><font color="#000000"><br></font></td>
+	</tr>
+	<tr>
+		<td height="18" align="left" valign=bottom><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom><font color="#000000">&lt;flow-location&gt;</font></td>
+		<td align="left" valign=bottom><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom><font color="#000000">path</font></td>
+		<td align="left" valign=bottom><font color="#000000"><br></font></td>
+	</tr>
+</table>
+<!-- ************************************************************************** -->
+<hr>
+<A NAME="table9"><h1>Sheet 9: <em>jms-config</em></h1></A>
+<table cellspacing="0" border="0">
+	<colgroup width="488"></colgroup>
+	<colgroup width="162"></colgroup>
+	<colgroup width="86"></colgroup>
+	<colgroup width="31"></colgroup>
+	<colgroup width="171"></colgroup>
+	<colgroup width="30"></colgroup>
+	<colgroup width="66"></colgroup>
+	<tr>
+		<td height="38" align="left" valign=bottom><font color="#000000">to configure spring own JMS container to support MDP ( POJO MDB )</font></td>
+		<td align="left" valign=bottom><font color="#000000">&lt;listener-container&gt;</font></td>
+		<td align="left" valign=bottom><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom><font color="#000000">Connection-factory</font></td>
+		<td align="left" valign=bottom><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom><font color="#000000"><br></font></td>
+	</tr>
+	<tr>
+		<td height="18" align="left" valign=bottom><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom><font color="#000000">&lt;listener&gt;</font></td>
+		<td align="left" valign=bottom><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom><font color="#000000">destination</font></td>
+		<td align="left" valign=bottom><font color="#000000">ref</font></td>
+		<td align="left" valign=bottom><font color="#000000">method</font></td>
+	</tr>
+</table>
+<!-- ************************************************************************** -->
+<hr>
+<A NAME="table10"><h1>Sheet 10: <em>task-schedule</em></h1></A>
+<table cellspacing="0" border="0">
+	<colgroup width="381"></colgroup>
+	<colgroup width="198"></colgroup>
+	<tr>
+		<td height="18" align="left" valign=bottom><font color="#000000">enable automated scheduling</font></td>
+		<td align="left" valign=bottom><font color="#000000">&lt;task:annotation-driven&gt;</font></td>
+	</tr>
+</table>
+<!-- ************************************************************************** -->
+<hr>
+<A NAME="table11"><h1>Sheet 11: <em>batch</em></h1></A>
+<table cellspacing="0" border="0">
+	<colgroup width="274"></colgroup>
+	<colgroup width="103"></colgroup>
+	<colgroup width="69"></colgroup>
+	<colgroup width="51"></colgroup>
+	<colgroup width="44"></colgroup>
+	<colgroup width="223"></colgroup>
+	<colgroup width="69"></colgroup>
+	<colgroup span="2" width="86"></colgroup>
+	<colgroup width="171"></colgroup>
+	<colgroup width="69"></colgroup>
+	<colgroup width="51"></colgroup>
+	<colgroup width="120"></colgroup>
+	<colgroup width="171"></colgroup>
+	<colgroup width="86"></colgroup>
+	<colgroup width="206"></colgroup>
+	<colgroup span="2" width="86"></colgroup>
+	<tr>
+		<td height="18" align="left" valign=bottom><font color="#000000">it is for Persistant type only.</font></td>
+		<td style="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000" align="left" valign=bottom bgcolor="#E6E6E6"><font color="#000000">Job-repository</font></td>
+		<td style="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000" align="left" valign=bottom bgcolor="#E6E6E6"><font color="#000000"><br></font></td>
+		<td style="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000" align="left" valign=bottom bgcolor="#E6E6E6"><font color="#000000"><br></font></td>
+		<td style="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000" align="left" valign=bottom bgcolor="#E6E6E6"><font color="#000000"><br></font></td>
+		<td style="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000" align="left" valign=bottom bgcolor="#E6E6E6"><font color="#000000"><br></font></td>
+		<td style="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000" align="left" valign=bottom bgcolor="#E6E6E6"><font color="#000000"><br></font></td>
+		<td style="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000" align="left" valign=bottom><font color="#000000">id</font></td>
+		<td style="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000" align="left" valign=bottom><font color="#000000">datasource</font></td>
+		<td style="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000" align="left" valign=bottom><font color="#000000">Transaction-manager</font></td>
+		<td style="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000" align="left" valign=bottom><font color="#000000"><br></font></td>
+		<td style="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000" align="left" valign=bottom><font color="#000000"><br></font></td>
+		<td style="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000" align="left" valign=bottom><font color="#000000">Lob-handler</font></td>
+		<td style="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000" align="left" valign=bottom><font color="#000000">Isolation-level-for-create</font></td>
+		<td align="left" valign=bottom><font color="#000000">Max-varchar-length</font></td>
+		<td align="left" valign=bottom><font color="#000000">Table-prefix</font></td>
+		<td align="left" valign=bottom><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom><font color="#000000"><br></font></td>
+	</tr>
+	<tr>
+		<td height="18" align="left" valign=bottom><font color="#000000">job configuration</font></td>
+		<td style="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000" align="left" valign=bottom bgcolor="#E6E6E6"><font color="#000000">job</font></td>
+		<td style="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000" align="left" valign=bottom bgcolor="#E6E6E6"><font color="#000000"><br></font></td>
+		<td style="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000" align="left" valign=bottom bgcolor="#E6E6E6"><font color="#000000"><br></font></td>
+		<td style="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000" align="left" valign=bottom bgcolor="#E6E6E6"><font color="#000000"><br></font></td>
+		<td style="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000" align="left" valign=bottom bgcolor="#E6E6E6"><font color="#000000"><br></font></td>
+		<td style="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000" align="left" valign=bottom bgcolor="#E6E6E6"><font color="#000000"><br></font></td>
+		<td style="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000" align="left" valign=bottom><font color="#000000">id</font></td>
+		<td style="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000" align="left" valign=bottom><font color="#000000">restartable</font></td>
+		<td style="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000" align="left" valign=bottom><font color="#000000">incrementor</font></td>
+		<td style="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000" align="left" valign=bottom><font color="#000000">abstract</font></td>
+		<td style="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000" align="left" valign=bottom><font color="#000000">parent</font></td>
+		<td style="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000" align="left" valign=bottom><font color="#000000">Job-repository</font></td>
+		<td style="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000" align="left" valign=bottom><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom><font color="#000000"><br></font></td>
+	</tr>
+	<tr>
+		<td height="18" align="left" valign=bottom><font color="#000000"><br></font></td>
+		<td style="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000" align="left" valign=bottom bgcolor="#E6E6E6"><font color="#000000"><br></font></td>
+		<td style="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000" align="left" valign=bottom bgcolor="#E6E6E6"><font color="#000000">step</font></td>
+		<td style="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000" align="left" valign=bottom bgcolor="#E6E6E6"><font color="#000000"><br></font></td>
+		<td style="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000" align="left" valign=bottom bgcolor="#E6E6E6"><font color="#000000"><br></font></td>
+		<td style="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000" align="left" valign=bottom bgcolor="#E6E6E6"><font color="#000000"><br></font></td>
+		<td style="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000" align="left" valign=bottom bgcolor="#E6E6E6"><font color="#000000"><br></font></td>
+		<td style="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000" align="left" valign=bottom><font color="#000000">id</font></td>
+		<td style="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000" align="left" valign=bottom><font color="#000000">next</font></td>
+		<td align="left" valign=bottom><font color="#000000"><br></font></td>
+		<td style="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000" align="left" valign=bottom><font color="#000000">abstract</font></td>
+		<td style="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000" align="left" valign=bottom><font color="#000000">parent</font></td>
+		<td style="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000" align="left" valign=bottom><font color="#000000"><br></font></td>
+		<td style="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000" align="left" valign=bottom><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom><font color="#000000"><br></font></td>
+	</tr>
+	<tr>
+		<td height="18" align="left" valign=bottom><font color="#000000"><br></font></td>
+		<td style="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000" align="left" valign=bottom bgcolor="#E6E6E6"><font color="#000000"><br></font></td>
+		<td style="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000" align="left" valign=bottom bgcolor="#E6E6E6"><font color="#000000"><br></font></td>
+		<td style="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000" align="left" valign=bottom bgcolor="#E6E6E6"><font color="#000000">tasklet</font></td>
+		<td style="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000" align="left" valign=bottom bgcolor="#E6E6E6"><font color="#000000"><br></font></td>
+		<td style="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000" align="left" valign=bottom bgcolor="#E6E6E6"><font color="#000000"><br></font></td>
+		<td style="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000" align="left" valign=bottom bgcolor="#E6E6E6"><font color="#000000"><br></font></td>
+		<td style="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000" align="left" valign=bottom><font color="#000000">ref</font></td>
+		<td style="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000" align="left" valign=bottom><font color="#000000"><br></font></td>
+		<td style="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000" align="left" valign=bottom><font color="#000000">Transaction-manager</font></td>
+		<td style="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000" align="left" valign=bottom><font color="#000000"><br></font></td>
+		<td style="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000" align="left" valign=bottom><font color="#000000"><br></font></td>
+		<td style="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000" align="left" valign=bottom><font color="#000000">Start-limit</font></td>
+		<td style="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000" align="left" valign=bottom><font color="#000000">Allow-start-if-complete</font></td>
+		<td align="left" valign=bottom><font color="#000000">Start-limit</font></td>
+		<td align="left" valign=bottom><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom><font color="#000000"><br></font></td>
+	</tr>
+	<tr>
+		<td height="18" align="left" valign=bottom><font color="#000000"><br></font></td>
+		<td style="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000" align="left" valign=bottom bgcolor="#E6E6E6"><font color="#000000"><br></font></td>
+		<td style="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000" align="left" valign=bottom bgcolor="#E6E6E6"><font color="#000000"><br></font></td>
+		<td style="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000" align="left" valign=bottom bgcolor="#E6E6E6"><font color="#000000"><br></font></td>
+		<td style="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000" align="left" valign=bottom bgcolor="#E6E6E6"><font color="#000000">chunk</font></td>
+		<td style="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000" align="left" valign=bottom bgcolor="#E6E6E6"><font color="#000000"><br></font></td>
+		<td style="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000" align="left" valign=bottom bgcolor="#E6E6E6"><font color="#000000"><br></font></td>
+		<td style="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000" align="left" valign=bottom><font color="#000000">processor</font></td>
+		<td style="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000" align="left" valign=bottom><font color="#000000">reader</font></td>
+		<td style="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000" align="left" valign=bottom><font color="#000000">writer</font></td>
+		<td style="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000" align="left" valign=bottom><font color="#000000"><br></font></td>
+		<td style="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000" align="left" valign=bottom><font color="#000000"><br></font></td>
+		<td style="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000" align="left" valign=bottom><font color="#000000">Commit-interval</font></td>
+		<td style="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000" align="left" valign=bottom><font color="#000000">Skip-limit</font></td>
+		<td align="left" valign=bottom><font color="#000000">Retry-limit</font></td>
+		<td align="left" valign=bottom><font color="#000000">Reader-transactional-queue</font></td>
+		<td align="left" valign=bottom><font color="#000000">Skip-policy</font></td>
+		<td align="left" valign=bottom><font color="#000000">Retry-policy</font></td>
+	</tr>
+	<tr>
+		<td height="37" align="left" valign=bottom><font color="#000000">it is used to SKIP the current item and continue for rest of item</font></td>
+		<td style="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000" align="left" valign=bottom bgcolor="#E6E6E6"><font color="#000000"><br></font></td>
+		<td style="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000" align="left" valign=bottom bgcolor="#E6E6E6"><font color="#000000"><br></font></td>
+		<td style="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000" align="left" valign=bottom bgcolor="#E6E6E6"><font color="#000000"><br></font></td>
+		<td style="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000" align="left" valign=bottom bgcolor="#E6E6E6"><font color="#000000"><br></font></td>
+		<td style="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000" align="left" valign=bottom bgcolor="#E6E6E6"><font color="#000000">Skippable-exception-classes</font></td>
+		<td style="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000" align="left" valign=bottom bgcolor="#E6E6E6"><font color="#000000"><br></font></td>
+		<td style="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000" align="left" valign=bottom><font color="#000000"><br></font></td>
+		<td style="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000" align="left" valign=bottom><font color="#000000"><br></font></td>
+		<td style="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000" align="left" valign=bottom><font color="#000000"><br></font></td>
+		<td style="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000" align="left" valign=bottom><font color="#000000"><br></font></td>
+		<td style="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000" align="left" valign=bottom><font color="#000000"><br></font></td>
+		<td style="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000" align="left" valign=bottom><font color="#000000"><br></font></td>
+		<td style="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000" align="left" valign=bottom><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom><font color="#000000"><br></font></td>
+	</tr>
+	<tr>
+		<td height="18" align="left" valign=bottom><font color="#000000"><br></font></td>
+		<td style="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000" align="left" valign=bottom bgcolor="#E6E6E6"><font color="#000000"><br></font></td>
+		<td style="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000" align="left" valign=bottom bgcolor="#E6E6E6"><font color="#000000"><br></font></td>
+		<td style="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000" align="left" valign=bottom bgcolor="#E6E6E6"><font color="#000000"><br></font></td>
+		<td style="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000" align="left" valign=bottom bgcolor="#E6E6E6"><font color="#000000"><br></font></td>
+		<td style="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000" align="left" valign=bottom bgcolor="#E6E6E6"><font color="#000000"><br></font></td>
+		<td style="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000" align="left" valign=bottom bgcolor="#E6E6E6"><font color="#000000">include</font></td>
+		<td style="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000" align="left" valign=bottom><font color="#000000">class</font></td>
+		<td style="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000" align="left" valign=bottom><font color="#000000"><br></font></td>
+		<td style="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000" align="left" valign=bottom><font color="#000000"><br></font></td>
+		<td style="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000" align="left" valign=bottom><font color="#000000"><br></font></td>
+		<td style="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000" align="left" valign=bottom><font color="#000000"><br></font></td>
+		<td style="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000" align="left" valign=bottom><font color="#000000"><br></font></td>
+		<td style="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000" align="left" valign=bottom><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom><font color="#000000"><br></font></td>
+	</tr>
+	<tr>
+		<td height="18" align="left" valign=bottom><font color="#000000"><br></font></td>
+		<td style="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000" align="left" valign=bottom bgcolor="#E6E6E6"><font color="#000000"><br></font></td>
+		<td style="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000" align="left" valign=bottom bgcolor="#E6E6E6"><font color="#000000"><br></font></td>
+		<td style="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000" align="left" valign=bottom bgcolor="#E6E6E6"><font color="#000000"><br></font></td>
+		<td style="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000" align="left" valign=bottom bgcolor="#E6E6E6"><font color="#000000"><br></font></td>
+		<td style="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000" align="left" valign=bottom bgcolor="#E6E6E6"><font color="#000000"><br></font></td>
+		<td style="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000" align="left" valign=bottom bgcolor="#E6E6E6"><font color="#000000">exclude</font></td>
+		<td style="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000" align="left" valign=bottom><font color="#000000">class</font></td>
+		<td style="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000" align="left" valign=bottom><font color="#000000"><br></font></td>
+		<td style="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000" align="left" valign=bottom><font color="#000000"><br></font></td>
+		<td style="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000" align="left" valign=bottom><font color="#000000"><br></font></td>
+		<td style="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000" align="left" valign=bottom><font color="#000000"><br></font></td>
+		<td style="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000" align="left" valign=bottom><font color="#000000"><br></font></td>
+		<td style="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000" align="left" valign=bottom><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom><font color="#000000"><br></font></td>
+	</tr>
+	<tr>
+		<td height="18" align="left" valign=bottom><font color="#000000">it is used to RE-TRY if exception</font></td>
+		<td style="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000" align="left" valign=bottom bgcolor="#E6E6E6"><font color="#000000"><br></font></td>
+		<td style="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000" align="left" valign=bottom bgcolor="#E6E6E6"><font color="#000000"><br></font></td>
+		<td style="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000" align="left" valign=bottom bgcolor="#E6E6E6"><font color="#000000"><br></font></td>
+		<td style="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000" align="left" valign=bottom bgcolor="#E6E6E6"><font color="#000000"><br></font></td>
+		<td style="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000" align="left" valign=bottom bgcolor="#E6E6E6"><font color="#000000">Retryable-exception-classes</font></td>
+		<td style="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000" align="left" valign=bottom bgcolor="#E6E6E6"><font color="#000000"><br></font></td>
+		<td style="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000" align="left" valign=bottom><font color="#000000"><br></font></td>
+		<td style="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000" align="left" valign=bottom><font color="#000000"><br></font></td>
+		<td style="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000" align="left" valign=bottom><font color="#000000"><br></font></td>
+		<td style="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000" align="left" valign=bottom><font color="#000000"><br></font></td>
+		<td style="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000" align="left" valign=bottom><font color="#000000"><br></font></td>
+		<td style="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000" align="left" valign=bottom><font color="#000000"><br></font></td>
+		<td style="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000" align="left" valign=bottom><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom><font color="#000000"><br></font></td>
+	</tr>
+	<tr>
+		<td height="18" align="left" valign=bottom><font color="#000000"><br></font></td>
+		<td style="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000" align="left" valign=bottom bgcolor="#E6E6E6"><font color="#000000"><br></font></td>
+		<td style="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000" align="left" valign=bottom bgcolor="#E6E6E6"><font color="#000000"><br></font></td>
+		<td style="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000" align="left" valign=bottom bgcolor="#E6E6E6"><font color="#000000"><br></font></td>
+		<td style="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000" align="left" valign=bottom bgcolor="#E6E6E6"><font color="#000000"><br></font></td>
+		<td style="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000" align="left" valign=bottom bgcolor="#E6E6E6"><font color="#000000"><br></font></td>
+		<td style="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000" align="left" valign=bottom bgcolor="#E6E6E6"><font color="#000000">include</font></td>
+		<td style="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000" align="left" valign=bottom><font color="#000000">class</font></td>
+		<td style="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000" align="left" valign=bottom><font color="#000000"><br></font></td>
+		<td style="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000" align="left" valign=bottom><font color="#000000"><br></font></td>
+		<td style="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000" align="left" valign=bottom><font color="#000000"><br></font></td>
+		<td style="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000" align="left" valign=bottom><font color="#000000"><br></font></td>
+		<td style="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000" align="left" valign=bottom><font color="#000000"><br></font></td>
+		<td style="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000" align="left" valign=bottom><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom><font color="#000000"><br></font></td>
+	</tr>
+	<tr>
+		<td height="18" align="left" valign=bottom><font color="#000000"><br></font></td>
+		<td style="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000" align="left" valign=bottom bgcolor="#E6E6E6"><font color="#000000"><br></font></td>
+		<td style="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000" align="left" valign=bottom bgcolor="#E6E6E6"><font color="#000000"><br></font></td>
+		<td style="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000" align="left" valign=bottom bgcolor="#E6E6E6"><font color="#000000"><br></font></td>
+		<td style="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000" align="left" valign=bottom bgcolor="#E6E6E6"><font color="#000000"><br></font></td>
+		<td style="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000" align="left" valign=bottom bgcolor="#E6E6E6"><font color="#000000"><br></font></td>
+		<td style="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000" align="left" valign=bottom bgcolor="#E6E6E6"><font color="#000000">exclude</font></td>
+		<td style="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000" align="left" valign=bottom><font color="#000000">class</font></td>
+		<td style="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000" align="left" valign=bottom><font color="#000000"><br></font></td>
+		<td style="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000" align="left" valign=bottom><font color="#000000"><br></font></td>
+		<td style="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000" align="left" valign=bottom><font color="#000000"><br></font></td>
+		<td style="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000" align="left" valign=bottom><font color="#000000"><br></font></td>
+		<td style="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000" align="left" valign=bottom><font color="#000000"><br></font></td>
+		<td style="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000" align="left" valign=bottom><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom><font color="#000000"><br></font></td>
+	</tr>
+	<tr>
+		<td height="18" align="left" valign=bottom><font color="#000000"><br></font></td>
+		<td style="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000" align="left" valign=bottom bgcolor="#E6E6E6"><font color="#000000"><br></font></td>
+		<td style="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000" align="left" valign=bottom bgcolor="#E6E6E6"><font color="#000000"><br></font></td>
+		<td style="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000" align="left" valign=bottom bgcolor="#E6E6E6"><font color="#000000"><br></font></td>
+		<td style="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000" align="left" valign=bottom bgcolor="#E6E6E6"><font color="#000000"><br></font></td>
+		<td style="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000" align="left" valign=bottom bgcolor="#E6E6E6"><font color="#000000">Transaction-attributes</font></td>
+		<td style="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000" align="left" valign=bottom bgcolor="#E6E6E6"><font color="#000000"><br></font></td>
+		<td style="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000" align="left" valign=bottom><font color="#000000"><br></font></td>
+		<td style="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000" align="left" valign=bottom><font color="#000000"><br></font></td>
+		<td style="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000" align="left" valign=bottom><font color="#000000"><br></font></td>
+		<td style="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000" align="left" valign=bottom><font color="#000000"><br></font></td>
+		<td style="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000" align="left" valign=bottom><font color="#000000"><br></font></td>
+		<td style="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000" align="left" valign=bottom><font color="#000000"><br></font></td>
+		<td style="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000" align="left" valign=bottom><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom><font color="#000000"><br></font></td>
+	</tr>
+	<tr>
+		<td height="18" align="left" valign=bottom><font color="#000000">dont roll back for these exception</font></td>
+		<td style="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000" align="left" valign=bottom bgcolor="#E6E6E6"><font color="#000000"><br></font></td>
+		<td style="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000" align="left" valign=bottom bgcolor="#E6E6E6"><font color="#000000"><br></font></td>
+		<td style="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000" align="left" valign=bottom bgcolor="#E6E6E6"><font color="#000000"><br></font></td>
+		<td style="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000" align="left" valign=bottom bgcolor="#E6E6E6"><font color="#000000"><br></font></td>
+		<td style="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000" align="left" valign=bottom bgcolor="#E6E6E6"><font color="#000000">No-rollback-exception-classes</font></td>
+		<td style="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000" align="left" valign=bottom bgcolor="#E6E6E6"><font color="#000000">include</font></td>
+		<td style="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000" align="left" valign=bottom><font color="#000000"><br></font></td>
+		<td style="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000" align="left" valign=bottom><font color="#000000"><br></font></td>
+		<td style="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000" align="left" valign=bottom><font color="#000000"><br></font></td>
+		<td style="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000" align="left" valign=bottom><font color="#000000"><br></font></td>
+		<td style="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000" align="left" valign=bottom><font color="#000000"><br></font></td>
+		<td style="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000" align="left" valign=bottom><font color="#000000"><br></font></td>
+		<td style="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000" align="left" valign=bottom><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom><font color="#000000"><br></font></td>
+	</tr>
+	<tr>
+		<td height="18" align="left" valign=bottom><font color="#000000"><br></font></td>
+		<td style="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000" align="left" valign=bottom bgcolor="#E6E6E6"><font color="#000000"><br></font></td>
+		<td style="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000" align="left" valign=bottom bgcolor="#E6E6E6"><font color="#000000"><br></font></td>
+		<td style="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000" align="left" valign=bottom bgcolor="#E6E6E6"><font color="#000000"><br></font></td>
+		<td style="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000" align="left" valign=bottom bgcolor="#E6E6E6"><font color="#000000"><br></font></td>
+		<td style="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000" align="left" valign=bottom bgcolor="#E6E6E6"><font color="#000000">retry-listeners</font></td>
+		<td style="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000" align="left" valign=bottom bgcolor="#E6E6E6"><font color="#000000"><br></font></td>
+		<td style="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000" align="left" valign=bottom><font color="#000000"><br></font></td>
+		<td style="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000" align="left" valign=bottom><font color="#000000"><br></font></td>
+		<td style="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000" align="left" valign=bottom><font color="#000000"><br></font></td>
+		<td style="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000" align="left" valign=bottom><font color="#000000"><br></font></td>
+		<td style="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000" align="left" valign=bottom><font color="#000000"><br></font></td>
+		<td style="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000" align="left" valign=bottom><font color="#000000"><br></font></td>
+		<td style="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000" align="left" valign=bottom><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom><font color="#000000"><br></font></td>
+	</tr>
+	<tr>
+		<td height="18" align="left" valign=bottom><font color="#000000"><br></font></td>
+		<td style="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000" align="left" valign=bottom bgcolor="#E6E6E6"><font color="#000000"><br></font></td>
+		<td style="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000" align="left" valign=bottom bgcolor="#E6E6E6"><font color="#000000"><br></font></td>
+		<td style="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000" align="left" valign=bottom bgcolor="#E6E6E6"><font color="#000000"><br></font></td>
+		<td style="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000" align="left" valign=bottom bgcolor="#E6E6E6"><font color="#000000"><br></font></td>
+		<td style="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000" align="left" valign=bottom bgcolor="#E6E6E6"><font color="#000000"><br></font></td>
+		<td style="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000" align="left" valign=bottom bgcolor="#E6E6E6"><font color="#000000">include</font></td>
+		<td style="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000" align="left" valign=bottom><font color="#000000">ref</font></td>
+		<td style="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000" align="left" valign=bottom><font color="#000000"><br></font></td>
+		<td style="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000" align="left" valign=bottom><font color="#000000"><br></font></td>
+		<td style="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000" align="left" valign=bottom><font color="#000000"><br></font></td>
+		<td style="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000" align="left" valign=bottom><font color="#000000"><br></font></td>
+		<td style="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000" align="left" valign=bottom><font color="#000000"><br></font></td>
+		<td style="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000" align="left" valign=bottom><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom><font color="#000000"><br></font></td>
+	</tr>
+	<tr>
+		<td height="18" align="left" valign=bottom><font color="#000000"><br></font></td>
+		<td style="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000" align="left" valign=bottom bgcolor="#E6E6E6"><font color="#000000"><br></font></td>
+		<td style="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000" align="left" valign=bottom bgcolor="#E6E6E6"><font color="#000000"><br></font></td>
+		<td style="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000" align="left" valign=bottom bgcolor="#E6E6E6"><font color="#000000"><br></font></td>
+		<td style="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000" align="left" valign=bottom bgcolor="#E6E6E6"><font color="#000000">listeners</font></td>
+		<td style="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000" align="left" valign=bottom bgcolor="#E6E6E6"><font color="#000000"><br></font></td>
+		<td style="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000" align="left" valign=bottom bgcolor="#E6E6E6"><font color="#000000"><br></font></td>
+		<td style="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000" align="left" valign=bottom><font color="#000000"><br></font></td>
+		<td style="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000" align="left" valign=bottom><font color="#000000"><br></font></td>
+		<td style="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000" align="left" valign=bottom><font color="#000000"><br></font></td>
+		<td style="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000" align="left" valign=bottom><font color="#000000"><br></font></td>
+		<td style="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000" align="left" valign=bottom><font color="#000000"><br></font></td>
+		<td style="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000" align="left" valign=bottom><font color="#000000"><br></font></td>
+		<td style="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000" align="left" valign=bottom><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom><font color="#000000"><br></font></td>
+	</tr>
+	<tr>
+		<td height="18" align="left" valign=bottom><font color="#000000"><br></font></td>
+		<td style="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000" align="left" valign=bottom bgcolor="#E6E6E6"><font color="#000000"><br></font></td>
+		<td style="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000" align="left" valign=bottom bgcolor="#E6E6E6"><font color="#000000"><br></font></td>
+		<td style="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000" align="left" valign=bottom bgcolor="#E6E6E6"><font color="#000000"><br></font></td>
+		<td style="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000" align="left" valign=bottom bgcolor="#E6E6E6"><font color="#000000"><br></font></td>
+		<td style="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000" align="left" valign=bottom bgcolor="#E6E6E6"><font color="#000000">listener</font></td>
+		<td style="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000" align="left" valign=bottom bgcolor="#E6E6E6"><font color="#000000"><br></font></td>
+		<td style="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000" align="left" valign=bottom><font color="#000000">ref</font></td>
+		<td style="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000" align="left" valign=bottom><font color="#000000"><br></font></td>
+		<td style="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000" align="left" valign=bottom><font color="#000000"><br></font></td>
+		<td style="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000" align="left" valign=bottom><font color="#000000"><br></font></td>
+		<td style="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000" align="left" valign=bottom><font color="#000000"><br></font></td>
+		<td style="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000" align="left" valign=bottom><font color="#000000"><br></font></td>
+		<td style="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000" align="left" valign=bottom><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom><font color="#000000"><br></font></td>
+	</tr>
+	<tr>
+		<td height="18" align="left" valign=bottom><font color="#000000"><br></font></td>
+		<td style="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000" align="left" valign=bottom bgcolor="#E6E6E6"><font color="#000000"><br></font></td>
+		<td style="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000" align="left" valign=bottom bgcolor="#E6E6E6"><font color="#000000">decision</font></td>
+		<td style="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000" align="left" valign=bottom bgcolor="#E6E6E6"><font color="#000000"><br></font></td>
+		<td style="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000" align="left" valign=bottom bgcolor="#E6E6E6"><font color="#000000"><br></font></td>
+		<td style="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000" align="left" valign=bottom bgcolor="#E6E6E6"><font color="#000000"><br></font></td>
+		<td style="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000" align="left" valign=bottom bgcolor="#E6E6E6"><font color="#000000"><br></font></td>
+		<td style="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000" align="left" valign=bottom><font color="#000000">id</font></td>
+		<td style="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000" align="left" valign=bottom><font color="#000000">decider</font></td>
+		<td style="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000" align="left" valign=bottom><font color="#000000"><br></font></td>
+		<td style="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000" align="left" valign=bottom><font color="#000000"><br></font></td>
+		<td style="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000" align="left" valign=bottom><font color="#000000"><br></font></td>
+		<td style="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000" align="left" valign=bottom><font color="#000000"><br></font></td>
+		<td style="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000" align="left" valign=bottom><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom><font color="#000000"><br></font></td>
+	</tr>
+	<tr>
+		<td height="18" align="left" valign=bottom><font color="#000000">used for non-linear path</font></td>
+		<td style="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000" align="left" valign=bottom bgcolor="#E6E6E6"><font color="#000000"><br></font></td>
+		<td style="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000" align="left" valign=bottom bgcolor="#E6E6E6"><font color="#000000"><br></font></td>
+		<td style="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000" align="left" valign=bottom bgcolor="#E6E6E6"><font color="#000000">next</font></td>
+		<td style="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000" align="left" valign=bottom bgcolor="#E6E6E6"><font color="#000000"><br></font></td>
+		<td style="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000" align="left" valign=bottom bgcolor="#E6E6E6"><font color="#000000"><br></font></td>
+		<td style="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000" align="left" valign=bottom bgcolor="#E6E6E6"><font color="#000000"><br></font></td>
+		<td style="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000" align="left" valign=bottom><font color="#000000">on</font></td>
+		<td style="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000" align="left" valign=bottom><font color="#000000">to</font></td>
+		<td style="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000" align="left" valign=bottom><font color="#000000"><br></font></td>
+		<td style="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000" align="left" valign=bottom><font color="#000000"><br></font></td>
+		<td style="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000" align="left" valign=bottom><font color="#000000"><br></font></td>
+		<td style="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000" align="left" valign=bottom><font color="#000000"><br></font></td>
+		<td style="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000" align="left" valign=bottom><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom><font color="#000000"><br></font></td>
+	</tr>
+	<tr>
+		<td height="18" align="left" valign=bottom><font color="#000000"><br></font></td>
+		<td style="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000" align="left" valign=bottom bgcolor="#E6E6E6"><font color="#000000"><br></font></td>
+		<td style="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000" align="left" valign=bottom bgcolor="#E6E6E6"><font color="#000000">validator</font></td>
+		<td style="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000" align="left" valign=bottom bgcolor="#E6E6E6"><font color="#000000"><br></font></td>
+		<td style="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000" align="left" valign=bottom bgcolor="#E6E6E6"><font color="#000000"><br></font></td>
+		<td style="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000" align="left" valign=bottom bgcolor="#E6E6E6"><font color="#000000"><br></font></td>
+		<td style="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000" align="left" valign=bottom bgcolor="#E6E6E6"><font color="#000000"><br></font></td>
+		<td style="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000" align="left" valign=bottom><font color="#000000">ref</font></td>
+		<td style="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000" align="left" valign=bottom><font color="#000000"><br></font></td>
+		<td style="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000" align="left" valign=bottom><font color="#000000"><br></font></td>
+		<td style="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000" align="left" valign=bottom><font color="#000000"><br></font></td>
+		<td style="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000" align="left" valign=bottom><font color="#000000"><br></font></td>
+		<td style="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000" align="left" valign=bottom><font color="#000000"><br></font></td>
+		<td style="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000" align="left" valign=bottom><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom><font color="#000000"><br></font></td>
+	</tr>
+	<tr>
+		<td height="18" align="left" valign=bottom><font color="#000000"><br></font></td>
+		<td style="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000" align="left" valign=bottom bgcolor="#E6E6E6"><font color="#000000"><br></font></td>
+		<td style="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000" align="left" valign=bottom bgcolor="#E6E6E6"><font color="#000000">listeners</font></td>
+		<td style="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000" align="left" valign=bottom bgcolor="#E6E6E6"><font color="#000000"><br></font></td>
+		<td style="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000" align="left" valign=bottom bgcolor="#E6E6E6"><font color="#000000"><br></font></td>
+		<td style="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000" align="left" valign=bottom bgcolor="#E6E6E6"><font color="#000000"><br></font></td>
+		<td style="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000" align="left" valign=bottom bgcolor="#E6E6E6"><font color="#000000"><br></font></td>
+		<td style="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000" align="left" valign=bottom><font color="#000000"><br></font></td>
+		<td style="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000" align="left" valign=bottom><font color="#000000"><br></font></td>
+		<td style="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000" align="left" valign=bottom><font color="#000000"><br></font></td>
+		<td style="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000" align="left" valign=bottom><font color="#000000"><br></font></td>
+		<td style="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000" align="left" valign=bottom><font color="#000000"><br></font></td>
+		<td style="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000" align="left" valign=bottom><font color="#000000"><br></font></td>
+		<td style="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000" align="left" valign=bottom><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom><font color="#000000"><br></font></td>
+	</tr>
+	<tr>
+		<td height="18" align="left" valign=bottom><font color="#000000"><br></font></td>
+		<td style="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000" align="left" valign=bottom bgcolor="#E6E6E6"><font color="#000000"><br></font></td>
+		<td style="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000" align="left" valign=bottom bgcolor="#E6E6E6"><font color="#000000"><br></font></td>
+		<td style="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000" align="left" valign=bottom bgcolor="#E6E6E6"><font color="#000000">listener</font></td>
+		<td style="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000" align="left" valign=bottom bgcolor="#E6E6E6"><font color="#000000"><br></font></td>
+		<td style="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000" align="left" valign=bottom bgcolor="#E6E6E6"><font color="#000000"><br></font></td>
+		<td style="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000" align="left" valign=bottom bgcolor="#E6E6E6"><font color="#000000"><br></font></td>
+		<td style="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000" align="left" valign=bottom><font color="#000000">ref</font></td>
+		<td style="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000" align="left" valign=bottom><font color="#000000"><br></font></td>
+		<td style="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000" align="left" valign=bottom><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom><font color="#000000"><br></font></td>
+	</tr>
+	<tr>
+		<td height="18" align="left" valign=bottom><font color="#000000"><br></font></td>
+		<td style="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000" align="left" valign=bottom bgcolor="#E6E6E6"><font color="#000000"><br></font></td>
+		<td style="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000" align="left" valign=bottom bgcolor="#E6E6E6"><font color="#000000"><br></font></td>
+		<td style="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000" align="left" valign=bottom bgcolor="#E6E6E6"><font color="#000000"><br></font></td>
+		<td style="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000" align="left" valign=bottom bgcolor="#E6E6E6"><font color="#000000"><br></font></td>
+		<td style="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000" align="left" valign=bottom bgcolor="#E6E6E6"><font color="#000000"><br></font></td>
+		<td style="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000" align="left" valign=bottom bgcolor="#E6E6E6"><font color="#000000"><br></font></td>
+		<td style="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000" align="left" valign=bottom><font color="#000000"><br></font></td>
+		<td style="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000" align="left" valign=bottom><font color="#000000"><br></font></td>
+		<td style="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000" align="left" valign=bottom><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom><font color="#000000"><br></font></td>
+	</tr>
+</table>
+<!-- ************************************************************************** -->
+<hr>
+<A NAME="table12"><h1>Sheet 12: <em>Though annoation, xml need for</em></h1></A>
+<table cellspacing="0" border="0">
+	<colgroup width="223"></colgroup>
+	<colgroup width="853"></colgroup>
+	<tr>
+		<td height="18" align="left" valign=bottom><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom><font color="#6B4794">Lets have only the below configuration in spring configurring xml file</font></td>
+	</tr>
+	<tr>
+		<td height="18" align="left" valign=bottom><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom><font color="#6B4794">Still, have different configuration xml file to logically related declaration instead only one xml file for all</font></td>
+	</tr>
+	<tr>
+		<td height="18" align="left" valign=bottom><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom><font color="#000000"><br></font></td>
+	</tr>
+	<tr>
+		<td height="18" align="left" valign=bottom><font color="#000000">Bean and wiring annotation</font></td>
+		<td align="left" valign=bottom><font color="#000000">configuring &lt;component-scan&gt;</font></td>
+	</tr>
+	<tr>
+		<td height="18" align="left" valign=bottom><font color="#000000">Bean</font></td>
+		<td align="left" valign=bottom><font color="#000000">to declare a static method as factory for object creation.</font></td>
+	</tr>
+	<tr>
+		<td height="18" align="left" valign=bottom><font color="#000000">Collection</font></td>
+		<td align="left" valign=bottom><font color="#000000">to configure collection of values, I have to use xml file</font></td>
+	</tr>
+	<tr>
+		<td height="18" align="left" valign=bottom><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom><font color="#000000"><br></font></td>
+	</tr>
+	<tr>
+		<td height="18" align="left" valign=bottom><font color="#000000">AOP</font></td>
+		<td align="left" valign=bottom><font color="#000000">configuration &lt;aspectj-autoproxy&gt; for use annotation for AOP</font></td>
+	</tr>
+	<tr>
+		<td height="18" align="left" valign=bottom><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom><font color="#000000"><br></font></td>
+	</tr>
+	<tr>
+		<td height="18" align="left" valign=bottom><font color="#000000">DAO</font></td>
+		<td align="left" valign=bottom><font color="#000000">configuration datasource bean</font></td>
+	</tr>
+	<tr>
+		<td height="18" align="left" valign=bottom><font color="#000000">DAO</font></td>
+		<td align="left" valign=bottom><font color="#000000">configuration of post processor (PersistenceExceptionTranslationPostProcessor) for @Repositary ( JPA and Hibernate )</font></td>
+	</tr>
+	<tr>
+		<td height="18" align="left" valign=bottom><font color="#000000">DAO</font></td>
+		<td align="left" valign=bottom><font color="#000000">factory bean to load the configuration of iBAtis, Hiberanate, JPA</font></td>
+	</tr>
+	<tr>
+		<td height="18" align="left" valign=bottom><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom><font color="#000000"><br></font></td>
+	</tr>
+	<tr>
+		<td height="18" align="left" valign=bottom><font color="#000000">transaction</font></td>
+		<td align="left" valign=bottom><font color="#000000">configuration of transaction managers</font></td>
+	</tr>
+	<tr>
+		<td height="18" align="left" valign=bottom><font color="#000000">transaction</font></td>
+		<td align="left" valign=bottom><font color="#000000">configuration of  &lt;tx:annotation-driven&gt; for annotation based trasnaction</font></td>
+	</tr>
+	<tr>
+		<td height="18" align="left" valign=bottom><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom><font color="#000000"><br></font></td>
+	</tr>
+	<tr>
+		<td height="18" align="left" valign=bottom><font color="#000000">remoting</font></td>
+		<td align="left" valign=bottom><font color="#000000">remote service exposing . Configiguration</font></td>
+	</tr>
+	<tr>
+		<td height="18" align="left" valign=bottom><font color="#000000">remoting</font></td>
+		<td align="left" valign=bottom><font color="#000000">indentifying remote servcies configuration..</font></td>
+	</tr>
+	<tr>
+		<td height="18" align="left" valign=bottom><font color="#000000">remoting</font></td>
+		<td align="left" valign=bottom><font color="#000000">to export JAX-WS annotated bean as webservice</font></td>
+	</tr>
+	<tr>
+		<td height="18" align="left" valign=bottom><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom><font color="#000000"><br></font></td>
+	</tr>
+	<tr>
+		<td height="18" align="left" valign=bottom><font color="#000000">jms</font></td>
+		<td align="left" valign=bottom><font color="#000000">to configure connection factory for JMS</font></td>
+	</tr>
+	<tr>
+		<td height="18" align="left" valign=bottom><font color="#000000">jms</font></td>
+		<td align="left" valign=bottom><font color="#000000">to configure JMS destination</font></td>
+	</tr>
+	<tr>
+		<td height="18" align="left" valign=bottom><font color="#000000">jms</font></td>
+		<td align="left" valign=bottom><font color="#000000">to configure JMS Listener Container for MDP</font></td>
+	</tr>
+	<tr>
+		<td height="18" align="left" valign=bottom><font color="#000000">jms</font></td>
+		<td align="left" valign=bottom><font color="#000000">to configure JMS Listener Container for MDP</font></td>
+	</tr>
+	<tr>
+		<td height="18" align="left" valign=bottom><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom><font color="#000000"><br></font></td>
+	</tr>
+	<tr>
+		<td height="18" align="left" valign=bottom><font color="#000000">mvc</font></td>
+		<td align="left" valign=bottom><font color="#000000">mvc view resolver has to be configured</font></td>
+	</tr>
+	<tr>
+		<td height="18" align="left" valign=bottom><font color="#000000">Mvc-flow</font></td>
+		<td align="left" valign=bottom><font color="#000000">mvc flow registry configuration</font></td>
+	</tr>
+	<tr>
+		<td height="18" align="left" valign=bottom><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom><font color="#000000"><br></font></td>
+	</tr>
+	<tr>
+		<td height="18" align="left" valign=bottom><font color="#000000">file upload</font></td>
+		<td align="left" valign=bottom><font color="#000000">multipart resolver</font></td>
+	</tr>
+	<tr>
+		<td height="18" align="left" valign=bottom><font color="#000000">common annotation</font></td>
+		<td align="left" valign=bottom><font color="#000000">register CommonAnnotationBeanPostProcessor for JSR 250 annotation</font></td>
+	</tr>
+	<tr>
+		<td height="18" align="left" valign=bottom><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom><font color="#000000"><br></font></td>
+	</tr>
+	<tr>
+		<td height="18" align="left" valign=bottom><font color="#000000">scheduler</font></td>
+		<td align="left" valign=bottom><font color="#000000">scheduler configuration</font></td>
+	</tr>
+</table>
+<!-- ************************************************************************** -->
+</body>
+
+</html>

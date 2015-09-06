@@ -1,0 +1,354 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+
+<html>
+<head>
+	
+	<meta http-equiv="content-type" content="text/html; charset=utf-8">
+	<title></title>
+	<meta name="generator" content="LibreOffice 4.2.8.2 (Linux)">
+	<meta name="author" content="Paramasivam">
+	<meta name="created" content="20090318;171717000000000">
+	<meta name="changedby" content="param">
+	<meta name="changed" content="20090609;125003000000000">
+	
+	<style type="text/css"><!-- 
+		body,div,table,thead,tbody,tfoot,tr,th,td,p { font-family:"Calibri"; font-size:x-small }
+		 -->
+	</style>
+	
+</head>
+
+<body text="#000000">
+<hr>
+	<p><center>
+		<h1>Overview</h1>
+		<A HREF="#table0">SOAP 1.1</A><br>
+		<A HREF="#table1">SOAP Tag</A><br>
+		<A HREF="#table2">namespace rule</A><br>
+		<A HREF="#table3">API</A><br>
+		
+	</center></p>
+<hr>
+<A NAME="table0"><h1>Sheet 1: <em>SOAP 1.1</em></h1></A>
+<table cellspacing="0" border="0">
+	<colgroup width="198"></colgroup>
+	<colgroup width="1231"></colgroup>
+	<tr>
+		<td height="20" align="left" valign=bottom><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom><font color="#000000">SOAP is maintained by W3C consortium</font></td>
+	</tr>
+	<tr>
+		<td height="20" align="left" valign=bottom><font color="#000000">verson</font></td>
+		<td align="left" valign=bottom><font color="#000000">SOAP 1.1</font></td>
+	</tr>
+	<tr>
+		<td height="20" align="left" valign=bottom><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom><font color="#000000">SOAP 1.2 also there. But it is not yet implemented fully. For certificate only  SOAP 1.1 is enough</font></td>
+	</tr>
+	<tr>
+		<td height="20" align="left" valign=bottom><font color="#000000">soap namespace</font></td>
+		<td align="left" valign=bottom><font color="#000000"><a href="http://schemas.xmlsoap.org/soap/envelope">http://schemas.xmlsoap.org/soap/envelope</a></font></td>
+	</tr>
+	<tr>
+		<td height="20" align="left" valign=bottom><font color="#000000">SOAP messsage</font></td>
+		<td align="left" valign=bottom><font color="#000000">SOAP is the the only best protocol to transfer XML data packet over the network</font></td>
+	</tr>
+	<tr>
+		<td height="20" align="left" valign=bottom><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom><font color="#000000">SOAP is just another XML language</font></td>
+	</tr>
+	<tr>
+		<td height="20" align="left" valign=bottom><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom><b><font color="#000000">Message format ( application data ) in WSDL and SOAP must be same</font></b></td>
+	</tr>
+	<tr>
+		<td height="20" align="left" valign=bottom><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom><font color="#000000">SOAP XML instance is called soap message</font></td>
+	</tr>
+	<tr>
+		<td height="20" align="left" valign=bottom><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom><font color="#000000">it support namespace and xml schema</font></td>
+	</tr>
+	<tr>
+		<td height="20" align="left" valign=bottom><font color="#000000">transfer over</font></td>
+		<td align="left" valign=bottom><font color="#000000">HTTP / FTP/ SMTP / TCP/ip ….  But BP require SOAP message want to transfer via HTTP only</font></td>
+	</tr>
+	<tr>
+		<td height="20" align="left" valign=bottom><font color="#000000">type of comm.</font></td>
+		<td align="left" valign=bottom><font color="#000000">one-way-message or request / response</font></td>
+	</tr>
+	<tr>
+		<td height="20" align="left" valign=middle><font color="#000000">Advantage of SOAP</font></td>
+		<td align="left" valign=bottom><font color="#000000">message formate defined by XML Scheme, so easy to extend</font></td>
+	</tr>
+	<tr>
+		<td height="20" align="left" valign=middle><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom><font color="#000000">it woks by HTTP tunneling</font></td>
+	</tr>
+	<tr>
+		<td height="20" align="left" valign=bottom><font color="#000000">SOAP message format</font></td>
+		<td align="left" valign=bottom><font color="#000000">one header( optional ) and one body element must be</font></td>
+	</tr>
+	<tr>
+		<td height="20" align="left" valign=bottom><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom><font color="#000000">if header there, each element of header must have its own name space, to identify list of element has to be processed by a MessageHandler( actor )</font></td>
+	</tr>
+	<tr>
+		<td height="20" align="left" valign=bottom><font color="#000000">SOAPHeader</font></td>
+		<td align="left" valign=bottom><font color="#000000">Mostly the vaue of &quot;actor&quot; be a url, but it is mandatory. It can be any orbitrary word</font></td>
+	</tr>
+	<tr>
+		<td height="20" align="left" valign=bottom><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom><font color="#000000">alter or add or remove any header element can be done in intermediaries nodes</font></td>
+	</tr>
+	<tr>
+		<td height="20" align="left" valign=bottom><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom bgcolor="#FAC090"><font color="#000000">application specific data may or may not prefixed. But it is not mandatory</font></td>
+	</tr>
+	<tr>
+		<td height="20" align="left" valign=bottom><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom><font color="#000000">when a node act on header block, it read , act, then remove that header block before it forward to next node of message path</font></td>
+	</tr>
+	<tr>
+		<td height="20" align="left" valign=bottom><font color="#000000">Soap body</font></td>
+		<td align="left" valign=bottom><font color="#000000">only one element per SOAP message</font></td>
+	</tr>
+	<tr>
+		<td height="20" align="left" valign=bottom><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom><font color="#000000">it can have either APPLICATION DATA or FAULT MESSAGE. But not both</font></td>
+	</tr>
+	<tr>
+		<td height="20" align="left" valign=bottom><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom bgcolor="#FAC090"><font color="#000000">application specific data must be prefixed. ( the cue BP(body with prefix ) )</font></td>
+	</tr>
+	<tr>
+		<td height="20" align="left" valign=bottom><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom><font color="#000000">j2EE does not support the message mode of Document / encoded</font></td>
+	</tr>
+	<tr>
+		<td height="20" align="left" valign=bottom><font color="#000000">detail</font></td>
+		<td align="left" valign=bottom><font color="#000000">this element can have any number of  application specific element or any number of attribute unless until those are are not SOAP's namespace</font></td>
+	</tr>
+	<tr>
+		<td height="18" align="left" valign=bottom><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom><font color="#000000"><br></font></td>
+	</tr>
+	<tr>
+		<td height="18" align="left" valign=bottom><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom><font color="#000000"><br></font></td>
+	</tr>
+	<tr>
+		<td height="18" align="left" valign=bottom><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom><font color="#000000"><br></font></td>
+	</tr>
+	<tr>
+		<td height="18" align="left" valign=bottom><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom><font color="#000000"><br></font></td>
+	</tr>
+	<tr>
+		<td height="20" align="left" valign=bottom><b><font color="#000000">SAAJ API suggestion</font></b></td>
+		<td align="left" valign=bottom><font color="#000000"><br></font></td>
+	</tr>
+	<tr>
+		<td height="20" align="left" valign=bottom><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom><font color="#000000">they could have made SOAPMessage.getAttachmentPart(SOAPElement )  method as STATIC</font></td>
+	</tr>
+	<tr>
+		<td height="20" align="left" valign=bottom><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom><font color="#000000">MimeHeader' toString() could have overridden</font></td>
+	</tr>
+</table>
+<!-- ************************************************************************** -->
+<hr>
+<A NAME="table1"><h1>Sheet 2: <em>SOAP Tag</em></h1></A>
+<table align="left" cellspacing="0" border="0">
+	<colgroup width="143"></colgroup>
+	<colgroup width="80"></colgroup>
+	<colgroup width="111"></colgroup>
+	<colgroup width="107"></colgroup>
+	<colgroup width="161"></colgroup>
+	<colgroup width="888"></colgroup>
+	<tr>
+		<td height="20" align="center" valign=bottom bgcolor="#FF0000"><font color="#000000">SAAJ API</font></td>
+		<td colspan=4 align="center" valign=bottom bgcolor="#558ED5"><b><font color="#1E1C11">SOAP Tags and its Attributes</font></b></td>
+		<td align="left" valign=bottom bgcolor="#FFFF00"><font color="#C00000">Notes</font></td>
+	</tr>
+	<tr>
+		<td height="18" align="left" valign=bottom><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom><font color="#000000"><br></font></td>
+	</tr>
+	<tr>
+		<td height="18" align="left" valign=bottom><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom><font color="#000000"><br></font></td>
+	</tr>
+	<tr>
+		<td height="20" align="left" valign=bottom bgcolor="#558ED5"><b><font color="#FFFF00">SOAPEnvelope</font></b></td>
+		<td align="left" valign=bottom><font color="#000000">Envelope</font></td>
+		<td align="left" valign=bottom><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom><font color="#000000"><br></font></td>
+	</tr>
+	<tr>
+		<td height="20" align="left" valign=bottom bgcolor="#558ED5"><b><font color="#FFFF00">SOAPHeader</font></b></td>
+		<td align="left" valign=bottom><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom><font color="#000000">Header ?</font></td>
+		<td align="left" valign=bottom bgcolor="#FFFF00"><font color="#000000">[ actor ]</font></td>
+		<td align="left" valign=bottom bgcolor="#FFFF00"><font color="#000000">[mustUnderstand]</font></td>
+		<td align="left" valign=bottom><font color="#000000">sub elements of Header may or may not prefixed. But recomented</font></td>
+	</tr>
+	<tr>
+		<td height="20" align="left" valign=bottom bgcolor="#558ED5"><b><font color="#FFFF00"><br></font></b></td>
+		<td align="left" valign=bottom><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom><font color="#000000">Cliam ?</font></td>
+		<td align="left" valign=bottom bgcolor="#FFFF00"><font color="#000000">[conformsTo]</font></td>
+		<td align="left" valign=bottom><font color="#000000">Cliam can be only for Header. But not any other soap element</font></td>
+	</tr>
+	<tr>
+		<td height="20" align="left" valign=bottom><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom><font color="#000000">absence of &quot;actor&quot; attribute indicate that header block has to be processed by ultimate receiver</font></td>
+	</tr>
+	<tr>
+		<td height="20" align="left" valign=bottom bgcolor="#558ED5"><b><font color="#FFFF00">SOAPBody</font></b></td>
+		<td align="left" valign=bottom><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom><font color="#000000">Body (1)</font></td>
+		<td align="left" valign=bottom><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom><font color="#000000">url ( value ) of next role for actor attribute --&gt; soap:actor = &quot;http://schemas.xmlsoap.org/soap/actor/next&quot;</font></td>
+	</tr>
+	<tr>
+		<td height="20" align="left" valign=bottom><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom><i><font color="#000000">appData</font></i></td>
+		<td align="left" valign=bottom><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom><font color="#000000">Each of app. Elements of body must be prefixed</font></td>
+	</tr>
+	<tr>
+		<td height="20" align="left" valign=bottom bgcolor="#558ED5"><b><font color="#FFFF00">SOAPFault</font></b></td>
+		<td align="left" valign=bottom><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom><font color="#000000">Fault ?</font></td>
+		<td align="left" valign=bottom><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom><font color="#000000"><br></font></td>
+	</tr>
+	<tr>
+		<td height="20" align="left" valign=bottom><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom><font color="#000000">faultcode ( 1 )</font></td>
+		<td align="left" valign=bottom><font color="#000000"> value will either one of soap:Client / soap:Server / soap:versionMismatch / soap:mustUnderstand</font></td>
+	</tr>
+	<tr>
+		<td height="20" align="left" valign=bottom><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom><font color="#000000">faultstring ( 1 )</font></td>
+		<td align="left" valign=bottom><font color="#000000">just small description about error</font></td>
+	</tr>
+	<tr>
+		<td height="20" align="left" valign=bottom><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom><font color="#000000">faultactor ?</font></td>
+		<td align="left" valign=bottom><font color="#000000">present this element only if error occurred by intermediars and optional for ultimate receiver</font></td>
+	</tr>
+	<tr>
+		<td height="20" align="left" valign=bottom bgcolor="#558ED5"><b><font color="#FFFF00">Detail</font></b></td>
+		<td align="left" valign=bottom><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom><font color="#000000">detail ?</font></td>
+		<td align="left" valign=bottom><font color="#000000">Must be present only if error because of Body and must not be if error because of header</font></td>
+	</tr>
+</table>
+<img src="ParamSOAP11andSAAJ13_html_f8d7665b.png" width=185 height=77>
+<img src="ParamSOAP11andSAAJ13_html_5825c4b4.png" width=255 height=78>
+<br clear=left>
+<!-- ************************************************************************** -->
+<hr>
+<A NAME="table2"><h1>Sheet 3: <em>namespace rule</em></h1></A>
+<table cellspacing="0" border="0">
+	<colgroup width="234"></colgroup>
+	<colgroup width="362"></colgroup>
+	<colgroup width="336"></colgroup>
+	<tr>
+		<td height="20" align="left" valign=bottom><font color="#000000">child element of</font></td>
+		<td align="left" valign=bottom><font color="#000000">according SOAP schema</font></td>
+		<td align="left" valign=bottom><font color="#000000">according to BS-I</font></td>
+	</tr>
+	<tr>
+		<td height="18" align="left" valign=bottom><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom><font color="#000000"><br></font></td>
+	</tr>
+	<tr>
+		<td height="20" align="left" valign=bottom><font color="#000000">Body</font></td>
+		<td align="left" valign=bottom><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom><font color="#000000">must be</font></td>
+	</tr>
+</table>
+<!-- ************************************************************************** -->
+<hr>
+<A NAME="table3"><h1>Sheet 4: <em>API</em></h1></A>
+<table cellspacing="0" border="0">
+	<colgroup span="2" width="120"></colgroup>
+	<colgroup width="137"></colgroup>
+	<colgroup width="103"></colgroup>
+	<tr>
+		<td height="18" align="left" valign=bottom><font color="#000000">SOAPException</font></td>
+		<td align="left" valign=bottom><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom><font color="#000000"><br></font></td>
+	</tr>
+	<tr>
+		<td height="18" align="left" valign=bottom><font color="#000000">MessageFactory</font></td>
+		<td align="left" valign=bottom><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom><font color="#000000"><br></font></td>
+	</tr>
+	<tr>
+		<td height="18" align="left" valign=bottom><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom><font color="#000000">SOAPMessage</font></td>
+		<td align="left" valign=bottom><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom><font color="#000000"><br></font></td>
+	</tr>
+	<tr>
+		<td height="18" align="left" valign=bottom><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom><font color="#000000">SOAPEnvelope</font></td>
+		<td align="left" valign=bottom><font color="#000000"><br></font></td>
+	</tr>
+	<tr>
+		<td height="18" align="left" valign=bottom><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom><font color="#000000">SOAPHeader</font></td>
+	</tr>
+	<tr>
+		<td height="18" align="left" valign=bottom><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom><font color="#000000">SOAPBody</font></td>
+	</tr>
+</table>
+<!-- ************************************************************************** -->
+</body>
+
+</html>

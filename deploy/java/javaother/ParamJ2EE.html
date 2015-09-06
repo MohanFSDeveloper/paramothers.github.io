@@ -1,0 +1,737 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+
+<html>
+<head>
+	
+	<meta http-equiv="content-type" content="text/html; charset=utf-8">
+	<title></title>
+	<meta name="generator" content="LibreOffice 4.2.8.2 (Linux)">
+	<meta name="author" content=" ">
+	<meta name="created" content="20071209;194810000000000">
+	<meta name="changedby" content="Paramasivam">
+	<meta name="changed" content="20100616;105325000000000">
+	
+	<style type="text/css"><!-- 
+		body,div,table,thead,tbody,tfoot,tr,th,td,p { font-family:"Arial"; font-size:x-small }
+		 -->
+	</style>
+	
+</head>
+
+<body text="#000000">
+<hr>
+	<p><center>
+		<h1>Overview</h1>
+		<A HREF="#table0">General</A><br>
+		<A HREF="#table1">J2ee Resource</A><br>
+		<A HREF="#table2">Dia - J2EE</A><br>
+		<A HREF="#table3">JMS</A><br>
+		<A HREF="#table4">JCA</A><br>
+		
+	</center></p>
+<hr>
+<A NAME="table0"><h1>Sheet 1: <em>General</em></h1></A>
+<table cellspacing="0" border="0">
+	<colgroup width="171"></colgroup>
+	<colgroup width="369"></colgroup>
+	<tr>
+		<td height="17" align="left">J2EE 1.5</td>
+		<td align="left">the moto of this version is &quot;ease of development&quot; using annotation</td>
+	</tr>
+	<tr>
+		<td height="17" align="left"><br></td>
+		<td align="left"><br></td>
+	</tr>
+	<tr>
+		<td height="17" align="left"><br></td>
+		<td align="left">use annotation to avoid use of Service locator</td>
+	</tr>
+	<tr>
+		<td height="17" align="left"><br></td>
+		<td align="left">use annotation to get Dependency Injection benefit</td>
+	</tr>
+	<tr>
+		<td height="17" align="left"><br></td>
+		<td align="left">use annotation to use Resource like Datasource &amp; JMs</td>
+	</tr>
+	<tr>
+		<td height="17" align="left"><br></td>
+		<td align="left"><br></td>
+	</tr>
+	<tr>
+		<td height="17" align="left">Dependency Injection</td>
+		<td align="left">in Spring, it is achieved by using external XML file</td>
+	</tr>
+	<tr>
+		<td height="17" align="left"><br></td>
+		<td align="left">in J2EE it is achieved by declarig Annotation itself</td>
+	</tr>
+</table>
+<!-- ************************************************************************** -->
+<hr>
+<A NAME="table1"><h1>Sheet 2: <em>J2ee Resource</em></h1></A>
+<table cellspacing="0" border="0">
+	<colgroup width="164"></colgroup>
+	<colgroup width="304"></colgroup>
+	<tr>
+		<td height="34" align="left"><b>Resource provider in j2ee</b></td>
+		<td align="left">JDBC</td>
+	</tr>
+	<tr>
+		<td height="17" align="left"><b><br></b></td>
+		<td align="left">JMS</td>
+	</tr>
+	<tr>
+		<td height="17" align="left"><b><br></b></td>
+		<td align="left">JavaMail</td>
+	</tr>
+	<tr>
+		<td height="17" align="left"><b><br></b></td>
+		<td align="left">Resource Adaptor</td>
+	</tr>
+	<tr>
+		<td height="17" align="left"><b><br></b></td>
+		<td align="left">Asynchronous Beans</td>
+	</tr>
+	<tr>
+		<td height="17" align="left"><b><br></b></td>
+		<td align="left">URL</td>
+	</tr>
+	<tr>
+		<td height="17" align="left"><b><br></b></td>
+		<td align="left">Resource Environment</td>
+	</tr>
+	<tr>
+		<td height="17" align="left"><b><br></b></td>
+		<td align="left">Cache Instance</td>
+	</tr>
+	<tr>
+		<td height="17" align="left"><b><br></b></td>
+		<td align="left"><br></td>
+	</tr>
+	<tr>
+		<td height="17" align="left"><b><br></b></td>
+		<td align="left"><br></td>
+	</tr>
+	<tr>
+		<td height="17" align="left"><b><br></b></td>
+		<td align="left"><br></td>
+	</tr>
+	<tr>
+		<td height="17" align="left"><b><br></b></td>
+		<td align="left"><br></td>
+	</tr>
+	<tr>
+		<td height="17" align="left"><b><br></b></td>
+		<td align="left"><br></td>
+	</tr>
+	<tr>
+		<td rowspan=4 height="85" align="center"><b>Services need to be provide by App server</b></td>
+		<td align="left">1. Naming</td>
+	</tr>
+	<tr>
+		<td align="left">2. Security  (declration )</td>
+	</tr>
+	<tr>
+		<td align="left">3. Transaction service ( JTA)</td>
+	</tr>
+	<tr>
+		<td align="left">4. Deployment service</td>
+	</tr>
+	<tr>
+		<td height="17" align="left"><b><br></b></td>
+		<td align="left"><br></td>
+	</tr>
+	<tr>
+		<td height="17" align="left"><b>J2EE Comminication</b></td>
+		<td align="left">Java RMI ( IIOP )</td>
+	</tr>
+	<tr>
+		<td height="17" align="left"><b><br></b></td>
+		<td align="left">JMS</td>
+	</tr>
+	<tr>
+		<td height="17" align="left"><b><br></b></td>
+		<td align="left">Protocal support like HTTP, SSL, TCP/IP</td>
+	</tr>
+	<tr>
+		<td height="17" align="left"><b><br></b></td>
+		<td align="left">SOAP</td>
+	</tr>
+	<tr>
+		<td height="17" align="left"><b><br></b></td>
+		<td align="left">UDDI</td>
+	</tr>
+</table>
+<!-- ************************************************************************** -->
+<hr>
+<A NAME="table2"><h1>Sheet 3: <em>Dia - J2EE</em></h1></A>
+<table cellspacing="0" border="0">
+	<colgroup span="17" width="67"></colgroup>
+	<tr>
+		<td height="17" align="left"><br></td>
+		<td colspan=16 rowspan=45 align="left"><br><img src="ParamJ2EE_html_7cac33df.png" width=1069 height=764 hspace=9 vspace=22>
+		</td>
+		</tr>
+	<tr>
+		<td height="17" align="left"><br></td>
+		</tr>
+	<tr>
+		<td height="17" align="left"><br></td>
+		</tr>
+	<tr>
+		<td height="17" align="left"><br></td>
+		</tr>
+	<tr>
+		<td height="17" align="left"><br></td>
+		</tr>
+	<tr>
+		<td height="17" align="left"><br></td>
+		</tr>
+	<tr>
+		<td height="17" align="left"><br></td>
+		</tr>
+	<tr>
+		<td height="17" align="left"><br></td>
+		</tr>
+	<tr>
+		<td height="17" align="left"><br></td>
+		</tr>
+	<tr>
+		<td height="17" align="left"><br></td>
+		</tr>
+	<tr>
+		<td height="17" align="left"><br></td>
+		</tr>
+	<tr>
+		<td height="17" align="left"><br></td>
+		</tr>
+	<tr>
+		<td height="17" align="left"><br></td>
+		</tr>
+	<tr>
+		<td height="17" align="left"><br></td>
+		</tr>
+	<tr>
+		<td height="17" align="left"><br></td>
+		</tr>
+	<tr>
+		<td height="17" align="left"><br></td>
+		</tr>
+	<tr>
+		<td height="17" align="left"><br></td>
+		</tr>
+	<tr>
+		<td height="17" align="left"><br></td>
+		</tr>
+	<tr>
+		<td height="17" align="left"><br></td>
+		</tr>
+	<tr>
+		<td height="17" align="left"><br></td>
+		</tr>
+	<tr>
+		<td height="17" align="left"><br></td>
+		</tr>
+	<tr>
+		<td height="17" align="left"><br></td>
+		</tr>
+	<tr>
+		<td height="17" align="left"><br></td>
+		</tr>
+	<tr>
+		<td height="17" align="left"><br></td>
+		</tr>
+	<tr>
+		<td height="17" align="left"><br></td>
+		</tr>
+	<tr>
+		<td height="17" align="left"><br></td>
+		</tr>
+	<tr>
+		<td height="17" align="left"><br></td>
+		</tr>
+	<tr>
+		<td height="17" align="left"><br></td>
+		</tr>
+	<tr>
+		<td height="17" align="left"><br></td>
+		</tr>
+	<tr>
+		<td height="17" align="left"><br></td>
+		</tr>
+	<tr>
+		<td height="17" align="left"><br></td>
+		</tr>
+	<tr>
+		<td height="17" align="left"><br></td>
+		</tr>
+	<tr>
+		<td height="17" align="left"><br></td>
+		</tr>
+	<tr>
+		<td height="17" align="left"><br></td>
+		</tr>
+	<tr>
+		<td height="17" align="left"><br></td>
+		</tr>
+	<tr>
+		<td height="17" align="left"><br></td>
+		</tr>
+	<tr>
+		<td height="17" align="left"><br></td>
+		</tr>
+	<tr>
+		<td height="17" align="left"><br></td>
+		</tr>
+	<tr>
+		<td height="17" align="left"><br></td>
+		</tr>
+	<tr>
+		<td height="17" align="left"><br></td>
+		</tr>
+	<tr>
+		<td height="17" align="left"><br></td>
+		</tr>
+	<tr>
+		<td height="17" align="left"><br></td>
+		</tr>
+	<tr>
+		<td height="17" align="left"><br></td>
+		</tr>
+	<tr>
+		<td height="17" align="left"><br></td>
+		</tr>
+	<tr>
+		<td height="17" align="left"><br></td>
+		</tr>
+	<tr>
+		<td height="17" align="left"><br></td>
+		<td align="left"><br></td>
+		<td align="left"><br></td>
+		<td align="left"><br></td>
+		<td align="left"><br></td>
+		<td align="left"><br></td>
+		<td align="left"><br></td>
+		<td align="left"><br></td>
+		<td align="left"><br></td>
+		<td align="left"><br></td>
+		<td align="left"><br></td>
+		<td align="left"><br></td>
+		<td align="left"><br></td>
+		<td align="left"><br></td>
+		<td align="left"><br></td>
+		<td align="left"><br></td>
+		<td align="left"><br></td>
+	</tr>
+	<tr>
+		<td height="17" align="left"><br></td>
+		<td align="left"><br></td>
+		<td align="left"><br></td>
+		<td align="left"><br></td>
+		<td align="left"><br></td>
+		<td align="left"><br></td>
+		<td align="left"><br></td>
+		<td align="left"><br></td>
+		<td align="left"><br></td>
+		<td align="left"><br></td>
+		<td align="left"><br></td>
+		<td align="left"><br></td>
+		<td align="left"><br></td>
+		<td align="left"><br></td>
+		<td align="left"><br></td>
+		<td align="left"><br></td>
+		<td align="left"><br></td>
+	</tr>
+	<tr>
+		<td height="17" align="left"><br></td>
+		<td align="left"><br></td>
+		<td align="left"><br></td>
+		<td align="left"><br></td>
+		<td align="left"><br></td>
+		<td align="left"><br></td>
+		<td align="left"><br></td>
+		<td align="left"><br></td>
+		<td align="left"><br></td>
+		<td align="left"><br></td>
+		<td align="left"><br></td>
+		<td align="left"><br></td>
+		<td align="left"><br></td>
+		<td align="left"><br></td>
+		<td align="left"><br></td>
+		<td align="left"><br></td>
+		<td align="left"><br></td>
+	</tr>
+	<tr>
+		<td height="17" align="left"><br></td>
+		<td align="left"><br></td>
+		<td align="left"><br></td>
+		<td align="left"><br></td>
+		<td align="left"><br></td>
+		<td align="left"><br></td>
+		<td align="left"><br></td>
+		<td align="left"><br></td>
+		<td align="left"><br></td>
+		<td align="left"><br></td>
+		<td align="left"><br></td>
+		<td align="left"><br></td>
+		<td align="left"><br></td>
+		<td align="left"><br></td>
+		<td align="left"><br></td>
+		<td align="left"><br></td>
+		<td align="left"><br></td>
+	</tr>
+	<tr>
+		<td height="17" align="left"><br></td>
+		<td colspan=5 rowspan=15 align="left"><br><img src="ParamJ2EE_html_7fe24aac.png" width=308 height=234 hspace=15 vspace=17>
+		</td>
+		<td align="left"><br></td>
+		<td align="left"><br></td>
+		<td align="left"><br></td>
+		<td align="left"><br></td>
+		<td align="left"><br></td>
+		<td align="left"><br></td>
+		<td align="left"><br></td>
+		<td align="left"><br></td>
+		<td align="left"><br></td>
+		<td align="left"><br></td>
+		<td align="left"><br></td>
+	</tr>
+	<tr>
+		<td height="17" align="left"><br></td>
+		<td align="left"><br></td>
+		<td align="left"><br></td>
+		<td align="left"><br></td>
+		<td align="left"><br></td>
+		<td align="left"><br></td>
+		<td align="left"><br></td>
+		<td align="left"><br></td>
+		<td align="left"><br></td>
+		<td align="left"><br></td>
+		<td align="left"><br></td>
+		<td align="left"><br></td>
+	</tr>
+	<tr>
+		<td height="17" align="left"><br></td>
+		<td align="left"><br></td>
+		<td align="left"><br></td>
+		<td align="left"><br></td>
+		<td align="left"><br></td>
+		<td align="left"><br></td>
+		<td align="left"><br></td>
+		<td align="left"><br></td>
+		<td align="left"><br></td>
+		<td align="left"><br></td>
+		<td align="left"><br></td>
+		<td align="left"><br></td>
+	</tr>
+	<tr>
+		<td height="17" align="left"><br></td>
+		<td align="left"><br></td>
+		<td align="left"><br></td>
+		<td align="left"><br></td>
+		<td align="left"><br></td>
+		<td align="left"><br></td>
+		<td align="left"><br></td>
+		<td align="left"><br></td>
+		<td align="left"><br></td>
+		<td align="left"><br></td>
+		<td align="left"><br></td>
+		<td align="left"><br></td>
+	</tr>
+	<tr>
+		<td height="17" align="left"><br></td>
+		<td align="left"><br></td>
+		<td align="left"><br></td>
+		<td align="left"><br></td>
+		<td align="left"><br></td>
+		<td align="left"><br></td>
+		<td align="left"><br></td>
+		<td align="left"><br></td>
+		<td align="left"><br></td>
+		<td align="left"><br></td>
+		<td align="left"><br></td>
+		<td align="left"><br></td>
+	</tr>
+	<tr>
+		<td height="17" align="left"><br></td>
+		<td align="left"><br></td>
+		<td align="left"><br></td>
+		<td align="left"><br></td>
+		<td align="left"><br></td>
+		<td align="left"><br></td>
+		<td align="left"><br></td>
+		<td align="left"><br></td>
+		<td align="left"><br></td>
+		<td align="left"><br></td>
+		<td align="left"><br></td>
+		<td align="left"><br></td>
+	</tr>
+	<tr>
+		<td height="17" align="left"><br></td>
+		<td align="left"><br></td>
+		<td align="left"><br></td>
+		<td align="left"><br></td>
+		<td align="left"><br></td>
+		<td align="left"><br></td>
+		<td align="left"><br></td>
+		<td align="left"><br></td>
+		<td align="left"><br></td>
+		<td align="left"><br></td>
+		<td align="left"><br></td>
+		<td align="left"><br></td>
+	</tr>
+	<tr>
+		<td height="17" align="left"><br></td>
+		<td align="left"><br></td>
+		<td align="left"><br></td>
+		<td align="left"><br></td>
+		<td align="left"><br></td>
+		<td align="left"><br></td>
+		<td align="left"><br></td>
+		<td align="left"><br></td>
+		<td align="left"><br></td>
+		<td align="left"><br></td>
+		<td align="left"><br></td>
+		<td align="left"><br></td>
+	</tr>
+	<tr>
+		<td height="17" align="left"><br></td>
+		<td align="left"><br></td>
+		<td align="left"><br></td>
+		<td align="left"><br></td>
+		<td align="left"><br></td>
+		<td align="left"><br></td>
+		<td align="left"><br></td>
+		<td align="left"><br></td>
+		<td align="left"><br></td>
+		<td align="left"><br></td>
+		<td align="left"><br></td>
+		<td align="left"><br></td>
+	</tr>
+	<tr>
+		<td height="17" align="left"><br></td>
+		<td align="left"><br></td>
+		<td align="left"><br></td>
+		<td align="left"><br></td>
+		<td align="left"><br></td>
+		<td align="left"><br></td>
+		<td align="left"><br></td>
+		<td align="left"><br></td>
+		<td align="left"><br></td>
+		<td align="left"><br></td>
+		<td align="left"><br></td>
+		<td align="left"><br></td>
+	</tr>
+	<tr>
+		<td height="17" align="left"><br></td>
+		<td align="left"><br></td>
+		<td align="left"><br></td>
+		<td align="left"><br></td>
+		<td align="left"><br></td>
+		<td align="left"><br></td>
+		<td align="left"><br></td>
+		<td align="left"><br></td>
+		<td align="left"><br></td>
+		<td align="left"><br></td>
+		<td align="left"><br></td>
+		<td align="left"><br></td>
+	</tr>
+	<tr>
+		<td height="17" align="left"><br></td>
+		<td align="left"><br></td>
+		<td align="left"><br></td>
+		<td align="left"><br></td>
+		<td align="left"><br></td>
+		<td align="left"><br></td>
+		<td align="left"><br></td>
+		<td align="left"><br></td>
+		<td align="left"><br></td>
+		<td align="left"><br></td>
+		<td align="left"><br></td>
+		<td align="left"><br></td>
+	</tr>
+	<tr>
+		<td height="17" align="left"><br></td>
+		<td align="left"><br></td>
+		<td align="left"><br></td>
+		<td align="left"><br></td>
+		<td align="left"><br></td>
+		<td align="left"><br></td>
+		<td align="left"><br></td>
+		<td align="left"><br></td>
+		<td align="left"><br></td>
+		<td align="left"><br></td>
+		<td align="left"><br></td>
+		<td align="left"><br></td>
+	</tr>
+	<tr>
+		<td height="17" align="left"><br></td>
+		<td align="left"><br></td>
+		<td align="left"><br></td>
+		<td align="left"><br></td>
+		<td align="left"><br></td>
+		<td align="left"><br></td>
+		<td align="left"><br></td>
+		<td align="left"><br></td>
+		<td align="left"><br></td>
+		<td align="left"><br></td>
+		<td align="left"><br></td>
+		<td align="left"><br></td>
+	</tr>
+	<tr>
+		<td height="17" align="left"><br></td>
+		<td align="left"><br></td>
+		<td align="left"><br></td>
+		<td align="left"><br></td>
+		<td align="left"><br></td>
+		<td align="left"><br></td>
+		<td align="left"><br></td>
+		<td align="left"><br></td>
+		<td align="left"><br></td>
+		<td align="left"><br></td>
+		<td align="left"><br></td>
+		<td align="left"><br></td>
+	</tr>
+</table>
+<!-- ************************************************************************** -->
+<hr>
+<A NAME="table3"><h1>Sheet 4: <em>JMS</em></h1></A>
+<table cellspacing="0" border="0">
+	<colgroup span="9" width="67"></colgroup>
+	<tr>
+		<td height="17" align="left"><br></td>
+		<td colspan=8 rowspan=4 align="left"><br><img src="ParamJ2EE_html_846a0a0a.png" width=494 height=67 hspace=25 vspace=2>
+		</td>
+		</tr>
+	<tr>
+		<td height="17" align="left"><br></td>
+		</tr>
+	<tr>
+		<td height="17" align="left"><br></td>
+		</tr>
+	<tr>
+		<td height="17" align="left"><br></td>
+		</tr>
+</table>
+<!-- ************************************************************************** -->
+<hr>
+<A NAME="table4"><h1>Sheet 5: <em>JCA</em></h1></A>
+<table cellspacing="0" border="0">
+	<colgroup width="163"></colgroup>
+	<colgroup width="797"></colgroup>
+	<tr>
+		<td height="17" align="left"><b><br></b></td>
+		<td rowspan=22 align="left"><br><img src="ParamJ2EE_html_dc3bb759.png" width=638 height=344 hspace=79 vspace=25>
+	</td>
+	</tr>
+	<tr>
+		<td height="17" align="left"><b><br></b></td>
+		</tr>
+	<tr>
+		<td height="17" align="left"><b><br></b></td>
+		</tr>
+	<tr>
+		<td height="17" align="left"><b><br></b></td>
+		</tr>
+	<tr>
+		<td height="17" align="left"><b><br></b></td>
+		</tr>
+	<tr>
+		<td height="17" align="left"><b><br></b></td>
+		</tr>
+	<tr>
+		<td height="17" align="left"><b><br></b></td>
+		</tr>
+	<tr>
+		<td height="17" align="left"><b><br></b></td>
+		</tr>
+	<tr>
+		<td height="17" align="left"><b><br></b></td>
+		</tr>
+	<tr>
+		<td height="17" align="left"><b><br></b></td>
+		</tr>
+	<tr>
+		<td height="17" align="left"><b><br></b></td>
+		</tr>
+	<tr>
+		<td height="17" align="left"><b><br></b></td>
+		</tr>
+	<tr>
+		<td height="17" align="left"><b><br></b></td>
+		</tr>
+	<tr>
+		<td height="17" align="left"><b><br></b></td>
+		</tr>
+	<tr>
+		<td height="17" align="left"><b><br></b></td>
+		</tr>
+	<tr>
+		<td height="17" align="left"><b><br></b></td>
+		</tr>
+	<tr>
+		<td height="17" align="left"><b><br></b></td>
+		</tr>
+	<tr>
+		<td height="17" align="left"><b><br></b></td>
+		</tr>
+	<tr>
+		<td height="17" align="left"><b><br></b></td>
+		</tr>
+	<tr>
+		<td height="17" align="left"><b><br></b></td>
+		</tr>
+	<tr>
+		<td height="17" align="left"><b><br></b></td>
+		</tr>
+	<tr>
+		<td height="17" align="left"><b><br></b></td>
+		</tr>
+	<tr>
+		<td height="17" align="left"><b><br></b></td>
+		<td align="left"><br></td>
+	</tr>
+	<tr>
+		<td rowspan=7 height="119" align="center"><b>JCA 1.5  features in App server</b></td>
+		<td align="left">Message inflow management [ used in JMS]</td>
+	</tr>
+	<tr>
+		<td align="left">Connection Management  [ used in JMS]</td>
+	</tr>
+	<tr>
+		<td align="left">Transaction Management</td>
+	</tr>
+	<tr>
+		<td align="left">Transaction Inflow Management</td>
+	</tr>
+	<tr>
+		<td align="left">Security support</td>
+	</tr>
+	<tr>
+		<td align="left">Life cycle management</td>
+	</tr>
+	<tr>
+		<td align="left">work management</td>
+	</tr>
+	<tr>
+		<td height="17" align="left"><b><br></b></td>
+		<td align="left"><br></td>
+	</tr>
+	<tr>
+		<td height="17" align="left"><b><br></b></td>
+		<td align="left"><br></td>
+	</tr>
+	<tr>
+		<td height="17" align="left"><b><br></b></td>
+		<td align="left"><br></td>
+	</tr>
+	<tr>
+		<td height="17" align="left"><b>JCA Version</b></td>
+		<td align="left"> JCA 1.5 in J2EE 1.4</td>
+	</tr>
+</table>
+<!-- ************************************************************************** -->
+</body>
+
+</html>

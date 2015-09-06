@@ -1,0 +1,1129 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+
+<html>
+<head>
+	
+	<meta http-equiv="content-type" content="text/html; charset=utf-8">
+	<title></title>
+	<meta name="generator" content="LibreOffice 4.2.8.2 (Linux)">
+	<meta name="author" content="Administrator">
+	<meta name="created" content="20090212;191529000000000">
+	<meta name="changed" content="20130904;115149000000000">
+	
+	<style type="text/css"><!-- 
+		body,div,table,thead,tbody,tfoot,tr,th,td,p { font-family:"Arial"; font-size:x-small }
+		 -->
+	</style>
+	
+</head>
+
+<body text="#000000">
+<hr>
+	<p><center>
+		<h1>Overview</h1>
+		<A HREF="#table0">General</A><br>
+		<A HREF="#table1">jaxb  tools</A><br>
+		<A HREF="#table2">JAXB Schema cusotmiation</A><br>
+		<A HREF="#table3">Step to customize</A><br>
+		<A HREF="#table4">External bindings</A><br>
+		<A HREF="#table5">study frame</A><br>
+		
+	</center></p>
+<hr>
+<A NAME="table0"><h1>Sheet 1: <em>General</em></h1></A>
+<table cellspacing="0" border="0">
+	<colgroup width="819"></colgroup>
+	<tr>
+		<td height="17" align="left">This release of the JAXB RI includes experimental support for RELAX NG, DTD, and WSDL</td>
+	</tr>
+	<tr>
+		<td height="17" align="left">up-to-date check comes into picture only if more than one schema files are used while at a time compilation</td>
+	</tr>
+	<tr>
+		<td height="17" align="left">delete &quot;jaxb1-impl.jar&quot; since it is implmentation of jaxb1.0 . It is need only for backword compatability</td>
+	</tr>
+	<tr>
+		<td height="17" align="left"><b>xercesImpl.jar is need by JAXB inturn xml paring</b></td>
+	</tr>
+	<tr>
+		<td height="17" align="left">if you are facing any ciritical error in JAXB see &quot;Changelog&quot; of JAXB Documents for list of fixed and unfixed bugs</td>
+	</tr>
+	<tr>
+		<td height="17" align="left"><br></td>
+	</tr>
+	<tr>
+		<td height="17" align="left"><br></td>
+	</tr>
+	<tr>
+		<td height="17" align="left"><b>Advaced Configuration of Marshaller</b></td>
+	</tr>
+	<tr>
+		<td height="17" align="left"><br></td>
+	</tr>
+	<tr>
+		<td height="17" align="left">1 . com.sun.xml.bind.namespacePrefixMapper </td>
+	</tr>
+	<tr>
+		<td height="17" align="left">2. com.sun.xml.bind.indentString </td>
+	</tr>
+	<tr>
+		<td height="17" align="left">3. jaxb.formatted.output</td>
+	</tr>
+	<tr>
+		<td height="17" align="left">4. com.sun.xml.bind.characterEscapeHandler </td>
+	</tr>
+	<tr>
+		<td height="17" align="left">5.com.sun.xml.bind.XmlAccessorFactory </td>
+	</tr>
+	<tr>
+		<td height="17" align="left">6.com.sun.xml.bind.xmlHeaders</td>
+	</tr>
+	<tr>
+		<td height="17" align="left"><br></td>
+	</tr>
+	<tr>
+		<td height="17" align="left"><b>Advanced XJC customization</b></td>
+	</tr>
+	<tr>
+		<td height="17" align="left"><br></td>
+	</tr>
+	<tr>
+		<td style="border-top: 1px solid #1a1a1a; border-bottom: 1px solid #1a1a1a; border-left: 1px solid #1a1a1a; border-right: 1px solid #1a1a1a" height="17" align="left">&lt;superClass&gt;</td>
+	</tr>
+	<tr>
+		<td height="17" align="left">&lt;superInterface &gt;</td>
+	</tr>
+	<tr>
+		<td height="17" align="left">&lt;javaType&gt;</td>
+	</tr>
+	<tr>
+		<td height="17" align="left">&lt;simple&gt;</td>
+	</tr>
+	<tr>
+		<td height="17" align="left">&lt;treatRestrictionLikeNewType&gt; </td>
+	</tr>
+	<tr>
+		<td height="17" align="left">&lt;substituable&gt;</td>
+	</tr>
+</table>
+<!-- ************************************************************************** -->
+<hr>
+<A NAME="table1"><h1>Sheet 2: <em>jaxb  tools</em></h1></A>
+<table cellspacing="0" border="0">
+	<colgroup width="25"></colgroup>
+	<colgroup width="250"></colgroup>
+	<colgroup width="531"></colgroup>
+	<tr>
+		<td height="19" align="left"><br></td>
+		<td align="left">XJC</td>
+		<td align="left"><br></td>
+	</tr>
+	<tr>
+		<td height="19" align="left"><br></td>
+		<td align="left">not to validate on schema</td>
+		<td align="left">-nv</td>
+	</tr>
+	<tr>
+		<td height="19" align="left"><br></td>
+		<td align="left"><br></td>
+		<td align="left"><br></td>
+	</tr>
+	<tr>
+		<td height="19" align="left"><br></td>
+		<td align="left"><br></td>
+		<td align="left"><br></td>
+	</tr>
+	<tr>
+		<td height="19" align="left"><br></td>
+		<td align="left"><br></td>
+		<td align="left"><br></td>
+	</tr>
+	<tr>
+		<td height="19" align="left"><br></td>
+		<td align="left"><br></td>
+		<td align="left"><br></td>
+	</tr>
+	<tr>
+		<td height="19" align="left"><br></td>
+		<td align="left"><br></td>
+		<td align="left"><br></td>
+	</tr>
+	<tr>
+		<td height="17" align="left"><br></td>
+		<td align="left"><br></td>
+		<td align="left"><br></td>
+	</tr>
+	<tr>
+		<td height="19" align="left"><br></td>
+		<td align="left"><br></td>
+		<td align="left"><br></td>
+	</tr>
+	<tr>
+		<td height="19" align="left"><br></td>
+		<td align="left"><br></td>
+		<td align="left"><br></td>
+	</tr>
+	<tr>
+		<td height="17" align="left"><br></td>
+		<td align="left" bgcolor="#FFFF00"><b>XJC ANT option</b></td>
+		<td align="left"><br></td>
+	</tr>
+	<tr>
+		<td height="17" align="left"><br></td>
+		<td align="left"><br></td>
+		<td align="left"><br></td>
+	</tr>
+	<tr>
+		<td height="17" align="right" bgcolor="#FFCC00" sdval="1" sdnum="16393;">1</td>
+		<td align="left" bgcolor="#3366FF">schema</td>
+		<td align="left">name of schema files to be compiled into java files</td>
+	</tr>
+	<tr>
+		<td height="17" align="right" bgcolor="#FFCC00" sdval="2" sdnum="16393;">2</td>
+		<td align="left">binding</td>
+		<td align="left">to say external binding files..</td>
+	</tr>
+	<tr>
+		<td height="17" align="right" bgcolor="#FFCC00" sdval="3" sdnum="16393;">3</td>
+		<td align="left" bgcolor="#3366FF">package</td>
+		<td align="left">java package path of generated java files</td>
+	</tr>
+	<tr>
+		<td height="17" align="right" bgcolor="#FFCC00" sdval="4" sdnum="16393;">4</td>
+		<td align="left" bgcolor="#3366FF">destdir</td>
+		<td align="left">destination directory of generated files</td>
+	</tr>
+	<tr>
+		<td height="17" align="right" bgcolor="#FFCC00" sdval="5" sdnum="16393;">5</td>
+		<td align="left">readonly</td>
+		<td align="left">generated Java files are read only by default</td>
+	</tr>
+	<tr>
+		<td height="17" align="right" bgcolor="#FFCC00" sdval="6" sdnum="16393;">6</td>
+		<td align="left">header</td>
+		<td align="left">html content in java file, the content will be the same schema type definition'</td>
+	</tr>
+	<tr>
+		<td height="17" align="right" bgcolor="#FFCC00" sdval="7" sdnum="16393;">7</td>
+		<td align="left">extension { no need }</td>
+		<td align="left"> it is implementing verdor extension of JAXB</td>
+	</tr>
+	<tr>
+		<td height="17" align="right" bgcolor="#FFCC00" sdval="8" sdnum="16393;">8</td>
+		<td align="left">catalog</td>
+		<td align="left"> never need</td>
+	</tr>
+	<tr>
+		<td height="17" align="right" bgcolor="#FFCC00" sdval="9" sdnum="16393;">9</td>
+		<td align="left">removeOldOutput</td>
+		<td align="left">it used with nested &lt;produce&gt; elemetn</td>
+	</tr>
+	<tr>
+		<td height="17" align="right" bgcolor="#FFCC00" sdval="10" sdnum="16393;">10</td>
+		<td align="left">source</td>
+		<td align="left"> say, version of XJC { never need }</td>
+	</tr>
+	<tr>
+		<td height="17" align="right" bgcolor="#FFCC00" sdval="11" sdnum="16393;">11</td>
+		<td align="left">target</td>
+		<td align="left"> say, version of XJC { never need }</td>
+	</tr>
+	<tr>
+		<td height="17" align="right" bgcolor="#FFCC00" sdval="12" sdnum="16393;">12</td>
+		<td align="left">language</td>
+		<td align="left">XMLSCHEMA / WSDL</td>
+	</tr>
+	<tr>
+		<td height="17" align="left"><br></td>
+		<td align="left"><br></td>
+		<td align="left"><br></td>
+	</tr>
+	<tr>
+		<td height="17" align="left"><br></td>
+		<td align="left" bgcolor="#FFCC00"><b>XJC ANT Task nested element</b></td>
+		<td align="left"><br></td>
+	</tr>
+	<tr>
+		<td height="17" align="left"><br></td>
+		<td align="left">&lt;produces&gt; </td>
+		<td align="left">it is used with removeOldOutput option to delete previously generated java files .this is also used in up-to-date check with &lt;depends&gt; element if it is there</td>
+	</tr>
+	<tr>
+		<td height="17" align="left"><br></td>
+		<td align="left">&lt;classpath&gt;</td>
+		<td align="left">may need custom java type by customized binding</td>
+	</tr>
+	<tr>
+		<td height="17" align="left"><br></td>
+		<td align="left">&lt;binding&gt; </td>
+		<td align="left">if we used more than one external binding file used</td>
+	</tr>
+	<tr>
+		<td height="17" align="left"><br></td>
+		<td align="left">&lt;schema&gt;</td>
+		<td align="left">if we use more than one schema like import/include [ this element cannot be used if the same element used more than schema file]</td>
+	</tr>
+	<tr>
+		<td height="17" align="left"><br></td>
+		<td align="left">&lt;arg&gt;( no need )</td>
+		<td align="left">if need more say more option for XJC</td>
+	</tr>
+	<tr>
+		<td height="17" align="left"><br></td>
+		<td align="left">&lt;xmlcatelog&gt;</td>
+		<td align="left">it is used resolve entity reference</td>
+	</tr>
+	<tr>
+		<td height="19" align="left"><br></td>
+		<td align="left">&lt;depends&gt;</td>
+		<td align="left">for up-to-date  check on schemas / DTD. It is necessary to set if one schema import / include any other schema</td>
+	</tr>
+	<tr>
+		<td height="17" align="left"><br></td>
+		<td align="left"><br></td>
+		<td align="left"><br></td>
+	</tr>
+	<tr>
+		<td height="17" align="left"><br></td>
+		<td align="left" bgcolor="#FFCC00"><b>SchemaGEN ANT</b></td>
+		<td align="left"><br></td>
+	</tr>
+	<tr>
+		<td height="17" align="left"><br></td>
+		<td align="left">srcdir</td>
+		<td align="left"> source java file directories</td>
+	</tr>
+	<tr>
+		<td height="17" align="left"><br></td>
+		<td align="left">destdir</td>
+		<td align="left"> where to store generated Schema file</td>
+	</tr>
+	<tr>
+		<td height="17" align="left"><br></td>
+		<td align="left">classpath</td>
+		<td align="left"><br></td>
+	</tr>
+	<tr>
+		<td height="17" align="left"><br></td>
+		<td align="left">episode</td>
+		<td align="left"> ????</td>
+	</tr>
+	<tr>
+		<td height="17" align="left"><br></td>
+		<td align="left"><br></td>
+		<td align="left"><br></td>
+	</tr>
+	<tr>
+		<td height="17" align="left"><br></td>
+		<td align="left">&lt; schema &gt;</td>
+		<td align="left">say name of file name and namespace of elements</td>
+	</tr>
+	<tr>
+		<td height="17" align="left"><br></td>
+		<td align="left">&lt; classpath &gt;</td>
+		<td align="left"><br></td>
+	</tr>
+</table>
+<!-- ************************************************************************** -->
+<hr>
+<A NAME="table2"><h1>Sheet 3: <em>JAXB Schema cusotmiation</em></h1></A>
+<table cellspacing="0" border="0">
+	<colgroup width="146"></colgroup>
+	<colgroup width="228"></colgroup>
+	<colgroup width="237"></colgroup>
+	<colgroup width="346"></colgroup>
+	<colgroup width="183"></colgroup>
+	<tr>
+		<td height="17" align="left">External bindins is better because schema file has been written by some one and we can keep schema file as much as simple</td>
+		<td align="left"><br></td>
+		<td align="left"><br></td>
+		<td align="left"><br></td>
+		<td align="left"><br></td>
+	</tr>
+	<tr>
+		<td height="17" align="left">while customising, don’t  or avoid for innner class bean. This will not easy to understand or debug. There is no any performance difference b/w inner and outer class</td>
+		<td align="left"><br></td>
+		<td align="left"><br></td>
+		<td align="left"><br></td>
+		<td align="left"><br></td>
+	</tr>
+	<tr>
+		<td height="17" align="left">so, getting into a level another level go for separate Bean instead of Inner class</td>
+		<td align="left"><br></td>
+		<td align="left"><br></td>
+		<td align="left"><br></td>
+		<td align="left"><br></td>
+	</tr>
+	<tr>
+		<td height="17" align="left"><br></td>
+		<td align="left"><br></td>
+		<td align="left"><br></td>
+		<td align="left"><br></td>
+		<td align="left"><br></td>
+	</tr>
+	<tr>
+		<td height="17" align="left"><br></td>
+		<td align="left"><br></td>
+		<td align="left"><br></td>
+		<td align="left"><br></td>
+		<td align="left"><br></td>
+	</tr>
+	<tr>
+		<td height="17" align="left" bgcolor="#FFFF00"><b>Tag</b></td>
+		<td align="left" bgcolor="#FFFF00"><b><br></b></td>
+		<td align="left" bgcolor="#FFFF00"><b><br></b></td>
+		<td align="left" bgcolor="#FFFF99"><b>possible values</b></td>
+		<td align="left"><b><br></b></td>
+	</tr>
+	<tr>
+		<td height="17" align="left"><br></td>
+		<td align="left"><br></td>
+		<td align="left"><br></td>
+		<td align="left"><br></td>
+		<td align="left"><br></td>
+	</tr>
+	<tr>
+		<td height="18" align="left" bgcolor="#99CCFF"><font face="Courier New" color="#000000">&lt;globalBindings&gt;</font></td>
+		<td style="border-top: 1px solid #1a1a1a; border-bottom: 1px solid #1a1a1a; border-left: 1px solid #1a1a1a; border-right: 1px solid #1a1a1a" align="left" bgcolor="#FFFF00">fixedAttributeAsConstantProperty</td>
+		<td align="left"><br></td>
+		<td align="left" bgcolor="#99CCFF">true/false/1/0</td>
+		<td align="left">this cannot be apply to element</td>
+	</tr>
+	<tr>
+		<td height="18" align="left" bgcolor="#99CCFF"><font face="Courier New" color="#000000"><br></font></td>
+		<td style="border-top: 1px solid #1a1a1a; border-bottom: 1px solid #1a1a1a; border-left: 1px solid #1a1a1a; border-right: 1px solid #1a1a1a" align="left" bgcolor="#FFFF00">collectionType</td>
+		<td align="left"><br></td>
+		<td align="left">if we give non-List type, wont give any error while compilation. But generated java files will give compilation error</td>
+		<td align="left"><br></td>
+	</tr>
+	<tr>
+		<td height="18" align="left" bgcolor="#99CCFF"><font face="Courier New" color="#000000"><br></font></td>
+		<td style="border-top: 1px solid #1a1a1a; border-bottom: 1px solid #1a1a1a; border-left: 1px solid #1a1a1a; border-right: 1px solid #1a1a1a" align="left" bgcolor="#FFFF00"><b>typesafeEnumBase</b></td>
+		<td align="left"><font color="#0000FF">use this instead of &lt;typesafeEnumClass&gt; as much as possible. This is good and easy to update</font></td>
+		<td align="left" bgcolor="#99CCFF"><font face="Courier New" color="#000000"><br></font></td>
+		<td align="left">base type of enumerated simple type</td>
+	</tr>
+	<tr>
+		<td height="18" align="left" bgcolor="#99CCFF"><font face="Courier New" color="#000000"><br></font></td>
+		<td style="border-top: 1px solid #1a1a1a; border-bottom: 1px solid #1a1a1a; border-left: 1px solid #1a1a1a; border-right: 1px solid #1a1a1a" align="left" bgcolor="#FFFF00">choiceContentProperty</td>
+		<td align="left"><i>try to get familier with this property</i></td>
+		<td align="left" bgcolor="#99CCFF">true/false/1/0</td>
+		<td align="left"><br></td>
+	</tr>
+	<tr>
+		<td height="18" align="left" bgcolor="#99CCFF"><font face="Courier New" color="#000000"><br></font></td>
+		<td style="border-top: 1px solid #1a1a1a; border-bottom: 1px solid #1a1a1a; border-left: 1px solid #1a1a1a; border-right: 1px solid #1a1a1a" align="left" bgcolor="#FFFF00"><b>typesafeEnumMemberName</b></td>
+		<td align="left"><br></td>
+		<td align="left" bgcolor="#99CCFF">generateName/ generateError</td>
+		<td align="left"><br></td>
+	</tr>
+	<tr>
+		<td height="19" align="left" bgcolor="#99CCFF"><font face="Courier New" color="#000000"><br></font></td>
+		<td style="border-top: 1px solid #1a1a1a; border-bottom: 1px solid #1a1a1a; border-left: 1px solid #1a1a1a; border-right: 1px solid #1a1a1a" align="left" bgcolor="#FFFF00"><b>typesafeEnumMaxMembers</b></td>
+		<td align="left"><br></td>
+		<td align="left" bgcolor="#99CCFF">0 – mean, never generate Enum for constants</td>
+		<td align="left"><br></td>
+	</tr>
+	<tr>
+		<td height="18" align="left" bgcolor="#99CCFF"><font face="Courier New" color="#000000"><br></font></td>
+		<td style="border-top: 1px solid #1a1a1a; border-bottom: 1px solid #1a1a1a; border-left: 1px solid #1a1a1a; border-right: 1px solid #1a1a1a" align="left" bgcolor="#FFFF00">enableFailFastCheck</td>
+		<td align="left"><i>not yet implemented by JAXB</i></td>
+		<td align="left" bgcolor="#99CCFF">true/false/1/0</td>
+		<td align="left"><br></td>
+	</tr>
+	<tr>
+		<td height="18" align="left" bgcolor="#99CCFF"><font face="Courier New" color="#000000"><br></font></td>
+		<td style="border-top: 1px solid #1a1a1a; border-bottom: 1px solid #1a1a1a; border-left: 1px solid #1a1a1a; border-right: 1px solid #1a1a1a" align="left" bgcolor="#FFFF00">generateIsSetMethod</td>
+		<td align="left"><br></td>
+		<td align="left" bgcolor="#99CCFF">true/false/1/0</td>
+		<td align="left"><br></td>
+	</tr>
+	<tr>
+		<td height="18" align="left" bgcolor="#99CCFF"><font face="Courier New" color="#000000"><br></font></td>
+		<td style="border-top: 1px solid #1a1a1a; border-bottom: 1px solid #1a1a1a; border-left: 1px solid #1a1a1a; border-right: 1px solid #1a1a1a" align="left" bgcolor="#FFFF00">underscoreBinding</td>
+		<td align="left"><br></td>
+		<td align="left" bgcolor="#99CCFF"><font face="Courier New" color="#000000">asWordSeparator/asCharInWord</font></td>
+		<td align="left"><br></td>
+	</tr>
+	<tr>
+		<td height="18" align="left" bgcolor="#99CCFF"><font face="Courier New" color="#000000"><br></font></td>
+		<td style="border-top: 1px solid #1a1a1a; border-bottom: 1px solid #1a1a1a; border-left: 1px solid #1a1a1a; border-right: 1px solid #1a1a1a" align="left" bgcolor="#FFFF00"><font face="Courier New" color="#000000">enableJavaNamingConventions </font></td>
+		<td align="left"><br></td>
+		<td align="left" bgcolor="#99CCFF">true/false/1/0</td>
+		<td align="left"><br></td>
+	</tr>
+	<tr>
+		<td height="18" align="left" bgcolor="#99CCFF"><font face="Courier New" color="#000000"><br></font></td>
+		<td style="border-top: 1px solid #1a1a1a; border-bottom: 1px solid #1a1a1a; border-left: 1px solid #1a1a1a; border-right: 1px solid #1a1a1a" align="left" bgcolor="#FFFF00"><font face="Courier New" color="#000000">bindingStyle </font></td>
+		<td align="left"><br></td>
+		<td align="left" bgcolor="#99CCFF">elementBinding/ modelGroupBinding</td>
+		<td align="left"><br></td>
+	</tr>
+	<tr>
+		<td height="18" align="left" bgcolor="#99CCFF"><font face="Courier New" color="#000000"><br></font></td>
+		<td style="border-top: 1px solid #1a1a1a; border-bottom: 1px solid #1a1a1a; border-left: 1px solid #1a1a1a; border-right: 1px solid #1a1a1a" align="left" bgcolor="#99CCFF"><font face="Courier New" color="#000000">&lt;javaType&gt; *</font></td>
+		<td align="left" bgcolor="#99CCFF"><br></td>
+		<td align="left" bgcolor="#99CCFF"><br></td>
+		<td align="left"><br></td>
+	</tr>
+	<tr>
+		<td style="border-top: 1px solid #1a1a1a; border-bottom: 1px solid #1a1a1a; border-left: 1px solid #1a1a1a; border-right: 1px solid #1a1a1a" height="17" align="left" bgcolor="#CCFFCC">&lt;schemaBindings&gt;</td>
+		<td align="left" bgcolor="#CCFFCC"><br></td>
+		<td align="left" bgcolor="#CCFFCC"><br></td>
+		<td align="left" bgcolor="#CCFFCC"><br></td>
+		<td align="left"><br></td>
+	</tr>
+	<tr>
+		<td height="20" align="left" bgcolor="#CCFFCC"><font face="Courier New" color="#000000"><br></font></td>
+		<td style="border-top: 1px solid #1a1a1a; border-bottom: 1px solid #1a1a1a; border-left: 1px solid #1a1a1a; border-right: 1px solid #1a1a1a" align="left" bgcolor="#CCFFCC"><font face="Arial Unicode MS" color="#000000">&lt;package&gt;  </font></td>
+		<td style="border-top: 1px solid #1a1a1a; border-bottom: 1px solid #1a1a1a; border-left: 1px solid #1a1a1a; border-right: 1px solid #1a1a1a" align="left" bgcolor="#FFFF00">name </td>
+		<td align="left" bgcolor="#CCFFCC">name of package</td>
+		<td align="left"><br></td>
+	</tr>
+	<tr>
+		<td height="20" align="left" bgcolor="#CCFFCC"><font face="Courier New" color="#000000"><br></font></td>
+		<td style="border-top: 1px solid #1a1a1a; border-bottom: 1px solid #1a1a1a; border-left: 1px solid #1a1a1a; border-right: 1px solid #1a1a1a" align="left" bgcolor="#CCFFCC"><font face="Arial Unicode MS" color="#000000"><br></font></td>
+		<td style="border-top: 1px solid #1a1a1a; border-bottom: 1px solid #1a1a1a; border-left: 1px solid #1a1a1a; border-right: 1px solid #1a1a1a" align="left" bgcolor="#CCFFCC">&lt;javadoc&gt;</td>
+		<td align="left" bgcolor="#C0C0C0"><font face="Arial Unicode MS" color="#000000">enter the comments inside of &lt;![CDATA[ ]]&gt;. It is JAXB 2.0 requirment and this &lt;package&gt; element only need its &lt;javadoc&gt; should be &lt;body&gt;</font></td>
+		<td align="left"><br></td>
+	</tr>
+	<tr>
+		<td height="20" align="left" bgcolor="#CCFFCC"><font face="Courier New" color="#000000"><br></font></td>
+		<td style="border-top: 1px solid #1a1a1a; border-bottom: 1px solid #1a1a1a; border-left: 1px solid #1a1a1a; border-right: 1px solid #1a1a1a" align="left" bgcolor="#CCFFCC"><font face="Arial Unicode MS" color="#000000">&lt;nameXmlTransform&gt; *</font></td>
+		<td align="left"><i><br></i></td>
+		<td align="left" bgcolor="#CCFFCC"><br></td>
+		<td align="left"><br></td>
+	</tr>
+	<tr>
+		<td height="20" align="left" bgcolor="#CCFFCC"><font face="Courier New" color="#000000"><br></font></td>
+		<td align="left" bgcolor="#CCFFCC"><font face="Courier New" color="#000000"><br></font></td>
+		<td style="border-top: 1px solid #1a1a1a; border-bottom: 1px solid #1a1a1a; border-left: 1px solid #1a1a1a; border-right: 1px solid #1a1a1a" align="left" bgcolor="#CCFFCC"><font face="Arial Unicode MS" color="#000000">&lt;typeName &gt;</font></td>
+		<td style="border-top: 1px solid #1a1a1a; border-bottom: 1px solid #1a1a1a; border-left: 1px solid #1a1a1a; border-right: 1px solid #1a1a1a" align="left" bgcolor="#CCFFCC">prefix / suffix</td>
+		<td align="left"><br></td>
+	</tr>
+	<tr>
+		<td height="20" align="left" bgcolor="#CCFFCC"><font face="Courier New" color="#000000"><br></font></td>
+		<td align="left" bgcolor="#CCFFCC"><font face="Courier New" color="#000000"><br></font></td>
+		<td style="border-top: 1px solid #1a1a1a; border-bottom: 1px solid #1a1a1a; border-left: 1px solid #1a1a1a; border-right: 1px solid #1a1a1a" align="left" bgcolor="#CCFFCC"><font face="Arial Unicode MS" color="#000000">&lt;elementName&gt;</font></td>
+		<td style="border-top: 1px solid #1a1a1a; border-bottom: 1px solid #1a1a1a; border-left: 1px solid #1a1a1a; border-right: 1px solid #1a1a1a" align="left" bgcolor="#CCFFCC">prefix / suffix</td>
+		<td align="left"><br></td>
+	</tr>
+	<tr>
+		<td height="20" align="left" bgcolor="#CCFFCC"><font face="Courier New" color="#000000"><br></font></td>
+		<td align="left" bgcolor="#CCFFCC"><font face="Courier New" color="#000000"><br></font></td>
+		<td style="border-top: 1px solid #1a1a1a; border-bottom: 1px solid #1a1a1a; border-left: 1px solid #1a1a1a; border-right: 1px solid #1a1a1a" align="left" bgcolor="#CCFFCC"><font face="Arial Unicode MS" color="#000000">&lt;modelGroupName&gt;</font></td>
+		<td style="border-top: 1px solid #1a1a1a; border-bottom: 1px solid #1a1a1a; border-left: 1px solid #1a1a1a; border-right: 1px solid #1a1a1a" align="left" bgcolor="#CCFFCC">prefix / suffix</td>
+		<td align="left"><br></td>
+	</tr>
+	<tr>
+		<td height="20" align="left" bgcolor="#CCFFCC"><font face="Courier New" color="#000000"><br></font></td>
+		<td align="left" bgcolor="#CCFFCC"><font face="Courier New" color="#000000"><br></font></td>
+		<td style="border-top: 1px solid #1a1a1a; border-bottom: 1px solid #1a1a1a; border-left: 1px solid #1a1a1a; border-right: 1px solid #1a1a1a" align="left" bgcolor="#CCFFCC"><font face="Arial Unicode MS" color="#000000">&lt;anonymousTypeName&gt;</font></td>
+		<td style="border-top: 1px solid #1a1a1a; border-bottom: 1px solid #1a1a1a; border-left: 1px solid #1a1a1a; border-right: 1px solid #1a1a1a" align="left" bgcolor="#CCFFCC">prefix / suffix</td>
+		<td align="left"><br></td>
+	</tr>
+	<tr>
+		<td height="20" align="left" bgcolor="#CCFFCC"><font face="Courier New" color="#000000"><br></font></td>
+		<td align="left" bgcolor="#CCFFCC"><font face="Courier New" color="#000000"><br></font></td>
+		<td align="left" bgcolor="#CCFFCC"><font face="Arial Unicode MS" color="#000000"><br></font></td>
+		<td align="left" bgcolor="#CCFFCC"><br></td>
+		<td align="left"><br></td>
+	</tr>
+	<tr>
+		<td height="20" align="left" bgcolor="#CC99FF"><font face="Courier New" color="#000000">&lt;class&gt;</font></td>
+		<td style="border-top: 1px solid #1a1a1a; border-bottom: 1px solid #1a1a1a; border-left: 1px solid #1a1a1a; border-right: 1px solid #1a1a1a" align="left" bgcolor="#FFFF00"><font face="Arial Unicode MS" color="#000000">name</font></td>
+		<td align="left"><br></td>
+		<td align="left"><br></td>
+		<td align="left"><br></td>
+	</tr>
+	<tr>
+		<td height="20" align="left" bgcolor="#CC99FF"><font face="Courier New" color="#000000"><br></font></td>
+		<td style="border-top: 1px solid #1a1a1a; border-bottom: 1px solid #1a1a1a; border-left: 1px solid #1a1a1a; border-right: 1px solid #1a1a1a" align="left" bgcolor="#FFFF00"><font face="Courier New" color="#000000">implClass</font></td>
+		<td align="left"><font face="Arial Unicode MS" color="#000000">use this to supply own class to be used instead of generating new class for a complexType</font></td>
+		<td align="left"><i><br></i></td>
+		<td align="left"><br></td>
+	</tr>
+	<tr>
+		<td height="20" align="left" bgcolor="#CC99FF"><font face="Courier New" color="#000000"><br></font></td>
+		<td style="border-top: 1px solid #1a1a1a; border-bottom: 1px solid #1a1a1a; border-left: 1px solid #1a1a1a; border-right: 1px solid #1a1a1a" align="left" bgcolor="#CC99FF"><font face="Courier New" color="#000000">&lt;javadoc&gt;</font></td>
+		<td align="left"><font face="Arial Unicode MS" color="#000000"><br></font></td>
+		<td align="left"><br></td>
+		<td align="left"><br></td>
+	</tr>
+	<tr>
+		<td style="border-top: 1px solid #1a1a1a; border-bottom: 1px solid #1a1a1a; border-left: 1px solid #1a1a1a; border-right: 1px solid #1a1a1a" height="20" align="left" bgcolor="#C0C0C0"><font face="Courier New" color="#000000">&lt;property&gt;</font></td>
+		<td align="left" bgcolor="#C0C0C0"><font face="Courier New" color="#000000"><br></font></td>
+		<td align="left" bgcolor="#C0C0C0"><font face="Arial Unicode MS" color="#000000"><br></font></td>
+		<td align="left"><br></td>
+		<td align="left"><br></td>
+	</tr>
+	<tr>
+		<td height="20" align="left" bgcolor="#C0C0C0"><font face="Courier New" color="#000000"><br></font></td>
+		<td style="border-top: 1px solid #1a1a1a; border-bottom: 1px solid #1a1a1a; border-left: 1px solid #1a1a1a; border-right: 1px solid #1a1a1a" align="left" bgcolor="#FFFF00"><font face="Courier New" color="#000000">name </font></td>
+		<td align="left" bgcolor="#C0C0C0"><font face="Arial Unicode MS" color="#000000"><br></font></td>
+		<td align="left"><br></td>
+		<td align="left"><br></td>
+	</tr>
+	<tr>
+		<td height="20" align="left" bgcolor="#C0C0C0"><font face="Courier New" color="#000000"><br></font></td>
+		<td style="border-top: 1px solid #1a1a1a; border-bottom: 1px solid #1a1a1a; border-left: 1px solid #1a1a1a; border-right: 1px solid #1a1a1a" align="left" bgcolor="#FFFF00"><font face="Courier New" color="#000000">collectionType </font></td>
+		<td align="left" bgcolor="#C0C0C0"><font face="Arial Unicode MS" color="#000000"><br></font></td>
+		<td align="left"><br></td>
+		<td align="left"><br></td>
+	</tr>
+	<tr>
+		<td height="36" align="left" bgcolor="#C0C0C0"><font face="Courier New" color="#000000"><br></font></td>
+		<td style="border-top: 1px solid #1a1a1a; border-bottom: 1px solid #1a1a1a; border-left: 1px solid #1a1a1a; border-right: 1px solid #1a1a1a" align="left" bgcolor="#FFFF00"><font face="Courier New" color="#000000">fixedAttributeAsConstantProperty </font></td>
+		<td align="left" bgcolor="#C0C0C0"><font face="Arial Unicode MS" color="#000000"><br></font></td>
+		<td align="left">this can be applied only for attribute . Cannot apply for element</td>
+		<td align="left"><br></td>
+	</tr>
+	<tr>
+		<td height="20" align="left" bgcolor="#C0C0C0"><font face="Courier New" color="#000000"><br></font></td>
+		<td style="border-top: 1px solid #1a1a1a; border-bottom: 1px solid #1a1a1a; border-left: 1px solid #1a1a1a; border-right: 1px solid #1a1a1a" align="left" bgcolor="#FFFF00"><font face="Courier New" color="#000000">generateIsSetMethod </font></td>
+		<td align="left" bgcolor="#C0C0C0"><font face="Arial Unicode MS" color="#000000"><br></font></td>
+		<td align="left"><br></td>
+		<td align="left"><br></td>
+	</tr>
+	<tr>
+		<td height="18" align="left" bgcolor="#C0C0C0"><font face="Courier New" color="#000000"><br></font></td>
+		<td style="border-top: 1px solid #1a1a1a; border-bottom: 1px solid #1a1a1a; border-left: 1px solid #1a1a1a; border-right: 1px solid #1a1a1a" align="left" bgcolor="#FFFF00"><font face="Courier New" color="#000000">enableFailFastCheck </font></td>
+		<td align="left"><i>not yet implemented by JAXB</i></td>
+		<td align="left"><br></td>
+		<td align="left"><br></td>
+	</tr>
+	<tr>
+		<td height="20" align="left" bgcolor="#C0C0C0"><font face="Courier New" color="#000000"><br></font></td>
+		<td style="border-top: 1px solid #1a1a1a; border-bottom: 1px solid #1a1a1a; border-left: 1px solid #1a1a1a; border-right: 1px solid #1a1a1a" align="left" bgcolor="#C0C0C0"><font face="Courier New" color="#000000">&lt;baseType&gt;</font></td>
+		<td align="left" bgcolor="#C0C0C0"><font face="Arial Unicode MS" color="#000000"><br></font></td>
+		<td align="left" bgcolor="#FF0000"><i>not sure</i></td>
+		<td align="left"><br></td>
+	</tr>
+	<tr>
+		<td height="18" align="left" bgcolor="#C0C0C0"><font face="Courier New" color="#000000"><br></font></td>
+		<td style="border-top: 1px solid #1a1a1a; border-bottom: 1px solid #1a1a1a; border-left: 1px solid #1a1a1a; border-right: 1px solid #1a1a1a" align="left" bgcolor="#C0C0C0"><font face="Courier New" color="#000000"><br></font></td>
+		<td style="border-top: 1px solid #1a1a1a; border-bottom: 1px solid #1a1a1a; border-left: 1px solid #1a1a1a; border-right: 1px solid #1a1a1a" align="left" bgcolor="#C0C0C0"><font face="Courier New" color="#000000">&lt;javaType&gt;</font></td>
+		<td align="left"><br></td>
+		<td align="left"><br></td>
+	</tr>
+	<tr>
+		<td height="20" align="left" bgcolor="#C0C0C0"><font face="Courier New" color="#000000"><br></font></td>
+		<td style="border-top: 1px solid #1a1a1a; border-bottom: 1px solid #1a1a1a; border-left: 1px solid #1a1a1a; border-right: 1px solid #1a1a1a" align="left" bgcolor="#C0C0C0"><font face="Courier New" color="#000000">&lt;javadoc&gt;</font></td>
+		<td align="left" bgcolor="#C0C0C0"><font face="Arial Unicode MS" color="#000000">enter the comments inside of &lt;![CDATA[ ]]&gt;. It is JAXB 2.0 requirment</font></td>
+		<td align="left"><br></td>
+		<td align="left"><br></td>
+	</tr>
+	<tr>
+		<td height="40" align="left" bgcolor="#FFCC00"><font face="Courier New" color="#000000">&lt;javaType&gt;</font></td>
+		<td align="left" bgcolor="#FFCC00"><font face="Courier New" color="#000000"><br></font></td>
+		<td align="left"><font face="Arial Unicode MS" color="#000000">used for map the java type with xml schema type</font></td>
+		<td align="left"><br></td>
+		<td align="left"><br></td>
+	</tr>
+	<tr>
+		<td height="20" align="left" bgcolor="#FFCC00"><font face="Courier New" color="#000000"><br></font></td>
+		<td align="left" bgcolor="#FFCC00"><font face="Arial Unicode MS" color="#000000">name</font></td>
+		<td align="left"><font face="Arial Unicode MS" color="#000000"><br></font></td>
+		<td align="left"><br></td>
+		<td align="left"><br></td>
+	</tr>
+	<tr>
+		<td height="20" align="left" bgcolor="#FFCC00"><font face="Courier New" color="#000000"><br></font></td>
+		<td align="left" bgcolor="#FFCC00"><font face="Courier New" color="#000000">xmlType</font></td>
+		<td align="left"><font face="Arial Unicode MS" color="#000000"><br></font></td>
+		<td align="left"><br></td>
+		<td align="left"><br></td>
+	</tr>
+	<tr>
+		<td height="20" align="left" bgcolor="#FFCC00"><font face="Courier New" color="#000000"><br></font></td>
+		<td align="left" bgcolor="#FFCC00"><font face="Courier New" color="#000000">hasNsContext </font></td>
+		<td align="left"><font face="Arial Unicode MS" color="#000000"> true / false</font></td>
+		<td align="left"><br></td>
+		<td align="left"><br></td>
+	</tr>
+	<tr>
+		<td height="20" align="left" bgcolor="#FFCC00"><font face="Courier New" color="#000000"><br></font></td>
+		<td align="left" bgcolor="#FFCC00"><font face="Arial Unicode MS" color="#000000">parseMethod</font></td>
+		<td align="left">those customized class must be in classpath of ant execution ( so, make a jar for customized data type converter file )</td>
+		<td align="left"><br></td>
+		<td align="left"><br></td>
+	</tr>
+	<tr>
+		<td height="20" align="left" bgcolor="#FFCC00"><font face="Courier New" color="#000000"><br></font></td>
+		<td align="left" bgcolor="#FFCC00"><font face="Arial Unicode MS" color="#000000">printMethod</font></td>
+		<td align="left"><font face="Arial Unicode MS" color="#000000">those customized class must be in classpath of ant execution ( so, make a jar for customized data type converter file )</font></td>
+		<td align="left"><br></td>
+		<td align="left"><br></td>
+	</tr>
+	<tr>
+		<td height="20" align="left" bgcolor="#FF99CC"><font face="Courier New" color="#000000">&lt;typesafeEnumClass&gt;  </font></td>
+		<td align="left" bgcolor="#FFCC99"><font face="Courier New" color="#000000"><br></font></td>
+		<td align="left"><font face="Arial Unicode MS" color="#000000">used only for simpletype with enumeration facts</font></td>
+		<td align="left"><br></td>
+		<td align="left"><br></td>
+	</tr>
+	<tr>
+		<td height="20" align="left" bgcolor="#FFCC99"><font face="Courier New" color="#000000"><br></font></td>
+		<td align="left" bgcolor="#FFFF00"><font face="Arial Unicode MS" color="#000000">name </font></td>
+		<td align="left"><font face="Arial Unicode MS" color="#000000"><br></font></td>
+		<td align="left"><br></td>
+		<td align="left"><br></td>
+	</tr>
+	<tr>
+		<td height="19" align="left" bgcolor="#FFCC99"><font face="Courier New" color="#000000"><br></font></td>
+		<td align="left" bgcolor="#FFFF00"><font face="Arial Unicode MS" color="#000000">map</font></td>
+		<td align="left"><font face="Arial Unicode MS" color="#000000">false/true. False will not use Enum for constants in java</font></td>
+		<td align="left"><br></td>
+		<td align="left"><br></td>
+	</tr>
+	<tr>
+		<td height="20" align="left" bgcolor="#FFCC99"><font face="Courier New" color="#000000"><br></font></td>
+		<td align="left" bgcolor="#FFCC99"><font face="Courier New" color="#000000">&lt;typesafeEnumMember&gt;*</font></td>
+		<td align="left"><font face="Arial Unicode MS" color="#000000"><br></font></td>
+		<td align="left"><br></td>
+		<td align="left"><br></td>
+	</tr>
+	<tr>
+		<td height="20" align="left" bgcolor="#FFCC99"><font face="Courier New" color="#000000"><br></font></td>
+		<td align="left" bgcolor="#FFCC99"><font face="Arial Unicode MS" color="#000000">&lt;javadoc&gt;</font></td>
+		<td align="left" bgcolor="#C0C0C0"><font face="Arial Unicode MS" color="#000000">enter the comments inside of &lt;![CDATA[ ]]&gt;. It is JAXB 2.0 requirment</font></td>
+		<td align="left"><br></td>
+		<td align="left"><br></td>
+	</tr>
+	<tr>
+		<td height="20" align="left" bgcolor="#FF99CC"><font face="Arial Unicode MS" color="#000000">&lt;typesafeEnumMember&gt; </font></td>
+		<td align="left" bgcolor="#FF99CC"><font face="Arial Unicode MS" color="#000000"><br></font></td>
+		<td align="left"><font face="Arial Unicode MS" color="#000000">have to use this only if need member name should be different from enumeration value, mostly no need to use this tag</font></td>
+		<td align="left"><br></td>
+		<td align="left"><br></td>
+	</tr>
+	<tr>
+		<td height="20" align="left" bgcolor="#FF99CC"><font face="Courier New" color="#000000"><br></font></td>
+		<td align="left" bgcolor="#FFFF00"><font face="Arial Unicode MS" color="#000000">name </font></td>
+		<td align="left"><font face="Arial Unicode MS" color="#000000"><br></font></td>
+		<td align="left"><br></td>
+		<td align="left"><br></td>
+	</tr>
+	<tr>
+		<td height="20" align="left" bgcolor="#FF99CC"><font face="Courier New" color="#000000"><br></font></td>
+		<td align="left" bgcolor="#FFFF00"><font face="Arial Unicode MS" color="#000000">value </font></td>
+		<td align="left"><i><font face="Arial Unicode MS" color="#000000">value attribute cannot be appear</font></i></td>
+		<td align="left"><br></td>
+		<td align="left"><br></td>
+	</tr>
+	<tr>
+		<td height="20" align="left" bgcolor="#FF99CC"><font face="Courier New" color="#000000"><br></font></td>
+		<td align="left" bgcolor="#FF99CC"><font face="Arial Unicode MS" color="#000000">&lt;javadoc&gt;</font></td>
+		<td align="left"><font face="Arial Unicode MS" color="#000000"><br></font></td>
+		<td align="left"><br></td>
+		<td align="left"><br></td>
+	</tr>
+	<tr>
+		<td height="19" align="left"><font face="Courier New" color="#000000"> &lt;Dom&gt;</font></td>
+		<td align="left"><font face="Arial Unicode MS" color="#000000"><br></font></td>
+		<td align="left"><font face="Arial Unicode MS" color="#000000"><br></font></td>
+		<td align="left"><br></td>
+		<td align="left"><br></td>
+	</tr>
+	<tr>
+		<td height="19" align="left"><font face="Courier New" color="#000000"><br></font></td>
+		<td align="left"><font face="Arial Unicode MS" color="#000000"><br></font></td>
+		<td align="left"><font face="Arial Unicode MS" color="#000000"><br></font></td>
+		<td align="left"><br></td>
+		<td align="left"><br></td>
+	</tr>
+	<tr>
+		<td height="19" align="left"><font face="Courier New" color="#000000"><br></font></td>
+		<td align="left"><font face="Arial Unicode MS" color="#000000"><br></font></td>
+		<td align="left"><font face="Arial Unicode MS" color="#000000"><br></font></td>
+		<td align="left"><br></td>
+		<td align="left"><br></td>
+	</tr>
+	<tr>
+		<td height="19" align="left"><font face="Courier New" color="#000000"><br></font></td>
+		<td align="left"><font face="Arial Unicode MS" color="#000000"><br></font></td>
+		<td align="left"><font face="Arial Unicode MS" color="#000000"><br></font></td>
+		<td align="left"><br></td>
+		<td align="left"><br></td>
+	</tr>
+	<tr>
+		<td height="19" align="left"><font face="Courier New" color="#000000"><br></font></td>
+		<td align="left"><font face="Arial Unicode MS" color="#000000"><br></font></td>
+		<td align="left"><font face="Arial Unicode MS" color="#000000"><br></font></td>
+		<td align="left"><br></td>
+		<td align="left"><br></td>
+	</tr>
+	<tr>
+		<td style="border-top: 1px solid #1a1a1a; border-bottom: 1px solid #1a1a1a; border-left: 1px solid #1a1a1a; border-right: 1px solid #1a1a1a" height="17" align="left">serializable</td>
+		<td align="left"><br></td>
+		<td align="left"><br></td>
+		<td align="left"><br></td>
+		<td align="left"><br></td>
+	</tr>
+	<tr>
+		<td style="border-top: 1px solid #1a1a1a; border-bottom: 1px solid #1a1a1a; border-left: 1px solid #1a1a1a; border-right: 1px solid #1a1a1a" height="17" align="left">smartWildcardDefaultBinding</td>
+		<td align="left"><br></td>
+		<td align="left"><br></td>
+		<td align="left"><br></td>
+		<td align="left"><br></td>
+	</tr>
+	<tr>
+		<td style="border-top: 1px solid #1a1a1a; border-bottom: 1px solid #1a1a1a; border-left: 1px solid #1a1a1a; border-right: 1px solid #1a1a1a" height="17" align="left"><br></td>
+		<td align="left"><br></td>
+		<td align="left"><br></td>
+		<td align="left"><br></td>
+		<td align="left"><br></td>
+	</tr>
+	<tr>
+		<td style="border-top: 1px solid #1a1a1a; border-bottom: 1px solid #1a1a1a; border-left: 1px solid #1a1a1a; border-right: 1px solid #1a1a1a" height="17" align="left"><br></td>
+		<td align="left"><br></td>
+		<td align="left"><br></td>
+		<td align="left"><br></td>
+		<td align="left"><br></td>
+	</tr>
+	<tr>
+		<td height="17" align="left"><br></td>
+		<td align="left"><br></td>
+		<td align="left"><br></td>
+		<td align="left"><br></td>
+		<td align="left"><br></td>
+	</tr>
+	<tr>
+		<td style="border-top: 1px solid #1a1a1a; border-bottom: 1px solid #1a1a1a; border-left: 1px solid #1a1a1a; border-right: 1px solid #1a1a1a" height="17" align="left"><br></td>
+		<td align="left"><br></td>
+		<td align="left"><br></td>
+		<td align="left"><br></td>
+		<td align="left"><br></td>
+	</tr>
+	<tr>
+		<td style="border-top: 1px solid #1a1a1a; border-bottom: 1px solid #1a1a1a; border-left: 1px solid #1a1a1a; border-right: 1px solid #1a1a1a" height="17" align="left"><br></td>
+		<td align="left"><br></td>
+		<td align="left"><br></td>
+		<td align="left"><br></td>
+		<td align="left"><br></td>
+	</tr>
+	<tr>
+		<td height="17" align="left"><br></td>
+		<td align="left"><br></td>
+		<td align="left"><br></td>
+		<td align="left"><br></td>
+		<td align="left"><br></td>
+	</tr>
+	<tr>
+		<td height="17" align="left"><br></td>
+		<td align="left"><br></td>
+		<td align="left"><br></td>
+		<td align="left"><br></td>
+		<td align="left"><br></td>
+	</tr>
+	<tr>
+		<td style="border-top: 1px solid #1a1a1a; border-bottom: 1px solid #1a1a1a; border-left: 1px solid #1a1a1a; border-right: 1px solid #1a1a1a" height="17" align="left"><br></td>
+		<td align="left"><br></td>
+		<td align="left"><br></td>
+		<td align="left"><br></td>
+		<td align="left"><br></td>
+	</tr>
+	<tr>
+		<td style="border-top: 1px solid #1a1a1a; border-bottom: 1px solid #1a1a1a; border-left: 1px solid #1a1a1a; border-right: 1px solid #1a1a1a" height="17" align="left"><br></td>
+		<td align="left"><br></td>
+		<td align="left"><br></td>
+		<td align="left"><br></td>
+		<td align="left"><br></td>
+	</tr>
+	<tr>
+		<td style="border-top: 1px solid #1a1a1a; border-bottom: 1px solid #1a1a1a; border-left: 1px solid #1a1a1a; border-right: 1px solid #1a1a1a" height="17" align="left"><br></td>
+		<td align="left"><br></td>
+		<td align="left"><br></td>
+		<td align="left"><br></td>
+		<td align="left"><br></td>
+	</tr>
+	<tr>
+		<td style="border-top: 1px solid #1a1a1a; border-bottom: 1px solid #1a1a1a; border-left: 1px solid #1a1a1a; border-right: 1px solid #1a1a1a" height="17" align="left"><br></td>
+		<td align="left"><br></td>
+		<td align="left"><br></td>
+		<td align="left"><br></td>
+		<td align="left"><br></td>
+	</tr>
+	<tr>
+		<td style="border-top: 1px solid #1a1a1a; border-bottom: 1px solid #1a1a1a; border-left: 1px solid #1a1a1a; border-right: 1px solid #1a1a1a" height="17" align="left"><br></td>
+		<td align="left"><br></td>
+		<td align="left"><br></td>
+		<td align="left"><br></td>
+		<td align="left"><br></td>
+	</tr>
+	<tr>
+		<td style="border-top: 1px solid #1a1a1a; border-bottom: 1px solid #1a1a1a; border-left: 1px solid #1a1a1a; border-right: 1px solid #1a1a1a" height="17" align="left"><br></td>
+		<td align="left"><br></td>
+		<td align="left"><br></td>
+		<td align="left"><br></td>
+		<td align="left"><br></td>
+	</tr>
+	<tr>
+		<td style="border-top: 1px solid #1a1a1a; border-bottom: 1px solid #1a1a1a; border-left: 1px solid #1a1a1a; border-right: 1px solid #1a1a1a" height="17" align="left"><br></td>
+		<td align="left"><br></td>
+		<td align="left"><br></td>
+		<td align="left"><br></td>
+		<td align="left"><br></td>
+	</tr>
+	<tr>
+		<td style="border-top: 1px solid #1a1a1a; border-bottom: 1px solid #1a1a1a; border-left: 1px solid #1a1a1a; border-right: 1px solid #1a1a1a" height="17" align="left"><br></td>
+		<td align="left"><br></td>
+		<td align="left"><br></td>
+		<td align="left"><br></td>
+		<td align="left"><br></td>
+	</tr>
+	<tr>
+		<td style="border-top: 1px solid #1a1a1a; border-bottom: 1px solid #1a1a1a; border-left: 1px solid #1a1a1a; border-right: 1px solid #1a1a1a" height="17" align="left"><br></td>
+		<td align="left"><br></td>
+		<td align="left"><br></td>
+		<td align="left"><br></td>
+		<td align="left"><br></td>
+	</tr>
+</table>
+<!-- ************************************************************************** -->
+<hr>
+<A NAME="table3"><h1>Sheet 4: <em>Step to customize</em></h1></A>
+<table cellspacing="0" border="0">
+	<colgroup width="26"></colgroup>
+	<colgroup width="986"></colgroup>
+	<tr>
+		<td height="17" align="left"><br></td>
+		<td align="left"><b><font color="#0000FF">Algrorithmic Steps of JAXB Customization</font></b></td>
+	</tr>
+	<tr>
+		<td height="17" align="left"><br></td>
+		<td align="left"><br></td>
+	</tr>
+	<tr>
+		<td height="17" align="right" sdval="1" sdnum="16393;">1</td>
+		<td align="left">Finish XML Schema</td>
+	</tr>
+	<tr>
+		<td height="17" align="right" sdval="2" sdnum="16393;">2</td>
+		<td align="left">write ANT script for compilation of xml Schema into java bean</td>
+	</tr>
+	<tr>
+		<td height="17" align="right" sdval="3" sdnum="16393;">3</td>
+		<td align="left">customize the &lt;globalBindings&gt; </td>
+	</tr>
+	<tr>
+		<td height="17" align="right" sdval="4" sdnum="16393;">4</td>
+		<td align="left">customize for &lt;schemaBinding&gt; for package </td>
+	</tr>
+	<tr>
+		<td height="17" align="right" sdval="5" sdnum="16393;">5</td>
+		<td align="left">customize class name</td>
+	</tr>
+	<tr>
+		<td height="17" align="right" sdval="6" sdnum="16393;">6</td>
+		<td align="left">check the mapping of xml schema elements with bean for every getting inner level of element</td>
+	</tr>
+	<tr>
+		<td height="17" align="right" sdval="7" sdnum="16393;">7</td>
+		<td align="left">write JavaDoc for java classes</td>
+	</tr>
+	<tr>
+		<td height="17" align="right" sdval="8" sdnum="16393;">8</td>
+		<td align="left">customize property name of class [ use any attiribute like generateIsSetMethod set to false &lt;property&gt; element if necessary . Better use globalbinding]</td>
+	</tr>
+	<tr>
+		<td height="17" align="right" sdval="9" sdnum="16393;">9</td>
+		<td align="left">use &lt;javaType&gt; to change default Data type mapping between java and xml</td>
+	</tr>
+	<tr>
+		<td height="17" align="right" sdval="10" sdnum="16393;">10</td>
+		<td align="left">write customized data type binding methds for wrapper. It can reduce creating BIG&lt;Wrapper&gt; objects. Mostly customize with built in methods instead of writing own class and methods</td>
+	</tr>
+	<tr>
+		<td height="17" align="right" sdval="11" sdnum="16393;">11</td>
+		<td align="left">customize simpleType for java enumeration if a simple type has only Enumeration facets</td>
+	</tr>
+	<tr>
+		<td height="17" align="right" sdval="13" sdnum="16393;">13</td>
+		<td align="left">customize &lt;xmlNameTransform&gt; with &lt;elementName&gt; with Suffix value as &quot;Element&quot;. It will increase readability of bean. Mostly root Bean will end with this Element</td>
+	</tr>
+	<tr>
+		<td height="17" align="right" sdval="15" sdnum="16393;">15</td>
+		<td align="left">if you want to javadoc should comes the JAXB binding tag palce all the binding element inside of &lt;!CDATA[ ]] &gt;</td>
+	</tr>
+	<tr>
+		<td height="17" align="right" sdval="16" sdnum="16393;">16</td>
+		<td align="left"><br></td>
+	</tr>
+</table>
+<!-- ************************************************************************** -->
+<hr>
+<A NAME="table4"><h1>Sheet 5: <em>External bindings</em></h1></A>
+<table cellspacing="0" border="0">
+	<colgroup width="73"></colgroup>
+	<colgroup width="117"></colgroup>
+	<colgroup width="156"></colgroup>
+	<colgroup width="67"></colgroup>
+	<tr>
+		<td height="17" align="left">&lt;bindings&gt;</td>
+		<td align="left" bgcolor="#FFFF00">version</td>
+		<td align="left" bgcolor="#FFFF00">xmlns</td>
+		<td align="left"><br></td>
+	</tr>
+	<tr>
+		<td height="17" align="left"><br></td>
+		<td align="left"><br></td>
+		<td align="left"><br></td>
+		<td align="left"><br></td>
+	</tr>
+	<tr>
+		<td height="17" align="left"><br></td>
+		<td align="left"><br></td>
+		<td align="left"><br></td>
+		<td align="left"><br></td>
+	</tr>
+	<tr>
+		<td height="17" align="left"><br></td>
+		<td align="left">&lt;bindings&gt;</td>
+		<td align="left" bgcolor="#FFFF00">schemaLocation</td>
+		<td align="left" bgcolor="#FFFF00">node</td>
+	</tr>
+	<tr>
+		<td height="17" align="left"><br></td>
+		<td align="left"><br></td>
+		<td align="left">&lt;globalBindings&gt;</td>
+		<td align="left"> it same as inline binding</td>
+	</tr>
+	<tr>
+		<td height="17" align="left"><br></td>
+		<td align="left"><br></td>
+		<td align="left">&lt;schemaBindings&gt;</td>
+		<td align="left"> it same as inline binding</td>
+	</tr>
+	<tr>
+		<td height="17" align="left"><br></td>
+		<td align="left"><br></td>
+		<td align="left">&lt;bindings&gt;</td>
+		<td align="left" bgcolor="#FFFF00">node</td>
+	</tr>
+	<tr>
+		<td height="17" align="left"><br></td>
+		<td align="left"><br></td>
+		<td align="left"><br></td>
+		<td align="left">&lt;class&gt;</td>
+	</tr>
+	<tr>
+		<td height="17" align="left"><br></td>
+		<td align="left"><br></td>
+		<td align="left"><br></td>
+		<td align="left"><br></td>
+	</tr>
+	<tr>
+		<td height="17" align="left"><br></td>
+		<td align="left"><br></td>
+		<td align="left">&lt;bindings&gt;</td>
+		<td align="left"><br></td>
+	</tr>
+	<tr>
+		<td height="17" align="left"><br></td>
+		<td align="left"><br></td>
+		<td align="left"><br></td>
+		<td align="left">&lt;javaType&gt;</td>
+	</tr>
+	<tr>
+		<td height="17" align="left"><br></td>
+		<td align="left"><br></td>
+		<td align="left">&lt;bindings&gt;</td>
+		<td align="left"><br></td>
+	</tr>
+	<tr>
+		<td height="17" align="left"><br></td>
+		<td align="left"><br></td>
+		<td align="left"><br></td>
+		<td align="left">&lt;property&gt;</td>
+	</tr>
+	<tr>
+		<td height="17" align="left"><br></td>
+		<td align="left"><br></td>
+		<td align="left">&lt;bindings&gt;</td>
+		<td align="left"><br></td>
+	</tr>
+	<tr>
+		<td height="17" align="left"><br></td>
+		<td align="left"><br></td>
+		<td align="left"><br></td>
+		<td align="left">&lt;typesafeEnumClass&gt;</td>
+	</tr>
+</table>
+<!-- ************************************************************************** -->
+<hr>
+<A NAME="table5"><h1>Sheet 6: <em>study frame</em></h1></A>
+<table cellspacing="0" border="0">
+	<colgroup width="94"></colgroup>
+	<colgroup width="178"></colgroup>
+	<colgroup width="168"></colgroup>
+	<colgroup width="201"></colgroup>
+	<colgroup width="148"></colgroup>
+	<tr>
+		<td height="17" align="right" sdval="39874" sdnum="16393;0;DD/MM/YYYY">02/03/2009</td>
+		<td align="right" sdval="0.652083333333333" sdnum="16393;0;HH:MM AM/PM">03:39 PM</td>
+		<td align="left"><br></td>
+		<td align="right" sdval="0.0833333333333333" sdnum="16393;0;HH:MM">02:00</td>
+		<td align="left">Unmarshaller</td>
+	</tr>
+	<tr>
+		<td height="17" align="right" sdval="39876" sdnum="16393;0;DD/MM/YYYY">04/03/2009</td>
+		<td align="right" sdval="0.599305555555556" sdnum="16393;0;HH:MM AM/PM">02:23 PM</td>
+		<td align="right" sdval="0.725694444444444" sdnum="16393;0;HH:MM AM/PM">05:25 PM</td>
+		<td align="right" sdval="0.0833333333333333" sdnum="16393;0;HH:MM">02:00</td>
+		<td align="left">Marshaller</td>
+	</tr>
+	<tr>
+		<td height="17" align="right" sdval="39876" sdnum="16393;0;DD/MM/YYYY">04/03/2009</td>
+		<td align="left"><br></td>
+		<td align="left"><br></td>
+		<td align="right" sdval="0.0833333333333333" sdnum="16393;0;HH:MM">02:00</td>
+		<td align="left">validationEventHanlder / ValidationEvent /validationEventLocator / ValidationEventCollector</td>
+	</tr>
+	<tr>
+		<td height="17" align="right" sdval="39876" sdnum="16393;0;DD/MM/YYYY">04/03/2009</td>
+		<td align="left"><br></td>
+		<td align="right" sdval="0.948611111111111" sdnum="16393;0;HH:MM AM/PM">10:46 PM</td>
+		<td align="right" sdval="0.0208333333333333" sdnum="16393;0;HH:MM">00:30</td>
+		<td align="left">Both listeners</td>
+	</tr>
+	<tr>
+		<td height="17" align="right" sdval="39877" sdnum="16393;0;DD/MM/YYYY">05/03/2009</td>
+		<td align="right" sdval="0.6375" sdnum="16393;0;HH:MM AM/PM">03:18 PM</td>
+		<td align="left"><br></td>
+		<td align="right" sdval="0.0208333333333333" sdnum="16393;0;HH:MM">00:30</td>
+		<td align="left">JAXBIntrospector</td>
+	</tr>
+	<tr>
+		<td height="17" align="right" sdval="39881" sdnum="16393;0;DD/MM/YYYY">09/03/2009</td>
+		<td align="right" sdval="0.818055555555556" sdnum="16393;0;HH:MM AM/PM">07:38 PM</td>
+		<td align="right" sdval="0.930555555555555" sdnum="16393;0;HH:MM AM/PM">10:20 PM</td>
+		<td align="right" sdval="0.0416666666666667" sdnum="16393;0;HH:MM">01:00</td>
+		<td align="left">JAXBElement&lt;t&gt;</td>
+	</tr>
+	<tr>
+		<td height="17" align="right" sdval="39882" sdnum="16393;0;DD/MM/YYYY">10/03/2009</td>
+		<td align="right" sdval="0.60625" sdnum="16393;0;HH:MM AM/PM">02:33 PM</td>
+		<td align="right" sdval="0.636111111111111" sdnum="16393;0;HH:MM AM/PM">03:16 PM</td>
+		<td align="right" sdval="0.0277777777777778" sdnum="16393;0;HH:MM">00:40</td>
+		<td align="left">JAXBResult / JAXBSource</td>
+	</tr>
+	<tr>
+		<td height="17" align="left"><br></td>
+		<td align="left"><br></td>
+		<td align="left"><br></td>
+		<td align="left"><br></td>
+		<td align="left"><br></td>
+	</tr>
+	<tr>
+		<td height="17" align="left"><br></td>
+		<td align="left"><br></td>
+		<td align="left"><br></td>
+		<td align="right" bgcolor="#FFFF00" sdval="0.361111111111111" sdnum="16393;0;HH:MM"><b><font color="#FF0000">08:40</font></b></td>
+		<td align="left"><br></td>
+	</tr>
+</table>
+<!-- ************************************************************************** -->
+</body>
+
+</html>

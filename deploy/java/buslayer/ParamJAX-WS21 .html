@@ -1,0 +1,1014 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+
+<html>
+<head>
+	
+	<meta http-equiv="content-type" content="text/html; charset=utf-8">
+	<title></title>
+	<meta name="generator" content="LibreOffice 4.2.8.2 (Linux)">
+	<meta name="author" content=" ">
+	<meta name="created" content="20080212;154352000000000">
+	<meta name="changed" content="20130830;203843000000000">
+	
+	<style type="text/css"><!-- 
+		body,div,table,thead,tbody,tfoot,tr,th,td,p { font-family:"Calibri"; font-size:x-small }
+		 -->
+	</style>
+	
+</head>
+
+<body text="#000000">
+<hr>
+	<p><center>
+		<h1>Overview</h1>
+		<A HREF="#table0">General</A><br>
+		<A HREF="#table1">End points</A><br>
+		<A HREF="#table2">Good practice</A><br>
+		<A HREF="#table7">WS-I and BP 1.0</A><br>
+		<A HREF="#table11">order of webservice development</A><br>
+		<A HREF="#table12">API</A><br>
+		<A HREF="#table13">Handler Chanin.xml</A><br>
+		<A HREF="#table14">Apache CXF</A><br>
+		
+	</center></p>
+<hr>
+<A NAME="table0"><h1>Sheet 1: <em>General</em></h1></A>
+<table align="left" cellspacing="0" border="0">
+	<colgroup width="35"></colgroup>
+	<colgroup width="670"></colgroup>
+	<colgroup width="146"></colgroup>
+	<colgroup width="182"></colgroup>
+	<colgroup width="88"></colgroup>
+	<colgroup span="3" width="79"></colgroup>
+	<tr>
+		<td height="20" align="left" valign=bottom><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom><font color="#000000">this was j2ee 1.3 and very first Java web service architecture</font></td>
+		<td align="left" valign=bottom><font color="#000000">JSR 109</font></td>
+		<td align="left" valign=bottom><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom><font color="#000000"><br></font></td>
+	</tr>
+	<tr>
+		<td height="20" align="left" valign=bottom><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom><font color="#000000">this is LATEST webserice specification and latest only of J2EE</font></td>
+		<td align="left" valign=bottom><font color="#000000">JSR 921</font></td>
+		<td align="left" valign=bottom><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom><font color="#000000"><br></font></td>
+	</tr>
+	<tr>
+		<td height="20" align="left" valign=bottom><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom><font color="#000000">this  is annotation based webservice develoopement</font></td>
+		<td align="left" valign=bottom><font color="#000000">JSR 181</font></td>
+		<td align="left" valign=bottom><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom><font color="#000000"><br></font></td>
+	</tr>
+	<tr>
+		<td height="20" align="left" valign=bottom><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom><font color="#000000">so even we develop webservice based on JSR 181, it has to convert to JSR 921 based then only it can be deployed</font></td>
+		<td align="left" valign=bottom><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom><font color="#000000"><br></font></td>
+	</tr>
+	<tr>
+		<td height="18" align="left" valign=bottom><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom><font color="#000000"><br></font></td>
+	</tr>
+	<tr>
+		<td height="18" align="left" valign=bottom><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom><font color="#000000"><br></font></td>
+	</tr>
+	<tr>
+		<td height="20" align="left" valign=bottom><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom><font color="#000000">servlet -released</font></td>
+		<td align="right" valign=bottom sdval="1997" sdnum="16393;"><font color="#000000">1997</font></td>
+		<td align="left" valign=bottom><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom><font color="#000000"><br></font></td>
+	</tr>
+	<tr>
+		<td height="20" align="left" valign=bottom><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom><font color="#000000">EJB - released</font></td>
+		<td align="right" valign=bottom sdval="1998" sdnum="16393;"><font color="#000000">1998</font></td>
+		<td align="left" valign=bottom><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom><font color="#000000"><br></font></td>
+	</tr>
+	<tr>
+		<td height="18" align="left" valign=bottom><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom><font color="#000000"><br></font></td>
+	</tr>
+	<tr>
+		<td height="20" align="left" valign=bottom><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom><font color="#000000">Web service</font></td>
+		<td align="left" valign=bottom><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom><font color="#000000"><br></font></td>
+	</tr>
+	<tr>
+		<td height="18" align="left" valign=bottom><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom><font color="#000000"><br></font></td>
+	</tr>
+	<tr>
+		<td height="20" align="left" valign=bottom><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom><font color="#000000">Four Parts</font></td>
+		<td align="left" valign=bottom><font color="#000000">XML 1.0</font></td>
+		<td align="left" valign=bottom><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom><font color="#000000"><br></font></td>
+	</tr>
+	<tr>
+		<td height="20" align="left" valign=bottom><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom><font color="#000000">SOAP 1.1</font></td>
+		<td align="left" valign=bottom><font color="#808080">SOAP 1.2</font></td>
+		<td align="left" valign=bottom><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom><font color="#000000"><br></font></td>
+	</tr>
+	<tr>
+		<td height="20" align="left" valign=bottom><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom><font color="#000000">WSDL 1.1</font></td>
+		<td align="left" valign=bottom><font color="#808080">WSDL 1.2</font></td>
+		<td align="left" valign=bottom><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom><font color="#000000"><br></font></td>
+	</tr>
+	<tr>
+		<td height="20" align="left" valign=bottom><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom><font color="#808080"><br></font></td>
+		<td align="left" valign=bottom><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom><font color="#000000"><br></font></td>
+	</tr>
+	<tr>
+		<td height="18" align="left" valign=bottom><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom><font color="#000000"><br></font></td>
+	</tr>
+	<tr>
+		<td height="20" align="left" valign=bottom><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom><font color="#000000">JEE</font></td>
+		<td align="left" valign=bottom><font color="#000000">JAX-WS 2.1</font></td>
+		<td align="left" valign=bottom><font color="#000000">it name is metro</font></td>
+		<td align="left" valign=bottom><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom><font color="#000000"><br></font></td>
+	</tr>
+	<tr>
+		<td height="20" align="left" valign=bottom><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom><font color="#000000">Act as back bone for webservice in J2EE ( like container for ejb )</font></td>
+		<td align="left" valign=bottom><font color="#000000">JAX-RPC 1.1</font></td>
+		<td align="left" valign=bottom><font color="#808080">JAX-RPC 1.0</font></td>
+		<td align="left" valign=bottom><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom><font color="#000000"><br></font></td>
+	</tr>
+	<tr>
+		<td height="20" align="left" valign=bottom><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom><font color="#000000">Used to process/create/send/create SOAP message. [ internally use DOM2]</font></td>
+		<td align="left" valign=bottom><font color="#000000">SAAJ</font></td>
+		<td align="left" valign=bottom><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom><font color="#000000"><br></font></td>
+	</tr>
+	<tr>
+		<td height="18" align="left" valign=bottom><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom><font color="#000000"><br></font></td>
+	</tr>
+	<tr>
+		<td height="18" align="right" valign=bottom sdval="1" sdnum="16393;"><font color="#000000">1</font></td>
+		<td align="left" valign=bottom><font color="#000000">it generate JAXB artificats, schema types from Service Enpoint Interface, WSDL</font></td>
+		<td align="left" valign=bottom><font color="#000000">wsgen</font></td>
+		<td align="left" valign=bottom><font color="#000000">-keep</font></td>
+		<td align="left" valign=bottom><font color="#000000">-cp</font></td>
+		<td align="left" valign=bottom><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom><font color="#000000"><br></font></td>
+	</tr>
+	<tr>
+		<td height="18" align="right" valign=bottom sdval="2" sdnum="16393;"><font color="#000000">2</font></td>
+		<td align="left" valign=bottom><font color="#000000">Generate client AND service implementation, JAXB 2.1 classes from given WSDL</font></td>
+		<td align="left" valign=bottom><font color="#000000">wsimport</font></td>
+		<td align="left" valign=bottom><font color="#000000">-keep</font></td>
+		<td align="left" valign=bottom><font color="#000000">-p</font></td>
+		<td align="left" valign=bottom><font color="#000000">-b</font></td>
+		<td align="left" valign=bottom><font color="#000000">-extension</font></td>
+		<td align="left" valign=bottom><font color="#000000">-d</font></td>
+	</tr>
+	<tr>
+		<td height="18" align="left" valign=bottom><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom><font color="#000000">to monitor http request and response</font></td>
+		<td align="left" valign=bottom><font color="#000000">tcpmon</font></td>
+		<td align="left" valign=bottom><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom><font color="#000000"><br></font></td>
+	</tr>
+	<tr>
+		<td height="18" align="left" valign=bottom><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom><font color="#000000"><br></font></td>
+	</tr>
+	<tr>
+		<td height="18" align="left" valign=bottom><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom><font color="#000000"><br></font></td>
+	</tr>
+	<tr>
+		<td height="18" align="left" valign=bottom><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom><font color="#000000">Old to generate client for a webservice from given WSDL</font></td>
+		<td align="left" valign=bottom><font color="#000000">wsdl2java</font></td>
+		<td align="left" valign=bottom><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom><font color="#000000"><br></font></td>
+	</tr>
+	<tr>
+		<td height="18" align="left" valign=bottom><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom><font color="#000000">Old to generate client for a webservice from given WSDL</font></td>
+		<td align="left" valign=bottom><font color="#000000">java2wsdl</font></td>
+		<td align="left" valign=bottom><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom><font color="#000000"><br></font></td>
+	</tr>
+	<tr>
+		<td height="18" align="left" valign=bottom><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom><font color="#000000"><br></font></td>
+	</tr>
+	<tr>
+		<td height="18" align="left" valign=bottom><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom><font color="#000000">to generate java client for RESTFul client for given WADL document</font></td>
+		<td align="left" valign=bottom><font color="#000000">wadl2java</font></td>
+		<td align="left" valign=bottom><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom><font color="#000000"><br></font></td>
+	</tr>
+	<tr>
+		<td height="18" align="left" valign=bottom><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom><font color="#000000"><br></font></td>
+	</tr>
+	<tr>
+		<td height="18" align="left" valign=bottom><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom><font color="#000000">light weight publisher</font></td>
+		<td align="left" valign=bottom><font color="#000000">Enpoint class</font></td>
+		<td align="left" valign=bottom><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom><font color="#000000"><br></font></td>
+	</tr>
+	<tr>
+		<td height="18" align="left" valign=bottom><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom><font color="#000000">middle weight publisher</font></td>
+		<td align="left" valign=bottom><font color="#000000">Tomcat</font></td>
+		<td align="left" valign=bottom><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom><font color="#000000"><br></font></td>
+	</tr>
+	<tr>
+		<td height="18" align="left" valign=bottom><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom><font color="#000000">heavy weight publisher</font></td>
+		<td align="left" valign=bottom><font color="#000000">App Server</font></td>
+		<td align="left" valign=bottom><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom><font color="#000000"><br></font></td>
+	</tr>
+</table>
+<img src="ParamJAX-WS21%20_html_beb86961.png" width=150 height=63>
+<img src="ParamJAX-WS21%20_html_612bc63a.png" width=145 height=64>
+<img src="ParamJAX-WS21%20_html_1575b0b2.png" width=145 height=82>
+<br clear=left>
+<!-- ************************************************************************** -->
+<hr>
+<A NAME="table1"><h1>Sheet 2: <em>End points</em></h1></A>
+<table cellspacing="0" border="0">
+	<colgroup width="268"></colgroup>
+	<colgroup width="1130"></colgroup>
+	<tr>
+		<td style="border-top: 3px solid #000000; border-bottom: 3px solid #000000; border-left: 3px solid #000000; border-right: 3px solid #000000" height="20" align="left" valign=bottom bgcolor="#FFFF99"><b><font color="#000000">EJB Endpoints</font></b></td>
+		<td align="left" valign=bottom><font color="#000000"><br></font></td>
+	</tr>
+	<tr>
+		<td height="18" align="left" valign=bottom><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom><font color="#000000"><br></font></td>
+	</tr>
+	<tr>
+		<td height="18" align="left" valign=bottom><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom><font color="#000000"><br></font></td>
+	</tr>
+	<tr>
+		<td height="20" align="left" valign=bottom><font color="#000000">Transaction attributs</font></td>
+		<td align="left" valign=bottom><font color="#000000">mandatory is not sussported by ejb end points</font></td>
+	</tr>
+	<tr>
+		<td height="18" align="left" valign=bottom><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom><font color="#000000"><br></font></td>
+	</tr>
+	<tr>
+		<td height="18" align="left" valign=bottom><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom><font color="#000000"><br></font></td>
+	</tr>
+	<tr>
+		<td height="18" align="left" valign=bottom><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom><font color="#000000"><br></font></td>
+	</tr>
+	<tr>
+		<td style="border-top: 3px solid #000000; border-bottom: 3px solid #000000; border-left: 3px solid #000000; border-right: 3px solid #000000" height="20" align="left" valign=bottom bgcolor="#FFFF99"><b><font color="#000000">JSE Endpoints</font></b></td>
+		<td align="left" valign=bottom><font color="#000000"><br></font></td>
+	</tr>
+	<tr>
+		<td height="18" align="left" valign=bottom><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom><font color="#000000"><br></font></td>
+	</tr>
+	<tr>
+		<td height="20" align="left" valign=bottom><font color="#000000">&lt;init-param&gt;</font></td>
+		<td align="left" valign=bottom><font color="#000000">there is no way to access servlet init parameter inside of JSE</font></td>
+	</tr>
+	<tr>
+		<td height="20" align="left" valign=bottom><font color="#000000">&lt;context-param&gt;</font></td>
+		<td align="left" valign=bottom><font color="#000000">this is the only paramerets can be accessed by JSE</font></td>
+	</tr>
+	<tr>
+		<td height="20" align="left" valign=bottom><font color="#000000">&lt;url-pattern&gt;</font></td>
+		<td align="left" valign=bottom><font color="#000000">this is used with wsdl-port-addressLocation</font></td>
+	</tr>
+	<tr>
+		<td height="20" align="left" valign=bottom><font color="#000000">&lt;url-pattern&gt;</font></td>
+		<td align="left" valign=bottom><font color="#000000">JSE URL pattern cannot be have wild card.</font></td>
+	</tr>
+	<tr>
+		<td height="20" align="left" valign=bottom><font color="#000000">&lt;security-role-ref&gt;</font></td>
+		<td align="left" valign=bottom><font color="#000000">the role priniciple object cannot access in JSE. To access the role, use servlet filter</font></td>
+	</tr>
+</table>
+<!-- ************************************************************************** -->
+<hr>
+<A NAME="table2"><h1>Sheet 3: <em>Good practice</em></h1></A>
+<table cellspacing="0" border="0">
+	<colgroup width="119"></colgroup>
+	<colgroup width="1027"></colgroup>
+	<colgroup width="95"></colgroup>
+	<tr>
+		<td height="20" align="left" valign=bottom><font color="#000000">JSE</font></td>
+		<td align="left" valign=bottom><font color="#000000">implement ServiceLifecycle interface always in JSEndpoint class even it is not a mandatory</font></td>
+		<td align="right" valign=bottom sdval="39685" sdnum="16393;0;DD/MM/YYYY"><font color="#000000">25/08/2008</font></td>
+	</tr>
+	<tr>
+		<td height="21" align="left" valign=bottom><font color="#000000">WSDL</font></td>
+		<td align="left" valign=bottom><font color="#000000">start to write webservice from WSDL only if operation containg structured data element rather than simply parameter of method</font></td>
+		<td align="right" valign=bottom sdval="39685" sdnum="16393;0;DD/MM/YYYY"><font color="#000000">25/08/2008</font></td>
+	</tr>
+	<tr>
+		<td height="20" align="left" valign=bottom><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom><font color="#000000">write complex type in separate XML Schema file and import it into WSDL file either wsdl &lt;import&gt; or schema &lt;import&gt;</font></td>
+		<td align="right" valign=bottom sdval="39685" sdnum="16393;0;DD/MM/YYYY"><font color="#000000">25/08/2008</font></td>
+	</tr>
+	<tr>
+		<td height="20" align="left" valign=bottom><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom><font color="#000000">so, that in client development, we can use the same XSD for JAXB binding</font></td>
+		<td align="right" valign=bottom sdval="39936" sdnum="16393;0;DD/MM/YYYY"><font color="#000000">03/05/2009</font></td>
+	</tr>
+	<tr>
+		<td height="20" align="left" valign=bottom><font color="#000000">web service</font></td>
+		<td align="left" valign=bottom><font color="#000000">avoid to use restriction rather than extension. Since it is easy to use with webservices</font></td>
+		<td align="right" valign=bottom sdval="39711" sdnum="16393;0;DD/MM/YYYY"><font color="#000000">20/09/2008</font></td>
+	</tr>
+	<tr>
+		<td height="20" align="left" valign=bottom><font color="#000000">web service</font></td>
+		<td align="left" valign=bottom><font color="#000000">avoid to use union. There is no corresponding mapping with java or other programing language for web services</font></td>
+		<td align="right" valign=bottom sdval="39711" sdnum="16393;0;DD/MM/YYYY"><font color="#000000">20/09/2008</font></td>
+	</tr>
+</table>
+<!-- ************************************************************************** -->
+<hr>
+<A NAME="table7"><h1>Sheet 4: <em>WS-I and BP 1.0</em></h1></A>
+<table cellspacing="0" border="0">
+	<colgroup width="147"></colgroup>
+	<colgroup width="813"></colgroup>
+	<tr>
+		<td height="20" align="left" valign=bottom><font color="#000000">BP 1.0 covers</font></td>
+		<td align="left" valign=bottom><font color="#000000">it talks about rules for XML 1.0, SOAP 1.1, WSDL 1.1 &amp; UDDI 2.0</font></td>
+	</tr>
+	<tr>
+		<td height="20" align="left" valign=bottom><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom><font color="#000000">But it does not talk about SwA ( Soap with attachment )</font></td>
+	</tr>
+	<tr>
+		<td height="20" align="left" valign=bottom><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom><font color="#000000">BP does say use of UDDI is optional for you application.  If you are using UDDI it support the version 2.0</font></td>
+	</tr>
+	<tr>
+		<td height="18" align="left" valign=bottom><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom><font color="#000000"><br></font></td>
+	</tr>
+	<tr>
+		<td height="18" align="left" valign=bottom><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom><font color="#000000"><br></font></td>
+	</tr>
+	<tr>
+		<td height="18" align="left" valign=bottom><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom><font color="#000000"><br></font></td>
+	</tr>
+	<tr>
+		<td height="20" align="left" valign=bottom><font color="#000000">WS-I</font></td>
+		<td align="left" valign=bottom><font color="#000000">this is organaisation, which maintaing BP 1.0</font></td>
+	</tr>
+	<tr>
+		<td height="18" align="left" valign=bottom><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom><font color="#000000">web service interoperability</font></td>
+	</tr>
+	<tr>
+		<td height="18" align="left" valign=bottom><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom><font color="#000000">it is guidlines for web service developer to write web service that can work across different platform</font></td>
+	</tr>
+</table>
+<!-- ************************************************************************** -->
+<hr>
+<A NAME="table11"><h1>Sheet 5: <em>order of webservice development</em></h1></A>
+<table cellspacing="0" border="0">
+	<colgroup width="65"></colgroup>
+	<colgroup width="1036"></colgroup>
+	<tr>
+		<td height="20" align="center" valign=bottom bgcolor="#FFFF00" sdval="1" sdnum="16393;"><font color="#000000">1</font></td>
+		<td align="left" valign=bottom><font color="#000000">Write a XMLSchema</font></td>
+	</tr>
+	<tr>
+		<td height="20" align="center" valign=bottom bgcolor="#FFFF00" sdval="2" sdnum="16393;"><font color="#000000">2</font></td>
+		<td align="left" valign=bottom><font color="#000000">write JAXB EXTERNAL customization for given xmlSchema</font></td>
+	</tr>
+	<tr>
+		<td height="20" align="center" valign=bottom bgcolor="#FFFF00" sdval="3" sdnum="16393;"><font color="#000000">3</font></td>
+		<td align="left" valign=bottom><font color="#000000">write a ANT script to generate JAVA bean for this xmlSchema</font></td>
+	</tr>
+	<tr>
+		<td height="20" align="center" valign=bottom bgcolor="#FFFF00" sdval="4" sdnum="16393;"><font color="#000000">4</font></td>
+		<td align="left" valign=bottom><font color="#000000">write a Java INTERFACE using these java bean as paremeter or return type</font></td>
+	</tr>
+	<tr>
+		<td height="20" align="center" valign=bottom bgcolor="#FFFF00" sdval="5" sdnum="16393;"><font color="#000000">5</font></td>
+		<td align="left" valign=bottom><font color="#000000">write WSDL file based on this interface and importing that prior developed xmlSchema</font></td>
+	</tr>
+	<tr>
+		<td height="20" align="center" valign=bottom bgcolor="#FFFF00" sdval="6" sdnum="16393;"><font color="#000000">6</font></td>
+		<td align="left" valign=bottom><font color="#000000">write Mapping file</font></td>
+	</tr>
+	<tr>
+		<td height="20" align="center" valign=bottom bgcolor="#FFFF00" sdval="7" sdnum="16393;"><font color="#000000">7</font></td>
+		<td align="left" valign=bottom><font color="#000000">write JSE or EJB enpoints</font></td>
+	</tr>
+	<tr>
+		<td height="20" align="center" valign=bottom bgcolor="#FFFF00" sdval="8" sdnum="16393;"><font color="#000000">8</font></td>
+		<td align="left" valign=bottom><font color="#000000">write web.xml / ejb-jar.xml file</font></td>
+	</tr>
+	<tr>
+		<td height="20" align="center" valign=bottom bgcolor="#FFFF00" sdval="9" sdnum="16393;"><font color="#000000">9</font></td>
+		<td align="left" valign=bottom><font color="#000000">write webservices.xml</font></td>
+	</tr>
+	<tr>
+		<td height="20" align="center" valign=bottom bgcolor="#FFFF00" sdval="10" sdnum="16393;"><font color="#000000">10</font></td>
+		<td align="left" valign=bottom><font color="#000000">write server specific webservices.xml file</font></td>
+	</tr>
+	<tr>
+		<td height="20" align="center" valign=bottom bgcolor="#FFFF00" sdval="11" sdnum="16393;"><font color="#000000">11</font></td>
+		<td align="left" valign=bottom><font color="#000000">now do any security or transaction or any other configuration in web.xml or ejb-jar.xml as advanced settings</font></td>
+	</tr>
+	<tr>
+		<td height="18" align="left" valign=bottom><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom><font color="#000000"><br></font></td>
+	</tr>
+	<tr>
+		<td height="18" align="left" valign=bottom><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom><font color="#000000"><br></font></td>
+	</tr>
+	<tr>
+		<td height="18" align="left" valign=bottom><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom><font color="#000000"><br></font></td>
+	</tr>
+	<tr>
+		<td height="18" align="left" valign=bottom><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom><font color="#000000"><br></font></td>
+	</tr>
+	<tr>
+		<td height="20" align="left" valign=bottom><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom><font color="#000000">alternative order</font></td>
+	</tr>
+	<tr>
+		<td height="18" align="left" valign=bottom><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom><font color="#000000"><br></font></td>
+	</tr>
+	<tr>
+		<td height="20" align="left" valign=bottom><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom><font color="#000000">write interface, which declare methods</font></td>
+	</tr>
+	<tr>
+		<td height="20" align="left" valign=bottom><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom><font color="#000000">write implmentation class</font></td>
+	</tr>
+	<tr>
+		<td height="20" align="left" valign=bottom><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom><font color="#000000">write web.xml</font></td>
+	</tr>
+	<tr>
+		<td height="20" align="left" valign=bottom><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom><font color="#000000">write XMLSchema</font></td>
+	</tr>
+	<tr>
+		<td height="20" align="left" valign=bottom><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom><font color="#000000">write wsdl</font></td>
+	</tr>
+	<tr>
+		<td height="20" align="left" valign=bottom><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom><font color="#000000">write mapping file</font></td>
+	</tr>
+	<tr>
+		<td height="20" align="left" valign=bottom><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom><font color="#000000">write webservices.xml</font></td>
+	</tr>
+</table>
+<!-- ************************************************************************** -->
+<hr>
+<A NAME="table12"><h1>Sheet 6: <em>API</em></h1></A>
+<table cellspacing="0" border="0">
+	<colgroup width="375"></colgroup>
+	<colgroup width="160"></colgroup>
+	<colgroup width="125"></colgroup>
+	<colgroup width="177"></colgroup>
+	<tr>
+		<td height="18" align="left" valign=bottom><font color="#000000">it is for run endpoint to handle one request</font></td>
+		<td align="left" valign=bottom><font color="#000000">EndPoint</font></td>
+		<td align="left" valign=bottom><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom><font color="#000000"><br></font></td>
+	</tr>
+	<tr>
+		<td height="18" align="left" valign=bottom><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom><font color="#000000"><br></font></td>
+	</tr>
+	<tr>
+		<td height="18" align="left" valign=bottom><font color="#000000">to generate dynamic proxy</font></td>
+		<td align="left" valign=bottom><font color="#000000">Service</font></td>
+		<td align="left" valign=bottom><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom><font color="#000000"><br></font></td>
+	</tr>
+	<tr>
+		<td height="18" align="left" valign=bottom><font color="#000000">to create a qualified name</font></td>
+		<td align="left" valign=bottom><font color="#000000">Qname</font></td>
+		<td align="left" valign=bottom><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom><font color="#000000"><br></font></td>
+	</tr>
+	<tr>
+		<td height="18" align="left" valign=bottom><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom><font color="#000000"><br></font></td>
+	</tr>
+	<tr>
+		<td height="18" align="left" valign=bottom><font color="#000000">for in/out &amp; out parameter, try to avoid usage</font></td>
+		<td align="left" valign=bottom><font color="#000000">Holder</font></td>
+		<td align="left" valign=bottom><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom><font color="#000000"><br></font></td>
+	</tr>
+	<tr>
+		<td height="18" align="left" valign=bottom bgcolor="#CCCCCC"><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom bgcolor="#CCCCCC"><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom bgcolor="#CCCCCC"><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom bgcolor="#CCCCCC"><font color="#000000"><br></font></td>
+	</tr>
+	<tr>
+		<td height="18" align="left" valign=bottom><font color="#000000">Async Client – calling</font></td>
+		<td align="left" valign=bottom><font color="#000000">Future</font></td>
+		<td align="left" valign=bottom><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom><font color="#000000"><br></font></td>
+	</tr>
+	<tr>
+		<td height="18" align="left" valign=bottom><font color="#000000">Async Client – polling</font></td>
+		<td align="left" valign=bottom><font color="#000000">Response</font></td>
+		<td align="left" valign=bottom><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom><font color="#000000"><br></font></td>
+	</tr>
+	<tr>
+		<td height="18" align="left" valign=bottom><font color="#000000">Async Client – calling handler</font></td>
+		<td align="left" valign=bottom><font color="#000000">AsyncHandler</font></td>
+		<td align="left" valign=bottom><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom><font color="#000000"><br></font></td>
+	</tr>
+	<tr>
+		<td height="18" align="left" valign=bottom bgcolor="#CCCCCC"><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom bgcolor="#CCCCCC"><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom bgcolor="#CCCCCC"><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom bgcolor="#CCCCCC"><font color="#000000"><br></font></td>
+	</tr>
+	<tr>
+		<td height="18" align="left" valign=bottom><font color="#000000">Generic Super interface</font></td>
+		<td align="left" valign=bottom><font color="#000000">Handler</font></td>
+		<td align="left" valign=bottom><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom><font color="#000000"><br></font></td>
+	</tr>
+	<tr>
+		<td height="18" align="left" valign=bottom><font color="#000000">it can access only SOAP Body</font></td>
+		<td align="left" valign=bottom><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom><font color="#000000">LogicalHandler</font></td>
+		<td align="left" valign=bottom><font color="#000000"><br></font></td>
+	</tr>
+	<tr>
+		<td height="18" align="left" valign=bottom><font color="#000000">it give access to payload xml</font></td>
+		<td align="left" valign=bottom><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom><font color="#000000">LogicalMessage</font></td>
+	</tr>
+	<tr>
+		<td height="18" align="left" valign=bottom><font color="#000000">it can access both SOAP body, Header</font></td>
+		<td align="left" valign=bottom><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom><font color="#000000">SOAPHandler</font></td>
+		<td align="left" valign=bottom><font color="#000000"><br></font></td>
+	</tr>
+	<tr>
+		<td height="18" align="left" valign=bottom><font color="#000000">used in client side to config hanlders</font></td>
+		<td align="left" valign=bottom><font color="#000000">HandlerResolver</font></td>
+		<td align="left" valign=bottom><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom><font color="#000000"><br></font></td>
+	</tr>
+	<tr>
+		<td height="18" align="left" valign=bottom bgcolor="#CCCCCC"><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom bgcolor="#CCCCCC"><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom bgcolor="#CCCCCC"><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom bgcolor="#CCCCCC"><font color="#000000"><br></font></td>
+	</tr>
+	<tr>
+		<td height="18" align="left" valign=bottom><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom><font color="#000000">WebserviceContext</font></td>
+		<td align="left" valign=bottom><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom><font color="#000000"><br></font></td>
+	</tr>
+	<tr>
+		<td height="18" align="left" valign=bottom><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom><font color="#000000">MessageContext</font></td>
+		<td align="left" valign=bottom><font color="#000000"><br></font></td>
+	</tr>
+	<tr>
+		<td height="18" align="left" valign=bottom><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom><font color="#000000">LogicalMessageContext</font></td>
+	</tr>
+	<tr>
+		<td height="18" align="left" valign=bottom><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom><font color="#000000">SOAPMessageContext</font></td>
+	</tr>
+	<tr>
+		<td height="18" align="left" valign=bottom bgcolor="#CCCCCC"><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom bgcolor="#CCCCCC"><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom bgcolor="#CCCCCC"><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom bgcolor="#CCCCCC"><font color="#000000"><br></font></td>
+	</tr>
+	<tr>
+		<td height="18" align="left" valign=bottom><font color="#000000">it is used in Client side</font></td>
+		<td align="left" valign=bottom><font color="#000000">BindingProvider</font></td>
+		<td align="left" valign=bottom><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom><font color="#000000"><br></font></td>
+	</tr>
+	<tr>
+		<td height="18" align="left" valign=bottom><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom><font color="#000000"><br></font></td>
+	</tr>
+	<tr>
+		<td height="18" align="left" valign=bottom bgcolor="#CCCCCC"><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom bgcolor="#CCCCCC"><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom bgcolor="#CCCCCC"><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom bgcolor="#CCCCCC"><font color="#000000"><br></font></td>
+	</tr>
+	<tr>
+		<td height="18" align="left" valign=bottom><font color="#000000">RESTFul webservice</font></td>
+		<td align="left" valign=bottom><font color="#000000">Provider</font></td>
+		<td align="left" valign=bottom><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom><font color="#000000"><br></font></td>
+	</tr>
+	<tr>
+		<td height="18" align="left" valign=bottom><font color="#000000">dynamic client for RESTFult</font></td>
+		<td align="left" valign=bottom><font color="#000000">Dispatch</font></td>
+		<td align="left" valign=bottom><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom><font color="#000000"><br></font></td>
+	</tr>
+</table>
+<!-- ************************************************************************** -->
+<hr>
+<A NAME="table13"><h1>Sheet 7: <em>Handler Chanin.xml</em></h1></A>
+<table cellspacing="0" border="0">
+	<colgroup width="549"></colgroup>
+	<colgroup span="2" width="138"></colgroup>
+	<colgroup width="190"></colgroup>
+	<tr>
+		<td height="18" align="left" valign=bottom><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom><font color="#000000">&lt;handler-chains&gt;</font></td>
+		<td align="left" valign=bottom><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom><font color="#000000"><br></font></td>
+	</tr>
+	<tr>
+		<td height="18" align="left" valign=bottom><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom><font color="#000000">&lt;handler-chain&gt;</font></td>
+		<td align="left" valign=bottom><font color="#000000"><br></font></td>
+	</tr>
+	<tr>
+		<td height="18" align="left" valign=bottom><font color="#000000">used to configure specific service, port &amp; namespace instead of all request</font></td>
+		<td align="left" valign=bottom><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom><font color="#000000">&lt;service-name-pattern&gt;</font></td>
+	</tr>
+	<tr>
+		<td height="18" align="left" valign=bottom><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom><font color="#000000">&lt;port-name-pattern&gt;</font></td>
+	</tr>
+	<tr>
+		<td height="18" align="left" valign=bottom><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom><font color="#000000">&lt;protocol-bindings&gt;</font></td>
+	</tr>
+	<tr>
+		<td height="18" align="left" valign=bottom><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom><font color="#000000">&lt;handler-class&gt;</font></td>
+	</tr>
+</table>
+<!-- ************************************************************************** -->
+<hr>
+<A NAME="table14"><h1>Sheet 8: <em>Apache CXF</em></h1></A>
+<table cellspacing="0" border="0">
+	<colgroup width="86"></colgroup>
+	<colgroup width="138"></colgroup>
+	<colgroup width="189"></colgroup>
+	<colgroup span="4" width="86"></colgroup>
+	<tr>
+		<td height="18" align="left" valign=bottom><font color="#000000">feature</font></td>
+		<td align="left" valign=bottom><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom><font color="#000000">Tool</font></td>
+		<td align="left" valign=bottom><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom><font color="#000000"><br></font></td>
+	</tr>
+	<tr>
+		<td height="18" align="left" valign=bottom><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom><font color="#000000">protocol support</font></td>
+		<td align="left" valign=bottom><font color="#000000">HTTP, JMS &amp; Local</font></td>
+		<td align="left" valign=bottom><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom><font color="#000000">Java2ws</font></td>
+		<td align="left" valign=bottom><font color="#000000">to generate artificate, bottom-up</font></td>
+	</tr>
+	<tr>
+		<td height="18" align="left" valign=bottom><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom><font color="#000000">Binding</font></td>
+		<td align="left" valign=bottom><font color="#000000">SOAP, HTTP(RESTFul)</font></td>
+		<td align="left" valign=bottom><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom><font color="#000000">wsdl2java</font></td>
+		<td align="left" valign=bottom><font color="#000000">to generate webservice from wsdl</font></td>
+	</tr>
+	<tr>
+		<td height="18" align="left" valign=bottom><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom><font color="#000000">Easy to work with Spring</font></td>
+		<td align="left" valign=bottom><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom><font color="#000000"><br></font></td>
+	</tr>
+	<tr>
+		<td height="18" align="left" valign=bottom><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom><font color="#000000">it support most of WS-* SOAP extension</font></td>
+		<td align="left" valign=bottom><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom><font color="#000000"><br></font></td>
+	</tr>
+	<tr>
+		<td height="18" align="left" valign=bottom><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom><font color="#000000">WS-Security</font></td>
+		<td align="left" valign=bottom><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom><font color="#000000"><br></font></td>
+	</tr>
+	<tr>
+		<td height="18" align="left" valign=bottom><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom><font color="#000000">WS-ReliableMessage</font></td>
+		<td align="left" valign=bottom><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom><font color="#000000"><br></font></td>
+	</tr>
+	<tr>
+		<td height="18" align="left" valign=bottom><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom><font color="#000000">WS-Addressing</font></td>
+		<td align="left" valign=bottom><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom><font color="#000000"><br></font></td>
+	</tr>
+	<tr>
+		<td height="18" align="left" valign=bottom><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom><font color="#000000">WS-Policy</font></td>
+		<td align="left" valign=bottom><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom><font color="#000000"><br></font></td>
+	</tr>
+	<tr>
+		<td height="18" align="left" valign=bottom><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom><font color="#000000"><br></font></td>
+	</tr>
+	<tr>
+		<td height="18" align="left" valign=bottom><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom><font color="#000000">MTOM support for SOAP binary data</font></td>
+		<td align="left" valign=bottom><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom><font color="#000000"><br></font></td>
+	</tr>
+	<tr>
+		<td height="18" align="left" valign=bottom><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom><font color="#000000"><br></font></td>
+	</tr>
+	<tr>
+		<td height="18" align="left" valign=bottom><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom><font color="#000000">Invokers</font></td>
+		<td align="left" valign=bottom><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom><font color="#000000"><br></font></td>
+	</tr>
+	<tr>
+		<td height="18" align="left" valign=bottom><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom><font color="#000000"><br></font></td>
+	</tr>
+	<tr>
+		<td height="18" align="left" valign=bottom><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom><font color="#000000">it suppport 2 type of services</font></td>
+		<td align="left" valign=bottom><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom><font color="#000000"><br></font></td>
+	</tr>
+	<tr>
+		<td height="18" align="left" valign=bottom><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom><font color="#000000">SOAP</font></td>
+		<td align="left" valign=bottom><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom><font color="#000000"><br></font></td>
+	</tr>
+	<tr>
+		<td height="18" align="left" valign=bottom><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom><font color="#000000">RESTFul</font></td>
+		<td align="left" valign=bottom><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom><font color="#000000"><br></font></td>
+	</tr>
+	<tr>
+		<td height="18" align="left" valign=bottom><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom><font color="#000000">CORBA</font></td>
+		<td align="left" valign=bottom><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom><font color="#000000"><br></font></td>
+	</tr>
+</table>
+<!-- ************************************************************************** -->
+</body>
+
+</html>

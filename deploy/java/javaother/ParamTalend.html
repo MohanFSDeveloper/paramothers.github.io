@@ -1,0 +1,501 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+
+<html>
+<head>
+	
+	<meta http-equiv="content-type" content="text/html; charset=utf-8">
+	<title></title>
+	<meta name="generator" content="LibreOffice 4.2.8.2 (Linux)">
+	<meta name="created" content="20121022;231659000000000">
+	<meta name="changed" content="20121125;233347000000000">
+	
+	<style type="text/css"><!-- 
+		body,div,table,thead,tbody,tfoot,tr,th,td,p { font-family:"Arial"; font-size:x-small }
+		 -->
+	</style>
+	
+</head>
+
+<body text="#000000">
+<hr>
+	<p><center>
+		<h1>Overview</h1>
+		<A HREF="#table1">Why Talend than others</A><br>
+		<A HREF="#table2">Best Practice</A><br>
+		<A HREF="#table3">IDE Customization</A><br>
+		<A HREF="#table4">Custom component development</A><br>
+		<A HREF="#table5">Component</A><br>
+		<A HREF="#table6">Minimum components Groups</A><br>
+		
+	</center></p>
+<hr>
+<A NAME="table1"><h1>Sheet 1: <em>Why Talend than others</em></h1></A>
+<table cellspacing="0" border="0">
+	<colgroup width="747"></colgroup>
+	<tr>
+		<td height="16" align="left" valign=bottom>it is best for Java Batch job projects</td>
+	</tr>
+	<tr>
+		<td height="17" align="left" valign=bottom><font color="#FF3366">it is java Language, we can debug</font></td>
+	</tr>
+	<tr>
+		<td height="17" align="left" valign=bottom>Super Error handling. Since it is developed in java</td>
+	</tr>
+	<tr>
+		<td height="16" align="left" valign=bottom><font color="#00AE00">it is open source</font></td>
+	</tr>
+	<tr>
+		<td height="16" align="left" valign=bottom>Error notification</td>
+	</tr>
+	<tr>
+		<td height="17" align="left" valign=bottom>more than 400 connecter or components available</td>
+	</tr>
+	<tr>
+		<td height="16" align="left" valign=bottom><b>can develop own and custom component and share them with other developers</b></td>
+	</tr>
+	<tr>
+		<td height="17" align="left" valign=bottom><font color="#198A8A">we can share preference of IDE to any user in Talend community over internet</font></td>
+	</tr>
+	<tr>
+		<td height="17" align="left" valign=bottom>multiple languages supported tool Graphical Environment. Not only english.</td>
+	</tr>
+	<tr>
+		<td height="16" align="left" valign=bottom><font color="#FF00FF">It is easy to hands on for Java developer. Since Java and Eclipse( view,tab, preference,etc) is GDE</font></td>
+	</tr>
+	<tr>
+		<td height="16" align="left" valign=bottom>Excellent Customization GDE level via Preference and project level by File → Edit Project Properties and export/import to other developers</td>
+	</tr>
+	<tr>
+		<td height="16" align="left" valign=bottom>In-Build version control</td>
+	</tr>
+	<tr>
+		<td height="17" align="left" valign=bottom>Fine-Grainned control and options about log, statistic, context parameters for jobs</td>
+	</tr>
+	<tr>
+		<td height="17" align="left" valign=bottom><br></td>
+	</tr>
+	<tr>
+		<td height="17" align="left" valign=bottom>Metadata – save time, easy to popuate any component, from any component as metadata</td>
+	</tr>
+	<tr>
+		<td height="17" align="left" valign=bottom>Metadata Manager -  to share across teams</td>
+	</tr>
+	<tr>
+		<td height="17" align="left" valign=bottom><br></td>
+	</tr>
+	<tr>
+		<td height="16" align="left" valign=bottom>commonly used variables and its value can be shared across different components, even different job. Can be different project by export and import</td>
+	</tr>
+	<tr>
+		<td height="17" align="left" valign=bottom>Jobs can be exported as  Webservices</td>
+	</tr>
+	<tr>
+		<td height="16" align="left" valign=bottom>easy documentation of jobs</td>
+	</tr>
+	<tr>
+		<td height="17" align="left" valign=bottom>create coresspondig component while drag metadata to workspace (Ctrl+shift pressed while dragging)</td>
+	</tr>
+</table>
+<!-- ************************************************************************** -->
+<hr>
+<A NAME="table2"><h1>Sheet 2: <em>Best Practice</em></h1></A>
+<table cellspacing="0" border="0">
+	<colgroup width="86"></colgroup>
+	<colgroup width="754"></colgroup>
+	<tr>
+		<td height="16" align="left" valign=bottom>Model</td>
+		<td align="left" valign=bottom>always start with Business Model any job or any projects</td>
+	</tr>
+	<tr>
+		<td height="16" align="left" valign=bottom>Folder</td>
+		<td align="left" valign=bottom>have separate folder in business and job  for use case wise or module wise</td>
+	</tr>
+	<tr>
+		<td height="16" align="left" valign=bottom>Status</td>
+		<td align="left" valign=bottom>define the status which relevant to a project</td>
+	</tr>
+	<tr>
+		<td height="17" align="left" valign=bottom>Metadata</td>
+		<td align="left" valign=bottom>define DB, Files and etc in metadata for a project. If those are shared across project export and reuse the same</td>
+	</tr>
+	<tr>
+		<td height="17" align="left" valign=bottom>Debug</td>
+		<td align="left" valign=bottom>run Trace Debug rather than Java Debug. Since it need java knowledge</td>
+	</tr>
+	<tr>
+		<td height="16" align="left" valign=bottom>variable</td>
+		<td align="left" valign=bottom>if variable used more than one COMPONENT then define context variable in that job's context view</td>
+	</tr>
+	<tr>
+		<td height="17" align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom>if variable used more than one JOB then define context variable in that repositary-&gt;context</td>
+	</tr>
+	<tr>
+		<td height="16" align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom>create one context group for every environment, with same set of variable name. But value for each group may be different</td>
+	</tr>
+</table>
+<!-- ************************************************************************** -->
+<hr>
+<A NAME="table3"><h1>Sheet 3: <em>IDE Customization</em></h1></A>
+<table cellspacing="0" border="0">
+	<colgroup width="86"></colgroup>
+	<colgroup width="395"></colgroup>
+	<tr>
+		<td height="16" align="left" valign=bottom>Run</td>
+		<td align="left" valign=bottom>enable “save automatically before to run”</td>
+	</tr>
+	<tr>
+		<td height="17" align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+	</tr>
+	<tr>
+		<td height="17" align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+	</tr>
+	<tr>
+		<td height="17" align="left" valign=bottom>Pallet</td>
+		<td align="left" valign=bottom>hide unwanted component from pallete</td>
+	</tr>
+	<tr>
+		<td height="16" align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom>add often using component to favorite</td>
+	</tr>
+	<tr>
+		<td height="17" align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+	</tr>
+	<tr>
+		<td height="16" align="left" valign=bottom>views</td>
+		<td align="left" valign=bottom>close not using views like outline, code viewer</td>
+	</tr>
+</table>
+<!-- ************************************************************************** -->
+<hr>
+<A NAME="table4"><h1>Sheet 4: <em>Custom component development</em></h1></A>
+<table cellspacing="0" border="0">
+	<colgroup width="480"></colgroup>
+	<tr>
+		<td height="17" align="left" valign=bottom><font color="#0000FF"><a href="http://www.talendforge.org/wiki/doku.php?id=component_creation">http://www.talendforge.org/wiki/doku.php?id=component_creation.</a></font></td>
+	</tr>
+</table>
+<!-- ************************************************************************** -->
+<hr>
+<A NAME="table5"><h1>Sheet 5: <em>Component</em></h1></A>
+<table cellspacing="0" border="0">
+	<colgroup width="133"></colgroup>
+	<colgroup width="142"></colgroup>
+	<colgroup width="444"></colgroup>
+	<tr>
+		<td height="16" align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom>start</td>
+		<td align="left" valign=bottom><br></td>
+	</tr>
+	<tr>
+		<td height="16" align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom>tPreJob</td>
+		<td align="left" valign=bottom><br></td>
+	</tr>
+	<tr>
+		<td height="16" align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom>tPostJob</td>
+		<td align="left" valign=bottom><br></td>
+	</tr>
+	<tr>
+		<td height="16" align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom>tReplecate</td>
+		<td align="left" valign=bottom><br></td>
+	</tr>
+	<tr>
+		<td height="16" align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom>tXMLMap</td>
+		<td align="left" valign=bottom><br></td>
+	</tr>
+	<tr>
+		<td height="16" align="left" valign=bottom>read more</td>
+		<td align="left" valign=bottom>tLogRow</td>
+		<td align="left" valign=bottom><br></td>
+	</tr>
+	<tr>
+		<td height="16" align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom>tMessageBox</td>
+		<td align="left" valign=bottom><br></td>
+	</tr>
+	<tr>
+		<td height="16" align="left" valign=bottom>read more</td>
+		<td align="left" valign=bottom>tFileCopy</td>
+		<td align="left" valign=bottom><br></td>
+	</tr>
+	<tr>
+		<td height="16" align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom>tRowGenerator</td>
+		<td align="left" valign=bottom><br></td>
+	</tr>
+	<tr>
+		<td height="16" align="left" valign=bottom>read more</td>
+		<td align="left" valign=bottom>tFileFetch</td>
+		<td align="left" valign=bottom><br></td>
+	</tr>
+	<tr>
+		<td height="16" align="left" valign=bottom>Work  more</td>
+		<td align="left" valign=bottom>tApacheLogInput</td>
+		<td align="left" valign=bottom><br></td>
+	</tr>
+	<tr>
+		<td height="16" align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom>tFixedFlowInput</td>
+		<td align="left" valign=bottom><br></td>
+	</tr>
+	<tr>
+		<td height="16" align="left" valign=bottom>read more</td>
+		<td align="left" valign=bottom>tFileCompare</td>
+		<td align="left" valign=bottom><br></td>
+	</tr>
+	<tr>
+		<td height="16" align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom>tFileUnarchieve</td>
+		<td align="left" valign=bottom><br></td>
+	</tr>
+	<tr>
+		<td height="16" align="left" valign=bottom>use more</td>
+		<td align="left" valign=bottom>tFileList</td>
+		<td align="left" valign=bottom><br></td>
+	</tr>
+	<tr>
+		<td height="17" align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+	</tr>
+	<tr>
+		<td height="17" align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+	</tr>
+	<tr>
+		<td height="17" align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+	</tr>
+	<tr>
+		<td height="16" align="left" valign=bottom bgcolor="#77216F"><br></td>
+		<td align="left" valign=bottom bgcolor="#77216F"><br></td>
+		<td align="left" valign=bottom bgcolor="#77216F"><br></td>
+	</tr>
+	<tr>
+		<td height="16" align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom>tIterate</td>
+		<td align="left" valign=bottom><br></td>
+	</tr>
+	<tr>
+		<td height="16" align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom>tInfiniteLoop</td>
+		<td align="left" valign=bottom><br></td>
+	</tr>
+	<tr>
+		<td height="16" align="left" valign=bottom>use more</td>
+		<td align="left" valign=bottom>tLoop</td>
+		<td align="left" valign=bottom>it is like for/while loop in java</td>
+	</tr>
+	<tr>
+		<td height="16" align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom>tSleep</td>
+		<td align="left" valign=bottom>to pause the execution</td>
+	</tr>
+	<tr>
+		<td height="16" align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom>tRunJob</td>
+		<td align="left" valign=bottom>run child job</td>
+	</tr>
+	<tr>
+		<td height="16" align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom>tUnite</td>
+		<td align="left" valign=bottom>to merge many files but those are all same schema but data only different</td>
+	</tr>
+	<tr>
+		<td height="16" align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom>twaitForFile</td>
+		<td align="left" valign=bottom>file watcher</td>
+	</tr>
+	<tr>
+		<td height="16" align="left" valign=bottom>read more</td>
+		<td align="left" valign=bottom>twaitSocket</td>
+		<td align="left" valign=bottom><br></td>
+	</tr>
+	<tr>
+		<td height="16" align="left" valign=bottom>read more</td>
+		<td align="left" valign=bottom>twaitSQLData</td>
+		<td align="left" valign=bottom><br></td>
+	</tr>
+	<tr>
+		<td height="17" align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+	</tr>
+	<tr>
+		<td height="16" align="left" valign=bottom bgcolor="#5E2750"><br></td>
+		<td align="left" valign=bottom bgcolor="#5E2750"><br></td>
+		<td align="left" valign=bottom bgcolor="#5E2750"><br></td>
+	</tr>
+	<tr>
+		<td height="17" align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+	</tr>
+	<tr>
+		<td height="16" align="left" valign=bottom>use less</td>
+		<td align="left" valign=bottom>tAgreegateRow</td>
+		<td align="left" valign=bottom>used to agreegate row data when data source other than database</td>
+	</tr>
+	<tr>
+		<td height="16" align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom>tAgreegateSortedRow</td>
+		<td align="left" valign=bottom><br></td>
+	</tr>
+	<tr>
+		<td height="16" align="left" valign=bottom>use More</td>
+		<td align="left" valign=bottom>tConvertType</td>
+		<td align="left" valign=bottom><br></td>
+	</tr>
+	<tr>
+		<td height="16" align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom>tDenomalize</td>
+		<td align="left" valign=bottom><br></td>
+	</tr>
+	<tr>
+		<td height="16" align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom>tDemormalizeSorted</td>
+		<td align="left" valign=bottom><br></td>
+	</tr>
+	<tr>
+		<td height="16" align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom>tExternalSortRow</td>
+		<td align="left" valign=bottom>we can use any native language program</td>
+	</tr>
+	<tr>
+		<td height="16" align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom>tExtractDelimtedField</td>
+		<td align="left" valign=bottom><br></td>
+	</tr>
+	<tr>
+		<td height="16" align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom>tExtractPosistionField</td>
+		<td align="left" valign=bottom><br></td>
+	</tr>
+	<tr>
+		<td height="16" align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom>tExtractRegesFields</td>
+		<td align="left" valign=bottom><br></td>
+	</tr>
+	<tr>
+		<td height="16" align="left" valign=bottom>Work  more</td>
+		<td align="left" valign=bottom>tMap</td>
+		<td align="left" valign=bottom>join by keys, we can get many output</td>
+	</tr>
+	<tr>
+		<td height="16" align="left" valign=bottom>read more</td>
+		<td align="left" valign=bottom>tJoin</td>
+		<td align="left" valign=bottom>join by non-keys columns and do exact value matching, but only two, one matched another non matched</td>
+	</tr>
+	<tr>
+		<td height="16" align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom>tSortRow</td>
+		<td align="left" valign=bottom><br></td>
+	</tr>
+	<tr>
+		<td height="16" align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom>tReplace</td>
+		<td align="left" valign=bottom>find and replace</td>
+	</tr>
+	<tr>
+		<td height="16" align="left" valign=bottom>use more</td>
+		<td align="left" valign=bottom>tSampleRow</td>
+		<td align="left" valign=bottom>it is used to select records by ids</td>
+	</tr>
+	<tr>
+		<td height="16" align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom>tSplitRow</td>
+		<td align="left" valign=bottom><br></td>
+	</tr>
+	<tr>
+		<td height="16" align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom>tFilterColumns</td>
+		<td align="left" valign=bottom>just to change order of columns, add new columns</td>
+	</tr>
+	<tr>
+		<td height="16" align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom>tNormalise</td>
+		<td align="left" valign=bottom><br></td>
+	</tr>
+	<tr>
+		<td height="16" align="left" valign=bottom bgcolor="#5E2750"><br></td>
+		<td align="left" valign=bottom bgcolor="#5E2750"><br></td>
+		<td align="left" valign=bottom bgcolor="#5E2750"><br></td>
+	</tr>
+</table>
+<!-- ************************************************************************** -->
+<hr>
+<A NAME="table6"><h1>Sheet 6: <em>Minimum components Groups</em></h1></A>
+<table cellspacing="0" border="0">
+	<colgroup width="86"></colgroup>
+	<colgroup width="172"></colgroup>
+	<colgroup width="500"></colgroup>
+	<tr>
+		<td height="16" align="right" valign=bottom sdval="1" sdnum="16393;">1</td>
+		<td align="left" valign=bottom bgcolor="#FF00FF"><b>Processing</b></td>
+		<td align="left" valign=bottom>the most important components</td>
+	</tr>
+	<tr>
+		<td height="16" align="right" valign=bottom sdval="3" sdnum="16393;">3</td>
+		<td align="left" valign=bottom bgcolor="#FF00FF">Misc</td>
+		<td align="left" valign=bottom><br></td>
+	</tr>
+	<tr>
+		<td height="17" align="right" valign=bottom sdval="2" sdnum="16393;">2</td>
+		<td align="left" valign=bottom bgcolor="#FF00FF">Log &amp; Error</td>
+		<td align="left" valign=bottom>useful for logging or debuging</td>
+	</tr>
+	<tr>
+		<td height="16" align="right" valign=bottom sdval="4" sdnum="16393;">4</td>
+		<td align="left" valign=bottom bgcolor="#FF00FF">Orchestration</td>
+		<td align="left" valign=bottom><br></td>
+	</tr>
+	<tr>
+		<td height="16" align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom bgcolor="#FF00FF">Technical</td>
+		<td align="left" valign=bottom><br></td>
+	</tr>
+	<tr>
+		<td height="17" align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom bgcolor="#FF00FF">XMLComponent</td>
+		<td align="left" valign=bottom><br></td>
+	</tr>
+	<tr>
+		<td height="16" align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom bgcolor="#FF00FF">System Component</td>
+		<td align="left" valign=bottom><br></td>
+	</tr>
+	<tr>
+		<td height="17" align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom bgcolor="#FF00FF">CustomCode Component</td>
+		<td align="left" valign=bottom><br></td>
+	</tr>
+	<tr>
+		<td height="17" align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom bgcolor="#FF00FF">DataQuality</td>
+		<td align="left" valign=bottom><br></td>
+	</tr>
+	<tr>
+		<td height="16" align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom bgcolor="#0000FF">Oracle</td>
+		<td align="left" valign=bottom><br></td>
+	</tr>
+	<tr>
+		<td height="16" align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom bgcolor="#0000FF">File</td>
+		<td align="left" valign=bottom><br></td>
+	</tr>
+</table>
+<!-- ************************************************************************** -->
+</body>
+
+</html>

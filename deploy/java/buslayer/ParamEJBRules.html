@@ -1,0 +1,1731 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+
+<html>
+<head>
+	
+	<meta http-equiv="content-type" content="text/html; charset=utf-8">
+	<title></title>
+	<meta name="generator" content="LibreOffice 4.2.8.2 (Linux)">
+	<meta name="author" content=" ">
+	<meta name="created" content="20070508;172439000000000">
+	<meta name="changedby" content="ParamUser">
+	<meta name="changed" content="20101208;213923000000000">
+	
+	<style type="text/css"><!-- 
+		body,div,table,thead,tbody,tfoot,tr,th,td,p { font-family:"Arial"; font-size:x-small }
+		 -->
+	</style>
+	
+</head>
+
+<body text="#000000">
+<hr>
+	<p><center>
+		<h1>Overview</h1>
+		<A HREF="#table0">General</A><br>
+		<A HREF="#table1">Home</A><br>
+		<A HREF="#table2">Component</A><br>
+		<A HREF="#table3">Bean Class</A><br>
+		<A HREF="#table5">Transaction</A><br>
+		<A HREF="#table6">Exception</A><br>
+		<A HREF="#table7">Environment</A><br>
+		<A HREF="#table8">ejb-jar.xml</A><br>
+		<A HREF="#table9">Security</A><br>
+		
+	</center></p>
+<hr>
+<A NAME="table0"><h1>Sheet 1: <em>General</em></h1></A>
+<table cellspacing="0" border="0">
+	<colgroup width="40"></colgroup>
+	<colgroup width="595"></colgroup>
+	<colgroup width="81"></colgroup>
+	<colgroup width="91"></colgroup>
+	<colgroup width="67"></colgroup>
+	<tr>
+		<td height="17" align="left" bgcolor="#FF0000"><b><font color="#FFFFFF">S. No</font></b></td>
+		<td align="left" bgcolor="#FF0000"><b><font color="#FFFFFF">Rules</font></b></td>
+		<td align="left" bgcolor="#FF0000"><b><font color="#FFFFFF"> Session </font></b></td>
+		<td align="left" bgcolor="#FF0000"><b><font color="#FFFFFF">Entity </font></b></td>
+		<td align="left" bgcolor="#FF0000"><b><font color="#FFFFFF">Message </font></b></td>
+	</tr>
+	<tr>
+		<td height="17" align="left"><br></td>
+		<td align="left"><br></td>
+		<td align="left"><br></td>
+		<td align="left"><br></td>
+		<td align="left"><br></td>
+	</tr>
+	<tr>
+		<td height="62" align="right" sdval="1" sdnum="16393;">1</td>
+		<td align="left">&quot;this&quot; cannot be used as argument method calling, or return type in bean class<br><br>This rule is not a problem in EJB 3.0</td>
+		<td align="left"><br></td>
+		<td align="left"><br></td>
+		<td align="left"><br></td>
+	</tr>
+	<tr>
+		<td height="74" align="left"><br></td>
+		<td align="left">component business method or any helper method in bean class cannot start with &quot;ejb&quot;<br><br>This rule is not a problem in EJB 3.0</td>
+		<td align="left"><br></td>
+		<td align="left"><br></td>
+		<td align="left"><br></td>
+	</tr>
+	<tr>
+		<td height="112" align="left"><br></td>
+		<td align="left">Any of business method in bean class cannot declare RemoteExcepion in its throws clause <br><br>This rule is not a problem in EJB 3.0<br><br>But methods in Local&lt;XXX&gt; interface must not.</td>
+		<td align="left"><br></td>
+		<td align="left"><br></td>
+		<td align="left"><br></td>
+	</tr>
+	<tr>
+		<td height="80" align="left"><br></td>
+		<td align="left">we must not add any checked exception in throw clause in bean class that exception not <br>declare in its interface.<br><br>This rule is not a problem in EJB 3.0</td>
+		<td align="left"><br></td>
+		<td align="left"><br></td>
+		<td align="left"><br></td>
+	</tr>
+	<tr>
+		<td height="68" align="left"><br></td>
+		<td align="left">Enity's Home business method can begin with &quot;remove&quot; <br><br><br>This rule is not a problem in EJB 3.0</td>
+		<td align="left"><br></td>
+		<td align="left"><br></td>
+		<td align="left"><br></td>
+	</tr>
+	<tr>
+		<td height="44" align="left"><b><i><font size=3><br></font></i></b></td>
+		<td align="left"><b><i><font size=3 color="#FF0000">None of container call back methods methods,  in any bean type (session, entity and MDB), can be marked as &quot;static&quot; ,&quot;final&quot;</font></i></b></td>
+		<td align="left"><b><i><font size=3><br></font></i></b></td>
+		<td align="left"><b><i><font size=3><br></font></i></b></td>
+		<td align="left"><b><i><font size=3><br></font></i></b></td>
+	</tr>
+	<tr>
+		<td height="17" align="left"><br></td>
+		<td align="left"> component's business with final or static</td>
+		<td align="left">test</td>
+		<td align="left"><br></td>
+		<td align="left"><br></td>
+	</tr>
+	<tr>
+		<td height="45" align="left"><br></td>
+		<td align="left">None of bean type class's can overide finalize() method</td>
+		<td align="left"><br></td>
+		<td align="left"><br></td>
+		<td align="left"><br></td>
+	</tr>
+</table>
+<!-- ************************************************************************** -->
+<hr>
+<A NAME="table1"><h1>Sheet 2: <em>Home</em></h1></A>
+<table cellspacing="0" border="0">
+	<colgroup width="30"></colgroup>
+	<colgroup width="724"></colgroup>
+	<colgroup width="60"></colgroup>
+	<colgroup width="48"></colgroup>
+	<colgroup width="59"></colgroup>
+	<colgroup width="336"></colgroup>
+	<tr>
+		<td height="17" align="left" bgcolor="#FF0000"><b><font color="#FFFFFF">No</font></b></td>
+		<td align="left" bgcolor="#FF0000"><b><font color="#FFFFFF">Rules</font></b></td>
+		<td align="left" bgcolor="#FF0000"><b><font color="#FFFFFF">Session</font></b></td>
+		<td align="left" bgcolor="#FF0000"><b><font color="#FFFFFF">Entity</font></b></td>
+		<td align="left" bgcolor="#FF0000"><b><font color="#FFFFFF">Message </font></b></td>
+		<td align="left" bgcolor="#FF0000"><b><font color="#FFFFFF">    Remarks</font></b></td>
+	</tr>
+	<tr>
+		<td height="17" align="left"><br></td>
+		<td align="left"><br></td>
+		<td align="left"><br></td>
+		<td align="left"><br></td>
+		<td align="left"><br></td>
+		<td align="left"><b><i><font color="#0000FF"><br></font></i></b></td>
+	</tr>
+	<tr>
+		<td height="31" align="left" valign=middle><br></td>
+		<td align="left" valign=middle><b><u><font size=3 color="#339966">Remote Home Interface</font></u></b></td>
+		<td align="left" valign=middle><br></td>
+		<td align="left" valign=middle><br></td>
+		<td align="left" valign=middle><br></td>
+		<td align="left" valign=middle><b><i><font color="#0000FF"><br></font></i></b></td>
+	</tr>
+	<tr>
+		<td height="21" align="right" sdval="1" sdnum="16393;">1</td>
+		<td align="left"><b><font size=3 color="#0000FF">Session and Entity</font></b></td>
+		<td align="left"><br></td>
+		<td align="left"><br></td>
+		<td align="left"><br></td>
+		<td align="left"><b><i><font color="#0000FF"><br></font></i></b></td>
+	</tr>
+	<tr>
+		<td height="17" align="right" sdval="2" sdnum="16393;">2</td>
+		<td align="left">Remote Home interface extends EJBHome. </td>
+		<td align="left">Y</td>
+		<td align="left">Y</td>
+		<td align="left">NA</td>
+		<td align="left"><b><i><font color="#0000FF">If not, deplymentException</font></i></b></td>
+	</tr>
+	<tr>
+		<td height="34" align="right" sdval="3" sdnum="16393;">3</td>
+		<td align="left">every create method of throws clause must declare createException, RemoteException, <br>But it can also declare any application (checked) exception</td>
+		<td align="left">Y</td>
+		<td align="left">Y</td>
+		<td align="left">NA</td>
+		<td align="left"><b><i><font color="#0000FF">if not deployment exception</font></i></b></td>
+	</tr>
+	<tr>
+		<td height="17" align="right" sdval="4" sdnum="16393;">4</td>
+		<td align="left">create method on home’s return type must be corresponding component interface</td>
+		<td align="left">Y</td>
+		<td align="left">Y</td>
+		<td align="left">NA</td>
+		<td align="left"><b><i><font color="#0000FF">if not deployment exception</font></i></b></td>
+	</tr>
+	<tr>
+		<td height="102" align="right" sdval="5" sdnum="16393;">5</td>
+		<td align="left">create's method argument must RMI-IIOP complaint for remote client</td>
+		<td align="left">Y</td>
+		<td align="left">Y</td>
+		<td align="left">NA</td>
+		<td align="left"><b><i><font color="#0000FF">I tried with my own class, It don’t give any deploy<br>ment or runtime exception. I don’t know the reason<br><br>I tried same JVM but remote client</font></i></b></td>
+	</tr>
+	<tr>
+		<td height="41" align="right" sdval="6" sdnum="16393;">6</td>
+		<td align="left">any create method declared in home its corresponding method must be in bean class. <br>But vice versa is not ture. Any extra create method can be in bean. Not problem</td>
+		<td align="left">Y</td>
+		<td align="left">Y</td>
+		<td align="left">NA</td>
+		<td align="left"><b><i><font color="#0000FF">if not deployment exception</font></i></b></td>
+	</tr>
+	<tr>
+		<td height="28" align="left"><br></td>
+		<td align="left"><b><font size=3 color="#0000FF">Session ( Stateless and Stateful)</font></b></td>
+		<td align="left"><br></td>
+		<td align="left"><br></td>
+		<td align="left"><br></td>
+		<td align="left"><b><i><font color="#0000FF"><br></font></i></b></td>
+	</tr>
+	<tr>
+		<td height="27" align="left"><br></td>
+		<td align="left">session bean's home interface can have any other than create method. That is any busness method ?</td>
+		<td align="left">can't</td>
+		<td align="left">can</td>
+		<td align="left">NA</td>
+		<td align="left"><b><i><font color="#0000FF">if not get deployment exception</font></i></b></td>
+	</tr>
+	<tr>
+		<td height="61" align="left"><br></td>
+		<td align="left">remove( Object key) of EJBHome is only for entity bean. If session use this will get RemoveException or<br> EJBException if client is local</td>
+		<td align="left">NA</td>
+		<td align="left">Y</td>
+		<td align="left">NA</td>
+		<td align="left"><b><i><font color="#0000FF">RemoveException or EJBException</font></i></b></td>
+	</tr>
+	<tr>
+		<td height="74" align="left"><br></td>
+		<td align="left">if home interface has only single no-arg create method, this can either statefull or stateless. <br>But if it has more than one create method or any of argumented create method it can be only State full. <br>So, by looking source code we can assure only statefull. not to stateless. since no-arg can be both</td>
+		<td align="left">Y</td>
+		<td align="left">NA</td>
+		<td align="left">NA</td>
+		<td align="left"><b><i><font color="#0000FF"><br></font></i></b></td>
+	</tr>
+	<tr>
+		<td height="45" align="left"><br></td>
+		<td align="left"> session bean class must have atleast one create method</td>
+		<td align="left">Y</td>
+		<td align="left"><b><font color="#008000">NA</font></b></td>
+		<td align="left">NA</td>
+		<td align="left"><b><i><font color="#0000FF">if not get deployment exception</font></i></b></td>
+	</tr>
+	<tr>
+		<td height="21" align="left"><br></td>
+		<td align="left"><b><font size=3 color="#0000FF">Stateless session</font></b></td>
+		<td align="left"><br></td>
+		<td align="left"><br></td>
+		<td align="left"><br></td>
+		<td align="left"><b><i><font color="#0000FF"><br></font></i></b></td>
+	</tr>
+	<tr>
+		<td height="35" align="left"><br></td>
+		<td align="left">stateless session's create method must have only one no-arg create method</td>
+		<td align="left">Y</td>
+		<td align="left">NA</td>
+		<td align="left">NA</td>
+		<td align="left"><b><i><font color="#0000FF">if not deployment exception</font></i></b></td>
+	</tr>
+	<tr>
+		<td height="35" align="left"><br></td>
+		<td align="left">stateless session cannot have more than one create method</td>
+		<td align="left">Y</td>
+		<td align="left">NA</td>
+		<td align="left">NA</td>
+		<td align="left"><b><i><font color="#0000FF">if not deployment exception</font></i></b></td>
+	</tr>
+	<tr>
+		<td height="17" align="left"><br></td>
+		<td align="left"><br></td>
+		<td align="left"><br></td>
+		<td align="left">NA</td>
+		<td align="left"><br></td>
+		<td align="left"><b><i><font color="#0000FF"><br></font></i></b></td>
+	</tr>
+	<tr>
+		<td height="21" align="left"><b><font size=3 color="#0000FF"><br></font></b></td>
+		<td align="left"><b><font size=3 color="#0000FF">Satefull Session</font></b></td>
+		<td align="left"><b><font size=3 color="#0000FF"><br></font></b></td>
+		<td align="left">NA</td>
+		<td align="left"><b><font size=3 color="#0000FF"><br></font></b></td>
+		<td align="left"><b><i><font size=3 color="#0000FF"><br></font></i></b></td>
+	</tr>
+	<tr>
+		<td height="17" align="left"><br></td>
+		<td align="left">statefull session bean can have any number of overloaded create method with arguments</td>
+		<td align="left">Y</td>
+		<td align="left">NA</td>
+		<td align="left">NA</td>
+		<td align="left"><b><i><font color="#0000FF"><br></font></i></b></td>
+	</tr>
+	<tr>
+		<td height="17" align="left"><br></td>
+		<td align="left">statefull session bean no need to have no-arg create method but it can</td>
+		<td align="left">Y</td>
+		<td align="left">NA</td>
+		<td align="left">NA</td>
+		<td align="left"><b><i><font color="#0000FF"><br></font></i></b></td>
+	</tr>
+	<tr>
+		<td height="17" align="left"><br></td>
+		<td align="left">statefulll session bean any overloaded method must begin &quot;create&quot; </td>
+		<td align="left">Y</td>
+		<td align="left">NA</td>
+		<td align="left">NA</td>
+		<td align="left"><b><i><font color="#0000FF">if not get deployment exception</font></i></b></td>
+	</tr>
+	<tr>
+		<td height="17" align="left"><br></td>
+		<td align="left"><br></td>
+		<td align="left"><br></td>
+		<td align="left"><br></td>
+		<td align="left"><br></td>
+		<td align="left"><b><i><font color="#0000FF"><br></font></i></b></td>
+	</tr>
+	<tr>
+		<td height="17" align="left"><br></td>
+		<td align="left"><br></td>
+		<td align="left"><br></td>
+		<td align="left"><br></td>
+		<td align="left"><br></td>
+		<td align="left"><b><i><font color="#0000FF"><br></font></i></b></td>
+	</tr>
+	<tr>
+		<td height="21" align="left"><br></td>
+		<td align="left"><b><font size=3 color="#0000FF">Entity alone</font></b></td>
+		<td align="left"><br></td>
+		<td align="left"><br></td>
+		<td align="left"><br></td>
+		<td align="left"><b><i><font color="#0000FF"><br></font></i></b></td>
+	</tr>
+	<tr>
+		<td height="27" align="left"><br></td>
+		<td align="left">Home interface of entity bean must have atleast one findByPrimaryKey() methods</td>
+		<td align="left">NA</td>
+		<td align="left">Y</td>
+		<td align="left">NA</td>
+		<td align="left"><b><i><font color="#0000FF">if not get deployment exception</font></i></b></td>
+	</tr>
+	<tr>
+		<td height="34" align="left"><br></td>
+		<td align="left">parameter of findByPrimaryKey must be &lt;prim-key-class&gt; type</td>
+		<td align="left">NA</td>
+		<td align="left">Y</td>
+		<td align="left">NA</td>
+		<td align="left"><b><i><font color="#0000FF">if not get deployment exception</font></i></b></td>
+	</tr>
+	<tr>
+		<td height="30" align="left"><br></td>
+		<td align="left">every create method must start with  &quot;create&quot;  . If not it treated as home business method</td>
+		<td align="left">NA</td>
+		<td align="left">Y</td>
+		<td align="left">NA</td>
+		<td align="left">test</td>
+	</tr>
+	<tr>
+		<td height="35" align="left"><br></td>
+		<td align="left">every finder method  method must ruturn component interface or collection of them</td>
+		<td align="left"><br></td>
+		<td align="left"><br></td>
+		<td align="left"><br></td>
+		<td align="left"><b><i><font color="#0000FF">if not get deployment exception</font></i></b></td>
+	</tr>
+	<tr>
+		<td height="23" align="left"><br></td>
+		<td align="left">every finder method  method must declare FinderExceptin, RemoteException in its throw clause</td>
+		<td align="left"><br></td>
+		<td align="left"><br></td>
+		<td align="left"><br></td>
+		<td align="left"><b><i><font color="#0000FF">if not get deployment exception</font></i></b></td>
+	</tr>
+	<tr>
+		<td height="31" align="left"><br></td>
+		<td align="left">Home business method must declare RemoteException In its throws clause.</td>
+		<td align="left"><br></td>
+		<td align="left"><br></td>
+		<td align="left"><br></td>
+		<td align="left"><b><i><font color="#0000FF">if not get deployment exception</font></i></b></td>
+	</tr>
+	<tr>
+		<td height="24" align="left"><br></td>
+		<td align="left">Home business method must not start with &quot;create&quot;,&quot;find&quot;,&quot;remove&quot;</td>
+		<td align="left"><br></td>
+		<td align="left"><br></td>
+		<td align="left"><br></td>
+		<td align="left"><b><i><font color="#0000FF">method can begin with remove in ejb3.0</font></i></b></td>
+	</tr>
+	<tr>
+		<td height="17" align="left"><br></td>
+		<td align="left"><br></td>
+		<td align="left"><br></td>
+		<td align="left"><br></td>
+		<td align="left"><br></td>
+		<td align="left"><b><i><font color="#0000FF"><br></font></i></b></td>
+	</tr>
+	<tr>
+		<td height="31" align="left" valign=middle><br></td>
+		<td align="left" valign=middle><b><u><font size=3 color="#339966">Local Home Interface</font></u></b></td>
+		<td align="left" valign=middle><br></td>
+		<td align="left" valign=middle><br></td>
+		<td align="left" valign=middle><br></td>
+		<td align="left" valign=middle><b><i><font color="#0000FF"><br></font></i></b></td>
+	</tr>
+	<tr>
+		<td height="21" align="left"><br></td>
+		<td align="left"><b><font size=3 color="#0000FF">Session and Entity</font></b></td>
+		<td align="left"><br></td>
+		<td align="left"><br></td>
+		<td align="left"><br></td>
+		<td align="left"><b><i><font color="#0000FF"><br></font></i></b></td>
+	</tr>
+	<tr>
+		<td height="48" align="right" sdval="3" sdnum="16393;">3</td>
+		<td align="left">every create method of throws clause must declare createException, <br>But it can also declare any application (checked) exception</td>
+		<td align="left">Y</td>
+		<td align="left">Y</td>
+		<td align="left">NA</td>
+		<td align="left"><b><i><font color="#0000FF">if not deployment exception</font></i></b></td>
+	</tr>
+	<tr>
+		<td height="25" align="left"><br></td>
+		<td align="left">All create method must have declared CreateException in its throws clause.</td>
+		<td align="left">Y</td>
+		<td align="left">Y</td>
+		<td align="left">NA</td>
+		<td align="left"><b><i><font color="#0000FF"> If not, deploymentException</font></i></b></td>
+	</tr>
+	<tr>
+		<td height="46" align="left"><br></td>
+		<td align="left">remove( Object key) of EJBHome is only for entity bean. If session use this will get RemoveException or<br> EJBException if client is local</td>
+		<td align="left">NA</td>
+		<td align="left">Y</td>
+		<td align="left">NA</td>
+		<td align="left"><b><i><font color="#0000FF">RemoveException or EJBException</font></i></b></td>
+	</tr>
+	<tr>
+		<td height="25" align="left"><br></td>
+		<td align="left">create method on home’s return type must be corresponding component interface, </td>
+		<td align="left">Y</td>
+		<td align="left">Y</td>
+		<td align="left">NA</td>
+		<td align="left"><b><i><font color="#0000FF">if not deployment exception</font></i></b></td>
+	</tr>
+	<tr>
+		<td height="17" align="left"><br></td>
+		<td align="left">stateless session's create method must have only one no-arg create method, </td>
+		<td align="left">Y</td>
+		<td align="left">NA</td>
+		<td align="left">NA</td>
+		<td align="left"><b><i><font color="#0000FF">if not deployment exception</font></i></b></td>
+	</tr>
+	<tr>
+		<td height="17" align="left"><br></td>
+		<td align="left"><br></td>
+		<td align="left"><br></td>
+		<td align="left"><br></td>
+		<td align="left"><br></td>
+		<td align="left"><b><i><font color="#0000FF"><br></font></i></b></td>
+	</tr>
+	<tr>
+		<td height="17" align="left"><br></td>
+		<td align="left"><br></td>
+		<td align="left"><br></td>
+		<td align="left"><br></td>
+		<td align="left"><br></td>
+		<td align="left"><b><i><font color="#0000FF"><br></font></i></b></td>
+	</tr>
+	<tr>
+		<td height="21" align="left"><b><font size=3 color="#0000FF"><br></font></b></td>
+		<td align="left"><b><font size=3 color="#0000FF">Satefull Session</font></b></td>
+		<td align="left"><b><font size=3 color="#0000FF"><br></font></b></td>
+		<td align="left"><b><font size=3 color="#0000FF"><br></font></b></td>
+		<td align="left"><b><font size=3 color="#0000FF"><br></font></b></td>
+		<td align="left"><b><i><font size=3 color="#0000FF"><br></font></i></b></td>
+	</tr>
+	<tr>
+		<td height="37" align="left"><br></td>
+		<td align="left">statefull session bean no need to have no-arg create method but it can</td>
+		<td align="left">Y</td>
+		<td align="left">Y</td>
+		<td align="left">NA</td>
+		<td align="left"><b><i><font color="#0000FF"><br></font></i></b></td>
+	</tr>
+	<tr>
+		<td height="17" align="left"><br></td>
+		<td align="left"><br></td>
+		<td align="left"><br></td>
+		<td align="left"><br></td>
+		<td align="left"><br></td>
+		<td align="left"><b><i><font color="#0000FF"><br></font></i></b></td>
+	</tr>
+	<tr>
+		<td height="21" align="left"><br></td>
+		<td align="left"><b><font size=3 color="#0000FF">Entity alone</font></b></td>
+		<td align="left"><br></td>
+		<td align="left"><br></td>
+		<td align="left"><br></td>
+		<td align="left"><b><i><font color="#0000FF"><br></font></i></b></td>
+	</tr>
+	<tr>
+		<td height="31" align="left"><br></td>
+		<td align="left">Home interface of entity bean must have atleast one findByPrimaryKey() methods</td>
+		<td align="left">NA</td>
+		<td align="left">Y</td>
+		<td align="left">NA</td>
+		<td align="left"><b><i><font color="#0000FF">if not get deployment exception</font></i></b></td>
+	</tr>
+	<tr>
+		<td height="17" align="left"><br></td>
+		<td align="left">Home business method returning value object</td>
+		<td align="left"><br></td>
+		<td align="left"><br></td>
+		<td align="left"><br></td>
+		<td align="left"><b><i><font color="#0000FF">test</font></i></b></td>
+	</tr>
+</table>
+<!-- ************************************************************************** -->
+<hr>
+<A NAME="table2"><h1>Sheet 3: <em>Component</em></h1></A>
+<table cellspacing="0" border="0">
+	<colgroup width="35"></colgroup>
+	<colgroup width="681"></colgroup>
+	<colgroup width="62"></colgroup>
+	<colgroup width="58"></colgroup>
+	<colgroup width="42"></colgroup>
+	<colgroup width="340"></colgroup>
+	<tr>
+		<td height="17" align="left" bgcolor="#FF0000"><b><font color="#FFFFFF">No</font></b></td>
+		<td align="left" bgcolor="#FF0000"><b><font color="#FFFFFF">Rules</font></b></td>
+		<td align="left" bgcolor="#FF0000"><b><font color="#FFFFFF">Session </font></b></td>
+		<td align="left" bgcolor="#FF0000"><b><font color="#FFFFFF">Entity </font></b></td>
+		<td align="left" bgcolor="#FF0000"><b><font color="#FFFFFF">MDB</font></b></td>
+		<td align="left" bgcolor="#FF0000"><b><font color="#FFFFFF">Remarks</font></b></td>
+	</tr>
+	<tr>
+		<td height="17" align="left"><br></td>
+		<td align="left"><br></td>
+		<td align="left"><br></td>
+		<td align="left"><br></td>
+		<td align="left"><br></td>
+		<td align="left"><b><i><font color="#0000FF"><br></font></i></b></td>
+	</tr>
+	<tr>
+		<td height="28" align="left" valign=middle><br></td>
+		<td align="left" valign=middle><b><u><font size=3 color="#339966">Remote Component Interface</font></u></b></td>
+		<td align="left" valign=middle><br></td>
+		<td align="left" valign=middle><br></td>
+		<td align="left" valign=middle><br></td>
+		<td align="left" valign=middle><b><i><font color="#0000FF"><br></font></i></b></td>
+	</tr>
+	<tr>
+		<td height="17" align="left" valign=middle><br></td>
+		<td align="left" valign=middle><b><u><font size=3 color="#339966"><br></font></u></b></td>
+		<td align="left" valign=middle><br></td>
+		<td align="left" valign=middle><br></td>
+		<td align="left" valign=middle><br></td>
+		<td align="left" valign=middle><b><i><font color="#0000FF"><br></font></i></b></td>
+	</tr>
+	<tr>
+		<td height="16" align="left" valign=middle><br></td>
+		<td align="left" valign=middle><b><u><font size=3 color="#0000FF">Session and Entity</font></u></b></td>
+		<td align="left" valign=middle><br></td>
+		<td align="left" valign=middle><br></td>
+		<td align="left" valign=middle><br></td>
+		<td align="left" valign=middle><b><i><font color="#0000FF"><br></font></i></b></td>
+	</tr>
+	<tr>
+		<td height="25" align="right" sdval="1" sdnum="16393;">1</td>
+		<td align="left">Remote component interface must extend EJBObject. </td>
+		<td align="left">Y</td>
+		<td align="left">Y</td>
+		<td align="left">NA</td>
+		<td align="left"><b><i><font color="#0000FF">If not, deploymentException</font></i></b></td>
+	</tr>
+	<tr>
+		<td height="26" align="left"><br></td>
+		<td align="left">argument and return type must be RMI-IIOP complaint</td>
+		<td align="left">Y</td>
+		<td align="left">Y</td>
+		<td align="left">NA</td>
+		<td align="left"><b><i><font color="#0000FF">test</font></i></b></td>
+	</tr>
+	<tr>
+		<td height="28" align="left"><br></td>
+		<td align="left">Every business method's throws clause must be declared with RemoteException</td>
+		<td align="left">Y</td>
+		<td align="left">Y</td>
+		<td align="left">NA</td>
+		<td align="left"><b><i><font color="#0000FF">if not Deployment exception</font></i></b></td>
+	</tr>
+	<tr>
+		<td height="43" align="left"><br></td>
+		<td align="left">Business method can have it throws clause any application exception . Those must be checked exception, runtime exception cannot declared </td>
+		<td align="left">Y</td>
+		<td align="left">Y</td>
+		<td align="left">NA</td>
+		<td align="left"><b><i><font color="#0000FF">,if not will get Deployment exception </font></i></b></td>
+	</tr>
+	<tr>
+		<td height="27" align="left"><br></td>
+		<td align="left">busniess method can be overloaded</td>
+		<td align="left">Y</td>
+		<td align="left">Y</td>
+		<td align="left">NA</td>
+		<td align="left"><b><i><font color="#0000FF"><br></font></i></b></td>
+	</tr>
+	<tr>
+		<td height="39" align="left"><br></td>
+		<td align="left">Business method parameters and return type must exactly match with method in bean class, <br>if not will get Deployment Exception. Covarient type also not applied here</td>
+		<td align="left">Y</td>
+		<td align="left">Y</td>
+		<td align="left">NA</td>
+		<td align="left"><b><i><font color="#0000FF">,if not will get Deployment exception </font></i></b></td>
+	</tr>
+	<tr>
+		<td height="35" align="left"><br></td>
+		<td align="left">Busness method cannot start with &quot;ejb&quot;</td>
+		<td align="left"><b><font color="#008000">Y</font></b></td>
+		<td align="left"><b><font color="#008000">Y</font></b></td>
+		<td align="left">NA</td>
+		<td align="left"><b><i><font color="#0000FF">business method can start with &quot;ejb&quot;</font></i></b></td>
+	</tr>
+	<tr>
+		<td height="17" align="left"><br></td>
+		<td align="left"><br></td>
+		<td align="left"><br></td>
+		<td align="left"><br></td>
+		<td align="left"><br></td>
+		<td align="left"><b><i><font color="#0000FF"><br></font></i></b></td>
+	</tr>
+	<tr>
+		<td height="17" align="left"><br></td>
+		<td align="left"><br></td>
+		<td align="left"><br></td>
+		<td align="left"><br></td>
+		<td align="left"><br></td>
+		<td align="left"><b><i><font color="#0000FF"><br></font></i></b></td>
+	</tr>
+	<tr>
+		<td height="21" align="left"><br></td>
+		<td align="left"><b><font size=3 color="#0000FF">Session ( Stateless and Stateful)</font></b></td>
+		<td align="left"><br></td>
+		<td align="left"><br></td>
+		<td align="left">NA</td>
+		<td align="left"><b><i><font color="#0000FF"><br></font></i></b></td>
+	</tr>
+	<tr>
+		<td height="17" align="left"><br></td>
+		<td align="left"><br></td>
+		<td align="left"><br></td>
+		<td align="left"><br></td>
+		<td align="left">NA</td>
+		<td align="left"><b><i><font color="#0000FF"><br></font></i></b></td>
+	</tr>
+	<tr>
+		<td height="17" align="left"><br></td>
+		<td align="left"><br></td>
+		<td align="left"><br></td>
+		<td align="left"><br></td>
+		<td align="left">NA</td>
+		<td align="left"><b><i><font color="#0000FF"><br></font></i></b></td>
+	</tr>
+	<tr>
+		<td height="21" align="left"><br></td>
+		<td align="left"><b><font size=3 color="#0000FF">Entity alone</font></b></td>
+		<td align="left"><br></td>
+		<td align="left"><br></td>
+		<td align="left">NA</td>
+		<td align="left"><b><i><font color="#0000FF"><br></font></i></b></td>
+	</tr>
+	<tr>
+		<td height="43" align="left"><br></td>
+		<td align="left">Object getPrimaryKey() method of EJBObject is only for entity bean but not for session bean. </td>
+		<td align="left">NA</td>
+		<td align="left">Y</td>
+		<td align="left">NA</td>
+		<td align="left"><b><i><font color="#0000FF">If we called get RemoteException or EJBException<br> if client is local</font></i></b></td>
+	</tr>
+	<tr>
+		<td height="17" align="left"><br></td>
+		<td align="left"><br></td>
+		<td align="left"><br></td>
+		<td align="left"><br></td>
+		<td align="left">NA</td>
+		<td align="left"><b><i><font color="#0000FF"><br></font></i></b></td>
+	</tr>
+	<tr>
+		<td height="31" align="left" valign=middle><br></td>
+		<td align="left" valign=middle><b><u><font size=3 color="#339966">Local Component Interface</font></u></b></td>
+		<td align="left" valign=middle><br></td>
+		<td align="left" valign=middle><br></td>
+		<td align="left" valign=middle><br></td>
+		<td align="left" valign=middle><b><i><font color="#0000FF"><br></font></i></b></td>
+	</tr>
+	<tr>
+		<td height="31" align="left" valign=middle><br></td>
+		<td align="left" valign=middle><b><u><font size=3 color="#339966"><br></font></u></b></td>
+		<td align="left" valign=middle><br></td>
+		<td align="left" valign=middle><br></td>
+		<td align="left" valign=middle><br></td>
+		<td align="left" valign=middle><b><i><font color="#0000FF"><br></font></i></b></td>
+	</tr>
+	<tr>
+		<td height="32" align="left"><br></td>
+		<td align="left">Every business method declared in component interface must have matching method in bean class.</td>
+		<td align="left">Y</td>
+		<td align="left">Y</td>
+		<td align="left">NA</td>
+		<td align="left"><b><i><font color="#0000FF"> If not deployment exception</font></i></b></td>
+	</tr>
+	<tr>
+		<td height="28" align="left"><br></td>
+		<td align="left">business method can be overloaded</td>
+		<td align="left">Y</td>
+		<td align="left">Y</td>
+		<td align="left">NA</td>
+		<td align="left"><b><i><font color="#0000FF"><br></font></i></b></td>
+	</tr>
+	<tr>
+		<td height="17" align="left"><br></td>
+		<td align="left">Business method cannot start with &quot;ejb&quot;</td>
+		<td align="left">Y</td>
+		<td align="left">Y</td>
+		<td align="left">NA</td>
+		<td align="left"><b><i><font color="#0000FF"><br></font></i></b></td>
+	</tr>
+	<tr>
+		<td height="43" align="left"><br></td>
+		<td align="left">Business method parameters and return type must exactly match with method in bean class. Covarient type also not applied here</td>
+		<td align="left">Y</td>
+		<td align="left">Y</td>
+		<td align="left">NA</td>
+		<td align="left"><b><i><font color="#0000FF"> If not deployment exception</font></i></b></td>
+	</tr>
+	<tr>
+		<td height="42" align="left"><br></td>
+		<td align="left">Business method can have it throws clause any application exception . Those must be checked exception, it cannot declare runtime exception,</td>
+		<td align="left">Y</td>
+		<td align="left">Y</td>
+		<td align="left">NA</td>
+		<td align="left"><b><i><font color="#0000FF"> If not deployment exception</font></i></b></td>
+	</tr>
+	<tr>
+		<td height="17" align="left"><br></td>
+		<td align="left">Any of business method must not declare RemoteException</td>
+		<td align="left"><br></td>
+		<td align="left"><br></td>
+		<td align="left"><br></td>
+		<td align="left"><b><i><font color="#0000FF">if not deployment exception</font></i></b></td>
+	</tr>
+	<tr>
+		<td height="17" align="left"><br></td>
+		<td align="left"><br></td>
+		<td align="left"><br></td>
+		<td align="left"><br></td>
+		<td align="left"><br></td>
+		<td align="left"><b><i><font color="#0000FF"><br></font></i></b></td>
+	</tr>
+	<tr>
+		<td height="17" align="left"><br></td>
+		<td align="left"><br></td>
+		<td align="left"><br></td>
+		<td align="left"><br></td>
+		<td align="left"><br></td>
+		<td align="left"><b><i><font color="#0000FF"><br></font></i></b></td>
+	</tr>
+	<tr>
+		<td height="17" align="left"><br></td>
+		<td align="left"><br></td>
+		<td align="left"><br></td>
+		<td align="left"><br></td>
+		<td align="left"><br></td>
+		<td align="left"><b><i><font color="#0000FF"><br></font></i></b></td>
+	</tr>
+	<tr>
+		<td height="21" align="left"><br></td>
+		<td align="left"><b><font size=3 color="#0000FF">Entity alone</font></b></td>
+		<td align="left"><br></td>
+		<td align="left"><br></td>
+		<td align="left">NA</td>
+		<td align="left"><b><i><font color="#0000FF"><br></font></i></b></td>
+	</tr>
+	<tr>
+		<td height="36" align="left"><br></td>
+		<td align="left">Object getPrimaryKey() method of EJBLocalObject is only for entity bean but not for session bean. </td>
+		<td align="left">NA</td>
+		<td align="left">Y</td>
+		<td align="left">NA</td>
+		<td align="left"><b><i><font color="#0000FF">If we called get  EJBException  if client is local</font></i></b></td>
+	</tr>
+	<tr>
+		<td height="85" align="left"><br></td>
+		<td align="left">There are three ways to get component reference for exiting entity <br><br>1. finder method<br>2. create method<br>3. home business method( can return anything including component inteface refernc )</td>
+		<td align="left">NA</td>
+		<td align="left">Y</td>
+		<td align="left">NA</td>
+		<td align="left"><b><i><font color="#0000FF"><br></font></i></b></td>
+	</tr>
+</table>
+<!-- ************************************************************************** -->
+<hr>
+<A NAME="table3"><h1>Sheet 4: <em>Bean Class</em></h1></A>
+<table cellspacing="0" border="0">
+	<colgroup width="29"></colgroup>
+	<colgroup width="598"></colgroup>
+	<colgroup width="91"></colgroup>
+	<colgroup width="100"></colgroup>
+	<colgroup width="80"></colgroup>
+	<colgroup width="67"></colgroup>
+	<colgroup width="378"></colgroup>
+	<tr>
+		<td height="17" align="left" bgcolor="#FF0000"><b><font color="#FFFFFF">No</font></b></td>
+		<td align="left" bgcolor="#FF0000"><b><font color="#FFFFFF">Rules</font></b></td>
+		<td align="left" bgcolor="#FF0000"><b><font color="#FFFFFF">Session less</font></b></td>
+		<td align="left" bgcolor="#FF0000"><b><font color="#FFFFFF">State full</font></b></td>
+		<td align="left" bgcolor="#FF0000"><b><font color="#FFFFFF">Entity </font></b></td>
+		<td align="left" bgcolor="#FF0000"><b><font color="#FFFFFF">Message </font></b></td>
+		<td align="left" bgcolor="#FF0000"><b><i><font color="#FFFFFF">Remarks</font></i></b></td>
+	</tr>
+	<tr>
+		<td height="17" align="left"><br></td>
+		<td align="left"><br></td>
+		<td align="left"><br></td>
+		<td align="left"><br></td>
+		<td align="left"><br></td>
+		<td align="left"><br></td>
+		<td align="left"><b><i><br></i></b></td>
+	</tr>
+	<tr>
+		<td height="17" align="left"><br></td>
+		<td align="left"><br></td>
+		<td align="left"><br></td>
+		<td align="left"><br></td>
+		<td align="left"><br></td>
+		<td align="left"><br></td>
+		<td align="left"><b><i><br></i></b></td>
+	</tr>
+	<tr>
+		<td height="69" align="left"><br></td>
+		<td align="left">Bean calss no need to care about it has either local or remote client. None of realtion with client<br>view ABOUT TYPE of client ( Local or Remote)<br>But arguments matter</td>
+		<td align="left">Y</td>
+		<td align="left">Y</td>
+		<td align="left">Y</td>
+		<td align="left">NA</td>
+		<td align="left"><b><i><br></i></b></td>
+	</tr>
+	<tr>
+		<td height="26" align="left"><br></td>
+		<td align="left">ejbCreate() method must be in Bean class I thought it would give  exception when client try call.</td>
+		<td align="left">Y</td>
+		<td align="left">Y</td>
+		<td align="left"><font color="#0000FF">Optional</font></td>
+		<td align="left">Y</td>
+		<td align="left"><b><i>If not, deploymentException</i></b></td>
+	</tr>
+	<tr>
+		<td height="34" align="left"><br></td>
+		<td align="left">Bean must implement Corresponding interface If not , deploymentException</td>
+		<td colspan=2 align="left">        SessionBean</td>
+		<td align="left">EntityBean</td>
+		<td align="left">MessageDrivenBean</td>
+		<td align="left"><b><i>If not, deploymentException</i></b></td>
+	</tr>
+	<tr>
+		<td height="45" align="left"><br></td>
+		<td align="left">Bean class can implement any home or component interface.No problem if it is implements <br>those. But it does not make sense</td>
+		<td align="left">Y</td>
+		<td align="left">Y</td>
+		<td align="left">Y</td>
+		<td align="left">NA</td>
+		<td align="left"><b><i><br></i></b></td>
+	</tr>
+	<tr>
+		<td height="57" align="left"><br></td>
+		<td align="left">SessionSynchronization can implements only by statefull,  and stateless , entity and <br>messagedrivean cannot implemente if it is it will get Deployment exception</td>
+		<td align="left">NA</td>
+		<td align="left">Y</td>
+		<td align="left"><br></td>
+		<td align="left"><br></td>
+		<td align="left"><b><i><font color="#FF0000">Test for entity and MDB</font></i></b></td>
+	</tr>
+	<tr>
+		<td height="29" align="left"><br></td>
+		<td align="left">Number of Container call back methods in bean class</td>
+		<td align="left">exatly 5</td>
+		<td align="left"> = &gt;5 ( createXXX)</td>
+		<td align="left"> =&gt; 7</td>
+		<td align="left">exactly 4</td>
+		<td align="left"><b><i><br></i></b></td>
+	</tr>
+	<tr>
+		<td height="38" align="left"><br></td>
+		<td align="left"><font color="#0000FF">Passivation while the bean in transaction</font></td>
+		<td align="left">NA</td>
+		<td align="left">cannot</td>
+		<td align="left">cannot</td>
+		<td align="left">NA</td>
+		<td align="left"><b><i><br></i></b></td>
+	</tr>
+	<tr>
+		<td height="56" align="left"><br></td>
+		<td align="left">Bean calss &quot;abstract or  final&quot; modifier</td>
+		<td colspan=2 align="left">            Must not</td>
+		<td align="left">Must be <br>&quot;abstract&quot; only</td>
+		<td align="left">Must Not</td>
+		<td align="left"><b><i> if this rule not followed deployment exception</i></b></td>
+	</tr>
+	<tr>
+		<td height="40" align="left"><br></td>
+		<td align="left">Return type of ejbCreate method must be</td>
+		<td align="left">void</td>
+		<td align="left">void</td>
+		<td align="left">primary key</td>
+		<td align="left">void</td>
+		<td align="left"><b><i><br></i></b></td>
+	</tr>
+	<tr>
+		<td height="40" align="left"><br></td>
+		<td align="left">ejbCreate() and any business methods must not be marked as static or final. </td>
+		<td align="left">Y</td>
+		<td align="left">Y</td>
+		<td align="left">Y</td>
+		<td align="left">Y</td>
+		<td align="left"><b><i>If not, deploymentException</i></b></td>
+	</tr>
+	<tr>
+		<td height="48" align="left"><br></td>
+		<td align="left">throws clause of ejbCreate() method can have any checked. And also it is good practice to <br>declaring CreateException on every ejbCreate( ) method</td>
+		<td align="left">Y</td>
+		<td align="left">Y</td>
+		<td align="left">Y</td>
+		<td align="left">Y</td>
+		<td align="left"><b><i><br></i></b></td>
+	</tr>
+	<tr>
+		<td height="52" align="left"><br></td>
+		<td align="left">any helper methods in bean class can throw any RuntimeException. Not problem <br>Only methods are mapped to component interface or home interface cannot declare in bean class</td>
+		<td align="left">Y</td>
+		<td align="left">Y</td>
+		<td align="left">Y</td>
+		<td align="left">Y</td>
+		<td align="left"><b><i><br></i></b></td>
+	</tr>
+	<tr>
+		<td height="40" align="left"><br></td>
+		<td align="left">any helper methods in bean class can be marked as static or final</td>
+		<td align="left">Y</td>
+		<td align="left">Y</td>
+		<td align="left">Y</td>
+		<td align="left">Y</td>
+		<td align="left"><b><i><br></i></b></td>
+	</tr>
+	<tr>
+		<td height="63" align="left"><br></td>
+		<td align="left">Bean class can have create method but, it no need to have correspoinding create method in <br>home interface. But vice vera is mandatory. That is … any create method in home must have <br>matching methods in bean class</td>
+		<td align="left">Y</td>
+		<td align="left">Y</td>
+		<td align="left">Y</td>
+		<td align="left">NA</td>
+		<td align="left"><b><i><br></i></b></td>
+	</tr>
+	<tr>
+		<td height="25" align="left"><br></td>
+		<td align="left">any of bean class must not have  override &quot;finalize()&quot; method</td>
+		<td align="left">Y</td>
+		<td align="left">Y</td>
+		<td align="left">Y</td>
+		<td align="left">Y</td>
+		<td align="left"><b><i>If not, deploymentException</i></b></td>
+	</tr>
+</table>
+<!-- ************************************************************************** -->
+<hr>
+<A NAME="table5"><h1>Sheet 5: <em>Transaction</em></h1></A>
+<table cellspacing="0" border="0">
+	<colgroup width="21"></colgroup>
+	<colgroup width="357"></colgroup>
+	<colgroup width="132"></colgroup>
+	<colgroup width="130"></colgroup>
+	<colgroup width="119"></colgroup>
+	<colgroup width="97"></colgroup>
+	<colgroup width="400"></colgroup>
+	<colgroup width="67"></colgroup>
+	<tr>
+		<td height="34" align="left" bgcolor="#FF0000"><b><font color="#FFFFFF">S. No</font></b></td>
+		<td align="left" bgcolor="#FF0000"><b><font color="#FFFFFF">Transaction Rules</font></b></td>
+		<td align="left" bgcolor="#FF0000"><b><font color="#FFFFFF">Sateless<br>session Bean</font></b></td>
+		<td align="left" bgcolor="#FF0000"><b><font color="#FFFFFF">Statefull <br>Session Bean</font></b></td>
+		<td align="left" bgcolor="#FF0000"><b><font color="#FFFFFF">Entity Bean</font></b></td>
+		<td align="left" bgcolor="#FF0000"><b><font color="#FFFFFF">Message <br>Driven Bean</font></b></td>
+		<td align="left" bgcolor="#FF0000"><b><i><font color="#FF0000"><br></font></i></b></td>
+		<td align="left" bgcolor="#FF0000"><b><font color="#FFFFFF"><br></font></b></td>
+	</tr>
+	<tr>
+		<td height="17" align="left"><br></td>
+		<td align="left"><br></td>
+		<td align="left"><br></td>
+		<td align="left"><br></td>
+		<td align="left"><br></td>
+		<td align="left"><br></td>
+		<td align="left"><b><i><font color="#FF0000"><br></font></i></b></td>
+		<td align="left"><br></td>
+	</tr>
+	<tr>
+		<td height="119" align="right" sdval="1" sdnum="16393;">1</td>
+		<td align="left">Support both BMT and CMT</td>
+		<td align="left">Y</td>
+		<td align="left">Y</td>
+		<td align="left">CMT only<br>so, Transacttion<br>is only by DD  but cannot by coding<br><br>BMT must not use</td>
+		<td align="left"> Y</td>
+		<td align="left"><b><i><font color="#FF0000">Entity bean cannout use UserTrnasaction's methods. If it is that code as illegal</font></i></b></td>
+		<td align="left"><br></td>
+	</tr>
+	<tr>
+		<td height="77" align="right" sdval="2" sdnum="16393;">2</td>
+		<td align="left">when use BMT it must end with in that same method</td>
+		<td align="left">Y</td>
+		<td align="left">when use BMT it can be for more than one method invocation</td>
+		<td align="left">NA</td>
+		<td align="left">Y</td>
+		<td align="left"><b><i><font color="#FF0000">if not close with in that method of stateless bean, it give <br>runtime exception either RemoteException or javax.ejb.EJBException if client local</font></i></b></td>
+		<td align="left"><br></td>
+	</tr>
+	<tr>
+		<td height="47" align="right" sdval="3" sdnum="16393;">3</td>
+		<td align="left">The only  Transaction a BMT bean will run in is one  that the bean itself creates</td>
+		<td align="left">Y</td>
+		<td align="left">Y</td>
+		<td align="left">NA</td>
+		<td align="left">Y</td>
+		<td align="left"><b><i><font color="#FF0000">try to check </font></i></b></td>
+		<td align="left"><br></td>
+	</tr>
+	<tr>
+		<td height="46" align="left"><br></td>
+		<td align="left">CMT bean can accept both BMT and CMT , But BMT  it don’t accept other's transaction .it run on its own</td>
+		<td align="left">Y</td>
+		<td align="left">Y</td>
+		<td align="left">Y</td>
+		<td align="left">Y</td>
+		<td align="left"><b><i><font color="#FF0000">test the api methods using in corresponding<br>transction only on page 477</font></i></b></td>
+		<td align="left"><br></td>
+	</tr>
+	<tr>
+		<td height="119" align="right" sdval="4" sdnum="16393;">4</td>
+		<td align="left"><u><font color="#0000FF">CMT attribute support<br>      1. Required<br>      2. RequiresNew<br>      3. Mandatory<br>      4. Support<br>      5. NotSupported<br>      6.Never</font></u></td>
+		<td align="left">Y</td>
+		<td align="left">Y</td>
+		<td align="left">Y</td>
+		<td align="left">Required and<br>NotSupported<br>only</td>
+		<td align="left"><b><i><font color="#FF0000">* These are make sense when methods are called by anothere bean <br><br>* &quot; Require&quot; and &quot;Support&quot; are not same. Since Support will run even if there is not transaction on calling method</font></i></b></td>
+		<td align="left"><b><i><font color="#0000FF">test</font></i></b></td>
+	</tr>
+	<tr>
+		<td height="44" align="right" sdval="5" sdnum="16393;">5</td>
+		<td align="left">Bean's create method running need a transacton ?</td>
+		<td colspan=2 align="left">Session's bean run &quot;un specified Transa<br>ction Context&quot;</td>
+		<td align="left">Y</td>
+		<td align="left">NA</td>
+		<td align="left"><b><i><font color="#FF0000">&quot;support , Never &quot;  and  &quot;NotSupport&quot;  of CMT attribute behave like this when caller don’t  have transaction.</font></i></b></td>
+		<td align="left"><br></td>
+	</tr>
+	<tr>
+		<td height="128" align="right" sdval="6" sdnum="16393;">6</td>
+		<td align="left">Any bean can have only one type of transaction . It can be either  CMT( by DD) or BMT (coding). But a single bean cannot have both.<br>If code has and its DD cannot have and the same for vice versa</td>
+		<td align="left">Y</td>
+		<td align="left">Y</td>
+		<td align="left">Y (It can have only in DD)</td>
+		<td align="left">Y</td>
+		<td align="left"><b><i><font color="#FF0000">I said in DD as &quot;container&quot; and when try to get<br>UserTransaction object get runtime exception as  java.lang.IllegalStateException: CMT beans are not allowed to get a UserTransaction&quot;<br>So, any one of trnasaction method can only use in single bean. Cannot use both</font></i></b></td>
+		<td align="left"><br></td>
+	</tr>
+	<tr>
+		<td height="102" align="right" sdval="7" sdnum="16393;">7</td>
+		<td align="left">in BMT we cannot start another one transaction <br>before to commit exitng one.<br><br> But this is possible in CMT think about &quot;RequiresNew&quot; attribute. <br>This is one advantages in CMT than BMT</td>
+		<td align="left">Y</td>
+		<td align="left">Y</td>
+		<td align="left">NA</td>
+		<td align="left">Y</td>
+		<td align="left"><b><i><font color="#FF0000">if  not will get &quot;javax.transaction.NotSupportedException: <br>Transaction already active, cannot nest transactions&quot;</font></i></b></td>
+		<td align="left"><br></td>
+	</tr>
+	<tr>
+		<td height="39" align="right" sdval="8" sdnum="16393;">8</td>
+		<td align="left">BMT only can use UserTransaction methods.<br>CMT  cannot use method of this interface.</td>
+		<td align="left">Y</td>
+		<td align="left">Y</td>
+		<td align="left">NA</td>
+		<td align="left">Y</td>
+		<td align="left"><b><i><font color="#FF0000">whe hen try to get UserTransaction object get runtime <br>exception as  java.lang.IllegalStateException: </font></i></b></td>
+		<td align="left"><br></td>
+	</tr>
+	<tr>
+		<td height="153" align="right" sdval="9" sdnum="16393;">9</td>
+		<td align="left">in Both CMT and BMT call setRollbackOnly( ) means, <br>the current transaction will end either at the time runtimeexception or commit or roll back. But not going to commit<br><br>In this case, if it is BMT means simply we can rollback instead of calling setRollbackOnly() method. So, in this aspect BMT has more control than CMT. But this much control  not necessary</td>
+		<td align="left">Y</td>
+		<td align="left">Y</td>
+		<td align="left">Y</td>
+		<td align="left">Y</td>
+		<td align="left"><b><i><font color="#FF0000"><br></font></i></b></td>
+		<td align="left"><br></td>
+	</tr>
+	<tr>
+		<td height="34" align="right" sdval="10" sdnum="16393;">10</td>
+		<td align="left">In Both CMT and BMT , when calling setRollbackOnly( )<br>methods , it must be with in transaction. </td>
+		<td align="left">Y</td>
+		<td align="left">Y</td>
+		<td align="left">Y</td>
+		<td align="left">Y</td>
+		<td align="left"><b><i><font color="#FF0000">if not ,we get ava.lang.IllegalStateException: No transaction</font></i></b></td>
+		<td align="left"><br></td>
+	</tr>
+	<tr>
+		<td height="131" align="left"><br></td>
+		<td align="left">in CMT, getRollbackOnly() and setRollbackOnly() method<br>of EJBContext called only those are method's transaction attribute are <br><br>1. Required<br>2. RequiredNew<br>3. Mandatory</td>
+		<td align="left">Y</td>
+		<td align="left">Y</td>
+		<td align="left">Y</td>
+		<td align="left">Y</td>
+		<td align="left"><b><i><font color="#FF0000">since these three is gurantee, there transaction will be there<br><br>The other three not gurantee, transaction will be there</font></i></b></td>
+		<td align="left"><br></td>
+	</tr>
+	<tr>
+		<td height="34" align="right" sdval="11" sdnum="16393;">11</td>
+		<td align="left">getRollbackOnly and setRollback only of EJBContext <br>must called only on CMT .</td>
+		<td align="left">Y</td>
+		<td align="left">Y</td>
+		<td align="left">Y</td>
+		<td align="left">Y</td>
+		<td align="left"><b><i><font color="#FF0000">if not, we get java.lang.IllegalStateException: s<br>etRollbackOnly() not allowed for BMT beans</font></i></b></td>
+		<td align="left"><br></td>
+	</tr>
+	<tr>
+		<td height="332" align="right" sdval="12" sdnum="16393;">12</td>
+		<td align="left">In CMT what are methods can be set to a transaction</td>
+		<td colspan=2 align="left">Business method of component interface <br>only. None of other</td>
+		<td align="left">Business method <br>of component interface<br><br>remove method of componenet interface<br><br>both remove method of home interface<br><br>All method of bean provider In home interface. This incude any create , finder and home business method</td>
+		<td align="left">onMessage()</td>
+		<td align="left"><b><i><font color="#FF0000">test for session , entity </font></i></b></td>
+		<td align="left"><br></td>
+	</tr>
+	<tr>
+		<td height="161" align="left"><br></td>
+		<td align="left">In CMT, if we don’t say any transaction attribute <br>in DD for a business method, but with in that we can call getRollbackOnly() , setRollbackOnly(), because of this not any exception. Since these are would running &quot;un specified transaction context&quot; of container<br><br>This apply those business method called from directly client</td>
+		<td align="left">Y</td>
+		<td align="left">Y</td>
+		<td align="left">Y</td>
+		<td align="left">Y</td>
+		<td align="left"><b><i><font color="#FF0000"><br></font></i></b></td>
+		<td align="left"><br></td>
+	</tr>
+	<tr>
+		<td height="51" align="left"><br></td>
+		<td align="left">&lt;Tranasction- type&gt; specified in bean part of DD by Bean provider But Transaction attribute specified in &lt;assembly-descriptor&gt; by deployer</td>
+		<td align="left">Y</td>
+		<td align="left">Y</td>
+		<td align="left">Y</td>
+		<td align="left">Y</td>
+		<td align="left"><b><i><font color="#FF0000"><br></font></i></b></td>
+		<td align="left"><br></td>
+	</tr>
+	<tr>
+		<td height="136" align="left"><br></td>
+		<td align="left">There is no  any nested tranaction in EJB. In BMT cannot <br>start new transaction , when currently there is a transaction exist<br><br>But in CMT simply suspend exiting one and start new one<br>just thing about &quot;RequerirsNew&quot;</td>
+		<td align="left">Y</td>
+		<td align="left">Y</td>
+		<td align="left">Y</td>
+		<td align="left">Y</td>
+		<td align="left"><b><i><font color="#FF0000"><br></font></i></b></td>
+		<td align="left"><br></td>
+	</tr>
+	<tr>
+		<td height="75" align="left"><br></td>
+		<td align="left"><font color="#FF00FF">Session Bean ( Stateful only) implement <br>SessionSynization cannot use BMT</font></td>
+		<td align="left">Y</td>
+		<td align="left">Y</td>
+		<td align="left">NA</td>
+		<td align="left">NA</td>
+		<td align="left"><b><i><font color="#FF0000">if BMT statefull session implements deployment exception</font></i></b></td>
+		<td align="left"><br></td>
+	</tr>
+	<tr>
+		<td height="170" align="left"><br></td>
+		<td align="left">BMT transaction are one-way(send out not allow inside): which means BMT bean can propagate its transaction to CMT. But BMT cannot accept another bean's any of transaction<br><br>BMT to CMT ok<br>BMT --&gt; BMT  not ok<br>CMT --&gt; BMT not ok<br><br>Since it BMT always run of its own</td>
+		<td align="left">Y</td>
+		<td align="left">Y</td>
+		<td align="left">NA</td>
+		<td align="left">Y</td>
+		<td align="left"><b><i><font color="#FF0000">test</font></i></b></td>
+		<td align="left"><br></td>
+	</tr>
+	<tr>
+		<td height="17" align="left"><br></td>
+		<td align="left">CMT  cannot let open when method finish as BMT</td>
+		<td align="left">Y</td>
+		<td align="left">Y</td>
+		<td align="left">Y</td>
+		<td align="left">Y</td>
+		<td align="left"><b><i><font color="#FF0000"><br></font></i></b></td>
+		<td align="left"><br></td>
+	</tr>
+	<tr>
+		<td height="57" align="left"><br></td>
+		<td align="left">In Entity Bean ejbLoad() called before to start a transaction ejbStroe() called before to finish (commit)</td>
+		<td align="left">NA</td>
+		<td align="left">NA</td>
+		<td align="left">Y</td>
+		<td align="left">NA</td>
+		<td rowspan=2 align="left"><b><i><font color="#FF0000">test<br><br>I can say as there are container call back methods for tranaction</font></i></b></td>
+		<td align="left"><br></td>
+	</tr>
+	<tr>
+		<td height="51" align="left"><br></td>
+		<td align="left">In session bean,  there is no any call back method for transaction by default. We can do that only for stateful session bean by implementing SessionSynchronization</td>
+		<td align="left">NA</td>
+		<td align="left">Y</td>
+		<td align="left">NA</td>
+		<td align="left">NA</td>
+		<td align="left"><br></td>
+	</tr>
+	<tr>
+		<td height="34" align="left"><br></td>
+		<td align="left"><font color="#FF0000">Entity bean can implement this SessionSynchroniztion interface</font></td>
+		<td align="left"><br></td>
+		<td align="left"><br></td>
+		<td align="left"><br></td>
+		<td align="left"><br></td>
+		<td align="left"><b><i><font color="#FF0000">If it is implements there is NOT deployment excepiton.<br>It might be any run time exception.</font></i></b></td>
+		<td align="left"><br></td>
+	</tr>
+	<tr>
+		<td height="17" align="left"><br></td>
+		<td align="left">SessionSynchronization only for CMT not for BMT</td>
+		<td align="left">Y</td>
+		<td align="left">Y</td>
+		<td align="left">Y</td>
+		<td align="left">Y</td>
+		<td align="left"><b><i><font color="#FF0000">if BMT statefull session implements deployment exception</font></i></b></td>
+		<td align="left"><br></td>
+	</tr>
+	<tr>
+		<td height="34" align="left"><br></td>
+		<td align="left">Staeless session bean cannot implements SessionSynchronization</td>
+		<td align="left">Y</td>
+		<td align="left">NA</td>
+		<td align="left">NA</td>
+		<td align="left">NA</td>
+		<td align="left"><b><i><font color="#FF0000">if it is implements will get deployment excepiton</font></i></b></td>
+		<td align="left"><br></td>
+	</tr>
+	<tr>
+		<td height="85" align="left"><br></td>
+		<td align="left">There is no any nested transaction support in EJB.<br>In BMT, we cannot do begin anthor transaction without <br>rollback or commit the current transaction<br><br>in CMT there is no possiblity.. Only DD</td>
+		<td align="left">Y</td>
+		<td align="left">NA</td>
+		<td align="left">NA</td>
+		<td align="left">NA</td>
+		<td align="left"><b><i><font color="#FF0000">will NotSupportExcepion</font></i></b></td>
+		<td align="left"><br></td>
+	</tr>
+	<tr>
+		<td height="34" align="left"><br></td>
+		<td align="left">Bean provider not say transaction attribute in DD.<br>This is job of assembler</td>
+		<td align="left">Y</td>
+		<td align="left">NA</td>
+		<td align="left">NA</td>
+		<td align="left">NA</td>
+		<td align="left"><b><i><font color="#FF0000"><br></font></i></b></td>
+		<td align="left"><br></td>
+	</tr>
+	<tr>
+		<td height="79" align="left"><br></td>
+		<td align="left">we can say trans-attribute for same method more than <br>than one time in DD excluding via &quot;*&quot;. But among them, first apperance only will be used,  followers are simply ignored.</td>
+		<td align="left">Y</td>
+		<td align="left">Y</td>
+		<td align="left">Y</td>
+		<td align="left">Y</td>
+		<td align="left"><b><i><font color="#FF0000">No any kind of exception</font></i></b></td>
+		<td align="left"><br></td>
+	</tr>
+	<tr>
+		<td height="98" align="left"><br></td>
+		<td align="left">if &lt;transaction-type&gt; in &lt;enterprise-beans&gt; as &quot;Bean&quot; instead of Container But we specifed CMT transaction attribute to any of method for that bean in &lt;Container-transaction&gt; , this will simply ignored and BMT used</td>
+		<td align="left">Y</td>
+		<td align="left">Y</td>
+		<td align="left">Y</td>
+		<td align="left">Y</td>
+		<td align="left"><b><i><font color="#FF0000">No any kind of exception</font></i></b></td>
+		<td align="left"><br></td>
+	</tr>
+	<tr>
+		<td height="87" align="left"><br></td>
+		<td align="left">&lt;method-param&gt; is used in &lt;Container-transaction&gt; is just for optional. For example I said one &lt;method-param&gt; for a method. But that method don’t have any parameter. That method call executed succussfullly without any kind of exception</td>
+		<td align="left">Y</td>
+		<td align="left">Y</td>
+		<td align="left">Y</td>
+		<td align="left">Y</td>
+		<td align="left"><b><i><font color="#FF0000">No any kind of exception</font></i></b></td>
+		<td align="left"><br></td>
+	</tr>
+</table>
+<!-- ************************************************************************** -->
+<hr>
+<A NAME="table6"><h1>Sheet 6: <em>Exception</em></h1></A>
+<table cellspacing="0" border="0">
+	<colgroup width="43"></colgroup>
+	<colgroup width="442"></colgroup>
+	<colgroup width="108"></colgroup>
+	<colgroup width="117"></colgroup>
+	<colgroup width="113"></colgroup>
+	<colgroup width="126"></colgroup>
+	<colgroup width="333"></colgroup>
+	<tr>
+		<td height="34" align="left" bgcolor="#FF0000"><b><font color="#FFFFFF">S. No</font></b></td>
+		<td align="left" bgcolor="#FF0000"><b><font color="#FFFFFF">Rules</font></b></td>
+		<td align="left" bgcolor="#FF0000"><b><font color="#FFFFFF">Sateless <br>session Bean</font></b></td>
+		<td align="left" bgcolor="#FF0000"><b><font color="#FFFFFF">Statefull <br>Session Bean</font></b></td>
+		<td align="left" bgcolor="#FF0000"><b><font color="#FFFFFF">Entity Bean <br>CMT</font></b></td>
+		<td align="left" bgcolor="#FF0000"><b><font color="#FFFFFF">Message <br>Driven Bean</font></b></td>
+		<td align="left" bgcolor="#FF0000"><b><font color="#FF0000">Notes</font></b></td>
+	</tr>
+	<tr>
+		<td height="17" align="left"><br></td>
+		<td align="left"><br></td>
+		<td align="left"><br></td>
+		<td align="left"><br></td>
+		<td align="left"><br></td>
+		<td align="left"><br></td>
+		<td align="left"><b><font color="#FF0000"><br></font></b></td>
+	</tr>
+	<tr>
+		<td height="17" align="left"><br></td>
+		<td align="left"><br></td>
+		<td align="left"><br></td>
+		<td align="left"><br></td>
+		<td align="left"><br></td>
+		<td align="left"><br></td>
+		<td align="left"><b><font color="#FF0000"><br></font></b></td>
+	</tr>
+	<tr>
+		<td height="45" align="left"><br></td>
+		<td align="left">RemoteException can be throw only by container. Not out bean <br>class. So, never put RemoteException in Bean class. </td>
+		<td align="left">Y</td>
+		<td align="left">Y</td>
+		<td align="left">Y</td>
+		<td align="left"><font color="#0000FF">N</font></td>
+		<td align="left"><b><font color="#FF0000">even if we no any deployment or rumtime <br>exception</font></b></td>
+	</tr>
+	<tr>
+		<td height="153" align="right" sdval="1" sdnum="16393;">1</td>
+		<td align="left">Can declare application exception in its method</td>
+		<td align="left">Y</td>
+		<td align="left">Y</td>
+		<td align="left">Y</td>
+		<td align="left"><font color="#0000FF">N</font></td>
+		<td align="left"><b><font color="#FF0000">I don’t know what it means, whether onMessage <br>method cannot throw any application exception or <br>if we add any helper method in MDB that cannot have throw clause .<br><br>Since if we add any application exception in onMessage() method compiler itself give error.</font></b></td>
+	</tr>
+	<tr>
+		<td height="46" align="right" sdval="2" sdnum="16393;">2</td>
+		<td align="left">Application exception cannot extend from RemoteException</td>
+		<td align="left">Y</td>
+		<td align="left">Y</td>
+		<td align="left">Y</td>
+		<td align="left">Y</td>
+		<td align="left"><b><font color="#FF0000">It will give problem when using with local <br>client.But as per romote client no problem at all.</font></b></td>
+	</tr>
+	<tr>
+		<td height="56" align="right" sdval="3" sdnum="16393;">3</td>
+		<td align="left">Container callback methods cannot throw or declare any application<br>Exception</td>
+		<td align="left">Y</td>
+		<td align="left">Y</td>
+		<td align="left">Y</td>
+		<td align="left">Y</td>
+		<td align="left"><b><font color="#FF0000"><br></font></b></td>
+	</tr>
+	<tr>
+		<td height="70" align="left"><br></td>
+		<td align="left">We cannot ourselves throw RemoteException.</td>
+		<td align="left">Y</td>
+		<td align="left">Y</td>
+		<td align="left">Y</td>
+		<td align="left">Y</td>
+		<td align="left"><b><font color="#FF0000">I throw this exception myself. I don’t know What <br>this really means.<br><br>I has to throw only by Container</font></b></td>
+	</tr>
+	<tr>
+		<td height="45" align="left"><br></td>
+		<td align="left">In CMP FinderException can thrown only by Conainer. <br>Cannot by bean code</td>
+		<td align="left">NA</td>
+		<td align="left">NA</td>
+		<td align="left">Y</td>
+		<td align="left">NA</td>
+		<td align="left"><b><font color="#FF0000"><br></font></b></td>
+	</tr>
+	<tr>
+		<td height="38" align="left"><br></td>
+		<td align="left">In BMP bean can throw FinderException instead of container</td>
+		<td align="left">NA</td>
+		<td align="left">NA</td>
+		<td align="left">Y</td>
+		<td align="left">NA</td>
+		<td align="left"><b><font color="#FF0000"><br></font></b></td>
+	</tr>
+	<tr>
+		<td height="81" align="left"><br></td>
+		<td align="left"><font color="#0000FF">RemoveException will be thrown only from remove mtd of bean<br>But it can throw either bean or container</font></td>
+		<td align="left">NA ( stateless<br> bean never get this exception)</td>
+		<td align="left">Y</td>
+		<td align="left">Y</td>
+		<td align="left">NA ( MDB<br> bean never get this exception)</td>
+		<td align="left"><b><font color="#FF0000"><br></font></b></td>
+	</tr>
+	<tr>
+		<td height="53" align="left"><br></td>
+		<td align="left"><font color="#0000FF">ObjectNotFoundException only for SINGLE entity finder method<br>It never throw multiple finder</font></td>
+		<td align="left">NA</td>
+		<td align="left">NA</td>
+		<td align="left">Y</td>
+		<td align="left">NA</td>
+		<td align="left"><b><font color="#FF0000"><br></font></b></td>
+	</tr>
+	<tr>
+		<td height="61" align="left"><br></td>
+		<td align="left"><font color="#0000FF">CreateException can throw by either container or bean's create method<br>If bean code throw this exception method's throw clause will be declared</font></td>
+		<td align="left"><br></td>
+		<td align="left"><br></td>
+		<td align="left">Y</td>
+		<td align="left"><br></td>
+		<td align="left"><b><font color="#FF0000"><br></font></b></td>
+	</tr>
+	<tr>
+		<td height="48" align="left"><br></td>
+		<td align="left">A query return multiple object but return type of that method <br>is sigle object type instead of collection. What exception will come?</td>
+		<td align="left"><br></td>
+		<td align="left"><br></td>
+		<td align="left"><br></td>
+		<td align="left"><br></td>
+		<td align="left"><b><font color="#FF0000">Please test  in entity bean finder methods</font></b></td>
+	</tr>
+	<tr>
+		<td height="51" align="left"><br></td>
+		<td align="left"><font color="#FF0000">NoSuchEntityException this mostly use with MBP when there is not <br>such entity in Database. But CMT we don’t use mostly, instead of this we use FinderException</font></td>
+		<td align="left">NA</td>
+		<td align="left">NA</td>
+		<td align="left">Y</td>
+		<td align="left">NA</td>
+		<td align="left"><b><font color="#FF0000"><br></font></b></td>
+	</tr>
+	<tr>
+		<td height="51" align="left"><br></td>
+		<td align="left"><font color="#3366FF">TransactionRequiredLocalException and TransactionRequiredException<br>used only with CMT. When that method has &quot;mandatory&quot; attribute</font></td>
+		<td align="left">Y</td>
+		<td align="left">Y</td>
+		<td align="left">Y</td>
+		<td align="left">Y</td>
+		<td align="left"><b><font color="#FF0000"><br></font></b></td>
+	</tr>
+	<tr>
+		<td height="222" align="left"><br></td>
+		<td align="left">TransactionRolledbackOnly and TransactionRolledbackLocalException <br>are throw when method call to commit the exiting transaction . But container not able to commit<br><br>But this transaction leagal to request to commit.<br><br>So, it mostly throw from BMT not CMT. Since in CMT we cannot ask to commit<br><br>But, Container dont throw these exception when call mtd  to commit but earlier called to setRollbackOnly(). In this  case container still just rollback and return. dont commit...dont exception</td>
+		<td align="left">Y</td>
+		<td align="left">Y</td>
+		<td align="left">Y</td>
+		<td align="left">Y</td>
+		<td align="left"><b><font color="#FF0000"><br></font></b></td>
+	</tr>
+	<tr>
+		<td height="32" align="left"><br></td>
+		<td align="left">IllegalStateException mostly( ONLY) will throw from Illegal Bean Things access</td>
+		<td align="left">Y</td>
+		<td align="left">Y</td>
+		<td align="left">Y</td>
+		<td align="left">Y</td>
+		<td align="left"><b><font color="#FF0000"><br></font></b></td>
+	</tr>
+	<tr>
+		<td height="25" align="left"><br></td>
+		<td align="left">If any problem inside of remove() method </td>
+		<td align="left">Y</td>
+		<td align="left">Y</td>
+		<td align="left">Y</td>
+		<td align="left">Y</td>
+		<td align="left"><b><font color="#FF0000"> will get RemoveException</font></b></td>
+	</tr>
+	<tr>
+		<td height="27" align="left"><br></td>
+		<td align="left">if remove is not there (local session) </td>
+		<td align="left">Y</td>
+		<td align="left">Y</td>
+		<td align="left">Y</td>
+		<td align="left">Y</td>
+		<td align="left"><b><font color="#FF0000">will get RemoveException</font></b></td>
+	</tr>
+	<tr>
+		<td height="34" align="left"><br></td>
+		<td align="left">if bean already remove but if we call any business method will get </td>
+		<td align="left">Y</td>
+		<td align="left">Y</td>
+		<td align="left">Y</td>
+		<td align="left">NA</td>
+		<td align="left"><b><font color="#FF0000">RemoteException ( has wrapped <br>NoSuchObjectException) or EJBException</font></b></td>
+	</tr>
+	<tr>
+		<td height="28" align="left" bgcolor="#CCFFCC"><br></td>
+		<td align="left" bgcolor="#CCFFCC">if we call getPrimaryKey on EntityContest where, it is not applicable</td>
+		<td align="left" bgcolor="#CCFFCC"><br></td>
+		<td align="left" bgcolor="#CCFFCC"><br></td>
+		<td align="left" bgcolor="#CCFFCC"><br></td>
+		<td align="left" bgcolor="#CCFFCC"><br></td>
+		<td align="left" bgcolor="#CCFFCC"><b><font color="#FF0000">IllegalStateException</font></b></td>
+	</tr>
+	<tr>
+		<td height="28" align="left" bgcolor="#CCFFCC"><br></td>
+		<td align="left" bgcolor="#CCFFCC">if we call getPrimaryKey on Local Session Home </td>
+		<td align="left" bgcolor="#CCFFCC"><br></td>
+		<td align="left" bgcolor="#CCFFCC"><br></td>
+		<td align="left" bgcolor="#CCFFCC"><br></td>
+		<td align="left" bgcolor="#CCFFCC"><br></td>
+		<td align="left" bgcolor="#CCFFCC"><b><font color="#FF0000">EJBException</font></b></td>
+	</tr>
+	<tr>
+		<td height="56" align="left"><br></td>
+		<td align="left">Message Driven Bean can throw only EJBException or its subclass</td>
+		<td align="left">N</td>
+		<td align="left">N</td>
+		<td align="left">N</td>
+		<td align="left">Y</td>
+		<td align="left"><b><font color="#FF0000">Since, there is not client and cannot declare <br>any application exception in onMessage () method</font></b></td>
+	</tr>
+</table>
+<!-- ************************************************************************** -->
+<hr>
+<A NAME="table7"><h1>Sheet 7: <em>Environment</em></h1></A>
+<table cellspacing="0" border="0">
+	<colgroup width="48"></colgroup>
+	<colgroup width="307"></colgroup>
+	<colgroup width="161"></colgroup>
+	<colgroup width="164"></colgroup>
+	<colgroup width="143"></colgroup>
+	<colgroup width="154"></colgroup>
+	<colgroup width="308"></colgroup>
+	<tr>
+		<td height="17" align="left" bgcolor="#FF0000"><b><font color="#FFFFFF">S. No</font></b></td>
+		<td align="left" bgcolor="#FF0000"><b><font color="#FFFFFF">Rules</font></b></td>
+		<td align="left" bgcolor="#FF0000"><b><font color="#FFFFFF">Sateless session Bean</font></b></td>
+		<td align="left" bgcolor="#FF0000"><b><font color="#FFFFFF">Statefull Session Bean</font></b></td>
+		<td align="left" bgcolor="#FF0000"><b><font color="#FFFFFF">Entity Bean CMT</font></b></td>
+		<td align="left" bgcolor="#FF0000"><b><font color="#FFFFFF">Message Driven Bean</font></b></td>
+		<td align="left" bgcolor="#FF0000"><b><font color="#FFFFFF">Remarks</font></b></td>
+	</tr>
+	<tr>
+		<td height="17" align="right" sdval="1" sdnum="16393;">1</td>
+		<td align="left"><br></td>
+		<td align="left"><br></td>
+		<td align="left"><br></td>
+		<td align="left"><br></td>
+		<td align="left"><br></td>
+		<td align="left"><b><font color="#FF0000"><br></font></b></td>
+	</tr>
+	<tr>
+		<td height="51" align="left"><br></td>
+		<td align="left">Sub context for ejb, dbconnection<br> Is not mandatory ??</td>
+		<td align="left"><br></td>
+		<td align="left"><br></td>
+		<td align="left"><br></td>
+		<td align="left"><br></td>
+		<td align="left"><b><font color="#FF0000">yes, not mandatory. For best practice give<br> subcontext . The name if it as &quot;jdbc&quot; still it would be great</font></b></td>
+	</tr>
+	<tr>
+		<td height="102" align="left"><br></td>
+		<td align="left">Put sub context for enviroment variables</td>
+		<td align="left"><br></td>
+		<td align="left"><br></td>
+		<td align="left"><br></td>
+		<td align="left"><br></td>
+		<td align="left"><b><font color="#FF0000">Yes, we can put our own context for any <br>thing or any level nested subcontext.<br> It is like directory creation. <br>For best practice we don’t give any sub context for variables. Anyhow we can give sub context</font></b></td>
+	</tr>
+	<tr>
+		<td height="17" align="left"><br></td>
+		<td align="left">Check DB connection access in bean</td>
+		<td align="left"><br></td>
+		<td align="left"><br></td>
+		<td align="left"><br></td>
+		<td align="left"><br></td>
+		<td align="left"><b><font color="#FF0000">test</font></b></td>
+	</tr>
+	<tr>
+		<td height="34" align="left"><br></td>
+		<td align="left">env-entry-type must be either wrapper or String</td>
+		<td align="left"><br></td>
+		<td align="left"><br></td>
+		<td align="left"><br></td>
+		<td align="left"><br></td>
+		<td align="left"><b><font color="#FF0000">if not, I don’t find any error even I tried as <br>java.util.HashMap type. It worked fine</font></b></td>
+	</tr>
+	<tr>
+		<td height="70" align="left"><br></td>
+		<td align="left">From EJB we cannot access server's machine's <br>file system</td>
+		<td align="left"><br></td>
+		<td align="left"><br></td>
+		<td align="left"><br></td>
+		<td align="left"><br></td>
+		<td align="left"><b><font color="#FF0000">No, I accessed , I just check whether a <br>file exist or not in a path. It said as exist . I don’t whether meant something else</font></b></td>
+	</tr>
+	<tr>
+		<td height="138" align="left"><br></td>
+		<td align="left">same name of a environment entries cannot be <br>shared among different type of resource of a Sigle Bean</td>
+		<td align="left"><br></td>
+		<td align="left"><br></td>
+		<td align="left"><br></td>
+		<td align="left"><br></td>
+		<td align="left"><b><font color="#FF0000">yes, same NAME cannot be shared with in single EJB's any of environment entries. It not, it give deployed exception. The actual exception is &quot;javax.naming.NameAlreadyBoundException<br>&quot;</font></b></td>
+	</tr>
+	<tr>
+		<td height="34" align="left"><br></td>
+		<td align="left">our own subcontext can start with /</td>
+		<td align="left"><br></td>
+		<td align="left"><br></td>
+		<td align="left"><br></td>
+		<td align="left"><br></td>
+		<td align="left"><b><font color="#FF0000">It can start with &quot;/&quot; or not. Not a problem it <br>works fine</font></b></td>
+	</tr>
+	<tr>
+		<td height="102" align="left"><br></td>
+		<td align="left">environment name cannot start with<br> &quot;java:comp/env&quot;</td>
+		<td align="left"><br></td>
+		<td align="left"><br></td>
+		<td align="left"><br></td>
+		<td align="left"><br></td>
+		<td align="left"><b><font color="#FF0000">if it is, It don’t give deployment exception. <br>But at the run time it give as name not found exception. The actual exception is &quot;avax.naming.NameNotFoundException: myowb not bound<br>&quot;</font></b></td>
+	</tr>
+	<tr>
+		<td height="136" align="left"><br></td>
+		<td align="left">Should we has to JNDI, narrowing for<br> &lt;ejb-ref&gt; if it has &lt;ejb-link&gt; </td>
+		<td align="left"><br></td>
+		<td align="left"><br></td>
+		<td align="left"><br></td>
+		<td align="left"><br></td>
+		<td align="left"><b><font color="#FF0000">JNDI, narrowing all are need.<br>Actually &lt;ejb-link&gt; tag used for some other reason. We have to put one entry in jboss. Xml file for every &lt;ejb-ref&gt; tag<br><br>  If we use &lt;ejb-link&gt;, we no need to put any tag in jboss.xml file. This is purpose of &lt;ejb-link&gt;</font></b></td>
+	</tr>
+</table>
+<!-- ************************************************************************** -->
+<hr>
+<A NAME="table8"><h1>Sheet 8: <em>ejb-jar.xml</em></h1></A>
+<table cellspacing="0" border="0">
+	<colgroup width="31"></colgroup>
+	<colgroup width="467"></colgroup>
+	<tr>
+		<td height="17" align="left" bgcolor="#FF0000"><b><font color="#FFFFFF">No</font></b></td>
+		<td align="left" bgcolor="#FF0000"><b><font color="#FFFFFF">Rules</font></b></td>
+	</tr>
+	<tr>
+		<td height="48" align="right" sdval="1" sdnum="16393;">1</td>
+		<td align="left">value of this &lt;ejb-name&gt; field must be valid java identifier, if not deplyment exception</td>
+	</tr>
+	<tr>
+		<td height="85" align="left"><br></td>
+		<td align="left">Ejb name with sub-context<br><br>&lt;ejb-name&gt; element can have any name even it can have sub context.<br>Example : &lt;ejb-name&gt;mysubcontext/beanname&lt;/ejb-name&gt;<br></td>
+	</tr>
+</table>
+<!-- ************************************************************************** -->
+<hr>
+<A NAME="table9"><h1>Sheet 9: <em>Security</em></h1></A>
+<table cellspacing="0" border="0">
+	<colgroup width="41"></colgroup>
+	<colgroup width="382"></colgroup>
+	<colgroup width="153"></colgroup>
+	<colgroup width="156"></colgroup>
+	<colgroup width="130"></colgroup>
+	<colgroup width="160"></colgroup>
+	<colgroup width="263"></colgroup>
+	<tr>
+		<td height="17" align="left" bgcolor="#FF0000"><b><font color="#FFFFFF">S. No</font></b></td>
+		<td align="left" bgcolor="#FF0000"><b><font color="#FFFFFF">Rules</font></b></td>
+		<td align="left" bgcolor="#FF0000"><b><font color="#FFFFFF">Sateless session Bean</font></b></td>
+		<td align="left" bgcolor="#FF0000"><b><font color="#FFFFFF">Statefull Session Bean</font></b></td>
+		<td align="left" bgcolor="#FF0000"><b><font color="#FFFFFF">Entity Bean CMT</font></b></td>
+		<td align="left" bgcolor="#FF0000"><b><font color="#FFFFFF">Message Driven Bean</font></b></td>
+		<td align="left" bgcolor="#FF0000"><b><font color="#FFFFFF">Remarks</font></b></td>
+	</tr>
+	<tr>
+		<td height="17" align="left"><br></td>
+		<td align="left"><br></td>
+		<td align="left"><br></td>
+		<td align="left"><br></td>
+		<td align="left"><br></td>
+		<td align="left"><br></td>
+		<td align="left"><b><font color="#FF0000"><br></font></b></td>
+	</tr>
+	<tr>
+		<td height="51" align="left"><br></td>
+		<td align="left">&lt;use-caller-identy&gt; cannot use in MDB. No client<br>But It can have &lt;run-as&gt; because run-as element say about role when call other bean. Not to for own</td>
+		<td align="left">Y</td>
+		<td align="left">Y</td>
+		<td align="left">Y</td>
+		<td align="left"><font color="#0000FF">N</font></td>
+		<td align="left"><b><font color="#FF0000">Not deployment exception. Exception <br>might come when run time</font></b></td>
+	</tr>
+	<tr>
+		<td height="51" align="left"><br></td>
+		<td align="left">Can be the same method both in &lt;unchecked&gt; and &lt;exclued-list&gt; or &lt;exclude-list&gt; and &lt;method-permission&gt;</td>
+		<td align="left">Y</td>
+		<td align="left">Y</td>
+		<td align="left">Y</td>
+		<td align="left">NA (think, there is is no <br>client. Then who has role)</td>
+		<td align="left"><b><font color="#FF0000">Yes,  there is no deployment exception But run time exception might come out</font></b></td>
+	</tr>
+	<tr>
+		<td height="51" align="left"><br></td>
+		<td align="left">&lt;unchecked&gt; and &lt;role-name&gt; both cannot be with in single<br>&lt;method-permission&gt; element</td>
+		<td align="left">Y</td>
+		<td align="left">Y</td>
+		<td align="left">Y</td>
+		<td align="left">NA (think, there is is no <br>client. Then who has role)</td>
+		<td align="left"><b><font color="#FF0000">it don’t give any exception. But I <br>don’t know why so, I test on EJB 3.0</font></b></td>
+	</tr>
+	<tr>
+		<td height="51" align="left"><br></td>
+		<td align="left">&lt;method-intf&gt; element can have only &quot;&quot;Home&quot;, <br>&quot;LocalHome&quot;,&quot;Remote&quot; and &quot;Local&quot;</td>
+		<td align="left">Y</td>
+		<td align="left">Y</td>
+		<td align="left">Y</td>
+		<td align="left">NA</td>
+		<td align="left"><b><font color="#FF0000">if not deployement exception<br><br>Even these are case-sensitve.</font></b></td>
+	</tr>
+	<tr>
+		<td height="68" align="left"><br></td>
+		<td align="left">call a method of business of &lt;exclude-list&gt;<br><br>This define methods those can never be called by any ROLE</td>
+		<td align="left"><br></td>
+		<td align="left"><br></td>
+		<td align="left"><br></td>
+		<td align="left"><br></td>
+		<td align="left"><b><font color="#FF0000">We cannot expect deploytime exception . This is doesnot make sense.</font></b></td>
+	</tr>
+</table>
+<!-- ************************************************************************** -->
+</body>
+
+</html>

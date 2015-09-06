@@ -1,0 +1,1097 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+
+<html>
+<head>
+	
+	<meta http-equiv="content-type" content="text/html; charset=utf-8">
+	<title></title>
+	<meta name="generator" content="LibreOffice 4.2.8.2 (Linux)">
+	<meta name="author" content="Paramasivam">
+	<meta name="created" content="20091128;154018000000000">
+	<meta name="changedby" content="Paramasivam">
+	<meta name="changed" content="20091203;190542000000000">
+	<meta name="AppVersion" content="12.0000">
+	<meta name="DocSecurity" content="0">
+	<meta name="HyperlinksChanged" content="false">
+	<meta name="LinksUpToDate" content="false">
+	<meta name="ScaleCrop" content="false">
+	<meta name="ShareDoc" content="false">
+	
+	<style type="text/css"><!-- 
+		body,div,table,thead,tbody,tfoot,tr,th,td,p { font-family:"Calibri"; font-size:x-small }
+		 -->
+	</style>
+	
+</head>
+
+<body text="#000000">
+<hr>
+	<p><center>
+		<h1>Overview</h1>
+		<A HREF="#table0">General</A><br>
+		<A HREF="#table1">Studyframe</A><br>
+		<A HREF="#table2">configuration</A><br>
+		<A HREF="#table3">API 1.2</A><br>
+		<A HREF="#table4">quries</A><br>
+		<A HREF="#table5">Property Keys</A><br>
+		<A HREF="#table6">Configuration XML Elements</A><br>
+		
+	</center></p>
+<hr>
+<A NAME="table0"><h1>Sheet 1: <em>General</em></h1></A>
+<table cellspacing="0" border="0">
+	<colgroup width="904"></colgroup>
+	<tr>
+		<td height="20" align="left" valign=bottom><font color="#000000">use caps for logger instance declaration</font></td>
+	</tr>
+	<tr>
+		<td height="20" align="left" valign=bottom><font color="#000000">use threshold level to dynamically modify level of logger in any special environment [thanks to suresh ]</font></td>
+	</tr>
+	<tr>
+		<td height="20" align="left" valign=bottom><font color="#000000">use BasicConfigurator.configure() for instant use of log4j </font></td>
+	</tr>
+	<tr>
+		<td height="20" align="left" valign=bottom><font color="#000000">declare all logger variable as static final in one class and use static import, to import that logger variable </font></td>
+	</tr>
+	<tr>
+		<td height="20" align="left" valign=bottom><font color="#000000"><br></font></td>
+	</tr>
+	<tr>
+		<td height="20" align="left" valign=bottom><font color="#000000">use for debug log request after validation of Logger.isDebugEnabled(), to improve performance</font></td>
+	</tr>
+</table>
+<!-- ************************************************************************** -->
+<hr>
+<A NAME="table1"><h1>Sheet 2: <em>Studyframe</em></h1></A>
+<table cellspacing="0" border="0">
+	<colgroup width="120"></colgroup>
+	<colgroup width="99"></colgroup>
+	<colgroup width="88"></colgroup>
+	<colgroup width="85"></colgroup>
+	<colgroup width="332"></colgroup>
+	<colgroup span="4" width="80"></colgroup>
+	<tr>
+		<td height="20" align="left" valign=bottom bgcolor="#FFFF00"><b><font color="#FF0000">First round took 21 hours effort</font></b></td>
+		<td align="left" valign=bottom><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom><font color="#000000"><br></font></td>
+	</tr>
+	<tr>
+		<td height="20" align="right" valign=bottom sdval="40145" sdnum="16393;0;DD/MM/YYYY"><font color="#000000">28/11/2009</font></td>
+		<td align="right" valign=bottom sdval="0.989583333333333" sdnum="16393;0;HH:MM AM/PM"><font color="#000000">11:45 PM</font></td>
+		<td align="right" valign=bottom sdval="0.03125" sdnum="16393;0;HH:MM AM/PM"><font color="#000000">12:45 AM</font></td>
+		<td align="right" valign=bottom sdval="0.0416666666666667" sdnum="16393;0;HH:MM"><font color="#000000">01:00</font></td>
+		<td align="left" valign=bottom><font color="#000000">chapter 1</font></td>
+		<td align="left" valign=bottom><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom><font color="#000000"><br></font></td>
+	</tr>
+	<tr>
+		<td height="20" align="right" valign=bottom sdval="40146" sdnum="16393;0;DD/MM/YYYY"><font color="#000000">29/11/2009</font></td>
+		<td align="right" valign=bottom sdval="0.379166666666667" sdnum="16393;0;HH:MM AM/PM"><font color="#000000">09:06 AM</font></td>
+		<td align="left" valign=bottom><font color="#000000"><br></font></td>
+		<td align="right" valign=bottom sdval="0.0208333333333333" sdnum="16393;0;HH:MM"><font color="#000000">00:30</font></td>
+		<td align="left" valign=bottom><font color="#000000">chapter 2</font></td>
+		<td align="left" valign=bottom><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom><font color="#000000"><br></font></td>
+	</tr>
+	<tr>
+		<td height="20" align="right" valign=bottom sdval="40146" sdnum="16393;0;DD/MM/YYYY"><font color="#000000">29/11/2009</font></td>
+		<td align="right" valign=bottom sdval="0.728472222222222" sdnum="16393;0;HH:MM AM/PM"><font color="#000000">05:29 PM</font></td>
+		<td align="left" valign=bottom><font color="#000000"><br></font></td>
+		<td align="right" valign=bottom sdval="0.0833333333333333" sdnum="16393;0;HH:MM"><font color="#000000">02:00</font></td>
+		<td align="left" valign=bottom><font color="#000000">chapter 2</font></td>
+		<td align="left" valign=bottom><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom><font color="#000000"><br></font></td>
+	</tr>
+	<tr>
+		<td height="20" align="right" valign=bottom sdval="40147" sdnum="16393;0;DD/MM/YYYY"><font color="#000000">30/11/2009</font></td>
+		<td align="right" valign=bottom sdval="0.0444444444444444" sdnum="16393;0;HH:MM AM/PM"><font color="#000000">01:04 AM</font></td>
+		<td align="right" valign=bottom sdval="0.166666666666667" sdnum="16393;0;HH:MM AM/PM"><font color="#000000">04:00 AM</font></td>
+		<td align="right" valign=bottom sdval="0.0833333333333333" sdnum="16393;0;HH:MM"><font color="#000000">02:00</font></td>
+		<td align="left" valign=bottom><font color="#000000">chapter 2</font></td>
+		<td align="left" valign=bottom><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom><font color="#000000"><br></font></td>
+	</tr>
+	<tr>
+		<td height="20" align="right" valign=bottom sdval="40147" sdnum="16393;0;DD/MM/YYYY"><font color="#000000">30/11/2009</font></td>
+		<td align="right" valign=bottom sdval="0.458333333333333" sdnum="16393;0;HH:MM AM/PM"><font color="#000000">11:00 AM</font></td>
+		<td align="right" valign=bottom sdval="0.540972222222222" sdnum="16393;0;HH:MM AM/PM"><font color="#000000">12:59 PM</font></td>
+		<td align="right" valign=bottom sdval="0.0833333333333333" sdnum="16393;0;HH:MM"><font color="#000000">02:00</font></td>
+		<td align="left" valign=bottom><font color="#000000">chapter 3</font></td>
+		<td align="left" valign=bottom><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom><font color="#000000"><br></font></td>
+	</tr>
+	<tr>
+		<td height="20" align="right" valign=bottom sdval="40147" sdnum="16393;0;DD/MM/YYYY"><font color="#000000">30/11/2009</font></td>
+		<td align="right" valign=bottom sdval="0.610416666666667" sdnum="16393;0;HH:MM AM/PM"><font color="#000000">02:39 PM</font></td>
+		<td align="right" valign=bottom sdval="0.824305555555556" sdnum="16393;0;HH:MM AM/PM"><font color="#000000">07:47 PM</font></td>
+		<td align="right" valign=bottom sdval="0.125" sdnum="16393;0;HH:MM"><font color="#000000">03:00</font></td>
+		<td align="left" valign=bottom><font color="#000000">chapter 3</font></td>
+		<td align="left" valign=bottom><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom><font color="#000000"><br></font></td>
+	</tr>
+	<tr>
+		<td height="20" align="right" valign=bottom sdval="40147" sdnum="16393;0;DD/MM/YYYY"><font color="#000000">30/11/2009</font></td>
+		<td align="right" valign=bottom sdval="0.979861111111111" sdnum="16393;0;HH:MM AM/PM"><font color="#000000">11:31 PM</font></td>
+		<td align="right" valign=bottom sdval="0.0125" sdnum="16393;0;HH:MM AM/PM"><font color="#000000">12:18 AM</font></td>
+		<td align="right" valign=bottom sdval="0.0208333333333333" sdnum="16393;0;HH:MM"><font color="#000000">00:30</font></td>
+		<td align="left" valign=bottom><font color="#000000">chapter 3</font></td>
+		<td align="left" valign=bottom><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom><font color="#000000"><br></font></td>
+	</tr>
+	<tr>
+		<td height="20" align="right" valign=bottom sdval="40148" sdnum="16393;0;DD/MM/YYYY"><font color="#000000">01/12/2009</font></td>
+		<td align="right" valign=bottom sdval="0.478472222222222" sdnum="16393;0;HH:MM AM/PM"><font color="#000000">11:29 AM</font></td>
+		<td align="right" valign=bottom sdval="0.555555555555556" sdnum="16393;0;HH:MM AM/PM"><font color="#000000">01:20 PM</font></td>
+		<td align="right" valign=bottom sdval="0.0625" sdnum="16393;0;HH:MM"><font color="#000000">01:30</font></td>
+		<td align="left" valign=bottom><font color="#000000">chapter 3</font></td>
+		<td align="left" valign=bottom><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom><font color="#000000"><br></font></td>
+	</tr>
+	<tr>
+		<td height="20" align="right" valign=bottom sdval="40148" sdnum="16393;0;DD/MM/YYYY"><font color="#000000">01/12/2009</font></td>
+		<td align="right" valign=bottom sdval="0.690277777777778" sdnum="16393;0;HH:MM AM/PM"><font color="#000000">04:34 PM</font></td>
+		<td align="left" valign=bottom><font color="#000000"><br></font></td>
+		<td align="right" valign=bottom sdval="0.0416666666666667" sdnum="16393;0;HH:MM"><font color="#000000">01:00</font></td>
+		<td align="left" valign=bottom><font color="#000000">chapter 4</font></td>
+		<td align="left" valign=bottom><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom><font color="#000000"><br></font></td>
+	</tr>
+	<tr>
+		<td height="20" align="right" valign=bottom sdval="40148" sdnum="16393;0;DD/MM/YYYY"><font color="#000000">01/12/2009</font></td>
+		<td align="right" valign=bottom sdval="0.95" sdnum="16393;0;HH:MM AM/PM"><font color="#000000">10:48 PM</font></td>
+		<td align="right" valign=bottom sdval="0.0888888888888889" sdnum="16393;0;HH:MM AM/PM"><font color="#000000">02:08 AM</font></td>
+		<td align="right" valign=bottom sdval="0.0833333333333333" sdnum="16393;0;HH:MM"><font color="#000000">02:00</font></td>
+		<td align="left" valign=bottom><font color="#000000">chapter 4</font></td>
+		<td align="left" valign=bottom><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom><font color="#000000"><br></font></td>
+	</tr>
+	<tr>
+		<td height="20" align="right" valign=bottom sdval="40149" sdnum="16393;0;DD/MM/YYYY"><font color="#000000">02/12/2009</font></td>
+		<td align="right" valign=bottom sdval="0.0888888888888889" sdnum="16393;0;HH:MM AM/PM"><font color="#000000">02:08 AM</font></td>
+		<td align="right" valign=bottom sdval="0.138194444444444" sdnum="16393;0;HH:MM AM/PM"><font color="#000000">03:19 AM</font></td>
+		<td align="right" valign=bottom sdval="0.0416666666666667" sdnum="16393;0;HH:MM"><font color="#000000">01:00</font></td>
+		<td align="left" valign=bottom><font color="#000000">chapter 5</font></td>
+		<td align="left" valign=bottom><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom><font color="#000000"><br></font></td>
+	</tr>
+	<tr>
+		<td height="20" align="right" valign=bottom sdval="40149" sdnum="16393;0;DD/MM/YYYY"><font color="#000000">02/12/2009</font></td>
+		<td align="right" valign=bottom sdval="0.429861111111111" sdnum="16393;0;HH:MM AM/PM"><font color="#000000">10:19 AM</font></td>
+		<td align="right" valign=bottom sdval="0.469444444444444" sdnum="16393;0;HH:MM AM/PM"><font color="#000000">11:16 AM</font></td>
+		<td align="right" valign=bottom sdval="0.0416666666666667" sdnum="16393;0;HH:MM"><font color="#000000">01:00</font></td>
+		<td align="left" valign=bottom><font color="#000000">chapter 6</font></td>
+		<td align="left" valign=bottom><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom><font color="#000000"><br></font></td>
+	</tr>
+	<tr>
+		<td height="20" align="right" valign=bottom sdval="40149" sdnum="16393;0;DD/MM/YYYY"><font color="#000000">02/12/2009</font></td>
+		<td align="right" valign=bottom sdval="0.838194444444444" sdnum="16393;0;HH:MM AM/PM"><font color="#000000">08:07 PM</font></td>
+		<td align="right" valign=bottom sdval="0.909722222222222" sdnum="16393;0;HH:MM AM/PM"><font color="#000000">09:50 PM</font></td>
+		<td align="right" valign=bottom sdval="0.0416666666666667" sdnum="16393;0;HH:MM"><font color="#000000">01:00</font></td>
+		<td align="left" valign=bottom><font color="#000000">chapter 7</font></td>
+		<td align="left" valign=bottom><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom><font color="#000000"><br></font></td>
+	</tr>
+	<tr>
+		<td height="20" align="right" valign=bottom sdval="40149" sdnum="16393;0;DD/MM/YYYY"><font color="#000000">02/12/2009</font></td>
+		<td align="right" valign=bottom sdval="0.958333333333333" sdnum="16393;0;HH:MM AM/PM"><font color="#000000">11:00 PM</font></td>
+		<td align="right" valign=bottom sdval="0.0902777777777778" sdnum="16393;0;HH:MM AM/PM"><font color="#000000">02:10 AM</font></td>
+		<td align="right" valign=bottom sdval="0.0625" sdnum="16393;0;HH:MM"><font color="#000000">01:30</font></td>
+		<td align="left" valign=bottom><font color="#000000">chapter 8 &amp; 9</font></td>
+		<td align="left" valign=bottom><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom><font color="#000000"><br></font></td>
+	</tr>
+	<tr>
+		<td height="20" align="right" valign=bottom sdval="40150" sdnum="16393;0;DD/MM/YYYY"><font color="#000000">03/12/2009</font></td>
+		<td align="right" valign=bottom sdval="0.481944444444444" sdnum="16393;0;HH:MM AM/PM"><font color="#000000">11:34 AM</font></td>
+		<td align="right" valign=bottom sdval="0.520833333333333" sdnum="16393;0;HH:MM AM/PM"><font color="#000000">12:30 PM</font></td>
+		<td align="right" valign=bottom sdval="0.0416666666666667" sdnum="16393;0;HH:MM"><font color="#000000">01:00</font></td>
+		<td align="left" valign=bottom><font color="#000000">till end of book</font></td>
+		<td align="left" valign=bottom><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom><font color="#000000"><br></font></td>
+	</tr>
+	<tr>
+		<td height="20" align="right" valign=bottom sdval="40150" sdnum="16393;0;DD/MM/YYYY"><font color="#000000">03/12/2009</font></td>
+		<td align="right" valign=bottom sdval="0.799305555555556" sdnum="16393;0;HH:MM AM/PM"><font color="#000000">07:11 PM</font></td>
+		<td align="left" valign=bottom><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom><font color="#000000"><br></font></td>
+	</tr>
+	<tr>
+		<td height="20" align="left" valign=bottom><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom><font color="#000000"><br></font></td>
+	</tr>
+	<tr>
+		<td height="20" align="left" valign=bottom><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom><font color="#000000">9786949966 - gopalakrishnan</font></td>
+		<td align="left" valign=bottom><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom><font color="#000000"><br></font></td>
+	</tr>
+	<tr>
+		<td height="20" align="left" valign=bottom><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom><font color="#000000">m.com</font></td>
+		<td align="left" valign=bottom><font color="#000000">bed</font></td>
+		<td align="right" valign=bottom sdval="27" sdnum="16393;"><font color="#000000">27</font></td>
+		<td align="left" valign=bottom><font color="#000000"><br></font></td>
+	</tr>
+	<tr>
+		<td height="20" align="left" valign=bottom><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom><font color="#000000">look into example of log4j distribution</font></td>
+		<td align="left" valign=bottom><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom><font color="#000000">b</font></td>
+		<td align="left" valign=bottom><font color="#000000">be</font></td>
+	</tr>
+	<tr>
+		<td height="20" align="left" valign=bottom><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom><font color="#000000">look into others available in distribution</font></td>
+		<td align="left" valign=bottom><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom><font color="#000000">g</font></td>
+		<td align="left" valign=bottom><font color="#000000">be</font></td>
+	</tr>
+	<tr>
+		<td height="20" align="left" valign=bottom><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom><font color="#000000">spend some time for other logging framework</font></td>
+		<td align="left" valign=bottom><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom><font color="#000000"><br></font></td>
+	</tr>
+	<tr>
+		<td height="20" align="left" valign=bottom><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom><font color="#000000">do revision for the same PDF</font></td>
+		<td align="left" valign=bottom><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom><font color="#000000"><br></font></td>
+	</tr>
+	<tr>
+		<td height="20" align="left" valign=bottom><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom><font color="#000000">create video in both round</font></td>
+		<td align="left" valign=bottom><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom><font color="#000000"><br></font></td>
+	</tr>
+	<tr>
+		<td height="20" align="left" valign=bottom><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom><font color="#000000">review the ppt and excel</font></td>
+		<td align="left" valign=bottom><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom><font color="#000000"><br></font></td>
+	</tr>
+</table>
+<!-- ************************************************************************** -->
+<hr>
+<A NAME="table2"><h1>Sheet 3: <em>configuration</em></h1></A>
+<table cellspacing="0" border="0">
+	<colgroup width="59"></colgroup>
+	<colgroup width="319"></colgroup>
+	<colgroup width="604"></colgroup>
+	<tr>
+		<td height="20" align="right" valign=bottom sdval="1" sdnum="16393;"><font color="#000000">1</font></td>
+		<td align="left" valign=bottom><font color="#000000">BasicConfigurator.configure()</font></td>
+		<td align="left" valign=bottom><font color="#000000">simplest method to configure log4j framework</font></td>
+	</tr>
+	<tr>
+		<td height="20" align="right" valign=bottom sdval="2" sdnum="16393;"><font color="#000000">2</font></td>
+		<td align="left" valign=bottom><font color="#000000">using property file</font></td>
+		<td align="left" valign=bottom><font color="#000000">need to write separate property files with predefined keys</font></td>
+	</tr>
+	<tr>
+		<td height="20" align="right" valign=bottom sdval="3" sdnum="16393;"><font color="#000000">3</font></td>
+		<td align="left" valign=bottom><font color="#000000">using XML file</font></td>
+		<td align="left" valign=bottom><font color="#000000">need to write separate xml file with predefined elements &amp; attributes</font></td>
+	</tr>
+	<tr>
+		<td height="20" align="right" valign=bottom sdval="4" sdnum="16393;"><font color="#000000">4</font></td>
+		<td align="left" valign=bottom><font color="#000000">Programatically configure</font></td>
+		<td align="left" valign=bottom><font color="#000000"><br></font></td>
+	</tr>
+</table>
+<!-- ************************************************************************** -->
+<hr>
+<A NAME="table3"><h1>Sheet 4: <em>API 1.2</em></h1></A>
+<table cellspacing="0" border="0">
+	<colgroup width="188"></colgroup>
+	<colgroup width="183"></colgroup>
+	<colgroup width="157"></colgroup>
+	<colgroup width="141"></colgroup>
+	<colgroup width="151"></colgroup>
+	<colgroup width="175"></colgroup>
+	<tr>
+		<td height="20" align="left" valign=bottom bgcolor="#F2DCDB"><font color="#000000">Configurator</font></td>
+		<td align="left" valign=bottom bgcolor="#F2DCDB"><font color="#000000">BasicConfigurator</font></td>
+		<td align="left" valign=bottom><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom><font color="#000000"><br></font></td>
+	</tr>
+	<tr>
+		<td height="20" align="left" valign=bottom><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom bgcolor="#F2DCDB"><font color="#000000">PropertyConfigurator</font></td>
+		<td align="left" valign=bottom><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom><font color="#000000"><br></font></td>
+	</tr>
+	<tr>
+		<td height="20" align="left" valign=bottom><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom bgcolor="#F2DCDB"><font color="#000000">DOMConfigurator</font></td>
+		<td align="left" valign=bottom><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom><font color="#000000"><br></font></td>
+	</tr>
+	<tr>
+		<td height="20" align="left" valign=bottom><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom><font color="#000000"><br></font></td>
+	</tr>
+	<tr>
+		<td height="20" align="left" valign=bottom bgcolor="#C6D9F1"><font color="#000000">Logger</font></td>
+		<td align="left" valign=bottom bgcolor="#C6D9F1"><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom><font color="#000000"><br></font></td>
+	</tr>
+	<tr>
+		<td height="20" align="left" valign=bottom><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom bgcolor="#C6D9F1"><font color="#000000">Level</font></td>
+		<td align="left" valign=bottom><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom><font color="#000000"><br></font></td>
+	</tr>
+	<tr>
+		<td height="20" align="left" valign=bottom><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom bgcolor="#C6D9F1"><font color="#000000">LoggerRepository</font></td>
+		<td align="left" valign=bottom><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom><font color="#000000"><br></font></td>
+	</tr>
+	<tr>
+		<td height="20" align="left" valign=bottom><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom bgcolor="#D9D9D9"><font color="#000000">Appender</font></td>
+		<td align="left" valign=bottom bgcolor="#D9D9D9"><font color="#000000">ErrorHandler</font></td>
+		<td align="left" valign=bottom bgcolor="#D9D9D9"><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom><font color="#000000"><br></font></td>
+	</tr>
+	<tr>
+		<td height="20" align="left" valign=bottom><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom bgcolor="#D9D9D9"><font color="#000000">AppenderSkeleton</font></td>
+		<td align="left" valign=bottom bgcolor="#D9D9D9"><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom><font color="#000000"><br></font></td>
+	</tr>
+	<tr>
+		<td height="20" align="left" valign=bottom><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom><font color="#000000">WriterAppender</font></td>
+		<td align="left" valign=bottom bgcolor="#D9D9D9"><font color="#000000">ConsoleAppender</font></td>
+		<td align="left" valign=bottom><font color="#000000"><br></font></td>
+	</tr>
+	<tr>
+		<td height="20" align="left" valign=bottom><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom bgcolor="#D9D9D9"><font color="#000000">FileAppender</font></td>
+		<td align="left" valign=bottom><font color="#000000"><br></font></td>
+	</tr>
+	<tr>
+		<td height="20" align="left" valign=bottom><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom bgcolor="#D9D9D9"><font color="#000000">RollingFileAppender</font></td>
+	</tr>
+	<tr>
+		<td height="20" align="left" valign=bottom><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom bgcolor="#D9D9D9"><font color="#000000">SocketAppender</font></td>
+		<td align="left" valign=bottom><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom bgcolor="#D9D9D9"><font color="#000000">DailyRollingAppender</font></td>
+	</tr>
+	<tr>
+		<td height="20" align="left" valign=bottom><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom bgcolor="#D9D9D9"><font color="#000000">JMSAppender</font></td>
+		<td align="left" valign=bottom><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom><font color="#000000"><br></font></td>
+	</tr>
+	<tr>
+		<td height="20" align="left" valign=bottom><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom bgcolor="#D9D9D9"><font color="#000000">SMTPAppender</font></td>
+		<td align="left" valign=bottom><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom><font color="#000000"><br></font></td>
+	</tr>
+	<tr>
+		<td height="20" align="left" valign=bottom><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom bgcolor="#D9D9D9"><font color="#000000">AsyncAppender</font></td>
+		<td align="left" valign=bottom><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom><font color="#000000"><br></font></td>
+	</tr>
+	<tr>
+		<td height="20" align="left" valign=bottom><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom bgcolor="#D9D9D9"><font color="#000000">NullAppender</font></td>
+		<td align="left" valign=bottom><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom><font color="#000000"><br></font></td>
+	</tr>
+	<tr>
+		<td height="20" align="left" valign=bottom><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom bgcolor="#7F7F7F"><font color="#000000">Layout</font></td>
+		<td align="left" valign=bottom bgcolor="#7F7F7F"><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom><font color="#000000"><br></font></td>
+	</tr>
+	<tr>
+		<td height="20" align="left" valign=bottom><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom bgcolor="#7F7F7F"><font color="#000000">SimpleLayout</font></td>
+		<td align="left" valign=bottom><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom><font color="#000000"><br></font></td>
+	</tr>
+	<tr>
+		<td height="20" align="left" valign=bottom><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom bgcolor="#7F7F7F"><font color="#000000">PatternLayout</font></td>
+		<td align="left" valign=bottom><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom><font color="#000000"><br></font></td>
+	</tr>
+	<tr>
+		<td height="20" align="left" valign=bottom><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom bgcolor="#7F7F7F"><font color="#000000">XMLLayout</font></td>
+		<td align="left" valign=bottom><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom><font color="#000000"><br></font></td>
+	</tr>
+	<tr>
+		<td height="20" align="left" valign=bottom><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom bgcolor="#7F7F7F"><font color="#000000">HTMLLayout</font></td>
+		<td align="left" valign=bottom><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom><font color="#000000"><br></font></td>
+	</tr>
+	<tr>
+		<td height="20" align="left" valign=bottom><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom bgcolor="#C4BD97"><font color="#000000">Filter</font></td>
+		<td align="left" valign=bottom><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom><font color="#000000"><br></font></td>
+	</tr>
+	<tr>
+		<td height="20" align="left" valign=bottom><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom bgcolor="#C4BD97"><font color="#000000">LevelMatchFilter</font></td>
+		<td align="left" valign=bottom><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom><font color="#000000"><br></font></td>
+	</tr>
+	<tr>
+		<td height="20" align="left" valign=bottom><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom bgcolor="#C4BD97"><font color="#000000">StringMatchFilter</font></td>
+		<td align="left" valign=bottom><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom><font color="#000000"><br></font></td>
+	</tr>
+	<tr>
+		<td height="20" align="left" valign=bottom><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom bgcolor="#C4BD97"><font color="#000000">LevelRangeFilter</font></td>
+		<td align="left" valign=bottom><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom><font color="#000000"><br></font></td>
+	</tr>
+	<tr>
+		<td height="20" align="left" valign=bottom><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom bgcolor="#C4BD97"><font color="#000000">DenyAllFilter</font></td>
+		<td align="left" valign=bottom><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom><font color="#000000"><br></font></td>
+	</tr>
+	<tr>
+		<td height="20" align="left" valign=bottom><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom bgcolor="#FDEADA"><font color="#000000">LoggingEvent</font></td>
+		<td align="left" valign=bottom bgcolor="#FDEADA"><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom><font color="#000000"><br></font></td>
+	</tr>
+	<tr>
+		<td height="20" align="left" valign=bottom><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom bgcolor="#FDEADA"><font color="#000000">MDC</font></td>
+		<td align="left" valign=bottom><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom><font color="#000000"><br></font></td>
+	</tr>
+	<tr>
+		<td height="20" align="left" valign=bottom><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom bgcolor="#FDEADA"><font color="#000000">LocationInformation</font></td>
+		<td align="left" valign=bottom><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom><font color="#000000"><br></font></td>
+	</tr>
+	<tr>
+		<td height="20" align="left" valign=bottom><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom bgcolor="#FDEADA"><font color="#000000">NDC</font></td>
+		<td align="left" valign=bottom><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom><font color="#000000"><br></font></td>
+	</tr>
+	<tr>
+		<td height="20" align="left" valign=bottom><font color="#000000">ObjectRenderer</font></td>
+		<td align="left" valign=bottom><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom><font color="#000000"><br></font></td>
+	</tr>
+	<tr>
+		<td height="20" align="left" valign=bottom><font color="#000000">AttributeRenderer</font></td>
+		<td align="left" valign=bottom><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom><font color="#000000"><br></font></td>
+	</tr>
+	<tr>
+		<td height="20" align="left" valign=bottom><font color="#000000">LogManager</font></td>
+		<td align="left" valign=bottom><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom><font color="#000000"><br></font></td>
+	</tr>
+	<tr>
+		<td height="20" align="left" valign=bottom><font color="#000000">LoggerRepository</font></td>
+		<td align="left" valign=bottom><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom><font color="#000000"><br></font></td>
+	</tr>
+	<tr>
+		<td height="20" align="left" valign=bottom><font color="#000000">Hierarchy</font></td>
+		<td align="left" valign=bottom><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom><font color="#000000"><br></font></td>
+	</tr>
+	<tr>
+		<td height="20" align="left" valign=bottom><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom><font color="#000000"><br></font></td>
+	</tr>
+	<tr>
+		<td height="20" align="left" valign=bottom><font color="#000000"><br></font></td>
+		<td align="right" valign=bottom sdval="1" sdnum="16393;"><font color="#000000">1</font></td>
+		<td align="left" valign=bottom><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom><font color="#000000">msc , bio che</font></td>
+		<td align="left" valign=bottom><font color="#000000">vandalur</font></td>
+		<td align="left" valign=bottom><font color="#000000"><br></font></td>
+	</tr>
+	<tr>
+		<td height="20" align="left" valign=bottom><font color="#000000"><br></font></td>
+		<td align="right" valign=bottom sdval="1" sdnum="16393;"><font color="#000000">1</font></td>
+		<td align="left" valign=bottom><font color="#000000">guidy</font></td>
+		<td align="left" valign=bottom><font color="#000000">msc</font></td>
+		<td align="left" valign=bottom><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom><font color="#000000"><br></font></td>
+	</tr>
+	<tr>
+		<td height="20" align="left" valign=bottom><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom><font color="#000000"><br></font></td>
+	</tr>
+	<tr>
+		<td height="20" align="left" valign=bottom><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom><font color="#000000"><br></font></td>
+		<td align="right" valign=bottom sdval="9841491520" sdnum="16393;"><font color="#000000">9841491520</font></td>
+		<td align="left" valign=bottom><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom><font color="#000000"><br></font></td>
+	</tr>
+	<tr>
+		<td height="20" align="left" valign=bottom><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom><font color="#000000">bala krishnan</font></td>
+		<td align="left" valign=bottom><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom><font color="#000000"><br></font></td>
+	</tr>
+	<tr>
+		<td height="24" align="left" valign=bottom><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom><u><font size=4 color="#0000FF"><a href="mailto:akr.bala@gmail.com">akr.bala@gmail.com</a></font></u></td>
+		<td align="left" valign=bottom><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom><font color="#000000"><br></font></td>
+	</tr>
+</table>
+<!-- ************************************************************************** -->
+<hr>
+<A NAME="table4"><h1>Sheet 5: <em>quries</em></h1></A>
+<table cellspacing="0" border="0">
+	<colgroup width="819"></colgroup>
+	<tr>
+		<td height="20" align="left" valign=bottom><font color="#000000">get sample code from net for how to use ObjectRenderer</font></td>
+	</tr>
+</table>
+<!-- ************************************************************************** -->
+<hr>
+<A NAME="table5"><h1>Sheet 6: <em>Property Keys</em></h1></A>
+<table align="left" cellspacing="0" border="0">
+	<colgroup width="28"></colgroup>
+	<colgroup width="665"></colgroup>
+	<colgroup width="455"></colgroup>
+	<tr>
+		<td height="20" align="right" valign=bottom sdval="1" sdnum="16393;"><font color="#000000">1</font></td>
+		<td align="left" valign=bottom><font color="#000000">log4j.threshold = [level]</font></td>
+		<td align="left" valign=bottom><font color="#000000"><br></font></td>
+	</tr>
+	<tr>
+		<td height="20" align="left" valign=bottom><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom><font color="#000000"><br></font></td>
+	</tr>
+	<tr>
+		<td height="20" align="right" valign=bottom sdval="2" sdnum="16393;"><font color="#000000">2</font></td>
+		<td align="left" valign=bottom><font color="#000000">log4j.appender.[appenderName]=[FQN of class]</font></td>
+		<td align="left" valign=bottom><font color="#000000">define the appender first while writing configuration file.</font></td>
+	</tr>
+	<tr>
+		<td height="20" align="left" valign=bottom><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom><font color="#000000">log4j.appender.[appenderName].[options]=[value]</font></td>
+	</tr>
+	<tr>
+		<td height="20" align="left" valign=bottom><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom><font color="#000000"><br></font></td>
+	</tr>
+	<tr>
+		<td height="20" align="right" valign=bottom sdval="3" sdnum="16393;"><font color="#000000">3</font></td>
+		<td align="left" valign=bottom><font color="#000000">log4j.appender.[appenderName].layout =[FQN of class]</font></td>
+		<td align="left" valign=bottom><font color="#000000"><br></font></td>
+	</tr>
+	<tr>
+		<td height="20" align="left" valign=bottom><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom><font color="#000000"><br></font></td>
+	</tr>
+	<tr>
+		<td height="20" align="right" valign=bottom sdval="4" sdnum="16393;"><font color="#000000">4</font></td>
+		<td align="left" valign=bottom><font color="#000000">log4j.rootLogger = [level],[appender1, appender2,…]</font></td>
+		<td align="left" valign=bottom><font color="#000000">root logger should be first for inheritance of level </font></td>
+	</tr>
+	<tr>
+		<td height="20" align="left" valign=bottom><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom><font color="#000000"><br></font></td>
+	</tr>
+	<tr>
+		<td height="20" align="right" valign=bottom sdval="5" sdnum="16393;"><font color="#000000">5</font></td>
+		<td align="left" valign=bottom><font color="#000000">log4j.logger.[loggerName(usually package name)]=[level],[appdender1, appender2]</font></td>
+		<td align="left" valign=bottom><font color="#000000">non-root logger should be declared after root logger</font></td>
+	</tr>
+	<tr>
+		<td height="20" align="left" valign=bottom><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom><font color="#000000"><br></font></td>
+	</tr>
+	<tr>
+		<td height="20" align="right" valign=bottom sdval="6" sdnum="16393;"><font color="#000000">6</font></td>
+		<td align="left" valign=bottom><font color="#000000">log4j.additivity.[loggerName] = [true/false]</font></td>
+		<td align="left" valign=bottom><font color="#000000"><br></font></td>
+	</tr>
+	<tr>
+		<td height="20" align="left" valign=bottom><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom><font color="#000000"><br></font></td>
+	</tr>
+	<tr>
+		<td height="20" align="right" valign=bottom sdval="7" sdnum="16393;"><font color="#000000">7</font></td>
+		<td align="left" valign=bottom><font color="#000000">log4j.renderer.[FQN of domainobject] = [FQN of Renderer of a domainObject]</font></td>
+		<td align="left" valign=bottom><font color="#000000"><br></font></td>
+	</tr>
+</table>
+<img src="ParamLog4j12_html_4c90e888.png" width=247 height=78>
+<img src="ParamLog4j12_html_9a9f6a8c.png" width=231 height=116>
+<br clear=left>
+<!-- ************************************************************************** -->
+<hr>
+<A NAME="table6"><h1>Sheet 7: <em>Configuration XML Elements</em></h1></A>
+<table cellspacing="0" border="0">
+	<colgroup width="49"></colgroup>
+	<colgroup width="85"></colgroup>
+	<colgroup width="117"></colgroup>
+	<colgroup width="80"></colgroup>
+	<colgroup width="56"></colgroup>
+	<colgroup width="49"></colgroup>
+	<colgroup width="52"></colgroup>
+	<colgroup width="57"></colgroup>
+	<colgroup span="3" width="80"></colgroup>
+	<tr>
+		<td height="20" align="left" valign=bottom bgcolor="#D9D9D9"><font color="#000000">Configuration</font></td>
+		<td align="left" valign=bottom bgcolor="#D9D9D9"><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom bgcolor="#D9D9D9"><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom bgcolor="#D9D9D9"><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom><font color="#000000">debug</font></td>
+		<td align="left" valign=bottom><font color="#000000">theshold</font></td>
+		<td align="left" valign=bottom><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom><font color="#000000"><br></font></td>
+	</tr>
+	<tr>
+		<td height="20" align="left" valign=bottom bgcolor="#D9D9D9"><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom bgcolor="#D9D9D9"><font color="#000000">appender</font></td>
+		<td align="left" valign=bottom bgcolor="#D9D9D9"><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom bgcolor="#D9D9D9"><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom><font color="#000000">name</font></td>
+		<td align="left" valign=bottom><font color="#000000">class</font></td>
+		<td align="left" valign=bottom><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom><font color="#000000"><br></font></td>
+	</tr>
+	<tr>
+		<td height="20" align="left" valign=bottom bgcolor="#D9D9D9"><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom bgcolor="#D9D9D9"><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom bgcolor="#D9D9D9"><font color="#000000">errorHandler</font></td>
+		<td align="left" valign=bottom bgcolor="#D9D9D9"><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom><font color="#000000"><br></font></td>
+	</tr>
+	<tr>
+		<td height="20" align="left" valign=bottom bgcolor="#D9D9D9"><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom bgcolor="#D9D9D9"><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom bgcolor="#D9D9D9"><font color="#000000">param</font></td>
+		<td align="left" valign=bottom bgcolor="#D9D9D9"><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom><font color="#000000"><br></font></td>
+	</tr>
+	<tr>
+		<td height="20" align="left" valign=bottom bgcolor="#D9D9D9"><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom bgcolor="#D9D9D9"><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom bgcolor="#D9D9D9"><font color="#000000">filter</font></td>
+		<td align="left" valign=bottom bgcolor="#D9D9D9"><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom><font color="#000000">class</font></td>
+		<td align="left" valign=bottom><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom><font color="#000000"><br></font></td>
+	</tr>
+	<tr>
+		<td height="20" align="left" valign=bottom bgcolor="#D9D9D9"><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom bgcolor="#D9D9D9"><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom bgcolor="#D9D9D9"><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom bgcolor="#D9D9D9"><font color="#000000">param</font></td>
+		<td align="left" valign=bottom><font color="#000000">name</font></td>
+		<td align="left" valign=bottom><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom><font color="#000000">value</font></td>
+		<td align="left" valign=bottom><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom><font color="#000000"><br></font></td>
+	</tr>
+	<tr>
+		<td height="20" align="left" valign=bottom bgcolor="#D9D9D9"><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom bgcolor="#D9D9D9"><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom bgcolor="#D9D9D9"><font color="#000000">appender-ref</font></td>
+		<td align="left" valign=bottom bgcolor="#D9D9D9"><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom><font color="#000000">ref</font></td>
+		<td align="left" valign=bottom><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom><font color="#000000"><br></font></td>
+	</tr>
+	<tr>
+		<td height="20" align="left" valign=bottom bgcolor="#D9D9D9"><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom bgcolor="#D9D9D9"><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom bgcolor="#D9D9D9"><font color="#000000">layout</font></td>
+		<td align="left" valign=bottom bgcolor="#D9D9D9"><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom><font color="#000000">class</font></td>
+		<td align="left" valign=bottom><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom><font color="#000000"><br></font></td>
+	</tr>
+	<tr>
+		<td height="20" align="left" valign=bottom bgcolor="#D9D9D9"><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom bgcolor="#D9D9D9"><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom bgcolor="#D9D9D9"><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom bgcolor="#D9D9D9"><font color="#000000">param</font></td>
+		<td align="left" valign=bottom><font color="#000000">name</font></td>
+		<td align="left" valign=bottom><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom><font color="#000000">value</font></td>
+		<td align="left" valign=bottom><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom><font color="#000000"><br></font></td>
+	</tr>
+	<tr>
+		<td height="20" align="left" valign=bottom bgcolor="#D9D9D9"><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom bgcolor="#D9D9D9"><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom bgcolor="#D9D9D9"><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom bgcolor="#D9D9D9"><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom><font color="#000000"><br></font></td>
+	</tr>
+	<tr>
+		<td height="20" align="left" valign=bottom bgcolor="#D9D9D9"><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom bgcolor="#D9D9D9"><font color="#000000">root</font></td>
+		<td align="left" valign=bottom bgcolor="#D9D9D9"><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom bgcolor="#D9D9D9"><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom><font color="#000000"><br></font></td>
+	</tr>
+	<tr>
+		<td height="20" align="left" valign=bottom bgcolor="#D9D9D9"><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom bgcolor="#D9D9D9"><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom bgcolor="#D9D9D9"><font color="#000000">level</font></td>
+		<td align="left" valign=bottom bgcolor="#D9D9D9"><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom><font color="#000000">class</font></td>
+		<td align="left" valign=bottom><font color="#000000">value</font></td>
+		<td align="left" valign=bottom><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom><font color="#000000"><br></font></td>
+	</tr>
+	<tr>
+		<td height="20" align="left" valign=bottom bgcolor="#D9D9D9"><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom bgcolor="#D9D9D9"><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom bgcolor="#D9D9D9"><font color="#000000">appender-ref</font></td>
+		<td align="left" valign=bottom bgcolor="#D9D9D9"><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom><font color="#000000">ref</font></td>
+		<td align="left" valign=bottom><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom><font color="#000000"><br></font></td>
+	</tr>
+	<tr>
+		<td height="20" align="left" valign=bottom bgcolor="#D9D9D9"><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom bgcolor="#D9D9D9"><font color="#000000">renderer</font></td>
+		<td align="left" valign=bottom bgcolor="#D9D9D9"><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom bgcolor="#D9D9D9"><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom><font color="#000000">renderedClass</font></td>
+		<td align="left" valign=bottom><font color="#000000">renderingClass</font></td>
+	</tr>
+	<tr>
+		<td height="20" align="left" valign=bottom bgcolor="#D9D9D9"><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom bgcolor="#D9D9D9"><font color="#000000">logger</font></td>
+		<td align="left" valign=bottom bgcolor="#D9D9D9"><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom bgcolor="#D9D9D9"><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom><font color="#000000">name</font></td>
+		<td align="left" valign=bottom><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom><font color="#000000">aditivity</font></td>
+		<td align="left" valign=bottom><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom><font color="#000000"><br></font></td>
+	</tr>
+	<tr>
+		<td height="20" align="left" valign=bottom bgcolor="#D9D9D9"><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom bgcolor="#D9D9D9"><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom bgcolor="#D9D9D9"><font color="#000000">level</font></td>
+		<td align="left" valign=bottom bgcolor="#D9D9D9"><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom><font color="#000000">class</font></td>
+		<td align="left" valign=bottom><font color="#000000">value</font></td>
+		<td align="left" valign=bottom><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom><font color="#000000"><br></font></td>
+	</tr>
+	<tr>
+		<td height="20" align="left" valign=bottom bgcolor="#D9D9D9"><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom bgcolor="#D9D9D9"><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom bgcolor="#D9D9D9"><font color="#000000">appender-ref</font></td>
+		<td align="left" valign=bottom bgcolor="#D9D9D9"><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom><font color="#000000">ref</font></td>
+		<td align="left" valign=bottom><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom><font color="#000000"><br></font></td>
+	</tr>
+	<tr>
+		<td height="20" align="left" valign=bottom bgcolor="#D9D9D9"><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom bgcolor="#D9D9D9"><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom bgcolor="#D9D9D9"><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom bgcolor="#D9D9D9"><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom><font color="#000000"><br></font></td>
+	</tr>
+	<tr>
+		<td height="20" align="left" valign=bottom bgcolor="#D9D9D9"><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom bgcolor="#D9D9D9"><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom bgcolor="#D9D9D9"><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom bgcolor="#D9D9D9"><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom><font color="#000000"><br></font></td>
+	</tr>
+</table>
+<!-- ************************************************************************** -->
+</body>
+
+</html>

@@ -1,0 +1,868 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+
+<html>
+<head>
+	
+	<meta http-equiv="content-type" content="text/html; charset=utf-8">
+	<title></title>
+	<meta name="generator" content="LibreOffice 4.2.8.2 (Linux)">
+	<meta name="author" content="param">
+	<meta name="created" content="20090320;170816000000000">
+	<meta name="changedby" content="param">
+	<meta name="changed" content="20090613;32337000000000">
+	<meta name="AppVersion" content="12.0000">
+	<meta name="DocSecurity" content="0">
+	<meta name="HyperlinksChanged" content="false">
+	<meta name="LinksUpToDate" content="false">
+	<meta name="ScaleCrop" content="false">
+	<meta name="ShareDoc" content="false">
+	
+	<style type="text/css"><!-- 
+		body,div,table,thead,tbody,tfoot,tr,th,td,p { font-family:"Calibri"; font-size:x-small }
+		 -->
+	</style>
+	
+</head>
+
+<body text="#000000">
+<hr>
+	<p><center>
+		<h1>Overview</h1>
+		<A HREF="#table0">JAX-RPC 1.1</A><br>
+		<A HREF="#table1">JAX RPC API</A><br>
+		<A HREF="#table2">time frame</A><br>
+		<A HREF="#table3">Security</A><br>
+		
+	</center></p>
+<hr>
+<A NAME="table0"><h1>Sheet 1: <em>JAX-RPC 1.1</em></h1></A>
+<table cellspacing="0" border="0">
+	<colgroup width="212"></colgroup>
+	<colgroup width="335"></colgroup>
+	<colgroup width="1070"></colgroup>
+	<tr>
+		<td height="20" align="left" valign=bottom bgcolor="#D7E4BD"><font color="#000000">Message Handler</font></td>
+		<td align="left" valign=bottom bgcolor="#D7E4BD"><font color="#000000">it act on only HEADER of Soap message</font></td>
+		<td align="left" valign=bottom bgcolor="#D7E4BD"><font color="#000000"><br></font></td>
+	</tr>
+	<tr>
+		<td height="20" align="left" valign=bottom bgcolor="#D7E4BD"><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom bgcolor="#D7E4BD"><font color="#000000"> In j2ee application message handler configured  in webservice.xml ( in end point side )</font></td>
+		<td align="left" valign=bottom bgcolor="#D7E4BD"><font color="#000000"><br></font></td>
+	</tr>
+	<tr>
+		<td height="20" align="left" valign=bottom bgcolor="#D7E4BD"><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom bgcolor="#D7E4BD"><font color="#000000"> In j2ee application message handler configured  in web.xml /ejb-jar.xml ( in client side )</font></td>
+		<td align="left" valign=bottom bgcolor="#D7E4BD"><font color="#000000"><br></font></td>
+	</tr>
+	<tr>
+		<td height="20" align="left" valign=bottom bgcolor="#D7E4BD"><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom bgcolor="#D7E4BD"><font color="#000000"> in stand alone application message handler configured via programming</font></td>
+		<td align="left" valign=bottom bgcolor="#D7E4BD"><font color="#000000"><br></font></td>
+	</tr>
+	<tr>
+		<td height="20" align="left" valign=bottom bgcolor="#D7E4BD"><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom bgcolor="#D7E4BD"><font color="#000000">it is stateless object</font></td>
+		<td align="left" valign=bottom bgcolor="#D7E4BD"><font color="#000000"><br></font></td>
+	</tr>
+	<tr>
+		<td height="20" align="left" valign=bottom bgcolor="#D7E4BD"><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom bgcolor="#D7E4BD"><font color="#000000">it has its own life cycle</font></td>
+		<td align="left" valign=bottom bgcolor="#D7E4BD"><font color="#000000"><br></font></td>
+	</tr>
+	<tr>
+		<td height="20" align="left" valign=bottom bgcolor="#D7E4BD"><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom bgcolor="#D7E4BD"><font color="#000000">it can access all of the resource of a component for its servicing</font></td>
+		<td align="left" valign=bottom bgcolor="#D7E4BD"><font color="#000000"><br></font></td>
+	</tr>
+	<tr>
+		<td height="20" align="left" valign=bottom bgcolor="#D7E4BD"><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom bgcolor="#D7E4BD"><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom bgcolor="#D7E4BD"><font color="#000000"><br></font></td>
+	</tr>
+	<tr>
+		<td height="20" align="left" valign=bottom bgcolor="#D7E4BD"><font color="#000000">server side - Message Handler</font></td>
+		<td align="left" valign=bottom bgcolor="#DCE6F2"><font color="#000000">handleFault()</font></td>
+		<td rowspan=2 align="left" valign=middle bgcolor="#DCE6F2"><font color="#000000">if return false, then skip rest of handler and send to client</font></td>
+	</tr>
+	<tr>
+		<td height="20" align="left" valign=bottom bgcolor="#D7E4BD"><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom bgcolor="#DCE6F2"><font color="#000000">handleResponse()</font></td>
+		</tr>
+	<tr>
+		<td height="20" align="left" valign=bottom bgcolor="#D7E4BD"><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom><font color="#000000">handleRequest()</font></td>
+		<td align="left" valign=bottom><font color="#000000">if return false, then the same message send as reply to client and abundan normal process</font></td>
+	</tr>
+	<tr>
+		<td height="20" align="left" valign=bottom bgcolor="#D7E4BD"><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom bgcolor="#D7E4BD"><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom bgcolor="#D7E4BD"><font color="#000000"><br></font></td>
+	</tr>
+	<tr>
+		<td height="20" align="left" valign=bottom bgcolor="#D7E4BD"><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom bgcolor="#D7E4BD"><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom bgcolor="#D7E4BD"><font color="#000000"><br></font></td>
+	</tr>
+	<tr>
+		<td height="20" align="left" valign=bottom bgcolor="#D7E4BD"><font color="#000000">client side -Message Handler</font></td>
+		<td align="left" valign=bottom><font color="#000000">handleRequest()</font></td>
+		<td align="left" valign=bottom><font color="#000000">if return false, the message does not send to server</font></td>
+	</tr>
+	<tr>
+		<td height="20" align="left" valign=bottom bgcolor="#D7E4BD"><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom bgcolor="#D9D9D9"><font color="#000000">handleFault()</font></td>
+		<td rowspan=2 align="left" valign=middle bgcolor="#D9D9D9"><font color="#000000">if return false, then skip the rest of handler and send to client as remote or user defined exception</font></td>
+	</tr>
+	<tr>
+		<td height="20" align="left" valign=bottom bgcolor="#D7E4BD"><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom bgcolor="#D9D9D9"><font color="#000000">handleResponse()</font></td>
+		</tr>
+	<tr>
+		<td height="20" align="left" valign=bottom><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom><font color="#000000"><br></font></td>
+	</tr>
+	<tr>
+		<td height="20" align="left" valign=bottom><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom><font color="#000000"><br></font></td>
+	</tr>
+	<tr>
+		<td height="20" align="left" valign=bottom><font color="#000000">JAX-RPC Mapping</font></td>
+		<td align="left" valign=bottom><font color="#000000">out and inout parameter will rep by holder type</font></td>
+		<td align="left" valign=bottom><font color="#000000"><br></font></td>
+	</tr>
+	<tr>
+		<td height="20" align="left" valign=bottom><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom><font color="#000000">if any part's element said as nullable=true then it is represented  wrapper classess</font></td>
+		<td align="left" valign=bottom><font color="#000000"><br></font></td>
+	</tr>
+	<tr>
+		<td height="20" align="left" valign=bottom><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom><font color="#000000">if maxOccurs  is greater than zero the it is represented by array</font></td>
+		<td align="left" valign=bottom><font color="#000000"><br></font></td>
+	</tr>
+	<tr>
+		<td height="20" align="left" valign=bottom><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom><font color="#000000"><br></font></td>
+	</tr>
+	<tr>
+		<td height="20" align="left" valign=bottom><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom><font color="#000000"><br></font></td>
+	</tr>
+	<tr>
+		<td height="20" align="left" valign=bottom><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom><font color="#000000"><br></font></td>
+	</tr>
+	<tr>
+		<td height="20" align="left" valign=bottom><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom><font color="#000000"><br></font></td>
+	</tr>
+	<tr>
+		<td height="20" align="left" valign=bottom><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom><font color="#000000"><br></font></td>
+	</tr>
+	<tr>
+		<td height="20" align="left" valign=bottom><font color="#000000">SOAPElement as parameter</font></td>
+		<td align="left" valign=bottom><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom><font color="#000000"><br></font></td>
+	</tr>
+	<tr>
+		<td height="20" align="left" valign=bottom><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom><font color="#000000"> if we want to bump xml fragment into endpoint method</font></td>
+		<td align="left" valign=bottom><font color="#000000"><br></font></td>
+	</tr>
+	<tr>
+		<td height="20" align="left" valign=bottom><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom><font color="#000000">if the 'group' used in schema definition, we have to use the SOAPElement.. The support of JAX-RPC is optional</font></td>
+		<td align="left" valign=bottom><font color="#000000"><br></font></td>
+	</tr>
+	<tr>
+		<td height="20" align="left" valign=bottom><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom><font color="#000000">mostly, we use SOAPElement, when the JAX-RPC doesnot support a schema component</font></td>
+		<td align="left" valign=bottom><font color="#000000"><br></font></td>
+	</tr>
+	<tr>
+		<td height="20" align="left" valign=bottom><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom><font color="#000000">unfortunatly, the SOAPElement has to construct by client using SAAJ to invoke such a method in endpoints</font></td>
+		<td align="left" valign=bottom><font color="#000000"><br></font></td>
+	</tr>
+	<tr>
+		<td height="20" align="left" valign=bottom><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom><font color="#000000"><br></font></td>
+	</tr>
+	<tr>
+		<td height="20" align="left" valign=bottom><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom><font color="#000000"><br></font></td>
+	</tr>
+	<tr>
+		<td height="20" align="left" valign=bottom><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom><font color="#000000"><br></font></td>
+	</tr>
+	<tr>
+		<td height="20" align="left" valign=bottom><font color="#000000">Holder</font></td>
+		<td align="left" valign=bottom><font color="#000000">INOuUT</font></td>
+		<td align="left" valign=bottom><font color="#000000"> any part name is occurred as same in both input and output message,  then it is considered as INOUT and need holder</font></td>
+	</tr>
+	<tr>
+		<td height="20" align="left" valign=bottom><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom><font color="#000000">OUT</font></td>
+		<td align="left" valign=bottom><font color="#000000"> any part name is listed in parameterOrder of operation, it is treated as OUT parameter and need holder typs</font></td>
+	</tr>
+	<tr>
+		<td height="20" align="left" valign=bottom><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom><font color="#000000">  --return type--</font></td>
+		<td align="left" valign=bottom><font color="#000000"> any part name of output message is missed then it is treated return type of a operation</font></td>
+	</tr>
+	<tr>
+		<td height="20" align="left" valign=bottom><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom><font color="#000000"><br></font></td>
+	</tr>
+	<tr>
+		<td height="20" align="left" valign=bottom><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom><font color="#000000">IN</font></td>
+		<td align="left" valign=bottom><font color="#000000"> does not requir Holder type. Java support automatically</font></td>
+	</tr>
+	<tr>
+		<td height="20" align="left" valign=bottom><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom><font color="#000000"><br></font></td>
+	</tr>
+	<tr>
+		<td height="20" align="left" valign=bottom><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom><font color="#000000">custom holder</font></td>
+		<td align="left" valign=bottom><font color="#000000"> any complex type  used in any of OUT and INOUT,  custom holder type created</font></td>
+	</tr>
+	<tr>
+		<td height="20" align="left" valign=bottom><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom><font color="#000000">ArrayCustomHolder</font></td>
+		<td align="left" valign=bottom><font color="#000000"> any type has unbounded value for maxOccurs,  then holder has an array</font></td>
+	</tr>
+</table>
+<!-- ************************************************************************** -->
+<hr>
+<A NAME="table1"><h1>Sheet 2: <em>JAX RPC API</em></h1></A>
+<table cellspacing="0" border="0">
+	<colgroup width="277"></colgroup>
+	<colgroup width="243"></colgroup>
+	<colgroup width="241"></colgroup>
+	<tr>
+		<td style="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000" height="20" align="left" valign=bottom bgcolor="#FFFF00"><b><font color="#FF0000">JSE Endpoint classes/interfaces</font></b></td>
+		<td style="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000" align="left" valign=bottom bgcolor="#FFFF00"><b><font color="#FF0000">Service Interface / Classes</font></b></td>
+		<td style="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000" align="left" valign=bottom bgcolor="#FFFF00"><b><font color="#FF0000">Handler classes / interface</font></b></td>
+	</tr>
+	<tr>
+		<td height="20" align="left" valign=bottom><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom><font color="#000000"><br></font></td>
+	</tr>
+	<tr>
+		<td height="20" align="left" valign=bottom><font color="#000000">java.rmi.Remote</font></td>
+		<td align="left" valign=bottom><font color="#000000">Service</font></td>
+		<td align="left" valign=bottom><font color="#000000">Handler</font></td>
+	</tr>
+	<tr>
+		<td height="20" align="left" valign=bottom><font color="#000000">ServiceLifecycle</font></td>
+		<td align="left" valign=bottom><font color="#000000">ServiceFactory</font></td>
+		<td align="left" valign=bottom><font color="#000000"><br></font></td>
+	</tr>
+	<tr>
+		<td height="20" align="left" valign=bottom bgcolor="#92D050"><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom bgcolor="#92D050"><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom bgcolor="#92D050"><font color="#000000"><br></font></td>
+	</tr>
+	<tr>
+		<td height="20" align="left" valign=bottom><font color="#000000">ServletEndpointContext</font></td>
+		<td align="left" valign=bottom><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom><font color="#000000">MesssageContext</font></td>
+	</tr>
+	<tr>
+		<td height="20" align="left" valign=bottom><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom><font color="#000000">SOAPMessageContext</font></td>
+	</tr>
+	<tr>
+		<td height="20" align="left" valign=bottom bgcolor="#92D050"><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom bgcolor="#92D050"><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom bgcolor="#92D050"><font color="#000000"><br></font></td>
+	</tr>
+	<tr>
+		<td height="20" align="left" valign=bottom><font color="#000000">Holder</font></td>
+		<td align="left" valign=bottom><font color="#000000">Call</font></td>
+		<td align="left" valign=bottom><font color="#000000">HandlerInfo</font></td>
+	</tr>
+	<tr>
+		<td height="20" align="left" valign=bottom><font color="#000000">Stub</font></td>
+		<td align="left" valign=bottom><font color="#000000">NamespaceConstants</font></td>
+		<td align="left" valign=bottom><font color="#000000">GenericHandler</font></td>
+	</tr>
+	<tr>
+		<td height="20" align="left" valign=bottom><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom><font color="#000000">XMLType</font></td>
+		<td align="left" valign=bottom><font color="#000000"><br></font></td>
+	</tr>
+	<tr>
+		<td height="20" align="left" valign=bottom bgcolor="#92D050"><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom bgcolor="#92D050"><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom bgcolor="#92D050"><font color="#000000"><br></font></td>
+	</tr>
+	<tr>
+		<td height="20" align="left" valign=bottom><font color="#000000">java.rmi.RemoteException</font></td>
+		<td align="left" valign=bottom><font color="#000000">ServiceException</font></td>
+		<td align="left" valign=bottom><font color="#000000"><br></font></td>
+	</tr>
+	<tr>
+		<td height="20" align="left" valign=bottom><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom><font color="#000000">JAXRPCException</font></td>
+		<td align="left" valign=bottom><font color="#000000"><br></font></td>
+	</tr>
+	<tr>
+		<td height="20" align="left" valign=bottom><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom><font color="#000000">SOAPFaultException</font></td>
+		<td align="left" valign=bottom><font color="#000000"><br></font></td>
+	</tr>
+</table>
+<!-- ************************************************************************** -->
+<hr>
+<A NAME="table2"><h1>Sheet 3: <em>time frame</em></h1></A>
+<table cellspacing="0" border="0">
+	<colgroup width="107"></colgroup>
+	<colgroup width="95"></colgroup>
+	<colgroup width="99"></colgroup>
+	<colgroup width="107"></colgroup>
+	<colgroup width="521"></colgroup>
+	<colgroup span="2" width="85"></colgroup>
+	<colgroup span="6" width="80"></colgroup>
+	<tr>
+		<td height="20" align="right" valign=bottom sdval="39952" sdnum="16393;0;DD/MM/YYYY"><font color="#000000">19/05/2009</font></td>
+		<td align="right" valign=bottom sdval="0.929861111111111" sdnum="16393;0;HH:MM AM/PM"><font color="#000000">10:19 PM</font></td>
+		<td align="left" valign=bottom><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom><font color="#000000"><br></font></td>
+		<td align="center" valign=bottom><font color="#000000">JAX-RPC intro</font></td>
+		<td align="center" valign=bottom><font color="#000000"><br></font></td>
+		<td align="center" valign=bottom><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom><font color="#000000"><br></font></td>
+	</tr>
+	<tr>
+		<td height="20" align="right" valign=bottom sdval="39953" sdnum="16393;0;DD/MM/YYYY"><font color="#000000">20/05/2009</font></td>
+		<td align="right" valign=bottom sdval="0.374305555555555" sdnum="16393;0;HH:MM AM/PM"><font color="#000000">08:59 AM</font></td>
+		<td align="center" valign=bottom sdval="0.525" sdnum="16393;0;HH:MM AM/PM"><font color="#000000">12:36 PM</font></td>
+		<td align="center" valign=bottom sdval="0.0833333333333333" sdnum="16393;0;[H]:MM:SS"><font color="#000000">2:00:00</font></td>
+		<td align="center" valign=bottom><font color="#000000">JSE Developmet</font></td>
+		<td align="center" valign=bottom><font color="#000000"><br></font></td>
+		<td align="center" valign=bottom><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom><font color="#000000"><br></font></td>
+	</tr>
+	<tr>
+		<td height="20" align="right" valign=bottom sdval="39953" sdnum="16393;0;DD/MM/YYYY"><font color="#000000">20/05/2009</font></td>
+		<td align="right" valign=bottom sdval="0.708333333333333" sdnum="16393;0;HH:MM AM/PM"><font color="#000000">05:00 PM</font></td>
+		<td align="center" valign=bottom sdval="0.765972222222222" sdnum="16393;0;HH:MM AM/PM"><font color="#000000">06:23 PM</font></td>
+		<td align="center" valign=bottom sdval="0.0625" sdnum="16393;0;[H]:MM:SS"><font color="#000000">1:30:00</font></td>
+		<td align="center" valign=bottom><font color="#000000">JSE Environment access - ServletEndpointcontext</font></td>
+		<td align="center" valign=bottom><font color="#000000"><br></font></td>
+		<td align="center" valign=bottom><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom><font color="#000000"><br></font></td>
+	</tr>
+	<tr>
+		<td height="20" align="right" valign=bottom sdval="39953" sdnum="16393;0;DD/MM/YYYY"><font color="#000000">20/05/2009</font></td>
+		<td align="right" valign=bottom sdval="0.840972222222222" sdnum="16393;0;HH:MM AM/PM"><font color="#000000">08:11 PM</font></td>
+		<td align="center" valign=bottom sdval="0.979861111111111" sdnum="16393;0;HH:MM AM/PM"><font color="#000000">11:31 PM</font></td>
+		<td align="center" valign=bottom sdval="0.125" sdnum="16393;0;[H]:MM:SS"><font color="#000000">3:00:00</font></td>
+		<td align="center" valign=bottom><font color="#000000">JSE evaluation</font></td>
+		<td align="center" valign=bottom><font color="#000000"><br></font></td>
+		<td align="center" valign=bottom><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom><font color="#000000"><br></font></td>
+	</tr>
+	<tr>
+		<td height="20" align="right" valign=bottom sdval="39954" sdnum="16393;0;DD/MM/YYYY"><font color="#000000">21/05/2009</font></td>
+		<td align="right" valign=bottom sdval="0.3875" sdnum="16393;0;HH:MM AM/PM"><font color="#000000">09:18 AM</font></td>
+		<td align="left" valign=bottom><font color="#000000"><br></font></td>
+		<td align="center" valign=bottom sdval="0.0833333333333333" sdnum="16393;0;[H]:MM:SS"><font color="#000000">2:00:00</font></td>
+		<td align="center" valign=bottom><font color="#000000">EJB introduction</font></td>
+		<td align="center" valign=bottom><font color="#000000"><br></font></td>
+		<td align="center" valign=bottom><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom><font color="#000000"><br></font></td>
+	</tr>
+	<tr>
+		<td height="20" align="right" valign=bottom sdval="39954" sdnum="16393;0;DD/MM/YYYY"><font color="#000000">21/05/2009</font></td>
+		<td align="right" valign=bottom sdval="0.703472222222222" sdnum="16393;0;HH:MM AM/PM"><font color="#000000">04:53 PM</font></td>
+		<td align="center" valign=bottom sdval="0.823611111111111" sdnum="16393;0;HH:MM AM/PM"><font color="#000000">07:46 PM</font></td>
+		<td align="center" valign=bottom sdval="0.125" sdnum="16393;0;[H]:MM:SS"><font color="#000000">3:00:00</font></td>
+		<td align="center" valign=bottom><font color="#000000">EJB Web service endpoints</font></td>
+		<td align="center" valign=bottom><font color="#000000"><br></font></td>
+		<td align="center" valign=bottom><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom><font color="#000000"><br></font></td>
+	</tr>
+	<tr>
+		<td height="20" align="right" valign=bottom sdval="39954" sdnum="16393;0;DD/MM/YYYY"><font color="#000000">21/05/2009</font></td>
+		<td align="left" valign=bottom><font color="#000000"><br></font></td>
+		<td align="center" valign=bottom sdval="0.948611111111111" sdnum="16393;0;HH:MM AM/PM"><font color="#000000">10:46 PM</font></td>
+		<td align="center" valign=bottom sdval="0.0833333333333333" sdnum="16393;0;[H]:MM:SS"><font color="#000000">2:00:00</font></td>
+		<td align="center" valign=bottom><font color="#000000">EJB web service endpoints evaluation</font></td>
+		<td align="center" valign=bottom><font color="#000000"><br></font></td>
+		<td align="center" valign=bottom><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom><font color="#000000"><br></font></td>
+	</tr>
+	<tr>
+		<td height="20" align="right" valign=bottom sdval="39954" sdnum="16393;0;DD/MM/YYYY"><font color="#000000">21/05/2009</font></td>
+		<td align="left" valign=bottom><font color="#000000"><br></font></td>
+		<td align="center" valign=bottom sdval="0.985416666666667" sdnum="16393;0;HH:MM AM/PM"><font color="#000000">11:39 PM</font></td>
+		<td align="center" valign=bottom sdval="0.0416666666666667" sdnum="16393;0;[H]:MM:SS"><font color="#000000">1:00:00</font></td>
+		<td align="center" valign=bottom><font color="#000000">WSDL to  JAVA mapping behaviour</font></td>
+		<td align="center" valign=bottom><font color="#000000"><br></font></td>
+		<td align="center" valign=bottom><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom><font color="#000000"><br></font></td>
+	</tr>
+	<tr>
+		<td height="20" align="right" valign=bottom sdval="39955" sdnum="16393;0;DD/MM/YYYY"><font color="#000000">22/05/2009</font></td>
+		<td align="right" valign=bottom sdval="0.390972222222222" sdnum="16393;0;HH:MM AM/PM"><font color="#000000">09:23 AM</font></td>
+		<td align="center" valign=bottom sdval="0.438888888888889" sdnum="16393;0;HH:MM AM/PM"><font color="#000000">10:32 AM</font></td>
+		<td align="center" valign=bottom sdval="0.0416666666666667" sdnum="16393;0;[H]:MM:SS"><font color="#000000">1:00:00</font></td>
+		<td align="center" valign=bottom><font color="#000000">xml schema to  JAVA mapping behaviour</font></td>
+		<td align="center" valign=bottom><font color="#000000"><br></font></td>
+		<td align="center" valign=bottom><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom><font color="#000000"><br></font></td>
+	</tr>
+	<tr>
+		<td height="20" align="right" valign=bottom sdval="39955" sdnum="16393;0;DD/MM/YYYY"><font color="#000000">22/05/2009</font></td>
+		<td align="left" valign=bottom><font color="#000000"><br></font></td>
+		<td align="center" valign=bottom sdval="0.497916666666667" sdnum="16393;0;HH:MM AM/PM"><font color="#000000">11:57 AM</font></td>
+		<td align="center" valign=bottom sdval="0.0416666666666667" sdnum="16393;0;[H]:MM:SS"><font color="#000000">1:00:00</font></td>
+		<td align="center" valign=bottom><font color="#000000">Holders</font></td>
+		<td align="center" valign=bottom><font color="#000000"><br></font></td>
+		<td align="center" valign=bottom><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom><font color="#000000"><br></font></td>
+	</tr>
+	<tr>
+		<td height="20" align="right" valign=bottom sdval="39957" sdnum="16393;0;DD/MM/YYYY"><font color="#000000">24/05/2009</font></td>
+		<td align="left" valign=bottom><font color="#000000"><br></font></td>
+		<td align="center" valign=bottom sdval="0.997222222222222" sdnum="16393;0;HH:MM AM/PM"><font color="#000000">11:56 PM</font></td>
+		<td align="center" valign=bottom sdval="0.333333333333333" sdnum="16393;0;[H]:MM:SS"><font color="#000000">8:00:00</font></td>
+		<td align="center" valign=bottom><font color="#000000">Schema and mapping code evaluation</font></td>
+		<td align="center" valign=bottom><font color="#000000"><br></font></td>
+		<td align="center" valign=bottom><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom><font color="#000000"><br></font></td>
+	</tr>
+	<tr>
+		<td height="20" align="right" valign=bottom sdval="39958" sdnum="16393;0;DD/MM/YYYY"><font color="#000000">25/05/2009</font></td>
+		<td align="right" valign=bottom sdval="0.420138888888889" sdnum="16393;0;HH:MM AM/PM"><font color="#000000">10:05 AM</font></td>
+		<td align="left" valign=bottom><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom><font color="#000000"><br></font></td>
+		<td align="center" valign=bottom><font color="#000000">Holder evaluation</font></td>
+		<td align="center" valign=bottom><font color="#000000"><br></font></td>
+		<td align="center" valign=bottom><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom><font color="#000000">iyyapp</font></td>
+	</tr>
+	<tr>
+		<td height="20" align="right" valign=bottom sdval="39959" sdnum="16393;0;DD/MM/YYYY"><font color="#000000">26/05/2009</font></td>
+		<td align="right" valign=bottom sdval="0.329166666666667" sdnum="16393;0;HH:MM AM/PM"><font color="#000000">07:54 AM</font></td>
+		<td align="left" valign=bottom><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom><font color="#000000"><br></font></td>
+		<td align="center" valign=bottom><font color="#000000">End points Deployment tags </font></td>
+		<td align="center" valign=bottom><font color="#000000"><br></font></td>
+		<td align="center" valign=bottom><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom><font color="#000000"><br></font></td>
+	</tr>
+	<tr>
+		<td height="20" align="left" valign=bottom><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom><font color="#000000"><br></font></td>
+		<td align="center" valign=bottom><font color="#000000"><br></font></td>
+		<td align="center" valign=bottom><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom><font color="#000000"><br></font></td>
+	</tr>
+	<tr>
+		<td height="20" align="left" valign=bottom><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom><font color="#000000"><br></font></td>
+		<td align="center" valign=bottom><font color="#000000"><br></font></td>
+		<td align="center" valign=bottom><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom><font color="#000000"><br></font></td>
+	</tr>
+	<tr>
+		<td height="20" align="right" valign=bottom sdval="39973" sdnum="16393;0;DD/MM/YYYY"><font color="#000000">09/06/2009</font></td>
+		<td align="right" valign=bottom sdval="0.611805555555556" sdnum="16393;0;HH:MM AM/PM"><font color="#000000">02:41 PM</font></td>
+		<td align="center" valign=bottom sdval="0.650694444444445" sdnum="16393;0;HH:MM AM/PM"><font color="#000000">03:37 PM</font></td>
+		<td align="center" valign=bottom sdval="0.0416666666666667" sdnum="16393;0;HH:MM"><font color="#000000">01:00</font></td>
+		<td align="center" valign=bottom><font color="#000000">SCDJWS</font></td>
+		<td align="center" valign=bottom><font color="#000000"><br></font></td>
+		<td align="center" valign=bottom><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom><font color="#000000"><br></font></td>
+	</tr>
+	<tr>
+		<td height="20" align="right" valign=bottom sdval="39973" sdnum="16393;0;DD/MM/YYYY"><font color="#000000">09/06/2009</font></td>
+		<td align="left" valign=bottom><font color="#000000"><br></font></td>
+		<td align="center" valign=bottom sdval="0.868055555555555" sdnum="16393;0;HH:MM AM/PM"><font color="#000000">08:50 PM</font></td>
+		<td align="center" valign=bottom sdval="0.104166666666667" sdnum="16393;0;HH:MM"><font color="#000000">02:30</font></td>
+		<td align="center" valign=bottom><font color="#000000">SCDJWS - Soap and saaj</font></td>
+		<td align="center" valign=bottom><font color="#000000"><br></font></td>
+		<td align="center" valign=bottom><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom><font color="#000000"><br></font></td>
+	</tr>
+	<tr>
+		<td height="20" align="right" valign=bottom sdval="39973" sdnum="16393;0;DD/MM/YYYY"><font color="#000000">09/06/2009</font></td>
+		<td align="left" valign=bottom><font color="#000000"><br></font></td>
+		<td align="center" valign=bottom sdval="0.93125" sdnum="16393;0;HH:MM AM/PM"><font color="#000000">10:21 PM</font></td>
+		<td align="center" valign=bottom sdval="0.0416666666666667" sdnum="16393;0;HH:MM"><font color="#000000">01:00</font></td>
+		<td align="center" valign=bottom><font color="#000000">SCDJWS - WSDL and UDDI</font></td>
+		<td align="center" valign=bottom><font color="#000000"><br></font></td>
+		<td align="center" valign=bottom><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom><font color="#000000"><br></font></td>
+	</tr>
+	<tr>
+		<td height="20" align="right" valign=bottom sdval="39974" sdnum="16393;0;DD/MM/YYYY"><font color="#000000">10/06/2009</font></td>
+		<td align="right" valign=bottom sdval="0.7" sdnum="16393;0;HH:MM AM/PM"><font color="#000000">04:48 PM</font></td>
+		<td align="center" valign=bottom sdval="0.771527777777778" sdnum="16393;0;HH:MM AM/PM"><font color="#000000">06:31 PM</font></td>
+		<td align="center" valign=bottom sdval="0.0833333333333333" sdnum="16393;0;HH:MM"><font color="#000000">02:00</font></td>
+		<td align="center" valign=bottom><font color="#000000">SCDJWS - JAX-RPC</font></td>
+		<td align="center" valign=bottom><font color="#000000"><br></font></td>
+		<td align="center" valign=bottom><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom><font color="#000000"><br></font></td>
+	</tr>
+	<tr>
+		<td height="20" align="right" valign=bottom sdval="39974" sdnum="16393;0;DD/MM/YYYY"><font color="#000000">10/06/2009</font></td>
+		<td align="right" valign=bottom sdval="0.83125" sdnum="16393;0;HH:MM AM/PM"><font color="#000000">07:57 PM</font></td>
+		<td align="center" valign=bottom sdval="0.976388888888889" sdnum="16393;0;HH:MM AM/PM"><font color="#000000">11:26 PM</font></td>
+		<td align="center" valign=bottom sdval="0.0833333333333333" sdnum="16393;0;HH:MM"><font color="#000000">02:00</font></td>
+		<td align="center" valign=bottom><font color="#000000">SCDJWS - JAXP</font></td>
+		<td align="center" valign=bottom><font color="#000000"><br></font></td>
+		<td align="center" valign=bottom><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom><font color="#000000"><br></font></td>
+	</tr>
+	<tr>
+		<td height="20" align="right" valign=bottom sdval="39975" sdnum="16393;0;DD/MM/YYYY"><font color="#000000">11/06/2009</font></td>
+		<td align="right" valign=bottom sdval="0.130555555555556" sdnum="16393;0;HH:MM AM/PM"><font color="#000000">03:08 AM</font></td>
+		<td align="center" valign=bottom><font color="#000000"><br></font></td>
+		<td align="center" valign=bottom><font color="#000000"><br></font></td>
+		<td align="center" valign=bottom><font color="#000000">SCDJWS - JAXR</font></td>
+		<td align="center" valign=bottom><font color="#000000"><br></font></td>
+		<td align="center" valign=bottom><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom><font color="#000000"><br></font></td>
+	</tr>
+</table>
+<!-- ************************************************************************** -->
+<hr>
+<A NAME="table3"><h1>Sheet 4: <em>Security</em></h1></A>
+<table cellspacing="0" border="0">
+	<colgroup width="263"></colgroup>
+	<colgroup width="371"></colgroup>
+	<colgroup width="269"></colgroup>
+	<tr>
+		<td height="20" align="left" valign=bottom><font color="#000000">Transport level security</font></td>
+		<td align="left" valign=bottom><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom><font color="#000000"><br></font></td>
+	</tr>
+	<tr>
+		<td height="20" align="left" valign=bottom><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom><font color="#000000">SSL and TSL</font></td>
+		<td align="left" valign=bottom><font color="#000000"><br></font></td>
+	</tr>
+	<tr>
+		<td height="20" align="left" valign=bottom><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom><font color="#000000"><br></font></td>
+	</tr>
+	<tr>
+		<td height="20" align="left" valign=bottom><font color="#000000">Message Level security</font></td>
+		<td align="left" valign=bottom><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom><font color="#000000"><br></font></td>
+	</tr>
+	<tr>
+		<td height="20" align="left" valign=bottom><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom><font color="#000000">XML Encription ( of W3c )</font></td>
+		<td align="left" valign=bottom><font color="#000000"><br></font></td>
+	</tr>
+	<tr>
+		<td height="20" align="left" valign=bottom><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom><font color="#000000">&lt;EncryptionData&gt;</font></td>
+	</tr>
+	<tr>
+		<td height="20" align="left" valign=bottom><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom><font color="#000000">&lt;EncryptionMethod&gt;</font></td>
+	</tr>
+	<tr>
+		<td height="20" align="left" valign=bottom><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom><font color="#000000">&lt;cipherValue&gt;</font></td>
+	</tr>
+	<tr>
+		<td height="20" align="left" valign=bottom><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom><font color="#000000">&lt;cipherData&gt;</font></td>
+	</tr>
+	<tr>
+		<td height="20" align="left" valign=bottom><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom><font color="#000000">&lt;cipherReference&gt;</font></td>
+	</tr>
+	<tr>
+		<td height="20" align="left" valign=bottom><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom><font color="#000000"><br></font></td>
+	</tr>
+	<tr>
+		<td height="20" align="left" valign=bottom><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom><font color="#000000">XML Digital Signature ( W3c and IETF )</font></td>
+		<td align="left" valign=bottom><font color="#000000"><br></font></td>
+	</tr>
+	<tr>
+		<td height="20" align="left" valign=bottom><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom><font color="#000000">it has its own xml element</font></td>
+	</tr>
+	<tr>
+		<td height="20" align="left" valign=bottom><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom><font color="#000000">it has its own API and its implementation</font></td>
+	</tr>
+	<tr>
+		<td height="20" align="left" valign=bottom><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom><font color="#000000"><br></font></td>
+	</tr>
+	<tr>
+		<td height="20" align="left" valign=bottom><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom><font color="#000000">Enveloping</font></td>
+	</tr>
+	<tr>
+		<td height="20" align="left" valign=bottom><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom><font color="#000000">Enveloped</font></td>
+	</tr>
+	<tr>
+		<td height="20" align="left" valign=bottom><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom><font color="#000000">Detached</font></td>
+	</tr>
+	<tr>
+		<td height="20" align="left" valign=bottom><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom><font color="#000000"><br></font></td>
+	</tr>
+	<tr>
+		<td height="20" align="left" valign=bottom><font color="#000000">scurity standard</font></td>
+		<td align="left" valign=bottom><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom><font color="#000000"><br></font></td>
+	</tr>
+	<tr>
+		<td height="20" align="left" valign=bottom><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom><font color="#000000">SAML ( OASIS )</font></td>
+		<td align="left" valign=bottom><font color="#000000"><br></font></td>
+	</tr>
+	<tr>
+		<td height="20" align="left" valign=bottom><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom><font color="#000000">work in the form assertion</font></td>
+	</tr>
+	<tr>
+		<td height="20" align="left" valign=bottom><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom><font color="#000000"><br></font></td>
+	</tr>
+	<tr>
+		<td height="20" align="left" valign=bottom><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom><font color="#000000">XACML  ( OASIS )</font></td>
+		<td align="left" valign=bottom><font color="#000000"><br></font></td>
+	</tr>
+	<tr>
+		<td height="20" align="left" valign=bottom><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom><font color="#000000">it is used to define access policy for a client for a resource in server</font></td>
+	</tr>
+	<tr>
+		<td height="20" align="left" valign=bottom><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom><font color="#000000">it is not used for soap message protection</font></td>
+	</tr>
+	<tr>
+		<td height="20" align="left" valign=bottom><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom><font color="#000000">XKMS</font></td>
+		<td align="left" valign=bottom><font color="#000000"><br></font></td>
+	</tr>
+	<tr>
+		<td height="20" align="left" valign=bottom><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom><font color="#000000">it is used for public key generation /recovery / validation /</font></td>
+	</tr>
+	<tr>
+		<td height="20" align="left" valign=bottom><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom><font color="#000000">almost is used in server side</font></td>
+	</tr>
+	<tr>
+		<td height="20" align="left" valign=bottom><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom><font color="#000000">it is INDIRECTLY used with message level security</font></td>
+	</tr>
+	<tr>
+		<td height="20" align="left" valign=bottom><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom><font color="#000000"><br></font></td>
+	</tr>
+	<tr>
+		<td height="20" align="left" valign=bottom><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom><font color="#000000">WS-Security</font></td>
+		<td align="left" valign=bottom><font color="#000000"><br></font></td>
+	</tr>
+	<tr>
+		<td height="20" align="left" valign=bottom><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom><font color="#000000">it is used for message protection combination with Digital signature</font></td>
+	</tr>
+	<tr>
+		<td height="20" align="left" valign=bottom><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom><font color="#000000"><br></font></td>
+	</tr>
+	<tr>
+		<td height="20" align="left" valign=bottom><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom><font color="#000000">Liberty project</font></td>
+		<td align="left" valign=bottom><font color="#000000"><br></font></td>
+	</tr>
+	<tr>
+		<td height="20" align="left" valign=bottom><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom><font color="#000000"><br></font></td>
+	</tr>
+	<tr>
+		<td height="20" align="left" valign=bottom><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom><font color="#000000"><br></font></td>
+	</tr>
+	<tr>
+		<td height="20" align="left" valign=bottom><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom><font color="#000000"><br></font></td>
+	</tr>
+	<tr>
+		<td height="20" align="right" valign=bottom sdval="209" sdnum="16393;"><font color="#000000">209</font></td>
+		<td align="right" valign=bottom sdval="241" sdnum="16393;"><font color="#000000">241</font></td>
+		<td align="left" valign=bottom><font color="#000000"><br></font></td>
+	</tr>
+</table>
+<!-- ************************************************************************** -->
+</body>
+
+</html>

@@ -1,0 +1,641 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+
+<html>
+<head>
+	
+	<meta http-equiv="content-type" content="text/html; charset=utf-8">
+	<title></title>
+	<meta name="generator" content="LibreOffice 4.2.8.2 (Linux)">
+	<meta name="created" content="20130526;125210000000000">
+	<meta name="changed" content="20130619;233807000000000">
+	
+	<style type="text/css"><!-- 
+		body,div,table,thead,tbody,tfoot,tr,th,td,p { font-family:"Arial"; font-size:x-small }
+		 -->
+	</style>
+	
+</head>
+
+<body text="#000000">
+<hr>
+	<p><center>
+		<h1>Overview</h1>
+		<A HREF="#table0">Javassist Usage</A><br>
+		<A HREF="#table1">General-Java Assist</A><br>
+		<A HREF="#table2">JavaAssist-API</A><br>
+		<A HREF="#table3">JavaAssist-Identifier</A><br>
+		<A HREF="#table4">class loader</A><br>
+		<A HREF="#table5">Reflection</A><br>
+		<A HREF="#table6">Java ByteCode</A><br>
+		
+	</center></p>
+<hr>
+<A NAME="table0"><h1>Sheet 1: <em>Javassist Usage</em></h1></A>
+<table cellspacing="0" border="0">
+	<colgroup width="343"></colgroup>
+	<colgroup width="467"></colgroup>
+	<tr>
+		<td height="16" align="left" valign=bottom>adding entry / exit/ exception  logger statement</td>
+		<td align="left" valign=bottom>it save developer timie</td>
+	</tr>
+	<tr>
+		<td height="16" align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom>it helps developer free from log statement , when refactor method name</td>
+	</tr>
+	<tr>
+		<td height="16" align="left" valign=bottom>find execution time taken by every method</td>
+		<td align="left" valign=bottom><br></td>
+	</tr>
+	<tr>
+		<td height="17" align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+	</tr>
+	<tr>
+		<td height="16" align="left" valign=bottom>remove a method by rename and make it as private</td>
+		<td align="left" valign=bottom><br></td>
+	</tr>
+	<tr>
+		<td height="17" align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+	</tr>
+	<tr>
+		<td height="16" align="left" valign=bottom>add printstacktrace, try-catch for every public method</td>
+		<td align="left" valign=bottom>i can add try-catch-with stracktrace , it will helpful for developer/ debugger without change source code</td>
+	</tr>
+	<tr>
+		<td height="17" align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+	</tr>
+	<tr>
+		<td height="17" align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+	</tr>
+	<tr>
+		<td height="16" align="left" valign=bottom>i can define @print Annotation and use it print any variable</td>
+		<td align="left" valign=bottom>it can be processed and put debuger statement in proper style . It can be done on demand</td>
+	</tr>
+	<tr>
+		<td height="17" align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+	</tr>
+	<tr>
+		<td height="17" align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+	</tr>
+	<tr>
+		<td height="17" align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+	</tr>
+	<tr>
+		<td height="16" align="left" valign=bottom>i can make one method from several method</td>
+		<td align="left" valign=bottom>it helps when long process but defined in many methods. Like earlier calc, filter applications</td>
+	</tr>
+	<tr>
+		<td height="17" align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+	</tr>
+	<tr>
+		<td height="17" align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+	</tr>
+	<tr>
+		<td height="16" align="left" valign=bottom>add statement to close any resource in finally block</td>
+		<td align="left" valign=bottom>the finaly block can be added at class file, so source code will look free.</td>
+	</tr>
+	<tr>
+		<td height="17" align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+	</tr>
+	<tr>
+		<td height="17" align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+	</tr>
+	<tr>
+		<td height="16" align="left" valign=bottom>replace whole new body of method</td>
+		<td align="left" valign=bottom>i can replace some method for environment specific like UAT/PROD of some resoruce info</td>
+	</tr>
+	<tr>
+		<td height="17" align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+	</tr>
+	<tr>
+		<td height="16" align="left" valign=bottom>enviornment specific code changes or disable code</td>
+		<td align="left" valign=bottom><br></td>
+	</tr>
+</table>
+<!-- ************************************************************************** -->
+<hr>
+<A NAME="table1"><h1>Sheet 2: <em>General-Java Assist</em></h1></A>
+<table cellspacing="0" border="0">
+	<colgroup width="397"></colgroup>
+	<colgroup width="435"></colgroup>
+	<tr>
+		<td height="16" align="left" valign=bottom>usage of premain() method</td>
+		<td align="left" valign=bottom>it is good only for java desktop application</td>
+	</tr>
+	<tr>
+		<td height="17" align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+	</tr>
+	<tr>
+		<td height="16" align="left" valign=bottom>usage load class file and change again save the class file. This class file will be deployed into server</td>
+		<td align="left" valign=bottom><br></td>
+	</tr>
+	<tr>
+		<td height="17" align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+	</tr>
+	<tr>
+		<td height="17" align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+	</tr>
+	<tr>
+		<td height="16" align="left" valign=bottom>usage of  any ant task</td>
+		<td align="left" valign=bottom><br></td>
+	</tr>
+	<tr>
+		<td height="17" align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+	</tr>
+	<tr>
+		<td height="16" align="left" valign=bottom>usage custom builder in eclipse – project builder</td>
+		<td align="left" valign=bottom><br></td>
+	</tr>
+	<tr>
+		<td height="17" align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+	</tr>
+	<tr>
+		<td height="17" align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+	</tr>
+	<tr>
+		<td height="16" align="left" valign=bottom>is there any way to load set of classes on server environment and do instrumentation and server has to use those files.</td>
+		<td align="left" valign=bottom><br></td>
+	</tr>
+</table>
+<!-- ************************************************************************** -->
+<hr>
+<A NAME="table2"><h1>Sheet 3: <em>JavaAssist-API</em></h1></A>
+<table cellspacing="0" border="0">
+	<colgroup width="226"></colgroup>
+	<colgroup width="110"></colgroup>
+	<colgroup width="86"></colgroup>
+	<colgroup width="132"></colgroup>
+	<colgroup width="86"></colgroup>
+	<colgroup width="443"></colgroup>
+	<tr>
+		<td height="16" align="left" valign=bottom>rep. Classes on give path or class path</td>
+		<td align="left" valign=bottom>ClassPool</td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom>get</td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+	</tr>
+	<tr>
+		<td height="16" align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom>getDefault</td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+	</tr>
+	<tr>
+		<td height="16" align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom bgcolor="#E6E6E6">makeClass</td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+	</tr>
+	<tr>
+		<td height="16" align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom bgcolor="#E6E6E6">makeInterface</td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+	</tr>
+	<tr>
+		<td height="16" align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom bgcolor="#00B8FF">doPruning</td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+	</tr>
+	<tr>
+		<td height="16" align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom bgcolor="#00B8FF">stopPruning</td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+	</tr>
+	<tr>
+		<td height="16" align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom bgcolor="#00B8FF">debugWriteFile</td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+	</tr>
+	<tr>
+		<td height="16" align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom>insertClassPath</td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+	</tr>
+	<tr>
+		<td height="17" align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+	</tr>
+	<tr>
+		<td height="16" align="left" valign=bottom bgcolor="#C0C0C0"><br></td>
+		<td align="left" valign=bottom bgcolor="#C0C0C0"><br></td>
+		<td align="left" valign=bottom bgcolor="#C0C0C0"><br></td>
+		<td align="left" valign=bottom bgcolor="#C0C0C0"><br></td>
+		<td align="left" valign=bottom bgcolor="#C0C0C0"><br></td>
+		<td align="left" valign=bottom bgcolor="#C0C0C0"><br></td>
+	</tr>
+	<tr>
+		<td height="16" align="left" valign=bottom>rep. Existing class</td>
+		<td align="left" valign=bottom>CtClass</td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom>setSuperclass</td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom>it represent the a class definition, it has a lot of method to play class file</td>
+	</tr>
+	<tr>
+		<td height="16" align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom bgcolor="#00B8FF">writeFile</td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+	</tr>
+	<tr>
+		<td height="16" align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom bgcolor="#00B8FF">toBytecode</td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+	</tr>
+	<tr>
+		<td height="16" align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom bgcolor="#00B8FF">toClass</td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+	</tr>
+	<tr>
+		<td height="16" align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom>addMethod</td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+	</tr>
+	<tr>
+		<td height="16" align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom>defrost</td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+	</tr>
+	<tr>
+		<td height="16" align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom>getDeclaredMethod</td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+	</tr>
+	<tr>
+		<td height="16" align="left" valign=bottom>rep. Existing constructor</td>
+		<td align="left" valign=bottom>CtConstructor</td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom>be famailiar to modify content of constructor</td>
+	</tr>
+	<tr>
+		<td height="16" align="left" valign=bottom>rep. Existing field</td>
+		<td align="left" valign=bottom>CtField</td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom>be famailiar to modify content of field</td>
+	</tr>
+	<tr>
+		<td height="16" align="left" valign=bottom>rep. Existing method</td>
+		<td align="left" valign=bottom>CtMethod</td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom>be famailiar to modify content of method</td>
+	</tr>
+	<tr>
+		<td height="16" align="left" valign=bottom bgcolor="#C0C0C0"><br></td>
+		<td align="left" valign=bottom bgcolor="#C0C0C0"><br></td>
+		<td align="left" valign=bottom bgcolor="#C0C0C0"><br></td>
+		<td align="left" valign=bottom bgcolor="#C0C0C0"><br></td>
+		<td align="left" valign=bottom bgcolor="#C0C0C0"><br></td>
+		<td align="left" valign=bottom bgcolor="#C0C0C0"><br></td>
+	</tr>
+	<tr>
+		<td height="16" align="left" valign=bottom>used to add new method</td>
+		<td align="left" valign=bottom>CtNewMethod</td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom>abstractMethod</td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+	</tr>
+	<tr>
+		<td height="16" align="left" valign=bottom>used to add new con</td>
+		<td align="left" valign=bottom>CtNewConstructor</td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+	</tr>
+	<tr>
+		<td height="16" align="left" valign=bottom bgcolor="#C0C0C0"><br></td>
+		<td align="left" valign=bottom bgcolor="#C0C0C0"><br></td>
+		<td align="left" valign=bottom bgcolor="#C0C0C0"><br></td>
+		<td align="left" valign=bottom bgcolor="#C0C0C0"><br></td>
+		<td align="left" valign=bottom bgcolor="#C0C0C0"><br></td>
+		<td align="left" valign=bottom bgcolor="#C0C0C0"><br></td>
+	</tr>
+	<tr>
+		<td height="16" align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom>CtBehavior</td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+	</tr>
+	<tr>
+		<td height="16" align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom>MethodInfo</td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom>it represent the raw class file and a method</td>
+	</tr>
+	<tr>
+		<td height="17" align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+	</tr>
+	<tr>
+		<td height="16" align="left" valign=bottom>ClassPath</td>
+		<td align="left" valign=bottom>ClassClassPath</td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+	</tr>
+	<tr>
+		<td height="16" align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom>URLClassPath</td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+	</tr>
+	<tr>
+		<td height="16" align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom>ByteArrayClassPath</td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+	</tr>
+	<tr>
+		<td height="17" align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+	</tr>
+	<tr>
+		<td height="17" align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+	</tr>
+	<tr>
+		<td height="16" align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom>Loader</td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+	</tr>
+	<tr>
+		<td height="16" align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom>Translator</td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+	</tr>
+	<tr>
+		<td height="17" align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+	</tr>
+	<tr>
+		<td height="16" align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom>HotSwapper</td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom>load the class dynamically</td>
+	</tr>
+	<tr>
+		<td height="17" align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+	</tr>
+	<tr>
+		<td height="16" align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom>ExprEditor</td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+	</tr>
+	<tr>
+		<td height="17" align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+	</tr>
+	<tr>
+		<td height="16" align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom>javassist.bytecode</td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom>package has classes for direct byte code manipulation</td>
+	</tr>
+	<tr>
+		<td height="16" align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom>javassist.runtime</td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+	</tr>
+</table>
+<!-- ************************************************************************** -->
+<hr>
+<A NAME="table3"><h1>Sheet 4: <em>JavaAssist-Identifier</em></h1></A>
+<table cellspacing="0" border="0">
+	<colgroup width="189"></colgroup>
+	<colgroup width="360"></colgroup>
+	<tr>
+		<td height="16" align="left" valign=bottom>all the identifiere start with $</td>
+		<td align="left" valign=bottom><br></td>
+	</tr>
+	<tr>
+		<td height="17" align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+	</tr>
+	<tr>
+		<td height="16" align="left" valign=bottom>$$</td>
+		<td align="left" valign=bottom>it rep. All the parameters of a method under construction</td>
+	</tr>
+</table>
+<!-- ************************************************************************** -->
+<hr>
+<A NAME="table4"><h1>Sheet 5: <em>class loader</em></h1></A>
+<table cellspacing="0" border="0">
+	<colgroup width="86"></colgroup>
+	<colgroup width="168"></colgroup>
+	<colgroup width="258"></colgroup>
+	<colgroup width="474"></colgroup>
+	<tr>
+		<td height="16" align="right" valign=bottom sdval="1" sdnum="16393;">1</td>
+		<td align="left" valign=bottom>bootstrap loader</td>
+		<td align="left" valign=bottom>it does not have parent class loader</td>
+		<td align="left" valign=bottom>it load classes those no need any validation by JVM.</td>
+	</tr>
+	<tr>
+		<td height="17" align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+	</tr>
+	<tr>
+		<td height="16" align="right" valign=bottom sdval="2" sdnum="16393;">2</td>
+		<td align="left" valign=bottom>Extension loader</td>
+		<td align="left" valign=bottom>it load API like JAXP, JMX</td>
+		<td align="left" valign=bottom><br></td>
+	</tr>
+	<tr>
+		<td height="17" align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+	</tr>
+	<tr>
+		<td height="17" align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+	</tr>
+	<tr>
+		<td height="16" align="right" valign=bottom sdval="3" sdnum="16393;">3</td>
+		<td align="left" valign=bottom>system class loader</td>
+		<td align="left" valign=bottom>it load static classes like java.lang.String</td>
+		<td align="left" valign=bottom>it load our application classes also</td>
+	</tr>
+	<tr>
+		<td height="17" align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+	</tr>
+	<tr>
+		<td height="16" align="right" valign=bottom sdval="4" sdnum="16393;">4</td>
+		<td align="left" valign=bottom>application class loader</td>
+		<td align="left" valign=bottom>our own class loader</td>
+		<td align="left" valign=bottom>when we want to run more than one application, we will write own class loader</td>
+	</tr>
+	<tr>
+		<td height="16" align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom>to reload a class in runtime</td>
+	</tr>
+</table>
+<!-- ************************************************************************** -->
+<hr>
+<A NAME="table5"><h1>Sheet 6: <em>Reflection</em></h1></A>
+<table cellspacing="0" border="0">
+	<colgroup width="395"></colgroup>
+	<tr>
+		<td height="16" align="left" valign=bottom>it is API for runtime meta data access</td>
+	</tr>
+</table>
+<!-- ************************************************************************** -->
+<hr>
+<A NAME="table6"><h1>Sheet 7: <em>Java ByteCode</em></h1></A>
+<table cellspacing="0" border="0">
+	<colgroup width="365"></colgroup>
+	<colgroup width="366"></colgroup>
+	<tr>
+		<td height="16" align="left" valign=bottom>java class file has specific format specified by JVM spec.</td>
+		<td align="left" valign=bottom><br></td>
+	</tr>
+	<tr>
+		<td height="17" align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+	</tr>
+	<tr>
+		<td height="16" align="left" valign=bottom>it has version no.</td>
+		<td align="left" valign=bottom><br></td>
+	</tr>
+	<tr>
+		<td height="16" align="left" valign=bottom>it has constant pool</td>
+		<td align="left" valign=bottom><br></td>
+	</tr>
+	<tr>
+		<td height="16" align="left" valign=bottom>Attribute</td>
+		<td align="left" valign=bottom>it is used for many purpose in Class file</td>
+	</tr>
+	<tr>
+		<td height="16" align="left" valign=bottom>code attribute – is actual executable method defintion</td>
+		<td align="left" valign=bottom>code attribute contains instructions is called bytecode</td>
+	</tr>
+</table>
+<!-- ************************************************************************** -->
+</body>
+
+</html>

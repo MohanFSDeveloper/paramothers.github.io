@@ -1,0 +1,2661 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+
+<html>
+<head>
+	
+	<meta http-equiv="content-type" content="text/html; charset=utf-8">
+	<title></title>
+	<meta name="generator" content="LibreOffice 4.2.8.2 (Linux)">
+	<meta name="created" content="20150228;231521000000000">
+	<meta name="changed" content="20150228;231611000000000">
+	
+	<style type="text/css"><!-- 
+		body,div,table,thead,tbody,tfoot,tr,th,td,p { font-family:"Arial"; font-size:x-small }
+		 -->
+	</style>
+	
+</head>
+
+<body text="#000000">
+<hr>
+	<p><center>
+		<h1>Overview</h1>
+		<A HREF="#table0">General</A><br>
+		<A HREF="#table1">API-SpringBatch 3.0</A><br>
+		<A HREF="#table2">API- Job Repository</A><br>
+		<A HREF="#table3">API-Repeat</A><br>
+		<A HREF="#table4">API-Retry</A><br>
+		<A HREF="#table5">API-Step</A><br>
+		<A HREF="#table6">API- Job</A><br>
+		<A HREF="#table7">API-JunitTesst</A><br>
+		<A HREF="#table8">API-Listener</A><br>
+		<A HREF="#table9">API-policy &amp; status</A><br>
+		<A HREF="#table10">API-ItemProcessor</A><br>
+		<A HREF="#table11">API-ItemReader</A><br>
+		<A HREF="#table12">API-ItemWriter</A><br>
+		<A HREF="#table13">Spring batch LLR</A><br>
+		<A HREF="#table14">SpringBatch-SESSION</A><br>
+		
+	</center></p>
+<hr>
+<A NAME="table0"><h1>Sheet 1: <em>General</em></h1></A>
+<table cellspacing="0" border="0">
+	<colgroup width="514"></colgroup>
+	<colgroup width="223"></colgroup>
+	<tr>
+		<td height="18" align="left" valign=bottom bgcolor="#FFFF00"><b><font face="Calibri" color="#000000">Understanding</font></b></td>
+		<td align="left" valign=bottom><br></td>
+	</tr>
+	<tr>
+		<td height="18" align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+	</tr>
+	<tr>
+		<td height="18" align="left" valign=bottom>it requires</td>
+		<td align="left" valign=bottom>release</td>
+	</tr>
+	<tr>
+		<td height="18" align="left" valign=bottom>Spring core – DI</td>
+		<td align="left" valign=bottom><br></td>
+	</tr>
+	<tr>
+		<td height="18" align="left" valign=bottom>Spring JDBC</td>
+		<td align="left" valign=bottom>1.0 at 2008</td>
+	</tr>
+	<tr>
+		<td height="18" align="left" valign=bottom>Spring Transaction management</td>
+		<td align="left" valign=bottom>2.0 at 2009</td>
+	</tr>
+	<tr>
+		<td height="18" align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom>3.0 at 2014</td>
+	</tr>
+	<tr>
+		<td height="18" align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+	</tr>
+	<tr>
+		<td height="18" align="left" valign=bottom>Spring batch was born in 2007</td>
+		<td align="left" valign=bottom><br></td>
+	</tr>
+	<tr>
+		<td height="18" align="left" valign=bottom>Batch technology from ACCENTURE &amp; Spring from SpringSource</td>
+		<td align="left" valign=bottom><br></td>
+	</tr>
+	<tr>
+		<td height="18" align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+	</tr>
+	<tr>
+		<td height="18" align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+	</tr>
+	<tr>
+		<td height="18" align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+	</tr>
+	<tr>
+		<td height="18" align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+	</tr>
+	<tr>
+		<td height="18" align="left" valign=bottom>Batch job can be start from command line / HTTP request / Scheduler</td>
+		<td align="left" valign=bottom><br></td>
+	</tr>
+	<tr>
+		<td height="18" align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+	</tr>
+	<tr>
+		<td height="18" align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+	</tr>
+	<tr>
+		<td height="18" align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+	</tr>
+	<tr>
+		<td height="18" align="left" valign=bottom>Job Launcher – it create state for a job before to launch</td>
+		<td align="left" valign=bottom><br></td>
+	</tr>
+	<tr>
+		<td height="18" align="left" valign=bottom>Job Repository – it has state of batch jobs – repository can be reside either in Memory or Database</td>
+		<td align="left" valign=bottom><br></td>
+	</tr>
+</table>
+<!-- ************************************************************************** -->
+<hr>
+<A NAME="table1"><h1>Sheet 2: <em>API-SpringBatch 3.0</em></h1></A>
+<table cellspacing="0" border="0">
+	<colgroup width="514"></colgroup>
+	<colgroup width="223"></colgroup>
+	<tr>
+		<td height="18" align="left" valign=bottom><i><font face="Calibri" color="#FF6600">study API of all step, stepexecction, execution context</font></i></td>
+		<td align="left" valign=bottom><br></td>
+	</tr>
+	<tr>
+		<td height="20" align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><b><font face="Calibri" color="#000000">StepBuilderFactory</font></b></td>
+	</tr>
+	<tr>
+		<td height="20" align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><b><font face="Calibri" color="#000000">JobBuilderFactory</font></b></td>
+	</tr>
+</table>
+<!-- ************************************************************************** -->
+<hr>
+<A NAME="table2"><h1>Sheet 3: <em>API- Job Repository</em></h1></A>
+<table cellspacing="0" border="0">
+	<colgroup width="51"></colgroup>
+	<colgroup width="394"></colgroup>
+	<colgroup width="210"></colgroup>
+	<colgroup width="246"></colgroup>
+	<colgroup width="203"></colgroup>
+	<colgroup width="223"></colgroup>
+	<colgroup width="202"></colgroup>
+	<tr>
+		<td height="18" align="left" valign=bottom bgcolor="#DDDDDD"><br></td>
+		<td align="left" valign=bottom bgcolor="#DDDDDD"><br></td>
+		<td align="left" valign=bottom bgcolor="#DDDDDD"><br></td>
+		<td align="left" valign=bottom bgcolor="#DDDDDD"><br></td>
+		<td align="left" valign=bottom bgcolor="#DDDDDD"><br></td>
+		<td align="left" valign=bottom bgcolor="#DDDDDD"><br></td>
+		<td align="left" valign=bottom bgcolor="#DDDDDD"><br></td>
+	</tr>
+	<tr>
+		<td height="18" align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+	</tr>
+	<tr>
+		<td height="18" align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+	</tr>
+	<tr>
+		<td height="18" align="left" valign=bottom bgcolor="#DDDDDD"><br></td>
+		<td align="left" valign=bottom bgcolor="#DDDDDD"><br></td>
+		<td align="left" valign=bottom bgcolor="#DDDDDD"><font face="Calibri" color="#000000"><br></font></td>
+		<td align="left" valign=bottom bgcolor="#DDDDDD"><font face="Calibri" color="#000000"><br></font></td>
+		<td align="left" valign=bottom bgcolor="#DDDDDD"><br></td>
+		<td align="left" valign=bottom bgcolor="#DDDDDD"><br></td>
+		<td align="left" valign=bottom bgcolor="#DDDDDD"><br></td>
+	</tr>
+	<tr>
+		<td height="18" align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom bgcolor="#9999FF"><font face="Calibri" color="#000000">JobRepository</font></td>
+		<td align="left" valign=bottom bgcolor="#9999FF"><font face="Calibri" color="#000000">SimpleJobRepository</font></td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+	</tr>
+	<tr>
+		<td height="18" align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom>database repository</td>
+		<td align="left" valign=bottom><font face="Calibri" color="#000000"><br></font></td>
+		<td align="left" valign=bottom><font face="Calibri" color="#000000"><br></font></td>
+		<td align="left" valign=bottom>JobRepositoryFactoryBean</td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+	</tr>
+	<tr>
+		<td height="18" align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom>In-memory repositary</td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom>MapJobRepositoryFactoryBean</td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+	</tr>
+	<tr>
+		<td height="18" align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom>ResourcelessTransactionManager</td>
+		<td align="left" valign=bottom><br></td>
+	</tr>
+	<tr>
+		<td height="18" align="left" valign=bottom bgcolor="#DDDDDD"><br></td>
+		<td align="left" valign=bottom bgcolor="#DDDDDD"><br></td>
+		<td align="left" valign=bottom bgcolor="#DDDDDD"><br></td>
+		<td align="left" valign=bottom bgcolor="#DDDDDD"><br></td>
+		<td align="left" valign=bottom bgcolor="#DDDDDD"><br></td>
+		<td align="left" valign=bottom bgcolor="#DDDDDD"><br></td>
+		<td align="left" valign=bottom bgcolor="#DDDDDD"><br></td>
+	</tr>
+	<tr>
+		<td height="18" align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom>more function with JobReposisoty</td>
+		<td align="left" valign=bottom>JobOperator</td>
+		<td align="left" valign=bottom>SimpleJobOperator</td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+	</tr>
+	<tr>
+		<td height="18" align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom>used to READ only access data in  JobRepository</td>
+		<td align="left" valign=bottom>JobExplorer</td>
+		<td align="left" valign=bottom>JobExplorerFactoryBean</td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+	</tr>
+	<tr>
+		<td height="18" align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom bgcolor="#DDDDDD"><br></td>
+		<td align="left" valign=bottom bgcolor="#DDDDDD"><br></td>
+		<td align="left" valign=bottom bgcolor="#DDDDDD"><br></td>
+		<td align="left" valign=bottom bgcolor="#DDDDDD"><br></td>
+		<td align="left" valign=bottom bgcolor="#DDDDDD"><br></td>
+		<td align="left" valign=bottom bgcolor="#DDDDDD"><br></td>
+	</tr>
+	<tr>
+		<td height="18" align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+	</tr>
+	<tr>
+		<td height="18" align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom>dynamically modify job's properties/manipulate</td>
+		<td align="left" valign=bottom>JobLocator</td>
+		<td align="left" valign=bottom>JobRegistory</td>
+		<td align="left" valign=bottom>MapJobRegistry</td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+	</tr>
+	<tr>
+		<td height="18" align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom>JobRegistryBeanPostProcessor</td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+	</tr>
+</table>
+<!-- ************************************************************************** -->
+<hr>
+<A NAME="table3"><h1>Sheet 4: <em>API-Repeat</em></h1></A>
+<table cellspacing="0" border="0">
+	<colgroup width="119"></colgroup>
+	<colgroup width="205"></colgroup>
+	<colgroup width="119"></colgroup>
+	<colgroup width="290"></colgroup>
+	<tr>
+		<td height="18" align="left" valign=bottom>RepeatOperations</td>
+		<td align="left" valign=bottom>RepeatTemplate</td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+	</tr>
+	<tr>
+		<td height="18" align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom>RepeatCallback</td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+	</tr>
+	<tr>
+		<td height="18" align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom>ExceptionHandler</td>
+		<td align="left" valign=bottom>SimpleLimitExceptionHandler</td>
+	</tr>
+	<tr>
+		<td height="18" align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom>RepeatContext</td>
+		<td align="left" valign=bottom><br></td>
+	</tr>
+	<tr>
+		<td height="18" align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom>RepeatStatus</td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+	</tr>
+	<tr>
+		<td height="18" align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom>RepeatListener</td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+	</tr>
+	<tr>
+		<td height="18" align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom>TaskExecuterRepeateTemplete</td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+	</tr>
+</table>
+<!-- ************************************************************************** -->
+<hr>
+<A NAME="table4"><h1>Sheet 5: <em>API-Retry</em></h1></A>
+<table cellspacing="0" border="0">
+	<colgroup width="135"></colgroup>
+	<colgroup width="119"></colgroup>
+	<colgroup width="196"></colgroup>
+	<tr>
+		<td height="18" align="left" valign=bottom>RetryOperations</td>
+		<td align="left" valign=bottom>RetryTemplate</td>
+		<td align="left" valign=bottom><br></td>
+	</tr>
+	<tr>
+		<td height="18" align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom>RetryCallback</td>
+		<td align="left" valign=bottom><br></td>
+	</tr>
+	<tr>
+		<td height="18" align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom>RetryContext</td>
+	</tr>
+	<tr>
+		<td height="18" align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom>RecoveryCallback</td>
+		<td align="left" valign=bottom><br></td>
+	</tr>
+	<tr>
+		<td height="18" align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom>RetryListener</td>
+		<td align="left" valign=bottom><br></td>
+	</tr>
+	<tr>
+		<td height="18" align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom>BackoffPolicy</td>
+		<td align="left" valign=bottom>ExponentialBackoffPolicy</td>
+	</tr>
+	<tr>
+		<td height="18" align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom>RetryPolicy</td>
+		<td align="left" valign=bottom>SimpleRetryPolicy</td>
+	</tr>
+	<tr>
+		<td height="18" align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom>TimeoutRetryPolicy</td>
+	</tr>
+	<tr>
+		<td height="18" align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom>ExceptionClassifierRetryPolicy</td>
+	</tr>
+</table>
+<!-- ************************************************************************** -->
+<hr>
+<A NAME="table5"><h1>Sheet 6: <em>API-Step</em></h1></A>
+<table cellspacing="0" border="0">
+	<colgroup width="559"></colgroup>
+	<colgroup width="210"></colgroup>
+	<colgroup span="2" width="144"></colgroup>
+	<colgroup width="197"></colgroup>
+	<colgroup width="163"></colgroup>
+	<colgroup width="206"></colgroup>
+	<colgroup width="280"></colgroup>
+	<tr>
+		<td height="18" align="left" valign=bottom bgcolor="#DDDDDD"><br></td>
+		<td align="left" valign=bottom bgcolor="#DDDDDD"><br></td>
+		<td align="left" valign=bottom bgcolor="#DDDDDD"><br></td>
+		<td align="left" valign=bottom bgcolor="#DDDDDD"><br></td>
+		<td align="left" valign=bottom bgcolor="#DDDDDD"><br></td>
+		<td align="left" valign=bottom bgcolor="#DDDDDD"><br></td>
+		<td align="left" valign=bottom bgcolor="#DDDDDD"><br></td>
+		<td align="left" valign=bottom bgcolor="#DDDDDD"><br></td>
+	</tr>
+	<tr>
+		<td height="18" align="left" valign=bottom>built in command line batch launcher ( i planned to use llrbatch)</td>
+		<td align="left" valign=bottom>CommandLineJobRunner</td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+	</tr>
+	<tr>
+		<td height="18" align="left" valign=bottom>it wont run, but load all jobs, wait for user to start a job, it useful when want to run by http</td>
+		<td align="left" valign=bottom>JobRegistryBackgroundRunner</td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+	</tr>
+	<tr>
+		<td height="18" align="left" valign=bottom bgcolor="#DDDDDD"><br></td>
+		<td align="left" valign=bottom bgcolor="#DDDDDD"><font face="Calibri" color="#000000"><br></font></td>
+		<td align="left" valign=bottom bgcolor="#DDDDDD"><font face="Calibri" color="#000000"><br></font></td>
+		<td align="left" valign=bottom bgcolor="#DDDDDD"><br></td>
+		<td align="left" valign=bottom bgcolor="#DDDDDD"><br></td>
+		<td align="left" valign=bottom bgcolor="#DDDDDD"><br></td>
+		<td align="left" valign=bottom bgcolor="#DDDDDD"><br></td>
+		<td align="left" valign=bottom bgcolor="#DDDDDD"><br></td>
+	</tr>
+	<tr>
+		<td height="18" align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom>Step</td>
+		<td align="left" valign=bottom>FlowStep</td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+	</tr>
+	<tr>
+		<td height="18" align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom>JobStep</td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+	</tr>
+	<tr>
+		<td height="18" align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom bgcolor="#DDDDDD"><br></td>
+		<td align="left" valign=bottom bgcolor="#DDDDDD"><br></td>
+		<td align="left" valign=bottom bgcolor="#DDDDDD"><br></td>
+		<td align="left" valign=bottom bgcolor="#DDDDDD"><br></td>
+		<td align="left" valign=bottom bgcolor="#DDDDDD"><br></td>
+		<td align="left" valign=bottom><br></td>
+	</tr>
+	<tr>
+		<td height="18" align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom>PartitionStep</td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+	</tr>
+	<tr>
+		<td height="18" align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom>PartitionHandler</td>
+		<td align="left" valign=bottom>TaskExecutorPartitionHandler</td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+	</tr>
+	<tr>
+		<td height="18" align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom>StepExecutionSplitter</td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+	</tr>
+	<tr>
+		<td height="18" align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom>Partitioner</td>
+		<td align="left" valign=bottom>SimplePartitioner</td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+	</tr>
+	<tr>
+		<td height="18" align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom bgcolor="#DDDDDD"><br></td>
+		<td align="left" valign=bottom bgcolor="#DDDDDD"><br></td>
+		<td align="left" valign=bottom bgcolor="#DDDDDD"><br></td>
+		<td align="left" valign=bottom bgcolor="#DDDDDD"><br></td>
+		<td align="left" valign=bottom bgcolor="#DDDDDD"><br></td>
+		<td align="left" valign=bottom><br></td>
+	</tr>
+	<tr>
+		<td height="18" align="left" valign=bottom>it delete the task to any of TaskLet implementation</td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom>TaskletStep</td>
+		<td align="left" valign=bottom>TaskLet</td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+	</tr>
+	<tr>
+		<td height="18" align="left" valign=bottom>it is Chunk task impelementations</td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom>ChunkOrientedTasklet</td>
+		<td align="left" valign=bottom><font face="Calibri" color="#000000">ChunkContext</font></td>
+		<td align="left" valign=bottom>StepContext</td>
+		<td align="left" valign=bottom><br></td>
+	</tr>
+	<tr>
+		<td height="18" align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom>CallableTaskletAdaptor</td>
+		<td align="left" valign=bottom><font face="Calibri" color="#000000"><br></font></td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+	</tr>
+	<tr>
+		<td height="18" align="left" valign=bottom>use of exiting servie</td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom>MethodInvokingTaskletAdapter</td>
+		<td align="left" valign=bottom><font face="Calibri" color="#000000"><br></font></td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+	</tr>
+	<tr>
+		<td height="18" align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom>StopableTasklet</td>
+		<td align="left" valign=bottom><font face="Calibri" color="#000000"><br></font></td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+	</tr>
+	<tr>
+		<td height="18" align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><font face="Calibri" color="#000000">BatchletAdaptor</font></td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+	</tr>
+	<tr>
+		<td height="18" align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom>SystemCommandTasklet</td>
+		<td align="left" valign=bottom>SystemProcessExitCodeMapper</td>
+		<td align="left" valign=bottom>ConfigurableSystemProcessExitCodeMapper</td>
+	</tr>
+	<tr>
+		<td height="18" align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><font face="Calibri" color="#000000"><br></font></td>
+		<td align="left" valign=bottom>SimpleSystemProcessExitCodeMapper</td>
+	</tr>
+	<tr>
+		<td height="18" align="left" valign=bottom>it represent a step execution</td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><font face="Calibri" color="#000000">stepExecution</font></td>
+		<td align="left" valign=bottom><font face="Calibri" color="#00CC33">Executioncontext</font></td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+	</tr>
+	<tr>
+		<td height="18" align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><font face="Calibri" color="#000000">StepContribution</font></td>
+		<td align="left" valign=bottom><font face="Calibri" color="#00CC33"><br></font></td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+	</tr>
+	<tr>
+		<td height="18" align="left" valign=bottom>introduce new scope to postpone bean creation till step exection</td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom>StepScope</td>
+		<td align="left" valign=bottom><font face="Calibri" color="#00CC33"><br></font></td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+	</tr>
+	<tr>
+		<td height="18" align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+	</tr>
+	<tr>
+		<td height="18" align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+	</tr>
+	<tr>
+		<td height="19" align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom>JobExecutionDecider</td>
+		<td align="left" valign=bottom>FlowExecutionStatus</td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+	</tr>
+	<tr>
+		<td height="18" align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom>Flow</td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+	</tr>
+</table>
+<!-- ************************************************************************** -->
+<hr>
+<A NAME="table6"><h1>Sheet 7: <em>API- Job</em></h1></A>
+<table cellspacing="0" border="0">
+	<colgroup width="559"></colgroup>
+	<colgroup width="210"></colgroup>
+	<colgroup width="246"></colgroup>
+	<colgroup width="250"></colgroup>
+	<colgroup width="205"></colgroup>
+	<colgroup width="288"></colgroup>
+	<colgroup width="134"></colgroup>
+	<colgroup width="135"></colgroup>
+	<colgroup width="166"></colgroup>
+	<colgroup width="137"></colgroup>
+	<tr>
+		<td height="18" align="left" valign=bottom bgcolor="#DDDDDD"><br></td>
+		<td align="left" valign=bottom bgcolor="#DDDDDD"><br></td>
+		<td align="left" valign=bottom bgcolor="#DDDDDD"><br></td>
+		<td align="left" valign=bottom bgcolor="#DDDDDD"><br></td>
+		<td align="left" valign=bottom bgcolor="#DDDDDD"><br></td>
+		<td align="left" valign=bottom bgcolor="#DDDDDD"><br></td>
+		<td align="left" valign=bottom bgcolor="#DDDDDD"><br></td>
+		<td align="left" valign=bottom bgcolor="#DDDDDD"><br></td>
+		<td align="left" valign=bottom bgcolor="#DDDDDD"><br></td>
+		<td align="left" valign=bottom bgcolor="#DDDDDD"><br></td>
+	</tr>
+	<tr>
+		<td height="18" align="left" valign=bottom>built in command line batch launcher ( i planned to use llrbatch)</td>
+		<td align="left" valign=bottom>CommandLineJobRunner</td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+	</tr>
+	<tr>
+		<td height="18" align="left" valign=bottom>it wont run, but load all jobs, wait for user to start a job, it useful when want to run by http</td>
+		<td align="left" valign=bottom>JobRegistryBackgroundRunner</td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+	</tr>
+	<tr>
+		<td height="18" align="left" valign=bottom bgcolor="#DDDDDD"><br></td>
+		<td align="left" valign=bottom bgcolor="#DDDDDD"><font face="Calibri" color="#000000"><br></font></td>
+		<td align="left" valign=bottom bgcolor="#DDDDDD"><font face="Calibri" color="#000000"><br></font></td>
+		<td align="left" valign=bottom bgcolor="#DDDDDD"><br></td>
+		<td align="left" valign=bottom bgcolor="#DDDDDD"><br></td>
+		<td align="left" valign=bottom bgcolor="#DDDDDD"><br></td>
+		<td align="left" valign=bottom bgcolor="#DDDDDD"><br></td>
+		<td align="left" valign=bottom bgcolor="#DDDDDD"><br></td>
+		<td align="left" valign=bottom bgcolor="#DDDDDD"><font face="Calibri" color="#00CC33"><br></font></td>
+		<td align="left" valign=bottom bgcolor="#DDDDDD"><br></td>
+	</tr>
+	<tr>
+		<td height="18" align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><font face="Monospace" color="#000000"><br></font></td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+	</tr>
+	<tr>
+		<td height="18" align="left" valign=bottom>Class implement this interface to validate the job parameters</td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><font face="Calibri" color="#000000">JobParametersValidator</font></td>
+		<td align="left" valign=bottom><font face="Calibri" color="#000000">DefaultJobParametersValidator</font></td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+	</tr>
+	<tr>
+		<td height="18" align="left" valign=bottom>to create new set of parameter from previous one</td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><font face="Calibri" color="#000000">JobParametersIncrementer</font></td>
+		<td align="left" valign=bottom><font face="Calibri" color="#000000">RunidIncrementer</font></td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+	</tr>
+	<tr>
+		<td height="18" align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><font face="Calibri" color="#000000">JobParamertersBulider</font></td>
+		<td align="left" valign=bottom><font face="Calibri" color="#000000">JobParameters</font></td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+	</tr>
+	<tr>
+		<td height="18" align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><font face="Calibri" color="#000000">JobParameterExtractor</font></td>
+		<td align="left" valign=bottom><font face="Calibri" color="#000000">DefaultJobParametersExtractor</font></td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+	</tr>
+	<tr>
+		<td height="18" align="left" valign=bottom bgcolor="#E6E6E6"><br></td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom bgcolor="#E6E6E6"><br></td>
+		<td align="left" valign=bottom bgcolor="#E6E6E6"><br></td>
+		<td align="left" valign=bottom bgcolor="#E6E6E6"><br></td>
+		<td align="left" valign=bottom bgcolor="#E6E6E6"><br></td>
+		<td align="left" valign=bottom bgcolor="#E6E6E6"><br></td>
+		<td align="left" valign=bottom bgcolor="#E6E6E6"><br></td>
+		<td align="left" valign=bottom bgcolor="#E6E6E6"><br></td>
+		<td align="left" valign=bottom bgcolor="#E6E6E6"><br></td>
+	</tr>
+	<tr>
+		<td height="18" align="left" valign=bottom>simple job launcher, it is begning point of a job runn</td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom bgcolor="#9999FF"><font face="Calibri" color="#000000">JobLauncher</font></td>
+		<td align="left" valign=bottom bgcolor="#9999FF"><font face="Calibri" color="#000000">SimpleJobLauncher</font></td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+	</tr>
+	<tr>
+		<td height="18" align="left" valign=bottom>it is from core-spring</td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><font face="Calibri" color="#000000"><br></font></td>
+		<td align="left" valign=bottom><font face="Calibri" color="#000000"><br></font></td>
+		<td align="left" valign=bottom><b>TaskExecutor</b></td>
+		<td align="left" valign=bottom>[Simple] SyncTaskExecutor</td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+	</tr>
+	<tr>
+		<td height="18" align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><font face="Calibri" color="#000000"><br></font></td>
+		<td align="left" valign=bottom><font face="Calibri" color="#000000"><br></font></td>
+		<td align="left" valign=bottom><b><br></b></td>
+		<td align="left" valign=bottom>SimpleAsyncTaskExecutor</td>
+		<td align="left" valign=bottom>Job</td>
+		<td align="left" valign=bottom>SimpleJob</td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+	</tr>
+	<tr>
+		<td height="18" align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><font face="Calibri" color="#000000"><br></font></td>
+		<td align="left" valign=bottom><font face="Calibri" color="#000000"><br></font></td>
+		<td align="left" valign=bottom><b><br></b></td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom>JobInstance</td>
+		<td align="left" valign=bottom>JobExecution</td>
+		<td align="left" valign=bottom><font face="Calibri" color="#00CC33">Executioncontext</font></td>
+	</tr>
+	<tr>
+		<td height="18" align="left" valign=bottom bgcolor="#DDDDDD"><br></td>
+		<td align="left" valign=bottom bgcolor="#DDDDDD"><br></td>
+		<td align="left" valign=bottom bgcolor="#DDDDDD"><br></td>
+		<td align="left" valign=bottom bgcolor="#DDDDDD"><br></td>
+		<td align="left" valign=bottom bgcolor="#DDDDDD"><br></td>
+		<td align="left" valign=bottom bgcolor="#DDDDDD"><br></td>
+		<td align="left" valign=bottom bgcolor="#DDDDDD"><br></td>
+		<td align="left" valign=bottom bgcolor="#DDDDDD"><br></td>
+		<td align="left" valign=bottom bgcolor="#DDDDDD"><br></td>
+		<td align="left" valign=bottom bgcolor="#DDDDDD"><br></td>
+	</tr>
+	<tr>
+		<td height="18" align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+	</tr>
+	<tr>
+		<td height="18" align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom>Partiioner</td>
+		<td align="left" valign=bottom>ParitionHandler</td>
+		<td align="left" valign=bottom>TaskExecuterPartiionHandler</td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+	</tr>
+	<tr>
+		<td height="18" align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+	</tr>
+	<tr>
+		<td height="18" align="left" valign=bottom>dedicated job flow decider</td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+	</tr>
+	<tr>
+		<td height="18" align="left" valign=bottom bgcolor="#DDDDDD"><br></td>
+		<td align="left" valign=bottom bgcolor="#DDDDDD"><br></td>
+		<td align="left" valign=bottom bgcolor="#DDDDDD"><br></td>
+		<td align="left" valign=bottom bgcolor="#DDDDDD"><br></td>
+		<td align="left" valign=bottom bgcolor="#DDDDDD"><br></td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+	</tr>
+	<tr>
+		<td height="18" align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom>ExitCode</td>
+		<td align="left" valign=bottom><font face="Calibri" color="#000000">ExitCodeMapper</font></td>
+		<td align="left" valign=bottom>SimpleJvmExitCodeMapper</td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+	</tr>
+	<tr>
+		<td height="18" align="left" valign=bottom>exit status of job or step</td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom>ExitStatus</td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+	</tr>
+</table>
+<!-- ************************************************************************** -->
+<hr>
+<A NAME="table7"><h1>Sheet 8: <em>API-JunitTesst</em></h1></A>
+<table cellspacing="0" border="0">
+	<colgroup width="222"></colgroup>
+	<tr>
+		<td height="18" align="left" valign=bottom>AbstractJobTest</td>
+	</tr>
+	<tr>
+		<td height="18" align="left" valign=bottom>JobLauncherTestUtils</td>
+	</tr>
+	<tr>
+		<td height="18" align="left" valign=bottom>StepScopeTestExecutionListener</td>
+	</tr>
+	<tr>
+		<td height="18" align="left" valign=bottom>stepScopeTestUtils</td>
+	</tr>
+	<tr>
+		<td height="18" align="left" valign=bottom><br></td>
+	</tr>
+	<tr>
+		<td height="18" align="left" valign=bottom>AssertFile</td>
+	</tr>
+	<tr>
+		<td height="18" align="left" valign=bottom><br></td>
+	</tr>
+	<tr>
+		<td height="18" align="left" valign=bottom>MetadataInstanceFactory</td>
+	</tr>
+</table>
+<!-- ************************************************************************** -->
+<hr>
+<A NAME="table8"><h1>Sheet 9: <em>API-Listener</em></h1></A>
+<table cellspacing="0" border="0">
+	<colgroup width="514"></colgroup>
+	<colgroup span="2" width="223"></colgroup>
+	<colgroup width="171"></colgroup>
+	<tr>
+		<td height="18" align="left" valign=bottom>before and after job exection</td>
+		<td align="left" valign=bottom bgcolor="#CCFFCC"><font face="Calibri" color="#000000">JobExecutionListener</font></td>
+		<td align="left" valign=bottom bgcolor="#CCFFCC"><br></td>
+		<td align="left" valign=bottom><br></td>
+	</tr>
+	<tr>
+		<td height="18" align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><font face="Calibri" color="#000000"><br></font></td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+	</tr>
+	<tr>
+		<td height="18" align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom bgcolor="#CCFFCC"><font face="Calibri" color="#000000">StepListener</font></td>
+		<td align="left" valign=bottom bgcolor="#CCFFCC"><br></td>
+		<td align="left" valign=bottom><br></td>
+	</tr>
+	<tr>
+		<td height="18" align="left" valign=bottom>we can use to load reference data and clean up reference data</td>
+		<td align="left" valign=bottom bgcolor="#CCFFCC"><br></td>
+		<td align="left" valign=bottom bgcolor="#CCFFCC"><font face="Calibri" color="#000000">StepExecutionListener</font></td>
+		<td align="left" valign=bottom><br></td>
+	</tr>
+	<tr>
+		<td height="18" align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom bgcolor="#CCFFCC"><br></td>
+		<td align="left" valign=bottom bgcolor="#CCFFCC"><font face="Calibri" color="#000000">ChunkListener</font></td>
+		<td align="left" valign=bottom><br></td>
+	</tr>
+	<tr>
+		<td height="18" align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><font face="Calibri" color="#000000"><br></font></td>
+		<td align="left" valign=bottom><br></td>
+	</tr>
+	<tr>
+		<td height="18" align="left" valign=bottom>scrubbing of input data for default values or trimming</td>
+		<td align="left" valign=bottom bgcolor="#CCFFCC"><br></td>
+		<td align="left" valign=bottom bgcolor="#CCFFCC"><font face="Calibri" color="#000000">ItemReadListener</font></td>
+		<td align="left" valign=bottom><br></td>
+	</tr>
+	<tr>
+		<td height="18" align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom bgcolor="#CCFFCC"><br></td>
+		<td align="left" valign=bottom bgcolor="#CCFFCC"><font face="Calibri" color="#000000">ItemProcessListener</font></td>
+		<td align="left" valign=bottom><br></td>
+	</tr>
+	<tr>
+		<td height="18" align="left" valign=bottom>some common column updates</td>
+		<td align="left" valign=bottom bgcolor="#CCFFCC"><br></td>
+		<td align="left" valign=bottom bgcolor="#CCFFCC"><font face="Calibri" color="#000000">ItemWriteListener</font></td>
+		<td align="left" valign=bottom><br></td>
+	</tr>
+	<tr>
+		<td height="18" align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><font face="Calibri" color="#000000"><br></font></td>
+		<td align="left" valign=bottom><br></td>
+	</tr>
+	<tr>
+		<td height="18" align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom bgcolor="#CCFFCC"><br></td>
+		<td align="left" valign=bottom bgcolor="#CCFFCC"><font face="Calibri" color="#000000">SkipListener</font></td>
+		<td align="left" valign=bottom>ItemSkipListener</td>
+	</tr>
+	<tr>
+		<td height="18" align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom bgcolor="#CCFFCC"><br></td>
+		<td align="left" valign=bottom bgcolor="#CCFFCC"><font face="Calibri" color="#000000"><br></font></td>
+		<td align="left" valign=bottom>SkipListenerSupport</td>
+	</tr>
+	<tr>
+		<td height="18" align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><font face="Calibri" color="#000000"><br></font></td>
+		<td align="left" valign=bottom><br></td>
+	</tr>
+	<tr>
+		<td height="18" align="left" valign=bottom>called when a item repeated more than once</td>
+		<td align="left" valign=bottom bgcolor="#CCFFCC"><font face="Calibri" color="#000000">RepeatListener</font></td>
+		<td align="left" valign=bottom bgcolor="#CCFFCC"><br></td>
+		<td align="left" valign=bottom><br></td>
+	</tr>
+	<tr>
+		<td height="18" align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom bgcolor="#CCFFCC"><font face="Calibri" color="#000000">RetryListener</font></td>
+		<td align="left" valign=bottom>RetryListenerSupport</td>
+		<td align="left" valign=bottom><br></td>
+	</tr>
+	<tr>
+		<td height="18" align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom bgcolor="#CCFFCC"><font face="Calibri" color="#000000">ExecutionContextPromotionListener</font></td>
+		<td align="left" valign=bottom bgcolor="#CCFFCC"><br></td>
+		<td align="left" valign=bottom><br></td>
+	</tr>
+</table>
+<!-- ************************************************************************** -->
+<hr>
+<A NAME="table9"><h1>Sheet 10: <em>API-policy &amp; status</em></h1></A>
+<table cellspacing="0" border="0">
+	<colgroup width="514"></colgroup>
+	<colgroup width="223"></colgroup>
+	<colgroup width="196"></colgroup>
+	<tr>
+		<td height="18" align="left" valign=bottom>define own skip policy</td>
+		<td align="left" valign=bottom>SkipPolicy</td>
+		<td align="left" valign=bottom>LimitCheckingItemSkipPolicy</td>
+	</tr>
+	<tr>
+		<td height="18" align="left" valign=bottom>it is default one</td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom>ExceptionClassifierSkipPolicy</td>
+	</tr>
+	<tr>
+		<td height="18" align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom>AlwaysSkipItemSkipPolicy</td>
+	</tr>
+	<tr>
+		<td height="18" align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom>NeverSkipItemSkipPolicy</td>
+	</tr>
+	<tr>
+		<td height="18" align="left" valign=bottom bgcolor="#CCCCCC"><br></td>
+		<td align="left" valign=bottom bgcolor="#CCCCCC"><br></td>
+		<td align="left" valign=bottom bgcolor="#CCCCCC"><br></td>
+	</tr>
+	<tr>
+		<td height="18" align="left" valign=bottom>it allow to set different commit interval on every chunk programatically</td>
+		<td align="left" valign=bottom>CompletionPolicy</td>
+		<td align="left" valign=bottom>TimeoutTerminationPolicy</td>
+	</tr>
+	<tr>
+		<td height="18" align="left" valign=bottom>it used to complete by fixed no. Of times</td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom>SimpleCompletionPolicy</td>
+	</tr>
+	<tr>
+		<td height="18" align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom>CompositeCompletionPolicy</td>
+	</tr>
+	<tr>
+		<td height="18" align="left" valign=bottom bgcolor="#E6E6E6"><br></td>
+		<td align="left" valign=bottom bgcolor="#E6E6E6"><br></td>
+		<td align="left" valign=bottom bgcolor="#E6E6E6"><br></td>
+	</tr>
+	<tr>
+		<td height="18" align="left" valign=bottom>value rep. Step execution or job execution</td>
+		<td align="left" valign=bottom>BatchStatus</td>
+		<td align="left" valign=bottom><br></td>
+	</tr>
+	<tr>
+		<td height="18" align="left" valign=bottom>job launcher return this exist status object.</td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+	</tr>
+	<tr>
+		<td height="18" align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom>FlowExectionStatus</td>
+		<td align="left" valign=bottom><br></td>
+	</tr>
+	<tr>
+		<td height="18" align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom>ChunkListener</td>
+		<td align="left" valign=bottom><br></td>
+	</tr>
+	<tr>
+		<td height="18" align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+	</tr>
+	<tr>
+		<td height="18" align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+	</tr>
+	<tr>
+		<td height="18" align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+	</tr>
+	<tr>
+		<td height="18" align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+	</tr>
+	<tr>
+		<td height="18" align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom>`</td>
+	</tr>
+</table>
+<!-- ************************************************************************** -->
+<hr>
+<A NAME="table10"><h1>Sheet 11: <em>API-ItemProcessor</em></h1></A>
+<table cellspacing="0" border="0">
+	<colgroup width="514"></colgroup>
+	<colgroup width="99"></colgroup>
+	<colgroup width="163"></colgroup>
+	<colgroup width="64"></colgroup>
+	<colgroup width="154"></colgroup>
+	<tr>
+		<td height="18" align="left" valign=bottom>it is optional, it transform the data, validate, filter</td>
+		<td align="left" valign=bottom>ItemProcessor</td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+	</tr>
+	<tr>
+		<td height="18" align="left" valign=bottom>to use any existing service for processing</td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom>ItemProcessorAdapter</td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+	</tr>
+	<tr>
+		<td height="18" align="left" valign=bottom>chain of itermprocessor within single step</td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom>CompositeItemProcessor</td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+	</tr>
+	<tr>
+		<td height="18" align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom bgcolor="#DDDDDD"><br></td>
+		<td align="left" valign=bottom bgcolor="#DDDDDD"><br></td>
+		<td align="left" valign=bottom bgcolor="#DDDDDD"><br></td>
+		<td align="left" valign=bottom bgcolor="#DDDDDD"><br></td>
+	</tr>
+	<tr>
+		<td height="18" align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom>ValidatingItemProcessor</td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+	</tr>
+	<tr>
+		<td height="18" align="left" valign=bottom>to do any business validation on a item</td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom>Validator</td>
+		<td align="left" valign=bottom>SpringValidator</td>
+	</tr>
+</table>
+<!-- ************************************************************************** -->
+<hr>
+<A NAME="table11"><h1>Sheet 12: <em>API-ItemReader</em></h1></A>
+<table cellspacing="0" border="0">
+	<colgroup width="51"></colgroup>
+	<colgroup width="514"></colgroup>
+	<colgroup width="82"></colgroup>
+	<colgroup width="197"></colgroup>
+	<colgroup width="149"></colgroup>
+	<colgroup width="242"></colgroup>
+	<colgroup width="134"></colgroup>
+	<colgroup width="319"></colgroup>
+	<colgroup width="86"></colgroup>
+	<tr>
+		<td height="18" align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom>ItemReader</td>
+		<td align="left" valign=bottom><font face="Calibri" color="#000000">FlatFileItemReader</font></td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+	</tr>
+	<tr>
+		<td height="18" align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom>populte a record data to java domain object</td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><font face="Calibri" color="#000000">LineMapper</font></td>
+		<td align="left" valign=bottom><font face="Calibri" color="#000000">DefaultLineMapper</font></td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+	</tr>
+	<tr>
+		<td height="18" align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom>If I want to change tokonizing logic , give custom implementation</td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><font face="Calibri" color="#000000">LineTokenizer</font></td>
+		<td align="left" valign=bottom><font face="Calibri" color="#000000">DelimitedLineTokenizer</font></td>
+		<td align="left" valign=bottom><br></td>
+	</tr>
+	<tr>
+		<td height="18" align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom>to parse fixed length flat fle</td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><font face="Calibri" color="#000000"><br></font></td>
+		<td align="left" valign=bottom><font face="Calibri" color="#000000">FixedLengthTokenizer</font></td>
+		<td align="left" valign=bottom><br></td>
+	</tr>
+	<tr>
+		<td height="18" align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom>when a record span more than one line</td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><font face="Calibri" color="#000000"><br></font></td>
+		<td align="left" valign=bottom><font face="Calibri" color="#000000">PatternMatchingCompositeTokenizer</font></td>
+		<td align="left" valign=bottom><br></td>
+	</tr>
+	<tr>
+		<td height="18" align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom>it is collection of fiields produced by tokenizer</td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><font face="Calibri" color="#000000"><br></font></td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><font face="Calibri" color="#000000">FieldSet</font></td>
+	</tr>
+	<tr>
+		<td height="18" align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom>it copy value from fieldSet to Domain object</td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><font face="Calibri" color="#000000">FieldSetMapper</font></td>
+		<td align="left" valign=bottom><font face="Calibri" color="#000000">BeanWrapperFieldSetMapper</font></td>
+		<td align="left" valign=bottom><br></td>
+	</tr>
+	<tr>
+		<td height="18" align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom>PassThroughFieldSetMapper</td>
+		<td align="left" valign=bottom><br></td>
+	</tr>
+	<tr>
+		<td height="18" align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom>read data from JSON data structor</td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom>JsonLineMapper</td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+	</tr>
+	<tr>
+		<td height="18" align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom>a file has more than one formatted line and each to different domain object</td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom>PatternMatchingCompositeLineMapper</td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+	</tr>
+	<tr>
+		<td height="18" align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom>it just seperate the records either line ending or other means. But not FIELD</td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom bgcolor="#99FF66">RecordSeperatorPolicy</td>
+		<td align="left" valign=bottom bgcolor="#99FF66">DefaultRecordSeparatorPolicy</td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+	</tr>
+	<tr>
+		<td height="18" align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom>the file to be read</td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom bgcolor="#9999FF">Resource</td>
+		<td align="left" valign=bottom bgcolor="#9999FF">FileSystemResource</td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+	</tr>
+	<tr>
+		<td height="18" align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom>calll back when a line being skipped as raw line</td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom>LineCallbackHandler</td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+	</tr>
+	<tr>
+		<td height="18" align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom bgcolor="#DDDDDD"><br></td>
+		<td align="left" valign=bottom bgcolor="#DDDDDD"><br></td>
+		<td align="left" valign=bottom bgcolor="#DDDDDD"><br></td>
+		<td align="left" valign=bottom bgcolor="#DDDDDD"><br></td>
+		<td align="left" valign=bottom bgcolor="#DDDDDD"><br></td>
+		<td align="left" valign=bottom><br></td>
+	</tr>
+	<tr>
+		<td height="18" align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom>for XML as input file</td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom>StaxEventItemReader</td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+	</tr>
+	<tr>
+		<td height="18" align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom>it is from Xstream, used for marshall /unmarshal</td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom>XstreamMarshaller</td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+	</tr>
+	<tr>
+		<td height="18" align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom bgcolor="#DDDDDD"><br></td>
+		<td align="left" valign=bottom bgcolor="#DDDDDD"><br></td>
+		<td align="left" valign=bottom bgcolor="#DDDDDD"><br></td>
+		<td align="left" valign=bottom bgcolor="#DDDDDD"><br></td>
+		<td align="left" valign=bottom bgcolor="#DDDDDD"><br></td>
+		<td align="left" valign=bottom><br></td>
+	</tr>
+	<tr>
+		<td height="18" align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom>to read more than one file as input. File either xml/flat file</td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom>MultiResourceItemReader</td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+	</tr>
+	<tr>
+		<td height="18" align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom bgcolor="#DDDDDD"><br></td>
+		<td align="left" valign=bottom bgcolor="#DDDDDD"><br></td>
+		<td align="left" valign=bottom bgcolor="#DDDDDD"><br></td>
+		<td align="left" valign=bottom bgcolor="#DDDDDD"><br></td>
+		<td align="left" valign=bottom bgcolor="#DDDDDD"><br></td>
+		<td align="left" valign=bottom><br></td>
+	</tr>
+	<tr>
+		<td height="18" align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom>JdbcCursorItemReader</td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+	</tr>
+	<tr>
+		<td height="18" align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom>it is from spring-jdbc</td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom>RowMapper</td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+	</tr>
+	<tr>
+		<td height="18" align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom>get cursor by calling a procedure</td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom>StoredProcedureItemReader</td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+	</tr>
+	<tr>
+		<td height="18" align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom>RowMapper</td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+	</tr>
+	<tr>
+		<td height="18" align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom>paging instead of cursor</td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom>JdbcPagingItemReader</td>
+		<td align="left" valign=bottom>PagingQueryProvider</td>
+		<td align="left" valign=bottom>SqlPagingQueryProviderFactoryBean</td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+	</tr>
+	<tr>
+		<td height="18" align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom bgcolor="#DDDDDD"><br></td>
+		<td align="left" valign=bottom bgcolor="#DDDDDD"><br></td>
+		<td align="left" valign=bottom bgcolor="#DDDDDD"><br></td>
+		<td align="left" valign=bottom bgcolor="#DDDDDD"><br></td>
+		<td align="left" valign=bottom bgcolor="#DDDDDD"><br></td>
+		<td align="left" valign=bottom><br></td>
+	</tr>
+	<tr>
+		<td height="18" align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom>use stateless session</td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom>HibernateCursorItemReader</td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+	</tr>
+	<tr>
+		<td height="18" align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom>it is from hibernate api</td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom>HibernateSessionFactory</td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+	</tr>
+	<tr>
+		<td height="18" align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom>HibernatePagingItemReader</td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+	</tr>
+	<tr>
+		<td height="18" align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom>JpaPagingItemReader</td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+	</tr>
+	<tr>
+		<td height="18" align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom>from JPA</td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom>EnitityManager</td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+	</tr>
+	<tr>
+		<td height="18" align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom>it is deprecated in Spring Batch 3.0</td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom>IbatisPagingItemReader</td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+	</tr>
+	<tr>
+		<td height="18" align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom>to delegete to existing class for reading.</td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><font color="#800000">ItemReaderAdapter</font></td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+	</tr>
+	<tr>
+		<td height="18" align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom>JmsItemReader</td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+	</tr>
+	<tr>
+		<td height="18" align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom bgcolor="#DDDDDD"><br></td>
+		<td align="left" valign=bottom bgcolor="#DDDDDD"><br></td>
+		<td align="left" valign=bottom bgcolor="#DDDDDD"><br></td>
+		<td align="left" valign=bottom bgcolor="#DDDDDD"><br></td>
+		<td align="left" valign=bottom bgcolor="#DDDDDD"><br></td>
+		<td align="left" valign=bottom bgcolor="#DDDDDD"><br></td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+	</tr>
+	<tr>
+		<td height="18" align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom>It is common to all also used access execution context by reader, writer, processor</td>
+		<td align="left" valign=bottom>ItemStream</td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+	</tr>
+	<tr>
+		<td height="18" align="left" valign=bottom bgcolor="#DDDDDD"><br></td>
+		<td align="left" valign=bottom bgcolor="#DDDDDD"><br></td>
+		<td align="left" valign=bottom bgcolor="#DDDDDD"><br></td>
+		<td align="left" valign=bottom bgcolor="#DDDDDD"><br></td>
+		<td align="left" valign=bottom bgcolor="#DDDDDD"><br></td>
+		<td align="left" valign=bottom bgcolor="#DDDDDD"><br></td>
+		<td align="left" valign=bottom bgcolor="#DDDDDD"><br></td>
+		<td align="left" valign=bottom bgcolor="#DDDDDD"><br></td>
+		<td align="left" valign=bottom bgcolor="#DDDDDD"><br></td>
+	</tr>
+	<tr>
+		<td height="18" align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+	</tr>
+	<tr>
+		<td height="18" align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom>thrown when reading</td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom>FlatFileParseException</td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+	</tr>
+	<tr>
+		<td height="18" align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom>thrown when tokenize</td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom>FlatFileFormatExecption</td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+	</tr>
+	<tr>
+		<td height="18" align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom>thrown when setting fieldset</td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom>InCorrectTokenCountException</td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+	</tr>
+	<tr>
+		<td height="18" align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom>thrown by fixed legth tokenizer</td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom>IncorectLineLengthException</td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+	</tr>
+</table>
+<!-- ************************************************************************** -->
+<hr>
+<A NAME="table12"><h1>Sheet 13: <em>API-ItemWriter</em></h1></A>
+<table cellspacing="0" border="0">
+	<colgroup width="514"></colgroup>
+	<colgroup width="101"></colgroup>
+	<colgroup width="267"></colgroup>
+	<colgroup width="409"></colgroup>
+	<colgroup width="251"></colgroup>
+	<colgroup width="134"></colgroup>
+	<colgroup width="223"></colgroup>
+	<tr>
+		<td height="20" align="left" valign=bottom><font face="DejaVu Serif" size=3><br></font></td>
+		<td align="left" valign=bottom><font face="DejaVu Serif" size=3>ItemWriter</font></td>
+		<td align="left" valign=bottom><font face="DejaVu Serif" size=3>FlatFileItemWriter</font></td>
+		<td align="left" valign=bottom><font face="DejaVu Serif" size=3><br></font></td>
+		<td align="left" valign=bottom><font face="DejaVu Serif" size=3><br></font></td>
+		<td align="left" valign=bottom><font face="DejaVu Serif" size=3><br></font></td>
+		<td align="left" valign=bottom><br></td>
+	</tr>
+	<tr>
+		<td height="20" align="left" valign=bottom><font face="DejaVu Serif" size=3><br></font></td>
+		<td align="left" valign=bottom><font face="DejaVu Serif" size=3><br></font></td>
+		<td align="left" valign=bottom><font face="DejaVu Serif" size=3><br></font></td>
+		<td align="left" valign=bottom><font face="DejaVu Serif" size=3>Resource</font></td>
+		<td align="left" valign=bottom><font face="DejaVu Serif" size=3><br></font></td>
+		<td align="left" valign=bottom><font face="DejaVu Serif" size=3><br></font></td>
+		<td align="left" valign=bottom><br></td>
+	</tr>
+	<tr>
+		<td height="20" align="left" valign=bottom><font face="DejaVu Serif" size=3>convert a domain object into a line of output file</font></td>
+		<td align="left" valign=bottom><font face="DejaVu Serif" size=3><br></font></td>
+		<td align="left" valign=bottom><font face="DejaVu Serif" size=3><br></font></td>
+		<td align="left" valign=bottom><font face="DejaVu Serif" size=3>LineAggregator</font></td>
+		<td align="left" valign=bottom><font face="DejaVu Serif" size=3><br></font></td>
+		<td align="left" valign=bottom><font face="DejaVu Serif" size=3><br></font></td>
+		<td align="left" valign=bottom><br></td>
+	</tr>
+	<tr>
+		<td height="20" align="left" valign=bottom><font face="DejaVu Serif" size=3>it simply call toString() on a item</font></td>
+		<td align="left" valign=bottom><font face="DejaVu Serif" size=3><br></font></td>
+		<td align="left" valign=bottom><font face="DejaVu Serif" size=3><br></font></td>
+		<td align="left" valign=bottom><font face="DejaVu Serif" size=3><br></font></td>
+		<td align="left" valign=bottom><font face="DejaVu Serif" size=3>PassThroughLineAggregator</font></td>
+		<td align="left" valign=bottom><font face="DejaVu Serif" size=3><br></font></td>
+		<td align="left" valign=bottom><br></td>
+	</tr>
+	<tr>
+		<td height="20" align="left" valign=bottom><font face="DejaVu Serif" size=3 color="#FF3333">we have to use this when we have domain object as record</font></td>
+		<td align="left" valign=bottom><font face="DejaVu Serif" size=3 color="#FF3333"><br></font></td>
+		<td align="left" valign=bottom><font face="DejaVu Serif" size=3 color="#FF3333"><br></font></td>
+		<td align="left" valign=bottom><font face="DejaVu Serif" size=3 color="#FF3333"><br></font></td>
+		<td align="left" valign=bottom><font face="DejaVu Serif" size=3 color="#FF3333">ExtractorLineAggregator</font></td>
+		<td align="left" valign=bottom><font face="DejaVu Serif" size=3><br></font></td>
+		<td align="left" valign=bottom><br></td>
+	</tr>
+	<tr>
+		<td height="20" align="left" valign=bottom>write a file with fixed length</td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><font face="DejaVu Serif" size=3>FormatterLineAggregator</font></td>
+		<td align="left" valign=bottom><font face="DejaVu Serif" size=3><br></font></td>
+		<td align="left" valign=bottom><br></td>
+	</tr>
+	<tr>
+		<td height="20" align="left" valign=bottom><font face="DejaVu Serif" size=3>write a file with delimited</font></td>
+		<td align="left" valign=bottom><font face="DejaVu Serif" size=3><br></font></td>
+		<td align="left" valign=bottom><font face="DejaVu Serif" size=3><br></font></td>
+		<td align="left" valign=bottom><font face="DejaVu Serif" size=3><br></font></td>
+		<td align="left" valign=bottom><font face="DejaVu Serif" size=3>DelimitedLineAggregator</font></td>
+		<td align="left" valign=bottom><font face="DejaVu Serif" size=3><br></font></td>
+		<td align="left" valign=bottom><br></td>
+	</tr>
+	<tr>
+		<td height="20" align="left" valign=bottom>it used to write out collection type of array object</td>
+		<td align="left" valign=bottom><font face="DejaVu Serif" size=3><br></font></td>
+		<td align="left" valign=bottom><font face="DejaVu Serif" size=3><br></font></td>
+		<td align="left" valign=bottom><font face="DejaVu Serif" size=3><br></font></td>
+		<td align="left" valign=bottom><font face="DejaVu Serif" size=3><br></font></td>
+		<td align="left" valign=bottom><font face="DejaVu Serif" size=3>FieldExtractor</font></td>
+		<td align="left" valign=bottom><font face="DejaVu Serif">BeanWrapperFieldExtractor</font></td>
+	</tr>
+	<tr>
+		<td height="20" align="left" valign=bottom><font face="DejaVu Serif" size=3><br></font></td>
+		<td align="left" valign=bottom><font face="DejaVu Serif" size=3><br></font></td>
+		<td align="left" valign=bottom><font face="DejaVu Serif" size=3><br></font></td>
+		<td align="left" valign=bottom><font face="DejaVu Serif" size=3><br></font></td>
+		<td align="left" valign=bottom><font face="DejaVu Serif" size=3><br></font></td>
+		<td align="left" valign=bottom><font face="DejaVu Serif" size=3><br></font></td>
+		<td align="left" valign=bottom><font face="DejaVu Serif">PassThroughFieldExtractor</font></td>
+	</tr>
+	<tr>
+		<td height="20" align="left" valign=bottom><font face="DejaVu Serif" size=3>write header</font></td>
+		<td align="left" valign=bottom><font face="DejaVu Serif" size=3><br></font></td>
+		<td align="left" valign=bottom><font face="DejaVu Serif" size=3><br></font></td>
+		<td align="left" valign=bottom><font face="DejaVu Serif" size=3>FlatFileHeaderCallback</font></td>
+		<td align="left" valign=bottom><font face="DejaVu Serif" size=3><br></font></td>
+		<td align="left" valign=bottom><font face="DejaVu Serif" size=3><br></font></td>
+		<td align="left" valign=bottom><font face="DejaVu Serif"><br></font></td>
+	</tr>
+	<tr>
+		<td height="20" align="left" valign=bottom><font face="DejaVu Serif" size=3>write footter</font></td>
+		<td align="left" valign=bottom><font face="DejaVu Serif" size=3><br></font></td>
+		<td align="left" valign=bottom><font face="DejaVu Serif" size=3><br></font></td>
+		<td align="left" valign=bottom><font face="DejaVu Serif" size=3>FlatFileFooterCallback</font></td>
+		<td align="left" valign=bottom><font face="DejaVu Serif" size=3><br></font></td>
+		<td align="left" valign=bottom><font face="DejaVu Serif" size=3><br></font></td>
+		<td align="left" valign=bottom><font face="DejaVu Serif"><br></font></td>
+	</tr>
+	<tr>
+		<td height="20" align="left" valign=bottom><font face="DejaVu Serif" size=3><br></font></td>
+		<td align="left" valign=bottom><font face="DejaVu Serif" size=3><br></font></td>
+		<td align="left" valign=bottom bgcolor="#DDDDDD"><font face="DejaVu Serif" size=3><br></font></td>
+		<td align="left" valign=bottom bgcolor="#DDDDDD"><font face="DejaVu Serif" size=3><br></font></td>
+		<td align="left" valign=bottom bgcolor="#DDDDDD"><font face="DejaVu Serif" size=3><br></font></td>
+		<td align="left" valign=bottom><font face="DejaVu Serif" size=3><br></font></td>
+		<td align="left" valign=bottom><font face="DejaVu Serif"><br></font></td>
+	</tr>
+	<tr>
+		<td height="20" align="left" valign=bottom><font face="DejaVu Serif" size=3>to write out put XML file</font></td>
+		<td align="left" valign=bottom><font face="DejaVu Serif" size=3><br></font></td>
+		<td align="left" valign=bottom><font face="DejaVu Serif" size=3>StaxEventItemWriter</font></td>
+		<td align="left" valign=bottom><font face="DejaVu Serif" size=3>StaxWriterCallback</font></td>
+		<td align="left" valign=bottom><font face="DejaVu Serif" size=3><br></font></td>
+		<td align="left" valign=bottom><font face="DejaVu Serif" size=3><br></font></td>
+		<td align="left" valign=bottom><font face="DejaVu Serif"><br></font></td>
+	</tr>
+	<tr>
+		<td height="20" align="left" valign=bottom><font face="DejaVu Serif" size=3><br></font></td>
+		<td align="left" valign=bottom><font face="DejaVu Serif" size=3><br></font></td>
+		<td align="left" valign=bottom><font face="DejaVu Serif" size=3><br></font></td>
+		<td align="left" valign=bottom><font face="DejaVu Serif" size=3>Marshaller</font></td>
+		<td align="left" valign=bottom><font face="DejaVu Serif" size=3>XstreamMarshaller</font></td>
+		<td align="left" valign=bottom><font face="DejaVu Serif" size=3><br></font></td>
+		<td align="left" valign=bottom><font face="DejaVu Serif"><br></font></td>
+	</tr>
+	<tr>
+		<td height="20" align="left" valign=bottom><font face="DejaVu Serif" size=3><br></font></td>
+		<td align="left" valign=bottom><font face="DejaVu Serif" size=3><br></font></td>
+		<td align="left" valign=bottom bgcolor="#DDDDDD"><font face="DejaVu Serif" size=3><br></font></td>
+		<td align="left" valign=bottom bgcolor="#DDDDDD"><br></td>
+		<td align="left" valign=bottom bgcolor="#DDDDDD"><font face="DejaVu Serif" size=3><br></font></td>
+		<td align="left" valign=bottom><font face="DejaVu Serif" size=3><br></font></td>
+		<td align="left" valign=bottom><font face="DejaVu Serif"><br></font></td>
+	</tr>
+	<tr>
+		<td height="20" align="left" valign=bottom><font face="DejaVu Serif" size=3>fill the parameter by ? And index of ?</font></td>
+		<td align="left" valign=bottom><font face="DejaVu Serif" size=3><br></font></td>
+		<td align="left" valign=bottom><font face="DejaVu Serif" size=3 color="#000000">JdbcBatchItemWriter</font></td>
+		<td align="left" valign=bottom><font face="DejaVu Serif" size=3>ItemPreparedStatementSetter</font></td>
+		<td align="left" valign=bottom><font face="DejaVu Serif" size=3><br></font></td>
+		<td align="left" valign=bottom><font face="DejaVu Serif" size=3><br></font></td>
+		<td align="left" valign=bottom><font face="DejaVu Serif"><br></font></td>
+	</tr>
+	<tr>
+		<td height="20" align="left" valign=bottom><font face="DejaVu Serif" size=3>fill the parameter by name</font></td>
+		<td align="left" valign=bottom><font face="DejaVu Serif" size=3><br></font></td>
+		<td align="left" valign=bottom><font face="DejaVu Serif" size=3 color="#000000"><br></font></td>
+		<td align="left" valign=bottom><font face="DejaVu Serif" size=3>ItemSqlParameterSourceProvider</font></td>
+		<td align="left" valign=bottom><font face="DejaVu Serif" size=3 color="#000000">BeanPropertyItemSqlParameterSourceProvider</font></td>
+		<td align="left" valign=bottom><font face="DejaVu Serif" size=3><br></font></td>
+		<td align="left" valign=bottom><font face="DejaVu Serif"><br></font></td>
+	</tr>
+	<tr>
+		<td height="20" align="left" valign=bottom><font face="DejaVu Serif" size=3>the datasource configuration</font></td>
+		<td align="left" valign=bottom><font face="DejaVu Serif" size=3><br></font></td>
+		<td align="left" valign=bottom><font face="DejaVu Serif" size=3><br></font></td>
+		<td align="left" valign=bottom><font face="DejaVu Serif" size=3 color="#000000">DataSource</font></td>
+		<td align="left" valign=bottom><font face="DejaVu Serif" size=3><br></font></td>
+		<td align="left" valign=bottom><font face="DejaVu Serif" size=3><br></font></td>
+		<td align="left" valign=bottom><font face="DejaVu Serif"><br></font></td>
+	</tr>
+	<tr>
+		<td height="20" align="left" valign=bottom><font face="DejaVu Serif" size=3><br></font></td>
+		<td align="left" valign=bottom><font face="DejaVu Serif" size=3><br></font></td>
+		<td align="left" valign=bottom bgcolor="#DDDDDD"><font face="DejaVu Serif" size=3><br></font></td>
+		<td align="left" valign=bottom bgcolor="#DDDDDD"><font face="DejaVu Serif" size=3><br></font></td>
+		<td align="left" valign=bottom bgcolor="#DDDDDD"><font face="DejaVu Serif" size=3><br></font></td>
+		<td align="left" valign=bottom><font face="DejaVu Serif" size=3><br></font></td>
+		<td align="left" valign=bottom><font face="DejaVu Serif"><br></font></td>
+	</tr>
+	<tr>
+		<td height="20" align="left" valign=bottom><font face="DejaVu Serif" size=3>write data into DB via Hibernate</font></td>
+		<td align="left" valign=bottom><font face="DejaVu Serif" size=3><br></font></td>
+		<td align="left" valign=bottom><font face="DejaVu Serif" size=3>HibernateItemWriter</font></td>
+		<td align="left" valign=bottom><font face="DejaVu Serif" size=3><br></font></td>
+		<td align="left" valign=bottom><font face="DejaVu Serif" size=3><br></font></td>
+		<td align="left" valign=bottom><font face="DejaVu Serif" size=3><br></font></td>
+		<td align="left" valign=bottom><font face="DejaVu Serif"><br></font></td>
+	</tr>
+	<tr>
+		<td height="20" align="left" valign=bottom><font face="DejaVu Serif" size=3>write data into DB via JPA</font></td>
+		<td align="left" valign=bottom><font face="DejaVu Serif" size=3><br></font></td>
+		<td align="left" valign=bottom><font face="DejaVu Serif" size=3>JpaItemWriter</font></td>
+		<td align="left" valign=bottom><font face="DejaVu Serif" size=3><br></font></td>
+		<td align="left" valign=bottom><font face="DejaVu Serif" size=3><br></font></td>
+		<td align="left" valign=bottom><font face="DejaVu Serif" size=3><br></font></td>
+		<td align="left" valign=bottom><font face="DejaVu Serif"><br></font></td>
+	</tr>
+	<tr>
+		<td height="20" align="left" valign=bottom><font face="DejaVu Serif" size=3>write data into DB via iBATIS</font></td>
+		<td align="left" valign=bottom><font face="DejaVu Serif" size=3><br></font></td>
+		<td align="left" valign=bottom><font face="DejaVu Serif" size=3 color="#000000">IbatisBatchItemWriter</font></td>
+		<td align="left" valign=bottom><font face="DejaVu Serif" size=3><br></font></td>
+		<td align="left" valign=bottom><font face="DejaVu Serif" size=3><br></font></td>
+		<td align="left" valign=bottom><font face="DejaVu Serif" size=3><br></font></td>
+		<td align="left" valign=bottom><font face="DejaVu Serif"><br></font></td>
+	</tr>
+	<tr>
+		<td height="20" align="left" valign=bottom><font face="DejaVu Serif" size=3><br></font></td>
+		<td align="left" valign=bottom><font face="DejaVu Serif" size=3><br></font></td>
+		<td align="left" valign=bottom bgcolor="#DDDDDD"><font face="DejaVu Serif" size=3 color="#000000"><br></font></td>
+		<td align="left" valign=bottom bgcolor="#DDDDDD"><font face="DejaVu Serif" size=3><br></font></td>
+		<td align="left" valign=bottom bgcolor="#DDDDDD"><font face="DejaVu Serif" size=3><br></font></td>
+		<td align="left" valign=bottom><font face="DejaVu Serif" size=3><br></font></td>
+		<td align="left" valign=bottom><font face="DejaVu Serif"><br></font></td>
+	</tr>
+	<tr>
+		<td height="20" align="left" valign=bottom><font face="DejaVu Serif" size=3>to use any existing service to write data out</font></td>
+		<td align="left" valign=bottom><font face="DejaVu Serif" size=3><br></font></td>
+		<td align="left" valign=bottom><font face="DejaVu Serif" size=3 color="#800000">ItemWriterAdapter</font></td>
+		<td align="left" valign=bottom><font face="DejaVu Serif" size=3><br></font></td>
+		<td align="left" valign=bottom><font face="DejaVu Serif" size=3><br></font></td>
+		<td align="left" valign=bottom><font face="DejaVu Serif" size=3><br></font></td>
+		<td align="left" valign=bottom><font face="DejaVu Serif"><br></font></td>
+	</tr>
+	<tr>
+		<td height="20" align="left" valign=bottom><font face="DejaVu Serif" size=3>JMS item writer</font></td>
+		<td align="left" valign=bottom><font face="DejaVu Serif" size=3><br></font></td>
+		<td align="left" valign=bottom><font face="DejaVu Serif" size=3>JmsItemWriter</font></td>
+		<td align="left" valign=bottom><font face="DejaVu Serif" size=3><br></font></td>
+		<td align="left" valign=bottom><font face="DejaVu Serif" size=3><br></font></td>
+		<td align="left" valign=bottom><font face="DejaVu Serif" size=3><br></font></td>
+		<td align="left" valign=bottom><font face="DejaVu Serif"><br></font></td>
+	</tr>
+	<tr>
+		<td height="20" align="left" valign=bottom><font face="DejaVu Serif" size=3><br></font></td>
+		<td align="left" valign=bottom><font face="DejaVu Serif" size=3><br></font></td>
+		<td align="left" valign=bottom><font face="DejaVu Serif" size=3>SimpleMailMessageItemWriter</font></td>
+		<td align="left" valign=bottom><font face="DejaVu Serif" size=3><br></font></td>
+		<td align="left" valign=bottom><font face="DejaVu Serif" size=3><br></font></td>
+		<td align="left" valign=bottom><font face="DejaVu Serif" size=3><br></font></td>
+		<td align="left" valign=bottom><font face="DejaVu Serif"><br></font></td>
+	</tr>
+	<tr>
+		<td height="20" align="left" valign=bottom><font face="DejaVu Serif" size=3><br></font></td>
+		<td align="left" valign=bottom><font face="DejaVu Serif" size=3><br></font></td>
+		<td align="left" valign=bottom bgcolor="#DDDDDD"><font face="DejaVu Serif" size=3><br></font></td>
+		<td align="left" valign=bottom bgcolor="#DDDDDD"><font face="DejaVu Serif" size=3><br></font></td>
+		<td align="left" valign=bottom bgcolor="#DDDDDD"><font face="DejaVu Serif" size=3><br></font></td>
+		<td align="left" valign=bottom><font face="DejaVu Serif" size=3><br></font></td>
+		<td align="left" valign=bottom><font face="DejaVu Serif"><br></font></td>
+	</tr>
+	<tr>
+		<td height="20" align="left" valign=bottom><font face="DejaVu Serif" size=3>it composit and combination of many writers</font></td>
+		<td align="left" valign=bottom><font face="DejaVu Serif" size=3><br></font></td>
+		<td align="left" valign=bottom><font face="DejaVu Serif" size=3>CompositeItemWriter</font></td>
+		<td align="left" valign=bottom><font face="DejaVu Serif" size=3><br></font></td>
+		<td align="left" valign=bottom><font face="DejaVu Serif" size=3><br></font></td>
+		<td align="left" valign=bottom><font face="DejaVu Serif" size=3><br></font></td>
+		<td align="left" valign=bottom><font face="DejaVu Serif"><br></font></td>
+	</tr>
+	<tr>
+		<td height="20" align="left" valign=bottom><font face="DejaVu Serif" size=3>to write many output files</font></td>
+		<td align="left" valign=bottom><font face="DejaVu Serif" size=3><br></font></td>
+		<td align="left" valign=bottom><font face="DejaVu Serif" size=3>MultiResourceItemWriter</font></td>
+		<td align="left" valign=bottom><font face="DejaVu Serif" size=3><br></font></td>
+		<td align="left" valign=bottom><font face="DejaVu Serif" size=3><br></font></td>
+		<td align="left" valign=bottom><font face="DejaVu Serif" size=3><br></font></td>
+		<td align="left" valign=bottom><font face="DejaVu Serif"><br></font></td>
+	</tr>
+	<tr>
+		<td height="20" align="left" valign=bottom><font face="DejaVu Serif" size=3><br></font></td>
+		<td align="left" valign=bottom><font face="DejaVu Serif" size=3>Classifier</font></td>
+		<td align="left" valign=bottom><font face="DejaVu Serif" size=3><br></font></td>
+		<td align="left" valign=bottom><font face="DejaVu Serif" size=3><br></font></td>
+		<td align="left" valign=bottom><font face="DejaVu Serif" size=3><br></font></td>
+		<td align="left" valign=bottom><font face="DejaVu Serif" size=3><br></font></td>
+		<td align="left" valign=bottom><font face="DejaVu Serif"><br></font></td>
+	</tr>
+	<tr>
+		<td height="20" align="left" valign=bottom><font face="DejaVu Serif" size=3><br></font></td>
+		<td align="left" valign=bottom><font face="DejaVu Serif" size=3><br></font></td>
+		<td align="left" valign=bottom><font face="DejaVu Serif" size=3>ClassifierCompositeItemWriter</font></td>
+		<td align="left" valign=bottom><font face="DejaVu Serif" size=3><br></font></td>
+		<td align="left" valign=bottom><font face="DejaVu Serif" size=3><br></font></td>
+		<td align="left" valign=bottom><font face="DejaVu Serif" size=3><br></font></td>
+		<td align="left" valign=bottom><font face="DejaVu Serif"><br></font></td>
+	</tr>
+	<tr>
+		<td height="20" align="left" valign=bottom><font face="DejaVu Serif" size=3><br></font></td>
+		<td align="left" valign=bottom><font face="DejaVu Serif" size=3><br></font></td>
+		<td align="left" valign=bottom><font face="DejaVu Serif" size=3>BackToBackPatternClassifier</font></td>
+		<td align="left" valign=bottom><font face="DejaVu Serif" size=3><br></font></td>
+		<td align="left" valign=bottom><font face="DejaVu Serif" size=3><br></font></td>
+		<td align="left" valign=bottom><font face="DejaVu Serif" size=3><br></font></td>
+		<td align="left" valign=bottom><font face="DejaVu Serif"><br></font></td>
+	</tr>
+</table>
+<!-- ************************************************************************** -->
+<hr>
+<A NAME="table13"><h1>Sheet 14: <em>Spring batch LLR</em></h1></A>
+<table cellspacing="0" border="0">
+	<colgroup width="86"></colgroup>
+	<colgroup width="120"></colgroup>
+	<colgroup span="2" width="86"></colgroup>
+	<tr>
+		<td height="18" align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom>LLR flow</td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+	</tr>
+	<tr>
+		<td height="18" align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+	</tr>
+	<tr>
+		<td height="18" align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom>RC flow</td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+	</tr>
+	<tr>
+		<td height="18" align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+	</tr>
+	<tr>
+		<td height="18" align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom>MAF flow</td>
+		<td align="left" valign=bottom><b><font color="#00CC33">put all the negative condition in where clause , also group by gfrn and fdlacc in SQL itself</font></b></td>
+		<td align="left" valign=bottom><br></td>
+	</tr>
+	<tr>
+		<td height="18" align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+	</tr>
+	<tr>
+		<td height="18" align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+	</tr>
+	<tr>
+		<td height="18" align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom>RE-Run flow</td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+	</tr>
+	<tr>
+		<td height="18" align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+	</tr>
+	<tr>
+		<td height="18" align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+	</tr>
+	<tr>
+		<td height="18" align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom>have one step to write failure records</td>
+		<td align="left" valign=bottom><br></td>
+	</tr>
+	<tr>
+		<td height="18" align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+	</tr>
+	<tr>
+		<td height="18" align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom>llr will have non-linear flow,</td>
+		<td align="left" valign=bottom><br></td>
+	</tr>
+	<tr>
+		<td height="18" align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom>use of Exection Context and Data Holder for data sharing between STEPs</td>
+		<td align="left" valign=bottom><br></td>
+	</tr>
+	<tr>
+		<td height="18" align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom>use step-exection listener before and after for reference data load, next step to be run</td>
+		<td align="left" valign=bottom><br></td>
+	</tr>
+	<tr>
+		<td height="18" align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+	</tr>
+	<tr>
+		<td height="18" align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><b><font face="Calibri" color="#000000">shall i use a hashmap, key as table name, value as records of that tables for reference dtata. It will give more readable in service layer</font></b></td>
+		<td align="left" valign=bottom><br></td>
+	</tr>
+	<tr>
+		<td height="18" align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+	</tr>
+	<tr>
+		<td height="18" align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom>meta tables in every Oralce in instance or H2 database</td>
+		<td align="left" valign=bottom><br></td>
+	</tr>
+	<tr>
+		<td height="18" align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+	</tr>
+	<tr>
+		<td height="18" align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom>i prefere JobExectionDecider, since i dont want to persist metadata.</td>
+		<td align="left" valign=bottom><br></td>
+	</tr>
+	<tr>
+		<td height="18" align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+	</tr>
+	<tr>
+		<td height="18" align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+	</tr>
+	<tr>
+		<td height="18" align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom>let s use JobParaaameter from system env variable</td>
+		<td align="left" valign=bottom><br></td>
+	</tr>
+	<tr>
+		<td height="18" align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+	</tr>
+	<tr>
+		<td height="18" align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom>let use data holder for sharing data between steps</td>
+		<td align="left" valign=bottom><br></td>
+	</tr>
+	<tr>
+		<td height="18" align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom>local parallism</td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+	</tr>
+	<tr>
+		<td height="18" align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom>Local Scalling ( Multithreaded Step, Parellel Step )</td>
+		<td align="left" valign=bottom><br></td>
+	</tr>
+	<tr>
+		<td height="18" align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+	</tr>
+	<tr>
+		<td height="18" align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+	</tr>
+	<tr>
+		<td height="18" align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom>we use split to run maf and standard deviation job</td>
+		<td align="left" valign=bottom><br></td>
+	</tr>
+	<tr>
+		<td height="18" align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+	</tr>
+	<tr>
+		<td height="18" align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom>we use partitioning for LLR and RC Filter</td>
+		<td align="left" valign=bottom><br></td>
+	</tr>
+	<tr>
+		<td height="18" align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+	</tr>
+	<tr>
+		<td height="18" align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+	</tr>
+	<tr>
+		<td height="18" align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom>Master hashmap</td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom>llr, rc, fclos dto list</td>
+	</tr>
+	<tr>
+		<td height="18" align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom>alll control tables</td>
+	</tr>
+	<tr>
+		<td height="18" align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom>any ref.data used more than one job</td>
+	</tr>
+	<tr>
+		<td height="18" align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+	</tr>
+	<tr>
+		<td height="18" align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+	</tr>
+	<tr>
+		<td height="18" align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom>slave hashmap</td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom>ever job</td>
+	</tr>
+	<tr>
+		<td height="18" align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom>loaded by steplistener</td>
+	</tr>
+	<tr>
+		<td height="18" align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom>cleared by step listener</td>
+	</tr>
+	<tr>
+		<td height="18" align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+	</tr>
+	<tr>
+		<td height="18" align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom>make ready H2 database to test completly in local box itself., if need copy neecessary data from oracle to h2</td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+	</tr>
+	<tr>
+		<td height="18" align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom>H2 it must have duplicate schema of oracle</td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+	</tr>
+	<tr>
+		<td height="18" align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+	</tr>
+	<tr>
+		<td height="18" align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom>use of ParameterValidator</td>
+		<td align="left" valign=bottom><br></td>
+	</tr>
+	<tr>
+		<td height="18" align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+	</tr>
+	<tr>
+		<td height="18" align="left" valign=bottom><b><font color="#00FF66">use of job level listener to load either fclos or lll_loan exposure</font></b></td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+	</tr>
+	<tr>
+		<td height="18" align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom>we will have facility to re-order stepss, skipping steps</td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+	</tr>
+	<tr>
+		<td height="18" align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><b><font color="#FF3333">Lllr cannot use in-memory job-reposisotry, since it is not support parellel, mulitithreaded step exectioon</font></b></td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+	</tr>
+	<tr>
+		<td height="18" align="left" valign=bottom><b><font color="#00FF66">So, lets consider H2  database for reposiitory and get benefit of parallel, multithread step</font></b></td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+	</tr>
+	<tr>
+		<td height="18" align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom>Write custom jobparamter to validate</td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+	</tr>
+	<tr>
+		<td height="18" align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom>WRITE custom jobparameter builder to build from system variable</td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+	</tr>
+	<tr>
+		<td height="18" align="left" valign=bottom>manish</td>
+		<td align="left" valign=bottom>on what column basis, records are indepdent like data category or gfcid, or gfrn lik that</td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+	</tr>
+	<tr>
+		<td height="18" align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+	</tr>
+	<tr>
+		<td height="18" align="left" valign=bottom><b><font color="#00FF66">pre proocess put in step listener</font></b></td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+	</tr>
+	<tr>
+		<td height="18" align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+	</tr>
+	<tr>
+		<td height="18" align="left" valign=bottom>adjustement</td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+	</tr>
+	<tr>
+		<td height="18" align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom>call adjustement step only if it has adjustment otherwise skip</td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+	</tr>
+	<tr>
+		<td height="18" align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+	</tr>
+	<tr>
+		<td height="18" align="left" valign=bottom><b><font color="#00CC33">use jobOperator to stop the batch execution if any exception throrwn by any of service layer</font></b></td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+	</tr>
+	<tr>
+		<td height="18" align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+	</tr>
+	<tr>
+		<td height="18" align="left" valign=bottom><b><font color="#00FF66">implement custom of JobParametersIncrementer to increment llr and rc run reference no,, populate llr,rc rundata table also, ALWAYS pass -next parameter</font></b></td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+	</tr>
+	<tr>
+		<td height="18" align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom>lets keep all  the llr_run_control table values are llr, rc, feed, asofdate as jobparameters</td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+	</tr>
+	<tr>
+		<td height="18" align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+	</tr>
+	<tr>
+		<td height="18" align="left" valign=bottom>Let not use any ExecutionContext, since it persist data...... if it is in-momory—map based....i can use</td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+	</tr>
+	<tr>
+		<td height="18" align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+	</tr>
+	<tr>
+		<td height="18" align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom>lets jave jobparameters to hold object or property of 4 control tables</td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+	</tr>
+	<tr>
+		<td height="18" align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+	</tr>
+	<tr>
+		<td height="18" align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+	</tr>
+	<tr>
+		<td height="18" align="left" valign=bottom><b><font color="#FF3333">as of now all intermediate table commit happening then and there. It must be modified to commit only after complete job both llr and rc table pushed propertly.</font></b></td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+	</tr>
+	<tr>
+		<td height="18" align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+	</tr>
+	<tr>
+		<td height="18" align="left" valign=bottom>add Transaction manager only those step persist data but not for all the step</td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+	</tr>
+	<tr>
+		<td height="18" align="left" valign=bottom>SQLite can be used as  Jobrepository</td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+	</tr>
+	<tr>
+		<td height="18" align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+	</tr>
+	<tr>
+		<td height="18" align="left" valign=bottom>service layer no need to be spring bean, if we use MethodInvokingTaskletAdapter</td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+	</tr>
+	<tr>
+		<td height="18" align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+	</tr>
+	<tr>
+		<td height="18" align="left" valign=bottom><b><font color="#00FF66">let use FlatFileItemReader and call read method to read input file. Along with BeanWrapperFieldSetMapper</font></b></td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+	</tr>
+	<tr>
+		<td height="18" align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+	</tr>
+	<tr>
+		<td height="18" align="left" valign=bottom><b><font color="#00FF66">use of FlatfileItemWriter for standarad deviation csv ( 6) file generation</font></b></td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+	</tr>
+</table>
+<!-- ************************************************************************** -->
+<hr>
+<A NAME="table14"><h1>Sheet 15: <em>SpringBatch-SESSION</em></h1></A>
+<table cellspacing="0" border="0">
+	<colgroup width="122"></colgroup>
+	<colgroup width="137"></colgroup>
+	<colgroup width="215"></colgroup>
+	<colgroup width="119"></colgroup>
+	<colgroup width="129"></colgroup>
+	<colgroup width="231"></colgroup>
+	<colgroup width="85"></colgroup>
+	<colgroup width="102"></colgroup>
+	<tr>
+		<td height="18" align="left" valign=bottom bgcolor="#FF33FF"><font face="Calibri" color="#000000">Job</font></td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+	</tr>
+	<tr>
+		<td height="18" align="left" valign=bottom bgcolor="#FF33FF"><font face="Calibri" color="#000000">step</font></td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom bgcolor="#FFFF00">Data holder</td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+	</tr>
+	<tr>
+		<td height="18" align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom bgcolor="#FFFF00">Context</td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+	</tr>
+	<tr>
+		<td height="18" align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom bgcolor="#FFFF00">chunk</td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+	</tr>
+	<tr>
+		<td height="18" align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom bgcolor="#FFFF00">Reader</td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom bgcolor="#FFFF00">parttition</td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+	</tr>
+	<tr>
+		<td height="18" align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom bgcolor="#FFFF00">Writer</td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom bgcolor="#FFFF00">parellel execution of a step</td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+	</tr>
+	<tr>
+		<td height="18" align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom bgcolor="#FFFF00">Processor/tasklet</td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom bgcolor="#FFFF00">parellel execution of many step</td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+	</tr>
+	<tr>
+		<td height="18" align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom bgcolor="#FFFF00">remote chunking</td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+	</tr>
+	<tr>
+		<td height="18" align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom bgcolor="#FFFF00">SPI</td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+	</tr>
+	<tr>
+		<td height="18" align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom bgcolor="#FFFF00"><font face="Calibri" color="#000000">Joblauncher</font></td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom bgcolor="#FF33FF"><font face="Calibri" color="#000000">Testing</font></td>
+		<td align="left" valign=bottom><br></td>
+	</tr>
+	<tr>
+		<td height="18" align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom bgcolor="#FFFF00"><font face="Calibri" color="#000000">JobParameter</font></td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+	</tr>
+	<tr>
+		<td height="18" align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom bgcolor="#FFFF00">JobRepository</td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom bgcolor="#FF33FF"><font face="Calibri" color="#000000">Job Status</font></td>
+	</tr>
+	<tr>
+		<td height="18" align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom>single run of job</td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom bgcolor="#FF33FF"><font face="Calibri" color="#000000">JobExecution</font></td>
+		<td rowspan=2 align="center" valign=middle bgcolor="#FF33FF"><font face="Calibri" color="#000000">ExecutionContext</font></td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom bgcolor="#FF33FF"><font face="Calibri" color="#000000">Step Status</font></td>
+	</tr>
+	<tr>
+		<td height="18" align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom>single run of a step</td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom bgcolor="#FF33FF"><font face="Calibri" color="#000000">StepExecution</font></td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+	</tr>
+</table>
+<!-- ************************************************************************** -->
+</body>
+
+</html>

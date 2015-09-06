@@ -1,0 +1,349 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+
+<html>
+<head>
+	
+	<meta http-equiv="content-type" content="text/html; charset=utf-8">
+	<title></title>
+	<meta name="generator" content="LibreOffice 4.2.8.2 (Linux)">
+	<meta name="author" content="param">
+	<meta name="created" content="20090429;31244000000000">
+	<meta name="changedby" content="Windows User">
+	<meta name="changed" content="20090622;50712000000000">
+	<meta name="AppVersion" content="12.0000">
+	<meta name="DocSecurity" content="0">
+	<meta name="HyperlinksChanged" content="false">
+	<meta name="LinksUpToDate" content="false">
+	<meta name="ScaleCrop" content="false">
+	<meta name="ShareDoc" content="false">
+	
+	<style type="text/css"><!-- 
+		body,div,table,thead,tbody,tfoot,tr,th,td,p { font-family:"Calibri"; font-size:x-small }
+		 -->
+	</style>
+	
+</head>
+
+<body text="#000000">
+<hr>
+	<p><center>
+		<h1>Overview</h1>
+		<A HREF="#table0">client deployment</A><br>
+		<A HREF="#table1">webservice.xml</A><br>
+		<A HREF="#table2">Handler config</A><br>
+		<A HREF="#table3">Study frame</A><br>
+		
+	</center></p>
+<hr>
+<A NAME="table0"><h1>Sheet 1: <em>client deployment</em></h1></A>
+<table align="left" cellspacing="0" border="0">
+	<colgroup width="76"></colgroup>
+	<colgroup width="215"></colgroup>
+	<colgroup width="265"></colgroup>
+	<colgroup width="148"></colgroup>
+	<tr>
+		<td height="20" align="left" valign=bottom><font color="#000000">&lt;service-ref&gt;</font></td>
+		<td align="left" valign=bottom><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom><font color="#000000"><br></font></td>
+	</tr>
+	<tr>
+		<td height="20" align="left" valign=bottom><font color="#000000"><br></font></td>
+		<td style="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000" align="left" valign=bottom><font color="#000000">&lt;service-ref-name&gt;</font></td>
+		<td align="left" valign=bottom><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom><font color="#000000"><br></font></td>
+	</tr>
+	<tr>
+		<td height="20" align="left" valign=bottom><font color="#000000"><br></font></td>
+		<td style="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000" align="left" valign=bottom bgcolor="#948A54"><font color="#000000">&lt;service-interface&gt;</font></td>
+		<td align="left" valign=bottom><font color="#000000"> service class of WSDL (or) javax.xml.rpc.Servie for DII, dynamic proxies clients</font></td>
+		<td align="left" valign=bottom><font color="#000000"><br></font></td>
+	</tr>
+	<tr>
+		<td height="20" align="center" valign=bottom><b><font color="#FF0000"><br></font></b></td>
+		<td style="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000" align="left" valign=bottom bgcolor="#8EB4E3"><font color="#000000">&lt;wsdl-file&gt;</font></td>
+		<td align="left" valign=bottom><font color="#000000">These entry comes only for generated stub client.</font></td>
+		<td align="left" valign=bottom><font color="#000000"><br></font></td>
+	</tr>
+	<tr>
+		<td height="20" align="center" valign=bottom><b><font color="#FF0000"><br></font></b></td>
+		<td style="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000" align="left" valign=bottom bgcolor="#FFFF00"><font color="#000000">&lt;jaxrpc-mapping-file&gt;</font></td>
+		<td align="left" valign=bottom><font color="#000000">These entry comes only for generated stub client.</font></td>
+		<td align="left" valign=bottom><font color="#000000"><br></font></td>
+	</tr>
+	<tr>
+		<td height="20" align="center" valign=bottom><b><font color="#FF0000"><br></font></b></td>
+		<td style="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000" align="left" valign=bottom bgcolor="#8EB4E3"><font color="#000000">&lt;service-qname&gt;</font></td>
+		<td align="left" valign=bottom><font color="#000000">say specific service name in wsdl. Since a WSDL file can more than one &lt;service&gt; element</font></td>
+		<td align="left" valign=bottom><font color="#000000"><br></font></td>
+	</tr>
+	<tr>
+		<td height="20" align="center" valign=bottom><b><font color="#FF0000"><br></font></b></td>
+		<td style="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000" align="left" valign=bottom bgcolor="#FCD5B5"><font color="#000000">&lt;port-component-ref&gt; (1)</font></td>
+		<td align="left" valign=bottom><font color="#000000"> this elment need only if the client is Dynamic proxy client only</font></td>
+		<td align="left" valign=bottom><font color="#000000"><br></font></td>
+	</tr>
+	<tr>
+		<td height="20" align="center" valign=bottom><b><font color="#FF0000"><br></font></b></td>
+		<td style="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000" align="left" valign=bottom><font color="#000000"><br></font></td>
+		<td style="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000" align="left" valign=bottom bgcolor="#FCD5B5"><font color="#000000">&lt;service-endpoint-interface&gt; (1)</font></td>
+		<td align="left" valign=bottom><font color="#000000"><br></font></td>
+	</tr>
+	<tr>
+		<td height="20" align="center" valign=bottom><b><font color="#FF0000"><br></font></b></td>
+		<td style="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000" align="left" valign=bottom><font color="#000000"><br></font></td>
+		<td style="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000" align="left" valign=bottom bgcolor="#FCD5B5"><font color="#000000">&lt;port-component-link&gt; (?)</font></td>
+		<td align="left" valign=bottom><font color="#000000"> this can be used to access the web services in the JAR / WAR  of  same EAR</font></td>
+	</tr>
+	<tr>
+		<td height="20" align="center" valign=bottom><b><font color="#FF0000"><br></font></b></td>
+		<td style="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000" align="left" valign=bottom bgcolor="#FCD5B5"><font color="#000000">&lt;/port-component-ref&gt;</font></td>
+		<td align="left" valign=bottom><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom><font color="#000000"><br></font></td>
+	</tr>
+	<tr>
+		<td height="20" align="left" valign=bottom><font color="#000000"><br></font></td>
+		<td style="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000" align="left" valign=bottom bgcolor="#FDEADA"><font color="#000000">&lt;handler&gt;( * )</font></td>
+		<td align="left" valign=bottom><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom><font color="#000000"><br></font></td>
+	</tr>
+	<tr>
+		<td height="20" align="left" valign=bottom><font color="#000000">&lt;/service-ref&gt;</font></td>
+		<td align="left" valign=bottom><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom><font color="#000000"><br></font></td>
+	</tr>
+</table>
+<img src="Paramwebservicedeploymenttags_html_d7f4cc9d.png" width=431 height=78>
+<br clear=left>
+<!-- ************************************************************************** -->
+<hr>
+<A NAME="table1"><h1>Sheet 2: <em>webservice.xml</em></h1></A>
+<table align="left" cellspacing="0" border="0">
+	<colgroup width="48"></colgroup>
+	<colgroup width="76"></colgroup>
+	<colgroup width="261"></colgroup>
+	<colgroup width="243"></colgroup>
+	<colgroup width="212"></colgroup>
+	<colgroup width="131"></colgroup>
+	<tr>
+		<td height="20" align="left" valign=bottom><font color="#000000">&lt;webservices&gt;</font></td>
+		<td align="left" valign=bottom><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom><font color="#000000">xmlns declaration and version attribute is must</font></td>
+		<td align="left" valign=bottom><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom><font color="#000000"><br></font></td>
+	</tr>
+	<tr>
+		<td height="20" align="left" valign=bottom><font color="#000000"><br></font></td>
+		<td style="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000" align="left" valign=bottom bgcolor="#FCD5B5"><font color="#000000">&lt;webservice-description&gt;(+)</font></td>
+		<td align="left" valign=bottom bgcolor="#FCD5B5"><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom><font color="#000000">declare namespace prefix for a wsdl here instead of root element. Since wsdl is specific to &lt;webservice-description&gt;</font></td>
+		<td align="left" valign=bottom><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom><font color="#000000"><br></font></td>
+	</tr>
+	<tr>
+		<td height="20" align="left" valign=bottom><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom bgcolor="#FCD5B5"><font color="#000000"><br></font></td>
+		<td style="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000" align="left" valign=bottom bgcolor="#FCD5B5"><font color="#000000">&lt;webservice-description-name&gt;</font></td>
+		<td align="left" valign=bottom><font color="#000000">can arbitray and no need to be unique. It is used in server specific DD</font></td>
+		<td align="left" valign=bottom><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom><font color="#000000"><br></font></td>
+	</tr>
+	<tr>
+		<td height="20" align="left" valign=bottom><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom bgcolor="#FCD5B5"><font color="#000000"><br></font></td>
+		<td style="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000" align="left" valign=bottom bgcolor="#FCD5B5"><font color="#000000">&lt;wsdl-file&gt;</font></td>
+		<td align="left" valign=bottom><font color="#000000">it may start with &quot;/&quot; or not. ( I tested) ( file name and path is case sensitive )</font></td>
+		<td align="left" valign=bottom><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom><font color="#000000"><br></font></td>
+	</tr>
+	<tr>
+		<td height="20" align="left" valign=bottom><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom bgcolor="#FCD5B5"><font color="#000000"><br></font></td>
+		<td style="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000" align="left" valign=bottom bgcolor="#FCD5B5"><font color="#000000">&lt;jaxrpc-mapping-file&gt;</font></td>
+		<td align="left" valign=bottom><font color="#000000">it may start with &quot;/&quot; or not. ( I tested) ( file name and path is case sensitive )</font></td>
+		<td align="left" valign=bottom><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom><font color="#000000"><br></font></td>
+	</tr>
+	<tr>
+		<td height="20" align="left" valign=bottom><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom bgcolor="#FCD5B5"><font color="#000000"><br></font></td>
+		<td style="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000" align="left" valign=bottom bgcolor="#FDEADA"><font color="#000000">&lt;port-component&gt; ( + )</font></td>
+		<td align="left" valign=bottom><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom><font color="#000000"><br></font></td>
+	</tr>
+	<tr>
+		<td height="20" align="left" valign=bottom><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom bgcolor="#FCD5B5"><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom bgcolor="#FDEADA"><font color="#000000"><br></font></td>
+		<td style="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000" align="left" valign=bottom bgcolor="#FDEADA"><font color="#000000">&lt;port-component-name&gt;</font></td>
+		<td align="left" valign=bottom><i><font color="#17375E"> should be unique name in this file. It is  used in server specific DD</font></i></td>
+		<td align="left" valign=bottom><font color="#000000"><br></font></td>
+	</tr>
+	<tr>
+		<td height="20" align="left" valign=bottom><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom bgcolor="#FCD5B5"><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom bgcolor="#FDEADA"><font color="#000000"><br></font></td>
+		<td style="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000" align="left" valign=bottom bgcolor="#FDEADA"><font color="#000000">&lt;wsdl-port&gt;</font></td>
+		<td align="left" valign=bottom><font color="#000000">name of &lt;port&gt; of WSDL and MUST be FQN</font></td>
+		<td align="left" valign=bottom><font color="#000000"><br></font></td>
+	</tr>
+	<tr>
+		<td height="20" align="left" valign=bottom><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom bgcolor="#FCD5B5"><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom bgcolor="#FDEADA"><font color="#000000"><br></font></td>
+		<td style="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000" align="left" valign=bottom bgcolor="#FDEADA"><font color="#000000">&lt;service-endpoint-interface&gt;</font></td>
+		<td align="left" valign=bottom><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom><font color="#000000"><br></font></td>
+	</tr>
+	<tr>
+		<td height="20" align="left" valign=bottom><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom bgcolor="#FCD5B5"><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom bgcolor="#FDEADA"><font color="#000000"><br></font></td>
+		<td style="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000" align="left" valign=bottom bgcolor="#FDEADA"><font color="#000000">&lt;service-impl-bean&gt;</font></td>
+		<td align="left" valign=bottom><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom><font color="#000000"><br></font></td>
+	</tr>
+	<tr>
+		<td height="20" align="left" valign=bottom><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom bgcolor="#FCD5B5"><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom bgcolor="#FDEADA"><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom bgcolor="#FDEADA"><font color="#000000"><br></font></td>
+		<td style="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000" align="left" valign=bottom bgcolor="#FDEADA"><font color="#000000">&lt;servlet-link&gt; / &lt;ejb-link&gt;</font></td>
+		<td align="left" valign=bottom><font color="#000000">value of &lt;servlet-link&gt; or &lt;ejb-link&gt; cannot occure more than once in whole webservice.xml file</font></td>
+	</tr>
+	<tr>
+		<td height="20" align="left" valign=bottom><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom bgcolor="#FCD5B5"><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom bgcolor="#FDEADA"><font color="#000000"><br></font></td>
+		<td style="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000" align="left" valign=bottom bgcolor="#FDEADA"><font color="#000000">&lt;/service-impl-bean&gt;</font></td>
+		<td align="left" valign=bottom><font color="#000000">given servlet-link name is verified at the time of deployment and that class must be there</font></td>
+		<td align="left" valign=bottom><font color="#000000"><br></font></td>
+	</tr>
+	<tr>
+		<td height="20" align="left" valign=bottom><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom bgcolor="#FCD5B5"><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom bgcolor="#FDEADA"><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom bgcolor="#FDEADA"><font color="#000000">&lt;handler&gt;( * )</font></td>
+		<td align="left" valign=bottom><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom><font color="#000000"><br></font></td>
+	</tr>
+	<tr>
+		<td height="20" align="left" valign=bottom><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom bgcolor="#FCD5B5"><font color="#000000"><br></font></td>
+		<td style="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000" align="left" valign=bottom bgcolor="#FDEADA"><font color="#000000">&lt;/port-component&gt;</font></td>
+		<td align="left" valign=bottom><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom><font color="#000000"><br></font></td>
+	</tr>
+	<tr>
+		<td height="20" align="left" valign=bottom><font color="#000000"><br></font></td>
+		<td style="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000" align="left" valign=bottom bgcolor="#FCD5B5"><font color="#000000">&lt;/webservice-description&gt;</font></td>
+		<td align="left" valign=bottom bgcolor="#FCD5B5"><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom><font color="#000000"><br></font></td>
+	</tr>
+	<tr>
+		<td height="20" align="left" valign=bottom><font color="#000000">&lt;/webservices&gt;</font></td>
+		<td align="left" valign=bottom><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom><font color="#000000"><br></font></td>
+	</tr>
+</table>
+<img src="Paramwebservicedeploymenttags_html_f9aa3fc5.png" width=264 height=78>
+<br clear=left>
+<!-- ************************************************************************** -->
+<hr>
+<A NAME="table2"><h1>Sheet 3: <em>Handler config</em></h1></A>
+<table align="left" cellspacing="0" border="0">
+	<colgroup width="124"></colgroup>
+	<colgroup width="169"></colgroup>
+	<colgroup width="145"></colgroup>
+	<tr>
+		<td style="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000" height="20" align="left" valign=bottom bgcolor="#DDD9C3"><font color="#000000">&lt;handler&gt; (* )</font></td>
+		<td align="left" valign=bottom><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom><font color="#000000"><br></font></td>
+	</tr>
+	<tr>
+		<td height="20" align="left" valign=bottom bgcolor="#DDD9C3"><font color="#000000"><br></font></td>
+		<td style="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000" align="left" valign=bottom bgcolor="#DDD9C3"><font color="#000000">&lt;handler-name&gt;</font></td>
+		<td align="left" valign=bottom><font color="#000000">any arbitrary name but must be unique</font></td>
+	</tr>
+	<tr>
+		<td height="20" align="left" valign=bottom bgcolor="#DDD9C3"><font color="#000000"><br></font></td>
+		<td style="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000" align="left" valign=bottom bgcolor="#DDD9C3"><font color="#000000">&lt;handler-class&gt;</font></td>
+		<td align="left" valign=bottom><font color="#000000">  FQN of a class, which implement the Handler interface</font></td>
+	</tr>
+	<tr>
+		<td height="20" align="left" valign=bottom bgcolor="#DDD9C3"><i><font color="#FF0000">optional</font></i></td>
+		<td style="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000" align="left" valign=bottom bgcolor="#DCE6F2"><font color="#000000">&lt;init-param&gt; ( * )</font></td>
+		<td align="left" valign=bottom><font color="#000000"><br></font></td>
+	</tr>
+	<tr>
+		<td height="20" align="left" valign=bottom bgcolor="#DDD9C3"><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom bgcolor="#DCE6F2"><font color="#000000"><br></font></td>
+		<td style="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000" align="left" valign=bottom bgcolor="#DCE6F2"><font color="#000000">&lt;param-name&gt;</font></td>
+	</tr>
+	<tr>
+		<td height="20" align="left" valign=bottom bgcolor="#DDD9C3"><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom bgcolor="#DCE6F2"><font color="#000000"><br></font></td>
+		<td style="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000" align="left" valign=bottom bgcolor="#DCE6F2"><font color="#000000">&lt;param-value&gt;</font></td>
+	</tr>
+	<tr>
+		<td height="20" align="left" valign=bottom bgcolor="#DDD9C3"><font color="#000000"><br></font></td>
+		<td style="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000" align="left" valign=bottom bgcolor="#DCE6F2"><font color="#000000">&lt;/init-param&gt;</font></td>
+		<td align="left" valign=bottom><font color="#000000"><br></font></td>
+	</tr>
+	<tr>
+		<td height="20" align="left" valign=bottom bgcolor="#DDD9C3"><i><font color="#FF0000">optional</font></i></td>
+		<td style="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000" align="left" valign=bottom bgcolor="#DDD9C3"><font color="#000000">&lt;soap-header&gt; ( * )</font></td>
+		<td align="left" valign=bottom><font color="#000000">  specify the name of SOAP header in declartive manner, which is alternative to Handler.getHeaders() method</font></td>
+	</tr>
+	<tr>
+		<td height="20" align="left" valign=bottom bgcolor="#DDD9C3"><i><font color="#FF0000">optional</font></i></td>
+		<td style="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000" align="left" valign=bottom bgcolor="#DDD9C3"><font color="#000000">&lt;soap-role&gt; ( * )</font></td>
+		<td align="left" valign=bottom><font color="#000000">it is declative manner specifing actor for a header element. Which is alternative to specifying programattically SOAPHeaderElement.setActor() method</font></td>
+	</tr>
+	<tr>
+		<td height="20" align="left" valign=bottom bgcolor="#DDD9C3"><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom bgcolor="#DDD9C3"><font color="#FF0000">&lt;port-name&gt;</font></td>
+		<td align="left" valign=bottom><font color="#000000"> used only in client side [ i could not able to evaluate. Getting deployment error even if i specified correctly ]</font></td>
+	</tr>
+	<tr>
+		<td style="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000" height="20" align="left" valign=bottom bgcolor="#DDD9C3"><font color="#000000">&lt;handler&gt;</font></td>
+		<td align="left" valign=bottom><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom><font color="#000000"><br></font></td>
+	</tr>
+</table>
+<img src="Paramwebservicedeploymenttags_html_c15e1e95.png" width=642 height=78>
+<br clear=left>
+<!-- ************************************************************************** -->
+<hr>
+<A NAME="table3"><h1>Sheet 4: <em>Study frame</em></h1></A>
+<table cellspacing="0" border="0">
+	<colgroup span="4" width="80"></colgroup>
+	<colgroup width="188"></colgroup>
+	<tr>
+		<td height="20" align="right" valign=bottom sdval="39934" sdnum="16393;0;DD/MM/YYYY"><font color="#000000">01/05/2009</font></td>
+		<td align="right" valign=bottom sdval="0.695833333333333" sdnum="16393;0;HH:MM AM/PM"><font color="#000000">04:42 PM</font></td>
+		<td align="right" valign=bottom sdval="0.9125" sdnum="16393;0;HH:MM AM/PM"><font color="#000000">09:54 PM</font></td>
+		<td align="right" valign=bottom sdval="0.0833333333333333" sdnum="16393;0;HH:MM"><font color="#000000">02:00</font></td>
+		<td align="left" valign=bottom><font color="#000000">Webservices.xml</font></td>
+	</tr>
+	<tr>
+		<td height="20" align="right" valign=bottom sdval="39935" sdnum="16393;0;DD/MM/YYYY"><font color="#000000">02/05/2009</font></td>
+		<td align="right" valign=bottom sdval="0.427777777777778" sdnum="16393;0;HH:MM AM/PM"><font color="#000000">10:16 AM</font></td>
+		<td align="left" valign=bottom><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom><font color="#000000"><br></font></td>
+	</tr>
+</table>
+<!-- ************************************************************************** -->
+</body>
+
+</html>

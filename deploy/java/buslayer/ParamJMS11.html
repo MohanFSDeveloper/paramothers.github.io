@@ -1,0 +1,397 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+
+<html>
+<head>
+	
+	<meta http-equiv="content-type" content="text/html; charset=utf-8">
+	<title></title>
+	<meta name="generator" content="LibreOffice 4.2.8.2 (Linux)">
+	<meta name="author" content=" ">
+	<meta name="created" content="20080108;223546000000000">
+	<meta name="changedby" content="padhu">
+	<meta name="changed" content="20110320;211655000000000">
+	
+	<style type="text/css"><!-- 
+		body,div,table,thead,tbody,tfoot,tr,th,td,p { font-family:"Arial"; font-size:x-small }
+		 -->
+	</style>
+	
+</head>
+
+<body text="#000000">
+<hr>
+	<p><center>
+		<h1>Overview</h1>
+		<A HREF="#table0">JMS 1.1  API </A><br>
+		<A HREF="#table1">JMS Tags</A><br>
+		<A HREF="#table3">why need EJB with JMS</A><br>
+		<A HREF="#table4">Spring and JMS</A><br>
+		<A HREF="#table5">JMS Spring  2.5 Tag</A><br>
+		
+	</center></p>
+<hr>
+<A NAME="table0"><h1>Sheet 1: <em>JMS 1.1  API </em></h1></A>
+<table cellspacing="0" border="0">
+	<colgroup width="165"></colgroup>
+	<colgroup width="251"></colgroup>
+	<tr>
+		<td height="17" align="left" bgcolor="#FF8080">ConnectionFactory</td>
+		<td align="left" bgcolor="#FF8080"><br></td>
+	</tr>
+	<tr>
+		<td height="17" align="left" bgcolor="#FF8080"><br></td>
+		<td align="left" bgcolor="#CCCCFF">QueueConnectionFactory [by lookup]</td>
+	</tr>
+	<tr>
+		<td height="17" align="left" bgcolor="#FF8080"><br></td>
+		<td align="left" bgcolor="#CCCCFF">TopicConnectionFactory [by lookup]</td>
+	</tr>
+	<tr>
+		<td height="17" align="left" bgcolor="#FF8080">Connection</td>
+		<td align="left" bgcolor="#FF8080"><br></td>
+	</tr>
+	<tr>
+		<td height="17" align="left" bgcolor="#FF8080"><br></td>
+		<td align="left" bgcolor="#FF8080">QueueConnection</td>
+	</tr>
+	<tr>
+		<td height="17" align="left" bgcolor="#FF8080"><br></td>
+		<td align="left" bgcolor="#FF8080">TopicConnection</td>
+	</tr>
+	<tr>
+		<td height="17" align="left" bgcolor="#FF8080"><br></td>
+		<td align="left" bgcolor="#FF8080">ConnectionMetaData</td>
+	</tr>
+	<tr>
+		<td height="17" align="left" bgcolor="#FF8080">Session</td>
+		<td align="left" bgcolor="#FF8080"><br></td>
+	</tr>
+	<tr>
+		<td height="17" align="left" bgcolor="#FF8080"><br></td>
+		<td align="left" bgcolor="#808000">QueueSessoin</td>
+	</tr>
+	<tr>
+		<td height="17" align="left" bgcolor="#FF8080"><br></td>
+		<td align="left" bgcolor="#808000">TopicSession</td>
+	</tr>
+	<tr>
+		<td height="17" align="left" bgcolor="#FF8080"><br></td>
+		<td align="left" bgcolor="#808000">MessageConsumer</td>
+	</tr>
+	<tr>
+		<td height="17" align="left" bgcolor="#FF8080">MessageProducer</td>
+		<td align="left" bgcolor="#808000"><br></td>
+	</tr>
+	<tr>
+		<td height="17" align="left" bgcolor="#FF8080"><br></td>
+		<td align="left" bgcolor="#0066CC">QueueSender</td>
+	</tr>
+	<tr>
+		<td height="17" align="left" bgcolor="#FF8080"><br></td>
+		<td align="left" bgcolor="#0066CC">QueueRequestor</td>
+	</tr>
+	<tr>
+		<td height="17" align="left" bgcolor="#FF8080"><br></td>
+		<td align="left" bgcolor="#0066CC">TopicPublisher</td>
+	</tr>
+	<tr>
+		<td height="17" align="left" bgcolor="#FF8080">MessageReceiver</td>
+		<td align="left" bgcolor="#0066CC"><br></td>
+	</tr>
+	<tr>
+		<td height="17" align="left" bgcolor="#FF8080"><br></td>
+		<td align="left" bgcolor="#969696">QueueReceiver</td>
+	</tr>
+	<tr>
+		<td height="17" align="left" bgcolor="#FF8080"><br></td>
+		<td align="left" bgcolor="#969696">TopicSubscriber</td>
+	</tr>
+	<tr>
+		<td height="17" align="left" bgcolor="#FF8080"><br></td>
+		<td align="left" bgcolor="#969696">TopicRequestor</td>
+	</tr>
+	<tr>
+		<td height="17" align="left">Destination</td>
+		<td align="left"><br></td>
+	</tr>
+	<tr>
+		<td height="17" align="left"><br></td>
+		<td align="left" bgcolor="#FF9900">Queue[by lookup]</td>
+	</tr>
+	<tr>
+		<td height="17" align="left"><br></td>
+		<td align="left" bgcolor="#FF9900">Topic [by lookup]</td>
+	</tr>
+	<tr>
+		<td height="17" align="left"><br></td>
+		<td align="left" bgcolor="#FF9900"><br></td>
+	</tr>
+	<tr>
+		<td height="17" align="left">DeliveryMode</td>
+		<td align="left">PERSISTENT</td>
+	</tr>
+	<tr>
+		<td height="17" align="left"><br></td>
+		<td align="left">NON_PERSISTENT</td>
+	</tr>
+	<tr>
+		<td height="17" align="left" bgcolor="#00FF00">Message</td>
+		<td align="left" bgcolor="#00FF00"><br></td>
+	</tr>
+	<tr>
+		<td height="17" align="left" bgcolor="#00FF00"><br></td>
+		<td align="left" bgcolor="#FF8080">TextMessage</td>
+	</tr>
+	<tr>
+		<td height="17" align="left" bgcolor="#00FF00"><br></td>
+		<td align="left" bgcolor="#FF8080">MapMessage</td>
+	</tr>
+	<tr>
+		<td height="17" align="left" bgcolor="#00FF00"><br></td>
+		<td align="left" bgcolor="#00FF00">ByteMessage</td>
+	</tr>
+	<tr>
+		<td height="17" align="left" bgcolor="#00FF00"><br></td>
+		<td align="left" bgcolor="#00FF00">StreamMessage</td>
+	</tr>
+	<tr>
+		<td height="17" align="left" bgcolor="#00FF00"><br></td>
+		<td align="left" bgcolor="#00FF00">ObjectMessage</td>
+	</tr>
+	<tr>
+		<td height="17" align="left"><br></td>
+		<td align="left"><br></td>
+	</tr>
+	<tr>
+		<td height="17" align="left"><br></td>
+		<td align="left"><br></td>
+	</tr>
+	<tr>
+		<td height="17" align="left"><br></td>
+		<td align="left"><br></td>
+	</tr>
+	<tr>
+		<td height="17" align="left">JMSException</td>
+		<td align="left"><br></td>
+	</tr>
+	<tr>
+		<td height="17" align="left"><br></td>
+		<td align="left">InvalidSelectorException</td>
+	</tr>
+	<tr>
+		<td height="17" align="left"><br></td>
+		<td align="left">MessageNotWriteableException</td>
+	</tr>
+	<tr>
+		<td height="17" align="left"><br></td>
+		<td align="left">InvalidDestinationException</td>
+	</tr>
+	<tr>
+		<td height="17" align="left"><br></td>
+		<td align="left"><br></td>
+	</tr>
+	<tr>
+		<td height="17" align="left">ExceptionListener</td>
+		<td align="left"><br></td>
+	</tr>
+</table>
+<!-- ************************************************************************** -->
+<hr>
+<A NAME="table1"><h1>Sheet 2: <em>JMS Tags</em></h1></A>
+<table cellspacing="0" border="0">
+	<colgroup width="184"></colgroup>
+	<colgroup width="185"></colgroup>
+	<tr>
+		<td height="17" align="left">&lt;res-ref-name&gt;</td>
+		<td align="left"><br></td>
+	</tr>
+	<tr>
+		<td height="17" align="left"><br></td>
+		<td align="left">&lt;res-ref-name&gt;</td>
+	</tr>
+	<tr>
+		<td height="17" align="left"><br></td>
+		<td align="left">&lt;res-type&gt;</td>
+	</tr>
+	<tr>
+		<td height="17" align="left"><br></td>
+		<td align="left">&lt;res-auth&gt;</td>
+	</tr>
+	<tr>
+		<td height="17" align="left">&lt;/res-ref-name&gt;</td>
+		<td align="left"><br></td>
+	</tr>
+	<tr>
+		<td height="17" align="left"><br></td>
+		<td align="left"><br></td>
+	</tr>
+	<tr>
+		<td height="17" align="left">&lt;res-env-ref&gt;</td>
+		<td align="left"><br></td>
+	</tr>
+	<tr>
+		<td height="17" align="left"><br></td>
+		<td align="left">&lt;res-env-ref-name&gt;</td>
+	</tr>
+	<tr>
+		<td height="17" align="left"><br></td>
+		<td align="left">&lt;res-env-ref-type&gt;</td>
+	</tr>
+	<tr>
+		<td height="17" align="left">&lt;/res-enve-ref&gt;</td>
+		<td align="left"><br></td>
+	</tr>
+	<tr>
+		<td height="17" align="left"><br></td>
+		<td align="left"><br></td>
+	</tr>
+	<tr>
+		<td height="17" align="left">&lt;res-sharing-scope&gt;</td>
+		<td align="left"><br></td>
+	</tr>
+	<tr>
+		<td height="17" align="left"><br></td>
+		<td align="left"><br></td>
+	</tr>
+	<tr>
+		<td height="17" align="left">&lt;subscription-durablity&gt;</td>
+		<td align="left"><br></td>
+	</tr>
+</table>
+<!-- ************************************************************************** -->
+<hr>
+<A NAME="table3"><h1>Sheet 3: <em>why need EJB with JMS</em></h1></A>
+<table cellspacing="0" border="0">
+	<colgroup width="67"></colgroup>
+	<colgroup width="429"></colgroup>
+	<colgroup width="607"></colgroup>
+	<tr>
+		<td height="17" align="left"><br></td>
+		<td align="left" bgcolor="#C0C0C0"><b>EJB Container</b></td>
+		<td align="left" bgcolor="#C0C0C0"><b>Web Container</b></td>
+	</tr>
+	<tr>
+		<td height="17" align="left">Adv</td>
+		<td align="left"><br></td>
+		<td align="left"><br></td>
+	</tr>
+	<tr>
+		<td height="34" align="left"><br></td>
+		<td align="left">Easy Transaction mangemene ( by declaration )</td>
+		<td align="left">we are somewhat expert in transaction handling, so, we can use manual transaction and we can use web container only wherever possible</td>
+	</tr>
+	<tr>
+		<td height="34" align="left"><br></td>
+		<td align="left">Easy for JMS resource mangement like connection, session <br> ( by ejbCreate() ,ejbRemove() )</td>
+		<td align="left">we can use static methods to </td>
+	</tr>
+	<tr>
+		<td height="17" align="left"><br></td>
+		<td align="left">MDB easy for Asynchornous</td>
+		<td align="left">we can do the same by simple bean implementing messageListerner</td>
+	</tr>
+	<tr>
+		<td height="34" align="left"><br></td>
+		<td align="left">Concurrent process of message by several instance.</td>
+		<td align="left">we don’t have that much trafic of message and needs to be processed concurrently from  same queue or topic</td>
+	</tr>
+	<tr>
+		<td height="17" align="left"><br></td>
+		<td align="left">easy to distributed transaction</td>
+		<td align="left">we no need distributed transaction. </td>
+	</tr>
+	<tr>
+		<td height="17" align="left"><br></td>
+		<td align="left">easy to message acknowledgement </td>
+		<td align="left">we have to call the method explicitly on Session object of JMS</td>
+	</tr>
+	<tr>
+		<td height="17" align="left"><br></td>
+		<td align="left"><br></td>
+		<td align="left"><br></td>
+	</tr>
+	<tr>
+		<td height="17" align="left"><br></td>
+		<td align="left"><br></td>
+		<td align="left"><br></td>
+	</tr>
+	<tr>
+		<td height="17" align="left">Dis</td>
+		<td align="left"><br></td>
+		<td align="left"><br></td>
+	</tr>
+	<tr>
+		<td height="34" align="left"><br></td>
+		<td align="left"> to receive synchronouse  message using any EJB is bad idea, since waiting with resouce in J2EE server is costly</td>
+		<td align="left">we can use simple bean and ask to receive synchrounse message with low weight</td>
+	</tr>
+	<tr>
+		<td height="17" align="left"><br></td>
+		<td align="left"><br></td>
+		<td align="left"><br></td>
+	</tr>
+	<tr>
+		<td height="34" align="left"><br></td>
+		<td align="left">incase session and entity bean, we have to care full in ejbPassivate() and ejbActivate()</td>
+		<td align="left">there is no headache like passivation and activation</td>
+	</tr>
+</table>
+<!-- ************************************************************************** -->
+<hr>
+<A NAME="table4"><h1>Sheet 4: <em>Spring and JMS</em></h1></A>
+<table cellspacing="0" border="0">
+	<colgroup width="232"></colgroup>
+	<colgroup width="187"></colgroup>
+	<tr>
+		<td height="17" align="left">JmsTemplate</td>
+		<td align="left"><br></td>
+	</tr>
+	<tr>
+		<td height="17" align="left"><br></td>
+		<td align="left">MessageCreator</td>
+	</tr>
+	<tr>
+		<td height="17" align="left"><br></td>
+		<td align="left">SimpleMessageConverter</td>
+	</tr>
+	<tr>
+		<td height="17" align="left"><br></td>
+		<td align="left">MessagePostProcessor</td>
+	</tr>
+	<tr>
+		<td height="17" align="left">SessionAwareMessageListener</td>
+		<td align="left"><br></td>
+	</tr>
+	<tr>
+		<td height="17" align="left">MessageListenerAdaptor</td>
+		<td align="left"><br></td>
+	</tr>
+	<tr>
+		<td height="17" align="left"><br></td>
+		<td align="left"><br></td>
+	</tr>
+	<tr>
+		<td height="17" align="left">DefaultMessageListenercontainer</td>
+		<td align="left"><br></td>
+	</tr>
+	<tr>
+		<td height="17" align="left">SimpleMessageListenerContainer</td>
+		<td align="left"><br></td>
+	</tr>
+</table>
+<!-- ************************************************************************** -->
+<hr>
+<A NAME="table5"><h1>Sheet 5: <em>JMS Spring  2.5 Tag</em></h1></A>
+<table cellspacing="0" border="0">
+	<colgroup width="147"></colgroup>
+	<tr>
+		<td height="17" align="left">&lt;listener-container&gt;</td>
+	</tr>
+	<tr>
+		<td height="17" align="left">&lt;listener&gt;</td>
+	</tr>
+</table>
+<!-- ************************************************************************** -->
+</body>
+
+</html>

@@ -1,0 +1,511 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+
+<html>
+<head>
+	
+	<meta http-equiv="content-type" content="text/html; charset=utf-8">
+	<title></title>
+	<meta name="generator" content="LibreOffice 4.2.8.2 (Linux)">
+	<meta name="created" content="20120904;105551000000000">
+	<meta name="changed" content="20120913;140824000000000">
+	
+	<style type="text/css"><!-- 
+		body,div,table,thead,tbody,tfoot,tr,th,td,p { font-family:"Arial"; font-size:x-small }
+		 -->
+	</style>
+	
+</head>
+
+<body text="#000000">
+<hr>
+	<p><center>
+		<h1>Overview</h1>
+		<A HREF="#table0">Gen rule</A><br>
+		<A HREF="#table1">method signature pattern</A><br>
+		<A HREF="#table2">Type signature pattern( package, class, interface )</A><br>
+		<A HREF="#table3">bean name pattern</A><br>
+		<A HREF="#table4">Execution Object Type</A><br>
+		<A HREF="#table5">arguments</A><br>
+		<A HREF="#table6">Combing Pointcut</A><br>
+		<A HREF="#table7">annotation pattern</A><br>
+		
+	</center></p>
+<hr>
+<A NAME="table0"><h1>Sheet 1: <em>Gen rule</em></h1></A>
+<table cellspacing="0" border="0">
+	<colgroup width="86"></colgroup>
+	<tr>
+		<td height="22" align="left" valign=bottom><font face="Monospace" size=3 color="#FF0000">name binding only allowed in target, this, and args</font></td>
+	</tr>
+	<tr>
+		<td height="17" align="left" valign=bottom><br></td>
+	</tr>
+	<tr>
+		<td height="17" align="left" valign=bottom><br></td>
+	</tr>
+	<tr>
+		<td height="32" align="left" valign=bottom>I hope, I cannot use args() to capture joint points. Usually parameter will domain object, obviously they no need to be declared as spring bean. <br>But args() accept only Spring Bean. So to make use arg() I dont want put my domain object as a spring bean</td>
+	</tr>
+	<tr>
+		<td height="17" align="left" valign=bottom>But, args() takes java class okay.</td>
+	</tr>
+	<tr>
+		<td height="17" align="left" valign=bottom><br></td>
+	</tr>
+	<tr>
+		<td height="17" align="left" valign=bottom><b><font color="#33CC66">Point cut expression, if it accept Type, those type must be spring bean. So I use objectName[referenceVariable] in args() instead of class name</font></b></td>
+	</tr>
+	<tr>
+		<td height="17" align="left" valign=bottom><br></td>
+	</tr>
+	<tr>
+		<td height="17" align="left" valign=bottom><br></td>
+	</tr>
+	<tr>
+		<td height="17" align="left" valign=bottom>JointPoint or ProceddingJoinPoint must be first parameter in advice methods</td>
+	</tr>
+	<tr>
+		<td height="17" align="left" valign=bottom>In fact any parameters can be accessed by JointPoint interface</td>
+	</tr>
+</table>
+<!-- ************************************************************************** -->
+<hr>
+<A NAME="table1"><h1>Sheet 2: <em>method signature pattern</em></h1></A>
+<table cellspacing="0" border="0">
+	<colgroup width="361"></colgroup>
+	<colgroup width="570"></colgroup>
+	<tr>
+		<td height="17" align="left" valign=bottom>If I want method name or parameter or return type specific pointcut, this “execution” is the only way</td>
+		<td align="left" valign=bottom><br></td>
+	</tr>
+	<tr>
+		<td height="17" align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+	</tr>
+	<tr>
+		<td height="17" align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+	</tr>
+	<tr>
+		<td height="17" align="left" valign=bottom>prototype to define the expression</td>
+		<td align="left" valign=bottom>expression([method scope] &lt;return type&gt; &lt;fully qualified class name&gt;.*(parametes))</td>
+	</tr>
+	<tr>
+		<td height="17" align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+	</tr>
+	<tr>
+		<td height="16" align="left" valign=bottom bgcolor="#CCCCCC"><br></td>
+		<td align="left" valign=bottom bgcolor="#CCCCCC"><br></td>
+	</tr>
+	<tr>
+		<td height="17" align="left" valign=bottom>any public methods</td>
+		<td align="left" valign=bottom>execution(public **(..))</td>
+	</tr>
+	<tr>
+		<td height="16" align="left" valign=bottom bgcolor="#CCCCCC"><br></td>
+		<td align="left" valign=bottom bgcolor="#CCCCCC"><br></td>
+	</tr>
+	<tr>
+		<td height="17" align="left" valign=bottom>any method of any class in given package</td>
+		<td align="left" valign=bottom>execution(* some.package.name.*.*(..))</td>
+	</tr>
+	<tr>
+		<td height="17" align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+	</tr>
+	<tr>
+		<td height="17" align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+	</tr>
+	<tr>
+		<td height="17" align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+	</tr>
+	<tr>
+		<td height="16" align="left" valign=bottom bgcolor="#CCCCCC"><br></td>
+		<td align="left" valign=bottom bgcolor="#CCCCCC"><br></td>
+	</tr>
+	<tr>
+		<td height="17" align="left" valign=bottom>ignored method scope. By default public</td>
+		<td align="left" valign=bottom>execution(* some.package.name.Classname.*(..))</td>
+	</tr>
+	<tr>
+		<td height="16" align="left" valign=bottom>star represent any return type</td>
+		<td align="left" valign=bottom><br></td>
+	</tr>
+	<tr>
+		<td height="16" align="left" valign=bottom>FQN of class</td>
+		<td align="left" valign=bottom><br></td>
+	</tr>
+	<tr>
+		<td height="16" align="left" valign=bottom>star represent any method name</td>
+		<td align="left" valign=bottom><br></td>
+	</tr>
+	<tr>
+		<td height="17" align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+	</tr>
+	<tr>
+		<td height="16" align="left" valign=bottom bgcolor="#CCCCCC"><br></td>
+		<td align="left" valign=bottom bgcolor="#CCCCCC"><br></td>
+	</tr>
+	<tr>
+		<td height="17" align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+	</tr>
+	<tr>
+		<td height="17" align="left" valign=bottom>only public methods</td>
+		<td align="left" valign=bottom>execution(public * some.package.name.Classname.*(..))</td>
+	</tr>
+	<tr>
+		<td height="16" align="left" valign=bottom bgcolor="#CCCCCC"><br></td>
+		<td align="left" valign=bottom bgcolor="#CCCCCC"><br></td>
+	</tr>
+	<tr>
+		<td height="17" align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+	</tr>
+	<tr>
+		<td height="17" align="left" valign=bottom>method those return type int</td>
+		<td align="left" valign=bottom>execution(* int some.package.name.Classname.*(..))</td>
+	</tr>
+	<tr>
+		<td height="16" align="left" valign=bottom bgcolor="#CCCCCC"><br></td>
+		<td align="left" valign=bottom bgcolor="#CCCCCC"><br></td>
+	</tr>
+	<tr>
+		<td height="17" align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+	</tr>
+	<tr>
+		<td height="17" align="left" valign=bottom>first parameter type of method should be int</td>
+		<td align="left" valign=bottom>execution(* int some.package.name.Classname.*(int, ..))</td>
+	</tr>
+	<tr>
+		<td height="16" align="left" valign=bottom>rest of the parameter can be any thing.</td>
+		<td align="left" valign=bottom><br></td>
+	</tr>
+	<tr>
+		<td height="16" align="left" valign=bottom bgcolor="#CCCCCC"><br></td>
+		<td align="left" valign=bottom bgcolor="#CCCCCC"><br></td>
+	</tr>
+	<tr>
+		<td height="17" align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+	</tr>
+	<tr>
+		<td height="17" align="left" valign=bottom>only one parameter, that too int</td>
+		<td align="left" valign=bottom>execution(* int some.package.name.Classname.*(int))</td>
+	</tr>
+	<tr>
+		<td height="16" align="left" valign=bottom bgcolor="#CCCCCC"><br></td>
+		<td align="left" valign=bottom bgcolor="#CCCCCC"><br></td>
+	</tr>
+	<tr>
+		<td height="17" align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+	</tr>
+	<tr>
+		<td height="17" align="left" valign=bottom>first parameter type float, second int</td>
+		<td align="left" valign=bottom>execution(* int some.package.name.Classname.*(float, int))</td>
+	</tr>
+</table>
+<!-- ************************************************************************** -->
+<hr>
+<A NAME="table2"><h1>Sheet 3: <em>Type signature pattern( package, class, interface )</em></h1></A>
+<table cellspacing="0" border="0">
+	<colgroup width="623"></colgroup>
+	<colgroup width="268"></colgroup>
+	<tr>
+		<td height="16" align="left" valign=bottom><b><font face="DAAAAA+DroidSansMono" color="#0047FF">within(type name)</font></b></td>
+		<td align="left" valign=bottom><br></td>
+	</tr>
+	<tr>
+		<td height="17" align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+	</tr>
+	<tr>
+		<td height="16" align="left" valign=bottom>it is used to define within package or class</td>
+		<td align="left" valign=bottom><br></td>
+	</tr>
+	<tr>
+		<td height="17" align="left" valign=bottom>I think, I prefer this, when I want to apply a advice all of methods but, particular packages or sub package or class or interface.</td>
+		<td align="left" valign=bottom><br></td>
+	</tr>
+	<tr>
+		<td height="16" align="left" valign=bottom><b><font color="#6B2394">If I want method name or specific methods I cannot use this, but have to use “execution”</font></b></td>
+		<td align="left" valign=bottom><br></td>
+	</tr>
+	<tr>
+		<td height="17" align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+	</tr>
+	<tr>
+		<td height="16" align="left" valign=bottom bgcolor="#CCCCCC"><br></td>
+		<td align="left" valign=bottom bgcolor="#CCCCCC"><br></td>
+	</tr>
+	<tr>
+		<td height="17" align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+	</tr>
+	<tr>
+		<td height="17" align="left" valign=bottom>ALL methods of ALL classes of some.package</td>
+		<td align="left" valign=bottom>within(some.package.*)</td>
+	</tr>
+	<tr>
+		<td height="16" align="left" valign=bottom><b>it cover static methods also</b></td>
+		<td align="left" valign=bottom><br></td>
+	</tr>
+	<tr>
+		<td height="16" align="left" valign=bottom><b>nested class will be covered</b></td>
+		<td align="left" valign=bottom><br></td>
+	</tr>
+	<tr>
+		<td height="16" align="left" valign=bottom><b><font color="#5E11A6">sub class not covered</font></b></td>
+		<td align="left" valign=bottom><br></td>
+	</tr>
+	<tr>
+		<td height="16" align="left" valign=bottom bgcolor="#CCCCCC"><br></td>
+		<td align="left" valign=bottom bgcolor="#CCCCCC"><br></td>
+	</tr>
+	<tr>
+		<td height="17" align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+	</tr>
+	<tr>
+		<td height="17" align="left" valign=bottom>it include sub packages also ( one extra dot )</td>
+		<td align="left" valign=bottom>within(iamjosh.samples..*)</td>
+	</tr>
+	<tr>
+		<td height="16" align="left" valign=bottom bgcolor="#CCCCCC"><br></td>
+		<td align="left" valign=bottom bgcolor="#CCCCCC"><br></td>
+	</tr>
+	<tr>
+		<td height="17" align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+	</tr>
+	<tr>
+		<td height="17" align="left" valign=bottom>all methods but only that specified class</td>
+		<td align="left" valign=bottom>within(some.package.ClassName)</td>
+	</tr>
+	<tr>
+		<td height="16" align="left" valign=bottom bgcolor="#CCCCCC"><br></td>
+		<td align="left" valign=bottom bgcolor="#CCCCCC"><br></td>
+	</tr>
+	<tr>
+		<td height="17" align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+	</tr>
+	<tr>
+		<td height="17" align="left" valign=bottom>all classes those implement this interface</td>
+		<td align="left" valign=bottom>within(iamjosh.samples.InterfaceName+)</td>
+	</tr>
+</table>
+<!-- ************************************************************************** -->
+<hr>
+<A NAME="table3"><h1>Sheet 4: <em>bean name pattern</em></h1></A>
+<table cellspacing="0" border="0">
+	<colgroup width="404"></colgroup>
+	<colgroup width="457"></colgroup>
+	<tr>
+		<td height="16" align="left" valign=bottom>it is introduced by spring itself.</td>
+		<td align="left" valign=bottom><br></td>
+	</tr>
+	<tr>
+		<td height="17" align="left" valign=bottom><b>this is almost same as type signature, execept it take bean id instead of type. But both for all public method</b></td>
+		<td align="left" valign=bottom><br></td>
+	</tr>
+	<tr>
+		<td height="17" align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+	</tr>
+	<tr>
+		<td height="16" align="left" valign=bottom>all Spring BEAN NAME end with Service</td>
+		<td align="left" valign=bottom>bean(*Service)</td>
+	</tr>
+	<tr>
+		<td height="16" align="left" valign=bottom bgcolor="#CCCCCC"><br></td>
+		<td align="left" valign=bottom bgcolor="#CCCCCC"><br></td>
+	</tr>
+	<tr>
+		<td height="17" align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+	</tr>
+	<tr>
+		<td height="17" align="left" valign=bottom>all Spring BEAN NAME end with ServiceImpl</td>
+		<td align="left" valign=bottom>bean(*ServiceImpl)</td>
+	</tr>
+	<tr>
+		<td height="17" align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+	</tr>
+	<tr>
+		<td height="16" align="left" valign=bottom bgcolor="#CCCCCC"><br></td>
+		<td align="left" valign=bottom bgcolor="#CCCCCC"><br></td>
+	</tr>
+	<tr>
+		<td height="17" align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+	</tr>
+	<tr>
+		<td height="17" align="left" valign=bottom>all Spring BEAN NAME end with DaoImpl</td>
+		<td align="left" valign=bottom>bean(*DaoImpl)</td>
+	</tr>
+</table>
+<!-- ************************************************************************** -->
+<hr>
+<A NAME="table4"><h1>Sheet 5: <em>Execution Object Type</em></h1></A>
+<table cellspacing="0" border="0">
+	<colgroup width="678"></colgroup>
+	<colgroup width="193"></colgroup>
+	<tr>
+		<td height="17" align="left" valign=bottom>it match all join points.. all public methods when current object type is specifiedObjectType or its sub type</td>
+		<td align="left" valign=bottom>this(specifiedObjectType)</td>
+	</tr>
+	<tr>
+		<td height="17" align="left" valign=bottom><b>this cannot apply for static methods</b></td>
+		<td align="left" valign=bottom><br></td>
+	</tr>
+	<tr>
+		<td height="17" align="left" valign=bottom>nested class will not covered</td>
+		<td align="left" valign=bottom><br></td>
+	</tr>
+	<tr>
+		<td height="17" align="left" valign=bottom>+ no need to specify to include subtype. since it is already included</td>
+		<td align="left" valign=bottom><br></td>
+	</tr>
+	<tr>
+		<td height="47" align="left" valign=bottom><b><font color="#00AE00">it wont accept package name</font></b></td>
+		<td align="left" valign=bottom><font color="#5E11A6">Actually  <br>This() or  target() I will always<br>Need to pass spring bean.</font></td>
+	</tr>
+	<tr>
+		<td height="16" align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+	</tr>
+	<tr>
+		<td height="16" align="left" valign=bottom bgcolor="#B3B3B3"><br></td>
+		<td align="left" valign=bottom bgcolor="#B3B3B3"><br></td>
+	</tr>
+	<tr>
+		<td height="16" align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+	</tr>
+	<tr>
+		<td height="17" align="left" valign=bottom>it match all join points.. all public methods when target object type is specifiedObjectType or its sub type</td>
+		<td align="left" valign=bottom>target(specifiedObjectType)</td>
+	</tr>
+	<tr>
+		<td height="17" align="left" valign=bottom>this cannot apply for static methods</td>
+		<td align="left" valign=bottom><br></td>
+	</tr>
+	<tr>
+		<td height="17" align="left" valign=bottom>+ no need to specify to include subtype. since it is already included</td>
+		<td align="left" valign=bottom><br></td>
+	</tr>
+	<tr>
+		<td height="47" align="left" valign=bottom><b><font color="#00AE00">it wont accept package name</font></b></td>
+		<td align="left" valign=bottom><font color="#5E11A6">Actually  <br>This() or  target() I will always<br>Need to pass spring bean.</font></td>
+	</tr>
+</table>
+<!-- ************************************************************************** -->
+<hr>
+<A NAME="table5"><h1>Sheet 6: <em>arguments</em></h1></A>
+<table cellspacing="0" border="0">
+	<colgroup width="660"></colgroup>
+	<colgroup width="239"></colgroup>
+	<tr>
+		<td height="77" align="left" valign=bottom>though it can accept either type or reference variable name, In most of project Domain object will be parameters. So I dont Declare my domain class as spring bean. <br>  So, I prefer to use objectIdentifier( refernceVariableName).<br><br>So, it means, I am not using this to identify joinpionts But I am using to take parameter to my advice</td>
+		<td align="left" valign=bottom>args(TypePattern or ObjectIdentifier)</td>
+	</tr>
+</table>
+<!-- ************************************************************************** -->
+<hr>
+<A NAME="table6"><h1>Sheet 7: <em>Combing Pointcut</em></h1></A>
+<table cellspacing="0" border="0">
+	<colgroup width="339"></colgroup>
+	<colgroup width="215"></colgroup>
+	<tr>
+		<td height="17" align="left" valign=bottom>And ( it is not worked with exection)</td>
+		<td align="left" valign=bottom>&amp;&amp;</td>
+	</tr>
+	<tr>
+		<td height="16" align="left" valign=bottom>or</td>
+		<td align="left" valign=bottom>||</td>
+	</tr>
+	<tr>
+		<td height="16" align="left" valign=bottom>not</td>
+		<td align="left" valign=bottom>!</td>
+	</tr>
+</table>
+<!-- ************************************************************************** -->
+<hr>
+<A NAME="table7"><h1>Sheet 8: <em>annotation pattern</em></h1></A>
+<table cellspacing="0" border="0">
+	<colgroup width="491"></colgroup>
+	<colgroup width="316"></colgroup>
+	<tr>
+		<td height="17" align="left" valign=bottom>here I will define a annotation.</td>
+		<td align="left" valign=bottom>@Annotation ( myCustomedefinedAnnotation)</td>
+	</tr>
+	<tr>
+		<td height="17" align="left" valign=bottom>then add that my annotation to any methods those has to be advised</td>
+		<td align="left" valign=bottom><br></td>
+	</tr>
+	<tr>
+		<td height="17" align="left" valign=bottom>then at advise method definition say my annotation</td>
+		<td align="left" valign=bottom><br></td>
+	</tr>
+	<tr>
+		<td height="17" align="left" valign=bottom><b><font color="#B80047">I could not run sample</font></b></td>
+		<td align="left" valign=bottom><br></td>
+	</tr>
+	<tr>
+		<td height="16" align="left" valign=bottom bgcolor="#CCCCCC"><br></td>
+		<td align="left" valign=bottom bgcolor="#CCCCCC"><br></td>
+	</tr>
+	<tr>
+		<td height="17" align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom>@Within( myCustomedefinedAnnotation)</td>
+	</tr>
+	<tr>
+		<td height="32" align="left" valign=bottom>when I want to use the same to all of methods, those are annotated my custom annotation and I want to advise at class level</td>
+		<td align="left" valign=bottom><br></td>
+	</tr>
+	<tr>
+		<td height="17" align="left" valign=bottom><b><font color="#B80047">I could not run sample</font></b></td>
+		<td align="left" valign=bottom><br></td>
+	</tr>
+	<tr>
+		<td height="16" align="left" valign=bottom bgcolor="#B3B3B3"><br></td>
+		<td align="left" valign=bottom bgcolor="#B3B3B3"><br></td>
+	</tr>
+	<tr>
+		<td height="17" align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+	</tr>
+	<tr>
+		<td height="17" align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+	</tr>
+	<tr>
+		<td height="17" align="left" valign=bottom><b><font color="#B80047">I could not run sample</font></b></td>
+		<td align="left" valign=bottom>@Target(myCustomAnnotation)</td>
+	</tr>
+	<tr>
+		<td height="16" align="left" valign=bottom bgcolor="#B3B3B3"><br></td>
+		<td align="left" valign=bottom bgcolor="#B3B3B3"><br></td>
+	</tr>
+	<tr>
+		<td height="17" align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+	</tr>
+	<tr>
+		<td height="17" align="left" valign=bottom><b><font color="#B80047">I could not run sample</font></b></td>
+		<td align="left" valign=bottom>@args(myCustomannotation)</td>
+	</tr>
+</table>
+<!-- ************************************************************************** -->
+</body>
+
+</html>

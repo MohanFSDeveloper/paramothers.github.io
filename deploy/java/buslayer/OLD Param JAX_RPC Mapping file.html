@@ -1,0 +1,781 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+
+<html>
+<head>
+	
+	<meta http-equiv="content-type" content="text/html; charset=utf-8">
+	<title></title>
+	<meta name="generator" content="LibreOffice 4.2.8.2 (Linux)">
+	<meta name="author" content="param">
+	<meta name="created" content="20090429;30025000000000">
+	<meta name="changedby" content="param">
+	<meta name="changed" content="20090518;150311000000000">
+	
+	<style type="text/css"><!-- 
+		body,div,table,thead,tbody,tfoot,tr,th,td,p { font-family:"Calibri"; font-size:x-small }
+		 -->
+	</style>
+	
+</head>
+
+<body text="#000000">
+<hr>
+	<p><center>
+		<h1>Overview</h1>
+		<A HREF="#table0">java-wsdl</A><br>
+		<A HREF="#table1">package</A><br>
+		<A HREF="#table2">java-xml-type</A><br>
+		<A HREF="#table3">exception</A><br>
+		<A HREF="#table4">service-interface</A><br>
+		<A HREF="#table5">service-endpoint-interface</A><br>
+		<A HREF="#table6">study frame</A><br>
+		
+	</center></p>
+<hr>
+<A NAME="table0"><h1>Sheet 1: <em>java-wsdl</em></h1></A>
+<table cellspacing="0" border="0">
+	<colgroup width="188"></colgroup>
+	<colgroup width="349"></colgroup>
+	<colgroup width="115"></colgroup>
+	<tr>
+		<td height="20" align="left" valign=bottom><font color="#000000">there 9  element ends with &quot;-name&quot; ( 0 + 2+ 1+3 + 3)  CUE:</font></td>
+		<td align="left" valign=bottom><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom><font color="#000000"><br></font></td>
+	</tr>
+	<tr>
+		<td height="20" align="left" valign=bottom><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom><font color="#000000"><br></font></td>
+	</tr>
+	<tr>
+		<td height="20" align="left" valign=bottom bgcolor="#8EB4E3"><font color="#000000">&lt;java-wsdl-mapping&gt;</font></td>
+		<td align="left" valign=bottom><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom><font color="#000000"><br></font></td>
+	</tr>
+	<tr>
+		<td height="20" align="left" valign=bottom bgcolor="#8EB4E3"><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom bgcolor="#DDD9C3"><font color="#000000">version=&quot;1.1&quot;</font></td>
+		<td align="left" valign=bottom><font color="#000000"><br></font></td>
+	</tr>
+	<tr>
+		<td height="20" align="left" valign=bottom bgcolor="#8EB4E3"><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom bgcolor="#DDD9C3"><font color="#000000">xmlns for mapping schema (http://java.sun.com/xml/ns/j2ee )</font></td>
+		<td align="left" valign=bottom><font color="#000000"><br></font></td>
+	</tr>
+	<tr>
+		<td height="20" align="left" valign=bottom bgcolor="#8EB4E3"><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom bgcolor="#FFFF00"><i><font color="#000000">xmlns for my schema file</font></i></td>
+		<td align="left" valign=bottom bgcolor="#FF0000"><font color="#000000">don’t miss it</font></td>
+	</tr>
+	<tr>
+		<td height="20" align="left" valign=bottom bgcolor="#8EB4E3"><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom bgcolor="#FFFF00"><i><font color="#000000">xmlns for my wsdl file</font></i></td>
+		<td align="left" valign=bottom bgcolor="#FF0000"><font color="#000000">don’t miss it</font></td>
+	</tr>
+	<tr>
+		<td height="20" align="left" valign=bottom bgcolor="#FFFF00"><i><font color="#000000">lightweight mapping</font></i></td>
+		<td align="left" valign=bottom bgcolor="#92D050"><font color="#000000">&lt;package-mapping&gt; ( * )</font></td>
+		<td align="left" valign=bottom><font color="#000000">Optional</font></td>
+	</tr>
+	<tr>
+		<td height="20" align="left" valign=bottom bgcolor="#8EB4E3"><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom bgcolor="#D99694"><font color="#000000">&lt;java-xml-type-mapping&gt;  ( * )</font></td>
+		<td align="left" valign=bottom><font color="#000000">Optional</font></td>
+	</tr>
+	<tr>
+		<td height="20" align="left" valign=bottom bgcolor="#8EB4E3"><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom bgcolor="#D99694"><font color="#000000">&lt;exception-mapping&gt; ( * )</font></td>
+		<td align="left" valign=bottom><font color="#000000">Optional</font></td>
+	</tr>
+	<tr>
+		<td height="20" align="left" valign=bottom bgcolor="#8EB4E3"><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom bgcolor="#92D050"><font color="#000000">&lt;service-interface-mapping&gt; ( * )</font></td>
+		<td align="left" valign=bottom><font color="#000000">Optional</font></td>
+	</tr>
+	<tr>
+		<td height="20" align="left" valign=bottom bgcolor="#8EB4E3"><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom bgcolor="#D99694"><font color="#000000">&lt;service-endpoint-interface-mapping&gt; ( + )</font></td>
+		<td align="left" valign=bottom bgcolor="#FFFF00"><font color="#000000">mandatory</font></td>
+	</tr>
+	<tr>
+		<td height="20" align="left" valign=bottom bgcolor="#8EB4E3"><font color="#000000">&lt;java-wsdl-mapping&gt;</font></td>
+		<td align="left" valign=bottom><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom><font color="#000000"><br></font></td>
+	</tr>
+</table>
+<!-- ************************************************************************** -->
+<hr>
+<A NAME="table1"><h1>Sheet 2: <em>package</em></h1></A>
+<table align="left" cellspacing="0" border="0">
+	<colgroup width="217"></colgroup>
+	<colgroup width="188"></colgroup>
+	<colgroup width="80"></colgroup>
+	<tr>
+		<td height="20" align="left" valign=bottom><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom><font color="#000000"><br></font></td>
+	</tr>
+	<tr>
+		<td height="20" align="left" valign=bottom><b><font color="#FF0000">This &lt;service-interface-mapping&gt; and &lt; package-mapping&gt; are never used in runtime,  so any updation on these, again has to generate all class to see effect</font></b></td>
+		<td align="left" valign=bottom><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom><font color="#000000"><br></font></td>
+	</tr>
+	<tr>
+		<td height="20" align="left" valign=bottom><b><font color="#FF0000"><br></font></b></td>
+		<td align="left" valign=bottom><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom><font color="#000000"><br></font></td>
+	</tr>
+	<tr>
+		<td style="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000" height="20" align="left" valign=bottom bgcolor="#FDEADA"><font color="#000000">&lt;package-mapping&gt; ( * )</font></td>
+		<td align="left" valign=bottom><font color="#000000">no need at runtime for any style of binding</font></td>
+		<td align="left" valign=bottom><font color="#000000"><br></font></td>
+	</tr>
+	<tr>
+		<td height="20" align="left" valign=bottom bgcolor="#FDEADA"><font color="#000000"><br></font></td>
+		<td style="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000" align="left" valign=bottom bgcolor="#FDEADA"><font color="#000000">&lt;package-type&gt;</font></td>
+		<td align="left" valign=bottom><font color="#000000"><br></font></td>
+	</tr>
+	<tr>
+		<td height="20" align="left" valign=bottom bgcolor="#FDEADA"><font color="#000000"><br></font></td>
+		<td style="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000" align="left" valign=bottom bgcolor="#FDEADA"><font color="#000000">&lt;namespaceURI&gt;</font></td>
+		<td align="left" valign=bottom><font color="#000000">namespace of wsdl or schama.</font></td>
+	</tr>
+	<tr>
+		<td style="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000" height="20" align="left" valign=bottom bgcolor="#FDEADA"><font color="#000000">&lt;/package-mapping&gt;</font></td>
+		<td align="left" valign=bottom><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom><font color="#000000"><br></font></td>
+	</tr>
+</table>
+<img src="OLD%20Param%20JAX_RPC%20Mapping%20file_html_46d551b5.png" width=137 height=86>
+<br clear=left>
+<!-- ************************************************************************** -->
+<hr>
+<A NAME="table2"><h1>Sheet 3: <em>java-xml-type</em></h1></A>
+<table align="left" cellspacing="0" border="0">
+	<colgroup width="80"></colgroup>
+	<colgroup width="259"></colgroup>
+	<colgroup width="209"></colgroup>
+	<colgroup width="205"></colgroup>
+	<tr>
+		<td height="20" align="left" valign=bottom><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom><b><i><font color="#FF0000">this entry should be In mapping file for every simpleType / complexType / any fault message</font></i></b></td>
+		<td align="left" valign=bottom><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom><font color="#000000"><br></font></td>
+	</tr>
+	<tr>
+		<td height="20" align="left" valign=bottom><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom><font color="#000000"><br></font></td>
+	</tr>
+	<tr>
+		<td height="20" align="left" valign=bottom bgcolor="#FFFF00"><font color="#000000">optional</font></td>
+		<td style="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000" align="left" valign=bottom bgcolor="#DCE6F2"><font color="#000000">&lt;java-xml-type-mapping&gt; (*)</font></td>
+		<td align="left" valign=bottom><font color="#000000">this is need only if WSDL use NON-BUILT in type of XMLSchema</font></td>
+		<td align="left" valign=bottom><font color="#000000"><br></font></td>
+	</tr>
+	<tr>
+		<td height="20" align="left" valign=bottom><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom bgcolor="#DCE6F2"><font color="#000000"><br></font></td>
+		<td style="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000" align="left" valign=bottom bgcolor="#DCE6F2"><font color="#000000">&lt;java-type&gt;</font></td>
+		<td align="left" valign=bottom><font color="#000000"><br></font></td>
+	</tr>
+	<tr>
+		<td height="20" align="left" valign=bottom><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom bgcolor="#DCE6F2"><font color="#000000"><br></font></td>
+		<td style="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000" align="left" valign=bottom bgcolor="#DCE6F2"><font color="#000000">&lt;root-type-qname&gt;</font></td>
+		<td align="left" valign=bottom><font color="#000000">it must FQN</font></td>
+	</tr>
+	<tr>
+		<td height="20" align="left" valign=bottom><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom bgcolor="#DCE6F2"><font color="#000000"><br></font></td>
+		<td style="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000" align="left" valign=bottom bgcolor="#DCE6F2"><font color="#000000">&lt;qname-scope&gt;</font></td>
+		<td align="left" valign=bottom><font color="#000000">this can have either 'element' / 'simpleType/complexType'</font></td>
+	</tr>
+	<tr>
+		<td height="20" align="left" valign=bottom><font color="#000000">optional</font></td>
+		<td align="left" valign=bottom bgcolor="#DCE6F2"><font color="#000000"><br></font></td>
+		<td style="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000" align="left" valign=bottom bgcolor="#DCE6F2"><font color="#000000">&lt;variable-mapping&gt; (*)</font></td>
+		<td align="left" valign=bottom><font color="#000000"><br></font></td>
+	</tr>
+	<tr>
+		<td height="20" align="left" valign=bottom><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom bgcolor="#DCE6F2"><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom bgcolor="#DCE6F2"><font color="#000000"><br></font></td>
+		<td style="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000" align="left" valign=bottom bgcolor="#DCE6F2"><font color="#000000">&lt;java-variable-name 1&gt;</font></td>
+	</tr>
+	<tr>
+		<td height="20" align="left" valign=bottom><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom bgcolor="#DCE6F2"><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom bgcolor="#DCE6F2"><font color="#000000"><br></font></td>
+		<td style="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000" align="left" valign=bottom bgcolor="#DCE6F2"><font color="#000000">&lt;xml-element-name 2&gt;</font></td>
+	</tr>
+	<tr>
+		<td height="20" align="left" valign=bottom><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom bgcolor="#DCE6F2"><font color="#000000"><br></font></td>
+		<td style="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000" align="left" valign=bottom bgcolor="#DCE6F2"><font color="#000000">&lt;/variable-mapping&gt;</font></td>
+		<td align="left" valign=bottom><font color="#000000"><br></font></td>
+	</tr>
+	<tr>
+		<td height="20" align="left" valign=bottom><font color="#000000"><br></font></td>
+		<td style="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000" align="left" valign=bottom bgcolor="#DCE6F2"><font color="#000000">&lt;/java-xml-type-mapping&gt;</font></td>
+		<td align="left" valign=bottom><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom><font color="#000000"><br></font></td>
+	</tr>
+	<tr>
+		<td height="20" align="left" valign=bottom><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom><font color="#000000"><br></font></td>
+	</tr>
+	<tr>
+		<td height="20" align="left" valign=bottom><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom><font color="#000000"><br></font></td>
+	</tr>
+	<tr>
+		<td height="20" align="left" valign=bottom><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom><font color="#000000">it is usage is simply map the XML Fragment to a  java type</font></td>
+		<td align="left" valign=bottom><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom><font color="#000000"><br></font></td>
+	</tr>
+</table>
+<img src="OLD%20Param%20JAX_RPC%20Mapping%20file_html_a39e5988.png" width=136 height=111>
+<br clear=left>
+<!-- ************************************************************************** -->
+<hr>
+<A NAME="table3"><h1>Sheet 4: <em>exception</em></h1></A>
+<table align="left" cellspacing="0" border="0">
+	<colgroup width="233"></colgroup>
+	<colgroup width="308"></colgroup>
+	<colgroup width="177"></colgroup>
+	<colgroup width="80"></colgroup>
+	<tr>
+		<td height="20" align="left" valign=bottom><b><i><font color="#FF0000">if this mapping exist it will be used while throwing exception. If not just send stack trace in response. But not white page</font></i></b></td>
+		<td align="left" valign=bottom><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom><font color="#000000"><br></font></td>
+	</tr>
+	<tr>
+		<td height="20" align="left" valign=bottom><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom><font color="#000000"><br></font></td>
+	</tr>
+	<tr>
+		<td style="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000" height="20" align="left" valign=bottom bgcolor="#C4BD97"><font color="#000000">&lt;exception-mapping&gt; ( * )</font></td>
+		<td align="left" valign=bottom><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom><font color="#000000"><br></font></td>
+	</tr>
+	<tr>
+		<td height="20" align="left" valign=bottom bgcolor="#C4BD97"><font color="#000000"><br></font></td>
+		<td style="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000" align="left" valign=bottom bgcolor="#C4BD97"><font color="#000000">&lt;exception-type&gt;</font></td>
+		<td align="left" valign=bottom><font color="#000000">&lt;java-xml-type-mapping&gt; entry must be there for this exception class</font></td>
+		<td align="left" valign=bottom><font color="#000000"><br></font></td>
+	</tr>
+	<tr>
+		<td height="20" align="left" valign=bottom bgcolor="#C4BD97"><font color="#000000"><br></font></td>
+		<td style="border-top: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000" align="left" valign=bottom bgcolor="#C4BD97"><font color="#000000">&lt;wsdl-message&gt;</font></td>
+		<td align="left" valign=bottom><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom><font color="#000000"><br></font></td>
+	</tr>
+	<tr>
+		<td height="20" align="left" valign=bottom bgcolor="#C4BD97"><font color="#000000"><br></font></td>
+		<td style="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000" align="left" valign=bottom bgcolor="#CCC1DA"><font color="#000000">&lt;constructor-parameter-order&gt; ( ? )</font></td>
+		<td align="left" valign=bottom><font color="#000000">this is need only if fault part is complexType</font></td>
+		<td align="left" valign=bottom><font color="#000000"><br></font></td>
+	</tr>
+	<tr>
+		<td height="20" align="left" valign=bottom bgcolor="#C4BD97"><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom bgcolor="#C4BD97"><font color="#000000"><br></font></td>
+		<td style="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000" align="left" valign=bottom bgcolor="#CCC1DA"><font color="#000000">&lt;element-name 3&gt;(+)</font></td>
+		<td align="left" valign=bottom><font color="#000000">child elment of a given complexType fault message</font></td>
+	</tr>
+	<tr>
+		<td height="20" align="left" valign=bottom bgcolor="#C4BD97"><font color="#000000"><br></font></td>
+		<td style="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000" align="left" valign=bottom bgcolor="#CCC1DA"><font color="#000000">&lt;/constructor-parameter-order&gt;</font></td>
+		<td align="left" valign=bottom><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom><font color="#000000"><br></font></td>
+	</tr>
+	<tr>
+		<td style="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000" height="20" align="left" valign=bottom bgcolor="#C4BD97"><font color="#000000">&lt;/exception-mapping&gt;</font></td>
+		<td align="left" valign=bottom><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom><font color="#000000"><br></font></td>
+	</tr>
+	<tr>
+		<td height="20" align="left" valign=bottom><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom><font color="#000000"><br></font></td>
+	</tr>
+	<tr>
+		<td height="20" align="left" valign=bottom><b><i><font color="#FF0000">&lt;constructor-parameter-order&gt; element is used to ENFORCE the order of parameter in constructor of exception class</font></i></b></td>
+		<td align="left" valign=bottom><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom><font color="#000000"><br></font></td>
+	</tr>
+</table>
+<img src="OLD%20Param%20JAX_RPC%20Mapping%20file_html_bf217f7e.png" width=136 height=86>
+<br clear=left>
+<!-- ************************************************************************** -->
+<hr>
+<A NAME="table4"><h1>Sheet 5: <em>service-interface</em></h1></A>
+<table align="left" cellspacing="0" border="0">
+	<colgroup width="260"></colgroup>
+	<colgroup width="229"></colgroup>
+	<colgroup width="181"></colgroup>
+	<colgroup span="2" width="80"></colgroup>
+	<tr>
+		<td height="20" align="left" valign=bottom><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom><font color="#000000"><br></font></td>
+	</tr>
+	<tr>
+		<td height="20" align="left" valign=bottom><b><font color="#FF0000">This &lt;service-interface-mapping&gt; and &lt; package-mapping&gt; are never used in runtime,  so any updation on these, again has to generate all class to see effect</font></b></td>
+		<td align="left" valign=bottom><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom><font color="#000000"><br></font></td>
+	</tr>
+	<tr>
+		<td height="20" align="left" valign=bottom><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom><font color="#000000"><br></font></td>
+		<td colspan=3 rowspan=6 align="left" valign=bottom><font color="#000000"><br><img src="OLD%20Param%20JAX_RPC%20Mapping%20file_html_9d9c2247.png" width=137 height=86 hspace=102 vspace=19>
+		</font></td>
+		</tr>
+	<tr>
+		<td style="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000" height="20" align="left" valign=bottom bgcolor="#D7E4BD"><font color="#000000">&lt;service-interface-mapping&gt;</font></td>
+		<td align="left" valign=bottom><font color="#000000"><br></font></td>
+		</tr>
+	<tr>
+		<td height="20" align="left" valign=bottom bgcolor="#D7E4BD"><font color="#000000"><br></font></td>
+		<td style="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000" align="left" valign=bottom bgcolor="#D7E4BD"><font color="#000000">&lt;service-interface&gt;</font></td>
+		</tr>
+	<tr>
+		<td height="20" align="left" valign=bottom bgcolor="#D7E4BD"><font color="#000000"><br></font></td>
+		<td style="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000" align="left" valign=bottom bgcolor="#D7E4BD"><font color="#000000">&lt;wsdl-service-name 4&gt;</font></td>
+		</tr>
+	<tr>
+		<td height="20" align="left" valign=bottom bgcolor="#D7E4BD"><font color="#000000"><br></font></td>
+		<td style="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000" align="left" valign=bottom bgcolor="#FDEADA"><font color="#000000">&lt;port-mapping&gt; (*)</font></td>
+		</tr>
+	<tr>
+		<td height="20" align="left" valign=bottom bgcolor="#D7E4BD"><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom bgcolor="#D7E4BD"><font color="#000000"><br></font></td>
+		</tr>
+	<tr>
+		<td height="20" align="left" valign=bottom bgcolor="#D7E4BD"><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom bgcolor="#D7E4BD"><font color="#000000"><br></font></td>
+		<td style="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000" align="left" valign=bottom bgcolor="#FDEADA"><font color="#000000">&lt;java-port-name 6&gt;</font></td>
+		<td align="left" valign=bottom><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom><font color="#000000"><br></font></td>
+	</tr>
+	<tr>
+		<td height="20" align="left" valign=bottom bgcolor="#D7E4BD"><font color="#000000"><br></font></td>
+		<td style="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000" align="left" valign=bottom bgcolor="#FDEADA"><font color="#000000">&lt;/port-mapping&gt;</font></td>
+		<td align="left" valign=bottom><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom><font color="#000000"><br></font></td>
+	</tr>
+	<tr>
+		<td style="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000" height="20" align="left" valign=bottom bgcolor="#D7E4BD"><font color="#000000">&lt;/service-interface-mapping&gt;</font></td>
+		<td align="left" valign=bottom><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom><font color="#000000"><br></font></td>
+	</tr>
+</table>
+<img src="OLD%20Param%20JAX_RPC%20Mapping%20file_html_ca43c65d.png" width=137 height=73>
+<img src="OLD%20Param%20JAX_RPC%20Mapping%20file_html_bdd8ff11.png" width=137 height=80>
+<br clear=left>
+<!-- ************************************************************************** -->
+<hr>
+<A NAME="table5"><h1>Sheet 6: <em>service-endpoint-interface</em></h1></A>
+<table align="left" cellspacing="0" border="0">
+	<colgroup width="19"></colgroup>
+	<colgroup width="80"></colgroup>
+	<colgroup width="244"></colgroup>
+	<colgroup width="307"></colgroup>
+	<colgroup width="249"></colgroup>
+	<colgroup width="256"></colgroup>
+	<tr>
+		<td height="20" align="left" valign=bottom><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom><font color="#000000"><br></font></td>
+	</tr>
+	<tr>
+		<td height="20" align="left" valign=bottom><font color="#000000"><br></font></td>
+		<td style="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000" align="left" valign=bottom bgcolor="#D9D9D9"><font color="#000000">&lt;service-endpoint-interface-mapping&gt;</font></td>
+		<td align="left" valign=bottom bgcolor="#D9D9D9"><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom><font color="#000000">this must be for every &lt;port&gt; of wsdl seprately ( I tested )</font></td>
+		<td align="left" valign=bottom><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom><font color="#000000"><br></font></td>
+	</tr>
+	<tr>
+		<td height="20" align="left" valign=bottom><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom bgcolor="#D9D9D9"><font color="#000000"><br></font></td>
+		<td style="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000" align="left" valign=bottom bgcolor="#D9D9D9"><font color="#000000">&lt;service-endpoint-interface&gt;</font></td>
+		<td align="left" valign=bottom><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom><font color="#000000"><br></font></td>
+	</tr>
+	<tr>
+		<td height="20" align="left" valign=bottom><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom bgcolor="#D9D9D9"><font color="#000000"><br></font></td>
+		<td style="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000" align="left" valign=bottom bgcolor="#D9D9D9"><font color="#000000">&lt;wsdl-port-type&gt;</font></td>
+		<td align="left" valign=bottom><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom><font color="#000000"><br></font></td>
+	</tr>
+	<tr>
+		<td height="20" align="left" valign=bottom><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom bgcolor="#D9D9D9"><font color="#000000"><br></font></td>
+		<td style="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000" align="left" valign=bottom bgcolor="#D9D9D9"><font color="#000000">&lt;wsdl-binding&gt;</font></td>
+		<td align="left" valign=bottom><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom><font color="#000000"><br></font></td>
+	</tr>
+	<tr>
+		<td height="20" align="left" valign=bottom><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom bgcolor="#D9D9D9"><font color="#000000"><br></font></td>
+		<td style="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000" align="left" valign=bottom bgcolor="#376092"><font color="#000000">&lt;service-endpoint-method-mapping&gt;(*)</font></td>
+		<td align="left" valign=bottom><b><font color="#FF0000">one entry for every method, it is optional. Even if method is not identifed by container it don’t say any error ( I tested )</font></b></td>
+		<td align="left" valign=bottom><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom><font color="#000000"><br></font></td>
+	</tr>
+	<tr>
+		<td height="20" align="left" valign=bottom><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom bgcolor="#D9D9D9"><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom bgcolor="#376092"><font color="#000000"><br></font></td>
+		<td style="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000" align="left" valign=bottom bgcolor="#8EB4E3"><font color="#000000">&lt;java-method-name 7&gt;</font></td>
+		<td align="left" valign=bottom><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom><font color="#000000"><br></font></td>
+	</tr>
+	<tr>
+		<td height="20" align="left" valign=bottom><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom bgcolor="#D9D9D9"><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom bgcolor="#376092"><font color="#000000"><br></font></td>
+		<td style="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000" align="left" valign=bottom bgcolor="#8EB4E3"><font color="#000000">&lt;wsdl-operation&gt;</font></td>
+		<td align="left" valign=bottom><font color="#000000">No need Qname</font></td>
+		<td align="left" valign=bottom><font color="#000000"><br></font></td>
+	</tr>
+	<tr>
+		<td height="20" align="left" valign=bottom><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom bgcolor="#D9D9D9"><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom bgcolor="#376092"><font color="#000000"><br></font></td>
+		<td style="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000" align="left" valign=bottom bgcolor="#8EB4E3"><font color="#000000">&lt;wrapped-element /&gt;</font></td>
+		<td align="left" valign=bottom><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom><font color="#000000"><br></font></td>
+	</tr>
+	<tr>
+		<td height="20" align="left" valign=bottom><font color="#000000">optional</font></td>
+		<td align="left" valign=bottom bgcolor="#D9D9D9"><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom bgcolor="#376092"><font color="#000000"><br></font></td>
+		<td style="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000" align="left" valign=bottom bgcolor="#8EB4E3"><font color="#000000">&lt;method-param-parts-mapping&gt; (*)</font></td>
+		<td align="left" valign=bottom><b><font color="#FF0000">this will be for every PART of input message</font></b></td>
+		<td align="left" valign=bottom><font color="#000000"><br></font></td>
+	</tr>
+	<tr>
+		<td height="20" align="left" valign=bottom><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom bgcolor="#D9D9D9"><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom bgcolor="#376092"><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom bgcolor="#8EB4E3"><font color="#000000"><br></font></td>
+		<td style="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000" align="left" valign=bottom bgcolor="#8EB4E3"><font color="#000000">&lt;param-position&gt;</font></td>
+		<td align="left" valign=bottom><font color="#000000"><br></font></td>
+	</tr>
+	<tr>
+		<td height="20" align="left" valign=bottom><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom bgcolor="#D9D9D9"><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom bgcolor="#376092"><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom bgcolor="#8EB4E3"><font color="#000000"><br></font></td>
+		<td style="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000" align="left" valign=bottom bgcolor="#8EB4E3"><font color="#000000">&lt;param-type&gt;</font></td>
+		<td align="left" valign=bottom><b><font color="#C00000">simply identify java type of parameter</font></b></td>
+	</tr>
+	<tr>
+		<td height="20" align="left" valign=bottom><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom bgcolor="#D9D9D9"><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom bgcolor="#376092"><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom bgcolor="#8EB4E3"><font color="#000000"><br></font></td>
+		<td style="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000" align="left" valign=bottom bgcolor="#8EB4E3"><font color="#000000">&lt;wsdl-message-mapping&gt;</font></td>
+		<td align="left" valign=bottom><b><font color="#C00000"><br></font></b></td>
+	</tr>
+	<tr>
+		<td height="20" align="left" valign=bottom><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom bgcolor="#D9D9D9"><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom bgcolor="#376092"><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom bgcolor="#8EB4E3"><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom bgcolor="#8EB4E3"><font color="#000000"><br></font></td>
+		<td style="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000" align="left" valign=bottom bgcolor="#8EB4E3"><font color="#000000">&lt;wsdl-message&gt;</font></td>
+	</tr>
+	<tr>
+		<td height="20" align="left" valign=bottom><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom bgcolor="#D9D9D9"><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom bgcolor="#376092"><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom bgcolor="#8EB4E3"><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom bgcolor="#8EB4E3"><font color="#000000"><br></font></td>
+		<td style="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000" align="left" valign=bottom bgcolor="#8EB4E3"><font color="#000000">&lt;wsdl-message-part-name 8&gt;</font></td>
+	</tr>
+	<tr>
+		<td height="20" align="left" valign=bottom><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom bgcolor="#D9D9D9"><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom bgcolor="#376092"><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom bgcolor="#8EB4E3"><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom bgcolor="#8EB4E3"><font color="#000000"><br></font></td>
+		<td style="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000" align="left" valign=bottom bgcolor="#8EB4E3"><font color="#000000">&lt;parameter-mode&gt;</font></td>
+	</tr>
+	<tr>
+		<td height="20" align="left" valign=bottom><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom bgcolor="#D9D9D9"><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom bgcolor="#376092"><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom bgcolor="#8EB4E3"><font color="#000000"><br></font></td>
+		<td style="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000" align="left" valign=bottom bgcolor="#8EB4E3"><font color="#000000">&lt;/wsdl-message-mapping&gt;</font></td>
+		<td align="left" valign=bottom><font color="#000000"><br></font></td>
+	</tr>
+	<tr>
+		<td height="20" align="left" valign=bottom><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom bgcolor="#D9D9D9"><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom bgcolor="#376092"><font color="#000000"><br></font></td>
+		<td style="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000" align="left" valign=bottom bgcolor="#8EB4E3"><font color="#000000">&lt;/method-param-parts-mapping&gt;</font></td>
+		<td align="left" valign=bottom><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom><font color="#000000"><br></font></td>
+	</tr>
+	<tr>
+		<td height="20" align="left" valign=bottom><font color="#000000">optional</font></td>
+		<td align="left" valign=bottom bgcolor="#D9D9D9"><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom bgcolor="#376092"><font color="#000000"><br></font></td>
+		<td style="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000" align="left" valign=bottom bgcolor="#C4BD97"><font color="#000000">&lt;wsdl-return-value-mapping&gt; (?)</font></td>
+		<td align="left" valign=bottom><font color="#000000">I mistyped 2 times this element name. so remember element name exactly</font></td>
+		<td align="left" valign=bottom><font color="#000000"><br></font></td>
+	</tr>
+	<tr>
+		<td height="20" align="left" valign=bottom><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom bgcolor="#D9D9D9"><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom bgcolor="#376092"><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom bgcolor="#C4BD97"><font color="#000000"><br></font></td>
+		<td style="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000" align="left" valign=bottom bgcolor="#C4BD97"><font color="#000000">&lt;method-return-value&gt;</font></td>
+		<td align="left" valign=bottom><font color="#000000"><br></font></td>
+	</tr>
+	<tr>
+		<td height="20" align="left" valign=bottom><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom bgcolor="#D9D9D9"><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom bgcolor="#376092"><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom bgcolor="#C4BD97"><font color="#000000"><br></font></td>
+		<td style="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000" align="left" valign=bottom bgcolor="#C4BD97"><font color="#000000">&lt;wsdl-message&gt;</font></td>
+		<td align="left" valign=bottom><font color="#000000"><br></font></td>
+	</tr>
+	<tr>
+		<td height="20" align="left" valign=bottom><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom bgcolor="#D9D9D9"><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom bgcolor="#376092"><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom bgcolor="#C4BD97"><font color="#000000"><br></font></td>
+		<td style="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000" align="left" valign=bottom bgcolor="#C4BD97"><font color="#000000">&lt;wsdl-message-part-name 9&gt;</font></td>
+		<td align="left" valign=bottom><font color="#000000"><br></font></td>
+	</tr>
+	<tr>
+		<td height="20" align="left" valign=bottom><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom bgcolor="#D9D9D9"><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom bgcolor="#376092"><font color="#000000"><br></font></td>
+		<td style="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000" align="left" valign=bottom bgcolor="#C4BD97"><font color="#000000">&lt;/wsdl-return-value-mapping&gt;</font></td>
+		<td align="left" valign=bottom><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom><font color="#000000"><br></font></td>
+	</tr>
+	<tr>
+		<td height="20" align="left" valign=bottom><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom bgcolor="#D9D9D9"><font color="#000000"><br></font></td>
+		<td style="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000" align="left" valign=bottom bgcolor="#376092"><font color="#000000">&lt;/service-endpoint-method-mapping&gt;</font></td>
+		<td align="left" valign=bottom><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom><font color="#000000"><br></font></td>
+	</tr>
+	<tr>
+		<td height="20" align="left" valign=bottom><font color="#000000"><br></font></td>
+		<td style="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000" align="left" valign=bottom bgcolor="#D9D9D9"><font color="#000000">&lt;/service-endpoint-interface-mapping&gt;</font></td>
+		<td align="left" valign=bottom bgcolor="#D9D9D9"><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom><font color="#000000"><br></font></td>
+	</tr>
+	<tr>
+		<td height="20" align="left" valign=bottom><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom><font color="#000000"><br></font></td>
+	</tr>
+	<tr>
+		<td height="20" align="left" valign=bottom><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom><font color="#000000"><br></font></td>
+	</tr>
+	<tr>
+		<td height="20" align="left" valign=bottom><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom><font color="#000000"><br></font></td>
+	</tr>
+	<tr>
+		<td height="20" align="left" valign=bottom><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom><font color="#000000"><br></font></td>
+	</tr>
+	<tr>
+		<td height="20" align="left" valign=bottom><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom><font color="#000000">Jax-ws</font></td>
+		<td align="left" valign=bottom><font color="#000000"><br></font></td>
+	</tr>
+	<tr>
+		<td height="20" align="left" valign=bottom><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom><font color="#000000">jaxb</font></td>
+		<td align="left" valign=bottom><font color="#000000"><br></font></td>
+	</tr>
+	<tr>
+		<td height="20" align="left" valign=bottom><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom><font color="#000000">jaxp</font></td>
+		<td align="left" valign=bottom><font color="#000000"><br></font></td>
+	</tr>
+</table>
+<img src="OLD%20Param%20JAX_RPC%20Mapping%20file_html_61177847.png" width=136 height=74>
+<br clear=left>
+<!-- ************************************************************************** -->
+<hr>
+<A NAME="table6"><h1>Sheet 7: <em>study frame</em></h1></A>
+<table cellspacing="0" border="0">
+	<colgroup width="101"></colgroup>
+	<colgroup span="3" width="80"></colgroup>
+	<colgroup width="371"></colgroup>
+	<tr>
+		<td height="20" align="right" valign=bottom sdval="39938" sdnum="16393;0;DD/MM/YYYY"><font color="#000000">05/05/2009</font></td>
+		<td align="right" valign=bottom sdval="0.470833333333333" sdnum="16393;0;HH:MM AM/PM"><font color="#000000">11:18 AM</font></td>
+		<td align="left" valign=bottom><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom><font color="#000000">mapping file</font></td>
+	</tr>
+	<tr>
+		<td height="20" align="right" valign=bottom sdval="39938" sdnum="16393;0;DD/MM/YYYY"><font color="#000000">05/05/2009</font></td>
+		<td align="right" valign=bottom sdval="0.888888888888889" sdnum="16393;0;HH:MM AM/PM"><font color="#000000">09:20 PM</font></td>
+		<td align="left" valign=bottom><font color="#000000"><br></font></td>
+		<td align="right" valign=bottom sdval="0.0138888888888889" sdnum="16393;0;HH:MM"><font color="#000000">00:20</font></td>
+		<td align="left" valign=bottom><font color="#000000">&lt;java-wsdl-mapping&gt; element</font></td>
+	</tr>
+	<tr>
+		<td height="20" align="left" valign=bottom sdnum="16393;0;DD/MM/YYYY"><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom sdnum="16393;0;HH:MM AM/PM"><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom><font color="#000000"><br></font></td>
+		<td align="right" valign=bottom sdval="0.0138888888888889" sdnum="16393;0;HH:MM"><font color="#000000">00:20</font></td>
+		<td align="left" valign=bottom><font color="#000000">&lt;package-mapping&gt;</font></td>
+	</tr>
+	<tr>
+		<td height="20" align="left" valign=bottom><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom><font color="#000000"><br></font></td>
+		<td align="right" valign=bottom sdval="0.0208333333333333" sdnum="16393;0;HH:MM"><font color="#000000">00:30</font></td>
+		<td align="left" valign=bottom><font color="#000000">&lt;java-xml-type-mapping&gt; element</font></td>
+	</tr>
+	<tr>
+		<td height="20" align="left" valign=bottom><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom><font color="#000000"><br></font></td>
+		<td align="right" valign=bottom sdval="0.0138888888888889" sdnum="16393;0;HH:MM"><font color="#000000">00:20</font></td>
+		<td align="left" valign=bottom><font color="#000000">&lt;exception-mapping&gt;</font></td>
+	</tr>
+	<tr>
+		<td height="20" align="right" valign=bottom sdval="39939" sdnum="16393;0;DD/MM/YYYY"><font color="#000000">06/05/2009</font></td>
+		<td align="left" valign=bottom><font color="#000000"><br></font></td>
+		<td align="right" valign=bottom sdval="0.0326388888888889" sdnum="16393;0;HH:MM AM/PM"><font color="#000000">12:47 AM</font></td>
+		<td align="right" valign=bottom sdval="0.0208333333333333" sdnum="16393;0;HH:MM"><font color="#000000">00:30</font></td>
+		<td align="left" valign=bottom><font color="#000000">&lt;service-interface-mapping&gt;</font></td>
+	</tr>
+	<tr>
+		<td height="20" align="right" valign=bottom sdval="39939" sdnum="16393;0;DD/MM/YYYY"><font color="#000000">06/05/2009</font></td>
+		<td align="right" valign=bottom sdval="0.423611111111111" sdnum="16393;0;HH:MM AM/PM"><font color="#000000">10:10 AM</font></td>
+		<td align="right" valign=bottom sdval="0.490277777777778" sdnum="16393;0;HH:MM AM/PM"><font color="#000000">11:46 AM</font></td>
+		<td align="right" valign=bottom sdval="0.0625" sdnum="16393;0;HH:MM"><font color="#000000">01:30</font></td>
+		<td align="left" valign=bottom><font color="#000000">&lt;service-endpoint-interface-mapping&gt;</font></td>
+	</tr>
+	<tr>
+		<td height="20" align="right" valign=bottom sdval="39940" sdnum="16393;0;DD/MM/YYYY"><font color="#000000">07/05/2009</font></td>
+		<td align="right" valign=bottom sdval="0.0479166666666667" sdnum="16393;0;HH:MM AM/PM"><font color="#000000">01:09 AM</font></td>
+		<td align="left" valign=bottom><font color="#000000"><br></font></td>
+		<td align="right" valign=bottom sdval="0.0416666666666667" sdnum="16393;0;HH:MM"><font color="#000000">01:00</font></td>
+		<td align="left" valign=bottom><font color="#000000">mapping file walk through</font></td>
+	</tr>
+	<tr>
+		<td height="20" align="right" valign=bottom sdval="39940" sdnum="16393;0;DD/MM/YYYY"><font color="#000000">07/05/2009</font></td>
+		<td align="right" valign=bottom sdval="0.400694444444444" sdnum="16393;0;HH:MM AM/PM"><font color="#000000">09:37 AM</font></td>
+		<td align="right" valign=bottom sdval="0.430555555555556" sdnum="16393;0;HH:MM AM/PM"><font color="#000000">10:20 AM</font></td>
+		<td align="right" valign=bottom sdval="0.0416666666666667" sdnum="16393;0;HH:MM"><font color="#000000">01:00</font></td>
+		<td align="left" valign=bottom><font color="#000000">mapping file walk through</font></td>
+	</tr>
+	<tr>
+		<td height="20" align="right" valign=bottom sdval="39940" sdnum="16393;0;DD/MM/YYYY"><font color="#000000">07/05/2009</font></td>
+		<td align="right" valign=bottom sdval="0.450694444444444" sdnum="16393;0;HH:MM AM/PM"><font color="#000000">10:49 AM</font></td>
+		<td align="right" valign=bottom sdval="0.503472222222222" sdnum="16393;0;HH:MM AM/PM"><font color="#000000">12:05 PM</font></td>
+		<td align="right" valign=bottom sdval="0.0486111111111111" sdnum="16393;0;HH:MM"><font color="#000000">01:10</font></td>
+		<td align="left" valign=bottom><font color="#000000">mapping file walk through</font></td>
+	</tr>
+	<tr>
+		<td height="20" align="right" valign=bottom sdval="39940" sdnum="16393;0;DD/MM/YYYY"><font color="#000000">07/05/2009</font></td>
+		<td align="right" valign=bottom sdval="0.81875" sdnum="16393;0;HH:MM AM/PM"><font color="#000000">07:39 PM</font></td>
+		<td align="left" valign=bottom><font color="#000000"><br></font></td>
+		<td align="right" valign=bottom sdval="0.0138888888888889" sdnum="16393;0;HH:MM"><font color="#000000">00:20</font></td>
+		<td align="left" valign=bottom><font color="#000000">mapping file walk through</font></td>
+	</tr>
+	<tr>
+		<td height="20" align="right" valign=bottom sdval="39940" sdnum="16393;0;DD/MM/YYYY"><font color="#000000">07/05/2009</font></td>
+		<td align="right" valign=bottom sdval="0.930555555555555" sdnum="16393;0;HH:MM AM/PM"><font color="#000000">10:20 PM</font></td>
+		<td align="right" valign=bottom sdval="0.955555555555556" sdnum="16393;0;HH:MM AM/PM"><font color="#000000">10:56 PM</font></td>
+		<td align="right" valign=bottom sdval="0.0208333333333333" sdnum="16393;0;HH:MM"><font color="#000000">00:30</font></td>
+		<td align="left" valign=bottom><font color="#000000">mapping file walk through</font></td>
+	</tr>
+	<tr>
+		<td height="20" align="right" valign=bottom sdval="39949" sdnum="16393;0;DD/MM/YYYY"><font color="#000000">16/05/2009</font></td>
+		<td align="right" valign=bottom sdval="0.342361111111111" sdnum="16393;0;HH:MM AM/PM"><font color="#000000">08:13 AM</font></td>
+		<td align="left" valign=bottom><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom><font color="#000000">Evaluation of jax-rpc mapping file</font></td>
+	</tr>
+	<tr>
+		<td height="20" align="right" valign=bottom sdval="39949" sdnum="16393;0;DD/MM/YYYY"><font color="#000000">16/05/2009</font></td>
+		<td align="right" valign=bottom sdval="0.866666666666667" sdnum="16393;0;HH:MM AM/PM"><font color="#000000">08:48 PM</font></td>
+		<td align="left" valign=bottom><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom><font color="#000000">Evaluation of jax-rpc mapping file</font></td>
+	</tr>
+	<tr>
+		<td height="20" align="right" valign=bottom sdval="39951" sdnum="16393;0;DD/MM/YYYY"><font color="#000000">18/05/2009</font></td>
+		<td align="left" valign=bottom><font color="#000000"><br></font></td>
+		<td align="right" valign=bottom sdval="0.952777777777778" sdnum="16393;0;HH:MM AM/PM"><font color="#000000">10:52 PM</font></td>
+		<td align="right" valign=bottom sdval="0.625" sdnum="16393;0;HH:MM"><font color="#000000">15:00</font></td>
+		<td align="left" valign=bottom><font color="#000000">Source code for jax-rpc mapping file evaluation</font></td>
+	</tr>
+</table>
+<!-- ************************************************************************** -->
+</body>
+
+</html>
