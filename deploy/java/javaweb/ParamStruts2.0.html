@@ -1,0 +1,1451 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+
+<html>
+<head>
+	
+	<meta http-equiv="content-type" content="text/html; charset=utf-8">
+	<title></title>
+	<meta name="generator" content="LibreOffice 4.2.8.2 (Linux)">
+	<meta name="author" content=" ">
+	<meta name="created" content="20071129;12026000000000">
+	<meta name="changed" content="20120819;190952000000000">
+	
+	<style type="text/css"><!-- 
+		body,div,table,thead,tbody,tfoot,tr,th,td,p { font-family:"Arial"; font-size:x-small }
+		 -->
+	</style>
+	
+</head>
+
+<body text="#000000">
+<hr>
+	<p><center>
+		<h1>Overview</h1>
+		<A HREF="#table0">General</A><br>
+		<A HREF="#table8">Tiles</A><br>
+		<A HREF="#table10">struts 2 config</A><br>
+		<A HREF="#table11">struts 2 api</A><br>
+		<A HREF="#table12">struts 2 tag</A><br>
+		<A HREF="#table13">struts 2 validator</A><br>
+		<A HREF="#table14">struts 2 tiles</A><br>
+		<A HREF="#table15">Comparision</A><br>
+		
+	</center></p>
+<hr>
+<A NAME="table0"><h1>Sheet 1: <em>General</em></h1></A>
+<table cellspacing="0" border="0">
+	<colgroup width="123"></colgroup>
+	<colgroup width="556"></colgroup>
+	<tr>
+		<td height="17" align="left">Purpose MVC</td>
+		<td align="left">Sepration of View, Controler and business logic</td>
+	</tr>
+	<tr>
+		<td height="17" align="left"><br></td>
+		<td align="left"><br></td>
+	</tr>
+	<tr>
+		<td height="17" align="left">Controller</td>
+		<td align="left">Manage the flow of data between model and view</td>
+	</tr>
+	<tr>
+		<td height="17" align="left"><br></td>
+		<td align="left">it use helper class to delegete the processing of request.</td>
+	</tr>
+	<tr>
+		<td height="17" align="left"><br></td>
+		<td align="left"><br></td>
+	</tr>
+	<tr>
+		<td height="17" align="left">Validator</td>
+		<td align="left">it externalize the validation code in both sever and client side.so that it can re used/ removed / changed</td>
+	</tr>
+	<tr>
+		<td height="17" align="left"><br></td>
+		<td align="left"><br></td>
+	</tr>
+	<tr>
+		<td height="17" align="left">Tiles</td>
+		<td align="left">it break jsp pages as tiles and bring together to make a pages</td>
+	</tr>
+	<tr>
+		<td height="17" align="left"><br></td>
+		<td align="left"><br></td>
+	</tr>
+	<tr>
+		<td height="17" align="left"><br></td>
+		<td align="left"><br></td>
+	</tr>
+	<tr>
+		<td height="17" align="left"><br></td>
+		<td align="left">how to configure internal logger of struts ???</td>
+	</tr>
+</table>
+<!-- ************************************************************************** -->
+<hr>
+<A NAME="table8"><h1>Sheet 2: <em>Tiles</em></h1></A>
+<table cellspacing="0" border="0">
+	<colgroup width="493"></colgroup>
+	<tr>
+		<td height="17" align="left">Tiles.. It is reuse of View code</td>
+	</tr>
+</table>
+<!-- ************************************************************************** -->
+<hr>
+<A NAME="table10"><h1>Sheet 3: <em>struts 2 config</em></h1></A>
+<table cellspacing="0" border="0">
+	<colgroup width="43"></colgroup>
+	<colgroup width="64"></colgroup>
+	<colgroup width="97"></colgroup>
+	<colgroup width="128"></colgroup>
+	<colgroup width="116"></colgroup>
+	<colgroup width="60"></colgroup>
+	<colgroup width="41"></colgroup>
+	<colgroup width="42"></colgroup>
+	<colgroup width="76"></colgroup>
+	<colgroup width="51"></colgroup>
+	<colgroup width="56"></colgroup>
+	<colgroup width="67"></colgroup>
+	<tr>
+		<td height="17" align="left">&lt;struts&gt;</td>
+		<td align="left"><br></td>
+		<td align="left"><br></td>
+		<td align="left"><br></td>
+		<td align="left"><br></td>
+		<td align="left"><br></td>
+		<td align="left"><br></td>
+		<td align="left"><br></td>
+		<td align="left"><br></td>
+		<td align="left"><br></td>
+		<td align="left"><br></td>
+		<td align="left"><br></td>
+	</tr>
+	<tr>
+		<td height="17" align="left"><br></td>
+		<td align="left">&lt;constant&gt;</td>
+		<td align="left"><br></td>
+		<td align="left"><br></td>
+		<td align="left"><br></td>
+		<td align="left"><br></td>
+		<td align="left">name</td>
+		<td align="left"><br></td>
+		<td align="left">value</td>
+		<td align="left"><br></td>
+		<td align="left"><br></td>
+		<td align="left"><br></td>
+	</tr>
+	<tr>
+		<td height="17" align="left"><br></td>
+		<td align="left">&lt;package&gt;</td>
+		<td align="left"><br></td>
+		<td align="left"><br></td>
+		<td align="left"><br></td>
+		<td align="left"><br></td>
+		<td align="left">name</td>
+		<td align="left"><br></td>
+		<td align="left">namespace</td>
+		<td align="left">extends</td>
+		<td align="left">abstract</td>
+		<td align="left"><br></td>
+	</tr>
+	<tr>
+		<td height="17" align="left"><br></td>
+		<td align="left"><br></td>
+		<td align="left" bgcolor="#CCCCFF">&lt;interceptors&gt;</td>
+		<td align="left" bgcolor="#CCCCFF"><br></td>
+		<td align="left" bgcolor="#CCCCFF"><br></td>
+		<td align="left" bgcolor="#CCCCFF"><br></td>
+		<td align="left" bgcolor="#CCCCFF"><br></td>
+		<td align="left" bgcolor="#CCCCFF"><br></td>
+		<td align="left"><br></td>
+		<td align="left"><br></td>
+		<td align="left"><br></td>
+		<td align="left"><br></td>
+	</tr>
+	<tr>
+		<td height="17" align="left"><br></td>
+		<td align="left"><br></td>
+		<td align="left" bgcolor="#CCCCFF"><br></td>
+		<td align="left" bgcolor="#CCCCFF">&lt;interceptor&gt;</td>
+		<td align="left" bgcolor="#CCCCFF"><br></td>
+		<td align="left" bgcolor="#CCCCFF"><br></td>
+		<td align="left" bgcolor="#CCCCFF">name</td>
+		<td align="left" bgcolor="#CCCCFF">class</td>
+		<td align="left"><br></td>
+		<td align="left"><br></td>
+		<td align="left"><br></td>
+		<td align="left"><br></td>
+	</tr>
+	<tr>
+		<td height="17" align="left"><br></td>
+		<td align="left"><br></td>
+		<td align="left" bgcolor="#CCCCFF"><br></td>
+		<td align="left" bgcolor="#339966">&lt;interceptor-stack&gt;</td>
+		<td align="left" bgcolor="#339966"><br></td>
+		<td align="left" bgcolor="#339966"><br></td>
+		<td align="left" bgcolor="#339966">name</td>
+		<td align="left" bgcolor="#339966"><br></td>
+		<td align="left"><br></td>
+		<td align="left"><br></td>
+		<td align="left"><br></td>
+		<td align="left"><br></td>
+	</tr>
+	<tr>
+		<td height="17" align="left"><br></td>
+		<td align="left"><br></td>
+		<td align="left" bgcolor="#CCCCFF"><br></td>
+		<td align="left" bgcolor="#339966"><br></td>
+		<td align="left" bgcolor="#339966">&lt;interceptor-ref&gt;</td>
+		<td align="left" bgcolor="#339966"><br></td>
+		<td align="left" bgcolor="#339966">name</td>
+		<td align="left" bgcolor="#339966"><br></td>
+		<td align="left"><br></td>
+		<td align="left"><br></td>
+		<td align="left"><br></td>
+		<td align="left"><br></td>
+	</tr>
+	<tr>
+		<td height="17" align="left"><br></td>
+		<td align="left"><br></td>
+		<td align="left" bgcolor="#CCCCFF"><br></td>
+		<td align="left" bgcolor="#339966"><br></td>
+		<td align="left" bgcolor="#339966"><br></td>
+		<td align="left" bgcolor="#339966">&lt;param&gt;</td>
+		<td align="left" bgcolor="#339966">name</td>
+		<td align="left" bgcolor="#339966"><br></td>
+		<td align="left"><br></td>
+		<td align="left"><br></td>
+		<td align="left"><br></td>
+		<td align="left"><br></td>
+	</tr>
+	<tr>
+		<td height="17" align="left"><br></td>
+		<td align="left"><br></td>
+		<td align="left" bgcolor="#CCCCFF">&lt;default-interceptor-ref&gt;</td>
+		<td align="left" bgcolor="#CCCCFF"><br></td>
+		<td align="left" bgcolor="#CCCCFF"><br></td>
+		<td align="left" bgcolor="#CCCCFF"><br></td>
+		<td align="left" bgcolor="#CCCCFF">name</td>
+		<td align="left" bgcolor="#CCCCFF"><br></td>
+		<td align="left"><br></td>
+		<td align="left"><br></td>
+		<td align="left"><br></td>
+		<td align="left"><br></td>
+	</tr>
+	<tr>
+		<td height="10" align="left"><br></td>
+		<td align="left"><br></td>
+		<td align="left"><br></td>
+		<td align="left"><br></td>
+		<td align="left"><br></td>
+		<td align="left"><br></td>
+		<td align="left"><br></td>
+		<td align="left"><br></td>
+		<td align="left"><br></td>
+		<td align="left"><br></td>
+		<td align="left"><br></td>
+		<td align="left"><br></td>
+	</tr>
+	<tr>
+		<td height="17" align="left"><br></td>
+		<td align="left"><br></td>
+		<td align="left">&lt;action&gt;</td>
+		<td align="left"><br></td>
+		<td align="left"><br></td>
+		<td align="left"><br></td>
+		<td align="left">name</td>
+		<td align="left">class</td>
+		<td align="left">method</td>
+		<td align="left"><br></td>
+		<td align="left"><br></td>
+		<td align="left"><br></td>
+	</tr>
+	<tr>
+		<td height="17" align="left"><br></td>
+		<td align="left"><br></td>
+		<td align="left"><br></td>
+		<td align="left">&lt;interceptor-ref&gt;</td>
+		<td align="left"><br></td>
+		<td align="left"><br></td>
+		<td align="left">name</td>
+		<td align="left"><br></td>
+		<td align="left"><br></td>
+		<td align="left"><br></td>
+		<td align="left"><br></td>
+		<td align="left"><br></td>
+	</tr>
+	<tr>
+		<td height="17" align="left"><br></td>
+		<td align="left"><br></td>
+		<td align="left"><br></td>
+		<td align="left">&lt;result&gt;</td>
+		<td align="left"><br></td>
+		<td align="left"><br></td>
+		<td align="left">name</td>
+		<td align="left"><br></td>
+		<td align="left"><br></td>
+		<td align="left"><br></td>
+		<td align="left"><br></td>
+		<td align="left"><br></td>
+	</tr>
+	<tr>
+		<td height="17" align="left"><br></td>
+		<td align="left"><br></td>
+		<td align="left"><br></td>
+		<td align="left">&lt;param&gt;</td>
+		<td align="left"><br></td>
+		<td align="left"><br></td>
+		<td align="left">name</td>
+		<td align="left"><br></td>
+		<td align="left"><br></td>
+		<td align="left"><br></td>
+		<td align="left"><br></td>
+		<td align="left"><br></td>
+	</tr>
+	<tr>
+		<td height="17" align="left"><br></td>
+		<td align="left"><br></td>
+		<td align="left"><br></td>
+		<td align="left"><br></td>
+		<td align="left"><br></td>
+		<td align="left"><br></td>
+		<td align="left"><br></td>
+		<td align="left"><br></td>
+		<td align="left"><br></td>
+		<td align="left"><br></td>
+		<td align="left"><br></td>
+		<td align="left"><br></td>
+	</tr>
+	<tr>
+		<td height="17" align="left"><br></td>
+		<td align="left"><br></td>
+		<td align="left">&lt;global-results&gt;</td>
+		<td align="left"><br></td>
+		<td align="left"><br></td>
+		<td align="left"><br></td>
+		<td align="left"><br></td>
+		<td align="left"><br></td>
+		<td align="left"><br></td>
+		<td align="left"><br></td>
+		<td align="left"><br></td>
+		<td align="left"><br></td>
+	</tr>
+	<tr>
+		<td height="17" align="left"><br></td>
+		<td align="left"><br></td>
+		<td align="left"><br></td>
+		<td align="left">&lt;result&gt;</td>
+		<td align="left"><br></td>
+		<td align="left"><br></td>
+		<td align="left">name</td>
+		<td align="left"><br></td>
+		<td align="left"><br></td>
+		<td align="left"><br></td>
+		<td align="left"><br></td>
+		<td align="left"><br></td>
+	</tr>
+	<tr>
+		<td height="17" align="left"><br></td>
+		<td align="left"><br></td>
+		<td align="left">&lt;global-exception-mappings&gt;</td>
+		<td align="left"><br></td>
+		<td align="left"><br></td>
+		<td align="left"><br></td>
+		<td align="left"><br></td>
+		<td align="left"><br></td>
+		<td align="left"><br></td>
+		<td align="left"><br></td>
+		<td align="left"><br></td>
+		<td align="left"><br></td>
+	</tr>
+	<tr>
+		<td height="17" align="left"><br></td>
+		<td align="left"><br></td>
+		<td align="left"><br></td>
+		<td align="left">&lt;exception-mapping&gt;</td>
+		<td align="left"><br></td>
+		<td align="left"><br></td>
+		<td align="left"><br></td>
+		<td align="left">exception</td>
+		<td align="left"><br></td>
+		<td align="left"><br></td>
+		<td align="left"><br></td>
+		<td align="left">result</td>
+	</tr>
+	<tr>
+		<td height="17" align="left"><br></td>
+		<td align="left"><br></td>
+		<td align="left">&lt;result-types&gt;</td>
+		<td align="left"><br></td>
+		<td align="left"><br></td>
+		<td align="left"><br></td>
+		<td align="left"><br></td>
+		<td align="left"><br></td>
+		<td align="left"><br></td>
+		<td align="left"><br></td>
+		<td align="left"><br></td>
+		<td align="left"><br></td>
+	</tr>
+	<tr>
+		<td height="17" align="left"><br></td>
+		<td align="left"><br></td>
+		<td align="left"><br></td>
+		<td align="left">&lt;result-type&gt;</td>
+		<td align="left"><br></td>
+		<td align="left"><br></td>
+		<td align="left">name</td>
+		<td align="left">class</td>
+		<td align="left">default</td>
+		<td align="left"><br></td>
+		<td align="left"><br></td>
+		<td align="left"><br></td>
+	</tr>
+	<tr>
+		<td height="17" align="left"><br></td>
+		<td align="left">&lt;include&gt;</td>
+		<td align="left"><br></td>
+		<td align="left"><br></td>
+		<td align="left"><br></td>
+		<td align="left"><br></td>
+		<td align="left"><br></td>
+		<td align="left"><br></td>
+		<td align="left">file</td>
+		<td align="left"><br></td>
+		<td align="left"><br></td>
+		<td align="left"><br></td>
+	</tr>
+</table>
+<!-- ************************************************************************** -->
+<hr>
+<A NAME="table11"><h1>Sheet 4: <em>struts 2 api</em></h1></A>
+<table cellspacing="0" border="0">
+	<colgroup width="241"></colgroup>
+	<colgroup width="166"></colgroup>
+	<colgroup width="154"></colgroup>
+	<tr>
+		<td height="17" align="left" bgcolor="#339966">Action</td>
+		<td align="left" bgcolor="#339966"><br></td>
+		<td align="left"><br></td>
+	</tr>
+	<tr>
+		<td height="17" align="left" bgcolor="#339966">Validatiable</td>
+		<td align="left" bgcolor="#339966"><br></td>
+		<td align="left"><br></td>
+	</tr>
+	<tr>
+		<td height="17" align="left" bgcolor="#99CCFF">ValidationAware</td>
+		<td align="left" bgcolor="#339966"><br></td>
+		<td align="left"><br></td>
+	</tr>
+	<tr>
+		<td height="17" align="left" bgcolor="#339966">TextProvider</td>
+		<td align="left" bgcolor="#339966"><br></td>
+		<td align="left"><br></td>
+	</tr>
+	<tr>
+		<td height="17" align="left" bgcolor="#99CCFF">LocalProvider</td>
+		<td align="left" bgcolor="#339966"><br></td>
+		<td align="left"><br></td>
+	</tr>
+	<tr>
+		<td height="17" align="left" bgcolor="#339966"><br></td>
+		<td align="left" bgcolor="#339966">ActionSupport</td>
+		<td align="left"><br></td>
+	</tr>
+	<tr>
+		<td height="17" align="left"><br></td>
+		<td align="left" bgcolor="#FF6600">ModelDriven.getObject()</td>
+		<td align="left"><br></td>
+	</tr>
+	<tr>
+		<td height="17" align="left"><br></td>
+		<td align="left" bgcolor="#FF6600">ScopedModelDriven</td>
+		<td align="left"><br></td>
+	</tr>
+	<tr>
+		<td height="17" align="left"><br></td>
+		<td align="left" bgcolor="#FF6600">Preparable.prepare()</td>
+		<td align="left"><br></td>
+	</tr>
+	<tr>
+		<td height="17" align="left" bgcolor="#800080"><br></td>
+		<td align="left" bgcolor="#800080"><br></td>
+		<td align="left" bgcolor="#800080">MyActionclass</td>
+	</tr>
+	<tr>
+		<td height="17" align="left" bgcolor="#99CCFF">ActionInvocation.invoke()</td>
+		<td align="left"><br></td>
+		<td align="left"><br></td>
+	</tr>
+	<tr>
+		<td height="17" align="left" bgcolor="#FFFF00">Interceptor.intercept(actionInvocation)</td>
+		<td align="left" bgcolor="#FFFF00"><br></td>
+		<td align="left"><br></td>
+	</tr>
+	<tr>
+		<td height="17" align="left" bgcolor="#FFFF00"><br></td>
+		<td align="left" bgcolor="#FFFF00">MethodFilterInterceptor</td>
+		<td align="left"><br></td>
+	</tr>
+	<tr>
+		<td height="17" align="left" bgcolor="#800080"><br></td>
+		<td align="left" bgcolor="#800080"><br></td>
+		<td align="left" bgcolor="#800080">MyInterCeptorParameter</td>
+	</tr>
+	<tr>
+		<td height="17" align="left" bgcolor="#FFFF00"><br></td>
+		<td align="left" bgcolor="#FFFF00">FileUploadIntercepter</td>
+		<td align="left"><br></td>
+	</tr>
+	<tr>
+		<td height="17" align="left" bgcolor="#FFFF00"><br></td>
+		<td align="left" bgcolor="#FFFF00">DefaultWorkflowInterceptor</td>
+		<td align="left"><br></td>
+	</tr>
+	<tr>
+		<td height="17" align="left" bgcolor="#FFFF00"><br></td>
+		<td align="left" bgcolor="#FFFF00">TimerInterceptor</td>
+		<td align="left"><br></td>
+	</tr>
+	<tr>
+		<td height="17" align="left"><br></td>
+		<td align="left"><br></td>
+		<td align="left"><br></td>
+	</tr>
+	<tr>
+		<td height="17" align="left" bgcolor="#99CCFF">ExceptionHolder</td>
+		<td align="left"><br></td>
+		<td align="left"><br></td>
+	</tr>
+	<tr>
+		<td height="17" align="left" bgcolor="#808000">TypeConverter</td>
+		<td align="left" bgcolor="#808000"><br></td>
+		<td align="left"><br></td>
+	</tr>
+	<tr>
+		<td height="17" align="left" bgcolor="#808000"><br></td>
+		<td align="left" bgcolor="#808000">StrutsTypeConverter</td>
+		<td align="left"><br></td>
+	</tr>
+	<tr>
+		<td height="17" align="left"><br></td>
+		<td align="left"><br></td>
+		<td align="left"><br></td>
+	</tr>
+	<tr>
+		<td height="17" align="left" bgcolor="#FF8080">Result</td>
+		<td align="left" bgcolor="#FF8080"><br></td>
+		<td align="left"><br></td>
+	</tr>
+	<tr>
+		<td height="17" align="left" bgcolor="#FF8080"><br></td>
+		<td align="left" bgcolor="#FF8080">myResult</td>
+		<td align="left"><br></td>
+	</tr>
+	<tr>
+		<td height="17" align="left"><br></td>
+		<td align="left"><br></td>
+		<td align="left"><br></td>
+	</tr>
+	<tr>
+		<td height="17" align="left" bgcolor="#00FF00">ActionContext</td>
+		<td align="left" bgcolor="#00FF00"><br></td>
+		<td align="left"><br></td>
+	</tr>
+	<tr>
+		<td height="17" align="left" bgcolor="#00FF00"><br></td>
+		<td align="left" bgcolor="#00FF00">ServletActionContext</td>
+		<td align="left"><br></td>
+	</tr>
+	<tr>
+		<td height="17" align="left">ValueStack</td>
+		<td align="left"><br></td>
+		<td align="left"><br></td>
+	</tr>
+	<tr>
+		<td height="17" align="left">ObjectFactory</td>
+		<td align="left"><br></td>
+		<td align="left"><br></td>
+	</tr>
+	<tr>
+		<td height="17" align="left"><br></td>
+		<td align="left"><br></td>
+		<td align="left"><br></td>
+	</tr>
+	<tr>
+		<td height="17" align="left" bgcolor="#0066CC">Validator</td>
+		<td align="left" bgcolor="#0066CC"><br></td>
+		<td align="left"><br></td>
+	</tr>
+	<tr>
+		<td height="17" align="left" bgcolor="#0066CC"><br></td>
+		<td align="left" bgcolor="#0066CC">ValidatorSupport</td>
+		<td align="left"><br></td>
+	</tr>
+	<tr>
+		<td height="17" align="left" bgcolor="#0066CC">FieldValidator</td>
+		<td align="left" bgcolor="#0066CC"><br></td>
+		<td align="left"><br></td>
+	</tr>
+	<tr>
+		<td height="17" align="left" bgcolor="#0066CC"><br></td>
+		<td align="left" bgcolor="#0066CC">FieldValidatorSupport</td>
+		<td align="left"><br></td>
+	</tr>
+	<tr>
+		<td height="17" align="left"><br></td>
+		<td align="left"><br></td>
+		<td align="left"><br></td>
+	</tr>
+	<tr>
+		<td height="17" align="left"><br></td>
+		<td align="left"><br></td>
+		<td align="left"><br></td>
+	</tr>
+	<tr>
+		<td height="17" align="left">ResourceBundle</td>
+		<td align="left"><br></td>
+		<td align="left"><br></td>
+	</tr>
+	<tr>
+		<td height="17" align="left"><br></td>
+		<td align="left">PropertyResourceBundle</td>
+		<td align="left"><br></td>
+	</tr>
+	<tr>
+		<td height="17" align="left">Locale</td>
+		<td align="left"><br></td>
+		<td align="left"><br></td>
+	</tr>
+</table>
+<!-- ************************************************************************** -->
+<hr>
+<A NAME="table12"><h1>Sheet 5: <em>struts 2 tag</em></h1></A>
+<table cellspacing="0" border="0">
+	<colgroup width="64"></colgroup>
+	<colgroup width="77"></colgroup>
+	<colgroup width="52"></colgroup>
+	<colgroup width="17"></colgroup>
+	<colgroup width="36"></colgroup>
+	<colgroup width="39"></colgroup>
+	<colgroup width="25"></colgroup>
+	<colgroup width="47"></colgroup>
+	<colgroup width="82"></colgroup>
+	<colgroup width="93"></colgroup>
+	<colgroup width="95"></colgroup>
+	<colgroup width="53"></colgroup>
+	<colgroup width="67"></colgroup>
+	<tr>
+		<td height="17" align="left">data tags</td>
+		<td align="left"><br></td>
+		<td align="left"><br></td>
+		<td align="left"><br></td>
+		<td align="left"><br></td>
+		<td align="left"><br></td>
+		<td align="left"><br></td>
+		<td align="left"><br></td>
+		<td align="left"><br></td>
+		<td align="left"><br></td>
+		<td align="left"><br></td>
+		<td align="left"><br></td>
+		<td align="left"><br></td>
+	</tr>
+	<tr>
+		<td height="17" align="left"><br></td>
+		<td align="left">property</td>
+		<td align="left"><br></td>
+		<td align="left"><br></td>
+		<td align="left">value</td>
+		<td align="left"><br></td>
+		<td align="left"><br></td>
+		<td align="left">default</td>
+		<td align="left"><br></td>
+		<td align="left"><br></td>
+		<td align="left"><br></td>
+		<td align="left"><br></td>
+		<td align="left"><br></td>
+	</tr>
+	<tr>
+		<td height="17" align="left"><br></td>
+		<td align="left" bgcolor="#00FF00">set</td>
+		<td align="left" bgcolor="#00FF00"><br></td>
+		<td align="left" bgcolor="#00FF00"><br></td>
+		<td align="left" bgcolor="#00FF00">value</td>
+		<td align="left" bgcolor="#00FF00">name</td>
+		<td align="left" bgcolor="#00FF00"><br></td>
+		<td align="left" bgcolor="#00FF00"><br></td>
+		<td align="left" bgcolor="#00FF00"><br></td>
+		<td align="left" bgcolor="#00FF00">scope</td>
+		<td align="left"><br></td>
+		<td align="left"><br></td>
+		<td align="left"><br></td>
+	</tr>
+	<tr>
+		<td height="17" align="left"><br></td>
+		<td align="left" bgcolor="#00FF00">push</td>
+		<td align="left" bgcolor="#00FF00"><br></td>
+		<td align="left" bgcolor="#00FF00"><br></td>
+		<td align="left" bgcolor="#00FF00">value</td>
+		<td align="left" bgcolor="#00FF00"><br></td>
+		<td align="left" bgcolor="#00FF00"><br></td>
+		<td align="left" bgcolor="#00FF00"><br></td>
+		<td align="left" bgcolor="#00FF00"><br></td>
+		<td align="left" bgcolor="#00FF00"><br></td>
+		<td align="left"><br></td>
+		<td align="left"><br></td>
+		<td align="left"><br></td>
+	</tr>
+	<tr>
+		<td height="17" align="left"><br></td>
+		<td align="left" bgcolor="#00FF00">bean</td>
+		<td align="left" bgcolor="#00FF00"><br></td>
+		<td align="left" bgcolor="#00FF00"><br></td>
+		<td align="left" bgcolor="#00FF00"><br></td>
+		<td align="left" bgcolor="#00FF00">name</td>
+		<td align="left" bgcolor="#00FF00">var</td>
+		<td align="left" bgcolor="#00FF00"><br></td>
+		<td align="left" bgcolor="#00FF00"><br></td>
+		<td align="left" bgcolor="#00FF00"><br></td>
+		<td align="left"><br></td>
+		<td align="left"><br></td>
+		<td align="left"><br></td>
+	</tr>
+	<tr>
+		<td height="17" align="left"><br></td>
+		<td align="left"><br></td>
+		<td align="left">param</td>
+		<td align="left"><br></td>
+		<td align="left">value</td>
+		<td align="left">name</td>
+		<td align="left"><br></td>
+		<td align="left"><br></td>
+		<td align="left"><br></td>
+		<td align="left"><br></td>
+		<td align="left"><br></td>
+		<td align="left"><br></td>
+		<td align="left"><br></td>
+	</tr>
+	<tr>
+		<td height="17" align="left"><br></td>
+		<td align="left">action</td>
+		<td align="left"><br></td>
+		<td align="left"><br></td>
+		<td align="left"><br></td>
+		<td align="left">name</td>
+		<td align="left">var</td>
+		<td align="left"><br></td>
+		<td align="left">ignoreContextParams</td>
+		<td align="left"><br></td>
+		<td align="left">namespace</td>
+		<td align="left"><br></td>
+		<td align="left"><br></td>
+	</tr>
+	<tr>
+		<td height="17" align="left"><br></td>
+		<td align="left"><br></td>
+		<td align="left"><br></td>
+		<td align="left"><br></td>
+		<td align="left"><br></td>
+		<td align="left"><br></td>
+		<td align="left"><br></td>
+		<td align="left"><br></td>
+		<td align="left"><br></td>
+		<td align="left"><br></td>
+		<td align="left"><br></td>
+		<td align="left"><br></td>
+		<td align="left"><br></td>
+	</tr>
+	<tr>
+		<td height="17" align="left">condition tags</td>
+		<td align="left"><br></td>
+		<td align="left"><br></td>
+		<td align="left"><br></td>
+		<td align="left"><br></td>
+		<td align="left"><br></td>
+		<td align="left"><br></td>
+		<td align="left"><br></td>
+		<td align="left"><br></td>
+		<td align="left"><br></td>
+		<td align="left"><br></td>
+		<td align="left"><br></td>
+		<td align="left"><br></td>
+	</tr>
+	<tr>
+		<td height="17" align="left"><br></td>
+		<td align="left"><br></td>
+		<td align="left"><br></td>
+		<td align="left"><br></td>
+		<td align="left"><br></td>
+		<td align="left"><br></td>
+		<td align="left"><br></td>
+		<td align="left"><br></td>
+		<td align="left"><br></td>
+		<td align="left"><br></td>
+		<td align="left"><br></td>
+		<td align="left"><br></td>
+		<td align="left"><br></td>
+	</tr>
+	<tr>
+		<td height="17" align="left"><br></td>
+		<td align="left">iterator</td>
+		<td align="left"><br></td>
+		<td align="left"><br></td>
+		<td align="left">value</td>
+		<td align="left"><br></td>
+		<td align="left"><br></td>
+		<td align="left">status</td>
+		<td align="left"><br></td>
+		<td align="left"><br></td>
+		<td align="left"><br></td>
+		<td align="left"><br></td>
+		<td align="left"><br></td>
+	</tr>
+	<tr>
+		<td height="17" align="left"><br></td>
+		<td align="left" bgcolor="#FF8080">if</td>
+		<td align="left" bgcolor="#FF8080"><br></td>
+		<td align="left" bgcolor="#FF8080"><br></td>
+		<td align="left" bgcolor="#FF8080"><br></td>
+		<td align="left" bgcolor="#FF8080"><br></td>
+		<td align="left" bgcolor="#FF8080"><br></td>
+		<td align="left" bgcolor="#FF8080"><br></td>
+		<td align="left" bgcolor="#FF8080">test</td>
+		<td align="left"><br></td>
+		<td align="left"><br></td>
+		<td align="left"><br></td>
+		<td align="left"><br></td>
+	</tr>
+	<tr>
+		<td height="17" align="left"><br></td>
+		<td align="left" bgcolor="#FF8080">elseif</td>
+		<td align="left" bgcolor="#FF8080"><br></td>
+		<td align="left" bgcolor="#FF8080"><br></td>
+		<td align="left" bgcolor="#FF8080"><br></td>
+		<td align="left" bgcolor="#FF8080"><br></td>
+		<td align="left" bgcolor="#FF8080"><br></td>
+		<td align="left" bgcolor="#FF8080"><br></td>
+		<td align="left" bgcolor="#FF8080">test</td>
+		<td align="left"><br></td>
+		<td align="left"><br></td>
+		<td align="left"><br></td>
+		<td align="left"><br></td>
+	</tr>
+	<tr>
+		<td height="17" align="left"><br></td>
+		<td align="left" bgcolor="#FF8080">else</td>
+		<td align="left" bgcolor="#FF8080"><br></td>
+		<td align="left" bgcolor="#FF8080"><br></td>
+		<td align="left" bgcolor="#FF8080"><br></td>
+		<td align="left" bgcolor="#FF8080"><br></td>
+		<td align="left" bgcolor="#FF8080"><br></td>
+		<td align="left" bgcolor="#FF8080"><br></td>
+		<td align="left" bgcolor="#FF8080"><br></td>
+		<td align="left"><br></td>
+		<td align="left"><br></td>
+		<td align="left"><br></td>
+		<td align="left"><br></td>
+	</tr>
+	<tr>
+		<td height="17" align="left"><br></td>
+		<td align="left"><br></td>
+		<td align="left"><br></td>
+		<td align="left"><br></td>
+		<td align="left"><br></td>
+		<td align="left"><br></td>
+		<td align="left"><br></td>
+		<td align="left"><br></td>
+		<td align="left"><br></td>
+		<td align="left"><br></td>
+		<td align="left"><br></td>
+		<td align="left"><br></td>
+		<td align="left"><br></td>
+	</tr>
+	<tr>
+		<td height="17" align="left"><br></td>
+		<td align="left"><br></td>
+		<td align="left"><br></td>
+		<td align="left"><br></td>
+		<td align="left"><br></td>
+		<td align="left"><br></td>
+		<td align="left"><br></td>
+		<td align="left"><br></td>
+		<td align="left"><br></td>
+		<td align="left"><br></td>
+		<td align="left"><br></td>
+		<td align="left"><br></td>
+		<td align="left"><br></td>
+	</tr>
+	<tr>
+		<td height="17" align="left">misc tags</td>
+		<td align="left"><br></td>
+		<td align="left"><br></td>
+		<td align="left"><br></td>
+		<td align="left"><br></td>
+		<td align="left"><br></td>
+		<td align="left"><br></td>
+		<td align="left"><br></td>
+		<td align="left"><br></td>
+		<td align="left"><br></td>
+		<td align="left"><br></td>
+		<td align="left"><br></td>
+		<td align="left"><br></td>
+	</tr>
+	<tr>
+		<td height="17" align="left"><br></td>
+		<td align="left">include</td>
+		<td align="left"><br></td>
+		<td align="left"><br></td>
+		<td align="left">value</td>
+		<td align="left"><br></td>
+		<td align="left"><br></td>
+		<td align="left"><br></td>
+		<td align="left"><br></td>
+		<td align="left"><br></td>
+		<td align="left"><br></td>
+		<td align="left"><br></td>
+		<td align="left"><br></td>
+	</tr>
+	<tr>
+		<td height="17" align="left"><br></td>
+		<td align="left">url</td>
+		<td align="left"><br></td>
+		<td align="left"><br></td>
+		<td align="left">value</td>
+		<td align="left"><br></td>
+		<td align="left">var</td>
+		<td align="left">action</td>
+		<td align="left"><br></td>
+		<td align="left">includeParams</td>
+		<td align="left">includeContext</td>
+		<td align="left">encode</td>
+		<td align="left">scheme</td>
+	</tr>
+	<tr>
+		<td height="17" align="left"><br></td>
+		<td align="left" bgcolor="#0066CC">text</td>
+		<td align="left" bgcolor="#0066CC"><br></td>
+		<td align="left" bgcolor="#0066CC"><br></td>
+		<td align="left" bgcolor="#0066CC"><br></td>
+		<td align="left" bgcolor="#0066CC">name</td>
+		<td align="left" bgcolor="#0066CC">var</td>
+		<td align="left"><br></td>
+		<td align="left"><br></td>
+		<td align="left"><br></td>
+		<td align="left"><br></td>
+		<td align="left"><br></td>
+		<td align="left"><br></td>
+	</tr>
+	<tr>
+		<td height="17" align="left"><br></td>
+		<td align="left" bgcolor="#0066CC">il8n</td>
+		<td align="left" bgcolor="#0066CC"><br></td>
+		<td align="left" bgcolor="#0066CC"><br></td>
+		<td align="left" bgcolor="#0066CC"><br></td>
+		<td align="left" bgcolor="#0066CC">name</td>
+		<td align="left" bgcolor="#0066CC"><br></td>
+		<td align="left"><br></td>
+		<td align="left"><br></td>
+		<td align="left"><br></td>
+		<td align="left"><br></td>
+		<td align="left"><br></td>
+		<td align="left"><br></td>
+	</tr>
+	<tr>
+		<td height="17" align="left"><br></td>
+		<td align="left">token</td>
+		<td align="left"><br></td>
+		<td align="left"><br></td>
+		<td align="left"><br></td>
+		<td align="left"><br></td>
+		<td align="left"><br></td>
+		<td align="left"><br></td>
+		<td align="left"><br></td>
+		<td align="left"><br></td>
+		<td align="left"><br></td>
+		<td align="left"><br></td>
+		<td align="left"><br></td>
+	</tr>
+	<tr>
+		<td height="17" align="left">ui tags</td>
+		<td align="left"><br></td>
+		<td align="left"><br></td>
+		<td align="left"><br></td>
+		<td align="left"><br></td>
+		<td align="left"><br></td>
+		<td align="left"><br></td>
+		<td align="left"><br></td>
+		<td align="left"><br></td>
+		<td align="left"><br></td>
+		<td align="left"><br></td>
+		<td align="left"><br></td>
+		<td align="left"><br></td>
+	</tr>
+	<tr>
+		<td height="17" align="left"><br></td>
+		<td align="left">text</td>
+		<td align="left"><br></td>
+		<td align="left"><br></td>
+		<td align="left"><br></td>
+		<td align="left">name</td>
+		<td align="left"><br></td>
+		<td align="left"><br></td>
+		<td align="left"><br></td>
+		<td align="left"><br></td>
+		<td align="left"><br></td>
+		<td align="left"><br></td>
+		<td align="left"><br></td>
+	</tr>
+	<tr>
+		<td height="17" align="left"><br></td>
+		<td align="left"><br></td>
+		<td align="left">param</td>
+		<td align="left"><br></td>
+		<td align="left">value</td>
+		<td align="left"><br></td>
+		<td align="left"><br></td>
+		<td align="left"><br></td>
+		<td align="left"><br></td>
+		<td align="left"><br></td>
+		<td align="left"><br></td>
+		<td align="left"><br></td>
+		<td align="left"><br></td>
+	</tr>
+	<tr>
+		<td height="17" align="left"><br></td>
+		<td align="left">textfield</td>
+		<td align="left"><br></td>
+		<td align="left"><br></td>
+		<td align="left">value</td>
+		<td align="left">name</td>
+		<td align="left"><br></td>
+		<td align="left"><br></td>
+		<td align="left">label / key</td>
+		<td align="left">theme</td>
+		<td align="left">templateDir</td>
+		<td align="left">template</td>
+		<td align="left">maxonly</td>
+	</tr>
+	<tr>
+		<td height="17" align="left"><br></td>
+		<td align="left"><br></td>
+		<td align="left"><br></td>
+		<td align="left"><br></td>
+		<td align="left"><br></td>
+		<td align="left"><br></td>
+		<td align="left"><br></td>
+		<td align="left"><br></td>
+		<td align="left">labelPosition</td>
+		<td align="left">required</td>
+		<td align="left">disabled</td>
+		<td align="left">tabindex</td>
+		<td align="left">readonly</td>
+	</tr>
+	<tr>
+		<td height="17" align="left"><br></td>
+		<td align="left">head</td>
+		<td align="left"><br></td>
+		<td align="left"><br></td>
+		<td align="left"><br></td>
+		<td align="left"><br></td>
+		<td align="left"><br></td>
+		<td align="left"><br></td>
+		<td align="left"><br></td>
+		<td align="left"><br></td>
+		<td align="left"><br></td>
+		<td align="left"><br></td>
+		<td align="left"><br></td>
+	</tr>
+	<tr>
+		<td height="17" align="left"><br></td>
+		<td align="left">form</td>
+		<td align="left"><br></td>
+		<td align="left"><br></td>
+		<td align="left"><br></td>
+		<td align="left"><br></td>
+		<td align="left"><br></td>
+		<td align="left">action</td>
+		<td align="left">namespace</td>
+		<td align="left">method</td>
+		<td align="left">validate</td>
+		<td align="left">enctype</td>
+		<td align="left"><br></td>
+	</tr>
+	<tr>
+		<td height="17" align="left"><br></td>
+		<td align="left">submit</td>
+		<td align="left"><br></td>
+		<td align="left"><br></td>
+		<td align="left">value</td>
+		<td align="left"><br></td>
+		<td align="left"><br></td>
+		<td align="left"><br></td>
+		<td align="left"><br></td>
+		<td align="left"><br></td>
+		<td align="left"><br></td>
+		<td align="left"><br></td>
+		<td align="left"><br></td>
+	</tr>
+	<tr>
+		<td height="17" align="left"><br></td>
+		<td align="left">textarea</td>
+		<td align="left"><br></td>
+		<td align="left"><br></td>
+		<td align="left"><br></td>
+		<td align="left"><br></td>
+		<td align="left"><br></td>
+		<td align="left"><br></td>
+		<td align="left"><br></td>
+		<td align="left"><br></td>
+		<td align="left"><br></td>
+		<td align="left"><br></td>
+		<td align="left"><br></td>
+	</tr>
+	<tr>
+		<td height="17" align="left"><br></td>
+		<td align="left">password</td>
+		<td align="left"><br></td>
+		<td align="left"><br></td>
+		<td align="left"><br></td>
+		<td align="left"><br></td>
+		<td align="left"><br></td>
+		<td align="left"><br></td>
+		<td align="left"><br></td>
+		<td align="left"><br></td>
+		<td align="left"><br></td>
+		<td align="left"><br></td>
+		<td align="left"><br></td>
+	</tr>
+	<tr>
+		<td height="17" align="left"><br></td>
+		<td align="left">checkbox</td>
+		<td align="left"><br></td>
+		<td align="left"><br></td>
+		<td align="left"><br></td>
+		<td align="left"><br></td>
+		<td align="left"><br></td>
+		<td align="left"><br></td>
+		<td align="left"><br></td>
+		<td align="left"><br></td>
+		<td align="left"><br></td>
+		<td align="left"><br></td>
+		<td align="left"><br></td>
+	</tr>
+	<tr>
+		<td height="17" align="left"><br></td>
+		<td align="left">label</td>
+		<td align="left"><br></td>
+		<td align="left"><br></td>
+		<td align="left"><br></td>
+		<td align="left">name</td>
+		<td align="left"><br></td>
+		<td align="left">label</td>
+		<td align="left"><br></td>
+		<td align="left"><br></td>
+		<td align="left"><br></td>
+		<td align="left"><br></td>
+		<td align="left"><br></td>
+	</tr>
+	<tr>
+		<td height="17" align="left"><br></td>
+		<td align="left">hidden</td>
+		<td align="left"><br></td>
+		<td align="left"><br></td>
+		<td align="left"><br></td>
+		<td align="left">name</td>
+		<td align="left"><br></td>
+		<td align="left"><br></td>
+		<td align="left"><br></td>
+		<td align="left"><br></td>
+		<td align="left"><br></td>
+		<td align="left"><br></td>
+		<td align="left"><br></td>
+	</tr>
+	<tr>
+		<td height="17" align="left"><br></td>
+		<td align="left" bgcolor="#FFFF00">select</td>
+		<td align="left"><br></td>
+		<td align="left"><br></td>
+		<td align="left"><br></td>
+		<td align="left">name</td>
+		<td align="left"><br></td>
+		<td align="left">list</td>
+		<td align="left">key</td>
+		<td align="left">listKey</td>
+		<td align="left">listValue</td>
+		<td align="left">headerKey</td>
+		<td align="left">headerValue</td>
+	</tr>
+	<tr>
+		<td height="17" align="left"><br></td>
+		<td align="left" bgcolor="#FFFF00">radio</td>
+		<td align="left"><br></td>
+		<td align="left"><br></td>
+		<td align="left"><br></td>
+		<td align="left">name</td>
+		<td align="left"><br></td>
+		<td align="left">list</td>
+		<td align="left">key</td>
+		<td align="left">listKey</td>
+		<td align="left">listValue</td>
+		<td align="left"><br></td>
+		<td align="left"><br></td>
+	</tr>
+	<tr>
+		<td height="17" align="left"><br></td>
+		<td align="left" bgcolor="#FFFF00">checkboxlist</td>
+		<td align="left"><br></td>
+		<td align="left"><br></td>
+		<td align="left"><br></td>
+		<td align="left">name</td>
+		<td align="left"><br></td>
+		<td align="left">list</td>
+		<td align="left">key</td>
+		<td align="left">listKey</td>
+		<td align="left">listValue</td>
+		<td align="left"><br></td>
+		<td align="left"><br></td>
+	</tr>
+</table>
+<!-- ************************************************************************** -->
+<hr>
+<A NAME="table13"><h1>Sheet 6: <em>struts 2 validator</em></h1></A>
+<table cellspacing="0" border="0">
+	<colgroup width="80"></colgroup>
+	<colgroup width="82"></colgroup>
+	<colgroup width="104"></colgroup>
+	<colgroup width="87"></colgroup>
+	<colgroup width="40"></colgroup>
+	<colgroup width="43"></colgroup>
+	<colgroup width="34"></colgroup>
+	<colgroup width="30"></colgroup>
+	<colgroup width="79"></colgroup>
+	<tr>
+		<td height="17" align="left">&lt;validators&gt;</td>
+		<td align="left"><br></td>
+		<td align="left"><br></td>
+		<td align="left"><br></td>
+		<td align="left"><br></td>
+		<td align="left"><br></td>
+		<td align="left"><br></td>
+		<td align="left"><br></td>
+		<td align="left"><br></td>
+	</tr>
+	<tr>
+		<td height="17" align="left"><br></td>
+		<td align="left" bgcolor="#0066CC">&lt;field&gt;</td>
+		<td align="left" bgcolor="#0066CC"><br></td>
+		<td align="left" bgcolor="#0066CC"><br></td>
+		<td align="left" bgcolor="#0066CC"><br></td>
+		<td align="left" bgcolor="#0066CC">name</td>
+		<td align="left" bgcolor="#0066CC"><br></td>
+		<td align="left" bgcolor="#0066CC"><br></td>
+		<td align="left" bgcolor="#0066CC"><br></td>
+	</tr>
+	<tr>
+		<td height="17" align="left"><br></td>
+		<td align="left" bgcolor="#0066CC"><br></td>
+		<td align="left" bgcolor="#0066CC">&lt;field-validator&gt;</td>
+		<td align="left" bgcolor="#0066CC"><br></td>
+		<td align="left" bgcolor="#0066CC"><br></td>
+		<td align="left" bgcolor="#0066CC"><br></td>
+		<td align="left" bgcolor="#0066CC">type</td>
+		<td align="left" bgcolor="#0066CC"><br></td>
+		<td align="left" bgcolor="#0066CC">short-circuit</td>
+	</tr>
+	<tr>
+		<td height="17" align="left"><br></td>
+		<td align="left" bgcolor="#0066CC"><br></td>
+		<td align="left" bgcolor="#0066CC"><br></td>
+		<td align="left" bgcolor="#0066CC">&lt;param&gt;</td>
+		<td align="left" bgcolor="#0066CC"><br></td>
+		<td align="left" bgcolor="#0066CC">name</td>
+		<td align="left" bgcolor="#0066CC"><br></td>
+		<td align="left" bgcolor="#0066CC"><br></td>
+		<td align="left" bgcolor="#0066CC"><br></td>
+	</tr>
+	<tr>
+		<td height="17" align="left"><br></td>
+		<td align="left" bgcolor="#0066CC"><br></td>
+		<td align="left" bgcolor="#0066CC"><br></td>
+		<td align="left" bgcolor="#0066CC">&lt;message&gt;</td>
+		<td align="left" bgcolor="#0066CC"><br></td>
+		<td align="left" bgcolor="#0066CC"><br></td>
+		<td align="left" bgcolor="#0066CC"><br></td>
+		<td align="left" bgcolor="#0066CC">key</td>
+		<td align="left" bgcolor="#0066CC"><br></td>
+	</tr>
+	<tr>
+		<td height="17" align="left"><br></td>
+		<td align="left">&lt;validator&gt;</td>
+		<td align="left"><br></td>
+		<td align="left"><br></td>
+		<td align="left"><br></td>
+		<td align="left">name</td>
+		<td align="left">class</td>
+		<td align="left"><br></td>
+		<td align="left"><br></td>
+	</tr>
+	<tr>
+		<td height="17" align="left"><br></td>
+		<td align="left"><br></td>
+		<td align="left">&lt;param&gt;</td>
+		<td align="left"><br></td>
+		<td align="left"><br></td>
+		<td align="left"><br></td>
+		<td align="left"><br></td>
+		<td align="left"><br></td>
+		<td align="left"><br></td>
+	</tr>
+	<tr>
+		<td height="17" align="left"><br></td>
+		<td align="left"><br></td>
+		<td align="left">&lt;message&gt;</td>
+		<td align="left"><br></td>
+		<td align="left"><br></td>
+		<td align="left"><br></td>
+		<td align="left"><br></td>
+		<td align="left"><br></td>
+		<td align="left"><br></td>
+	</tr>
+</table>
+<!-- ************************************************************************** -->
+<hr>
+<A NAME="table14"><h1>Sheet 7: <em>struts 2 tiles</em></h1></A>
+<table cellspacing="0" border="0">
+	<colgroup width="117"></colgroup>
+	<colgroup width="76"></colgroup>
+	<colgroup width="91"></colgroup>
+	<colgroup span="5" width="67"></colgroup>
+	<tr>
+		<td height="17" align="left">&lt;tiles-definitions&gt;</td>
+		<td align="left"><br></td>
+		<td align="left"><br></td>
+		<td align="left"><br></td>
+		<td align="left"><br></td>
+		<td align="left"><br></td>
+		<td align="left"><br></td>
+		<td align="left"><br></td>
+	</tr>
+	<tr>
+		<td height="17" align="left"><br></td>
+		<td align="left">&lt;definition&gt;</td>
+		<td align="left"><br></td>
+		<td align="left"><br></td>
+		<td align="left">name</td>
+		<td align="left">template</td>
+		<td align="left">extends</td>
+		<td align="left">prepare</td>
+	</tr>
+	<tr>
+		<td height="17" align="left"><br></td>
+		<td align="left"><br></td>
+		<td align="left">&lt;put-attribute&gt;</td>
+		<td align="left"><br></td>
+		<td align="left">name</td>
+		<td align="left"><br></td>
+		<td align="left">value</td>
+		<td align="left"><br></td>
+	</tr>
+</table>
+<!-- ************************************************************************** -->
+<hr>
+<A NAME="table15"><h1>Sheet 8: <em>Comparision</em></h1></A>
+<table cellspacing="0" border="0">
+	<colgroup width="29"></colgroup>
+	<colgroup width="347"></colgroup>
+	<colgroup width="340"></colgroup>
+	<tr>
+		<td height="17" align="left"><br></td>
+		<td align="left" bgcolor="#FFFF00">struts 1.2</td>
+		<td align="left" bgcolor="#FFFF00">strus 2.1</td>
+	</tr>
+	<tr>
+		<td height="17" align="left"><br></td>
+		<td align="left"><br></td>
+		<td align="left"><br></td>
+	</tr>
+	<tr>
+		<td height="34" align="right" sdval="1" sdnum="16393;">1</td>
+		<td align="left">action are singleton</td>
+		<td align="left">no. new instance for every request. So it is thread safe, we can have instance level property</td>
+	</tr>
+	<tr>
+		<td height="17" align="right" sdval="2" sdnum="16393;">2</td>
+		<td align="left">intrusive of ServletAPI &amp; Struts API</td>
+		<td align="left">no.</td>
+	</tr>
+	<tr>
+		<td height="17" align="right" sdval="3" sdnum="16393;">3</td>
+		<td align="left">we have to down cast form bean, find actionForward</td>
+		<td align="left">no</td>
+	</tr>
+	<tr>
+		<td height="17" align="right" sdval="4" sdnum="16393;">4</td>
+		<td align="left">Form bean</td>
+		<td align="left">action itself combine the use of form bean</td>
+	</tr>
+	<tr>
+		<td height="17" align="right" sdval="5" sdnum="16393;">5</td>
+		<td align="left">no</td>
+		<td align="left">request parameter to Domain object</td>
+	</tr>
+	<tr>
+		<td height="17" align="right" sdval="6" sdnum="16393;">6</td>
+		<td align="left">Three different tag library</td>
+		<td align="left">single tag library</td>
+	</tr>
+	<tr>
+		<td height="17" align="right" sdval="7" sdnum="16393;">7</td>
+		<td align="left">Tags are dependent on ActionForm</td>
+		<td align="left">tags dependents on ValueStack</td>
+	</tr>
+	<tr>
+		<td height="34" align="right" sdval="8" sdnum="16393;">8</td>
+		<td align="left">no</td>
+		<td align="left">most of Tags are directy support for Internationalization</td>
+	</tr>
+	<tr>
+		<td height="51" align="right" sdval="9" sdnum="16393;">9</td>
+		<td align="left">no</td>
+		<td align="left">Resource file search in hiearchy manner, class, super class, interface, super interface, packege, default</td>
+	</tr>
+	<tr>
+		<td height="17" align="right" sdval="10" sdnum="16393;">10</td>
+		<td align="left">no</td>
+		<td align="left">message can be scoped for action, domain specific</td>
+	</tr>
+	<tr>
+		<td height="34" align="right" sdval="11" sdnum="16393;">11</td>
+		<td align="left">we have to specify the extension( *.do )</td>
+		<td align="left">by default .action said in struts.xml file, no need to say explicityly</td>
+	</tr>
+	<tr>
+		<td height="17" align="right" sdval="12" sdnum="16393;">12</td>
+		<td align="left">no</td>
+		<td align="left">in many places, default intelligence are there</td>
+	</tr>
+	<tr>
+		<td height="17" align="right" sdval="13" sdnum="16393;">13</td>
+		<td align="left">no</td>
+		<td align="left">action mapping file itself greatly simplified</td>
+	</tr>
+	<tr>
+		<td height="17" align="right" sdval="14" sdnum="16393;">14</td>
+		<td align="left">no</td>
+		<td align="left">tag library reduce the amont of html code in jsp</td>
+	</tr>
+	<tr>
+		<td height="34" align="right" sdval="15" sdnum="16393;">15</td>
+		<td align="left">in single file</td>
+		<td align="left">validation rules can be action / domain / context specific, so it is easy in multiple developers</td>
+	</tr>
+	<tr>
+		<td height="34" align="right" sdval="16" sdnum="16393;">16</td>
+		<td align="left">no</td>
+		<td align="left">it has set of aware set of aware interfaces, *Support class</td>
+	</tr>
+</table>
+<!-- ************************************************************************** -->
+</body>
+
+</html>

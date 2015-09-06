@@ -1,0 +1,3277 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+
+<html>
+<head>
+	
+	<meta http-equiv="content-type" content="text/html; charset=utf-8">
+	<title></title>
+	<meta name="generator" content="LibreOffice 4.2.8.2 (Linux)">
+	<meta name="author" content=" ">
+	<meta name="created" content="20080118;101750000000000">
+	<meta name="changedby" content="Paramasivam">
+	<meta name="changed" content="20100720;11641000000000">
+	
+	<style type="text/css"><!-- 
+		body,div,table,thead,tbody,tfoot,tr,th,td,p { font-family:"Arial"; font-size:x-small }
+		 -->
+	</style>
+	
+</head>
+
+<body text="#000000">
+<hr>
+	<p><center>
+		<h1>Overview</h1>
+		<A HREF="#table0">General Understanding</A><br>
+		<A HREF="#table1">JSTL implicit objects</A><br>
+		<A HREF="#table2">JSTL -14 Core tags</A><br>
+		<A HREF="#table3">JSTL - 12 Formating tags</A><br>
+		<A HREF="#table4">JSTL - 6 DB tags</A><br>
+		<A HREF="#table5">JSTL - 10 XML tags</A><br>
+		<A HREF="#table6">JSTL - Validator</A><br>
+		<A HREF="#table7">Topic</A><br>
+		<A HREF="#table8">Meta</A><br>
+		<A HREF="#table9">Study Time Frame</A><br>
+		
+	</center></p>
+<hr>
+<A NAME="table0"><h1>Sheet 1: <em>General Understanding</em></h1></A>
+<table cellspacing="0" border="0">
+	<colgroup width="67"></colgroup>
+	<colgroup width="212"></colgroup>
+	<colgroup width="848"></colgroup>
+	<tr>
+		<td height="17" align="left"><br></td>
+		<td colspan=2 rowspan=9 align="left"><br><img src="ParamJSTL_html_7a5fd2b.png" width=554 height=145 hspace=254 vspace=8>
+		</td>
+		</tr>
+	<tr>
+		<td height="17" align="left"><br></td>
+		</tr>
+	<tr>
+		<td height="17" align="left"><br></td>
+		</tr>
+	<tr>
+		<td height="17" align="left"><br></td>
+		</tr>
+	<tr>
+		<td height="17" align="left"><br></td>
+		</tr>
+	<tr>
+		<td height="17" align="left"><br></td>
+		</tr>
+	<tr>
+		<td height="17" align="left"><br></td>
+		</tr>
+	<tr>
+		<td height="17" align="left"><br></td>
+		</tr>
+	<tr>
+		<td height="17" align="left"><br></td>
+		</tr>
+	<tr>
+		<td height="17" align="left"><br></td>
+		<td align="left"><br></td>
+		<td align="left"><br></td>
+	</tr>
+	<tr>
+		<td height="17" align="left"><br></td>
+		<td align="left"><br></td>
+		<td align="left"><br></td>
+	</tr>
+	<tr>
+		<td height="17" align="left"><br></td>
+		<td align="left"><br></td>
+		<td align="left"><br></td>
+	</tr>
+	<tr>
+		<td height="17" align="left"><br></td>
+		<td align="left">jstl.jar</td>
+		<td align="left">specification of JSTL ( mostly interfaces or abstract class )</td>
+	</tr>
+	<tr>
+		<td height="17" align="left"><br></td>
+		<td align="left">standard.jar</td>
+		<td align="left">a Reference implementation of JSTL. So, All of App/ Web server will have these two jar to support JSTL</td>
+	</tr>
+	<tr>
+		<td height="17" align="left"><br></td>
+		<td align="left"><br></td>
+		<td align="left"><br></td>
+	</tr>
+	<tr>
+		<td height="17" align="left"><br></td>
+		<td align="left"><br></td>
+		<td align="left"><br></td>
+	</tr>
+	<tr>
+		<td height="17" align="left"><br></td>
+		<td colspan=2 rowspan=5 align="left"><br><img src="ParamJSTL_html_52068791.png" width=913 height=79 hspace=74 vspace=5>
+		</td>
+		</tr>
+	<tr>
+		<td height="17" align="left"><br></td>
+		</tr>
+	<tr>
+		<td height="17" align="left"><br></td>
+		</tr>
+	<tr>
+		<td height="17" align="left"><br></td>
+		</tr>
+	<tr>
+		<td height="17" align="left"><br></td>
+		</tr>
+	<tr>
+		<td height="17" align="left"><br></td>
+		<td align="left"><br></td>
+		<td align="left"><br></td>
+	</tr>
+	<tr>
+		<td height="17" align="left"><br></td>
+		<td align="left"><br></td>
+		<td align="left"><br></td>
+	</tr>
+	<tr>
+		<td height="17" align="left"><br></td>
+		<td align="left"><br></td>
+		<td align="left"><br></td>
+	</tr>
+	<tr>
+		<td height="17" align="left"><br></td>
+		<td align="left"><br></td>
+		<td align="left"><br></td>
+	</tr>
+	<tr>
+		<td height="17" align="left"><br></td>
+		<td rowspan=5 align="left">The EL provides</td>
+		<td align="left">access to list,map,bean,array</td>
+	</tr>
+	<tr>
+		<td height="17" align="left"><br></td>
+		<td align="left">access to implicit object and servlet properties</td>
+	</tr>
+	<tr>
+		<td height="17" align="left"><br></td>
+		<td align="left">automatic type coercision</td>
+	</tr>
+	<tr>
+		<td height="17" align="left"><br></td>
+		<td align="left">arithmatic, logic and relational operators</td>
+	</tr>
+	<tr>
+		<td height="17" align="left"><br></td>
+		<td align="left">expression and identifier</td>
+	</tr>
+	<tr>
+		<td height="17" align="left"><br></td>
+		<td align="left"><br></td>
+		<td align="left"><br></td>
+	</tr>
+	<tr>
+		<td height="17" align="left"><br></td>
+		<td align="left">EL Identifier</td>
+		<td align="left">variable stored in any of JSP four scope ( page,request,session and application )</td>
+	</tr>
+	<tr>
+		<td height="17" align="left"><br></td>
+		<td align="left"><br></td>
+		<td align="left"><br></td>
+	</tr>
+	<tr>
+		<td height="17" align="left"><br></td>
+		<td align="left"><br></td>
+		<td align="left"><br></td>
+	</tr>
+	<tr>
+		<td height="17" align="left"><br></td>
+		<td colspan=2 rowspan=13 align="left"><br><img src="ParamJSTL_html_2d4569a2.png" width=752 height=210 hspace=154 vspace=11>
+		</td>
+		</tr>
+	<tr>
+		<td height="17" align="left"><br></td>
+		</tr>
+	<tr>
+		<td height="17" align="left"><br></td>
+		</tr>
+	<tr>
+		<td height="17" align="left"><br></td>
+		</tr>
+	<tr>
+		<td height="17" align="left"><br></td>
+		</tr>
+	<tr>
+		<td height="17" align="left"><br></td>
+		</tr>
+	<tr>
+		<td height="17" align="left"><br></td>
+		</tr>
+	<tr>
+		<td height="17" align="left"><br></td>
+		</tr>
+	<tr>
+		<td height="17" align="left"><br></td>
+		</tr>
+	<tr>
+		<td height="17" align="left"><br></td>
+		</tr>
+	<tr>
+		<td height="17" align="left"><br></td>
+		</tr>
+	<tr>
+		<td height="17" align="left"><br></td>
+		</tr>
+	<tr>
+		<td height="17" align="left"><br></td>
+		</tr>
+	<tr>
+		<td height="17" align="left"><br></td>
+		<td align="left"><br></td>
+		<td align="left"><br></td>
+	</tr>
+	<tr>
+		<td height="17" align="left"><br></td>
+		<td align="left"><br></td>
+		<td align="left"><br></td>
+	</tr>
+	<tr>
+		<td height="17" align="left"><br></td>
+		<td align="left"><br></td>
+		<td align="left"><br></td>
+	</tr>
+	<tr>
+		<td height="17" align="left"><br></td>
+		<td align="left">binary and Relational operator convert result into double if not possible convert to long</td>
+		<td align="left"><br></td>
+	</tr>
+	<tr>
+		<td height="17" align="left"><br></td>
+		<td align="left"><br></td>
+		<td align="left"><br></td>
+	</tr>
+	<tr>
+		<td height="17" align="left"><br></td>
+		<td align="left">logical operator reslut will be boolean</td>
+		<td align="left"><br></td>
+	</tr>
+	<tr>
+		<td height="17" align="left"><br></td>
+		<td align="left"><br></td>
+		<td align="left"><br></td>
+	</tr>
+	<tr>
+		<td height="17" align="left"><br></td>
+		<td align="left"><br></td>
+		<td align="left"><br></td>
+	</tr>
+	<tr>
+		<td height="17" align="left"><br></td>
+		<td align="left"><br></td>
+		<td align="left"><br></td>
+	</tr>
+	<tr>
+		<td height="17" align="left"><br></td>
+		<td align="left"><br></td>
+		<td align="left"><br></td>
+	</tr>
+	<tr>
+		<td height="17" align="left"><br></td>
+		<td align="left"><br></td>
+		<td align="left"><br></td>
+	</tr>
+	<tr>
+		<td height="17" align="left"><br></td>
+		<td align="left">EL - uses</td>
+		<td align="left">expression language can be used only to access attributes or object from those 11 implicit objects</td>
+	</tr>
+</table>
+<!-- ************************************************************************** -->
+<hr>
+<A NAME="table1"><h1>Sheet 2: <em>JSTL implicit objects</em></h1></A>
+<table cellspacing="0" border="0">
+	<colgroup width="178"></colgroup>
+	<colgroup width="134"></colgroup>
+	<colgroup width="459"></colgroup>
+	<colgroup span="7" width="67"></colgroup>
+	<tr>
+		<td height="17" align="left"><b>type of object</b></td>
+		<td align="left"><b>Object</b></td>
+		<td align="left"><b> Description</b></td>
+		<td align="left"><b><br></b></td>
+		<td align="left"><b><br></b></td>
+		<td align="left"><b><br></b></td>
+		<td align="left"><b><br></b></td>
+		<td align="left"><b><br></b></td>
+		<td align="left"><b><br></b></td>
+		<td align="left"><b><br></b></td>
+	</tr>
+	<tr>
+		<td height="17" align="left"><b><br></b></td>
+		<td align="left"><b><br></b></td>
+		<td align="left"><b><br></b></td>
+		<td align="left"><b><br></b></td>
+		<td align="left"><b><br></b></td>
+		<td align="left"><b><br></b></td>
+		<td align="left"><b><br></b></td>
+		<td align="left"><b><br></b></td>
+		<td align="left"><b><br></b></td>
+		<td align="left"><b><br></b></td>
+	</tr>
+	<tr>
+		<td height="17" align="left"><b><br></b></td>
+		<td align="left"><b><br></b></td>
+		<td align="left"><b><br></b></td>
+		<td align="left"><b><br></b></td>
+		<td align="left"><b><br></b></td>
+		<td align="left"><b><br></b></td>
+		<td align="left"><b><br></b></td>
+		<td align="left"><b><br></b></td>
+		<td align="left"><b><br></b></td>
+		<td align="left"><b><br></b></td>
+	</tr>
+	<tr>
+		<td height="17" align="left"><b><br></b></td>
+		<td align="left"><b><br></b></td>
+		<td align="left"><b><br></b></td>
+		<td align="left"><b><br></b></td>
+		<td align="left"><b><br></b></td>
+		<td align="left"><b><br></b></td>
+		<td align="left"><b><br></b></td>
+		<td align="left"><b><br></b></td>
+		<td align="left"><b><br></b></td>
+		<td align="left"><b><br></b></td>
+	</tr>
+	<tr>
+		<td height="17" align="left">HttpServletRequest</td>
+		<td align="left">param</td>
+		<td align="left"> request parameters</td>
+		<td align="left"><br></td>
+		<td align="left"><br></td>
+		<td align="left"><br></td>
+		<td align="left"><br></td>
+		<td align="left"><br></td>
+		<td align="left"><br></td>
+		<td align="left"><br></td>
+	</tr>
+	<tr>
+		<td height="17" align="left">java.util.Map</td>
+		<td align="left">initParam</td>
+		<td align="left">applicatoin context init parameter (web.xml )</td>
+		<td align="left"><br></td>
+		<td align="left"><br></td>
+		<td align="left"><br></td>
+		<td align="left"><br></td>
+		<td align="left"><br></td>
+		<td align="left"><br></td>
+		<td align="left"><br></td>
+	</tr>
+	<tr>
+		<td height="17" align="left"><br></td>
+		<td align="left"><br></td>
+		<td align="left"><br></td>
+		<td align="left"><br></td>
+		<td align="left"><br></td>
+		<td align="left"><br></td>
+		<td align="left"><br></td>
+		<td align="left"><br></td>
+		<td align="left"><br></td>
+		<td align="left"><br></td>
+	</tr>
+	<tr>
+		<td height="17" align="left"><br></td>
+		<td colspan=9 rowspan=24 align="left"><br><img src="ParamJSTL_html_9ccdc129.png" width=1052 height=396 hspace=9 vspace=17>
+		</td>
+		</tr>
+	<tr>
+		<td height="17" align="left"><br></td>
+		</tr>
+	<tr>
+		<td height="17" align="left"><br></td>
+		</tr>
+	<tr>
+		<td height="17" align="left"><br></td>
+		</tr>
+	<tr>
+		<td height="17" align="left"><br></td>
+		</tr>
+	<tr>
+		<td height="17" align="left"><br></td>
+		</tr>
+	<tr>
+		<td height="17" align="left"><br></td>
+		</tr>
+	<tr>
+		<td height="17" align="left"><br></td>
+		</tr>
+	<tr>
+		<td height="17" align="left"><br></td>
+		</tr>
+	<tr>
+		<td height="17" align="left"><br></td>
+		</tr>
+	<tr>
+		<td height="17" align="left"><br></td>
+		</tr>
+	<tr>
+		<td height="17" align="left"><br></td>
+		</tr>
+	<tr>
+		<td height="17" align="left"><br></td>
+		</tr>
+	<tr>
+		<td height="17" align="left"><br></td>
+		</tr>
+	<tr>
+		<td height="17" align="left"><br></td>
+		</tr>
+	<tr>
+		<td height="17" align="left"><br></td>
+		</tr>
+	<tr>
+		<td height="17" align="left"><br></td>
+		</tr>
+	<tr>
+		<td height="17" align="left"><br></td>
+		</tr>
+	<tr>
+		<td height="17" align="left"><br></td>
+		</tr>
+	<tr>
+		<td height="17" align="left"><br></td>
+		</tr>
+	<tr>
+		<td height="17" align="left"><br></td>
+		</tr>
+	<tr>
+		<td height="17" align="left"><br></td>
+		</tr>
+	<tr>
+		<td height="17" align="left"><br></td>
+		</tr>
+	<tr>
+		<td height="17" align="left"><br></td>
+		</tr>
+	<tr>
+		<td height="17" align="left"><br></td>
+		<td align="left"><br></td>
+		<td align="left"><br></td>
+		<td align="left"><br></td>
+		<td align="left"><br></td>
+		<td align="left"><br></td>
+		<td align="left"><br></td>
+		<td align="left"><br></td>
+		<td align="left"><br></td>
+		<td align="left"><br></td>
+	</tr>
+	<tr>
+		<td height="17" align="left"><br></td>
+		<td align="left"><br></td>
+		<td align="left"><br></td>
+		<td align="left"><br></td>
+		<td align="left"><br></td>
+		<td align="left"><br></td>
+		<td align="left"><br></td>
+		<td align="left"><br></td>
+		<td align="left"><br></td>
+		<td align="left"><br></td>
+	</tr>
+	<tr>
+		<td height="17" align="left"><br></td>
+		<td colspan=6 rowspan=13 align="left"><br><img src="ParamJSTL_html_f80c3012.png" width=830 height=205 hspace=18 vspace=14>
+		</td>
+		<td align="left"><br></td>
+		<td align="left"><br></td>
+		<td align="left"><br></td>
+	</tr>
+	<tr>
+		<td height="17" align="left"><br></td>
+		<td align="left"><br></td>
+		<td align="left"><br></td>
+		<td align="left"><br></td>
+	</tr>
+	<tr>
+		<td height="17" align="left"><br></td>
+		<td align="left"><br></td>
+		<td align="left"><br></td>
+		<td align="left"><br></td>
+	</tr>
+	<tr>
+		<td height="17" align="left"><br></td>
+		<td align="left"><br></td>
+		<td align="left"><br></td>
+		<td align="left"><br></td>
+	</tr>
+	<tr>
+		<td height="17" align="left"><br></td>
+		<td align="left"><br></td>
+		<td align="left"><br></td>
+		<td align="left"><br></td>
+	</tr>
+	<tr>
+		<td height="17" align="left"><br></td>
+		<td align="left"><br></td>
+		<td align="left"><br></td>
+		<td align="left"><br></td>
+	</tr>
+	<tr>
+		<td height="17" align="left"><br></td>
+		<td align="left"><br></td>
+		<td align="left"><br></td>
+		<td align="left"><br></td>
+	</tr>
+	<tr>
+		<td height="17" align="left"><br></td>
+		<td align="left"><br></td>
+		<td align="left"><br></td>
+		<td align="left"><br></td>
+	</tr>
+	<tr>
+		<td height="17" align="left"><br></td>
+		<td align="left"><br></td>
+		<td align="left"><br></td>
+		<td align="left"><br></td>
+	</tr>
+	<tr>
+		<td height="17" align="left"><br></td>
+		<td align="left"><br></td>
+		<td align="left"><br></td>
+		<td align="left"><br></td>
+	</tr>
+	<tr>
+		<td height="17" align="left"><br></td>
+		<td align="left"><br></td>
+		<td align="left"><br></td>
+		<td align="left"><br></td>
+	</tr>
+	<tr>
+		<td height="17" align="left"><br></td>
+		<td align="left"><br></td>
+		<td align="left"><br></td>
+		<td align="left"><br></td>
+	</tr>
+	<tr>
+		<td height="17" align="left"><br></td>
+		<td align="left"><br></td>
+		<td align="left"><br></td>
+		<td align="left"><br></td>
+	</tr>
+</table>
+<!-- ************************************************************************** -->
+<hr>
+<A NAME="table2"><h1>Sheet 3: <em>JSTL -14 Core tags</em></h1></A>
+<table cellspacing="0" border="0">
+	<colgroup width="152"></colgroup>
+	<colgroup width="93"></colgroup>
+	<colgroup width="44"></colgroup>
+	<colgroup width="785"></colgroup>
+	<colgroup width="165"></colgroup>
+	<colgroup span="2" width="67"></colgroup>
+	<tr>
+		<td height="62" align="left" bgcolor="#FFFF00"><b><font color="#FF0000">Core has  14 tags</font></b></td>
+		<td align="left"><b>Attibute</b></td>
+		<td align="left"><b>Mandatory</b></td>
+		<td align="left"><b>Description</b></td>
+		<td align="left"><br></td>
+		<td align="left"><br></td>
+		<td align="left"><br></td>
+	</tr>
+	<tr>
+		<td height="17" align="left"><b>Tag</b></td>
+		<td align="left"><br></td>
+		<td align="left"><br></td>
+		<td align="left"><br></td>
+		<td align="left"><br></td>
+		<td align="left"><br></td>
+		<td align="left"><br></td>
+	</tr>
+	<tr>
+		<td height="17" align="left"><b><br></b></td>
+		<td align="left"><b><br></b></td>
+		<td align="left"><b><br></b></td>
+		<td align="left"><b><br></b></td>
+		<td align="left"><b><br></b></td>
+		<td align="left"><b><br></b></td>
+		<td align="left"><b><br></b></td>
+	</tr>
+	<tr>
+		<td height="17" align="left" bgcolor="#C0C0C0">&lt;c:out&gt;</td>
+		<td align="left" bgcolor="#C0C0C0"><br></td>
+		<td align="left" bgcolor="#C0C0C0"><br></td>
+		<td align="left" bgcolor="#C0C0C0">to output the value. WE CAN COMPLETELY AVOID TO USE THIS TAG IN JSP 2.0</td>
+		<td align="left"><br></td>
+		<td align="left"><br></td>
+		<td align="left"><br></td>
+	</tr>
+	<tr>
+		<td height="17" align="left" bgcolor="#C0C0C0"><br></td>
+		<td align="left" bgcolor="#C0C0C0">value</td>
+		<td align="left" bgcolor="#C0C0C0">Yes</td>
+		<td align="left" bgcolor="#C0C0C0">if it is literal string, the same will be output. If it is EL then try find object in any 11 implicity objects</td>
+		<td align="left"><br></td>
+		<td align="left"><br></td>
+		<td align="left"><br></td>
+	</tr>
+	<tr>
+		<td height="17" align="left" bgcolor="#C0C0C0"><br></td>
+		<td align="left" bgcolor="#C0C0C0">escapeXml</td>
+		<td align="left" bgcolor="#C0C0C0"><br></td>
+		<td align="left" bgcolor="#C0C0C0"><br></td>
+		<td align="left"><br></td>
+		<td align="left"><br></td>
+		<td align="left"><br></td>
+	</tr>
+	<tr>
+		<td height="17" align="left" bgcolor="#C0C0C0"><br></td>
+		<td align="left" bgcolor="#C0C0C0">default</td>
+		<td align="left" bgcolor="#C0C0C0"><br></td>
+		<td align="left" bgcolor="#C0C0C0">default value can be specifed by using this attribute or BODY of tag</td>
+		<td align="left"><br></td>
+		<td align="left"><br></td>
+		<td align="left"><br></td>
+	</tr>
+	<tr>
+		<td height="17" align="left" bgcolor="#C0C0C0"><br></td>
+		<td align="left" bgcolor="#C0C0C0"><br></td>
+		<td align="left" bgcolor="#C0C0C0"><br></td>
+		<td align="left" bgcolor="#C0C0C0"><br></td>
+		<td align="left"><br></td>
+		<td align="left"><br></td>
+		<td align="left"><br></td>
+	</tr>
+	<tr>
+		<td height="34" align="left" bgcolor="#C0C0C0">&lt;c:set&gt;</td>
+		<td align="left" bgcolor="#C0C0C0"><br></td>
+		<td align="left" bgcolor="#C0C0C0"><br></td>
+		<td align="left" bgcolor="#C0C0C0">this tag can use to SET or RESET values in scope / bean / map<br>This tag only can use to set key/value for map. ( cannot use jsp:setProperty for the same )</td>
+		<td align="left"><br></td>
+		<td align="left">var</td>
+		<td align="left"><br></td>
+	</tr>
+	<tr>
+		<td height="17" align="left" bgcolor="#C0C0C0"><br></td>
+		<td align="left" bgcolor="#C0C0C0">var</td>
+		<td align="left" bgcolor="#C0C0C0">yes</td>
+		<td align="left" bgcolor="#C0C0C0">use to set value for scoped variables</td>
+		<td align="left"><br></td>
+		<td align="left"><br></td>
+		<td align="left"><br></td>
+	</tr>
+	<tr>
+		<td height="17" align="left" bgcolor="#C0C0C0"><br></td>
+		<td align="left" bgcolor="#C0C0C0">value</td>
+		<td align="left" bgcolor="#C0C0C0">yes</td>
+		<td align="left" bgcolor="#C0C0C0">use body of tag instead of value attribute to set value if values comes from another action</td>
+		<td align="left"><br></td>
+		<td align="left"><br></td>
+		<td align="left"><br></td>
+	</tr>
+	<tr>
+		<td height="17" align="left" bgcolor="#C0C0C0"><br></td>
+		<td align="left" bgcolor="#C0C0C0"><font color="#993300">target</font></td>
+		<td align="left" bgcolor="#C0C0C0"><br></td>
+		<td rowspan=2 align="left" valign=middle bgcolor="#C0C0C0">use to set value for bean / map attributes</td>
+		<td align="left"><br></td>
+		<td align="left"><br></td>
+		<td align="left"><br></td>
+	</tr>
+	<tr>
+		<td height="17" align="left" bgcolor="#C0C0C0"><br></td>
+		<td align="left" bgcolor="#C0C0C0"><font color="#993300">property</font></td>
+		<td align="left" bgcolor="#C0C0C0"><br></td>
+		<td align="left"><br></td>
+		<td align="left"><br></td>
+		<td align="left"><br></td>
+	</tr>
+	<tr>
+		<td height="17" align="left" bgcolor="#C0C0C0"><br></td>
+		<td align="left" bgcolor="#C0C0C0">scope</td>
+		<td align="left" bgcolor="#C0C0C0"><br></td>
+		<td align="left" bgcolor="#C0C0C0"><br></td>
+		<td align="left"><br></td>
+		<td align="left"><br></td>
+		<td align="left"><br></td>
+	</tr>
+	<tr>
+		<td height="17" align="left" bgcolor="#C0C0C0"><br></td>
+		<td align="left" bgcolor="#C0C0C0"><br></td>
+		<td align="left" bgcolor="#C0C0C0"><br></td>
+		<td align="left" bgcolor="#C0C0C0"><br></td>
+		<td align="left"><br></td>
+		<td align="left"><br></td>
+		<td align="left"><br></td>
+	</tr>
+	<tr>
+		<td height="17" align="left" bgcolor="#C0C0C0">&lt;c:remove&gt;</td>
+		<td align="left" bgcolor="#C0C0C0"><br></td>
+		<td align="left" bgcolor="#C0C0C0"><br></td>
+		<td align="left" bgcolor="#C0C0C0"><br></td>
+		<td align="left"><br></td>
+		<td align="left"><br></td>
+		<td align="left"><br></td>
+	</tr>
+	<tr>
+		<td height="34" align="left" bgcolor="#C0C0C0"><br></td>
+		<td align="left" bgcolor="#C0C0C0">var</td>
+		<td align="left" bgcolor="#C0C0C0">yes</td>
+		<td align="left" bgcolor="#C0C0C0">attribute name in any of FOUR scope<br>This cannot be EL, it accept only string.</td>
+		<td align="left"><br></td>
+		<td align="left"><br></td>
+		<td align="left"><br></td>
+	</tr>
+	<tr>
+		<td height="17" align="left" bgcolor="#C0C0C0"><br></td>
+		<td align="left" bgcolor="#C0C0C0"><br></td>
+		<td align="left" bgcolor="#C0C0C0"><br></td>
+		<td align="left" bgcolor="#C0C0C0"><br></td>
+		<td align="left"><br></td>
+		<td align="left"><br></td>
+		<td align="left"><br></td>
+	</tr>
+	<tr>
+		<td height="17" align="left" bgcolor="#C0C0C0">&lt;c:catch&gt;</td>
+		<td align="left" bgcolor="#C0C0C0"><br></td>
+		<td align="left" bgcolor="#C0C0C0"><br></td>
+		<td align="left" bgcolor="#C0C0C0">Mostly no need to use this tag. Since most of tags don’t give exception.</td>
+		<td align="left"><br></td>
+		<td align="left"><br></td>
+		<td align="left"><br></td>
+	</tr>
+	<tr>
+		<td height="17" align="left" bgcolor="#C0C0C0"><br></td>
+		<td align="left" bgcolor="#C0C0C0">var</td>
+		<td align="left" bgcolor="#C0C0C0">no</td>
+		<td align="left" bgcolor="#C0C0C0"><br></td>
+		<td align="left"><br></td>
+		<td align="left"><br></td>
+		<td align="left"><br></td>
+	</tr>
+	<tr>
+		<td height="17" align="left"><br></td>
+		<td align="left"><br></td>
+		<td align="left"><br></td>
+		<td align="left"><br></td>
+		<td align="left"><br></td>
+		<td align="left"><br></td>
+		<td align="left"><br></td>
+	</tr>
+	<tr>
+		<td height="17" align="left"><br></td>
+		<td align="left"><br></td>
+		<td align="left"><br></td>
+		<td align="left"><br></td>
+		<td align="left"><br></td>
+		<td align="left"><br></td>
+		<td align="left"><br></td>
+	</tr>
+	<tr>
+		<td height="17" align="left" bgcolor="#C0C0C0">&lt;if&gt;</td>
+		<td align="left" bgcolor="#C0C0C0"><br></td>
+		<td align="left" bgcolor="#C0C0C0"><br></td>
+		<td align="left" bgcolor="#C0C0C0"><br></td>
+		<td align="left"><br></td>
+		<td align="left"><br></td>
+		<td align="left"><br></td>
+	</tr>
+	<tr>
+		<td height="17" align="left" bgcolor="#C0C0C0"><br></td>
+		<td align="left" bgcolor="#C0C0C0">test</td>
+		<td align="left" bgcolor="#C0C0C0">yes</td>
+		<td align="left" bgcolor="#C0C0C0"><br></td>
+		<td align="left"><br></td>
+		<td align="left"><br></td>
+		<td align="left"><br></td>
+	</tr>
+	<tr>
+		<td height="17" align="left" bgcolor="#C0C0C0"><br></td>
+		<td align="left" bgcolor="#C0C0C0">var</td>
+		<td align="left" bgcolor="#C0C0C0"><br></td>
+		<td align="left" bgcolor="#C0C0C0"><br></td>
+		<td align="left"><br></td>
+		<td align="left"><br></td>
+		<td align="left"><br></td>
+	</tr>
+	<tr>
+		<td height="17" align="left" bgcolor="#C0C0C0"><br></td>
+		<td align="left" bgcolor="#C0C0C0">scope</td>
+		<td align="left" bgcolor="#C0C0C0"><br></td>
+		<td align="left" bgcolor="#C0C0C0"><br></td>
+		<td align="left"><br></td>
+		<td align="left"><br></td>
+		<td align="left"><br></td>
+	</tr>
+	<tr>
+		<td height="17" align="left" bgcolor="#C0C0C0"><br></td>
+		<td align="left" bgcolor="#C0C0C0"><br></td>
+		<td align="left" bgcolor="#C0C0C0"><br></td>
+		<td align="left" bgcolor="#C0C0C0"><br></td>
+		<td align="left"><br></td>
+		<td align="left"><br></td>
+		<td align="left"><br></td>
+	</tr>
+	<tr>
+		<td height="17" align="left" bgcolor="#C0C0C0">&lt;choose&gt;</td>
+		<td align="left" bgcolor="#C0C0C0"><br></td>
+		<td align="left" bgcolor="#C0C0C0"><br></td>
+		<td align="left" bgcolor="#C0C0C0">no attribute</td>
+		<td align="left"><br></td>
+		<td align="left"><br></td>
+		<td align="left"><br></td>
+	</tr>
+	<tr>
+		<td height="17" align="left" bgcolor="#C0C0C0">&lt;when&gt;</td>
+		<td align="left" bgcolor="#C0C0C0">test</td>
+		<td align="left" bgcolor="#C0C0C0">yes</td>
+		<td align="left" bgcolor="#C0C0C0">it don’t have &quot;var&quot; and &quot;scope&quot; attributes</td>
+		<td align="left"><br></td>
+		<td align="left"><br></td>
+		<td align="left"><br></td>
+	</tr>
+	<tr>
+		<td height="17" align="left" bgcolor="#C0C0C0">&lt;otherwise&gt;</td>
+		<td align="left" bgcolor="#C0C0C0"><br></td>
+		<td align="left" bgcolor="#C0C0C0"><br></td>
+		<td align="left" bgcolor="#C0C0C0">no attribute</td>
+		<td align="left"><br></td>
+		<td align="left"><br></td>
+		<td align="left"><br></td>
+	</tr>
+	<tr>
+		<td height="17" align="left"><br></td>
+		<td align="left"><br></td>
+		<td align="left"><br></td>
+		<td align="left"><br></td>
+		<td align="left"><br></td>
+		<td align="left"><br></td>
+		<td align="left"><br></td>
+	</tr>
+	<tr>
+		<td height="17" align="left"><br></td>
+		<td align="left"><br></td>
+		<td align="left"><br></td>
+		<td align="left"><br></td>
+		<td align="left"><br></td>
+		<td align="left"><br></td>
+		<td align="left"><br></td>
+	</tr>
+	<tr>
+		<td height="17" align="left" bgcolor="#C0C0C0">&lt;forEach&gt;</td>
+		<td align="left" bgcolor="#C0C0C0"><br></td>
+		<td align="left" bgcolor="#C0C0C0"><br></td>
+		<td align="left" bgcolor="#C0C0C0"><br></td>
+		<td align="left"><br></td>
+		<td align="left"><br></td>
+		<td align="left"><br></td>
+	</tr>
+	<tr>
+		<td height="17" align="left" bgcolor="#C0C0C0"><br></td>
+		<td align="left" bgcolor="#C0C0C0">items</td>
+		<td align="left" bgcolor="#C0C0C0">no</td>
+		<td align="left" bgcolor="#C0C0C0"><br></td>
+		<td align="left"><br></td>
+		<td align="left"><br></td>
+		<td align="left"><br></td>
+	</tr>
+	<tr>
+		<td height="17" align="left" bgcolor="#C0C0C0"><br></td>
+		<td align="left" bgcolor="#C0C0C0">var</td>
+		<td align="left" bgcolor="#C0C0C0">no</td>
+		<td align="left" bgcolor="#C0C0C0"><font color="#FF0000">It cannot accept EL</font></td>
+		<td align="left"><br></td>
+		<td align="left"><br></td>
+		<td align="left"><br></td>
+	</tr>
+	<tr>
+		<td height="17" align="left" bgcolor="#C0C0C0"><br></td>
+		<td align="left" bgcolor="#C0C0C0">varStatus</td>
+		<td align="left" bgcolor="#C0C0C0">no</td>
+		<td align="left" bgcolor="#C0C0C0"><font color="#FF0000">It cannot accept EL</font></td>
+		<td align="left"><br></td>
+		<td align="left"><br></td>
+		<td align="left"><br></td>
+	</tr>
+	<tr>
+		<td height="17" align="left" bgcolor="#C0C0C0"><br></td>
+		<td align="left" bgcolor="#C0C0C0">begin</td>
+		<td align="left" bgcolor="#C0C0C0">no</td>
+		<td align="left" bgcolor="#C0C0C0">if you specify  invalid begin that out of index ( but +number) this tag, don’t throw exception</td>
+		<td align="left"><br></td>
+		<td align="left"><br></td>
+		<td align="left"><br></td>
+	</tr>
+	<tr>
+		<td height="34" align="left" bgcolor="#C0C0C0"><br></td>
+		<td align="left" bgcolor="#C0C0C0">end</td>
+		<td align="left" bgcolor="#C0C0C0">no</td>
+		<td align="left" bgcolor="#C0C0C0">if you specify  invalid begin that out of index ( but +number) this tag, don’t throw exception<br>this tag can have &quot;end&quot; alone without begin or step ( I verified )</td>
+		<td align="left"><br></td>
+		<td align="left"><br></td>
+		<td align="left"><br></td>
+	</tr>
+	<tr>
+		<td height="17" align="left" bgcolor="#C0C0C0"><br></td>
+		<td align="left" bgcolor="#C0C0C0">step</td>
+		<td align="left" bgcolor="#C0C0C0">no</td>
+		<td align="left" bgcolor="#C0C0C0">if you specify  invalid begin that out of index ( but +number) this tag, don’t throw exception</td>
+		<td align="left"><br></td>
+		<td align="left"><br></td>
+		<td align="left"><br></td>
+	</tr>
+	<tr>
+		<td height="17" align="left" bgcolor="#C0C0C0"><br></td>
+		<td align="left" bgcolor="#C0C0C0"><br></td>
+		<td align="left" bgcolor="#C0C0C0"><br></td>
+		<td align="left" bgcolor="#C0C0C0"><br></td>
+		<td align="left"><br></td>
+		<td align="left"><br></td>
+		<td align="left"><br></td>
+	</tr>
+	<tr>
+		<td height="17" align="left" bgcolor="#C0C0C0">&lt;forTokens&gt;</td>
+		<td align="left" bgcolor="#C0C0C0"><br></td>
+		<td align="left" bgcolor="#C0C0C0"><br></td>
+		<td align="left" bgcolor="#C0C0C0"><br></td>
+		<td align="left"><br></td>
+		<td align="left"><br></td>
+		<td align="left"><br></td>
+	</tr>
+	<tr>
+		<td height="17" align="left" bgcolor="#C0C0C0"><br></td>
+		<td align="left" bgcolor="#C0C0C0">delims</td>
+		<td align="left" bgcolor="#C0C0C0">yes</td>
+		<td align="left" bgcolor="#C0C0C0"><br></td>
+		<td align="left"><br></td>
+		<td align="left"><br></td>
+		<td align="left"><br></td>
+	</tr>
+	<tr>
+		<td height="17" align="left" bgcolor="#C0C0C0"><br></td>
+		<td align="left" bgcolor="#C0C0C0">items</td>
+		<td align="left" bgcolor="#C0C0C0">yes</td>
+		<td align="left" bgcolor="#C0C0C0">here it is mandatory. But forEach not mandatory. This can be mixed data type value , since it is accept collection</td>
+		<td align="left"><br></td>
+		<td align="left"><br></td>
+		<td align="left"><br></td>
+	</tr>
+	<tr>
+		<td height="17" align="left" bgcolor="#C0C0C0"><br></td>
+		<td align="left" bgcolor="#C0C0C0">begin</td>
+		<td align="left" bgcolor="#C0C0C0">no</td>
+		<td align="left" bgcolor="#C0C0C0">if you specify  invalid begin that out of index ( but +number) this tag, don’t throw exception</td>
+		<td align="left"><br></td>
+		<td align="left"><br></td>
+		<td align="left"><br></td>
+	</tr>
+	<tr>
+		<td height="34" align="left" bgcolor="#C0C0C0"><br></td>
+		<td align="left" bgcolor="#C0C0C0">end</td>
+		<td align="left" bgcolor="#C0C0C0">no</td>
+		<td align="left" bgcolor="#C0C0C0">if you specify  invalid begin that out of index ( but +number) this tag, don’t throw exception<br>this tag can have &quot;end&quot; alone without begin or step ( I verified )</td>
+		<td align="left"><br></td>
+		<td align="left"><br></td>
+		<td align="left"><br></td>
+	</tr>
+	<tr>
+		<td height="17" align="left" bgcolor="#C0C0C0"><br></td>
+		<td align="left" bgcolor="#C0C0C0">step</td>
+		<td align="left" bgcolor="#C0C0C0">no</td>
+		<td align="left" bgcolor="#C0C0C0">if you specify  invalid begin that out of index ( but +number) this tag, don’t throw exception</td>
+		<td align="left"><br></td>
+		<td align="left"><br></td>
+		<td align="left"><br></td>
+	</tr>
+	<tr>
+		<td height="17" align="left" bgcolor="#C0C0C0"><br></td>
+		<td align="left" bgcolor="#C0C0C0">varStatus</td>
+		<td align="left" bgcolor="#C0C0C0">no</td>
+		<td align="left" bgcolor="#C0C0C0"><font color="#FF0000">It cannot accept EL</font></td>
+		<td align="left"><br></td>
+		<td align="left"><br></td>
+		<td align="left"><br></td>
+	</tr>
+	<tr>
+		<td height="17" align="left"><br></td>
+		<td align="left"><br></td>
+		<td align="left"><br></td>
+		<td align="left"><br></td>
+		<td align="left"><br></td>
+		<td align="left"><br></td>
+		<td align="left"><br></td>
+	</tr>
+	<tr>
+		<td height="17" align="left"><br></td>
+		<td align="left"><br></td>
+		<td align="left"><br></td>
+		<td align="left"><br></td>
+		<td align="left"><br></td>
+		<td align="left"><br></td>
+		<td align="left"><br></td>
+	</tr>
+	<tr>
+		<td height="17" align="left"><br></td>
+		<td align="left"><br></td>
+		<td align="left"><br></td>
+		<td align="left"><br></td>
+		<td align="left"><br></td>
+		<td align="left"><br></td>
+		<td align="left"><br></td>
+	</tr>
+	<tr>
+		<td height="17" align="left" bgcolor="#969696">&lt;import&gt;</td>
+		<td align="left" bgcolor="#969696"><br></td>
+		<td align="left" bgcolor="#969696"><br></td>
+		<td align="left" bgcolor="#969696">Use this tag wherever need to use &lt;jsp:include&gt;[ RETRIEVE OUTPUT OF ANOTHER RESOURCE ]</td>
+		<td align="left"><br></td>
+		<td align="left"><br></td>
+		<td align="left"><br></td>
+	</tr>
+	<tr>
+		<td height="17" align="left" bgcolor="#969696"><br></td>
+		<td align="left" bgcolor="#969696">url</td>
+		<td align="left" bgcolor="#969696">yes</td>
+		<td align="left" bgcolor="#969696"><br></td>
+		<td align="left"><br></td>
+		<td align="left"><br></td>
+		<td align="left"><br></td>
+	</tr>
+	<tr>
+		<td height="17" align="left" bgcolor="#969696"><br></td>
+		<td align="left" bgcolor="#969696">var</td>
+		<td align="left" bgcolor="#969696"><br></td>
+		<td align="left" bgcolor="#969696"><br></td>
+		<td align="left"><br></td>
+		<td align="left"><br></td>
+		<td align="left"><br></td>
+	</tr>
+	<tr>
+		<td height="17" align="left" bgcolor="#969696"><br></td>
+		<td align="left" bgcolor="#969696">scope</td>
+		<td align="left" bgcolor="#969696"><br></td>
+		<td align="left" bgcolor="#969696"><br></td>
+		<td align="left"><br></td>
+		<td align="left"><br></td>
+		<td align="left"><br></td>
+	</tr>
+	<tr>
+		<td height="17" align="left" bgcolor="#969696"><br></td>
+		<td align="left" bgcolor="#969696">context</td>
+		<td align="left" bgcolor="#969696"><br></td>
+		<td align="left" bgcolor="#969696"><br></td>
+		<td align="left"><br></td>
+		<td align="left"><br></td>
+		<td align="left"><br></td>
+	</tr>
+	<tr>
+		<td height="17" align="left" bgcolor="#969696"><br></td>
+		<td align="left" bgcolor="#969696">charEncoding</td>
+		<td align="left" bgcolor="#969696"><br></td>
+		<td align="left" bgcolor="#969696"><br></td>
+		<td align="left"><br></td>
+		<td align="left"><br></td>
+		<td align="left"><br></td>
+	</tr>
+	<tr>
+		<td height="17" align="left" bgcolor="#969696"><br></td>
+		<td align="left" bgcolor="#969696">varReader</td>
+		<td align="left" bgcolor="#969696"><br></td>
+		<td align="left" bgcolor="#969696"><br></td>
+		<td align="left"><br></td>
+		<td align="left"><br></td>
+		<td align="left"><br></td>
+	</tr>
+	<tr>
+		<td height="17" align="left" bgcolor="#969696">&lt;redirect&gt;</td>
+		<td align="left" bgcolor="#969696"><br></td>
+		<td align="left" bgcolor="#969696"><br></td>
+		<td align="left" bgcolor="#969696">use this tag when to redirect to any resource / external resource [ REDIRECT TO ANOTHER RESOURCE ]</td>
+		<td align="left"><br></td>
+		<td align="left"><br></td>
+		<td align="left"><br></td>
+	</tr>
+	<tr>
+		<td height="17" align="left" bgcolor="#969696"><br></td>
+		<td align="left" bgcolor="#969696">url</td>
+		<td align="left" bgcolor="#969696">yes</td>
+		<td align="left" bgcolor="#969696"><br></td>
+		<td align="left"><br></td>
+		<td align="left"><br></td>
+		<td align="left"><br></td>
+	</tr>
+	<tr>
+		<td height="17" align="left" bgcolor="#969696"><br></td>
+		<td align="left" bgcolor="#969696">context</td>
+		<td align="left" bgcolor="#969696"><br></td>
+		<td align="left" bgcolor="#969696"><br></td>
+		<td align="left"><br></td>
+		<td align="left"><br></td>
+		<td align="left"><br></td>
+	</tr>
+	<tr>
+		<td height="34" align="left" bgcolor="#969696">&lt;url&gt;</td>
+		<td align="left" bgcolor="#969696"><br></td>
+		<td align="left" bgcolor="#969696"><br></td>
+		<td align="left" bgcolor="#969696">TO BUILD URL ( A HYPER LINK )<br>use this tag to build url and use &lt;html:link&gt; tag to anchor tag in rendered html page</td>
+		<td align="left"><br></td>
+		<td align="left"><br></td>
+		<td align="left"><br></td>
+	</tr>
+	<tr>
+		<td height="17" align="left" bgcolor="#969696"><br></td>
+		<td align="left" bgcolor="#969696">name</td>
+		<td align="left" bgcolor="#969696">yes</td>
+		<td align="left" bgcolor="#969696"><br></td>
+		<td align="left"><br></td>
+		<td align="left"><br></td>
+		<td align="left"><br></td>
+	</tr>
+	<tr>
+		<td height="17" align="left" bgcolor="#969696"><br></td>
+		<td align="left" bgcolor="#969696">value</td>
+		<td align="left" bgcolor="#969696">yes</td>
+		<td align="left" bgcolor="#969696"><br></td>
+		<td align="left"><br></td>
+		<td align="left"><br></td>
+		<td align="left"><br></td>
+	</tr>
+	<tr>
+		<td height="17" align="left"><br></td>
+		<td align="left"><br></td>
+		<td align="left"><br></td>
+		<td align="left"><br></td>
+		<td align="left"><br></td>
+		<td align="left"><br></td>
+		<td align="left"><br></td>
+	</tr>
+	<tr>
+		<td height="17" align="left"><br></td>
+		<td align="left"><br></td>
+		<td align="left"><br></td>
+		<td align="left"><br></td>
+		<td align="left"><br></td>
+		<td align="left"><br></td>
+		<td align="left"><br></td>
+	</tr>
+	<tr>
+		<td height="17" align="left"><br></td>
+		<td align="left"><br></td>
+		<td align="left"><br></td>
+		<td align="left"><br></td>
+		<td align="left"><br></td>
+		<td align="left"><br></td>
+		<td align="left"><br></td>
+	</tr>
+	<tr>
+		<td height="17" align="left"><b><i>var - this attribute always represent a temp variable in any tags</i></b></td>
+		<td align="left"><br></td>
+		<td align="left"><br></td>
+		<td align="left"><br></td>
+		<td align="left"><br></td>
+		<td align="left"><br></td>
+		<td align="left"><br></td>
+	</tr>
+	<tr>
+		<td colspan=4 rowspan=14 height="238" align="left"><br><img src="ParamJSTL_html_e7750856.png" width=388 height=210 hspace=345 vspace=20>
+		</td>
+		<td align="left"><br></td>
+		<td align="left"><br></td>
+		<td align="left"><br></td>
+	</tr>
+	<tr>
+		<td align="left"><br></td>
+		<td align="left"><br></td>
+		<td align="left"><br></td>
+	</tr>
+	<tr>
+		<td colspan=3 rowspan=10 align="left"><br><img src="ParamJSTL_html_71bd28cc.png" width=256 height=165 hspace=22 vspace=7>
+		</td>
+		</tr>
+	<tr>
+		</tr>
+	<tr>
+		</tr>
+	<tr>
+		</tr>
+	<tr>
+		</tr>
+	<tr>
+		</tr>
+	<tr>
+		</tr>
+	<tr>
+		</tr>
+	<tr>
+		</tr>
+	<tr>
+		</tr>
+	<tr>
+		<td align="left"><br></td>
+		<td align="left"><br></td>
+		<td align="left"><br></td>
+	</tr>
+	<tr>
+		<td align="left"><br></td>
+		<td align="left"><br></td>
+		<td align="left"><br></td>
+	</tr>
+	<tr>
+		<td height="17" align="left"><br></td>
+		<td align="left"><br></td>
+		<td align="left"><br></td>
+		<td align="left"><br></td>
+		<td align="left"><br></td>
+		<td align="left"><br></td>
+	</tr>
+	<tr>
+		<td height="17" align="left"><br></td>
+		<td align="left"><br></td>
+		<td align="left"><br></td>
+		<td align="left"><br></td>
+		<td align="left"><br></td>
+		<td align="left"><br></td>
+		<td align="left"><br></td>
+	</tr>
+	<tr>
+		<td height="17" align="left"><br></td>
+		<td align="left"><br></td>
+		<td align="left"><br></td>
+		<td align="left"><br></td>
+		<td align="left"><br></td>
+		<td align="left"><br></td>
+		<td align="left"><br></td>
+	</tr>
+	<tr>
+		<td colspan=4 rowspan=24 height="408" align="left"><br><img src="ParamJSTL_html_3846535f.png" width=718 height=391 hspace=180 vspace=20>
+		</td>
+		<td align="left"><br></td>
+		<td align="left"><br></td>
+		<td align="left"><br></td>
+	</tr>
+	<tr>
+		<td align="left"><br></td>
+		<td align="left"><br></td>
+		<td align="left"><br></td>
+	</tr>
+	<tr>
+		<td align="left"><br></td>
+		<td align="left"><br></td>
+		<td align="left"><br></td>
+	</tr>
+	<tr>
+		<td align="left"><br></td>
+		<td align="left"><br></td>
+		<td align="left"><br></td>
+	</tr>
+	<tr>
+		<td align="left"><br></td>
+		<td align="left"><br></td>
+		<td align="left"><br></td>
+	</tr>
+	<tr>
+		<td align="left"><br></td>
+		<td align="left"><br></td>
+		<td align="left"><br></td>
+	</tr>
+	<tr>
+		<td align="left"><br></td>
+		<td align="left"><br></td>
+		<td align="left"><br></td>
+	</tr>
+	<tr>
+		<td align="left"><br></td>
+		<td align="left"><br></td>
+		<td align="left"><br></td>
+	</tr>
+	<tr>
+		<td align="left"><br></td>
+		<td align="left"><br></td>
+		<td align="left"><br></td>
+	</tr>
+	<tr>
+		<td align="left"><br></td>
+		<td align="left"><br></td>
+		<td align="left"><br></td>
+	</tr>
+	<tr>
+		<td align="left"><br></td>
+		<td align="left"><br></td>
+		<td align="left"><br></td>
+	</tr>
+	<tr>
+		<td align="left"><br></td>
+		<td align="left"><br></td>
+		<td align="left"><br></td>
+	</tr>
+	<tr>
+		<td align="left"><br></td>
+		<td align="left"><br></td>
+		<td align="left"><br></td>
+	</tr>
+	<tr>
+		<td align="left"><br></td>
+		<td align="left"><br></td>
+		<td align="left"><br></td>
+	</tr>
+	<tr>
+		<td align="left"><br></td>
+		<td align="left"><br></td>
+		<td align="left"><br></td>
+	</tr>
+	<tr>
+		<td align="left"><br></td>
+		<td align="left"><br></td>
+		<td align="left"><br></td>
+	</tr>
+	<tr>
+		<td align="left"><br></td>
+		<td align="left"><br></td>
+		<td align="left"><br></td>
+	</tr>
+	<tr>
+		<td align="left"><br></td>
+		<td align="left"><br></td>
+		<td align="left"><br></td>
+	</tr>
+	<tr>
+		<td align="left"><br></td>
+		<td align="left"><br></td>
+		<td align="left"><br></td>
+	</tr>
+	<tr>
+		<td align="left"><br></td>
+		<td align="left"><br></td>
+		<td align="left"><br></td>
+	</tr>
+	<tr>
+		<td align="left"><br></td>
+		<td align="left"><br></td>
+		<td align="left"><br></td>
+	</tr>
+	<tr>
+		<td align="left"><br></td>
+		<td align="left"><br></td>
+		<td align="left"><br></td>
+	</tr>
+	<tr>
+		<td align="left"><br></td>
+		<td align="left"><br></td>
+		<td align="left"><br></td>
+	</tr>
+	<tr>
+		<td align="left"><br></td>
+		<td align="left"><br></td>
+		<td align="left"><br></td>
+	</tr>
+	<tr>
+		<td colspan=4 rowspan=15 height="255" align="left"><br><img src="ParamJSTL_html_dee21fea.png" width=617 height=238 hspace=230 vspace=15>
+		</td>
+		<td align="left"><br></td>
+		<td align="left"><br></td>
+		<td align="left"><br></td>
+	</tr>
+	<tr>
+		<td align="left"><br></td>
+		<td align="left"><br></td>
+		<td align="left"><br></td>
+	</tr>
+	<tr>
+		<td align="left"><br></td>
+		<td align="left"><br></td>
+		<td align="left"><br></td>
+	</tr>
+	<tr>
+		<td align="left"><br></td>
+		<td align="left"><br></td>
+		<td align="left"><br></td>
+	</tr>
+	<tr>
+		<td align="left"><br></td>
+		<td align="left"><br></td>
+		<td align="left"><br></td>
+	</tr>
+	<tr>
+		<td align="left"><br></td>
+		<td align="left"><br></td>
+		<td align="left"><br></td>
+	</tr>
+	<tr>
+		<td align="left"><br></td>
+		<td align="left"><br></td>
+		<td align="left"><br></td>
+	</tr>
+	<tr>
+		<td align="left"><br></td>
+		<td align="left"><br></td>
+		<td align="left"><br></td>
+	</tr>
+	<tr>
+		<td align="left"><br></td>
+		<td align="left"><br></td>
+		<td align="left"><br></td>
+	</tr>
+	<tr>
+		<td align="left"><br></td>
+		<td align="left"><br></td>
+		<td align="left"><br></td>
+	</tr>
+	<tr>
+		<td align="left"><br></td>
+		<td align="left"><br></td>
+		<td align="left"><br></td>
+	</tr>
+	<tr>
+		<td align="left"><br></td>
+		<td align="left"><br></td>
+		<td align="left"><br></td>
+	</tr>
+	<tr>
+		<td align="left"><br></td>
+		<td align="left"><br></td>
+		<td align="left"><br></td>
+	</tr>
+	<tr>
+		<td align="left"><br></td>
+		<td align="left"><br></td>
+		<td align="left"><br></td>
+	</tr>
+	<tr>
+		<td align="left"><br></td>
+		<td align="left"><br></td>
+		<td align="left"><br></td>
+	</tr>
+</table>
+<img src="ParamJSTL_html_3dcf54c8.png" width=347 height=230 hspace=219 vspace=19>
+<img src="ParamJSTL_html_b625a5fc.png" width=292 height=116 hspace=247 vspace=13>
+<!-- ************************************************************************** -->
+<hr>
+<A NAME="table3"><h1>Sheet 4: <em>JSTL - 12 Formating tags</em></h1></A>
+<table cellspacing="0" border="0">
+	<colgroup width="67"></colgroup>
+	<colgroup width="155"></colgroup>
+	<colgroup width="130"></colgroup>
+	<colgroup width="70"></colgroup>
+	<colgroup width="674"></colgroup>
+	<colgroup width="67"></colgroup>
+	<tr>
+		<td height="17" align="left"><br></td>
+		<td align="left" bgcolor="#FFFF00"><b><font color="#FF0000">Formatting has  12 tags</font></b></td>
+		<td align="left"><br></td>
+		<td align="left"><br></td>
+		<td align="left"><br></td>
+		<td align="left"><br></td>
+	</tr>
+	<tr>
+		<td height="17" align="left"><br></td>
+		<td align="left"><br></td>
+		<td align="left"><br></td>
+		<td align="left"><br></td>
+		<td align="left"><br></td>
+		<td align="left"><br></td>
+	</tr>
+	<tr>
+		<td height="62" align="left"><b><br></b></td>
+		<td align="left"><b>Tag</b></td>
+		<td align="left"><b>Attibute</b></td>
+		<td align="left"><b>Mandatory</b></td>
+		<td align="left"><b>Description</b></td>
+		<td align="left"><b><br></b></td>
+	</tr>
+	<tr>
+		<td height="17" align="left"><br></td>
+		<td align="left"><br></td>
+		<td align="left"><br></td>
+		<td align="left"><br></td>
+		<td align="left"><br></td>
+		<td align="left"><br></td>
+	</tr>
+	<tr>
+		<td height="17" align="left"><br></td>
+		<td align="left">&lt;formatNumber&gt;</td>
+		<td align="left"><br></td>
+		<td align="left"><br></td>
+		<td align="left"><br></td>
+		<td align="left"><br></td>
+	</tr>
+	<tr>
+		<td height="17" align="left"><br></td>
+		<td align="left"><br></td>
+		<td align="left">value</td>
+		<td align="left">yes</td>
+		<td align="left"><br></td>
+		<td align="left"><br></td>
+	</tr>
+	<tr>
+		<td height="17" align="left"><br></td>
+		<td align="left"><br></td>
+		<td align="left">maxIntegerDigits</td>
+		<td align="left"><br></td>
+		<td align="left"><br></td>
+		<td align="left"><br></td>
+	</tr>
+	<tr>
+		<td height="17" align="left"><br></td>
+		<td align="left"><br></td>
+		<td align="left">minIntegerDigits</td>
+		<td align="left"><br></td>
+		<td align="left"><br></td>
+		<td align="left"><br></td>
+	</tr>
+	<tr>
+		<td height="17" align="left"><br></td>
+		<td align="left"><br></td>
+		<td align="left">maxFractionDigits</td>
+		<td align="left"><br></td>
+		<td align="left"><br></td>
+		<td align="left"><br></td>
+	</tr>
+	<tr>
+		<td height="17" align="left"><br></td>
+		<td align="left"><br></td>
+		<td align="left">minFractionDigits</td>
+		<td align="left"><br></td>
+		<td align="left"><br></td>
+		<td align="left"><br></td>
+	</tr>
+	<tr>
+		<td height="17" align="left"><br></td>
+		<td align="left"><br></td>
+		<td align="left">groupingUsed</td>
+		<td align="left"><br></td>
+		<td align="left">if this set to false, pattern attribute ignored</td>
+		<td align="left"><br></td>
+	</tr>
+	<tr>
+		<td height="17" align="left"><br></td>
+		<td align="left"><br></td>
+		<td align="left">pattern</td>
+		<td align="left"><br></td>
+		<td align="left"><br></td>
+		<td align="left"><br></td>
+	</tr>
+	<tr>
+		<td height="17" align="left"><br></td>
+		<td align="left"><br></td>
+		<td align="left">type</td>
+		<td align="left"><br></td>
+		<td align="left">say either currence/percentage/number. If pattern set, value of this attribute ignored</td>
+		<td align="left"><br></td>
+	</tr>
+	<tr>
+		<td height="17" align="left"><br></td>
+		<td align="left"><br></td>
+		<td align="left">var</td>
+		<td align="left"><br></td>
+		<td align="left">store formated value in scoped variable Instead of sending value to JSPWriter</td>
+		<td align="left"><br></td>
+	</tr>
+	<tr>
+		<td height="17" align="left"><br></td>
+		<td align="left"><br></td>
+		<td align="left">scope</td>
+		<td align="left"><br></td>
+		<td align="left"><br></td>
+		<td align="left"><br></td>
+	</tr>
+	<tr>
+		<td height="17" align="left"><br></td>
+		<td align="left"><br></td>
+		<td align="left">currencySymbol</td>
+		<td align="left"><br></td>
+		<td align="left"><br></td>
+		<td align="left"><br></td>
+	</tr>
+	<tr>
+		<td height="17" align="left"><br></td>
+		<td align="left"><br></td>
+		<td align="left">currencyCode</td>
+		<td align="left"><br></td>
+		<td align="left"><br></td>
+		<td align="left"><br></td>
+	</tr>
+	<tr>
+		<td height="17" align="left"><br></td>
+		<td align="left"><br></td>
+		<td align="left"><br></td>
+		<td align="left"><br></td>
+		<td align="left"><br></td>
+		<td align="left"><br></td>
+	</tr>
+	<tr>
+		<td height="17" align="left"><br></td>
+		<td align="left">&lt;parseNumber&gt;</td>
+		<td align="left"><br></td>
+		<td align="left"><br></td>
+		<td align="left"><br></td>
+		<td align="left"><br></td>
+	</tr>
+	<tr>
+		<td height="17" align="left"><br></td>
+		<td align="left"><br></td>
+		<td align="left">value</td>
+		<td align="left">yes</td>
+		<td align="left"><br></td>
+		<td align="left"><br></td>
+	</tr>
+	<tr>
+		<td height="17" align="left"><br></td>
+		<td align="left"><br></td>
+		<td align="left">type</td>
+		<td align="left"><br></td>
+		<td align="left"><br></td>
+		<td align="left"><br></td>
+	</tr>
+	<tr>
+		<td height="17" align="left"><br></td>
+		<td align="left"><br></td>
+		<td align="left">var</td>
+		<td align="left"><br></td>
+		<td align="left"><br></td>
+		<td align="left"><br></td>
+	</tr>
+	<tr>
+		<td height="17" align="left"><br></td>
+		<td align="left"><br></td>
+		<td align="left">parseLocal</td>
+		<td align="left"><br></td>
+		<td align="left"><br></td>
+		<td align="left"><br></td>
+	</tr>
+	<tr>
+		<td height="17" align="left"><br></td>
+		<td align="left"><br></td>
+		<td align="left">pattern</td>
+		<td align="left"><br></td>
+		<td align="left"><br></td>
+		<td align="left"><br></td>
+	</tr>
+	<tr>
+		<td height="17" align="left"><br></td>
+		<td align="left"><br></td>
+		<td align="left"><br></td>
+		<td align="left"><br></td>
+		<td align="left"><br></td>
+		<td align="left"><br></td>
+	</tr>
+	<tr>
+		<td height="17" align="left"><br></td>
+		<td align="left">&lt;setLocale&gt;</td>
+		<td align="left"><br></td>
+		<td align="left"><br></td>
+		<td align="left"><b><font color="#008000">This tag used  by &lt;parseNumber&gt;,  &lt;formatNumber&gt;, &lt;formatDate&gt; and &lt;parseDate&gt;</font></b></td>
+		<td align="left"><br></td>
+	</tr>
+	<tr>
+		<td height="17" align="left"><br></td>
+		<td align="left"><br></td>
+		<td align="left">value</td>
+		<td align="left"><br></td>
+		<td align="left"><br></td>
+		<td align="left"><br></td>
+	</tr>
+	<tr>
+		<td height="17" align="left"><br></td>
+		<td align="left"><br></td>
+		<td align="left">scope</td>
+		<td align="left"><br></td>
+		<td align="left"><br></td>
+		<td align="left"><br></td>
+	</tr>
+	<tr>
+		<td height="17" align="left"><br></td>
+		<td align="left"><br></td>
+		<td align="left">varient</td>
+		<td align="left"><br></td>
+		<td align="left">I don’t know about this</td>
+		<td align="left"><br></td>
+	</tr>
+	<tr>
+		<td height="17" align="left"><br></td>
+		<td align="left"><br></td>
+		<td align="left"><br></td>
+		<td align="left"><br></td>
+		<td align="left"><br></td>
+		<td align="left"><br></td>
+	</tr>
+	<tr>
+		<td height="17" align="left"><br></td>
+		<td align="left">&lt;formatDate&gt;</td>
+		<td align="left"><br></td>
+		<td align="left"><br></td>
+		<td align="left"><br></td>
+		<td align="left"><br></td>
+	</tr>
+	<tr>
+		<td height="17" align="left"><br></td>
+		<td align="left"><br></td>
+		<td align="left">value</td>
+		<td align="left"><br></td>
+		<td align="left"><br></td>
+		<td align="left"><br></td>
+	</tr>
+	<tr>
+		<td height="17" align="left"><br></td>
+		<td align="left"><br></td>
+		<td align="left">dateStyle</td>
+		<td align="left"><br></td>
+		<td align="left"><br></td>
+		<td align="left"><br></td>
+	</tr>
+	<tr>
+		<td height="17" align="left"><br></td>
+		<td align="left"><br></td>
+		<td align="left">type</td>
+		<td align="left"><br></td>
+		<td align="left"><br></td>
+		<td align="left"><br></td>
+	</tr>
+	<tr>
+		<td height="17" align="left"><br></td>
+		<td align="left"><br></td>
+		<td align="left">timeStyle</td>
+		<td align="left"><br></td>
+		<td align="left"><br></td>
+		<td align="left"><br></td>
+	</tr>
+	<tr>
+		<td height="17" align="left"><br></td>
+		<td align="left"><br></td>
+		<td align="left">timeZone</td>
+		<td align="left"><br></td>
+		<td align="left"><br></td>
+		<td align="left"><br></td>
+	</tr>
+	<tr>
+		<td height="17" align="left"><br></td>
+		<td align="left"><br></td>
+		<td align="left">pattern</td>
+		<td align="left"><br></td>
+		<td align="left"><br></td>
+		<td align="left"><br></td>
+	</tr>
+	<tr>
+		<td height="17" align="left"><br></td>
+		<td align="left"><br></td>
+		<td align="left"><br></td>
+		<td align="left"><br></td>
+		<td align="left"><br></td>
+		<td align="left"><br></td>
+	</tr>
+	<tr>
+		<td height="17" align="left"><br></td>
+		<td align="left"><br></td>
+		<td align="left"><br></td>
+		<td align="left"><br></td>
+		<td align="left"><br></td>
+		<td align="left"><br></td>
+	</tr>
+	<tr>
+		<td height="17" align="left"><br></td>
+		<td align="left">&lt;parseDate&gt;</td>
+		<td align="left"><br></td>
+		<td align="left"><br></td>
+		<td align="left">I hope, we may not face situation to use tag</td>
+		<td align="left"><br></td>
+	</tr>
+	<tr>
+		<td height="17" align="left"><br></td>
+		<td align="left"><br></td>
+		<td align="left">var</td>
+		<td align="left"><br></td>
+		<td align="left"><br></td>
+		<td align="left"><br></td>
+	</tr>
+	<tr>
+		<td height="17" align="left"><br></td>
+		<td align="left"><br></td>
+		<td align="left">value</td>
+		<td align="left"><br></td>
+		<td align="left"><br></td>
+		<td align="left"><br></td>
+	</tr>
+	<tr>
+		<td height="17" align="left"><br></td>
+		<td align="left"><br></td>
+		<td align="left">pattern</td>
+		<td align="left"><br></td>
+		<td align="left"><br></td>
+		<td align="left"><br></td>
+	</tr>
+	<tr>
+		<td height="17" align="left"><br></td>
+		<td align="left"><br></td>
+		<td align="left">timeZone</td>
+		<td align="left"><br></td>
+		<td align="left"><br></td>
+		<td align="left"><br></td>
+	</tr>
+	<tr>
+		<td height="17" align="left"><br></td>
+		<td align="left"><br></td>
+		<td align="left"><br></td>
+		<td align="left"><br></td>
+		<td align="left"><br></td>
+		<td align="left"><br></td>
+	</tr>
+	<tr>
+		<td height="17" align="left"><br></td>
+		<td align="left">&lt;timeZone&gt;</td>
+		<td align="left"><br></td>
+		<td align="left"><br></td>
+		<td align="left">set time zone for nested tags. It DON’T set value in configuration of JSTL</td>
+		<td align="left"><br></td>
+	</tr>
+	<tr>
+		<td height="17" align="left"><br></td>
+		<td align="left"><br></td>
+		<td align="left">value</td>
+		<td align="left"><br></td>
+		<td align="left"><br></td>
+		<td align="left"><br></td>
+	</tr>
+	<tr>
+		<td height="17" align="left"><br></td>
+		<td align="left"><br></td>
+		<td align="left"><br></td>
+		<td align="left"><br></td>
+		<td align="left"><br></td>
+		<td align="left"><br></td>
+	</tr>
+	<tr>
+		<td height="17" align="left"><br></td>
+		<td align="left">&lt;setTimeZone&gt;</td>
+		<td align="left"><br></td>
+		<td align="left"><br></td>
+		<td align="left">set value for configuration level of JSTL This tag used  by &lt;formatDate&gt; and &lt;parseDate&gt;</td>
+		<td align="left"><br></td>
+	</tr>
+	<tr>
+		<td height="17" align="left"><br></td>
+		<td align="left"><br></td>
+		<td align="left">var</td>
+		<td align="left"><br></td>
+		<td align="left"><br></td>
+		<td align="left"><br></td>
+	</tr>
+	<tr>
+		<td height="17" align="left"><br></td>
+		<td align="left"><br></td>
+		<td align="left">value</td>
+		<td align="left"><br></td>
+		<td align="left"><br></td>
+		<td align="left"><br></td>
+	</tr>
+	<tr>
+		<td height="17" align="left"><br></td>
+		<td align="left"><br></td>
+		<td align="left">scope</td>
+		<td align="left"><br></td>
+		<td align="left"><br></td>
+		<td align="left"><br></td>
+	</tr>
+	<tr>
+		<td height="17" align="left"><br></td>
+		<td align="left"><br></td>
+		<td align="left"><br></td>
+		<td align="left"><br></td>
+		<td align="left"><br></td>
+		<td align="left"><br></td>
+	</tr>
+	<tr>
+		<td height="17" align="left"><br></td>
+		<td align="left">&lt;setBundle&gt;</td>
+		<td align="left"><br></td>
+		<td align="left"><br></td>
+		<td align="left"><br></td>
+		<td align="left"><br></td>
+	</tr>
+	<tr>
+		<td height="17" align="left"><br></td>
+		<td align="left"><br></td>
+		<td align="left">basename</td>
+		<td align="left"><br></td>
+		<td align="left"><br></td>
+		<td align="left"><br></td>
+	</tr>
+	<tr>
+		<td height="17" align="left"><br></td>
+		<td align="left"><br></td>
+		<td align="left"><br></td>
+		<td align="left"><br></td>
+		<td align="left"><br></td>
+		<td align="left"><br></td>
+	</tr>
+	<tr>
+		<td height="17" align="left"><br></td>
+		<td align="left"><br></td>
+		<td align="left"><br></td>
+		<td align="left"><br></td>
+		<td align="left"><br></td>
+		<td align="left"><br></td>
+	</tr>
+	<tr>
+		<td height="17" align="left"><br></td>
+		<td align="left"><br></td>
+		<td align="left"><br></td>
+		<td align="left"><br></td>
+		<td align="left"><br></td>
+		<td align="left"><br></td>
+	</tr>
+	<tr>
+		<td height="17" align="left"><br></td>
+		<td align="left"><br></td>
+		<td align="left"><br></td>
+		<td align="left"><br></td>
+		<td align="left"><br></td>
+		<td align="left"><br></td>
+	</tr>
+	<tr>
+		<td height="17" align="left"><br></td>
+		<td align="left"><br></td>
+		<td align="left"><br></td>
+		<td align="left"><br></td>
+		<td align="left"><br></td>
+		<td align="left"><br></td>
+	</tr>
+	<tr>
+		<td colspan=5 rowspan=17 height="289" align="left"><br><img src="ParamJSTL_html_c2aca2a2.png" width=909 height=273 hspace=96 vspace=16>
+		</td>
+		<td align="left"><br></td>
+	</tr>
+	<tr>
+		<td align="left"><br></td>
+	</tr>
+	<tr>
+		<td align="left"><br></td>
+	</tr>
+	<tr>
+		<td align="left"><br></td>
+	</tr>
+	<tr>
+		<td align="left"><br></td>
+	</tr>
+	<tr>
+		<td align="left"><br></td>
+	</tr>
+	<tr>
+		<td align="left"><br></td>
+	</tr>
+	<tr>
+		<td align="left"><br></td>
+	</tr>
+	<tr>
+		<td align="left"><br></td>
+	</tr>
+	<tr>
+		<td align="left"><br></td>
+	</tr>
+	<tr>
+		<td align="left"><br></td>
+	</tr>
+	<tr>
+		<td align="left"><br></td>
+	</tr>
+	<tr>
+		<td align="left"><br></td>
+	</tr>
+	<tr>
+		<td align="left"><br></td>
+	</tr>
+	<tr>
+		<td align="left"><br></td>
+	</tr>
+	<tr>
+		<td align="left"><br></td>
+	</tr>
+	<tr>
+		<td align="left"><br></td>
+	</tr>
+	<tr>
+		<td height="17" align="left"><br></td>
+		<td align="left"><br></td>
+		<td align="left"><br></td>
+		<td align="left"><br></td>
+		<td align="left"><br></td>
+		<td align="left"><br></td>
+	</tr>
+	<tr>
+		<td colspan=6 rowspan=21 height="357" align="left"><br><img src="ParamJSTL_html_84691b90.png" width=1096 height=340 hspace=36 vspace=18>
+		</td>
+		</tr>
+	<tr>
+		</tr>
+	<tr>
+		</tr>
+	<tr>
+		</tr>
+	<tr>
+		</tr>
+	<tr>
+		</tr>
+	<tr>
+		</tr>
+	<tr>
+		</tr>
+	<tr>
+		</tr>
+	<tr>
+		</tr>
+	<tr>
+		</tr>
+	<tr>
+		</tr>
+	<tr>
+		</tr>
+	<tr>
+		</tr>
+	<tr>
+		</tr>
+	<tr>
+		</tr>
+	<tr>
+		</tr>
+	<tr>
+		</tr>
+	<tr>
+		</tr>
+	<tr>
+		</tr>
+	<tr>
+		</tr>
+</table>
+<!-- ************************************************************************** -->
+<hr>
+<A NAME="table4"><h1>Sheet 5: <em>JSTL - 6 DB tags</em></h1></A>
+<table cellspacing="0" border="0">
+	<colgroup width="67"></colgroup>
+	<colgroup width="103"></colgroup>
+	<colgroup width="180"></colgroup>
+	<colgroup width="163"></colgroup>
+	<colgroup width="166"></colgroup>
+	<colgroup width="215"></colgroup>
+	<colgroup span="7" width="67"></colgroup>
+	<tr>
+		<td height="17" align="left"><b><br></b></td>
+		<td align="left"><b>Tag</b></td>
+		<td align="left"><b>Body</b></td>
+		<td align="left"><b>Attibute</b></td>
+		<td align="left"><b>Attributes value</b></td>
+		<td align="left"><b>Repeated attributes</b></td>
+		<td align="left"><b><br></b></td>
+		<td align="left"><b><br></b></td>
+		<td align="left"><b><br></b></td>
+		<td align="left"><b><br></b></td>
+		<td align="left"><b><br></b></td>
+		<td align="left"><b><br></b></td>
+		<td align="left"><b><br></b></td>
+	</tr>
+	<tr>
+		<td height="17" align="left"><br></td>
+		<td align="left"><br></td>
+		<td align="left"><br></td>
+		<td align="left"><br></td>
+		<td align="left"><br></td>
+		<td align="left"><br></td>
+		<td align="left"><br></td>
+		<td align="left"><br></td>
+		<td align="left"><br></td>
+		<td align="left"><br></td>
+		<td align="left"><br></td>
+		<td align="left"><br></td>
+		<td align="left"><br></td>
+	</tr>
+	<tr>
+		<td height="17" align="left"><br></td>
+		<td align="left"><br></td>
+		<td align="left"><br></td>
+		<td align="left"><br></td>
+		<td align="left"><br></td>
+		<td align="left"><br></td>
+		<td align="left"><br></td>
+		<td align="left"><br></td>
+		<td align="left"><br></td>
+		<td align="left"><br></td>
+		<td align="left"><br></td>
+		<td align="left"><br></td>
+		<td align="left"><br></td>
+	</tr>
+	<tr>
+		<td height="17" align="left"><br></td>
+		<td align="left">&lt;sql:query&gt;</td>
+		<td align="left">SQL Query</td>
+		<td align="left">var</td>
+		<td align="left"><br></td>
+		<td align="left"><br></td>
+		<td align="left"><br></td>
+		<td align="left"><br></td>
+		<td align="left"><br></td>
+		<td align="left"><br></td>
+		<td align="left"><br></td>
+		<td align="left"><br></td>
+		<td align="left"><br></td>
+	</tr>
+	<tr>
+		<td height="17" align="left"><br></td>
+		<td align="left"><br></td>
+		<td align="left"><br></td>
+		<td align="left"><br></td>
+		<td align="left"><br></td>
+		<td align="left"><br></td>
+		<td align="left"><br></td>
+		<td align="left"><br></td>
+		<td align="left"><br></td>
+		<td align="left"><br></td>
+		<td align="left"><br></td>
+		<td align="left"><br></td>
+		<td align="left"><br></td>
+	</tr>
+	<tr>
+		<td height="17" align="left"><br></td>
+		<td align="left"><br></td>
+		<td align="left"><br></td>
+		<td align="left"><br></td>
+		<td align="left"><br></td>
+		<td align="left"><br></td>
+		<td align="left"><br></td>
+		<td align="left"><br></td>
+		<td align="left"><br></td>
+		<td align="left"><br></td>
+		<td align="left"><br></td>
+		<td align="left"><br></td>
+		<td align="left"><br></td>
+	</tr>
+	<tr>
+		<td height="17" align="left"><br></td>
+		<td align="left"><br></td>
+		<td align="left"><br></td>
+		<td align="left"><br></td>
+		<td align="left"><br></td>
+		<td align="left"><br></td>
+		<td align="left"><br></td>
+		<td align="left"><br></td>
+		<td align="left"><br></td>
+		<td align="left"><br></td>
+		<td align="left"><br></td>
+		<td align="left"><br></td>
+		<td align="left"><br></td>
+	</tr>
+	<tr>
+		<td height="17" align="left"><br></td>
+		<td align="left"><br></td>
+		<td align="left"><br></td>
+		<td align="left"><br></td>
+		<td align="left"><br></td>
+		<td align="left"><br></td>
+		<td align="left"><br></td>
+		<td align="left"><br></td>
+		<td align="left"><br></td>
+		<td align="left"><br></td>
+		<td align="left"><br></td>
+		<td align="left"><br></td>
+		<td align="left"><br></td>
+	</tr>
+	<tr>
+		<td height="17" align="left"><br></td>
+		<td align="left"><br></td>
+		<td align="left"><br></td>
+		<td align="left"><br></td>
+		<td align="left"><br></td>
+		<td align="left"><br></td>
+		<td align="left"><br></td>
+		<td align="left"><br></td>
+		<td align="left"><br></td>
+		<td align="left"><br></td>
+		<td align="left"><br></td>
+		<td align="left"><br></td>
+		<td align="left"><br></td>
+	</tr>
+	<tr>
+		<td height="17" align="left"><br></td>
+		<td align="left"><br></td>
+		<td align="left"><br></td>
+		<td align="left"><br></td>
+		<td align="left"><br></td>
+		<td align="left"><br></td>
+		<td align="left"><br></td>
+		<td align="left"><br></td>
+		<td align="left"><br></td>
+		<td align="left"><br></td>
+		<td align="left"><br></td>
+		<td align="left"><br></td>
+		<td align="left"><br></td>
+	</tr>
+	<tr>
+		<td height="17" align="left"><br></td>
+		<td align="left"><br></td>
+		<td align="left"><br></td>
+		<td align="left"><br></td>
+		<td align="left"><br></td>
+		<td align="left"><br></td>
+		<td align="left"><br></td>
+		<td align="left"><br></td>
+		<td align="left"><br></td>
+		<td align="left"><br></td>
+		<td align="left"><br></td>
+		<td align="left"><br></td>
+		<td align="left"><br></td>
+	</tr>
+	<tr>
+		<td height="17" align="left"><br></td>
+		<td align="left"><br></td>
+		<td align="left"><br></td>
+		<td align="left"><br></td>
+		<td align="left"><br></td>
+		<td align="left"><br></td>
+		<td align="left"><br></td>
+		<td align="left"><br></td>
+		<td align="left"><br></td>
+		<td align="left"><br></td>
+		<td align="left"><br></td>
+		<td align="left"><br></td>
+		<td align="left"><br></td>
+	</tr>
+	<tr>
+		<td height="17" align="left"><br></td>
+		<td align="left"><br></td>
+		<td align="left"><br></td>
+		<td align="left"><br></td>
+		<td align="left"><br></td>
+		<td align="left"><br></td>
+		<td align="left"><br></td>
+		<td align="left"><br></td>
+		<td align="left"><br></td>
+		<td align="left"><br></td>
+		<td align="left"><br></td>
+		<td align="left"><br></td>
+		<td align="left"><br></td>
+	</tr>
+	<tr>
+		<td height="17" align="left"><br></td>
+		<td align="left"><br></td>
+		<td align="left"><br></td>
+		<td align="left"><br></td>
+		<td align="left"><br></td>
+		<td align="left"><br></td>
+		<td align="left"><br></td>
+		<td align="left"><br></td>
+		<td align="left"><br></td>
+		<td align="left"><br></td>
+		<td align="left"><br></td>
+		<td align="left"><br></td>
+		<td align="left"><br></td>
+	</tr>
+	<tr>
+		<td height="17" align="left"><br></td>
+		<td align="left"><br></td>
+		<td align="left"><br></td>
+		<td align="left"><br></td>
+		<td align="left"><br></td>
+		<td align="left"><br></td>
+		<td align="left"><br></td>
+		<td align="left"><br></td>
+		<td align="left"><br></td>
+		<td align="left"><br></td>
+		<td align="left"><br></td>
+		<td align="left"><br></td>
+		<td align="left"><br></td>
+	</tr>
+	<tr>
+		<td height="17" align="left"><br></td>
+		<td align="left"><br></td>
+		<td align="left"><br></td>
+		<td align="left"><br></td>
+		<td colspan=9 rowspan=13 align="left"><br><img src="ParamJSTL_html_3a176409.png" width=803 height=206 hspace=27 vspace=13>
+		</td>
+		</tr>
+	<tr>
+		<td colspan=5 rowspan=13 height="221" align="left"><br><img src="ParamJSTL_html_83a1365f.png" width=510 height=203 hspace=86 vspace=15>
+		</td>
+		</tr>
+	<tr>
+		</tr>
+	<tr>
+		</tr>
+	<tr>
+		</tr>
+	<tr>
+		</tr>
+	<tr>
+		</tr>
+	<tr>
+		</tr>
+	<tr>
+		</tr>
+	<tr>
+		</tr>
+	<tr>
+		</tr>
+	<tr>
+		</tr>
+	<tr>
+		</tr>
+	<tr>
+		<td align="left"><br></td>
+		<td align="left"><br></td>
+		<td align="left"><br></td>
+		<td align="left"><br></td>
+		<td align="left"><br></td>
+		<td align="left"><br></td>
+		<td align="left"><br></td>
+		<td align="left"><br></td>
+	</tr>
+</table>
+<!-- ************************************************************************** -->
+<hr>
+<A NAME="table5"><h1>Sheet 6: <em>JSTL - 10 XML tags</em></h1></A>
+<table cellspacing="0" border="0">
+	<colgroup width="67"></colgroup>
+	<colgroup width="174"></colgroup>
+	<colgroup width="138"></colgroup>
+	<colgroup width="205"></colgroup>
+	<colgroup width="115"></colgroup>
+	<colgroup width="172"></colgroup>
+	<colgroup width="67"></colgroup>
+	<tr>
+		<td height="17" align="left"><br></td>
+		<td align="left" bgcolor="#FFFF00"><b><font color="#FF0000">XML has  10 tags</font></b></td>
+		<td align="left"><br></td>
+		<td align="left"><br></td>
+		<td align="left"><br></td>
+		<td align="left"><br></td>
+		<td align="left"><br></td>
+	</tr>
+	<tr>
+		<td height="17" align="left"><br></td>
+		<td align="left"><br></td>
+		<td align="left"><br></td>
+		<td align="left"><br></td>
+		<td align="left"><br></td>
+		<td align="left"><br></td>
+		<td align="left"><br></td>
+	</tr>
+	<tr>
+		<td height="17" align="left"><b><br></b></td>
+		<td align="left"><b>Tag</b></td>
+		<td align="left"><b>Body</b></td>
+		<td align="left"><b>Attibute</b></td>
+		<td align="left"><b>Attributes value</b></td>
+		<td align="left"><b>Repeated attributes</b></td>
+		<td align="left"><b><br></b></td>
+	</tr>
+	<tr>
+		<td height="17" align="left"><br></td>
+		<td align="left"><br></td>
+		<td align="left"><br></td>
+		<td align="left"><br></td>
+		<td align="left"><br></td>
+		<td align="left"><br></td>
+		<td align="left"><br></td>
+	</tr>
+	<tr>
+		<td height="17" align="left"><br></td>
+		<td align="left"><br></td>
+		<td align="left"><br></td>
+		<td align="left"><br></td>
+		<td align="left"><br></td>
+		<td align="left"><br></td>
+		<td align="left"><br></td>
+	</tr>
+	<tr>
+		<td height="17" align="left"><br></td>
+		<td align="left"><br></td>
+		<td align="left"><br></td>
+		<td align="left"><br></td>
+		<td align="left"><br></td>
+		<td align="left"><br></td>
+		<td align="left"><br></td>
+	</tr>
+	<tr>
+		<td height="17" align="left"><br></td>
+		<td align="left"><br></td>
+		<td align="left"><br></td>
+		<td align="left"><br></td>
+		<td align="left"><br></td>
+		<td align="left"><br></td>
+		<td align="left"><br></td>
+	</tr>
+	<tr>
+		<td height="17" align="left"><br></td>
+		<td align="left"><br></td>
+		<td align="left"><br></td>
+		<td align="left"><br></td>
+		<td align="left"><br></td>
+		<td align="left"><br></td>
+		<td align="left"><br></td>
+	</tr>
+	<tr>
+		<td height="17" align="left"><br></td>
+		<td align="left"><br></td>
+		<td align="left"><br></td>
+		<td align="left"><br></td>
+		<td align="left"><br></td>
+		<td align="left"><br></td>
+		<td align="left"><br></td>
+	</tr>
+	<tr>
+		<td height="17" align="left"><br></td>
+		<td align="left"><br></td>
+		<td align="left"><br></td>
+		<td align="left"><br></td>
+		<td align="left"><br></td>
+		<td align="left"><br></td>
+		<td align="left"><br></td>
+	</tr>
+	<tr>
+		<td height="17" align="left"><br></td>
+		<td align="left"><br></td>
+		<td align="left"><br></td>
+		<td align="left"><br></td>
+		<td align="left"><br></td>
+		<td align="left"><br></td>
+		<td align="left"><br></td>
+	</tr>
+	<tr>
+		<td height="17" align="left"><br></td>
+		<td colspan=6 rowspan=13 align="left"><br><img src="ParamJSTL_html_55941d00.png" width=861 height=205 hspace=8 vspace=14>
+		</td>
+		</tr>
+	<tr>
+		<td height="17" align="left"><br></td>
+		</tr>
+	<tr>
+		<td height="17" align="left"><br></td>
+		</tr>
+	<tr>
+		<td height="17" align="left"><br></td>
+		</tr>
+	<tr>
+		<td height="17" align="left"><br></td>
+		</tr>
+	<tr>
+		<td height="17" align="left"><br></td>
+		</tr>
+	<tr>
+		<td height="17" align="left"><br></td>
+		</tr>
+	<tr>
+		<td height="17" align="left"><br></td>
+		</tr>
+	<tr>
+		<td height="17" align="left"><br></td>
+		</tr>
+	<tr>
+		<td height="17" align="left"><br></td>
+		</tr>
+	<tr>
+		<td height="17" align="left"><br></td>
+		</tr>
+	<tr>
+		<td height="17" align="left"><br></td>
+		</tr>
+	<tr>
+		<td height="17" align="left"><br></td>
+		</tr>
+	<tr>
+		<td height="17" align="left"><br></td>
+		<td align="left"><br></td>
+		<td align="left"><br></td>
+		<td align="left"><br></td>
+		<td align="left"><br></td>
+		<td align="left"><br></td>
+		<td align="left"><br></td>
+	</tr>
+	<tr>
+		<td height="17" align="left"><br></td>
+		<td align="left"><br></td>
+		<td align="left"><br></td>
+		<td align="left"><br></td>
+		<td align="left"><br></td>
+		<td align="left"><br></td>
+		<td align="left"><br></td>
+	</tr>
+	<tr>
+		<td height="17" align="left"><br></td>
+		<td colspan=6 rowspan=18 align="left"><br><img src="ParamJSTL_html_4180b0d8.png" width=857 height=297 hspace=10 vspace=13>
+		</td>
+		</tr>
+	<tr>
+		<td height="17" align="left"><br></td>
+		</tr>
+	<tr>
+		<td height="17" align="left"><br></td>
+		</tr>
+	<tr>
+		<td height="17" align="left"><br></td>
+		</tr>
+	<tr>
+		<td height="17" align="left"><br></td>
+		</tr>
+	<tr>
+		<td height="17" align="left"><br></td>
+		</tr>
+	<tr>
+		<td height="17" align="left"><br></td>
+		</tr>
+	<tr>
+		<td height="17" align="left"><br></td>
+		</tr>
+	<tr>
+		<td height="17" align="left"><br></td>
+		</tr>
+	<tr>
+		<td height="17" align="left"><br></td>
+		</tr>
+	<tr>
+		<td height="17" align="left"><br></td>
+		</tr>
+	<tr>
+		<td height="17" align="left"><br></td>
+		</tr>
+	<tr>
+		<td height="17" align="left"><br></td>
+		</tr>
+	<tr>
+		<td height="17" align="left"><br></td>
+		</tr>
+	<tr>
+		<td height="17" align="left"><br></td>
+		</tr>
+	<tr>
+		<td height="17" align="left"><br></td>
+		</tr>
+	<tr>
+		<td height="17" align="left"><br></td>
+		</tr>
+	<tr>
+		<td height="17" align="left"><br></td>
+		</tr>
+</table>
+<!-- ************************************************************************** -->
+<hr>
+<A NAME="table6"><h1>Sheet 7: <em>JSTL - Validator</em></h1></A>
+<table cellspacing="0" border="0">
+	<colgroup span="5" width="67"></colgroup>
+	<tr>
+		<td height="17" align="left"><br></td>
+		<td align="left"><br></td>
+		<td align="left"><br></td>
+		<td align="left"><br></td>
+		<td align="left"><br></td>
+	</tr>
+	<tr>
+		<td height="17" align="left"><br></td>
+		<td colspan=4 rowspan=5 align="left"><br><img src="ParamJSTL_html_fc565f45.png" width=205 height=84 hspace=33 vspace=2>
+		</td>
+		</tr>
+	<tr>
+		<td height="17" align="left"><br></td>
+		</tr>
+	<tr>
+		<td height="17" align="left"><br></td>
+		</tr>
+	<tr>
+		<td height="17" align="left"><br></td>
+		</tr>
+	<tr>
+		<td height="17" align="left"><br></td>
+		</tr>
+	<tr>
+		<td colspan=5 rowspan=4 height="68" align="left"><br><img src="ParamJSTL_html_def73046.png" width=272 height=46 hspace=34 vspace=12>
+		</td>
+		</tr>
+	<tr>
+		</tr>
+	<tr>
+		</tr>
+	<tr>
+		</tr>
+</table>
+<!-- ************************************************************************** -->
+<hr>
+<A NAME="table7"><h1>Sheet 8: <em>Topic</em></h1></A>
+<table cellspacing="0" border="0">
+	<colgroup width="67"></colgroup>
+	<colgroup width="207"></colgroup>
+	<colgroup width="212"></colgroup>
+	<colgroup width="67"></colgroup>
+	<tr>
+		<td height="17" align="left">CH 1</td>
+		<td align="left"><br></td>
+		<td align="left"><br></td>
+		<td align="left"><br></td>
+	</tr>
+	<tr>
+		<td height="17" align="left"><br></td>
+		<td align="left">JSTL Overview</td>
+		<td align="left"><br></td>
+		<td align="left"><br></td>
+	</tr>
+	<tr>
+		<td height="17" align="left"><br></td>
+		<td align="left"><br></td>
+		<td align="left">twins librarary</td>
+		<td align="left"><br></td>
+	</tr>
+	<tr>
+		<td height="17" align="left"><br></td>
+		<td align="left"><br></td>
+		<td align="left"><br></td>
+		<td align="left"><br></td>
+	</tr>
+	<tr>
+		<td height="17" align="left">CH 2</td>
+		<td align="left">JSTL EL</td>
+		<td align="left"><br></td>
+		<td align="left"><br></td>
+	</tr>
+	<tr>
+		<td height="17" align="left"><br></td>
+		<td align="left"><br></td>
+		<td align="left">Expression</td>
+		<td align="left"><br></td>
+	</tr>
+	<tr>
+		<td height="17" align="left"><br></td>
+		<td align="left"><br></td>
+		<td align="left">Identifier</td>
+		<td align="left"><br></td>
+	</tr>
+	<tr>
+		<td height="17" align="left"><br></td>
+		<td align="left"><br></td>
+		<td align="left">Operator</td>
+		<td align="left"><br></td>
+	</tr>
+	<tr>
+		<td height="17" align="left"><br></td>
+		<td align="left"><br></td>
+		<td align="left"><br></td>
+		<td align="left"><br></td>
+	</tr>
+	<tr>
+		<td height="34" align="left"><br></td>
+		<td align="left">Accessing objects stored in array, map, and list </td>
+		<td align="left"><br></td>
+		<td align="left"><br></td>
+	</tr>
+	<tr>
+		<td height="17" align="left"><br></td>
+		<td align="left">EL implicit object</td>
+		<td align="left"><br></td>
+		<td align="left"><br></td>
+	</tr>
+	<tr>
+		<td height="17" align="left"><br></td>
+		<td align="left"><br></td>
+		<td align="left"><br></td>
+		<td align="left"><br></td>
+	</tr>
+	<tr>
+		<td height="17" align="left"><br></td>
+		<td align="left"><br></td>
+		<td align="left"><br></td>
+		<td align="left"><br></td>
+	</tr>
+	<tr>
+		<td height="17" align="left"><br></td>
+		<td align="left"><br></td>
+		<td align="left">accessing request implicit object</td>
+		<td align="left"><br></td>
+	</tr>
+	<tr>
+		<td height="17" align="left"><br></td>
+		<td align="left"><br></td>
+		<td align="left">accessing header implicit object</td>
+		<td align="left"><br></td>
+	</tr>
+	<tr>
+		<td height="17" align="left"><br></td>
+		<td align="left"><br></td>
+		<td align="left">accessing context init parameters</td>
+		<td align="right" sdval="0.497916666666667" sdnum="16393;0;HH:MM AM/PM">11:57 AM</td>
+	</tr>
+	<tr>
+		<td height="17" align="left">8th chapter</td>
+		<td align="right" sdval="39490" sdnum="16393;0;DD/MM/YYYY">12/02/2008</td>
+		<td align="right" sdval="0.498611111111111" sdnum="16393;0;HH:MM AM/PM">11:58 AM</td>
+		<td align="left"><br></td>
+	</tr>
+	<tr>
+		<td height="17" align="left"><br></td>
+		<td align="left"><br></td>
+		<td align="left">accessing scoped objects</td>
+		<td align="left"><br></td>
+	</tr>
+	<tr>
+		<td height="17" align="left"><br></td>
+		<td align="left"><br></td>
+		<td align="left"><br></td>
+		<td align="left"><br></td>
+	</tr>
+	<tr>
+		<td height="17" align="left"><br></td>
+		<td align="left">method invocation</td>
+		<td align="left"><br></td>
+		<td align="left"><br></td>
+	</tr>
+</table>
+<!-- ************************************************************************** -->
+<hr>
+<A NAME="table8"><h1>Sheet 9: <em>Meta</em></h1></A>
+<table cellspacing="0" border="0">
+	<colgroup width="67"></colgroup>
+	<colgroup width="158"></colgroup>
+	<colgroup width="344"></colgroup>
+	<colgroup width="462"></colgroup>
+	<tr>
+		<td height="17" align="left"><br></td>
+		<td align="left">JSTL Study Started</td>
+		<td align="left">1/18/2008 : 10:18 AM</td>
+		<td align="left"><br></td>
+	</tr>
+	<tr>
+		<td height="17" align="left"><br></td>
+		<td align="left"><br></td>
+		<td align="left"><br></td>
+		<td align="left"><br></td>
+	</tr>
+	<tr>
+		<td height="17" align="left"><br></td>
+		<td align="left"><br></td>
+		<td align="left"><br></td>
+		<td align="left"><br></td>
+	</tr>
+	<tr>
+		<td height="17" align="left"><br></td>
+		<td align="left"><br></td>
+		<td align="left"><br></td>
+		<td align="left"><br></td>
+	</tr>
+	<tr>
+		<td height="17" align="left"><br></td>
+		<td align="left"><br></td>
+		<td align="left"><br></td>
+		<td align="left"><br></td>
+	</tr>
+	<tr>
+		<td height="17" align="left"><br></td>
+		<td align="left"><br></td>
+		<td align="left"><br></td>
+		<td align="left"><br></td>
+	</tr>
+	<tr>
+		<td height="17" align="left"><br></td>
+		<td align="left"><br></td>
+		<td align="left"><br></td>
+		<td align="left"><br></td>
+	</tr>
+	<tr>
+		<td height="17" align="left"><br></td>
+		<td align="left"><br></td>
+		<td align="left"><br></td>
+		<td align="left"><br></td>
+	</tr>
+	<tr>
+		<td height="17" align="left"><br></td>
+		<td align="left"><br></td>
+		<td align="left"><br></td>
+		<td align="left"><br></td>
+	</tr>
+	<tr>
+		<td height="17" align="left"><br></td>
+		<td align="left"><br></td>
+		<td align="left"><br></td>
+		<td align="left"><br></td>
+	</tr>
+	<tr>
+		<td height="17" align="left"><br></td>
+		<td align="left"><br></td>
+		<td align="left"><br></td>
+		<td align="left"><br></td>
+	</tr>
+	<tr>
+		<td height="17" align="left"><br></td>
+		<td align="left"><br></td>
+		<td align="left"><br></td>
+		<td align="left"><br></td>
+	</tr>
+	<tr>
+		<td height="17" align="left"><br></td>
+		<td align="left"><font color="#C0C0C0"><br></font></td>
+		<td align="left"><font color="#C0C0C0">declare local and propertiy file in web.xml</font></td>
+		<td align="left"><font color="#C0C0C0"><br></font></td>
+	</tr>
+	<tr>
+		<td height="17" align="left"><br></td>
+		<td align="left"><font color="#C0C0C0"><br></font></td>
+		<td align="left"><font color="#C0C0C0">use format:message tag to all alert message</font></td>
+		<td align="left"><font color="#C0C0C0"><br></font></td>
+	</tr>
+	<tr>
+		<td height="17" align="left"><br></td>
+		<td align="left"><font color="#C0C0C0"><br></font></td>
+		<td align="left"><font color="#C0C0C0"><br></font></td>
+		<td align="left"><font color="#C0C0C0"><br></font></td>
+	</tr>
+	<tr>
+		<td height="17" align="left"><br></td>
+		<td align="left"><font color="#C0C0C0"><br></font></td>
+		<td align="left"><font color="#C0C0C0">use separate queryManager.xml file for each module</font></td>
+		<td align="right" sdval="0.497916666666667" sdnum="16393;0;HH:MM AM/PM"><font color="#C0C0C0">11:57 AM</font></td>
+	</tr>
+	<tr>
+		<td height="17" align="left">8th chapter</td>
+		<td align="right" sdval="39490" sdnum="16393;0;DD/MM/YYYY"><font color="#C0C0C0">12/02/2008</font></td>
+		<td align="right" sdval="0.498611111111111" sdnum="16393;0;HH:MM AM/PM"><font color="#C0C0C0">11:58 AM</font></td>
+		<td align="left"><font color="#C0C0C0"><br></font></td>
+	</tr>
+	<tr>
+		<td height="17" align="left"><br></td>
+		<td align="left"><font color="#C0C0C0"><br></font></td>
+		<td align="left"><font color="#C0C0C0">write one method in FORM to trim all fields and avoid calling trim() method in all other places</font></td>
+		<td align="left"><font color="#C0C0C0"><br></font></td>
+	</tr>
+	<tr>
+		<td height="17" align="left"><br></td>
+		<td align="left"><font color="#C0C0C0"><br></font></td>
+		<td align="left"><font color="#C0C0C0">put one method in PvosAction to get session. And all of sub-action must call super class method to get session .  Avoid getting session from request wherever requeried</font></td>
+		<td align="left"><font color="#C0C0C0"><br></font></td>
+	</tr>
+	<tr>
+		<td height="17" align="left"><br></td>
+		<td align="left"><font color="#C0C0C0"><br></font></td>
+		<td align="left"><font color="#C0C0C0"><br></font></td>
+		<td align="left"><font color="#C0C0C0"><br></font></td>
+	</tr>
+	<tr>
+		<td height="17" align="left"><br></td>
+		<td align="left"><font color="#C0C0C0"><br></font></td>
+		<td align="left"><font color="#C0C0C0">try to avoid c:out. </font></td>
+		<td align="left"><font color="#C0C0C0"><br></font></td>
+	</tr>
+	<tr>
+		<td height="17" align="left"><br></td>
+		<td align="left"><font color="#C0C0C0"><br></font></td>
+		<td align="left"><font color="#C0C0C0"><br></font></td>
+		<td align="left"><font color="#C0C0C0"><br></font></td>
+	</tr>
+	<tr>
+		<td height="17" align="left"><br></td>
+		<td align="left"><font color="#C0C0C0"><br></font></td>
+		<td align="left"><font color="#C0C0C0"><br></font></td>
+		<td align="left"><font color="#C0C0C0"><br></font></td>
+	</tr>
+	<tr>
+		<td height="17" align="left"><br></td>
+		<td align="left"><font color="#C0C0C0"><br></font></td>
+		<td align="left"><font color="#C0C0C0">declare three static variable to toggle expor option  for Display tag. We can simply switch off or on those exports</font></td>
+		<td align="left"><font color="#C0C0C0"><br></font></td>
+	</tr>
+	<tr>
+		<td height="17" align="left"><br></td>
+		<td align="left"><font color="#C0C0C0"><br></font></td>
+		<td align="left"><font color="#C0C0C0"><br></font></td>
+		<td align="left"><font color="#C0C0C0"><br></font></td>
+	</tr>
+	<tr>
+		<td height="17" align="left"><br></td>
+		<td align="left"><font color="#C0C0C0"><br></font></td>
+		<td align="left"><font color="#C0C0C0">to solve export problem by display tag</font></td>
+		<td align="left"><font color="#C0C0C0">update the &lt;%@ page buffer=25kb%&gt;</font></td>
+	</tr>
+	<tr>
+		<td height="17" align="left"><br></td>
+		<td align="left"><font color="#C0C0C0"><br></font></td>
+		<td align="left"><font color="#C0C0C0"><br></font></td>
+		<td align="left"><font color="#C0C0C0"><br></font></td>
+	</tr>
+	<tr>
+		<td height="17" align="left"><br></td>
+		<td align="left"><font color="#C0C0C0"><br></font></td>
+		<td align="left"><font color="#C0C0C0"><br></font></td>
+		<td align="left"><font color="#C0C0C0"><br></font></td>
+	</tr>
+	<tr>
+		<td height="17" align="left"><br></td>
+		<td align="left"><font color="#C0C0C0"><br></font></td>
+		<td align="left"><font color="#C0C0C0">put one private method to form indiviual DTO where ever possible in aciton class</font></td>
+		<td align="left"><font color="#C0C0C0"><br></font></td>
+	</tr>
+	<tr>
+		<td height="17" align="left"><br></td>
+		<td align="left"><font color="#C0C0C0"><br></font></td>
+		<td align="left"><font color="#C0C0C0"><br></font></td>
+		<td align="left"><font color="#C0C0C0"><br></font></td>
+	</tr>
+	<tr>
+		<td height="17" align="left"><br></td>
+		<td align="left"><font color="#C0C0C0"><br></font></td>
+		<td align="left"><font color="#C0C0C0"><br></font></td>
+		<td align="left"><font color="#C0C0C0"><br></font></td>
+	</tr>
+	<tr>
+		<td height="17" align="left"><br></td>
+		<td align="left"><font color="#C0C0C0"><br></font></td>
+		<td align="left"><font color="#C0C0C0"><br></font></td>
+		<td align="left"><font color="#C0C0C0"><br></font></td>
+	</tr>
+	<tr>
+		<td height="17" align="left"><br></td>
+		<td align="left"><font color="#C0C0C0"><br></font></td>
+		<td align="left"><font color="#C0C0C0"><br></font></td>
+		<td align="left"><font color="#C0C0C0"><br></font></td>
+	</tr>
+	<tr>
+		<td height="17" align="left"><br></td>
+		<td align="left"><font color="#C0C0C0"><br></font></td>
+		<td align="left"><font color="#C0C0C0">display tag should have &lt;requestURI  attribute if the page included into another page</font></td>
+		<td align="left"><font color="#C0C0C0"><br></font></td>
+	</tr>
+	<tr>
+		<td height="17" align="left"><br></td>
+		<td align="left"><font color="#C0C0C0"><br></font></td>
+		<td align="left"><font color="#C0C0C0"><br></font></td>
+		<td align="left"><font color="#C0C0C0"><br></font></td>
+	</tr>
+	<tr>
+		<td height="17" align="left"><br></td>
+		<td align="left"><font color="#C0C0C0"><br></font></td>
+		<td align="left"><font color="#C0C0C0">if export problem, this is because of tiles frame work. That time write one servlet-fillter to solve</font></td>
+		<td align="left"><font color="#C0C0C0"><br></font></td>
+	</tr>
+	<tr>
+		<td height="17" align="left"><br></td>
+		<td align="left"><font color="#C0C0C0"><br></font></td>
+		<td align="left"><font color="#C0C0C0"><br></font></td>
+		<td align="left"><font color="#C0C0C0"><br></font></td>
+	</tr>
+	<tr>
+		<td height="17" align="left"><br></td>
+		<td align="left"><font color="#C0C0C0"><br></font></td>
+		<td align="left"><font color="#C0C0C0">to cut header of table set false to &quot;basic.show.header&quot;</font></td>
+		<td align="left"><font color="#C0C0C0"><br></font></td>
+	</tr>
+	<tr>
+		<td height="17" align="left"><br></td>
+		<td align="left"><br></td>
+		<td align="left"><br></td>
+		<td align="left"><br></td>
+	</tr>
+	<tr>
+		<td height="17" align="left"><br></td>
+		<td align="left"><br></td>
+		<td align="left"><br></td>
+		<td align="left"><br></td>
+	</tr>
+	<tr>
+		<td height="17" align="left"><br></td>
+		<td align="left"><br></td>
+		<td align="left">use as much as possible EL implicit object ( 11 are there )</td>
+		<td align="left"><br></td>
+	</tr>
+	<tr>
+		<td height="54" align="left"><br></td>
+		<td align="left"><br></td>
+		<td align="left">use EL template text to avoid C:out tag<br><br>In JSP 2.0 don’t use c:out</td>
+		<td align="left"><font color="#008000">we must use &lt;c:out&gt; tag, only if need to say any default value if specified property is null or escape to xml when producing xml output</font></td>
+	</tr>
+	<tr>
+		<td height="17" align="left"><br></td>
+		<td align="left"><br></td>
+		<td align="left"><br></td>
+		<td align="left"><br></td>
+	</tr>
+	<tr>
+		<td height="17" align="left"><br></td>
+		<td align="left"><br></td>
+		<td align="left"><br></td>
+		<td align="left"><br></td>
+	</tr>
+	<tr>
+		<td height="17" align="left"><br></td>
+		<td align="left"><br></td>
+		<td align="left"><br></td>
+		<td align="left"><br></td>
+	</tr>
+	<tr>
+		<td height="17" align="left"><br></td>
+		<td align="left"><br></td>
+		<td align="left"><br></td>
+		<td align="left"><br></td>
+	</tr>
+	<tr>
+		<td height="17" align="left"><br></td>
+		<td align="left"><br></td>
+		<td align="left"><br></td>
+		<td align="left"><br></td>
+	</tr>
+	<tr>
+		<td height="17" align="left"><br></td>
+		<td align="left"><br></td>
+		<td align="left"><br></td>
+		<td align="left"><br></td>
+	</tr>
+	<tr>
+		<td height="17" align="left"><br></td>
+		<td align="left"><br></td>
+		<td align="left"><br></td>
+		<td align="left"><br></td>
+	</tr>
+	<tr>
+		<td height="17" align="left"><br></td>
+		<td align="left"><br></td>
+		<td align="left"><br></td>
+		<td align="left"><br></td>
+	</tr>
+	<tr>
+		<td height="17" align="left"><br></td>
+		<td align="left"><br></td>
+		<td align="left"><br></td>
+		<td align="left"><br></td>
+	</tr>
+	<tr>
+		<td height="17" align="left"><br></td>
+		<td align="left"><br></td>
+		<td align="left"><br></td>
+		<td align="left"><br></td>
+	</tr>
+	<tr>
+		<td height="17" align="left"><br></td>
+		<td align="left"><br></td>
+		<td align="left"><br></td>
+		<td align="left"><br></td>
+	</tr>
+	<tr>
+		<td height="17" align="left"><br></td>
+		<td align="left"><br></td>
+		<td align="left"><br></td>
+		<td align="left"><br></td>
+	</tr>
+	<tr>
+		<td height="17" align="left"><br></td>
+		<td align="left"><br></td>
+		<td align="left"><br></td>
+		<td align="left"><br></td>
+	</tr>
+	<tr>
+		<td height="17" align="left"><br></td>
+		<td align="left"><br></td>
+		<td align="left"><br></td>
+		<td align="left"><br></td>
+	</tr>
+	<tr>
+		<td height="17" align="left"><br></td>
+		<td align="left"><br></td>
+		<td align="left"><br></td>
+		<td align="left"><br></td>
+	</tr>
+	<tr>
+		<td height="17" align="left"><br></td>
+		<td align="left"><br></td>
+		<td align="left"><br></td>
+		<td align="left"><br></td>
+	</tr>
+	<tr>
+		<td height="17" align="left"><br></td>
+		<td align="left"><br></td>
+		<td align="left"><br></td>
+		<td align="left"><br></td>
+	</tr>
+	<tr>
+		<td height="17" align="left"><br></td>
+		<td align="left"><br></td>
+		<td align="left"><br></td>
+		<td align="left"><br></td>
+	</tr>
+	<tr>
+		<td height="17" align="left"><br></td>
+		<td align="left"><br></td>
+		<td align="left"><br></td>
+		<td align="left"><br></td>
+	</tr>
+	<tr>
+		<td height="17" align="left"><br></td>
+		<td align="left"><br></td>
+		<td align="left"><br></td>
+		<td align="left"><br></td>
+	</tr>
+	<tr>
+		<td height="17" align="left"><br></td>
+		<td align="left"><br></td>
+		<td align="left"><br></td>
+		<td align="left"><br></td>
+	</tr>
+	<tr>
+		<td height="17" align="left"><br></td>
+		<td align="left"><br></td>
+		<td align="left"><br></td>
+		<td align="left"><br></td>
+	</tr>
+	<tr>
+		<td height="17" align="left"><br></td>
+		<td align="left"><br></td>
+		<td align="left"><br></td>
+		<td align="left"><br></td>
+	</tr>
+	<tr>
+		<td height="17" align="left"><br></td>
+		<td align="left"><br></td>
+		<td align="left"><br></td>
+		<td align="left"><br></td>
+	</tr>
+	<tr>
+		<td height="17" align="left"><br></td>
+		<td align="left"><br></td>
+		<td align="left"><br></td>
+		<td align="left"><br></td>
+	</tr>
+	<tr>
+		<td height="17" align="left"><br></td>
+		<td align="left"><br></td>
+		<td align="left"><br></td>
+		<td align="left"><br></td>
+	</tr>
+	<tr>
+		<td height="17" align="left"><br></td>
+		<td align="left"><br></td>
+		<td align="left"><br></td>
+		<td align="left"><br></td>
+	</tr>
+	<tr>
+		<td height="17" align="left"><br></td>
+		<td align="left"><br></td>
+		<td align="left">check Business card status on net</td>
+		<td align="left"><br></td>
+	</tr>
+</table>
+<!-- ************************************************************************** -->
+<hr>
+<A NAME="table9"><h1>Sheet 10: <em>Study Time Frame</em></h1></A>
+<table cellspacing="0" border="0">
+	<colgroup width="118"></colgroup>
+	<colgroup width="182"></colgroup>
+	<colgroup span="2" width="67"></colgroup>
+	<colgroup width="81"></colgroup>
+	<tr>
+		<td height="17" align="left" bgcolor="#0066CC"><b>Chapters</b></td>
+		<td align="left" bgcolor="#0066CC"><b>Date</b></td>
+		<td align="left" bgcolor="#0066CC"><b>state</b></td>
+		<td align="left" bgcolor="#0066CC"><b>end</b></td>
+		<td align="left" bgcolor="#0066CC"><b>Total hour</b></td>
+	</tr>
+	<tr>
+		<td height="17" align="left"><br></td>
+		<td align="left"><br></td>
+		<td align="left"><br></td>
+		<td align="left"><br></td>
+		<td align="left"><br></td>
+	</tr>
+	<tr>
+		<td height="17" align="left"><br></td>
+		<td align="left"><br></td>
+		<td align="left"><br></td>
+		<td align="left"><br></td>
+		<td align="left"><br></td>
+	</tr>
+	<tr>
+		<td height="17" align="left"><br></td>
+		<td align="left"><br></td>
+		<td align="left"><br></td>
+		<td align="left"><br></td>
+		<td align="left"><br></td>
+	</tr>
+	<tr>
+		<td height="17" align="left">2nd chapter</td>
+		<td align="right" sdval="39478" sdnum="16393;0;[$-F800]DDDD\, MMMM DD\, YYYY">Thursday, January 31, 2008</td>
+		<td align="right" sdval="0.811805555555556" sdnum="16393;0;HH:MM AM/PM">07:29 PM</td>
+		<td align="right" sdval="0.951388888888889" sdnum="16393;0;HH:MM AM/PM">10:50 PM</td>
+		<td align="right" sdval="3" sdnum="16393;">3</td>
+	</tr>
+	<tr>
+		<td height="17" align="left">3rd chapter</td>
+		<td align="right" sdval="39481" sdnum="16393;0;[$-F800]DDDD\, MMMM DD\, YYYY">Sunday, February 03, 2008</td>
+		<td align="right" sdval="0.36875" sdnum="16393;0;HH:MM AM/PM">08:51 AM</td>
+		<td align="left"><br></td>
+		<td align="left"><br></td>
+	</tr>
+	<tr>
+		<td height="17" align="left">3rd chapter</td>
+		<td align="right" sdval="39481" sdnum="16393;0;[$-F800]DDDD\, MMMM DD\, YYYY">Sunday, February 03, 2008</td>
+		<td align="right" sdval="0.797222222222222" sdnum="16393;0;HH:MM AM/PM">07:08 PM</td>
+		<td align="left"><br></td>
+		<td align="left"><br></td>
+	</tr>
+	<tr>
+		<td height="17" align="left">4th chapter</td>
+		<td align="right" sdval="39482" sdnum="16393;0;[$-F800]DDDD\, MMMM DD\, YYYY">Monday, February 04, 2008</td>
+		<td align="right" sdval="0.927777777777778" sdnum="16393;0;HH:MM AM/PM">10:16 PM</td>
+		<td align="right" sdval="0.969444444444444" sdnum="16393;0;HH:MM AM/PM">11:16 PM</td>
+		<td align="right" sdval="1" sdnum="16393;">1</td>
+	</tr>
+	<tr>
+		<td height="17" align="left">4th chapter</td>
+		<td align="right" sdval="39483" sdnum="16393;0;[$-F800]DDDD\, MMMM DD\, YYYY">Tuesday, February 05, 2008</td>
+		<td align="right" sdval="0.397916666666667" sdnum="16393;0;HH:MM AM/PM">09:33 AM</td>
+		<td align="right" sdval="0.448611111111111" sdnum="16393;0;HH:MM AM/PM">10:46 AM</td>
+		<td align="right" sdval="1" sdnum="16393;">1</td>
+	</tr>
+	<tr>
+		<td height="17" align="left">4th chapter</td>
+		<td align="right" sdval="39486" sdnum="16393;0;[$-F800]DDDD\, MMMM DD\, YYYY">Friday, February 08, 2008</td>
+		<td align="right" sdval="0.08125" sdnum="16393;0;HH:MM AM/PM">01:57 AM</td>
+		<td align="right" sdval="0.104166666666667" sdnum="16393;0;HH:MM AM/PM">02:30 AM</td>
+		<td align="left"><br></td>
+	</tr>
+	<tr>
+		<td height="17" align="left">5th chapter</td>
+		<td align="right" sdval="39486" sdnum="16393;0;[$-F800]DDDD\, MMMM DD\, YYYY">Friday, February 08, 2008</td>
+		<td align="right" sdval="0.480555555555556" sdnum="16393;0;HH:MM AM/PM">11:32 AM</td>
+		<td align="left"><br></td>
+		<td align="left"><br></td>
+	</tr>
+	<tr>
+		<td height="17" align="left">5th chapter</td>
+		<td align="right" sdval="39488" sdnum="16393;0;[$-F800]DDDD\, MMMM DD\, YYYY">Sunday, February 10, 2008</td>
+		<td align="right" sdval="0.0291666666666667" sdnum="16393;0;HH:MM AM/PM">12:42 AM</td>
+		<td align="left"><br></td>
+		<td align="left"><br></td>
+	</tr>
+	<tr>
+		<td height="17" align="left">5th chapter</td>
+		<td align="right" sdval="39489" sdnum="16393;0;[$-F800]DDDD\, MMMM DD\, YYYY">Monday, February 11, 2008</td>
+		<td align="left" sdnum="16393;0;HH:MM AM/PM"><br></td>
+		<td align="right" sdval="0.0402777777777778" sdnum="16393;0;HH:MM AM/PM">12:58 AM</td>
+		<td align="left"><br></td>
+	</tr>
+	<tr>
+		<td height="17" align="left">6th chapter</td>
+		<td align="right" sdval="39489" sdnum="16393;0;[$-F800]DDDD\, MMMM DD\, YYYY">Monday, February 11, 2008</td>
+		<td align="right" sdval="0.0409722222222222" sdnum="16393;0;HH:MM AM/PM">12:59 AM</td>
+		<td align="right" sdval="0.0541666666666667" sdnum="16393;0;HH:MM AM/PM">01:18 AM</td>
+		<td align="left"><br></td>
+	</tr>
+	<tr>
+		<td height="17" align="left">6th chapter</td>
+		<td align="right" sdval="39490" sdnum="16393;0;[$-F800]DDDD\, MMMM DD\, YYYY">Tuesday, February 12, 2008</td>
+		<td align="right" sdval="0.438194444444444" sdnum="16393;0;HH:MM AM/PM">10:31 AM</td>
+		<td align="right" sdval="0.497916666666667" sdnum="16393;0;HH:MM AM/PM">11:57 AM</td>
+		<td align="left"><br></td>
+	</tr>
+	<tr>
+		<td height="17" align="left">8th chapter</td>
+		<td align="right" sdval="39490" sdnum="16393;0;[$-F800]DDDD\, MMMM DD\, YYYY">Tuesday, February 12, 2008</td>
+		<td align="right" sdval="0.498611111111111" sdnum="16393;0;HH:MM AM/PM">11:58 AM</td>
+		<td align="left"><br></td>
+		<td align="left"><br></td>
+	</tr>
+	<tr>
+		<td height="17" align="left">8th chapter</td>
+		<td align="right" sdval="39490" sdnum="16393;0;[$-F800]DDDD\, MMMM DD\, YYYY">Tuesday, February 12, 2008</td>
+		<td align="right" sdval="0.736805555555556" sdnum="16393;0;HH:MM AM/PM">05:41 PM</td>
+		<td align="right" sdval="0.847916666666667" sdnum="16393;0;HH:MM AM/PM">08:21 PM</td>
+		<td align="left"><br></td>
+	</tr>
+	<tr>
+		<td colspan=5 height="17" align="center">today is last day for jstl ----&gt; 2/12/2008</td>
+		</tr>
+</table>
+<!-- ************************************************************************** -->
+</body>
+
+</html>

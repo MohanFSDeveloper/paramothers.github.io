@@ -1,0 +1,1784 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+
+<html>
+<head>
+	
+	<meta http-equiv="content-type" content="text/html; charset=utf-8">
+	<title></title>
+	<meta name="generator" content="LibreOffice 4.2.8.2 (Linux)">
+	<meta name="author" content=" ">
+	<meta name="created" content="20070624;65732000000000">
+	<meta name="changedby" content="padhu">
+	<meta name="changed" content="20110704;172707000000000">
+	<meta name="AppVersion" content="12.0000">
+	<meta name="DocSecurity" content="0">
+	<meta name="HyperlinksChanged" content="false">
+	<meta name="LinksUpToDate" content="false">
+	<meta name="ScaleCrop" content="false">
+	<meta name="ShareDoc" content="false">
+	
+	<style type="text/css"><!-- 
+		body,div,table,thead,tbody,tfoot,tr,th,td,p { font-family:"Arial"; font-size:x-small }
+		 -->
+	</style>
+	
+</head>
+
+<body text="#000000">
+<hr>
+	<p><center>
+		<h1>Overview</h1>
+		<A HREF="#table0">study frame</A><br>
+		<A HREF="#table2">compile &amp; runtime jar</A><br>
+		<A HREF="#table3">Prior to Hibernate</A><br>
+		<A HREF="#table4">API</A><br>
+		<A HREF="#table8">Extension point</A><br>
+		<A HREF="#table10">Adv. of hibernate</A><br>
+		<A HREF="#table11">Exception</A><br>
+		
+	</center></p>
+<hr>
+<A NAME="table0"><h1>Sheet 1: <em>study frame</em></h1></A>
+<table cellspacing="0" border="0">
+	<colgroup width="98"></colgroup>
+	<colgroup width="91"></colgroup>
+	<colgroup width="96"></colgroup>
+	<colgroup span="2" width="68"></colgroup>
+	<tr>
+		<td height="25" align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+		<td align="right" valign=bottom sdval="1.09375" sdnum="16393;0;HH:MM"><b><font face="Calibri" size=4 color="#FF0000">02:15</font></b></td>
+		<td align="left" valign=bottom><br></td>
+	</tr>
+	<tr>
+		<td height="25" align="right" valign=bottom sdval="40013" sdnum="16393;0;DD/MM/YYYY"><font face="Calibri" size=4 color="#000000">19/07/2009</font></td>
+		<td align="right" valign=bottom sdval="0.945833333333333" sdnum="16393;0;HH:MM AM/PM"><font face="Calibri" size=4 color="#000000">10:42 PM</font></td>
+		<td align="right" valign=bottom sdval="0.0840277777777778" sdnum="16393;0;HH:MM AM/PM"><font face="Calibri" size=4 color="#000000">02:01 AM</font></td>
+		<td align="right" valign=bottom sdval="0.0833333333333333" sdnum="16393;0;HH:MM"><font face="Calibri" size=4 color="#000000">02:00</font></td>
+		<td align="left" valign=bottom><font face="Calibri" size=4 color="#000000">hibernate introduction</font></td>
+	</tr>
+	<tr>
+		<td height="25" align="right" valign=bottom sdval="40014" sdnum="16393;0;DD/MM/YYYY"><font face="Calibri" size=4 color="#000000">20/07/2009</font></td>
+		<td align="right" valign=bottom sdval="0.770138888888889" sdnum="16393;0;HH:MM AM/PM"><font face="Calibri" size=4 color="#000000">06:29 PM</font></td>
+		<td align="left" valign=bottom><br></td>
+		<td align="right" valign=bottom sdval="0.0416666666666667" sdnum="16393;0;HH:MM"><font face="Calibri" size=4 color="#000000">01:00</font></td>
+		<td align="left" valign=bottom><br></td>
+	</tr>
+	<tr>
+		<td height="25" align="right" valign=bottom sdval="40014" sdnum="16393;0;DD/MM/YYYY"><font face="Calibri" size=4 color="#000000">20/07/2009</font></td>
+		<td align="right" valign=bottom sdval="0.927777777777778" sdnum="16393;0;HH:MM AM/PM"><font face="Calibri" size=4 color="#000000">10:16 PM</font></td>
+		<td align="right" valign=bottom sdval="0.0118055555555556" sdnum="16393;0;HH:MM AM/PM"><font face="Calibri" size=4 color="#000000">12:17 AM</font></td>
+		<td align="right" valign=bottom sdval="0.0833333333333333" sdnum="16393;0;HH:MM"><font face="Calibri" size=4 color="#000000">02:00</font></td>
+		<td align="left" valign=bottom><font face="Calibri" size=4 color="#000000">1st chapter of hibernate documentation</font></td>
+	</tr>
+	<tr>
+		<td height="25" align="right" valign=bottom sdval="40015" sdnum="16393;0;DD/MM/YYYY"><font face="Calibri" size=4 color="#000000">21/07/2009</font></td>
+		<td align="right" valign=bottom sdval="0.45625" sdnum="16393;0;HH:MM AM/PM"><font face="Calibri" size=4 color="#000000">10:57 AM</font></td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><font face="Calibri" size=4 color="#000000">Hibernate configuration</font></td>
+	</tr>
+	<tr>
+		<td height="25" align="right" valign=bottom sdval="40019" sdnum="16393;0;DD/MM/YYYY"><font face="Calibri" size=4 color="#000000">25/07/2009</font></td>
+		<td align="right" valign=bottom sdval="0.958333333333333" sdnum="16393;0;HH:MM AM/PM"><font face="Calibri" size=4 color="#000000">11:00 PM</font></td>
+		<td align="right" valign=bottom sdval="0.0784722222222222" sdnum="16393;0;HH:MM AM/PM"><font face="Calibri" size=4 color="#000000">01:53 AM</font></td>
+		<td align="right" valign=bottom sdval="0.0416666666666667" sdnum="16393;0;HH:MM"><font face="Calibri" size=4 color="#000000">01:00</font></td>
+		<td align="left" valign=bottom><font face="Calibri" size=4 color="#000000">Hibernate configuration</font></td>
+	</tr>
+	<tr>
+		<td height="25" align="right" valign=bottom sdval="40023" sdnum="16393;0;DD/MM/YYYY"><font face="Calibri" size=4 color="#000000">29/07/2009</font></td>
+		<td align="right" valign=bottom sdval="0.461805555555556" sdnum="16393;0;HH:MM AM/PM"><font face="Calibri" size=4 color="#000000">11:05 AM</font></td>
+		<td align="right" valign=bottom sdval="0.567361111111111" sdnum="16393;0;HH:MM AM/PM"><font face="Calibri" size=4 color="#000000">01:37 PM</font></td>
+		<td align="right" valign=bottom sdval="0.0833333333333333" sdnum="16393;0;HH:MM"><font face="Calibri" size=4 color="#000000">02:00</font></td>
+		<td align="left" valign=bottom><font face="Calibri" size=4 color="#000000">mapping elements</font></td>
+	</tr>
+	<tr>
+		<td height="25" align="right" valign=bottom sdval="40023" sdnum="16393;0;DD/MM/YYYY"><font face="Calibri" size=4 color="#000000">29/07/2009</font></td>
+		<td align="left" valign=bottom><br></td>
+		<td align="right" valign=bottom sdval="0.743055555555555" sdnum="16393;0;HH:MM AM/PM"><font face="Calibri" size=4 color="#000000">05:50 PM</font></td>
+		<td align="right" valign=bottom sdval="0.0416666666666667" sdnum="16393;0;HH:MM"><font face="Calibri" size=4 color="#000000">01:00</font></td>
+		<td align="left" valign=bottom><font face="Calibri" size=4 color="#000000">hibernate types</font></td>
+	</tr>
+	<tr>
+		<td height="25" align="right" valign=bottom sdval="40023" sdnum="16393;0;DD/MM/YYYY"><font face="Calibri" size=4 color="#000000">29/07/2009</font></td>
+		<td align="left" valign=bottom><br></td>
+		<td align="right" valign=bottom sdval="0.818055555555556" sdnum="16393;0;HH:MM AM/PM"><font face="Calibri" size=4 color="#000000">07:38 PM</font></td>
+		<td align="right" valign=bottom sdval="0.0416666666666667" sdnum="16393;0;HH:MM"><font face="Calibri" size=4 color="#000000">01:00</font></td>
+		<td align="left" valign=bottom><font face="Calibri" size=4 color="#000000">collection mapping</font></td>
+	</tr>
+	<tr>
+		<td height="25" align="right" valign=bottom sdval="40023" sdnum="16393;0;DD/MM/YYYY"><font face="Calibri" size=4 color="#000000">29/07/2009</font></td>
+		<td align="right" valign=bottom sdval="0.927083333333333" sdnum="16393;0;HH:MM AM/PM"><font face="Calibri" size=4 color="#000000">10:15 PM</font></td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+	</tr>
+	<tr>
+		<td height="25" align="right" valign=bottom sdval="40024" sdnum="16393;0;DD/MM/YYYY"><font face="Calibri" size=4 color="#000000">30/07/2009</font></td>
+		<td align="right" valign=bottom sdval="0.344444444444444" sdnum="16393;0;HH:MM AM/PM"><font face="Calibri" size=4 color="#000000">08:16 AM</font></td>
+		<td align="right" valign=bottom sdval="0.361805555555556" sdnum="16393;0;HH:MM AM/PM"><font face="Calibri" size=4 color="#000000">08:41 AM</font></td>
+		<td align="right" valign=bottom sdval="0.0277777777777778" sdnum="16393;0;HH:MM"><font face="Calibri" size=4 color="#000000">00:40</font></td>
+		<td align="left" valign=bottom><font face="Calibri" size=4 color="#000000">component mapping</font></td>
+	</tr>
+	<tr>
+		<td height="25" align="right" valign=bottom sdval="40024" sdnum="16393;0;DD/MM/YYYY"><font face="Calibri" size=4 color="#000000">30/07/2009</font></td>
+		<td align="left" valign=bottom><br></td>
+		<td align="right" valign=bottom sdval="0.470833333333333" sdnum="16393;0;HH:MM AM/PM"><font face="Calibri" size=4 color="#000000">11:18 AM</font></td>
+		<td align="right" valign=bottom sdval="0.0416666666666667" sdnum="16393;0;HH:MM"><font face="Calibri" size=4 color="#000000">01:00</font></td>
+		<td align="left" valign=bottom><font face="Calibri" size=4 color="#000000">inheritance and working with objects</font></td>
+	</tr>
+	<tr>
+		<td height="25" align="right" valign=bottom sdval="40024" sdnum="16393;0;DD/MM/YYYY"><font face="Calibri" size=4 color="#000000">30/07/2009</font></td>
+		<td align="right" valign=bottom sdval="0.549305555555556" sdnum="16393;0;HH:MM AM/PM"><font face="Calibri" size=4 color="#000000">01:11 PM</font></td>
+		<td align="right" valign=bottom sdval="0.582638888888889" sdnum="16393;0;HH:MM AM/PM"><font face="Calibri" size=4 color="#000000">01:59 PM</font></td>
+		<td align="right" valign=bottom sdval="0.0347222222222222" sdnum="16393;0;HH:MM"><font face="Calibri" size=4 color="#000000">00:50</font></td>
+		<td align="left" valign=bottom><font face="Calibri" size=4 color="#000000">working with objects</font></td>
+	</tr>
+	<tr>
+		<td height="25" align="right" valign=bottom sdval="40024" sdnum="16393;0;DD/MM/YYYY"><font face="Calibri" size=4 color="#000000">30/07/2009</font></td>
+		<td align="right" valign=bottom sdval="0.749305555555556" sdnum="16393;0;HH:MM AM/PM"><font face="Calibri" size=4 color="#000000">05:59 PM</font></td>
+		<td align="right" valign=bottom sdval="0.819444444444444" sdnum="16393;0;HH:MM AM/PM"><font face="Calibri" size=4 color="#000000">07:40 PM</font></td>
+		<td align="right" valign=bottom sdval="0.0625" sdnum="16393;0;HH:MM"><font face="Calibri" size=4 color="#000000">01:30</font></td>
+		<td align="left" valign=bottom><font face="Calibri" size=4 color="#000000">Transaction and concurrency</font></td>
+	</tr>
+	<tr>
+		<td height="25" align="right" valign=bottom sdval="40024" sdnum="16393;0;DD/MM/YYYY"><font face="Calibri" size=4 color="#000000">30/07/2009</font></td>
+		<td align="right" valign=bottom sdval="0.823611111111111" sdnum="16393;0;HH:MM AM/PM"><font face="Calibri" size=4 color="#000000">07:46 PM</font></td>
+		<td align="right" valign=bottom sdval="0.851388888888889" sdnum="16393;0;HH:MM AM/PM"><font face="Calibri" size=4 color="#000000">08:26 PM</font></td>
+		<td align="right" valign=bottom sdval="0.0277777777777778" sdnum="16393;0;HH:MM"><font face="Calibri" size=4 color="#000000">00:40</font></td>
+		<td align="left" valign=bottom><font face="Calibri" size=4 color="#000000">Intercepter and events, batch processing</font></td>
+	</tr>
+	<tr>
+		<td height="25" align="right" valign=bottom sdval="40025" sdnum="16393;0;DD/MM/YYYY"><font face="Calibri" size=4 color="#000000">31/07/2009</font></td>
+		<td align="right" valign=bottom sdval="0.532638888888889" sdnum="16393;0;HH:MM AM/PM"><font face="Calibri" size=4 color="#000000">12:47 PM</font></td>
+		<td align="left" valign=bottom><br></td>
+		<td align="right" valign=bottom sdval="0.0208333333333333" sdnum="16393;0;HH:MM"><font face="Calibri" size=4 color="#000000">00:30</font></td>
+		<td align="left" valign=bottom><font face="Calibri" size=4 color="#000000">HQL</font></td>
+	</tr>
+	<tr>
+		<td height="25" align="right" valign=bottom sdval="40025" sdnum="16393;0;DD/MM/YYYY"><font face="Calibri" size=4 color="#000000">31/07/2009</font></td>
+		<td align="right" valign=bottom sdval="0.634722222222222" sdnum="16393;0;HH:MM AM/PM"><font face="Calibri" size=4 color="#000000">03:14 PM</font></td>
+		<td align="right" valign=bottom sdval="0.683333333333333" sdnum="16393;0;HH:MM AM/PM"><font face="Calibri" size=4 color="#000000">04:24 PM</font></td>
+		<td align="right" valign=bottom sdval="0.0486111111111111" sdnum="16393;0;HH:MM"><font face="Calibri" size=4 color="#000000">01:10</font></td>
+		<td align="left" valign=bottom><font face="Calibri" size=4 color="#000000">HQL</font></td>
+	</tr>
+	<tr>
+		<td height="25" align="right" valign=bottom sdval="40025" sdnum="16393;0;DD/MM/YYYY"><font face="Calibri" size=4 color="#000000">31/07/2009</font></td>
+		<td align="right" valign=bottom sdval="0.749305555555556" sdnum="16393;0;HH:MM AM/PM"><font face="Calibri" size=4 color="#000000">05:59 PM</font></td>
+		<td align="right" valign=bottom sdval="0.760416666666667" sdnum="16393;0;HH:MM AM/PM"><font face="Calibri" size=4 color="#000000">06:15 PM</font></td>
+		<td align="right" valign=bottom sdval="0.0104166666666667" sdnum="16393;0;HH:MM"><font face="Calibri" size=4 color="#000000">00:15</font></td>
+		<td align="left" valign=bottom><font face="Calibri" size=4 color="#000000">HQL</font></td>
+	</tr>
+	<tr>
+		<td height="25" align="right" valign=bottom sdval="40025" sdnum="16393;0;DD/MM/YYYY"><font face="Calibri" size=4 color="#000000">31/07/2009</font></td>
+		<td align="right" valign=bottom sdval="0.760416666666667" sdnum="16393;0;HH:MM AM/PM"><font face="Calibri" size=4 color="#000000">06:15 PM</font></td>
+		<td align="right" valign=bottom sdval="0.796527777777778" sdnum="16393;0;HH:MM AM/PM"><font face="Calibri" size=4 color="#000000">07:07 PM</font></td>
+		<td align="right" valign=bottom sdval="0.0347222222222222" sdnum="16393;0;HH:MM"><font face="Calibri" size=4 color="#000000">00:50</font></td>
+		<td align="left" valign=bottom><font face="Calibri" size=4 color="#000000">Criteria API &amp; Example Api</font></td>
+	</tr>
+	<tr>
+		<td height="25" align="right" valign=bottom sdval="40025" sdnum="16393;0;DD/MM/YYYY"><font face="Calibri" size=4 color="#000000">31/07/2009</font></td>
+		<td align="right" valign=bottom sdval="0.797222222222222" sdnum="16393;0;HH:MM AM/PM"><font face="Calibri" size=4 color="#000000">07:08 PM</font></td>
+		<td align="right" valign=bottom sdval="0.827777777777778" sdnum="16393;0;HH:MM AM/PM"><font face="Calibri" size=4 color="#000000">07:52 PM</font></td>
+		<td align="right" valign=bottom sdval="0.0208333333333333" sdnum="16393;0;HH:MM"><font face="Calibri" size=4 color="#000000">00:30</font></td>
+		<td align="left" valign=bottom><font face="Calibri" size=4 color="#000000">Native SQL</font></td>
+	</tr>
+	<tr>
+		<td height="25" align="right" valign=bottom sdval="40026" sdnum="16393;0;DD/MM/YYYY"><font face="Calibri" size=4 color="#000000">01/08/2009</font></td>
+		<td align="right" valign=bottom sdval="0.390972222222222" sdnum="16393;0;HH:MM AM/PM"><font face="Calibri" size=4 color="#000000">09:23 AM</font></td>
+		<td align="right" valign=bottom sdval="0.449305555555556" sdnum="16393;0;HH:MM AM/PM"><font face="Calibri" size=4 color="#000000">10:47 AM</font></td>
+		<td align="right" valign=bottom sdval="0.0416666666666667" sdnum="16393;0;HH:MM"><font face="Calibri" size=4 color="#000000">01:00</font></td>
+		<td align="left" valign=bottom><font face="Calibri" size=4 color="#000000">Performance tuning</font></td>
+	</tr>
+	<tr>
+		<td height="25" align="right" valign=bottom sdval="40026" sdnum="16393;0;DD/MM/YYYY"><font face="Calibri" size=4 color="#000000">01/08/2009</font></td>
+		<td align="right" valign=bottom sdval="0.497916666666667" sdnum="16393;0;HH:MM AM/PM"><font face="Calibri" size=4 color="#000000">11:57 AM</font></td>
+		<td align="right" valign=bottom sdval="0.538194444444444" sdnum="16393;0;HH:MM AM/PM"><font face="Calibri" size=4 color="#000000">12:55 PM</font></td>
+		<td align="right" valign=bottom sdval="0.0277777777777778" sdnum="16393;0;HH:MM"><font face="Calibri" size=4 color="#000000">00:40</font></td>
+		<td align="left" valign=bottom><font face="Calibri" size=4 color="#000000">Performance tuning</font></td>
+	</tr>
+	<tr>
+		<td height="25" align="right" valign=bottom sdval="40026" sdnum="16393;0;DD/MM/YYYY"><font face="Calibri" size=4 color="#000000">01/08/2009</font></td>
+		<td align="left" valign=bottom sdnum="16393;0;HH:MM AM/PM"><font face="Calibri" size=4 color="#000000"><br></font></td>
+		<td align="right" valign=bottom sdval="0.439583333333333" sdnum="16393;0;HH:MM AM/PM"><font face="Calibri" size=4 color="#000000">10:33 AM</font></td>
+		<td align="right" valign=bottom sdval="0.0277777777777778" sdnum="16393;0;HH:MM"><font face="Calibri" size=4 color="#000000">00:40</font></td>
+		<td align="left" valign=bottom><font face="Calibri" size=4 color="#000000">Toolset</font></td>
+	</tr>
+	<tr>
+		<td height="25" align="right" valign=bottom sdval="40052" sdnum="16393;0;DD/MM/YYYY"><font face="Calibri" size=4 color="#000000">27/08/2009</font></td>
+		<td align="right" valign=bottom sdval="0.456944444444444" sdnum="16393;0;HH:MM AM/PM"><font face="Calibri" size=4 color="#000000">10:58 AM</font></td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+	</tr>
+	<tr>
+		<td height="25" align="right" valign=bottom sdval="40053" sdnum="16393;0;DD/MM/YYYY"><font face="Calibri" size=4 color="#000000">28/08/2009</font></td>
+		<td align="right" valign=bottom sdval="0.369444444444444" sdnum="16393;0;HH:MM AM/PM"><font face="Calibri" size=4 color="#000000">08:52 AM</font></td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+	</tr>
+	<tr>
+		<td height="25" align="right" valign=bottom sdval="40053" sdnum="16393;0;DD/MM/YYYY"><font face="Calibri" size=4 color="#000000">28/08/2009</font></td>
+		<td align="right" valign=bottom sdval="0.946527777777778" sdnum="16393;0;HH:MM AM/PM"><font face="Calibri" size=4 color="#000000">10:43 PM</font></td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+	</tr>
+	<tr>
+		<td height="25" align="right" valign=bottom sdval="40054" sdnum="16393;0;DD/MM/YYYY"><font face="Calibri" size=4 color="#000000">29/08/2009</font></td>
+		<td align="right" valign=bottom sdval="0.815972222222222" sdnum="16393;0;HH:MM AM/PM"><font face="Calibri" size=4 color="#000000">07:35 PM</font></td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+	</tr>
+	<tr>
+		<td height="25" align="right" valign=bottom sdval="40059" sdnum="16393;0;DD/MM/YYYY"><font face="Calibri" size=4 color="#000000">03/09/2009</font></td>
+		<td align="left" valign=bottom><br></td>
+		<td align="right" valign=bottom sdval="0.0118055555555556" sdnum="16393;0;HH:MM AM/PM"><font face="Calibri" size=4 color="#000000">12:17 AM</font></td>
+		<td align="right" valign=bottom sdval="0.0833333333333333" sdnum="16393;0;HH:MM"><font face="Calibri" size=4 color="#000000">02:00</font></td>
+		<td align="left" valign=bottom><font face="Calibri" size=4 color="#000000">hibernate mapping file</font></td>
+	</tr>
+	<tr>
+		<td height="25" align="right" valign=bottom sdval="40059" sdnum="16393;0;DD/MM/YYYY"><font face="Calibri" size=4 color="#000000">03/09/2009</font></td>
+		<td align="right" valign=bottom sdval="0.327083333333333" sdnum="16393;0;HH:MM AM/PM"><font face="Calibri" size=4 color="#000000">07:51 AM</font></td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><font face="Calibri" size=4 color="#000000">choosing primary keys</font></td>
+	</tr>
+	<tr>
+		<td height="25" align="right" valign=bottom sdval="40059" sdnum="16393;0;DD/MM/YYYY"><font face="Calibri" size=4 color="#000000">03/09/2009</font></td>
+		<td align="right" valign=bottom sdval="0.959722222222222" sdnum="16393;0;HH:MM AM/PM"><font face="Calibri" size=4 color="#000000">11:02 PM</font></td>
+		<td align="left" valign=bottom><br></td>
+		<td align="right" valign=bottom sdval="0.0416666666666667" sdnum="16393;0;HH:MM"><font face="Calibri" size=4 color="#000000">01:00</font></td>
+		<td align="left" valign=bottom><font face="Calibri" size=4 color="#000000">component mapping</font></td>
+	</tr>
+	<tr>
+		<td height="25" align="right" valign=bottom sdval="40060" sdnum="16393;0;DD/MM/YYYY"><font face="Calibri" size=4 color="#000000">04/09/2009</font></td>
+		<td align="right" valign=bottom sdval="0.372916666666667" sdnum="16393;0;HH:MM AM/PM"><font face="Calibri" size=4 color="#000000">08:57 AM</font></td>
+		<td align="right" valign=bottom sdval="0.421527777777778" sdnum="16393;0;HH:MM AM/PM"><font face="Calibri" size=4 color="#000000">10:07 AM</font></td>
+		<td align="right" valign=bottom sdval="0.0416666666666667" sdnum="16393;0;HH:MM"><font face="Calibri" size=4 color="#000000">01:00</font></td>
+		<td align="left" valign=bottom><font face="Calibri" size=4 color="#000000">inheritance and working with objects</font></td>
+	</tr>
+	<tr>
+		<td height="25" align="right" valign=bottom sdval="40060" sdnum="16393;0;DD/MM/YYYY"><font face="Calibri" size=4 color="#000000">04/09/2009</font></td>
+		<td align="right" valign=bottom sdval="0.9625" sdnum="16393;0;HH:MM AM/PM"><font face="Calibri" size=4 color="#000000">11:06 PM</font></td>
+		<td align="right" valign=bottom sdval="0.00347222222222222" sdnum="16393;0;HH:MM AM/PM"><font face="Calibri" size=4 color="#000000">12:05 AM</font></td>
+		<td align="right" valign=bottom sdval="0.0416666666666667" sdnum="16393;0;HH:MM"><font face="Calibri" size=4 color="#000000">01:00</font></td>
+		<td align="left" valign=bottom><font face="Calibri" size=4 color="#000000">evaluaation of &lt;component&gt; element</font></td>
+	</tr>
+	<tr>
+		<td height="25" align="right" valign=bottom sdval="40061" sdnum="16393;0;DD/MM/YYYY"><font face="Calibri" size=4 color="#000000">05/09/2009</font></td>
+		<td align="right" valign=bottom sdval="0.347222222222222" sdnum="16393;0;HH:MM AM/PM"><font face="Calibri" size=4 color="#000000">08:20 AM</font></td>
+		<td align="right" valign=bottom sdval="0.440972222222222" sdnum="16393;0;HH:MM AM/PM"><font face="Calibri" size=4 color="#000000">10:35 AM</font></td>
+		<td align="right" valign=bottom sdval="0.0416666666666667" sdnum="16393;0;HH:MM"><font face="Calibri" size=4 color="#000000">01:00</font></td>
+		<td align="left" valign=bottom><font face="Calibri" size=4 color="#000000">one-to-many and many-to-one association</font></td>
+	</tr>
+	<tr>
+		<td height="25" align="right" valign=bottom sdval="40061" sdnum="16393;0;DD/MM/YYYY"><font face="Calibri" size=4 color="#000000">05/09/2009</font></td>
+		<td align="right" valign=bottom sdval="0.928472222222222" sdnum="16393;0;HH:MM AM/PM"><font face="Calibri" size=4 color="#000000">10:17 PM</font></td>
+		<td align="right" valign=bottom sdval="0.0111111111111111" sdnum="16393;0;HH:MM AM/PM"><font face="Calibri" size=4 color="#000000">12:16 AM</font></td>
+		<td align="right" valign=bottom sdval="0.0833333333333333" sdnum="16393;0;HH:MM"><font face="Calibri" size=4 color="#000000">02:00</font></td>
+		<td align="left" valign=bottom><font face="Calibri" size=4 color="#000000">one-to-many and many-to-one association</font></td>
+	</tr>
+	<tr>
+		<td height="25" align="right" valign=bottom sdval="40062" sdnum="16393;0;DD/MM/YYYY"><font face="Calibri" size=4 color="#000000">06/09/2009</font></td>
+		<td align="right" valign=bottom sdval="0.407638888888889" sdnum="16393;0;HH:MM AM/PM"><font face="Calibri" size=4 color="#000000">09:47 AM</font></td>
+		<td align="right" valign=bottom sdval="0.427777777777778" sdnum="16393;0;HH:MM AM/PM"><font face="Calibri" size=4 color="#000000">10:16 AM</font></td>
+		<td align="right" valign=bottom sdval="0.0416666666666667" sdnum="16393;0;HH:MM"><font face="Calibri" size=4 color="#000000">01:00</font></td>
+		<td align="left" valign=bottom><font face="Calibri" size=4 color="#000000">evaluation for &lt;subclass&gt; of inheritance</font></td>
+	</tr>
+	<tr>
+		<td height="25" align="right" valign=bottom sdval="40062" sdnum="16393;0;DD/MM/YYYY"><font face="Calibri" size=4 color="#000000">06/09/2009</font></td>
+		<td align="left" valign=bottom><br></td>
+		<td align="right" valign=bottom sdval="0.575" sdnum="16393;0;HH:MM AM/PM"><font face="Calibri" size=4 color="#000000">01:48 PM</font></td>
+		<td align="right" valign=bottom sdval="0.0416666666666667" sdnum="16393;0;HH:MM"><font face="Calibri" size=4 color="#000000">01:00</font></td>
+		<td align="left" valign=bottom><br></td>
+	</tr>
+	<tr>
+		<td height="25" align="right" valign=bottom sdval="40062" sdnum="16393;0;DD/MM/YYYY"><font face="Calibri" size=4 color="#000000">06/09/2009</font></td>
+		<td align="left" valign=bottom><br></td>
+		<td align="right" valign=bottom sdval="0.873611111111111" sdnum="16393;0;HH:MM AM/PM"><font face="Calibri" size=4 color="#000000">08:58 PM</font></td>
+		<td align="right" valign=bottom sdval="0.0833333333333333" sdnum="16393;0;HH:MM"><font face="Calibri" size=4 color="#000000">02:00</font></td>
+		<td align="left" valign=bottom><font face="Calibri" size=4 color="#000000">hibernate persitence state and persitence manager</font></td>
+	</tr>
+	<tr>
+		<td height="25" align="right" valign=bottom sdval="40062" sdnum="16393;0;DD/MM/YYYY"><font face="Calibri" size=4 color="#000000">06/09/2009</font></td>
+		<td align="right" valign=bottom sdval="0.923611111111111" sdnum="16393;0;HH:MM AM/PM"><font face="Calibri" size=4 color="#000000">10:10 PM</font></td>
+		<td align="right" valign=bottom sdval="0" sdnum="16393;0;HH:MM AM/PM"><font face="Calibri" size=4 color="#000000">12:00 AM</font></td>
+		<td align="right" valign=bottom sdval="0.0833333333333333" sdnum="16393;0;HH:MM"><font face="Calibri" size=4 color="#000000">02:00</font></td>
+		<td align="left" valign=bottom><br></td>
+	</tr>
+	<tr>
+		<td height="25" align="right" valign=bottom sdval="40063" sdnum="16393;0;DD/MM/YYYY"><font face="Calibri" size=4 color="#000000">07/09/2009</font></td>
+		<td align="right" valign=bottom sdval="0.0625" sdnum="16393;0;HH:MM AM/PM"><font face="Calibri" size=4 color="#000000">01:30 AM</font></td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><font face="Calibri" size=4 color="#000000">Retrieving objects</font></td>
+	</tr>
+	<tr>
+		<td height="25" align="right" valign=bottom sdval="40063" sdnum="16393;0;DD/MM/YYYY"><font face="Calibri" size=4 color="#000000">07/09/2009</font></td>
+		<td align="right" valign=bottom sdval="0.404861111111111" sdnum="16393;0;HH:MM AM/PM"><font face="Calibri" size=4 color="#000000">09:43 AM</font></td>
+		<td align="right" valign=bottom sdval="0.804861111111111" sdnum="16393;0;HH:MM AM/PM"><font face="Calibri" size=4 color="#000000">07:19 PM</font></td>
+		<td align="right" valign=bottom sdval="0.0416666666666667" sdnum="16393;0;HH:MM"><font face="Calibri" size=4 color="#000000">01:00</font></td>
+		<td align="left" valign=bottom><font face="Calibri" size=4 color="#000000">Performance tuning</font></td>
+	</tr>
+	<tr>
+		<td height="25" align="right" valign=bottom sdval="40062" sdnum="16393;0;DD/MM/YYYY"><font face="Calibri" size=4 color="#000000">06/09/2009</font></td>
+		<td align="right" valign=bottom sdval="0.945138888888889" sdnum="16393;0;HH:MM AM/PM"><font face="Calibri" size=4 color="#000000">10:41 PM</font></td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+	</tr>
+	<tr>
+		<td height="25" align="right" valign=bottom sdval="40063" sdnum="16393;0;DD/MM/YYYY"><font face="Calibri" size=4 color="#000000">07/09/2009</font></td>
+		<td align="right" valign=bottom sdval="0.340972222222222" sdnum="16393;0;HH:MM AM/PM"><font face="Calibri" size=4 color="#000000">08:11 AM</font></td>
+		<td align="right" valign=bottom sdval="0.390972222222222" sdnum="16393;0;HH:MM AM/PM"><font face="Calibri" size=4 color="#000000">09:23 AM</font></td>
+		<td align="right" valign=bottom sdval="0.0208333333333333" sdnum="16393;0;HH:MM"><font face="Calibri" size=4 color="#000000">00:30</font></td>
+		<td align="left" valign=bottom><font face="Calibri" size=4 color="#000000">Transaction and concurrency</font></td>
+	</tr>
+	<tr>
+		<td height="25" align="right" valign=bottom sdval="40063" sdnum="16393;0;DD/MM/YYYY"><font face="Calibri" size=4 color="#000000">07/09/2009</font></td>
+		<td align="right" valign=bottom sdval="0.938888888888889" sdnum="16393;0;HH:MM AM/PM"><font face="Calibri" size=4 color="#000000">10:32 PM</font></td>
+		<td align="right" valign=bottom sdval="0.0125" sdnum="16393;0;HH:MM AM/PM"><font face="Calibri" size=4 color="#000000">12:18 AM</font></td>
+		<td align="right" valign=bottom sdval="0.0694444444444444" sdnum="16393;0;HH:MM"><font face="Calibri" size=4 color="#000000">01:40</font></td>
+		<td align="left" valign=bottom><font face="Calibri" size=4 color="#000000">isolation level and optimistic implementation</font></td>
+	</tr>
+	<tr>
+		<td height="25" align="right" valign=bottom sdval="40064" sdnum="16393;0;DD/MM/YYYY"><font face="Calibri" size=4 color="#000000">08/09/2009</font></td>
+		<td align="right" valign=bottom sdval="0.383333333333333" sdnum="16393;0;HH:MM AM/PM"><font face="Calibri" size=4 color="#000000">09:12 AM</font></td>
+		<td align="right" valign=bottom sdval="0.428472222222222" sdnum="16393;0;HH:MM AM/PM"><font face="Calibri" size=4 color="#000000">10:17 AM</font></td>
+		<td align="right" valign=bottom sdval="0.0416666666666667" sdnum="16393;0;HH:MM"><font face="Calibri" size=4 color="#000000">01:00</font></td>
+		<td align="left" valign=bottom><font face="Calibri" size=4 color="#000000">cache level and scope</font></td>
+	</tr>
+	<tr>
+		<td height="25" align="right" valign=bottom sdval="40064" sdnum="16393;0;DD/MM/YYYY"><font face="Calibri" size=4 color="#000000">08/09/2009</font></td>
+		<td align="right" valign=bottom sdval="0.947916666666667" sdnum="16393;0;HH:MM AM/PM"><font face="Calibri" size=4 color="#000000">10:45 PM</font></td>
+		<td align="right" valign=bottom sdval="0.0173611111111111" sdnum="16393;0;HH:MM AM/PM"><font face="Calibri" size=4 color="#000000">12:25 AM</font></td>
+		<td align="right" valign=bottom sdval="0.0416666666666667" sdnum="16393;0;HH:MM"><font face="Calibri" size=4 color="#000000">01:00</font></td>
+		<td align="left" valign=bottom><font face="Calibri" size=4 color="#000000">second-level cache configuration</font></td>
+	</tr>
+	<tr>
+		<td height="25" align="right" valign=bottom sdval="40066" sdnum="16393;0;DD/MM/YYYY"><font face="Calibri" size=4 color="#000000">10/09/2009</font></td>
+		<td align="right" valign=bottom sdval="0.00833333333333333" sdnum="16393;0;HH:MM AM/PM"><font face="Calibri" size=4 color="#000000">12:12 AM</font></td>
+		<td align="right" valign=bottom sdval="0.122916666666667" sdnum="16393;0;HH:MM AM/PM"><font face="Calibri" size=4 color="#000000">02:57 AM</font></td>
+		<td align="right" valign=bottom sdval="0.0833333333333333" sdnum="16393;0;HH:MM"><font face="Calibri" size=4 color="#000000">02:00</font></td>
+		<td align="left" valign=bottom><font face="Calibri" size=4 color="#000000">mapping for collection of value type</font></td>
+	</tr>
+	<tr>
+		<td height="25" align="right" valign=bottom sdval="40066" sdnum="16393;0;DD/MM/YYYY"><font face="Calibri" size=4 color="#000000">10/09/2009</font></td>
+		<td align="right" valign=bottom sdval="0.413194444444444" sdnum="16393;0;HH:MM AM/PM"><font face="Calibri" size=4 color="#000000">09:55 AM</font></td>
+		<td align="right" valign=bottom sdval="0.454166666666667" sdnum="16393;0;HH:MM AM/PM"><font face="Calibri" size=4 color="#000000">10:54 AM</font></td>
+		<td align="right" valign=bottom sdval="0.0416666666666667" sdnum="16393;0;HH:MM"><font face="Calibri" size=4 color="#000000">01:00</font></td>
+		<td align="left" valign=bottom><font face="Calibri" size=4 color="#000000">one-to-one mapping by foreign or shared primary key</font></td>
+	</tr>
+	<tr>
+		<td height="25" align="right" valign=bottom sdval="40066" sdnum="16393;0;DD/MM/YYYY"><font face="Calibri" size=4 color="#000000">10/09/2009</font></td>
+		<td align="right" valign=bottom sdval="0.949305555555556" sdnum="16393;0;HH:MM AM/PM"><font face="Calibri" size=4 color="#000000">10:47 PM</font></td>
+		<td align="right" valign=bottom sdval="0.99375" sdnum="16393;0;HH:MM AM/PM"><font face="Calibri" size=4 color="#000000">11:51 PM</font></td>
+		<td align="right" valign=bottom sdval="0.0416666666666667" sdnum="16393;0;HH:MM"><font face="Calibri" size=4 color="#000000">01:00</font></td>
+		<td align="left" valign=bottom><font face="Calibri" size=4 color="#000000">many-to-many mapping</font></td>
+	</tr>
+	<tr>
+		<td height="25" align="right" valign=bottom sdval="40067" sdnum="16393;0;DD/MM/YYYY"><font face="Calibri" size=4 color="#000000">11/09/2009</font></td>
+		<td align="right" valign=bottom sdval="0.46875" sdnum="16393;0;HH:MM AM/PM"><font face="Calibri" size=4 color="#000000">11:15 AM</font></td>
+		<td align="right" valign=bottom sdval="0.00625" sdnum="16393;0;HH:MM AM/PM"><font face="Calibri" size=4 color="#000000">12:09 AM</font></td>
+		<td align="right" valign=bottom sdval="0.0277777777777778" sdnum="16393;0;HH:MM"><font face="Calibri" size=4 color="#000000">00:40</font></td>
+		<td align="left" valign=bottom><font face="Calibri" size=4 color="#000000">HQL introduction</font></td>
+	</tr>
+	<tr>
+		<td height="25" align="right" valign=bottom sdval="40068" sdnum="16393;0;DD/MM/YYYY"><font face="Calibri" size=4 color="#000000">12/09/2009</font></td>
+		<td align="left" valign=bottom><br></td>
+		<td align="right" valign=bottom sdval="0.467361111111111" sdnum="16393;0;HH:MM AM/PM"><font face="Calibri" size=4 color="#000000">11:13 AM</font></td>
+		<td align="right" valign=bottom sdval="0.0416666666666667" sdnum="16393;0;HH:MM"><font face="Calibri" size=4 color="#000000">01:00</font></td>
+		<td align="left" valign=bottom><br></td>
+	</tr>
+	<tr>
+		<td height="25" align="right" valign=bottom sdval="40068" sdnum="16393;0;DD/MM/YYYY"><font face="Calibri" size=4 color="#000000">12/09/2009</font></td>
+		<td align="right" valign=bottom sdval="0.467361111111111" sdnum="16393;0;HH:MM AM/PM"><font face="Calibri" size=4 color="#000000">11:13 AM</font></td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+	</tr>
+	<tr>
+		<td height="25" align="right" valign=bottom sdval="40069" sdnum="16393;0;DD/MM/YYYY"><font face="Calibri" size=4 color="#000000">13/09/2009</font></td>
+		<td align="right" valign=bottom sdval="0.398611111111111" sdnum="16393;0;HH:MM AM/PM"><font face="Calibri" size=4 color="#000000">09:34 AM</font></td>
+		<td align="right" valign=bottom sdval="0.449305555555556" sdnum="16393;0;HH:MM AM/PM"><font face="Calibri" size=4 color="#000000">10:47 AM</font></td>
+		<td align="right" valign=bottom sdval="0.0416666666666667" sdnum="16393;0;HH:MM"><font face="Calibri" size=4 color="#000000">01:00</font></td>
+		<td align="left" valign=bottom><font face="Calibri" size=4 color="#000000">projection and grouping of HQL</font></td>
+	</tr>
+	<tr>
+		<td height="25" align="right" valign=bottom sdval="40070" sdnum="16393;0;DD/MM/YYYY"><font face="Calibri" size=4 color="#000000">14/09/2009</font></td>
+		<td align="right" valign=bottom sdval="0.0513888888888889" sdnum="16393;0;HH:MM AM/PM"><font face="Calibri" size=4 color="#000000">01:14 AM</font></td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+	</tr>
+	<tr>
+		<td height="25" align="right" valign=bottom sdval="40071" sdnum="16393;0;DD/MM/YYYY"><font face="Calibri" size=4 color="#000000">15/09/2009</font></td>
+		<td align="right" valign=bottom sdval="0.976388888888889" sdnum="16393;0;HH:MM AM/PM"><font face="Calibri" size=4 color="#000000">11:26 PM</font></td>
+		<td align="right" valign=bottom sdval="0.0451388888888889" sdnum="16393;0;HH:MM AM/PM"><font face="Calibri" size=4 color="#000000">01:05 AM</font></td>
+		<td align="right" valign=bottom sdval="0.0416666666666667" sdnum="16393;0;HH:MM"><font face="Calibri" size=4 color="#000000">01:00</font></td>
+		<td align="left" valign=bottom><font face="Calibri" size=4 color="#000000">transaction handling</font></td>
+	</tr>
+	<tr>
+		<td height="25" align="right" valign=bottom sdval="40072" sdnum="16393;0;DD/MM/YYYY"><font face="Calibri" size=4 color="#000000">16/09/2009</font></td>
+		<td align="left" valign=bottom><br></td>
+		<td align="right" valign=bottom sdval="0.396527777777778" sdnum="16393;0;HH:MM AM/PM"><font face="Calibri" size=4 color="#000000">09:31 AM</font></td>
+		<td align="right" valign=bottom sdval="0.0208333333333333" sdnum="16393;0;HH:MM"><font face="Calibri" size=4 color="#000000">00:30</font></td>
+		<td align="left" valign=bottom><font face="Calibri" size=4 color="#000000">handling special kind of data in hibernate</font></td>
+	</tr>
+	<tr>
+		<td height="25" align="right" valign=bottom sdval="40072" sdnum="16393;0;DD/MM/YYYY"><font face="Calibri" size=4 color="#000000">16/09/2009</font></td>
+		<td align="right" valign=bottom sdval="0.921527777777778" sdnum="16393;0;HH:MM AM/PM"><font face="Calibri" size=4 color="#000000">10:07 PM</font></td>
+		<td align="right" valign=bottom sdval="0.99375" sdnum="16393;0;HH:MM AM/PM"><font face="Calibri" size=4 color="#000000">11:51 PM</font></td>
+		<td align="right" valign=bottom sdval="0.0416666666666667" sdnum="16393;0;HH:MM"><font face="Calibri" size=4 color="#000000">01:00</font></td>
+		<td align="left" valign=bottom><font face="Calibri" size=4 color="#000000">working with legacy and intercepter</font></td>
+	</tr>
+	<tr>
+		<td height="25" align="right" valign=bottom sdval="40073" sdnum="16393;0;DD/MM/YYYY"><font face="Calibri" size=4 color="#000000">17/09/2009</font></td>
+		<td align="right" valign=bottom sdval="0.423611111111111" sdnum="16393;0;HH:MM AM/PM"><font face="Calibri" size=4 color="#000000">10:10 AM</font></td>
+		<td align="right" valign=bottom sdval="0.454861111111111" sdnum="16393;0;HH:MM AM/PM"><font face="Calibri" size=4 color="#000000">10:55 AM</font></td>
+		<td align="right" valign=bottom sdval="0.0277777777777778" sdnum="16393;0;HH:MM"><font face="Calibri" size=4 color="#000000">00:40</font></td>
+		<td align="left" valign=bottom><font face="Calibri" size=4 color="#000000">hibernate tools</font></td>
+	</tr>
+	<tr>
+		<td height="25" align="right" valign=bottom sdval="40074" sdnum="16393;0;DD/MM/YYYY"><font face="Calibri" size=4 color="#000000">18/09/2009</font></td>
+		<td align="left" valign=bottom><br></td>
+		<td align="right" valign=bottom sdval="0.00625" sdnum="16393;0;HH:MM AM/PM"><font face="Calibri" size=4 color="#000000">12:09 AM</font></td>
+		<td align="right" valign=bottom sdval="0.0416666666666667" sdnum="16393;0;HH:MM"><font face="Calibri" size=4 color="#000000">01:00</font></td>
+		<td align="left" valign=bottom><font face="Calibri" size=4 color="#000000">xdoclet and middlegen</font></td>
+	</tr>
+	<tr>
+		<td height="25" align="right" valign=bottom sdval="40261" sdnum="16393;0;DD/MM/YYYY"><font face="Calibri" size=4 color="#000000">24/03/2010</font></td>
+		<td align="right" valign=bottom sdval="0.822916666666667" sdnum="16393;0;HH:MM AM/PM"><font face="Calibri" size=4 color="#000000">07:45 PM</font></td>
+		<td align="right" valign=bottom sdval="0.939583333333333" sdnum="16393;0;HH:MM AM/PM"><font face="Calibri" size=4 color="#000000">10:33 PM</font></td>
+		<td align="right" valign=bottom sdval="0.0625" sdnum="16393;0;HH:MM"><font face="Calibri" size=4 color="#000000">01:30</font></td>
+		<td align="left" valign=bottom><font face="Calibri" size=4 color="#000000">Java persistence with java</font></td>
+	</tr>
+	<tr>
+		<td height="25" align="right" valign=bottom sdval="40274" sdnum="16393;0;DD/MM/YYYY"><font face="Calibri" size=4 color="#000000">06/04/2010</font></td>
+		<td align="right" valign=bottom sdval="0.384722222222222" sdnum="16393;0;HH:MM AM/PM"><font face="Calibri" size=4 color="#000000">09:14 AM</font></td>
+		<td align="right" valign=bottom sdval="0.400694444444444" sdnum="16393;0;HH:MM AM/PM"><font face="Calibri" size=4 color="#000000">09:37 AM</font></td>
+		<td align="right" valign=bottom sdval="0.0138888888888889" sdnum="16393;0;HH:MM"><font face="Calibri" size=4 color="#000000">00:20</font></td>
+		<td align="left" valign=bottom><font face="Calibri" size=4 color="#000000">First chapter in Java persistence with hibernate</font></td>
+	</tr>
+	<tr>
+		<td height="25" align="right" valign=bottom sdval="40274" sdnum="16393;0;DD/MM/YYYY"><font face="Calibri" size=4 color="#000000">06/04/2010</font></td>
+		<td align="right" valign=bottom sdval="0.692361111111111" sdnum="16393;0;HH:MM AM/PM"><font face="Calibri" size=4 color="#000000">04:37 PM</font></td>
+		<td align="right" valign=bottom sdval="0.736111111111111" sdnum="16393;0;HH:MM AM/PM"><font face="Calibri" size=4 color="#000000">05:40 PM</font></td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><font face="Calibri" size=4 color="#000000">First chapter in Java persistence with hibernate</font></td>
+	</tr>
+	<tr>
+		<td height="25" align="right" valign=bottom sdval="40274" sdnum="16393;0;DD/MM/YYYY"><font face="Calibri" size=4 color="#000000">06/04/2010</font></td>
+		<td align="right" valign=bottom sdval="0.935416666666667" sdnum="16393;0;HH:MM AM/PM"><font face="Calibri" size=4 color="#000000">10:27 PM</font></td>
+		<td align="right" valign=bottom sdval="0.95625" sdnum="16393;0;HH:MM AM/PM"><font face="Calibri" size=4 color="#000000">10:57 PM</font></td>
+		<td align="right" valign=bottom sdval="0.0208333333333333" sdnum="16393;0;HH:MM"><font face="Calibri" size=4 color="#000000">00:30</font></td>
+		<td align="left" valign=bottom><font face="Calibri" size=4 color="#000000">First chapter in Java persistence with hibernate</font></td>
+	</tr>
+</table>
+<!-- ************************************************************************** -->
+<hr>
+<A NAME="table2"><h1>Sheet 2: <em>compile &amp; runtime jar</em></h1></A>
+<table align="left" cellspacing="0" border="0">
+	<colgroup width="120"></colgroup>
+	<colgroup width="31"></colgroup>
+	<colgroup width="839"></colgroup>
+	<tr>
+		<td height="25" align="left" valign=bottom><font face="Calibri" size=4 color="#000000"><br></font></td>
+		<td align="left" valign=bottom><font face="Calibri" size=4 color="#000000"><br></font></td>
+		<td align="left" valign=bottom><font face="Calibri" size=4 color="#000000">minimum jar files need to COMPILE</font></td>
+	</tr>
+	<tr>
+		<td colspan=3 rowspan=14 height="350" align="left" valign=bottom><font face="Calibri" size=4 color="#000000"><br><img src="ParamHibernate_html_74d2899a.png" width=857 height=329 hspace=67 vspace=17>
+		</font></td>
+		</tr>
+	<tr>
+		</tr>
+	<tr>
+		</tr>
+	<tr>
+		</tr>
+	<tr>
+		</tr>
+	<tr>
+		</tr>
+	<tr>
+		</tr>
+	<tr>
+		</tr>
+	<tr>
+		</tr>
+	<tr>
+		</tr>
+	<tr>
+		</tr>
+	<tr>
+		</tr>
+	<tr>
+		</tr>
+	<tr>
+		</tr>
+	<tr>
+		<td height="25" align="left" valign=bottom><font face="Calibri" size=4 color="#000000"><br></font></td>
+		<td align="left" valign=bottom><font face="Calibri" size=4 color="#000000"><br></font></td>
+		<td align="left" valign=bottom><br></td>
+	</tr>
+	<tr>
+		<td height="25" align="left" valign=bottom><font face="Calibri" size=4 color="#000000"><br></font></td>
+		<td align="left" valign=bottom><font face="Calibri" size=4 color="#000000"><br></font></td>
+		<td align="left" valign=bottom><font face="Calibri" size=4 color="#000000">for runntime</font></td>
+	</tr>
+	<tr>
+		<td height="25" align="left" valign=bottom><font face="Calibri" size=4 color="#000000"><br></font></td>
+		<td align="left" valign=bottom><font face="Calibri" size=4 color="#000000"><br></font></td>
+		<td align="left" valign=bottom><br></td>
+	</tr>
+	<tr>
+		<td colspan=3 rowspan=15 height="375" align="left" valign=bottom><font face="Calibri" size=4 color="#000000"><br><img src="ParamHibernate_html_730f8ee3.png" width=908 height=350 hspace=42 vspace=19>
+		</font></td>
+		</tr>
+	<tr>
+		</tr>
+	<tr>
+		</tr>
+	<tr>
+		</tr>
+	<tr>
+		</tr>
+	<tr>
+		</tr>
+	<tr>
+		</tr>
+	<tr>
+		</tr>
+	<tr>
+		</tr>
+	<tr>
+		</tr>
+	<tr>
+		</tr>
+	<tr>
+		</tr>
+	<tr>
+		</tr>
+	<tr>
+		</tr>
+	<tr>
+		</tr>
+	<tr>
+		<td height="25" align="left" valign=bottom><font face="Calibri" size=4 color="#000000"><br></font></td>
+		<td align="left" valign=bottom><font face="Calibri" size=4 color="#000000"><br></font></td>
+		<td align="left" valign=bottom><br></td>
+	</tr>
+	<tr>
+		<td height="25" align="left" valign=bottom><font face="Calibri" size=4 color="#000000"><br></font></td>
+		<td align="left" valign=bottom><font face="Calibri" size=4 color="#000000"><br></font></td>
+		<td align="left" valign=bottom><font face="Calibri" size=4 color="#000000">for annotation support</font></td>
+	</tr>
+	<tr>
+		<td height="25" align="left" valign=bottom><font face="Calibri" size=4 color="#000000"><br></font></td>
+		<td align="left" valign=bottom><font face="Calibri" size=4 color="#000000"><br></font></td>
+		<td align="left" valign=bottom><font face="Calibri" size=4 color="#000000"><br></font></td>
+	</tr>
+	<tr>
+		<td height="25" align="left" valign=bottom><font face="Calibri" size=4 color="#000000"><br></font></td>
+		<td align="left" valign=bottom><font face="Calibri" size=4 color="#000000"><br></font></td>
+		<td align="left" valign=bottom><font face="Calibri" size=4 color="#000000"><br></font></td>
+	</tr>
+	<tr>
+		<td height="25" align="left" valign=bottom><font face="Calibri" size=4 color="#000000"><br></font></td>
+		<td align="left" valign=bottom><font face="Calibri" size=4 color="#000000"><br></font></td>
+		<td align="left" valign=bottom><font face="Calibri" size=4 color="#000000"><br></font></td>
+	</tr>
+	<tr>
+		<td height="25" align="left" valign=bottom><font face="Calibri" size=4 color="#000000"><br></font></td>
+		<td align="left" valign=bottom><font face="Calibri" size=4 color="#000000"><br></font></td>
+		<td align="left" valign=bottom><font face="Calibri" size=4 color="#000000"><br></font></td>
+	</tr>
+	<tr>
+		<td height="25" align="left" valign=bottom><font face="Calibri" size=4 color="#000000"><br></font></td>
+		<td align="left" valign=bottom><font face="Calibri" size=4 color="#000000"><br></font></td>
+		<td align="left" valign=bottom><font face="Calibri" size=4 color="#000000"><br></font></td>
+	</tr>
+	<tr>
+		<td height="25" align="left" valign=bottom><font face="Calibri" size=4 color="#000000"><br></font></td>
+		<td align="left" valign=bottom><font face="Calibri" size=4 color="#000000"><br></font></td>
+		<td align="left" valign=bottom><font face="Calibri" size=4 color="#000000"><br></font></td>
+	</tr>
+	<tr>
+		<td height="25" align="left" valign=bottom><font face="Calibri" size=4 color="#000000"><br></font></td>
+		<td align="left" valign=bottom><font face="Calibri" size=4 color="#000000"><br></font></td>
+		<td align="left" valign=bottom><font face="Calibri" size=4 color="#000000"><br></font></td>
+	</tr>
+	<tr>
+		<td height="25" align="left" valign=bottom><font face="Calibri" size=4 color="#000000"><br></font></td>
+		<td align="left" valign=bottom><font face="Calibri" size=4 color="#000000"><br></font></td>
+		<td align="left" valign=bottom><font face="Calibri" size=4 color="#000000"><br></font></td>
+	</tr>
+	<tr>
+		<td height="25" align="left" valign=bottom><font face="Calibri" size=4 color="#000000"><br></font></td>
+		<td align="left" valign=bottom><font face="Calibri" size=4 color="#000000"><br></font></td>
+		<td align="left" valign=bottom><font face="Calibri" size=4 color="#000000"><br></font></td>
+	</tr>
+	<tr>
+		<td height="25" align="left" valign=bottom><font face="Calibri" size=4 color="#000000"><br></font></td>
+		<td align="left" valign=bottom><font face="Calibri" size=4 color="#000000"><br></font></td>
+		<td align="left" valign=bottom><font face="Calibri" size=4 color="#000000"><br></font></td>
+	</tr>
+	<tr>
+		<td height="25" align="left" valign=bottom><font face="Calibri" size=4 color="#000000"><br></font></td>
+		<td align="left" valign=bottom><font face="Calibri" size=4 color="#000000"><br></font></td>
+		<td align="left" valign=bottom><font face="Calibri" size=4 color="#000000"><br></font></td>
+	</tr>
+	<tr>
+		<td height="25" align="left" valign=bottom><font face="Calibri" size=4 color="#000000"><br></font></td>
+		<td align="left" valign=bottom><font face="Calibri" size=4 color="#000000"><br></font></td>
+		<td align="left" valign=bottom><font face="Calibri" size=4 color="#000000"><br></font></td>
+	</tr>
+	<tr>
+		<td height="25" align="left" valign=bottom><font face="Calibri" size=4 color="#000000"><br></font></td>
+		<td align="left" valign=bottom><font face="Calibri" size=4 color="#000000"><br></font></td>
+		<td align="left" valign=bottom><font face="Calibri" size=4 color="#000000"><br></font></td>
+	</tr>
+	<tr>
+		<td height="25" align="left" valign=bottom><font face="Calibri" size=4 color="#000000"><br></font></td>
+		<td align="left" valign=bottom><font face="Calibri" size=4 color="#000000"><br></font></td>
+		<td align="left" valign=bottom><font face="Calibri" size=4 color="#000000"><br></font></td>
+	</tr>
+</table>
+<img src="ParamHibernate_html_d0a3f3c4.png" width=740 height=331>
+<br clear=left>
+<!-- ************************************************************************** -->
+<hr>
+<A NAME="table3"><h1>Sheet 3: <em>Prior to Hibernate</em></h1></A>
+<table cellspacing="0" border="0">
+	<colgroup width="129"></colgroup>
+	<colgroup width="1179"></colgroup>
+	<tr>
+		<td height="25" align="left" valign=bottom><font face="Calibri" size=4 color="#000000">Database - relational technolgy</font></td>
+		<td align="left" valign=bottom><br></td>
+	</tr>
+	<tr>
+		<td height="25" align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+	</tr>
+	<tr>
+		<td height="25" align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><font face="Calibri" size=4 color="#000000">Industry has invested a lot for efficent ralational database system.</font></td>
+	</tr>
+	<tr>
+		<td height="25" align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><font face="Calibri" size=4 color="#000000">Relational technology is good interms of data independency, protection, integrity,sharing</font></td>
+	</tr>
+	<tr>
+		<td height="25" align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><font face="Calibri" size=4 color="#000000">All Database accessed only by SQL only. But SQL is not implemented any of relational technology concept</font></td>
+	</tr>
+	<tr>
+		<td height="25" align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><font face="Calibri" size=4 color="#000000">SQL already solved by relational technology and has extension by PL/SQL procedure</font></td>
+	</tr>
+	<tr>
+		<td height="25" align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><font face="Calibri" size=4 color="#000000">Usally every database has its own Dialect.</font></td>
+	</tr>
+	<tr>
+		<td height="25" align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+	</tr>
+	<tr>
+		<td height="25" align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+	</tr>
+	<tr>
+		<td height="25" align="left" valign=bottom><font face="Calibri" size=4 color="#000000">Database - SQL</font></td>
+		<td align="left" valign=bottom><br></td>
+	</tr>
+	<tr>
+		<td height="25" align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><font face="Calibri" size=4 color="#000000">Data Definition Language ( DDL ) - CREATE / ALTER statement</font></td>
+	</tr>
+	<tr>
+		<td height="25" align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><font face="Calibri" size=4 color="#000000">Data Manipulation Language ( DML ) - INSERT / UPDATE / DELETE / SELECT ( join / restriction / projection / reporting like group, order,aggregate )</font></td>
+	</tr>
+	<tr>
+		<td height="25" align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+	</tr>
+	<tr>
+		<td height="25" align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+	</tr>
+	<tr>
+		<td height="25" align="left" valign=bottom><font face="Calibri" size=4 color="#000000">Paradigm Mismatch</font></td>
+		<td align="left" valign=bottom><br></td>
+	</tr>
+	<tr>
+		<td height="25" align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><font face="Calibri" size=4 color="#000000">Object modelling Vs Relational Modeling  ( usually both model is must of a non-trival application development )</font></td>
+	</tr>
+	<tr>
+		<td height="25" align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><font face="Calibri" size=4 color="#000000">Object oriented progamming ( fully use of OOPs ) Vs SQL</font></td>
+	</tr>
+	<tr>
+		<td height="25" align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><font face="Calibri" size=4 color="#000000">Java object is best for business logic, since it use OOPS concept &amp; Design pattern  Vs it cannot be run inside database like pl/ SQL procedure</font></td>
+	</tr>
+	<tr>
+		<td height="25" align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><font face="Calibri" size=4 color="#000000">for data persistence Relational is best Vs serialization java objects</font></td>
+	</tr>
+	<tr>
+		<td height="25" align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><font face="Calibri" size=4 color="#000000">Use SQL Procedure when modify large data (i.e) close to data Vs Bring data to application layer when regular use of business (i.e) close to business logic</font></td>
+	</tr>
+	<tr>
+		<td height="25" align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><font face="Calibri" size=4 color="#000000">Relational Database does not support User Defined Type (UDT) to specify column of type. (i.e) a java class cant specify as type of a column in table</font></td>
+	</tr>
+	<tr>
+		<td height="25" align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><font face="Calibri" size=4 color="#000000">Relational Database does not support concept like Super table and sub tables Vs Java</font></td>
+	</tr>
+	<tr>
+		<td height="25" align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><font face="Calibri" size=4 color="#000000">Relational Database does not support Polymorphic association or polymorphic query result Vs Java</font></td>
+	</tr>
+	<tr>
+		<td height="25" align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><font face="Calibri" size=4 color="#000000">Identity of a record depends on primary key Vs Identity of java objects depends on memory reference and equals().</font></td>
+	</tr>
+	<tr>
+		<td height="25" align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><font face="Calibri" size=4 color="#000000">Java object association is by object reference  Vs Tables are associated with Foreign key </font></td>
+	</tr>
+	<tr>
+		<td height="25" align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><font face="Calibri" size=4 color="#000000">Java reference is directional Vs foreign key Is not directonal by default</font></td>
+	</tr>
+	<tr>
+		<td height="25" align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><font face="Calibri" size=4 color="#000000">tables arbitarly joined by tables join and projection even without foreign key association in Select query. Vs Association cant without reference among objects</font></td>
+	</tr>
+	<tr>
+		<td height="25" align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><font face="Calibri" size=4 color="#000000">one-to-one/ one-to-many/ many-to-many all are supported in Java  by object reference Vs Foreign key support only one-to-one / one -to-many. For many-to-many need LINK table</font></td>
+	</tr>
+	<tr>
+		<td height="25" align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><font face="Calibri" size=4 color="#000000">some time Domain model and Object model cannot be the same. This mismatch need a couple of cost in wring SQL and JDBC</font></td>
+	</tr>
+	<tr>
+		<td height="25" align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+	</tr>
+	<tr>
+		<td height="25" align="left" valign=bottom><font face="Calibri" size=4 color="#000000">Java</font></td>
+		<td align="left" valign=bottom><br></td>
+	</tr>
+	<tr>
+		<td height="25" align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><font face="Calibri" size=4 color="#000000">Java object can be serialized and recreated even single or networks of interconnected object.</font></td>
+	</tr>
+	<tr>
+		<td height="25" align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><font face="Calibri" size=4 color="#000000">But a java application have mixed of both serializable as well as Transient object.</font></td>
+	</tr>
+	<tr>
+		<td height="25" align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><font face="Calibri" size=4 color="#000000">so we need a subsystem( database ) to manage the persistence data</font></td>
+	</tr>
+	<tr>
+		<td height="25" align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+	</tr>
+	<tr>
+		<td height="25" align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+	</tr>
+	<tr>
+		<td height="25" align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+	</tr>
+	<tr>
+		<td height="25" align="left" valign=bottom><font face="Calibri" size=4 color="#000000">Datbase ( subsystem) Provides</font></td>
+		<td align="left" valign=bottom><br></td>
+	</tr>
+	<tr>
+		<td height="25" align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><font face="Calibri" size=4 color="#000000">it represent data in structured manner</font></td>
+	</tr>
+	<tr>
+		<td height="25" align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><font face="Calibri" size=4 color="#000000">it provide data integrity &amp; Concurrency by constraint rules</font></td>
+	</tr>
+	<tr>
+		<td height="25" align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><font face="Calibri" size=4 color="#000000">it provide data sharing among different user / application</font></td>
+	</tr>
+	<tr>
+		<td height="25" align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><font face="Calibri" size=4 color="#000000">it provide data manipulation, sorting, grouping(aggregation)</font></td>
+	</tr>
+	<tr>
+		<td height="25" align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><font face="Calibri" size=4 color="#000000">it provide data level security</font></td>
+	</tr>
+	<tr>
+		<td height="25" align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+	</tr>
+	<tr>
+		<td height="25" align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+	</tr>
+	<tr>
+		<td height="25" align="left" valign=bottom><font face="Calibri" size=4 color="#000000">Layered architecture</font></td>
+		<td align="left" valign=bottom><br></td>
+	</tr>
+	<tr>
+		<td height="25" align="left" valign=bottom><font face="Calibri" size=4 color="#000000"><br></font></td>
+		<td align="left" valign=bottom><font face="Calibri" size=4 color="#000000">each layer aware only below of its.</font></td>
+	</tr>
+	<tr>
+		<td height="25" align="left" valign=bottom><font face="Calibri" size=4 color="#000000"><br></font></td>
+		<td align="left" valign=bottom><font face="Calibri" size=4 color="#000000">each layer communicate only with below of it</font></td>
+	</tr>
+</table>
+<!-- ************************************************************************** -->
+<hr>
+<A NAME="table4"><h1>Sheet 4: <em>API</em></h1></A>
+<table align="left" cellspacing="0" border="0">
+	<colgroup width="202"></colgroup>
+	<colgroup width="166"></colgroup>
+	<colgroup width="105"></colgroup>
+	<colgroup width="99"></colgroup>
+	<colgroup width="111"></colgroup>
+	<colgroup width="123"></colgroup>
+	<colgroup width="128"></colgroup>
+	<tr>
+		<td height="25" align="left" valign=bottom bgcolor="#C6D9F1"><font face="Calibri" size=4 color="#000000">Configuration</font></td>
+		<td align="left" valign=bottom bgcolor="#C6D9F1"><font face="Calibri" size=4 color="#000000"><br></font></td>
+		<td align="left" valign=bottom bgcolor="#C6D9F1"><font face="Calibri" size=4 color="#000000"><br></font></td>
+		<td align="left" valign=bottom bgcolor="#C6D9F1"><font face="Calibri" size=4 color="#000000"><br></font></td>
+		<td align="left" valign=bottom bgcolor="#C6D9F1"><font face="Calibri" size=4 color="#000000"><br></font></td>
+		<td align="left" valign=bottom bgcolor="#C6D9F1"><font face="Calibri" size=4 color="#000000"><br></font></td>
+		<td align="left" valign=bottom><br></td>
+	</tr>
+	<tr>
+		<td height="25" align="left" valign=bottom bgcolor="#C6D9F1"><font face="Calibri" size=4 color="#000000"><br></font></td>
+		<td align="left" valign=bottom bgcolor="#C6D9F1"><font face="Calibri" size=4 color="#000000">SessionFactory</font></td>
+		<td align="left" valign=bottom bgcolor="#C6D9F1"><font face="Calibri" size=4 color="#000000"><br></font></td>
+		<td align="left" valign=bottom bgcolor="#C6D9F1"><font face="Calibri" size=4 color="#000000"><br></font></td>
+		<td align="left" valign=bottom bgcolor="#C6D9F1"><font face="Calibri" size=4 color="#000000"><br></font></td>
+		<td align="left" valign=bottom bgcolor="#C6D9F1"><font face="Calibri" size=4 color="#000000"><br></font></td>
+		<td align="left" valign=bottom><br></td>
+	</tr>
+	<tr>
+		<td height="25" align="left" valign=bottom bgcolor="#C6D9F1"><font face="Calibri" size=4 color="#000000"><br></font></td>
+		<td align="left" valign=bottom bgcolor="#C6D9F1"><font face="Calibri" size=4 color="#000000"><br></font></td>
+		<td align="left" valign=bottom bgcolor="#C6D9F1"><font face="Calibri" size=4 color="#000000">Session</font></td>
+		<td align="left" valign=bottom bgcolor="#C6D9F1"><font face="Calibri" size=4 color="#000000"><br></font></td>
+		<td align="left" valign=bottom bgcolor="#C6D9F1"><font face="Calibri" size=4 color="#000000"><br></font></td>
+		<td align="left" valign=bottom bgcolor="#C6D9F1"><font face="Calibri" size=4 color="#000000"><br></font></td>
+		<td align="left" valign=bottom><br></td>
+	</tr>
+	<tr>
+		<td height="25" align="left" valign=bottom bgcolor="#C6D9F1"><font face="Calibri" size=4 color="#000000"><br></font></td>
+		<td align="left" valign=bottom bgcolor="#C6D9F1"><font face="Calibri" size=4 color="#000000"><br></font></td>
+		<td align="left" valign=bottom bgcolor="#C6D9F1"><font face="Calibri" size=4 color="#000000"><br></font></td>
+		<td align="left" valign=bottom bgcolor="#C6D9F1"><font face="Calibri" size=4 color="#000000">Transaction</font></td>
+		<td align="left" valign=bottom bgcolor="#C6D9F1"><font face="Calibri" size=4 color="#000000"><br></font></td>
+		<td align="left" valign=bottom bgcolor="#C6D9F1"><font face="Calibri" size=4 color="#000000"><br></font></td>
+		<td align="left" valign=bottom><br></td>
+	</tr>
+	<tr>
+		<td height="25" align="left" valign=bottom bgcolor="#C6D9F1"><font face="Calibri" size=4 color="#000000"><br></font></td>
+		<td align="left" valign=bottom bgcolor="#C6D9F1"><font face="Calibri" size=4 color="#000000"><br></font></td>
+		<td align="left" valign=bottom bgcolor="#C6D9F1"><font face="Calibri" size=4 color="#000000"><br></font></td>
+		<td align="left" valign=bottom bgcolor="#C6D9F1"><font face="Calibri" size=4 color="#000000">Query</font></td>
+		<td align="left" valign=bottom bgcolor="#C6D9F1"><font face="Calibri" size=4 color="#000000"><br></font></td>
+		<td align="left" valign=bottom bgcolor="#C6D9F1"><font face="Calibri" size=4 color="#000000"><br></font></td>
+		<td align="left" valign=bottom><br></td>
+	</tr>
+	<tr>
+		<td height="25" align="left" valign=bottom bgcolor="#C6D9F1"><font face="Calibri" size=4 color="#000000"><br></font></td>
+		<td align="left" valign=bottom bgcolor="#C6D9F1"><font face="Calibri" size=4 color="#000000"><br></font></td>
+		<td align="left" valign=bottom bgcolor="#C6D9F1"><font face="Calibri" size=4 color="#000000"><br></font></td>
+		<td align="left" valign=bottom bgcolor="#558ED5"><font face="Calibri" size=4 color="#000000">Criteria</font></td>
+		<td align="left" valign=bottom bgcolor="#558ED5"><font face="Calibri" size=4 color="#000000"><br></font></td>
+		<td align="left" valign=bottom bgcolor="#558ED5"><font face="Calibri" size=4 color="#000000"><br></font></td>
+		<td align="left" valign=bottom><br></td>
+	</tr>
+	<tr>
+		<td height="25" align="left" valign=bottom bgcolor="#C6D9F1"><font face="Calibri" size=4 color="#000000"><br></font></td>
+		<td align="left" valign=bottom bgcolor="#C6D9F1"><font face="Calibri" size=4 color="#000000"><br></font></td>
+		<td align="left" valign=bottom bgcolor="#C6D9F1"><font face="Calibri" size=4 color="#000000"><br></font></td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom bgcolor="#B3A2C7"><font face="Calibri" size=4 color="#000000">Criterion</font></td>
+		<td align="left" valign=bottom bgcolor="#B3A2C7"><font face="Calibri" size=4 color="#000000"><br></font></td>
+		<td align="left" valign=bottom bgcolor="#B3A2C7"><font face="Calibri" size=4 color="#000000"><br></font></td>
+	</tr>
+	<tr>
+		<td height="25" align="left" valign=bottom bgcolor="#C6D9F1"><font face="Calibri" size=4 color="#000000"><br></font></td>
+		<td align="left" valign=bottom bgcolor="#C6D9F1"><font face="Calibri" size=4 color="#000000"><br></font></td>
+		<td align="left" valign=bottom bgcolor="#C6D9F1"><font face="Calibri" size=4 color="#000000"><br></font></td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom bgcolor="#B3A2C7"><font face="Calibri" size=4 color="#000000"><br></font></td>
+		<td align="left" valign=bottom bgcolor="#B3A2C7"><font face="Calibri" size=4 color="#000000">Restrictions</font></td>
+		<td align="left" valign=bottom bgcolor="#B3A2C7"><font face="Calibri" size=4 color="#000000"><br></font></td>
+	</tr>
+	<tr>
+		<td height="25" align="left" valign=bottom bgcolor="#C6D9F1"><font face="Calibri" size=4 color="#000000"><br></font></td>
+		<td align="left" valign=bottom bgcolor="#C6D9F1"><font face="Calibri" size=4 color="#000000"><br></font></td>
+		<td align="left" valign=bottom bgcolor="#C6D9F1"><font face="Calibri" size=4 color="#000000"><br></font></td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom bgcolor="#B3A2C7"><font face="Calibri" size=4 color="#000000"><br></font></td>
+		<td align="left" valign=bottom bgcolor="#B3A2C7"><font face="Calibri" size=4 color="#000000"><br></font></td>
+		<td align="left" valign=bottom bgcolor="#B3A2C7"><font face="Calibri" size=4 color="#000000">Disjunction</font></td>
+	</tr>
+	<tr>
+		<td height="25" align="left" valign=bottom bgcolor="#C6D9F1"><font face="Calibri" size=4 color="#000000"><br></font></td>
+		<td align="left" valign=bottom bgcolor="#C6D9F1"><font face="Calibri" size=4 color="#000000"><br></font></td>
+		<td align="left" valign=bottom bgcolor="#C6D9F1"><font face="Calibri" size=4 color="#000000"><br></font></td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom bgcolor="#B3A2C7"><font face="Calibri" size=4 color="#000000"><br></font></td>
+		<td align="left" valign=bottom bgcolor="#B3A2C7"><font face="Calibri" size=4 color="#000000"><br></font></td>
+		<td align="left" valign=bottom bgcolor="#B3A2C7"><font face="Calibri" size=4 color="#000000">Conjunction</font></td>
+	</tr>
+	<tr>
+		<td height="25" align="left" valign=bottom bgcolor="#C6D9F1"><font face="Calibri" size=4 color="#000000"><br></font></td>
+		<td align="left" valign=bottom bgcolor="#C6D9F1"><font face="Calibri" size=4 color="#000000"><br></font></td>
+		<td align="left" valign=bottom bgcolor="#C6D9F1"><font face="Calibri" size=4 color="#000000"><br></font></td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom bgcolor="#B3A2C7"><font face="Calibri" size=4 color="#000000"><br></font></td>
+		<td align="left" valign=bottom bgcolor="#B3A2C7"><font face="Calibri" size=4 color="#000000">Property</font></td>
+		<td align="left" valign=bottom bgcolor="#B3A2C7"><font face="Calibri" size=4 color="#000000"><br></font></td>
+	</tr>
+	<tr>
+		<td height="25" align="left" valign=bottom bgcolor="#C6D9F1"><font face="Calibri" size=4 color="#000000"><br></font></td>
+		<td align="left" valign=bottom bgcolor="#C6D9F1"><font face="Calibri" size=4 color="#000000"><br></font></td>
+		<td align="left" valign=bottom bgcolor="#C6D9F1"><font face="Calibri" size=4 color="#000000"><br></font></td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom bgcolor="#B3A2C7"><font face="Calibri" size=4 color="#000000"><br></font></td>
+		<td align="left" valign=bottom bgcolor="#B3A2C7"><font face="Calibri" size=4 color="#000000">Example</font></td>
+		<td align="left" valign=bottom bgcolor="#B3A2C7"><font face="Calibri" size=4 color="#000000"><br></font></td>
+	</tr>
+	<tr>
+		<td height="25" align="left" valign=bottom bgcolor="#C6D9F1"><font face="Calibri" size=4 color="#000000"><br></font></td>
+		<td align="left" valign=bottom bgcolor="#C6D9F1"><font face="Calibri" size=4 color="#000000"><br></font></td>
+		<td align="left" valign=bottom bgcolor="#C6D9F1"><font face="Calibri" size=4 color="#000000"><br></font></td>
+		<td align="left" valign=bottom bgcolor="#558ED5"><font face="Calibri" size=4 color="#000000"><br></font></td>
+		<td align="left" valign=bottom bgcolor="#558ED5"><font face="Calibri" size=4 color="#000000">Order</font></td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><font face="Calibri" size=4 color="#000000"><br></font></td>
+	</tr>
+	<tr>
+		<td height="25" align="left" valign=bottom bgcolor="#C6D9F1"><font face="Calibri" size=4 color="#000000"><br></font></td>
+		<td align="left" valign=bottom bgcolor="#C6D9F1"><font face="Calibri" size=4 color="#000000"><br></font></td>
+		<td align="left" valign=bottom bgcolor="#C6D9F1"><font face="Calibri" size=4 color="#000000"><br></font></td>
+		<td align="left" valign=bottom bgcolor="#558ED5"><font face="Calibri" size=4 color="#000000"><br></font></td>
+		<td align="left" valign=bottom bgcolor="#558ED5"><font face="Calibri" size=4 color="#000000">Expression</font></td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><font face="Calibri" size=4 color="#000000"><br></font></td>
+	</tr>
+	<tr>
+		<td height="25" align="left" valign=bottom bgcolor="#C6D9F1"><font face="Calibri" size=4 color="#000000"><br></font></td>
+		<td align="left" valign=bottom bgcolor="#C6D9F1"><font face="Calibri" size=4 color="#000000"><br></font></td>
+		<td align="left" valign=bottom bgcolor="#C6D9F1"><font face="Calibri" size=4 color="#000000"><br></font></td>
+		<td align="left" valign=bottom bgcolor="#558ED5"><font face="Calibri" size=4 color="#000000"><br></font></td>
+		<td align="left" valign=bottom bgcolor="#558ED5"><font face="Calibri" size=4 color="#000000">ResultTransformer</font></td>
+		<td align="left" valign=bottom bgcolor="#558ED5"><font face="Calibri" size=4 color="#000000"><br></font></td>
+		<td align="left" valign=bottom><font face="Calibri" size=4 color="#000000"><br></font></td>
+	</tr>
+	<tr>
+		<td height="25" align="left" valign=bottom bgcolor="#C6D9F1"><font face="Calibri" size=4 color="#000000"><br></font></td>
+		<td align="left" valign=bottom bgcolor="#C6D9F1"><font face="Calibri" size=4 color="#000000"><br></font></td>
+		<td align="left" valign=bottom bgcolor="#C6D9F1"><font face="Calibri" size=4 color="#000000"><br></font></td>
+		<td align="left" valign=bottom bgcolor="#558ED5"><font face="Calibri" size=4 color="#000000"><br></font></td>
+		<td align="left" valign=bottom bgcolor="#558ED5"><font face="Calibri" size=4 color="#000000">FetchMode</font></td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><font face="Calibri" size=4 color="#000000"><br></font></td>
+	</tr>
+	<tr>
+		<td height="25" align="left" valign=bottom bgcolor="#C6D9F1"><font face="Calibri" size=4 color="#000000"><br></font></td>
+		<td align="left" valign=bottom bgcolor="#C6D9F1"><font face="Calibri" size=4 color="#000000"><br></font></td>
+		<td align="left" valign=bottom bgcolor="#C6D9F1"><font face="Calibri" size=4 color="#000000"><br></font></td>
+		<td align="left" valign=bottom bgcolor="#558ED5"><font face="Calibri" size=4 color="#000000"><br></font></td>
+		<td align="left" valign=bottom bgcolor="#558ED5"><font face="Calibri" size=4 color="#000000"><br></font></td>
+		<td align="left" valign=bottom bgcolor="#558ED5"><font face="Calibri" size=4 color="#000000">MatchMode</font></td>
+		<td align="left" valign=bottom><font face="Calibri" size=4 color="#000000"><br></font></td>
+	</tr>
+	<tr>
+		<td height="25" align="left" valign=bottom bgcolor="#C6D9F1"><font face="Calibri" size=4 color="#000000"><br></font></td>
+		<td align="left" valign=bottom bgcolor="#C6D9F1"><font face="Calibri" size=4 color="#000000"><br></font></td>
+		<td align="left" valign=bottom bgcolor="#C6D9F1"><font face="Calibri" size=4 color="#000000"><br></font></td>
+		<td align="left" valign=bottom bgcolor="#558ED5"><font face="Calibri" size=4 color="#000000"><br></font></td>
+		<td align="left" valign=bottom bgcolor="#558ED5"><font face="Calibri" size=4 color="#000000"><br></font></td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><font face="Calibri" size=4 color="#000000"><br></font></td>
+	</tr>
+	<tr>
+		<td height="25" align="left" valign=bottom bgcolor="#C6D9F1"><font face="Calibri" size=4 color="#000000"><br></font></td>
+		<td align="left" valign=bottom bgcolor="#C6D9F1"><font face="Calibri" size=4 color="#000000"><br></font></td>
+		<td align="left" valign=bottom bgcolor="#C6D9F1"><font face="Calibri" size=4 color="#000000"><br></font></td>
+		<td align="left" valign=bottom bgcolor="#558ED5"><font face="Calibri" size=4 color="#000000"><br></font></td>
+		<td align="left" valign=bottom bgcolor="#948A54"><font face="Calibri" size=4 color="#000000">Projections</font></td>
+		<td align="left" valign=bottom bgcolor="#948A54"><font face="Calibri" size=4 color="#000000"><br></font></td>
+		<td align="left" valign=bottom><font face="Calibri" size=4 color="#000000"><br></font></td>
+	</tr>
+	<tr>
+		<td height="25" align="left" valign=bottom bgcolor="#C6D9F1"><font face="Calibri" size=4 color="#000000"><br></font></td>
+		<td align="left" valign=bottom bgcolor="#C6D9F1"><font face="Calibri" size=4 color="#000000"><br></font></td>
+		<td align="left" valign=bottom bgcolor="#C6D9F1"><font face="Calibri" size=4 color="#000000"><br></font></td>
+		<td align="left" valign=bottom bgcolor="#558ED5"><font face="Calibri" size=4 color="#000000"><br></font></td>
+		<td align="left" valign=bottom bgcolor="#948A54"><font face="Calibri" size=4 color="#000000"><br></font></td>
+		<td align="left" valign=bottom bgcolor="#948A54"><font face="Calibri" size=4 color="#000000">Projection</font></td>
+		<td align="left" valign=bottom><font face="Calibri" size=4 color="#000000"><br></font></td>
+	</tr>
+	<tr>
+		<td height="25" align="left" valign=bottom bgcolor="#C6D9F1"><font face="Calibri" size=4 color="#000000"><br></font></td>
+		<td align="left" valign=bottom bgcolor="#C6D9F1"><font face="Calibri" size=4 color="#000000"><br></font></td>
+		<td align="left" valign=bottom bgcolor="#C6D9F1"><font face="Calibri" size=4 color="#000000"><br></font></td>
+		<td align="left" valign=bottom bgcolor="#558ED5"><font face="Calibri" size=4 color="#000000"><br></font></td>
+		<td align="left" valign=bottom bgcolor="#948A54"><font face="Calibri" size=4 color="#000000"><br></font></td>
+		<td align="left" valign=bottom bgcolor="#948A54"><font face="Calibri" size=4 color="#000000">ProjectionList</font></td>
+		<td align="left" valign=bottom><font face="Calibri" size=4 color="#000000"><br></font></td>
+	</tr>
+	<tr>
+		<td height="25" align="left" valign=bottom bgcolor="#C6D9F1"><font face="Calibri" size=4 color="#000000"><br></font></td>
+		<td align="left" valign=bottom bgcolor="#C6D9F1"><font face="Calibri" size=4 color="#000000"><br></font></td>
+		<td align="left" valign=bottom bgcolor="#C6D9F1"><font face="Calibri" size=4 color="#000000"><br></font></td>
+		<td align="left" valign=bottom bgcolor="#558ED5"><font face="Calibri" size=4 color="#000000">DetachedCriteria</font></td>
+		<td align="left" valign=bottom bgcolor="#558ED5"><font face="Calibri" size=4 color="#000000"><br></font></td>
+		<td align="left" valign=bottom bgcolor="#558ED5"><font face="Calibri" size=4 color="#000000"><br></font></td>
+		<td align="left" valign=bottom><font face="Calibri" size=4 color="#000000"><br></font></td>
+	</tr>
+	<tr>
+		<td height="25" align="left" valign=bottom bgcolor="#C6D9F1"><font face="Calibri" size=4 color="#000000"><br></font></td>
+		<td align="left" valign=bottom bgcolor="#C6D9F1"><font face="Calibri" size=4 color="#000000"><br></font></td>
+		<td align="left" valign=bottom bgcolor="#C6D9F1"><font face="Calibri" size=4 color="#000000"><br></font></td>
+		<td align="left" valign=bottom bgcolor="#558ED5"><font face="Calibri" size=4 color="#000000">Subqueries</font></td>
+		<td align="left" valign=bottom bgcolor="#558ED5"><font face="Calibri" size=4 color="#000000"><br></font></td>
+		<td align="left" valign=bottom bgcolor="#558ED5"><font face="Calibri" size=4 color="#000000"><br></font></td>
+		<td align="left" valign=bottom><font face="Calibri" size=4 color="#000000"><br></font></td>
+	</tr>
+	<tr>
+		<td height="25" align="left" valign=bottom bgcolor="#C6D9F1"><font face="Calibri" size=4 color="#000000"><br></font></td>
+		<td align="left" valign=bottom bgcolor="#C6D9F1"><font face="Calibri" size=4 color="#000000"><br></font></td>
+		<td align="left" valign=bottom bgcolor="#C6D9F1"><font face="Calibri" size=4 color="#000000"><br></font></td>
+		<td align="left" valign=bottom bgcolor="#C3D69B"><font face="Calibri" size=4 color="#000000">SQLQuery</font></td>
+		<td align="left" valign=bottom bgcolor="#C3D69B"><font face="Calibri" size=4 color="#000000"><br></font></td>
+		<td align="left" valign=bottom bgcolor="#C3D69B"><font face="Calibri" size=4 color="#000000"><br></font></td>
+		<td align="left" valign=bottom><font face="Calibri" size=4 color="#000000"><br></font></td>
+	</tr>
+	<tr>
+		<td height="25" align="left" valign=bottom bgcolor="#C6D9F1"><font face="Calibri" size=4 color="#000000"><br></font></td>
+		<td align="left" valign=bottom bgcolor="#C6D9F1"><font face="Calibri" size=4 color="#000000"><br></font></td>
+		<td align="left" valign=bottom bgcolor="#C6D9F1"><font face="Calibri" size=4 color="#000000"><br></font></td>
+		<td align="left" valign=bottom bgcolor="#B3A2C7"><font face="Calibri" size=4 color="#000000">Filter</font></td>
+		<td align="left" valign=bottom bgcolor="#B3A2C7"><font face="Calibri" size=4 color="#000000"><br></font></td>
+		<td align="left" valign=bottom bgcolor="#B3A2C7"><font face="Calibri" size=4 color="#000000"><br></font></td>
+		<td align="left" valign=bottom><font face="Calibri" size=4 color="#000000"><br></font></td>
+	</tr>
+	<tr>
+		<td height="25" align="left" valign=bottom bgcolor="#C6D9F1"><font face="Calibri" size=4 color="#000000"><br></font></td>
+		<td align="left" valign=bottom bgcolor="#C6D9F1"><font face="Calibri" size=4 color="#000000"><br></font></td>
+		<td align="left" valign=bottom bgcolor="#C6D9F1"><font face="Calibri" size=4 color="#FF0000">StateLessSession</font></td>
+		<td align="left" valign=bottom bgcolor="#C6D9F1"><font face="Calibri" size=4 color="#000000"><br></font></td>
+		<td align="left" valign=bottom bgcolor="#C6D9F1"><font face="Calibri" size=4 color="#000000"><br></font></td>
+		<td align="left" valign=bottom bgcolor="#C6D9F1"><font face="Calibri" size=4 color="#000000"><br></font></td>
+		<td align="left" valign=bottom><font face="Calibri" size=4 color="#000000"><br></font></td>
+	</tr>
+	<tr>
+		<td height="25" align="left" valign=bottom><font face="Calibri" size=4 color="#E46C0A">ConnectionProvider</font></td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><font face="Calibri" size=4 color="#000000"><br></font></td>
+		<td align="left" valign=bottom><font face="Calibri" size=4 color="#000000"><br></font></td>
+		<td align="left" valign=bottom><font face="Calibri" size=4 color="#000000"><br></font></td>
+	</tr>
+	<tr>
+		<td height="25" align="left" valign=bottom><font face="Calibri" size=4 color="#E46C0A">TransactionFactory</font></td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><font face="Calibri" size=4 color="#000000"><br></font></td>
+		<td align="left" valign=bottom><font face="Calibri" size=4 color="#000000"><br></font></td>
+		<td align="left" valign=bottom><font face="Calibri" size=4 color="#000000"><br></font></td>
+	</tr>
+	<tr>
+		<td height="25" align="left" valign=bottom bgcolor="#FFFF00"><font face="Calibri" size=4 color="#E46C0A">Filter</font></td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><font face="Calibri" size=4 color="#000000"><br></font></td>
+		<td align="left" valign=bottom><font face="Calibri" size=4 color="#000000"><br></font></td>
+		<td align="left" valign=bottom><font face="Calibri" size=4 color="#000000"><br></font></td>
+	</tr>
+	<tr>
+		<td height="25" align="left" valign=bottom bgcolor="#C6D9F1"><font face="Calibri" size=4 color="#000000">Environment</font></td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><font face="Calibri" size=4 color="#000000"><br></font></td>
+		<td align="left" valign=bottom><font face="Calibri" size=4 color="#000000"><br></font></td>
+		<td align="left" valign=bottom><font face="Calibri" size=4 color="#000000"><br></font></td>
+	</tr>
+	<tr>
+		<td height="25" align="left" valign=bottom bgcolor="#C3D69B"><font face="Calibri" size=4 color="#FF0000">Intercepter</font></td>
+		<td align="left" valign=bottom bgcolor="#C3D69B"><font face="Calibri" size=4 color="#000000"><br></font></td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><font face="Calibri" size=4 color="#000000"><br></font></td>
+		<td align="left" valign=bottom><font face="Calibri" size=4 color="#000000"><br></font></td>
+		<td align="left" valign=bottom><font face="Calibri" size=4 color="#000000"><br></font></td>
+	</tr>
+	<tr>
+		<td height="25" align="left" valign=bottom bgcolor="#C3D69B"><font face="Calibri" size=4 color="#FF0000"><br></font></td>
+		<td align="left" valign=bottom bgcolor="#C3D69B"><font face="Calibri" size=4 color="#000000">EmptyIntercepter</font></td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><font face="Calibri" size=4 color="#000000"><br></font></td>
+		<td align="left" valign=bottom><font face="Calibri" size=4 color="#000000"><br></font></td>
+		<td align="left" valign=bottom><font face="Calibri" size=4 color="#000000"><br></font></td>
+	</tr>
+	<tr>
+		<td height="25" align="left" valign=bottom bgcolor="#D9D9D9"><font face="Calibri" size=4 color="#595959">Validatable ( don’t use )</font></td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><font face="Calibri" size=4 color="#000000"><br></font></td>
+		<td align="left" valign=bottom><font face="Calibri" size=4 color="#000000"><br></font></td>
+		<td align="left" valign=bottom><font face="Calibri" size=4 color="#000000"><br></font></td>
+	</tr>
+	<tr>
+		<td height="25" align="left" valign=bottom bgcolor="#D9D9D9"><font face="Calibri" size=4 color="#595959">LifeCycle ( don’t use )</font></td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><font face="Calibri" size=4 color="#000000"><br></font></td>
+		<td align="left" valign=bottom><font face="Calibri" size=4 color="#000000"><br></font></td>
+		<td align="left" valign=bottom><font face="Calibri" size=4 color="#000000"><br></font></td>
+	</tr>
+	<tr>
+		<td height="25" align="left" valign=bottom bgcolor="#D99694"><font face="Calibri" size=4 color="#0D0D0D">UserType</font></td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><font face="Calibri" size=4 color="#000000"><br></font></td>
+		<td align="left" valign=bottom><font face="Calibri" size=4 color="#000000"><br></font></td>
+		<td align="left" valign=bottom><font face="Calibri" size=4 color="#000000"><br></font></td>
+	</tr>
+	<tr>
+		<td height="25" align="left" valign=bottom bgcolor="#D99694"><font face="Calibri" size=4 color="#0D0D0D">CompositeUserType</font></td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><font face="Calibri" size=4 color="#000000"><br></font></td>
+		<td align="left" valign=bottom><font face="Calibri" size=4 color="#000000"><br></font></td>
+		<td align="left" valign=bottom><font face="Calibri" size=4 color="#000000"><br></font></td>
+	</tr>
+	<tr>
+		<td height="25" align="left" valign=bottom bgcolor="#D99694"><font face="Calibri" size=4 color="#0D0D0D">EnhancedUserType,</font></td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><font face="Calibri" size=4 color="#000000"><br></font></td>
+		<td align="left" valign=bottom><font face="Calibri" size=4 color="#000000"><br></font></td>
+		<td align="left" valign=bottom><font face="Calibri" size=4 color="#000000"><br></font></td>
+	</tr>
+	<tr>
+		<td height="25" align="left" valign=bottom bgcolor="#D99694"><font face="Calibri" size=4 color="#0D0D0D">UserCollectionType,</font></td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><font face="Calibri" size=4 color="#000000"><br></font></td>
+		<td align="left" valign=bottom><font face="Calibri" size=4 color="#000000"><br></font></td>
+		<td align="left" valign=bottom><font face="Calibri" size=4 color="#000000"><br></font></td>
+	</tr>
+	<tr>
+		<td height="25" align="left" valign=bottom bgcolor="#D99694"><font face="Calibri" size=4 color="#0D0D0D">UserVersionType</font></td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><font face="Calibri" size=4 color="#000000"><br></font></td>
+		<td align="left" valign=bottom><font face="Calibri" size=4 color="#000000"><br></font></td>
+		<td align="left" valign=bottom><font face="Calibri" size=4 color="#000000"><br></font></td>
+	</tr>
+	<tr>
+		<td height="25" align="left" valign=bottom bgcolor="#D99694"><font face="Calibri" size=4 color="#0D0D0D">ParameterizedType</font></td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><font face="Calibri" size=4 color="#000000"><br></font></td>
+		<td align="left" valign=bottom><font face="Calibri" size=4 color="#000000"><br></font></td>
+		<td align="left" valign=bottom><font face="Calibri" size=4 color="#000000"><br></font></td>
+	</tr>
+	<tr>
+		<td height="25" align="left" valign=bottom><font face="Calibri" size=4 color="#0D0D0D">IdentifierGenerator</font></td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><font face="Calibri" size=4 color="#000000"><br></font></td>
+		<td align="left" valign=bottom><font face="Calibri" size=4 color="#000000"><br></font></td>
+		<td align="left" valign=bottom><font face="Calibri" size=4 color="#000000"><br></font></td>
+	</tr>
+	<tr>
+		<td height="25" align="left" valign=bottom bgcolor="#E6B9B8"><font face="Calibri" size=4 color="#0D0D0D">NamingStartegy</font></td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><font face="Calibri" size=4 color="#000000"><br></font></td>
+		<td align="left" valign=bottom><font face="Calibri" size=4 color="#000000"><br></font></td>
+		<td align="left" valign=bottom><font face="Calibri" size=4 color="#000000"><br></font></td>
+	</tr>
+	<tr>
+		<td height="25" align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><font face="Calibri" size=4 color="#000000"><br></font></td>
+		<td align="left" valign=bottom><font face="Calibri" size=4 color="#000000"><br></font></td>
+		<td align="left" valign=bottom><font face="Calibri" size=4 color="#000000"><br></font></td>
+	</tr>
+	<tr>
+		<td height="25" align="left" valign=bottom><font face="Calibri" size=4 color="#0D0D0D">FlushMode</font></td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><font face="Calibri" size=4 color="#000000"><br></font></td>
+		<td align="left" valign=bottom><font face="Calibri" size=4 color="#000000"><br></font></td>
+		<td align="left" valign=bottom><font face="Calibri" size=4 color="#000000"><br></font></td>
+	</tr>
+	<tr>
+		<td height="25" align="left" valign=bottom><font face="Calibri" size=4 color="#0D0D0D">LockMode</font></td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><font face="Calibri" size=4 color="#000000"><br></font></td>
+		<td align="left" valign=bottom><font face="Calibri" size=4 color="#000000"><br></font></td>
+		<td align="left" valign=bottom><font face="Calibri" size=4 color="#000000"><br></font></td>
+	</tr>
+	<tr>
+		<td height="25" align="left" valign=bottom><font face="Calibri" size=4 color="#0D0D0D"><br></font></td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><font face="Calibri" size=4 color="#000000"><br></font></td>
+		<td align="left" valign=bottom><font face="Calibri" size=4 color="#000000"><br></font></td>
+		<td align="left" valign=bottom><font face="Calibri" size=4 color="#000000"><br></font></td>
+	</tr>
+	<tr>
+		<td height="25" align="left" valign=bottom bgcolor="#93CDDD"><font face="Calibri" size=4 color="#0D0D0D">CacheConcurrenceStartegy</font></td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><font face="Calibri" size=4 color="#000000"><br></font></td>
+		<td align="left" valign=bottom><font face="Calibri" size=4 color="#000000"><br></font></td>
+		<td align="left" valign=bottom><font face="Calibri" size=4 color="#000000"><br></font></td>
+	</tr>
+	<tr>
+		<td height="25" align="left" valign=bottom bgcolor="#93CDDD"><font face="Calibri" size=4 color="#0D0D0D">CacheProvider</font></td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><font face="Calibri" size=4 color="#000000"><br></font></td>
+		<td align="left" valign=bottom><font face="Calibri" size=4 color="#000000"><br></font></td>
+		<td align="left" valign=bottom><font face="Calibri" size=4 color="#000000"><br></font></td>
+	</tr>
+	<tr>
+		<td height="25" align="left" valign=bottom bgcolor="#93CDDD"><font face="Calibri" size=4 color="#0D0D0D">CacheMode</font></td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><font face="Calibri" size=4 color="#000000"><br></font></td>
+		<td align="left" valign=bottom><font face="Calibri" size=4 color="#000000"><br></font></td>
+		<td align="left" valign=bottom><font face="Calibri" size=4 color="#000000"><br></font></td>
+	</tr>
+	<tr>
+		<td height="25" align="left" valign=bottom><font face="Calibri" size=4 color="#0D0D0D"><br></font></td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><font face="Calibri" size=4 color="#000000"><br></font></td>
+		<td align="left" valign=bottom><font face="Calibri" size=4 color="#000000"><br></font></td>
+		<td align="left" valign=bottom><font face="Calibri" size=4 color="#000000"><br></font></td>
+	</tr>
+	<tr>
+		<td height="25" align="left" valign=bottom><font face="Calibri" size=4 color="#0D0D0D">Hibernate</font></td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><font face="Calibri" size=4 color="#000000"><br></font></td>
+		<td align="left" valign=bottom><font face="Calibri" size=4 color="#000000"><br></font></td>
+		<td align="left" valign=bottom><font face="Calibri" size=4 color="#000000"><br></font></td>
+	</tr>
+	<tr>
+		<td height="25" align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><font face="Calibri" size=4 color="#000000"><br></font></td>
+		<td align="left" valign=bottom><font face="Calibri" size=4 color="#000000"><br></font></td>
+		<td align="left" valign=bottom><font face="Calibri" size=4 color="#000000"><br></font></td>
+	</tr>
+	<tr>
+		<td height="25" align="left" valign=bottom bgcolor="#77933C"><font face="Calibri" size=4 color="#0D0D0D">SchemaExport</font></td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><font face="Calibri" size=4 color="#000000"><br></font></td>
+		<td align="left" valign=bottom><font face="Calibri" size=4 color="#000000"><br></font></td>
+		<td align="left" valign=bottom><font face="Calibri" size=4 color="#000000"><br></font></td>
+	</tr>
+	<tr>
+		<td height="25" align="left" valign=bottom bgcolor="#77933C"><font face="Calibri" size=4 color="#0D0D0D">SchemaUpdate</font></td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><font face="Calibri" size=4 color="#000000"><br></font></td>
+		<td align="left" valign=bottom><font face="Calibri" size=4 color="#000000"><br></font></td>
+		<td align="left" valign=bottom><font face="Calibri" size=4 color="#000000"><br></font></td>
+	</tr>
+	<tr>
+		<td height="25" align="left" valign=bottom bgcolor="#77933C"><font face="Calibri" size=4 color="#0D0D0D">SchemaValidator</font></td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><font face="Calibri" size=4 color="#000000"><br></font></td>
+		<td align="left" valign=bottom><font face="Calibri" size=4 color="#000000"><br></font></td>
+		<td align="left" valign=bottom><font face="Calibri" size=4 color="#000000"><br></font></td>
+	</tr>
+	<tr>
+		<td height="25" align="left" valign=bottom bgcolor="#77933C"><font face="Calibri" size=4 color="#0D0D0D">CodeGenerator</font></td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><font face="Calibri" size=4 color="#000000"><br></font></td>
+		<td align="left" valign=bottom><font face="Calibri" size=4 color="#000000"><br></font></td>
+		<td align="left" valign=bottom><font face="Calibri" size=4 color="#000000"><br></font></td>
+	</tr>
+	<tr>
+		<td height="25" align="left" valign=bottom bgcolor="#77933C"><font face="Calibri" size=4 color="#0D0D0D">HibernateToolTask</font></td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><font face="Calibri" size=4 color="#000000"><br></font></td>
+		<td align="left" valign=bottom><font face="Calibri" size=4 color="#000000"><br></font></td>
+		<td align="left" valign=bottom><font face="Calibri" size=4 color="#000000"><br></font></td>
+	</tr>
+	<tr>
+		<td height="25" align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><font face="Calibri" size=4 color="#000000"><br></font></td>
+		<td align="left" valign=bottom><font face="Calibri" size=4 color="#000000"><br></font></td>
+		<td align="left" valign=bottom><font face="Calibri" size=4 color="#000000"><br></font></td>
+	</tr>
+	<tr>
+		<td height="25" align="left" valign=bottom bgcolor="#B3A2C7"><font face="Calibri" size=4 color="#000000">Statistics</font></td>
+		<td align="left" valign=bottom bgcolor="#B3A2C7"><font face="Calibri" size=4 color="#000000"><br></font></td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><font face="Calibri" size=4 color="#000000"><br></font></td>
+		<td align="left" valign=bottom><font face="Calibri" size=4 color="#000000"><br></font></td>
+		<td align="left" valign=bottom><font face="Calibri" size=4 color="#000000"><br></font></td>
+	</tr>
+	<tr>
+		<td height="25" align="left" valign=bottom bgcolor="#B3A2C7"><font face="Calibri" size=4 color="#000000"><br></font></td>
+		<td align="left" valign=bottom bgcolor="#B3A2C7"><font face="Calibri" size=4 color="#000000">EntityStatistics</font></td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><font face="Calibri" size=4 color="#000000"><br></font></td>
+		<td align="left" valign=bottom><font face="Calibri" size=4 color="#000000"><br></font></td>
+		<td align="left" valign=bottom><font face="Calibri" size=4 color="#000000"><br></font></td>
+	</tr>
+	<tr>
+		<td height="25" align="left" valign=bottom bgcolor="#B3A2C7"><font face="Calibri" size=4 color="#000000"><br></font></td>
+		<td align="left" valign=bottom bgcolor="#B3A2C7"><font face="Calibri" size=4 color="#000000">CollectionStatistics</font></td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><font face="Calibri" size=4 color="#000000"><br></font></td>
+		<td align="left" valign=bottom><font face="Calibri" size=4 color="#000000"><br></font></td>
+		<td align="left" valign=bottom><font face="Calibri" size=4 color="#000000"><br></font></td>
+	</tr>
+	<tr>
+		<td height="25" align="left" valign=bottom bgcolor="#B3A2C7"><font face="Calibri" size=4 color="#000000"><br></font></td>
+		<td align="left" valign=bottom bgcolor="#B3A2C7"><font face="Calibri" size=4 color="#000000">QueryStatistics</font></td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><font face="Calibri" size=4 color="#000000"><br></font></td>
+		<td align="left" valign=bottom><font face="Calibri" size=4 color="#000000"><br></font></td>
+		<td align="left" valign=bottom><font face="Calibri" size=4 color="#000000"><br></font></td>
+	</tr>
+	<tr>
+		<td height="25" align="left" valign=bottom bgcolor="#B3A2C7"><font face="Calibri" size=4 color="#000000"><br></font></td>
+		<td align="left" valign=bottom bgcolor="#B3A2C7"><font face="Calibri" size=4 color="#000000">SecondLevelCacheStatistics</font></td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><font face="Calibri" size=4 color="#000000"><br></font></td>
+		<td align="left" valign=bottom><font face="Calibri" size=4 color="#000000"><br></font></td>
+		<td align="left" valign=bottom><font face="Calibri" size=4 color="#000000"><br></font></td>
+	</tr>
+	<tr>
+		<td height="25" align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><font face="Calibri" size=4 color="#000000"><br></font></td>
+		<td align="left" valign=bottom><font face="Calibri" size=4 color="#000000"><br></font></td>
+		<td align="left" valign=bottom><font face="Calibri" size=4 color="#000000"><br></font></td>
+	</tr>
+	<tr>
+		<td height="25" align="left" valign=bottom><font face="Calibri" size=4 color="#000000">Ejb3Configuration</font></td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><font face="Calibri" size=4 color="#000000"><br></font></td>
+		<td align="left" valign=bottom><font face="Calibri" size=4 color="#000000"><br></font></td>
+		<td align="left" valign=bottom><font face="Calibri" size=4 color="#000000"><br></font></td>
+	</tr>
+	<tr>
+		<td height="25" align="left" valign=bottom bgcolor="#948A54"><font face="Calibri" size=4 color="#000000">TransactionManger</font></td>
+		<td align="left" valign=bottom bgcolor="#948A54"><font face="Calibri" size=4 color="#000000"><br></font></td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><font face="Calibri" size=4 color="#000000"><br></font></td>
+		<td align="left" valign=bottom><font face="Calibri" size=4 color="#000000"><br></font></td>
+		<td align="left" valign=bottom><font face="Calibri" size=4 color="#000000"><br></font></td>
+	</tr>
+	<tr>
+		<td height="25" align="left" valign=bottom bgcolor="#948A54"><font face="Calibri" size=4 color="#000000"><br></font></td>
+		<td align="left" valign=bottom bgcolor="#948A54"><font face="Calibri" size=4 color="#000000">UserTransaction</font></td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><font face="Calibri" size=4 color="#000000"><br></font></td>
+		<td align="left" valign=bottom><font face="Calibri" size=4 color="#000000"><br></font></td>
+		<td align="left" valign=bottom><font face="Calibri" size=4 color="#000000"><br></font></td>
+	</tr>
+	<tr>
+		<td height="25" align="left" valign=bottom bgcolor="#948A54"><font face="Calibri" size=4 color="#000000">JDBCTransactionFactory</font></td>
+		<td align="left" valign=bottom bgcolor="#948A54"><font face="Calibri" size=4 color="#000000"><br></font></td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><font face="Calibri" size=4 color="#000000"><br></font></td>
+		<td align="left" valign=bottom><font face="Calibri" size=4 color="#000000"><br></font></td>
+		<td align="left" valign=bottom><font face="Calibri" size=4 color="#000000"><br></font></td>
+	</tr>
+	<tr>
+		<td height="25" align="left" valign=bottom bgcolor="#948A54"><font face="Calibri" size=4 color="#000000">JTATransactionFactory</font></td>
+		<td align="left" valign=bottom bgcolor="#948A54"><font face="Calibri" size=4 color="#000000"><br></font></td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><font face="Calibri" size=4 color="#000000"><br></font></td>
+		<td align="left" valign=bottom><font face="Calibri" size=4 color="#000000"><br></font></td>
+		<td align="left" valign=bottom><font face="Calibri" size=4 color="#000000"><br></font></td>
+	</tr>
+	<tr>
+		<td height="25" align="left" valign=bottom bgcolor="#948A54"><font face="Calibri" size=4 color="#000000">CMTTransactionFactory</font></td>
+		<td align="left" valign=bottom bgcolor="#948A54"><font face="Calibri" size=4 color="#000000"><br></font></td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><font face="Calibri" size=4 color="#000000"><br></font></td>
+		<td align="left" valign=bottom><font face="Calibri" size=4 color="#000000"><br></font></td>
+		<td align="left" valign=bottom><font face="Calibri" size=4 color="#000000"><br></font></td>
+	</tr>
+	<tr>
+		<td height="25" align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><font face="Calibri" size=4 color="#000000"><br></font></td>
+		<td align="left" valign=bottom><font face="Calibri" size=4 color="#000000"><br></font></td>
+		<td align="left" valign=bottom><font face="Calibri" size=4 color="#000000"><br></font></td>
+	</tr>
+	<tr>
+		<td height="25" align="left" valign=bottom bgcolor="#FAC090"><font face="Calibri" size=4 color="#000000">HibernateException</font></td>
+		<td align="left" valign=bottom bgcolor="#FAC090"><font face="Calibri" size=4 color="#000000"><br></font></td>
+		<td align="left" valign=bottom bgcolor="#FAC090"><font face="Calibri" size=4 color="#000000"><br></font></td>
+		<td align="left" valign=bottom bgcolor="#FAC090"><font face="Calibri" size=4 color="#000000"><br></font></td>
+		<td align="left" valign=bottom><font face="Calibri" size=4 color="#000000"><br></font></td>
+		<td align="left" valign=bottom><font face="Calibri" size=4 color="#000000"><br></font></td>
+		<td align="left" valign=bottom><font face="Calibri" size=4 color="#000000"><br></font></td>
+	</tr>
+	<tr>
+		<td height="25" align="left" valign=bottom bgcolor="#FAC090"><font face="Calibri" size=4 color="#000000"><br></font></td>
+		<td align="left" valign=bottom bgcolor="#FAC090"><font face="Calibri" size=4 color="#000000">JDBCException</font></td>
+		<td align="left" valign=bottom bgcolor="#FAC090"><font face="Calibri" size=4 color="#000000"><br></font></td>
+		<td align="left" valign=bottom bgcolor="#FAC090"><font face="Calibri" size=4 color="#000000"><br></font></td>
+		<td align="left" valign=bottom><font face="Calibri" size=4 color="#000000"><br></font></td>
+		<td align="left" valign=bottom><font face="Calibri" size=4 color="#000000"><br></font></td>
+		<td align="left" valign=bottom><font face="Calibri" size=4 color="#000000"><br></font></td>
+	</tr>
+	<tr>
+		<td height="25" align="left" valign=bottom bgcolor="#FAC090"><font face="Calibri" size=4 color="#000000"><br></font></td>
+		<td align="left" valign=bottom bgcolor="#FAC090"><font face="Calibri" size=4 color="#000000"><br></font></td>
+		<td align="left" valign=bottom bgcolor="#FAC090"><font face="Calibri" size=4 color="#000000">JDBCConnectionException</font></td>
+		<td align="left" valign=bottom bgcolor="#FAC090"><font face="Calibri" size=4 color="#000000"><br></font></td>
+		<td align="left" valign=bottom><font face="Calibri" size=4 color="#000000"><br></font></td>
+		<td align="left" valign=bottom><font face="Calibri" size=4 color="#000000"><br></font></td>
+		<td align="left" valign=bottom><font face="Calibri" size=4 color="#000000"><br></font></td>
+	</tr>
+	<tr>
+		<td height="25" align="left" valign=bottom bgcolor="#FAC090"><font face="Calibri" size=4 color="#000000"><br></font></td>
+		<td align="left" valign=bottom bgcolor="#FAC090"><font face="Calibri" size=4 color="#000000"><br></font></td>
+		<td align="left" valign=bottom bgcolor="#FAC090"><font face="Calibri" size=4 color="#000000">SQLGrammarException</font></td>
+		<td align="left" valign=bottom bgcolor="#FAC090"><font face="Calibri" size=4 color="#000000"><br></font></td>
+		<td align="left" valign=bottom><font face="Calibri" size=4 color="#000000"><br></font></td>
+		<td align="left" valign=bottom><font face="Calibri" size=4 color="#000000"><br></font></td>
+		<td align="left" valign=bottom><font face="Calibri" size=4 color="#000000"><br></font></td>
+	</tr>
+	<tr>
+		<td height="25" align="left" valign=bottom bgcolor="#FAC090"><font face="Calibri" size=4 color="#000000"><br></font></td>
+		<td align="left" valign=bottom bgcolor="#FAC090"><font face="Calibri" size=4 color="#000000"><br></font></td>
+		<td align="left" valign=bottom bgcolor="#FAC090"><font face="Calibri" size=4 color="#000000">ConstraintViolationException</font></td>
+		<td align="left" valign=bottom bgcolor="#FAC090"><font face="Calibri" size=4 color="#000000"><br></font></td>
+		<td align="left" valign=bottom><font face="Calibri" size=4 color="#000000"><br></font></td>
+		<td align="left" valign=bottom><font face="Calibri" size=4 color="#000000"><br></font></td>
+		<td align="left" valign=bottom><font face="Calibri" size=4 color="#000000"><br></font></td>
+	</tr>
+	<tr>
+		<td height="25" align="left" valign=bottom bgcolor="#FAC090"><font face="Calibri" size=4 color="#000000"><br></font></td>
+		<td align="left" valign=bottom bgcolor="#FAC090"><font face="Calibri" size=4 color="#000000"><br></font></td>
+		<td align="left" valign=bottom bgcolor="#FAC090"><font face="Calibri" size=4 color="#000000">LockAcquisitionException</font></td>
+		<td align="left" valign=bottom bgcolor="#FAC090"><font face="Calibri" size=4 color="#000000"><br></font></td>
+		<td align="left" valign=bottom><font face="Calibri" size=4 color="#000000"><br></font></td>
+		<td align="left" valign=bottom><font face="Calibri" size=4 color="#000000"><br></font></td>
+		<td align="left" valign=bottom><font face="Calibri" size=4 color="#000000"><br></font></td>
+	</tr>
+	<tr>
+		<td height="25" align="left" valign=bottom bgcolor="#FAC090"><font face="Calibri" size=4 color="#000000"><br></font></td>
+		<td align="left" valign=bottom bgcolor="#FAC090"><font face="Calibri" size=4 color="#000000"><br></font></td>
+		<td align="left" valign=bottom bgcolor="#FAC090"><font face="Calibri" size=4 color="#000000">GenericJDBCException</font></td>
+		<td align="left" valign=bottom bgcolor="#FAC090"><font face="Calibri" size=4 color="#000000"><br></font></td>
+		<td align="left" valign=bottom><font face="Calibri" size=4 color="#000000"><br></font></td>
+		<td align="left" valign=bottom><font face="Calibri" size=4 color="#000000"><br></font></td>
+		<td align="left" valign=bottom><font face="Calibri" size=4 color="#000000"><br></font></td>
+	</tr>
+	<tr>
+		<td height="25" align="left" valign=bottom bgcolor="#FAC090"><font face="Calibri" size=4 color="#000000">SQLExceptionConverter</font></td>
+		<td align="left" valign=bottom bgcolor="#FAC090"><font face="Calibri" size=4 color="#000000"><br></font></td>
+		<td align="left" valign=bottom bgcolor="#FAC090"><font face="Calibri" size=4 color="#000000"><br></font></td>
+		<td align="left" valign=bottom bgcolor="#FAC090"><font face="Calibri" size=4 color="#000000"><br></font></td>
+		<td align="left" valign=bottom><font face="Calibri" size=4 color="#000000"><br></font></td>
+		<td align="left" valign=bottom><font face="Calibri" size=4 color="#000000"><br></font></td>
+		<td align="left" valign=bottom><font face="Calibri" size=4 color="#000000"><br></font></td>
+	</tr>
+	<tr>
+		<td height="25" align="left" valign=bottom bgcolor="#FAC090"><font face="Calibri" size=4 color="#000000">SQLExceptionConverterFactory</font></td>
+		<td align="left" valign=bottom bgcolor="#FAC090"><font face="Calibri" size=4 color="#000000"><br></font></td>
+		<td align="left" valign=bottom bgcolor="#FAC090"><font face="Calibri" size=4 color="#000000"><br></font></td>
+		<td align="left" valign=bottom bgcolor="#FAC090"><font face="Calibri" size=4 color="#000000"><br></font></td>
+		<td align="left" valign=bottom><font face="Calibri" size=4 color="#000000"><br></font></td>
+		<td align="left" valign=bottom><font face="Calibri" size=4 color="#000000"><br></font></td>
+		<td align="left" valign=bottom><font face="Calibri" size=4 color="#000000"><br></font></td>
+	</tr>
+	<tr>
+		<td height="25" align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><font face="Calibri" size=4 color="#000000"><br></font></td>
+		<td align="left" valign=bottom><font face="Calibri" size=4 color="#000000"><br></font></td>
+		<td align="left" valign=bottom><font face="Calibri" size=4 color="#000000"><br></font></td>
+		<td align="left" valign=bottom><font face="Calibri" size=4 color="#000000"><br></font></td>
+		<td align="left" valign=bottom><font face="Calibri" size=4 color="#000000"><br></font></td>
+	</tr>
+	<tr>
+		<td height="25" align="left" valign=bottom bgcolor="#B3A2C7"><font face="Calibri" size=4 color="#000000">ClassMetadata</font></td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><font face="Calibri" size=4 color="#000000"><br></font></td>
+		<td align="left" valign=bottom><font face="Calibri" size=4 color="#000000"><br></font></td>
+		<td align="left" valign=bottom><font face="Calibri" size=4 color="#000000"><br></font></td>
+		<td align="left" valign=bottom><font face="Calibri" size=4 color="#000000"><br></font></td>
+		<td align="left" valign=bottom><font face="Calibri" size=4 color="#000000"><br></font></td>
+	</tr>
+	<tr>
+		<td height="25" align="left" valign=bottom bgcolor="#B3A2C7"><font face="Calibri" size=4 color="#000000">CollectionMetadata</font></td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><font face="Calibri" size=4 color="#000000"><br></font></td>
+		<td align="left" valign=bottom><font face="Calibri" size=4 color="#000000"><br></font></td>
+		<td align="left" valign=bottom><font face="Calibri" size=4 color="#000000"><br></font></td>
+		<td align="left" valign=bottom><font face="Calibri" size=4 color="#000000"><br></font></td>
+		<td align="left" valign=bottom><font face="Calibri" size=4 color="#000000"><br></font></td>
+	</tr>
+	<tr>
+		<td height="25" align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><font face="Calibri" size=4 color="#000000"><br></font></td>
+		<td align="left" valign=bottom><font face="Calibri" size=4 color="#000000"><br></font></td>
+		<td align="left" valign=bottom><font face="Calibri" size=4 color="#000000"><br></font></td>
+		<td align="left" valign=bottom><font face="Calibri" size=4 color="#000000"><br></font></td>
+		<td align="left" valign=bottom><font face="Calibri" size=4 color="#000000"><br></font></td>
+	</tr>
+	<tr>
+		<td height="25" align="left" valign=bottom><font face="Calibri" size=4 color="#000000">ConstraintViolation</font></td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><font face="Calibri" size=4 color="#000000"><br></font></td>
+		<td align="left" valign=bottom><font face="Calibri" size=4 color="#000000"><br></font></td>
+		<td align="left" valign=bottom><font face="Calibri" size=4 color="#000000"><br></font></td>
+		<td align="left" valign=bottom><font face="Calibri" size=4 color="#000000"><br></font></td>
+		<td align="left" valign=bottom><font face="Calibri" size=4 color="#000000"><br></font></td>
+	</tr>
+	<tr>
+		<td height="25" align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><br></td>
+		<td align="left" valign=bottom><font face="Calibri" size=4 color="#000000"><br></font></td>
+		<td align="left" valign=bottom><font face="Calibri" size=4 color="#000000"><br></font></td>
+		<td align="left" valign=bottom><font face="Calibri" size=4 color="#000000"><br></font></td>
+		<td align="left" valign=bottom><font face="Calibri" size=4 color="#000000"><br></font></td>
+		<td align="left" valign=bottom><font face="Calibri" size=4 color="#000000"><br></font></td>
+	</tr>
+	<tr>
+		<td height="25" align="left" valign=bottom bgcolor="#C3D69B"><font face="Calibri" size=4 color="#000000">ClassPersister</font></td>
+		<td align="left" valign=bottom bgcolor="#C3D69B"><font face="Calibri" size=4 color="#000000"><br></font></td>
+		<td align="left" valign=bottom><font face="Calibri" size=4 color="#000000"><br></font></td>
+		<td align="left" valign=bottom><font face="Calibri" size=4 color="#000000"><br></font></td>
+		<td align="left" valign=bottom><font face="Calibri" size=4 color="#000000"><br></font></td>
+		<td align="left" valign=bottom><font face="Calibri" size=4 color="#000000"><br></font></td>
+		<td align="left" valign=bottom><font face="Calibri" size=4 color="#000000"><br></font></td>
+	</tr>
+	<tr>
+		<td height="25" align="left" valign=bottom bgcolor="#C3D69B"><font face="Calibri" size=4 color="#000000"><br></font></td>
+		<td align="left" valign=bottom bgcolor="#C3D69B"><font face="Calibri" size=4 color="#000000">EntityPersister</font></td>
+		<td align="left" valign=bottom><font face="Calibri" size=4 color="#000000"><br></font></td>
+		<td align="left" valign=bottom><font face="Calibri" size=4 color="#000000"><br></font></td>
+		<td align="left" valign=bottom><font face="Calibri" size=4 color="#000000"><br></font></td>
+		<td align="left" valign=bottom><font face="Calibri" size=4 color="#000000"><br></font></td>
+		<td align="left" valign=bottom><font face="Calibri" size=4 color="#000000"><br></font></td>
+	</tr>
+</table>
+<img src="ParamHibernate_html_34fac29f.png" width=146 height=78>
+<img src="ParamHibernate_html_a063c119.png" width=173 height=83>
+<img src="ParamHibernate_html_f037f4a2.png" width=173 height=83>
+<img src="ParamHibernate_html_f41557fd.png" width=173 height=83>
+<img src="ParamHibernate_html_8931ccea.png" width=175 height=83>
+<img src="ParamHibernate_html_5b03f0ad.png" width=150 height=78>
+<br clear=left>
+<!-- ************************************************************************** -->
+<hr>
+<A NAME="table8"><h1>Sheet 5: <em>Extension point</em></h1></A>
+<table cellspacing="0" border="0">
+	<colgroup width="30"></colgroup>
+	<colgroup width="144"></colgroup>
+	<colgroup width="719"></colgroup>
+	<colgroup width="142"></colgroup>
+	<tr>
+		<td height="17" align="right" valign=bottom sdval="1" sdnum="16393;">1</td>
+		<td align="left" valign=bottom>Id Generation</td>
+		<td align="left" valign=bottom>we can plug our own implementation to generate ID generation, if we need like to append any character with number</td>
+		<td align="left" valign=bottom><br></td>
+	</tr>
+	<tr>
+		<td height="17" align="right" valign=bottom sdval="2" sdnum="16393;">2</td>
+		<td align="left" valign=bottom>ConnectionProvider</td>
+		<td align="left" valign=bottom>we can plug our own implementation to SessionFactory if we need to supply our own DB connection</td>
+		<td align="left" valign=bottom>hibernate configuration</td>
+	</tr>
+	<tr>
+		<td height="17" align="right" valign=bottom sdval="3" sdnum="16393;">3</td>
+		<td align="left" valign=bottom>TransactionFactory</td>
+		<td align="left" valign=bottom>we can plug our own implementation of TransactionFactory</td>
+		<td align="left" valign=bottom><br></td>
+	</tr>
+	<tr>
+		<td height="17" align="right" valign=bottom sdval="4" sdnum="16393;">4</td>
+		<td align="left" valign=bottom>CacheProvider</td>
+		<td align="left" valign=bottom>we can plug our own cache provider implementation</td>
+		<td align="left" valign=bottom>hibernate configuration</td>
+	</tr>
+	<tr>
+		<td height="17" align="right" valign=bottom sdval="5" sdnum="16393;">5</td>
+		<td align="left" valign=bottom>QueryCache</td>
+		<td align="left" valign=bottom>we can plug our own query cache provider implementation</td>
+		<td align="left" valign=bottom>hibernate configuration</td>
+	</tr>
+	<tr>
+		<td height="17" align="right" valign=bottom sdval="6" sdnum="16393;">6</td>
+		<td align="left" valign=bottom>exception converter</td>
+		<td align="left" valign=bottom>we can plug our own SQLException converter</td>
+		<td align="left" valign=bottom><br></td>
+	</tr>
+	<tr>
+		<td height="17" align="right" valign=bottom sdval="7" sdnum="16393;">7</td>
+		<td align="left" valign=bottom>Dialect</td>
+		<td align="left" valign=bottom>we can plug our own Dialect implementation</td>
+		<td align="left" valign=bottom>hibernate configuration</td>
+	</tr>
+	<tr>
+		<td height="17" align="right" valign=bottom sdval="8" sdnum="16393;">8</td>
+		<td align="left" valign=bottom>EntityPersister</td>
+		<td align="left" valign=bottom>we can plug our own entity persister for a class. For example to persit  as flat file</td>
+		<td align="left" valign=bottom>mapping</td>
+	</tr>
+	<tr>
+		<td height="17" align="right" valign=bottom sdval="9" sdnum="16393;">9</td>
+		<td align="left" valign=bottom>cutom Data type</td>
+		<td align="left" valign=bottom>we can create new hibernate data type</td>
+		<td align="left" valign=bottom><br></td>
+	</tr>
+	<tr>
+		<td height="17" align="right" valign=bottom sdval="10" sdnum="16393;">10</td>
+		<td align="left" valign=bottom>property accessor</td>
+		<td align="left" valign=bottom>we can plug our own property accessor </td>
+		<td align="left" valign=bottom>mapping</td>
+	</tr>
+	<tr>
+		<td height="17" align="right" valign=bottom sdval="11" sdnum="16393;">11</td>
+		<td align="left" valign=bottom>session Context</td>
+		<td align="left" valign=bottom>we can plug our own session context provider implementation</td>
+		<td align="left" valign=bottom>hibernate configuration</td>
+	</tr>
+</table>
+<!-- ************************************************************************** -->
+<hr>
+<A NAME="table10"><h1>Sheet 6: <em>Adv. of hibernate</em></h1></A>
+<table cellspacing="0" border="0">
+	<colgroup width="563"></colgroup>
+	<tr>
+		<td height="17" align="left" valign=bottom>cache</td>
+	</tr>
+	<tr>
+		<td height="17" align="left" valign=bottom>second level cache</td>
+	</tr>
+	<tr>
+		<td height="17" align="left" valign=bottom>pojo no need to extend/implement any other interface</td>
+	</tr>
+	<tr>
+		<td height="17" align="left" valign=bottom>generate schema</td>
+	</tr>
+	<tr>
+		<td height="17" align="left" valign=bottom>no need any app server to run</td>
+	</tr>
+	<tr>
+		<td height="17" align="left" valign=bottom>use custom naming startegy for naming tables and properties</td>
+	</tr>
+</table>
+<!-- ************************************************************************** -->
+<hr>
+<A NAME="table11"><h1>Sheet 7: <em>Exception</em></h1></A>
+<table align="left" cellspacing="0" border="0">
+	<colgroup width="199"></colgroup>
+	<tr>
+		<td height="17" align="left" valign=bottom>HibernateException</td>
+	</tr>
+	<tr>
+		<td height="17" align="left" valign=bottom>LazyInitializationException</td>
+	</tr>
+	<tr>
+		<td height="17" align="left" valign=bottom>NonUniqueResultException</td>
+	</tr>
+</table>
+<img src="ParamHibernate_html_10cbae42.png" width=167 height=83>
+<img src="ParamHibernate_html_6b2ef424.png" width=167 height=83>
+<br clear=left>
+<!-- ************************************************************************** -->
+</body>
+
+</html>

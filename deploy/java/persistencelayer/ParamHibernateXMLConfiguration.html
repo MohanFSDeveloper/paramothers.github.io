@@ -1,0 +1,476 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+
+<html>
+<head>
+	
+	<meta http-equiv="content-type" content="text/html; charset=utf-8">
+	<title></title>
+	<meta name="generator" content="LibreOffice 4.2.8.2 (Linux)">
+	<meta name="author" content="Param">
+	<meta name="created" content="20090829;172301000000000">
+	<meta name="changedby" content="padhu">
+	<meta name="changed" content="20110622;123528000000000">
+	<meta name="AppVersion" content="12.0000">
+	<meta name="DocSecurity" content="0">
+	<meta name="HyperlinksChanged" content="false">
+	<meta name="LinksUpToDate" content="false">
+	<meta name="ScaleCrop" content="false">
+	<meta name="ShareDoc" content="false">
+	
+	<style type="text/css"><!-- 
+		body,div,table,thead,tbody,tfoot,tr,th,td,p { font-family:"Calibri"; font-size:x-small }
+		 -->
+	</style>
+	
+</head>
+
+<body text="#000000">
+<hr>
+	<p><center>
+		<h1>Overview</h1>
+		<A HREF="#table0">Types of config</A><br>
+		<A HREF="#table1">xml config</A><br>
+		<A HREF="#table2">common attibuts</A><br>
+		<A HREF="#table3">driver manager</A><br>
+		<A HREF="#table4">JEE integration</A><br>
+		<A HREF="#table5">query</A><br>
+		<A HREF="#table6">cache</A><br>
+		<A HREF="#table7">performance</A><br>
+		<A HREF="#table8">tools</A><br>
+		
+	</center></p>
+<hr>
+<A NAME="table0"><h1>Sheet 1: <em>Types of config</em></h1></A>
+<table cellspacing="0" border="0">
+	<colgroup width="155"></colgroup>
+	<colgroup width="768"></colgroup>
+	<tr>
+		<td height="20" align="left" valign=bottom><font color="#000000">Property file</font></td>
+		<td align="left" valign=bottom><font color="#000000">file name must be 'hibernate.properties' and place in root class path</font></td>
+	</tr>
+	<tr>
+		<td height="20" align="left" valign=bottom><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom><font color="#000000">just creation of instance to 'Configuration' is enough</font></td>
+	</tr>
+	<tr>
+		<td height="20" align="left" valign=bottom><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom><font color="#000000">Mapping file has to be add by 'addClass()' or 'addResource()' method</font></td>
+	</tr>
+	<tr>
+		<td height="20" align="left" valign=bottom><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom><font color="#000000">while use of addClass(), mapping file MUST be placed along with class location</font></td>
+	</tr>
+	<tr>
+		<td height="20" align="left" valign=bottom><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom><font color="#000000">Mapping file must be in in classpath</font></td>
+	</tr>
+	<tr>
+		<td height="20" align="left" valign=bottom><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom><font color="#000000"><br></font></td>
+	</tr>
+	<tr>
+		<td height="20" align="left" valign=bottom><font color="#000000">XML file</font></td>
+		<td align="left" valign=bottom><font color="#000000">it is best for either simple or enterprise application</font></td>
+	</tr>
+	<tr>
+		<td height="20" align="left" valign=bottom><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom><font color="#000000">file name may be in 'hibernate.cfg.xml' and place in root class path</font></td>
+	</tr>
+	<tr>
+		<td height="20" align="left" valign=bottom><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom><font color="#000000">to load 'Configuration.configure()' method has to be called</font></td>
+	</tr>
+	<tr>
+		<td height="20" align="left" valign=bottom><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom><font color="#000000">file name can be other than default, that time path of  file has to be given in 'configure()' method</font></td>
+	</tr>
+	<tr>
+		<td height="20" align="left" valign=bottom><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom><font color="#000000">Mapping files can be declared in xml file itself. So no need any method call</font></td>
+	</tr>
+	<tr>
+		<td height="20" align="left" valign=bottom><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom bgcolor="#FFFF00"><font color="#000000">Possible to have more than one file for different environment </font></td>
+	</tr>
+	<tr>
+		<td height="20" align="left" valign=bottom><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom><font color="#000000">mapping file can be outside of classpath</font></td>
+	</tr>
+	<tr>
+		<td height="20" align="left" valign=bottom><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom><font color="#000000"><br></font></td>
+	</tr>
+	<tr>
+		<td height="20" align="left" valign=bottom><font color="#000000">Programatic</font></td>
+		<td align="left" valign=bottom><font color="#000000">it possible, but it is not encouraged</font></td>
+	</tr>
+	<tr>
+		<td height="20" align="left" valign=bottom><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom><font color="#000000">since configuration should be externalized.</font></td>
+	</tr>
+	<tr>
+		<td height="20" align="left" valign=bottom><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom><font color="#000000">if need tight security, use this apporach to configure</font></td>
+	</tr>
+	<tr>
+		<td height="20" align="left" valign=bottom><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom><font color="#000000"><br></font></td>
+	</tr>
+	<tr>
+		<td height="20" align="left" valign=bottom><font color="#000000">JMX ( no need )</font></td>
+		<td align="left" valign=bottom><font color="#000000">it is possilbe only in Jboss</font></td>
+	</tr>
+	<tr>
+		<td height="20" align="left" valign=bottom><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom><font color="#000000">it is easy, but not portable</font></td>
+	</tr>
+	<tr>
+		<td height="20" align="left" valign=bottom><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom><font color="#000000"><br></font></td>
+	</tr>
+	<tr>
+		<td height="20" align="left" valign=bottom><font color="#000000">Command line arg</font></td>
+		<td align="left" valign=bottom><font color="#000000">it is worst.</font></td>
+	</tr>
+	<tr>
+		<td height="20" align="left" valign=bottom><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom><font color="#000000">don’t use.</font></td>
+	</tr>
+</table>
+<!-- ************************************************************************** -->
+<hr>
+<A NAME="table1"><h1>Sheet 2: <em>xml config</em></h1></A>
+<table align="left" cellspacing="0" border="0">
+	<colgroup width="268"></colgroup>
+	<colgroup width="171"></colgroup>
+	<colgroup width="177"></colgroup>
+	<colgroup width="45"></colgroup>
+	<colgroup width="103"></colgroup>
+	<colgroup width="93"></colgroup>
+	<colgroup width="104"></colgroup>
+	<colgroup width="125"></colgroup>
+	<colgroup width="85"></colgroup>
+	<tr>
+		<td height="25" align="left" valign=bottom bgcolor="#95B3D7"><i><font size=4 color="#000000">hibernate-configuration</font></i></td>
+		<td align="left" valign=bottom bgcolor="#95B3D7"><font size=4 color="#000000"><br></font></td>
+		<td align="left" valign=bottom bgcolor="#95B3D7"><font size=4 color="#000000"><br></font></td>
+		<td align="left" valign=bottom bgcolor="#95B3D7"><font size=4 color="#000000"><br></font></td>
+		<td align="left" valign=bottom bgcolor="#95B3D7"><font size=4 color="#000000"><br></font></td>
+		<td align="left" valign=bottom bgcolor="#95B3D7"><font size=4 color="#000000"><br></font></td>
+		<td align="left" valign=bottom bgcolor="#95B3D7"><font size=4 color="#000000"><br></font></td>
+		<td align="left" valign=bottom bgcolor="#95B3D7"><font size=4 color="#000000"><br></font></td>
+		<td align="left" valign=bottom bgcolor="#95B3D7"><font size=4 color="#000000"><br></font></td>
+	</tr>
+	<tr>
+		<td height="25" align="left" valign=bottom bgcolor="#95B3D7"><font size=4 color="#000000"><br></font></td>
+		<td align="left" valign=bottom bgcolor="#95B3D7"><i><font size=4 color="#000000">session-factory</font></i></td>
+		<td align="left" valign=bottom bgcolor="#95B3D7"><font size=4 color="#000000"><br></font></td>
+		<td align="left" valign=bottom bgcolor="#95B3D7"><font size=4 color="#000000"><br></font></td>
+		<td align="left" valign=bottom bgcolor="#95B3D7"><font size=4 color="#000000">name</font></td>
+		<td align="left" valign=bottom bgcolor="#95B3D7"><font size=4 color="#000000"><br></font></td>
+		<td align="left" valign=bottom bgcolor="#95B3D7"><font size=4 color="#000000"><br></font></td>
+		<td align="left" valign=bottom bgcolor="#95B3D7"><font size=4 color="#000000"><br></font></td>
+		<td align="left" valign=bottom bgcolor="#95B3D7"><font size=4 color="#000000"><br></font></td>
+	</tr>
+	<tr>
+		<td height="25" align="left" valign=bottom bgcolor="#95B3D7"><font size=4 color="#000000"><br></font></td>
+		<td align="left" valign=bottom bgcolor="#95B3D7"><font size=4 color="#000000"><br></font></td>
+		<td align="left" valign=bottom bgcolor="#95B3D7"><i><font size=4 color="#000000">property</font></i></td>
+		<td align="left" valign=bottom bgcolor="#95B3D7"><font size=4 color="#000000"><br></font></td>
+		<td align="left" valign=bottom bgcolor="#95B3D7"><font size=4 color="#000000">name</font></td>
+		<td align="left" valign=bottom bgcolor="#95B3D7"><font size=4 color="#000000"><br></font></td>
+		<td align="left" valign=bottom bgcolor="#95B3D7"><font size=4 color="#000000"><br></font></td>
+		<td align="left" valign=bottom bgcolor="#95B3D7"><font size=4 color="#000000"><br></font></td>
+		<td align="left" valign=bottom bgcolor="#95B3D7"><font size=4 color="#000000"><br></font></td>
+	</tr>
+	<tr>
+		<td height="25" align="left" valign=bottom bgcolor="#95B3D7"><font size=4 color="#000000"><br></font></td>
+		<td align="left" valign=bottom bgcolor="#95B3D7"><font size=4 color="#000000"><br></font></td>
+		<td align="left" valign=bottom bgcolor="#95B3D7"><i><font size=4 color="#000000">mapping</font></i></td>
+		<td align="left" valign=bottom bgcolor="#95B3D7"><font size=4 color="#000000"><br></font></td>
+		<td align="left" valign=bottom bgcolor="#95B3D7"><font size=4 color="#000000">resource</font></td>
+		<td align="left" valign=bottom bgcolor="#95B3D7"><font size=4 color="#000000">file</font></td>
+		<td align="left" valign=bottom bgcolor="#95B3D7"><font size=4 color="#000000">class</font></td>
+		<td align="left" valign=bottom bgcolor="#95B3D7"><font size=4 color="#000000">package</font></td>
+		<td align="left" valign=bottom bgcolor="#95B3D7"><font size=4 color="#000000">jar</font></td>
+	</tr>
+	<tr>
+		<td height="25" align="left" valign=bottom><font size=4 color="#000000"><br></font></td>
+		<td align="left" valign=bottom><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom><i><font size=4 color="#000000">class-cache</font></i></td>
+		<td align="left" valign=bottom><font size=4 color="#000000"><br></font></td>
+		<td align="left" valign=bottom><font size=4 color="#000000">usage</font></td>
+		<td align="left" valign=bottom><font size=4 color="#000000"><br></font></td>
+		<td align="left" valign=bottom><font size=4 color="#000000">class</font></td>
+		<td align="left" valign=bottom><font size=4 color="#000000"><br></font></td>
+		<td align="left" valign=bottom><font size=4 color="#000000"><br></font></td>
+	</tr>
+	<tr>
+		<td height="25" align="left" valign=bottom><font size=4 color="#000000"><br></font></td>
+		<td align="left" valign=bottom><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom><i><font size=4 color="#000000">collection-cache</font></i></td>
+		<td align="left" valign=bottom><font size=4 color="#000000"><br></font></td>
+		<td align="left" valign=bottom><font size=4 color="#000000">usage</font></td>
+		<td align="left" valign=bottom><font size=4 color="#000000"><br></font></td>
+		<td align="left" valign=bottom><font size=4 color="#000000">collection</font></td>
+		<td align="left" valign=bottom><font size=4 color="#000000"><br></font></td>
+		<td align="left" valign=bottom><font size=4 color="#000000"><br></font></td>
+	</tr>
+	<tr>
+		<td height="25" align="left" valign=bottom><font size=4 color="#000000"><br></font></td>
+		<td align="left" valign=bottom><font size=4 color="#000000">event</font></td>
+		<td align="left" valign=bottom><i><font size=4 color="#000000"><br></font></i></td>
+		<td align="left" valign=bottom><font size=4 color="#000000"><br></font></td>
+		<td align="left" valign=bottom><font size=4 color="#000000">type</font></td>
+		<td align="left" valign=bottom><font size=4 color="#000000"><br></font></td>
+		<td align="left" valign=bottom><font size=4 color="#000000"><br></font></td>
+		<td align="left" valign=bottom><font size=4 color="#000000"><br></font></td>
+		<td align="left" valign=bottom><font size=4 color="#000000"><br></font></td>
+	</tr>
+	<tr>
+		<td height="25" align="left" valign=bottom><font size=4 color="#000000"><br></font></td>
+		<td align="left" valign=bottom><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom><i><font size=4 color="#000000">listener</font></i></td>
+		<td align="left" valign=bottom><font size=4 color="#000000"><br></font></td>
+		<td align="left" valign=bottom><font size=4 color="#000000"><br></font></td>
+		<td align="left" valign=bottom><font size=4 color="#000000"><br></font></td>
+		<td align="left" valign=bottom><font size=4 color="#000000"><br></font></td>
+		<td align="left" valign=bottom><font size=4 color="#000000"><br></font></td>
+		<td align="left" valign=bottom><font size=4 color="#000000"><br></font></td>
+	</tr>
+	<tr>
+		<td height="25" align="left" valign=bottom><font size=4 color="#000000"><br></font></td>
+		<td align="left" valign=bottom><i><font size=4 color="#000000">security</font></i></td>
+		<td align="left" valign=bottom><font size=4 color="#000000"><br></font></td>
+		<td align="left" valign=bottom><font size=4 color="#000000"><br></font></td>
+		<td align="left" valign=bottom><font size=4 color="#000000"><br></font></td>
+		<td align="left" valign=bottom><font size=4 color="#000000"><br></font></td>
+		<td align="left" valign=bottom><font size=4 color="#000000"><br></font></td>
+		<td align="left" valign=bottom><font size=4 color="#000000"><br></font></td>
+		<td align="left" valign=bottom><font size=4 color="#000000"><br></font></td>
+	</tr>
+</table>
+<img src="ParamHibernateXMLConfiguration_html_285311ff.png" width=219 height=83>
+<img src="ParamHibernateXMLConfiguration_html_4f914bea.png" width=209 height=83>
+<br clear=left>
+<!-- ************************************************************************** -->
+<hr>
+<A NAME="table2"><h1>Sheet 3: <em>common attibuts</em></h1></A>
+<table align="left" cellspacing="0" border="0">
+	<colgroup width="471"></colgroup>
+	<colgroup width="703"></colgroup>
+	<tr>
+		<td height="25" align="left" valign=bottom bgcolor="#D99694"><font size=4 color="#000000">hibernate.dialect</font></td>
+		<td align="left" valign=bottom><font size=4 color="#000000">it must both managed and non-managed environment</font></td>
+	</tr>
+	<tr>
+		<td height="25" align="left" valign=bottom bgcolor="#D99694"><font size=4 color="#000000">hibernate.default_schema</font></td>
+		<td align="left" valign=bottom><font size=4 color="#000000">FQN in sql query</font></td>
+	</tr>
+	<tr>
+		<td height="25" align="left" valign=bottom><font size=4 color="#000000">hibernate.connection.provider_class</font></td>
+		<td align="left" valign=bottom><font color="#000000"><br></font></td>
+	</tr>
+	<tr>
+		<td height="25" align="left" valign=bottom><font size=4 color="#000000">hibernate.temp.use_jdbc_metadata_defaults</font></td>
+		<td align="right" valign=bottom sdval="0" sdnum="16393;"><font size=4 color="#000000">0</font></td>
+	</tr>
+</table>
+<img src="ParamHibernateXMLConfiguration_html_998a7ede.png" width=166 height=83>
+<br clear=left>
+<!-- ************************************************************************** -->
+<hr>
+<A NAME="table3"><h1>Sheet 4: <em>driver manager</em></h1></A>
+<table cellspacing="0" border="0">
+	<colgroup width="363"></colgroup>
+	<colgroup width="80"></colgroup>
+	<tr>
+		<td height="25" align="left" valign=bottom bgcolor="#558ED5"><font size=4 color="#000000">hibernate.connection.driver_class</font></td>
+		<td align="left" valign=bottom><font size=4 color="#000000"><br></font></td>
+	</tr>
+	<tr>
+		<td height="25" align="left" valign=bottom bgcolor="#558ED5"><font size=4 color="#000000">hibernate.connection.url</font></td>
+		<td align="left" valign=bottom><font size=4 color="#000000"><br></font></td>
+	</tr>
+	<tr>
+		<td height="25" align="left" valign=bottom bgcolor="#558ED5"><font size=4 color="#000000">hibernate.connection.username</font></td>
+		<td align="left" valign=bottom><font size=4 color="#000000"><br></font></td>
+	</tr>
+	<tr>
+		<td height="25" align="left" valign=bottom bgcolor="#558ED5"><font size=4 color="#000000">hibernate.connection.password</font></td>
+		<td align="left" valign=bottom><font size=4 color="#000000"><br></font></td>
+	</tr>
+	<tr>
+		<td height="25" align="left" valign=bottom bgcolor="#558ED5"><font size=4 color="#000000">hibernate.connection.isolation</font></td>
+		<td align="left" valign=bottom><font color="#000000">specify transaction isolation level</font></td>
+	</tr>
+	<tr>
+		<td height="20" align="left" valign=bottom><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom><font color="#000000"><br></font></td>
+	</tr>
+	<tr>
+		<td height="20" align="left" valign=bottom><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom><font color="#000000"><br></font></td>
+	</tr>
+	<tr>
+		<td height="25" align="left" valign=bottom bgcolor="#C4BD97"><font size=4 color="#000000">hibernate.default_schema</font></td>
+		<td align="left" valign=bottom><font color="#000000">used specify name of schema of database to prefixed with table names while SQL generation</font></td>
+	</tr>
+</table>
+<!-- ************************************************************************** -->
+<hr>
+<A NAME="table4"><h1>Sheet 5: <em>JEE integration</em></h1></A>
+<table align="left" cellspacing="0" border="0">
+	<colgroup width="156"></colgroup>
+	<colgroup width="485"></colgroup>
+	<colgroup width="80"></colgroup>
+	<tr>
+		<td height="25" align="left" valign=bottom><font size=4 color="#000000">data source</font></td>
+		<td align="left" valign=bottom><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom><font color="#000000"><br></font></td>
+	</tr>
+	<tr>
+		<td height="25" align="left" valign=bottom><font size=4 color="#000000"><br></font></td>
+		<td align="left" valign=bottom bgcolor="#948A54"><font size=4 color="#000000">hibernate.connection.datasource</font></td>
+		<td align="left" valign=bottom><font size=4 color="#000000"><br></font></td>
+	</tr>
+	<tr>
+		<td height="25" align="left" valign=bottom><font size=4 color="#000000">Transaction</font></td>
+		<td align="left" valign=bottom><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom><font size=4 color="#000000"><br></font></td>
+	</tr>
+	<tr>
+		<td height="25" align="left" valign=bottom><font size=4 color="#000000"><br></font></td>
+		<td align="left" valign=bottom bgcolor="#FFFF00"><font size=4 color="#000000">hibernate.transaction.factory_class</font></td>
+		<td align="left" valign=bottom><font size=4 color="#000000">it is used to say either JDBC or JTA transaction</font></td>
+	</tr>
+	<tr>
+		<td height="25" align="left" valign=bottom><font size=4 color="#000000"><br></font></td>
+		<td align="left" valign=bottom bgcolor="#FFFF00"><font size=4 color="#000000">hibernate.transaction.manager_lookup_class</font></td>
+		<td align="left" valign=bottom><font size=4 color="#000000">it is need only if use SECOND-LEVEL cache in app server enviornment</font></td>
+	</tr>
+	<tr>
+		<td height="25" align="left" valign=bottom><font size=4 color="#000000">jndi properties</font></td>
+		<td align="left" valign=bottom><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom><font color="#000000"><br></font></td>
+	</tr>
+	<tr>
+		<td height="25" align="left" valign=bottom><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom bgcolor="#8EB4E3"><font size=4 color="#000000">hibernate.jndi.url</font></td>
+		<td align="left" valign=bottom><font size=4 color="#000000">optional. Might be need in non-app server environment</font></td>
+	</tr>
+	<tr>
+		<td height="25" align="left" valign=bottom><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom bgcolor="#8EB4E3"><font size=4 color="#000000">hibernate.jndi.class</font></td>
+		<td align="left" valign=bottom><font size=4 color="#000000">optional. Might be need in non-app server environment</font></td>
+	</tr>
+	<tr>
+		<td height="25" align="left" valign=bottom><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom bgcolor="#8EB4E3"><font size=4 color="#000000">hibernate.session_factory_name</font></td>
+		<td align="left" valign=bottom><font size=4 color="#000000">use this when we want to BIND session factory to JNDI </font></td>
+	</tr>
+</table>
+<img src="ParamHibernateXMLConfiguration_html_e2db2a2.png" width=185 height=77>
+<br clear=left>
+<!-- ************************************************************************** -->
+<hr>
+<A NAME="table5"><h1>Sheet 6: <em>query</em></h1></A>
+<table cellspacing="0" border="0">
+	<colgroup width="404"></colgroup>
+	<colgroup width="395"></colgroup>
+	<tr>
+		<td height="25" align="left" valign=bottom bgcolor="#C4BD97"><font size=4 color="#000000">hibernate.jdbc.fetch_size</font></td>
+		<td align="left" valign=bottom><font size=4 color="#000000">just give pagination size</font></td>
+	</tr>
+	<tr>
+		<td height="25" align="left" valign=bottom bgcolor="#C4BD97"><font size=4 color="#000000">hibernate.jdbc.batch_versioned_data</font></td>
+		<td align="left" valign=bottom><font color="#000000"><br></font></td>
+	</tr>
+	<tr>
+		<td height="25" align="left" valign=bottom bgcolor="#C4BD97"><font size=4 color="#000000">hibernate.query.substitutions</font></td>
+		<td align="left" valign=bottom><font color="#000000"><br></font></td>
+	</tr>
+	<tr>
+		<td height="25" align="left" valign=bottom bgcolor="#C4BD97"><font size=4 color="#000000">hibernate.show_sql</font></td>
+		<td align="left" valign=bottom><font size=4 color="#000000">stop at production</font></td>
+	</tr>
+	<tr>
+		<td height="25" align="left" valign=bottom bgcolor="#C4BD97"><font size=4 color="#000000">hibernate.format_sql</font></td>
+		<td align="left" valign=bottom><font size=4 color="#000000">stop at production</font></td>
+	</tr>
+	<tr>
+		<td height="25" align="left" valign=bottom bgcolor="#C4BD97"><font size=4 color="#000000">hibernate.use_sql_comments</font></td>
+		<td align="left" valign=bottom><font size=4 color="#000000">helps in debugging</font></td>
+	</tr>
+	<tr>
+		<td height="25" align="left" valign=bottom bgcolor="#C4BD97"><font size=4 color="#000000">hibernate.max_fetch_depth</font></td>
+		<td align="left" valign=bottom><font size=4 color="#000000">say, how many assoication has to be fetched in single SQL query</font></td>
+	</tr>
+</table>
+<!-- ************************************************************************** -->
+<hr>
+<A NAME="table6"><h1>Sheet 7: <em>cache</em></h1></A>
+<table cellspacing="0" border="0">
+	<colgroup width="408"></colgroup>
+	<colgroup width="80"></colgroup>
+	<tr>
+		<td height="25" align="left" valign=bottom bgcolor="#C4BD97"><font size=4 color="#000000">hibernate.cache.provider_class</font></td>
+		<td align="left" valign=bottom><font size=4 color="#000000"><br></font></td>
+	</tr>
+	<tr>
+		<td height="25" align="left" valign=bottom bgcolor="#C4BD97"><font size=4 color="#000000">hibernate.cache.use_minimul_puts</font></td>
+		<td align="left" valign=bottom><font size=4 color="#000000"><br></font></td>
+	</tr>
+	<tr>
+		<td height="25" align="left" valign=bottom bgcolor="#C4BD97"><font size=4 color="#000000">hibernate.cache.use_structured_entries</font></td>
+		<td align="left" valign=bottom><font size=4 color="#000000"><br></font></td>
+	</tr>
+	<tr>
+		<td height="25" align="left" valign=bottom bgcolor="#C4BD97"><font size=4 color="#000000">hibernate.cache.use_query_cache</font></td>
+		<td align="left" valign=bottom><font size=4 color="#000000"><br></font></td>
+	</tr>
+	<tr>
+		<td height="25" align="left" valign=bottom bgcolor="#C4BD97"><font size=4 color="#000000">hibernate.cache.region_prefix</font></td>
+		<td align="left" valign=bottom><font color="#000000">it will be useful if there is more than one SessionFactory</font></td>
+	</tr>
+</table>
+<!-- ************************************************************************** -->
+<hr>
+<A NAME="table7"><h1>Sheet 8: <em>performance</em></h1></A>
+<table cellspacing="0" border="0">
+	<colgroup width="415"></colgroup>
+	<colgroup width="367"></colgroup>
+	<tr>
+		<td height="25" align="left" valign=bottom bgcolor="#D99694"><font size=4 color="#000000">hibernate.max_fetch_depth</font></td>
+		<td align="left" valign=bottom><font size=4 color="#000000">performance tuninig</font></td>
+	</tr>
+	<tr>
+		<td height="25" align="left" valign=bottom bgcolor="#D99694"><font size=4 color="#000000">hibernate.default_batch_fetch_size</font></td>
+		<td align="left" valign=bottom><font size=4 color="#000000">performance tuninig</font></td>
+	</tr>
+	<tr>
+		<td height="25" align="left" valign=bottom bgcolor="#D99694"><font size=4 color="#000000">hibernate.jdbc.batch_size</font></td>
+		<td align="left" valign=bottom><font size=4 color="#000000">helps in performance tunining</font></td>
+	</tr>
+	<tr>
+		<td height="25" align="left" valign=bottom bgcolor="#D99694"><font size=4 color="#000000">hibernate.order_update</font></td>
+		<td align="left" valign=bottom><font size=4 color="#000000">might be performance hit</font></td>
+	</tr>
+	<tr>
+		<td height="25" align="left" valign=bottom bgcolor="#D99694"><font size=4 color="#000000">hibernate.generate_statistics</font></td>
+		<td align="left" valign=bottom><font size=4 color="#000000">helps in performance tunining</font></td>
+	</tr>
+</table>
+<!-- ************************************************************************** -->
+<hr>
+<A NAME="table8"><h1>Sheet 9: <em>tools</em></h1></A>
+<table cellspacing="0" border="0">
+	<colgroup width="288"></colgroup>
+	<tr>
+		<td height="20" align="left" valign=bottom><font color="#000000">hibernate.hbm2dll.auto</font></td>
+	</tr>
+</table>
+<!-- ************************************************************************** -->
+</body>
+
+</html>

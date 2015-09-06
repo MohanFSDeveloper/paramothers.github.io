@@ -1,0 +1,358 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+
+<html>
+<head>
+	
+	<meta http-equiv="content-type" content="text/html; charset=utf-8">
+	<title></title>
+	<meta name="generator" content="LibreOffice 4.2.8.2 (Linux)">
+	<meta name="created" content="20060916;0">
+	<meta name="changed" content="20120819;201028000000000">
+	
+	<style type="text/css"><!-- 
+		body,div,table,thead,tbody,tfoot,tr,th,td,p { font-family:"Calibri"; font-size:x-small }
+		 -->
+	</style>
+	
+</head>
+
+<body text="#000000">
+<hr>
+	<p><center>
+		<h1>Overview</h1>
+		<A HREF="#table0">Best Practice</A><br>
+		<A HREF="#table1">JPA 2.1 - API</A><br>
+		<A HREF="#table2">JPA - persistence config</A><br>
+		<A HREF="#table3">General</A><br>
+		
+	</center></p>
+<hr>
+<A NAME="table0"><h1>Sheet 1: <em>Best Practice</em></h1></A>
+<table cellspacing="0" border="0">
+	<colgroup width="86"></colgroup>
+	<colgroup width="768"></colgroup>
+	<tr>
+		<td height="91" align="left" valign=bottom><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom><font color="#000000">Better have separate project for JPA with its test case. So this project can be used by many application those want to use the same database.<br><br>Dont have DAO classes inside of JPA project. Since service layer may be with or without spring<br>And also, deverloper may add any logic / log / etc. in his DAO class .</font></td>
+	</tr>
+	<tr>
+		<td height="18" align="left" valign=bottom><font color="#000000">ID</font></td>
+		<td align="left" valign=bottom><font color="#000000">use wrapper instead primitive type, to allow null for unsaved objects</font></td>
+	</tr>
+	<tr>
+		<td height="20" align="left" valign=bottom><font color="#000000">Field</font></td>
+		<td align="left" valign=bottom><font color="#000000">try to avoid use of Public field</font></td>
+	</tr>
+</table>
+<!-- ************************************************************************** -->
+<hr>
+<A NAME="table1"><h1>Sheet 2: <em>JPA 2.1 - API</em></h1></A>
+<table cellspacing="0" border="0">
+	<colgroup width="378"></colgroup>
+	<colgroup width="94"></colgroup>
+	<colgroup width="159"></colgroup>
+	<colgroup width="88"></colgroup>
+	<colgroup width="105"></colgroup>
+	<colgroup width="367"></colgroup>
+	<tr>
+		<td height="17" align="left" valign=bottom bgcolor="#E6E6E6"><font face="Arial"><br></font></td>
+		<td align="left" valign=bottom bgcolor="#E6E6E6"><font face="Arial"><br></font></td>
+		<td align="left" valign=bottom bgcolor="#E6E6E6"><font face="Arial"><br></font></td>
+		<td align="left" valign=bottom bgcolor="#E6E6E6"><font face="Arial"><br></font></td>
+		<td align="left" valign=bottom bgcolor="#E6E6E6"><font face="Arial"><br></font></td>
+		<td align="left" valign=bottom bgcolor="#E6E6E6"><font face="Arial"><br></font></td>
+	</tr>
+	<tr>
+		<td height="18" align="left" valign=bottom><font color="#000000">Persistence class used only in Java SE</font></td>
+		<td align="left" valign=bottom><font face="Arial">Persistence</font></td>
+		<td align="left" valign=bottom bgcolor="#E6E6E6"><font face="Arial"><br></font></td>
+		<td align="left" valign=bottom bgcolor="#E6E6E6"><font face="Arial"><br></font></td>
+		<td align="left" valign=bottom bgcolor="#E6E6E6"><font face="Arial"><br></font></td>
+		<td align="left" valign=bottom bgcolor="#E6E6E6"><font face="Arial"><br></font></td>
+	</tr>
+	<tr>
+		<td height="18" align="left" valign=bottom><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom><font face="Arial">EntityManagerFactory</font></td>
+		<td align="left" valign=bottom bgcolor="#FF00FF"><font face="Arial">EntityManager</font></td>
+		<td align="left" valign=bottom><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom><font color="#000000"><br></font></td>
+	</tr>
+	<tr>
+		<td height="18" align="left" valign=bottom><font color="#000000">EntityTransaction also used only in Java SE</font></td>
+		<td align="left" valign=bottom><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom><font face="Arial">EntityTransaction</font></td>
+		<td align="left" valign=bottom><font color="#000000"><br></font></td>
+	</tr>
+	<tr>
+		<td height="18" align="left" valign=bottom><font color="#000000">when result type unknown or dynamic queries</font></td>
+		<td align="left" valign=bottom><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom><font face="Arial">Query</font></td>
+		<td align="left" valign=bottom><font color="#000000"><br></font></td>
+	</tr>
+	<tr>
+		<td height="18" align="left" valign=bottom><font color="#000000">when result type known</font></td>
+		<td align="left" valign=bottom><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom><font face="Arial">TypedQuery ( used for Static/named query )</font></td>
+	</tr>
+	<tr>
+		<td height="18" align="left" valign=bottom><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom><font face="Arial">CriteriaBuilder</font></td>
+		<td align="left" valign=bottom><font color="#000000"><br></font></td>
+	</tr>
+	<tr>
+		<td height="18" align="left" valign=bottom><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom><font face="Arial">CriteriaQuery ( used for Dynamic Query )</font></td>
+	</tr>
+	<tr>
+		<td height="18" align="left" valign=bottom bgcolor="#E6E6E6"><font face="Arial"><br></font></td>
+		<td align="left" valign=bottom bgcolor="#E6E6E6"><font face="Arial"><br></font></td>
+		<td align="left" valign=bottom><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom bgcolor="#E6E6E6"><font face="Arial"><br></font></td>
+		<td align="left" valign=bottom bgcolor="#E6E6E6"><font face="Arial"><br></font></td>
+		<td align="left" valign=bottom bgcolor="#E6E6E6"><font face="Arial"><br></font></td>
+	</tr>
+	<tr>
+		<td height="18" align="left" valign=bottom><font face="Arial"><br></font></td>
+		<td align="left" valign=bottom><font face="Arial"><br></font></td>
+		<td align="left" valign=bottom bgcolor="#E6E6E6"><font face="Arial"><br></font></td>
+		<td align="left" valign=bottom><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom><font face="Arial"><br></font></td>
+		<td align="left" valign=bottom><font face="Arial"><br></font></td>
+	</tr>
+	<tr>
+		<td height="17" align="left" valign=bottom><font face="Arial"><br></font></td>
+		<td align="left" valign=bottom><font face="Arial"><br></font></td>
+		<td align="left" valign=bottom><font face="Arial">PersistenceProvider</font></td>
+		<td align="left" valign=bottom><font face="Arial">org.hibernate.ejb.HibernatePersistence</font></td>
+		<td align="left" valign=bottom><font face="Arial"><br></font></td>
+		<td align="left" valign=bottom><font face="Arial"><br></font></td>
+	</tr>
+</table>
+<!-- ************************************************************************** -->
+<hr>
+<A NAME="table2"><h1>Sheet 3: <em>JPA - persistence config</em></h1></A>
+<table cellspacing="0" border="0">
+	<colgroup width="28"></colgroup>
+	<colgroup width="59"></colgroup>
+	<colgroup width="202"></colgroup>
+	<colgroup width="95"></colgroup>
+	<colgroup width="237"></colgroup>
+	<colgroup width="127"></colgroup>
+	<tr>
+		<td height="18" align="left" valign=bottom><font color="#000000">&lt;persistence&gt;</font></td>
+		<td align="left" valign=bottom><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom><font color="#000000"><br></font></td>
+	</tr>
+	<tr>
+		<td height="18" align="left" valign=bottom><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom><font color="#000000">&lt;persistence-unit&gt;</font></td>
+		<td align="left" valign=bottom><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom><font color="#000000">name</font></td>
+		<td align="left" valign=bottom><font color="#000000">transaction-type</font></td>
+	</tr>
+	<tr>
+		<td height="18" align="left" valign=bottom><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom bgcolor="#E46C0A"><font color="#000000">&lt;provider&gt;</font></td>
+		<td align="left" valign=bottom bgcolor="#E46C0A"><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom bgcolor="#E46C0A"><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom bgcolor="#E46C0A"><font color="#000000"><br></font></td>
+	</tr>
+	<tr>
+		<td height="18" align="left" valign=bottom><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom bgcolor="#B3A2C7"><font color="#000000">&lt;jta-datasource&gt;</font></td>
+		<td align="left" valign=bottom bgcolor="#B3A2C7"><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom bgcolor="#B3A2C7"><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom bgcolor="#B3A2C7"><font color="#000000"><br></font></td>
+	</tr>
+	<tr>
+		<td height="18" align="left" valign=bottom><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom bgcolor="#B3A2C7"><font color="#000000">&lt;non-jta-datasoruce&gt;</font></td>
+		<td align="left" valign=bottom bgcolor="#B3A2C7"><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom bgcolor="#B3A2C7"><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom bgcolor="#B3A2C7"><font color="#000000"><br></font></td>
+	</tr>
+	<tr>
+		<td height="18" align="left" valign=bottom><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom bgcolor="#77933C"><font color="#000000">&lt;mapping-file&gt;</font></td>
+		<td align="left" valign=bottom bgcolor="#77933C"><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom bgcolor="#77933C"><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom bgcolor="#77933C"><font color="#000000"><br></font></td>
+	</tr>
+	<tr>
+		<td height="18" align="left" valign=bottom><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom bgcolor="#77933C"><font color="#000000">&lt;class&gt;</font></td>
+		<td align="left" valign=bottom bgcolor="#77933C"><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom bgcolor="#77933C"><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom bgcolor="#77933C"><font color="#000000"><br></font></td>
+	</tr>
+	<tr>
+		<td height="18" align="left" valign=bottom><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom bgcolor="#77933C"><font color="#000000">&lt;jar-file&gt;</font></td>
+		<td align="left" valign=bottom bgcolor="#77933C"><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom bgcolor="#77933C"><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom bgcolor="#77933C"><font color="#000000"><br></font></td>
+	</tr>
+	<tr>
+		<td height="18" align="left" valign=bottom><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom bgcolor="#77933C"><i><font color="#000000">&lt;exclued-unlisted-classes&gt;</font></i></td>
+		<td align="left" valign=bottom bgcolor="#77933C"><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom bgcolor="#77933C"><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom bgcolor="#77933C"><font color="#000000"><br></font></td>
+	</tr>
+	<tr>
+		<td height="18" align="left" valign=bottom><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom bgcolor="#558ED5"><font color="#000000">&lt;shared-cache-mode&gt;</font></td>
+		<td align="left" valign=bottom bgcolor="#558ED5"><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom bgcolor="#558ED5"><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom bgcolor="#558ED5"><font color="#000000"><br></font></td>
+	</tr>
+	<tr>
+		<td height="18" align="left" valign=bottom><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom bgcolor="#77933C"><font color="#000000">&lt;validation-mode&gt;</font></td>
+		<td align="left" valign=bottom bgcolor="#77933C"><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom bgcolor="#77933C"><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom bgcolor="#77933C"><font color="#000000"><br></font></td>
+	</tr>
+	<tr>
+		<td height="18" align="left" valign=bottom><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom bgcolor="#D99694"><font color="#000000">&lt;properties&gt;</font></td>
+		<td align="left" valign=bottom bgcolor="#D99694"><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom bgcolor="#D99694"><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom bgcolor="#D99694"><font color="#000000"><br></font></td>
+	</tr>
+	<tr>
+		<td height="18" align="left" valign=bottom><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom bgcolor="#D99694"><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom bgcolor="#D99694"><font color="#000000">&lt;property&gt;</font></td>
+		<td align="left" valign=bottom bgcolor="#D99694"><font color="#000000">name</font></td>
+		<td align="left" valign=bottom bgcolor="#D99694"><font color="#000000">value</font></td>
+	</tr>
+	<tr>
+		<td height="18" align="left" valign=bottom><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom><font color="#000000"><br></font></td>
+	</tr>
+	<tr>
+		<td height="20" align="left" valign=bottom><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom><font color="#B84747">javax.persistence.jdbc.driver</font></td>
+		<td align="left" valign=bottom><font color="#000000"><br></font></td>
+	</tr>
+	<tr>
+		<td height="20" align="left" valign=bottom><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom><font color="#B84747">javax.persistence.jdbc.url</font></td>
+		<td align="left" valign=bottom><font color="#000000"><br></font></td>
+	</tr>
+	<tr>
+		<td height="20" align="left" valign=bottom><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom><font color="#B84747">javax.persistence.jdbc.user</font></td>
+		<td align="left" valign=bottom><font color="#000000"><br></font></td>
+	</tr>
+	<tr>
+		<td height="20" align="left" valign=bottom><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom><font color="#B84747">javax.persistence.jdbc.password</font></td>
+		<td align="left" valign=bottom><font color="#000000"><br></font></td>
+	</tr>
+</table>
+<!-- ************************************************************************** -->
+<hr>
+<A NAME="table3"><h1>Sheet 4: <em>General</em></h1></A>
+<table cellspacing="0" border="0">
+	<colgroup width="622"></colgroup>
+	<tr>
+		<td height="17" align="left" valign=bottom><font color="#000000">Toplink from oracle first developed for SmallTalk language, now suppot java</font></td>
+	</tr>
+	<tr>
+		<td height="17" align="left" valign=bottom><font color="#000000"><br></font></td>
+	</tr>
+	<tr>
+		<td height="17" align="left" valign=bottom><font color="#000000">Toplink is commercial product</font></td>
+	</tr>
+	<tr>
+		<td height="17" align="left" valign=bottom><font color="#000000">Hibernate is open source</font></td>
+	</tr>
+	<tr>
+		<td height="17" align="left" valign=bottom><font color="#000000"><br></font></td>
+	</tr>
+	<tr>
+		<td height="17" align="left" valign=bottom><font color="#000000">JDBC released in 97 in JDK 1.1</font></td>
+	</tr>
+	<tr>
+		<td height="17" align="left" valign=bottom><font color="#000000"><br></font></td>
+	</tr>
+	<tr>
+		<td height="17" align="left" valign=bottom><font color="#000000">EJB Entity bean was added in J2EE</font></td>
+	</tr>
+	<tr>
+		<td height="17" align="left" valign=bottom><font color="#000000"><br></font></td>
+	</tr>
+	<tr>
+		<td height="17" align="left" valign=bottom><font color="#000000">JDO is next attempt after few failure of EJB entity bean, it enhance the byte code</font></td>
+	</tr>
+	<tr>
+		<td height="17" align="left" valign=bottom><font color="#000000"><br></font></td>
+	</tr>
+	<tr>
+		<td height="17" align="left" valign=bottom><font color="#000000">JPA, introduced by combination of vendors, taken few feature from JDO</font></td>
+	</tr>
+	<tr>
+		<td height="17" align="left" valign=bottom><font color="#000000"><br></font></td>
+	</tr>
+	<tr>
+		<td height="17" align="left" valign=bottom><font color="#000000">JPA 1.0 released in 2006</font></td>
+	</tr>
+	<tr>
+		<td height="17" align="left" valign=bottom><font color="#000000">JPA 2.0 released in 2009</font></td>
+	</tr>
+	<tr>
+		<td height="17" align="left" valign=bottom><font color="#000000">JPA 2.1 released in 2013</font></td>
+	</tr>
+</table>
+<!-- ************************************************************************** -->
+</body>
+
+</html>

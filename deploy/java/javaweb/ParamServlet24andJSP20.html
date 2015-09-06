@@ -1,0 +1,495 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+
+<html>
+<head>
+	
+	<meta http-equiv="content-type" content="text/html; charset=utf-8">
+	<title></title>
+	<meta name="generator" content="LibreOffice 4.2.8.2 (Linux)">
+	<meta name="created" content="20060916;0">
+	<meta name="changed" content="20100517;134126000000000">
+	<meta name="AppVersion" content="12.0000">
+	<meta name="DocSecurity" content="0">
+	<meta name="HyperlinksChanged" content="false">
+	<meta name="LinksUpToDate" content="false">
+	<meta name="ScaleCrop" content="false">
+	<meta name="ShareDoc" content="false">
+	
+	<style type="text/css"><!-- 
+		body,div,table,thead,tbody,tfoot,tr,th,td,p { font-family:"Calibri"; font-size:x-small }
+		 -->
+	</style>
+	
+</head>
+
+<body text="#000000">
+<hr>
+	<p><center>
+		<h1>Overview</h1>
+		<A HREF="#table0">General</A><br>
+		<A HREF="#table1">HTTP Methods</A><br>
+		<A HREF="#table2">HTTP Headers</A><br>
+		<A HREF="#table3">HTTP Errors</A><br>
+		<A HREF="#table4">API</A><br>
+		<A HREF="#table5">web.xml</A><br>
+		<A HREF="#table6">Study frame</A><br>
+		<A HREF="#table7">Diff Servlets &amp; JSP</A><br>
+		
+	</center></p>
+<hr>
+<A NAME="table0"><h1>Sheet 1: <em>General</em></h1></A>
+<table cellspacing="0" border="0">
+	<colgroup width="71"></colgroup>
+	<colgroup width="115"></colgroup>
+	<colgroup width="457"></colgroup>
+	<tr>
+		<td height="20" align="left" valign=bottom><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom><font color="#000000">Introduction</font></td>
+		<td align="left" valign=bottom><font color="#000000">Servlet introduced in 1997</font></td>
+	</tr>
+	<tr>
+		<td height="20" align="left" valign=bottom bgcolor="#FFFF00"><font color="#000000">version</font></td>
+		<td align="left" valign=bottom><font color="#000000">Servlet 2.5</font></td>
+		<td align="left" valign=bottom sdnum="16393;0;D MMM YY"><font color="#000000">on 9/26/2005 SUN has launched  this Servlet 2.5 versions </font></td>
+	</tr>
+</table>
+<!-- ************************************************************************** -->
+<hr>
+<A NAME="table1"><h1>Sheet 2: <em>HTTP Methods</em></h1></A>
+<table cellspacing="0" border="0">
+	<colgroup width="83"></colgroup>
+	<colgroup width="85"></colgroup>
+	<colgroup width="436"></colgroup>
+	<colgroup width="140"></colgroup>
+	<colgroup width="129"></colgroup>
+	<tr>
+		<td height="20" align="left" valign=bottom><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom><b><font color="#FF0000">HTML</font></b></td>
+		<td align="left" valign=bottom><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom><font color="#000000"><br></font></td>
+	</tr>
+	<tr>
+		<td height="20" align="left" valign=bottom><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom><b><font color="#FF0000">HTTP 1.1</font></b></td>
+		<td align="left" valign=bottom><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom><font color="#000000"><br></font></td>
+	</tr>
+	<tr>
+		<td height="20" align="left" valign=bottom><b><font color="#FF0000">TCP / IP</font></b></td>
+		<td align="left" valign=bottom><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom><font color="#000000"><br></font></td>
+	</tr>
+	<tr>
+		<td height="20" align="left" valign=bottom><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom><font color="#000000"><br></font></td>
+	</tr>
+	<tr>
+		<td height="20" align="left" valign=bottom><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom><font color="#000000"> </font></td>
+		<td align="left" valign=bottom><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom><font color="#000000"><br></font></td>
+	</tr>
+	<tr>
+		<td height="20" align="left" valign=bottom bgcolor="#FFC000"><font color="#000000">GET</font></td>
+		<td align="left" valign=bottom><font color="#000000">doGet()</font></td>
+		<td align="left" valign=bottom><font color="#000000">making simple request to get something from server</font></td>
+		<td align="left" valign=bottom><font color="#000000">limited in size</font></td>
+		<td align="left" valign=bottom><font color="#000000">no payload</font></td>
+	</tr>
+	<tr>
+		<td height="20" align="left" valign=bottom bgcolor="#FFC000"><font color="#000000">POST</font></td>
+		<td align="left" valign=bottom><font color="#000000">doPost()</font></td>
+		<td align="left" valign=bottom><font color="#000000">to send some data from client to server</font></td>
+		<td align="left" valign=bottom><font color="#000000">non-limited size</font></td>
+		<td align="left" valign=bottom><font color="#000000">payload is there</font></td>
+	</tr>
+	<tr>
+		<td height="20" align="left" valign=bottom><font color="#000000">HEAD</font></td>
+		<td align="left" valign=bottom><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom><font color="#000000"><br></font></td>
+	</tr>
+	<tr>
+		<td height="20" align="left" valign=bottom><font color="#000000">PUT</font></td>
+		<td align="left" valign=bottom><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom><font color="#000000"><br></font></td>
+	</tr>
+	<tr>
+		<td height="20" align="left" valign=bottom><font color="#000000">DELETE</font></td>
+		<td align="left" valign=bottom><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom><font color="#000000"><br></font></td>
+	</tr>
+	<tr>
+		<td height="20" align="left" valign=bottom><font color="#000000">TRACE</font></td>
+		<td align="left" valign=bottom><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom><font color="#000000"><br></font></td>
+	</tr>
+	<tr>
+		<td height="20" align="left" valign=bottom><font color="#000000">CONNECT</font></td>
+		<td align="left" valign=bottom><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom><font color="#000000"><br></font></td>
+	</tr>
+</table>
+<!-- ************************************************************************** -->
+<hr>
+<A NAME="table2"><h1>Sheet 3: <em>HTTP Headers</em></h1></A>
+<table cellspacing="0" border="0">
+	<colgroup width="80"></colgroup>
+	<colgroup width="144"></colgroup>
+	<tr>
+		<td height="20" align="left" valign=bottom><font color="#000000">Request</font></td>
+		<td align="left" valign=bottom><font color="#000000"><br></font></td>
+	</tr>
+	<tr>
+		<td height="20" align="left" valign=bottom><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom bgcolor="#FFFF00"><font color="#000000">content-type:</font></td>
+	</tr>
+	<tr>
+		<td height="20" align="left" valign=bottom><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom><font color="#000000"><br></font></td>
+	</tr>
+	<tr>
+		<td height="20" align="left" valign=bottom><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom><font color="#000000"><br></font></td>
+	</tr>
+	<tr>
+		<td height="20" align="left" valign=bottom><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom><font color="#000000"><br></font></td>
+	</tr>
+	<tr>
+		<td height="20" align="left" valign=bottom><font color="#000000">Response</font></td>
+		<td align="left" valign=bottom><font color="#000000"><br></font></td>
+	</tr>
+	<tr>
+		<td height="20" align="left" valign=bottom><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom bgcolor="#FFFF00"><font color="#000000">content-type:</font></td>
+	</tr>
+</table>
+<!-- ************************************************************************** -->
+<hr>
+<A NAME="table3"><h1>Sheet 4: <em>HTTP Errors</em></h1></A>
+<table cellspacing="0" border="0">
+	<colgroup width="80"></colgroup>
+	<colgroup width="608"></colgroup>
+	<tr>
+		<td height="20" align="right" valign=bottom sdval="404" sdnum="16393;"><font color="#000000">404</font></td>
+		<td align="left" valign=bottom><font color="#000000">Resource is not found</font></td>
+	</tr>
+</table>
+<!-- ************************************************************************** -->
+<hr>
+<A NAME="table4"><h1>Sheet 5: <em>API</em></h1></A>
+<table cellspacing="0" border="0">
+	<colgroup width="124"></colgroup>
+	<colgroup width="127"></colgroup>
+	<colgroup width="143"></colgroup>
+	<colgroup width="181"></colgroup>
+	<tr>
+		<td height="20" align="left" valign=bottom><font color="#000000">Servlet</font></td>
+		<td align="left" valign=bottom><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom><font color="#000000"><br></font></td>
+	</tr>
+	<tr>
+		<td height="20" align="left" valign=bottom><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom><font color="#000000">GenericServlet</font></td>
+		<td align="left" valign=bottom><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom><font color="#000000"><br></font></td>
+	</tr>
+	<tr>
+		<td height="20" align="left" valign=bottom><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom><font color="#000000">ServletConfig</font></td>
+		<td align="left" valign=bottom><font color="#000000"><br></font></td>
+	</tr>
+	<tr>
+		<td height="20" align="left" valign=bottom><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom><font color="#000000">ServletRequest</font></td>
+		<td align="left" valign=bottom><font color="#000000"><br></font></td>
+	</tr>
+	<tr>
+		<td height="20" align="left" valign=bottom><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom><font color="#000000">ServletResponse</font></td>
+		<td align="left" valign=bottom><font color="#000000"><br></font></td>
+	</tr>
+	<tr>
+		<td height="20" align="left" valign=bottom><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom><font color="#000000">HTTPServlet</font></td>
+		<td align="left" valign=bottom><font color="#000000"><br></font></td>
+	</tr>
+	<tr>
+		<td height="20" align="left" valign=bottom><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom><font color="#000000">HTTPServletRequest</font></td>
+	</tr>
+	<tr>
+		<td height="20" align="left" valign=bottom><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom><font color="#000000">HTTPServletResponse</font></td>
+	</tr>
+	<tr>
+		<td height="20" align="left" valign=bottom><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom><font color="#000000">HTTPSession</font></td>
+	</tr>
+	<tr>
+		<td height="20" align="left" valign=bottom><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom><font color="#000000"><br></font></td>
+	</tr>
+	<tr>
+		<td height="20" align="left" valign=bottom><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom><font color="#000000"><br></font></td>
+	</tr>
+	<tr>
+		<td height="20" align="left" valign=bottom><font color="#000000">ServletContext</font></td>
+		<td align="left" valign=bottom><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom><font color="#000000"><br></font></td>
+	</tr>
+</table>
+<!-- ************************************************************************** -->
+<hr>
+<A NAME="table5"><h1>Sheet 6: <em>web.xml</em></h1></A>
+<table align="left" cellspacing="0" border="0">
+	<colgroup width="100"></colgroup>
+	<colgroup width="159"></colgroup>
+	<colgroup width="191"></colgroup>
+	<colgroup width="164"></colgroup>
+	<tr>
+		<td height="20" align="left" valign=bottom><font color="#000000">&lt;web-app&gt;</font></td>
+		<td align="left" valign=bottom><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom><font color="#000000"><br></font></td>
+	</tr>
+	<tr>
+		<td height="20" align="left" valign=bottom><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom><font color="#000000">&lt;servlet&gt;</font></td>
+		<td align="left" valign=bottom><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom><font color="#000000"><br></font></td>
+	</tr>
+	<tr>
+		<td height="20" align="left" valign=bottom><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom><font color="#000000">&lt;servlet-name&gt;</font></td>
+		<td align="left" valign=bottom><font color="#000000"><br></font></td>
+	</tr>
+	<tr>
+		<td height="20" align="left" valign=bottom><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom><font color="#000000">&lt;servlet-class&gt;</font></td>
+		<td align="left" valign=bottom><font color="#000000"><br></font></td>
+	</tr>
+	<tr>
+		<td height="20" align="left" valign=bottom><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom><font color="#000000"><br></font></td>
+	</tr>
+	<tr>
+		<td height="20" align="left" valign=bottom><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom><font color="#000000"><br></font></td>
+	</tr>
+	<tr>
+		<td height="20" align="left" valign=bottom><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom><font color="#000000">&lt;servlet-mapping&gt;</font></td>
+		<td align="left" valign=bottom><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom><font color="#000000"><br></font></td>
+	</tr>
+	<tr>
+		<td height="20" align="left" valign=bottom><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom><font color="#000000"><br></font></td>
+	</tr>
+	<tr>
+		<td height="20" align="left" valign=bottom><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom><font color="#000000">&lt;jsp-config&gt;</font></td>
+		<td align="left" valign=bottom><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom><font color="#000000"><br></font></td>
+	</tr>
+	<tr>
+		<td height="20" align="left" valign=bottom><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom><font color="#000000">&lt;jsp-property-group&gt;</font></td>
+		<td align="left" valign=bottom><font color="#000000"><br></font></td>
+	</tr>
+	<tr>
+		<td height="20" align="left" valign=bottom><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom><font color="#000000">&lt;url-pattern&gt;</font></td>
+	</tr>
+	<tr>
+		<td height="20" align="left" valign=bottom><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom><font color="#000000">&lt;is-xml&gt;</font></td>
+	</tr>
+	<tr>
+		<td height="20" align="left" valign=bottom><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom><font color="#000000">&lt;el-enabled&gt;</font></td>
+	</tr>
+	<tr>
+		<td height="20" align="left" valign=bottom><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom><font color="#000000">&lt;scripting-invalid&gt;</font></td>
+	</tr>
+	<tr>
+		<td height="20" align="left" valign=bottom><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom><font color="#000000">&lt;/jsp-property-group&gt;</font></td>
+		<td align="left" valign=bottom><font color="#000000"><br></font></td>
+	</tr>
+	<tr>
+		<td height="20" align="left" valign=bottom><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom><font color="#000000">&lt;tag-lib&gt;</font></td>
+		<td align="left" valign=bottom><font color="#000000"><br></font></td>
+	</tr>
+	<tr>
+		<td height="20" align="left" valign=bottom><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom><font color="#000000">&lt;taglib-uri&gt;</font></td>
+	</tr>
+	<tr>
+		<td height="20" align="left" valign=bottom><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom><font color="#000000">&lt;taglib-location&gt;</font></td>
+	</tr>
+	<tr>
+		<td height="20" align="left" valign=bottom><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom><font color="#000000">&lt;/tag-lib&gt;</font></td>
+		<td align="left" valign=bottom><font color="#000000"><br></font></td>
+	</tr>
+	<tr>
+		<td height="20" align="left" valign=bottom><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom><font color="#000000">&lt;/jsp-config&gt;</font></td>
+		<td align="left" valign=bottom><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom><font color="#000000"><br></font></td>
+	</tr>
+</table>
+<img src="ParamServlet24andJSP20_html_f328438e.png" width=189 height=78>
+<img src="ParamServlet24andJSP20_html_294e5028.png" width=189 height=78>
+<br clear=left>
+<!-- ************************************************************************** -->
+<hr>
+<A NAME="table6"><h1>Sheet 7: <em>Study frame</em></h1></A>
+<table cellspacing="0" border="0">
+	<colgroup width="96"></colgroup>
+	<colgroup width="88"></colgroup>
+	<colgroup width="87"></colgroup>
+	<colgroup width="80"></colgroup>
+	<colgroup width="289"></colgroup>
+	<tr>
+		<td height="20" align="right" valign=bottom sdval="40280" sdnum="16393;0;DD/MM/YYYY"><font color="#000000">12/04/2010</font></td>
+		<td align="left" valign=bottom><font color="#000000"><br></font></td>
+		<td align="right" valign=bottom sdval="0.14375" sdnum="16393;0;HH:MM AM/PM"><font color="#000000">03:27 AM</font></td>
+		<td align="right" valign=bottom sdval="0.125" sdnum="16393;0;HH:MM"><font color="#000000">03:00</font></td>
+		<td align="left" valign=bottom><font color="#000000">Head first servlet 2.4 1st chapter</font></td>
+	</tr>
+	<tr>
+		<td height="20" align="right" valign=bottom sdval="40282" sdnum="16393;0;DD/MM/YYYY"><font color="#000000">14/04/2010</font></td>
+		<td align="left" valign=bottom><font color="#000000"><br></font></td>
+		<td align="right" valign=bottom sdval="0.178472222222222" sdnum="16393;0;HH:MM AM/PM"><font color="#000000">04:17 AM</font></td>
+		<td align="right" valign=bottom sdval="0.0416666666666667" sdnum="16393;0;HH:MM"><font color="#000000">01:00</font></td>
+		<td align="left" valign=bottom><font color="#000000">Head first servlet 2.4 1st chapter</font></td>
+	</tr>
+	<tr>
+		<td height="20" align="right" valign=bottom sdval="40283" sdnum="16393;0;DD/MM/YYYY"><font color="#000000">15/04/2010</font></td>
+		<td align="right" valign=bottom sdval="0.138194444444444" sdnum="16393;0;HH:MM AM/PM"><font color="#000000">03:19 AM</font></td>
+		<td align="right" valign=bottom sdval="0.157638888888889" sdnum="16393;0;HH:MM AM/PM"><font color="#000000">03:47 AM</font></td>
+		<td align="right" valign=bottom sdval="0.0138888888888889" sdnum="16393;0;HH:MM"><font color="#000000">00:20</font></td>
+		<td align="left" valign=bottom><font color="#000000">Head first servlet 2.4 2nd chapter</font></td>
+	</tr>
+	<tr>
+		<td height="20" align="right" valign=bottom sdval="40283" sdnum="16393;0;DD/MM/YYYY"><font color="#000000">15/04/2010</font></td>
+		<td align="right" valign=bottom sdval="0.492361111111111" sdnum="16393;0;HH:MM AM/PM"><font color="#000000">11:49 AM</font></td>
+		<td align="right" valign=bottom sdval="0.538194444444444" sdnum="16393;0;HH:MM AM/PM"><font color="#000000">12:55 PM</font></td>
+		<td align="right" valign=bottom sdval="0.0347222222222222" sdnum="16393;0;HH:MM"><font color="#000000">00:50</font></td>
+		<td align="left" valign=bottom><font color="#000000">Head first servlet 2.4 2nd chapter</font></td>
+	</tr>
+	<tr>
+		<td height="20" align="right" valign=bottom sdval="40284" sdnum="16393;0;DD/MM/YYYY"><font color="#000000">16/04/2010</font></td>
+		<td align="right" valign=bottom sdval="0.00208333333333333" sdnum="16393;0;HH:MM AM/PM"><font color="#000000">12:03 AM</font></td>
+		<td align="right" valign=bottom sdval="0.11875" sdnum="16393;0;HH:MM AM/PM"><font color="#000000">02:51 AM</font></td>
+		<td align="left" valign=bottom><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom><font color="#000000">Head first servlet 2.4 2nd chapter</font></td>
+	</tr>
+</table>
+<!-- ************************************************************************** -->
+<hr>
+<A NAME="table7"><h1>Sheet 8: <em>Diff Servlets &amp; JSP</em></h1></A>
+<table cellspacing="0" border="0">
+	<colgroup width="37"></colgroup>
+	<colgroup width="481"></colgroup>
+	<colgroup width="441"></colgroup>
+	<tr>
+		<td height="20" align="left" valign=bottom><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom bgcolor="#FFFF00"><font color="#FF0000">STRUTS</font></td>
+		<td align="left" valign=bottom bgcolor="#FFFF00"><font color="#FF0000">Servlets</font></td>
+	</tr>
+	<tr>
+		<td height="20" align="left" valign=bottom><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom><font color="#000000"><br></font></td>
+	</tr>
+	<tr>
+		<td height="54" align="right" valign=bottom sdval="1" sdnum="16393;"><font color="#000000">1</font></td>
+		<td align="left" valign=bottom><font color="#000000">it expose action classes with support of controller (MVC) by unique url</font></td>
+		<td align="left" valign=bottom><font color="#000000">it expose servlets by url without single controller</font></td>
+	</tr>
+	<tr>
+		<td height="40" align="right" valign=bottom sdval="2" sdnum="16393;"><font color="#000000">2</font></td>
+		<td align="left" valign=bottom><font color="#000000">the population of HTTP parameter still moved to Form bean which is specific to action class</font></td>
+		<td align="left" valign=bottom><font color="#000000">the population of HTTP parameter is END with HTTPServletRequest irrespective of servlets</font></td>
+	</tr>
+	<tr>
+		<td height="20" align="right" valign=bottom sdval="3" sdnum="16393;"><font color="#000000">3</font></td>
+		<td align="left" valign=bottom><font color="#000000">it is easy to apply or change security</font></td>
+		<td align="left" valign=bottom><font color="#000000">security setting has to apply each servlet separatly</font></td>
+	</tr>
+	<tr>
+		<td height="60" align="right" valign=bottom sdval="4" sdnum="16393;"><font color="#000000">4</font></td>
+		<td align="left" valign=bottom><font color="#000000">Controller means --&gt; Single Entry point for a web application</font></td>
+		<td align="left" valign=bottom><font color="#000000">where as many entry point in a web application. Each servlet can be called independly in random order</font></td>
+	</tr>
+</table>
+<!-- ************************************************************************** -->
+</body>
+
+</html>
