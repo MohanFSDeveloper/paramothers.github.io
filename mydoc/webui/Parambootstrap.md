@@ -20,3 +20,7 @@ But BootStrap has added JavaScript with CSS and understand HTML tags
 
 # Responsive
    it means, the layout of the page can changed on the go. so the desing will work in any size of devices.
+   
+
+grep -rl 'src="' ./ | xargs sed -i 's/src="/linux/g' *.html
+grep -rl 'linux' ./ | xargs sed -i 's/linux/src="\/deploy\/asset\/img\//g' *.html
