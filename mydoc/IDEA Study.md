@@ -25,6 +25,18 @@
     k. Content assistence in code template. awesome ( live template )
 
     l. Run configuration - temporary. it is not like eclipe would create many run configuration permanantly
+    
+    14. save project as templete.
+    
+    15. Easy to datasource configuration (any settings sharing) in IDEA and easy to share team members.
+    
+    16. The presentation of Project Structure view.
+    
+    17. configuring scope and color for files.
+    
+    18. group-regroup-enable/disabe tool and menu items.
+    
+    19. Quick - list ( custom menu list )
 
 
  2. One project, but *many module support*.

@@ -1,3 +1,12 @@
+# Events
+
+ Events are fired by either by user or lifecyle of a UI widget 
+
+
+
+
+
+
 # EXT - JS - API.
 
 1. FloatingManager
@@ -6,9 +15,12 @@
 4.     AutoLayout
 5.     CardLayout
 6.     Fit
-7.     Botder
+7.     Accordion
+8.     HBox
+9.     VBox
+7.     Border
 8.     Dock
-9.     Field Component Layout
+9.     Field Component Layout ( replacement for FormLayout)
 5.     
 4. ComponentQuery
 4. Component
