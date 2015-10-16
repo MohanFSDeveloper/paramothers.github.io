@@ -3,8 +3,12 @@
  Events are fired by either by user or lifecyle of a UI widget 
 
 
-
-
+Ext.ClassManager , which is responsible for creatting class and associte it with a name
+Ext.Base, which is the base class, like in java java.lang.Object
+Ext.Class, every classes of EXTJS represent by Ext.Class type. Simplarly in java java.lang.Class
+   (When we use the
+Ext.define method to define a class we are in fact creating an instance of the
+Ext.Class class.)
 
 
 # EXT - JS - API.
