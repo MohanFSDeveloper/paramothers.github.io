@@ -1,48 +1,94 @@
-# Events
+﻿##Ext JS
+
+ it just emulate OOPs.
+ 
+*****
+
+##Ext JS core methods
+
+1. Ext.define()
+2. Ext.create()
+3. Ext.apply()
+4. Ext.require()
+
+*****
+
+#Ext Core classess
+
+ Ext-JS class system has set **pre-processor** and set of **post-processors**
+
+1. **Ext.ClassManager** , which is responsible for creatting class and associte it with a name
+2. **Ext.Base**, which is the base class, like in java java.lang.Object
+3. **Ext.Class**, every classes of EXTJS represent by Ext.Class type. Simplarly in java java.lang.Class
+   (When we use the Ext.define method to define a cl**ass we are in fact creating an in**stance of the Ext.Class class.)
+4. **Ext.Element**, this class responsible for dealing with DOM
+5. **Ext.DomQuery**, this class responsible for query dom element
+6. **Ext.DomHelper**, used to create dom element and html fragment
+
+******
+
+# Ext UI-widget Classes
+
+
+
+2. UI components has set of *lifecycle* events
+
+UI component cross 3-phases(creation, render, destrection). each phase has several steps.
+
+*****
+# UI Widget Events
 
  Events are fired by either by user or lifecyle of a UI widget 
 
+# UI Widget Classes
 
-Ext.ClassManager , which is responsible for creatting class and associte it with a name
-Ext.Base, which is the base class, like in java java.lang.Object
-Ext.Class, every classes of EXTJS represent by Ext.Class type. Simplarly in java java.lang.Class
-   (When we use the
-Ext.define method to define a class we are in fact creating an instance of the
-Ext.Class class.)
+ **Ext.ComponentManager** - every component instance are registered with its id
+ 
+    Ext.Component-> Ext.AbstractComponent,  as base class for all the ExtJS widget
+    Ext.component.Container, - responsible for managing children and  arrange layout. it introduce 'items' property
+       Ext.panel.Panel - one of the container, can contain panel and other ui widgets.
+       Ext.panel.Tool - have 25 predefined icon
+           Ext.window.Window, it subclass to Panel, it is floating panel
+                 TabPanel
+                 FormPanel
+                 BasicForm
+                      Field
+                           TextField
+                           TextArea
+              FieldSet             
+              ViewPort
+              Window
+                  MessageBox
+              MixedCollection          
+             DOCK
+             Toolbar
 
+****
 
+# UI Layout Classes
+
+    ComponentLayout
+        AutoLayout
+        CardLayout
+        Fit
+        Accordion
+        HBoxs
+        VBox
+        Border
+        Dock
+        Field Component Layout ( replacement for FormLayout)
+
+******
 # EXT - JS - API.
 
 1. FloatingManager
-2. CompoenentManager
-3. ComponentLayout
-4.     AutoLayout
-5.     CardLayout
-6.     Fit
-7.     Accordion
-8.     HBox
-9.     VBox
-7.     Border
-8.     Dock
-9.     Field Component Layout ( replacement for FormLayout)
+2. 
+3. 
 5.     
 4. ComponentQuery
-4. Component
-5.  Container
-6.      FieldSet
-6.      Panel
-7.         TabPanel
-8.         FormPanel
-9.         BasicForm
-9.              Field
-10.               TextField
-11.               TextArea
-7.      ViewPort
-8.      Window
-9.          MessageBox
-9.      MixedCollection          
-11.     DOCK
-12.     Toolbar
+    
+
+
 13. Store
 14.     Model
 15.         Association
