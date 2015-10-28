@@ -1,6 +1,24 @@
-##Ext JS
+## Pre require
 
- it just emulate OOPs.
+1. object-oriented JavaScript fundamentals such as objects, classes, and prototypal inheritance
+2. key concepts such as arrays, references, and scope
+
+##Ext JS Overview
+
+it started in 2006, as Sechna's Desktop javascript framewok.
+only two of them have mature UI widgets: Yahoo! User Interface ( YUI ) and Ext JS
+it just emulate OOPs.
+Ext JS provide, a lot of DOM utilities and widgets.
+Component Model, gives lifecyle to UI widgets ( **Initiated, Rendered, Destoryed** )
+Container Model, manage the child widgets.
+
+###Other Product of Sencha
+
+1. Ext Touch ( released in 2010 Nov,) Ext JS 4 architecture alinged with EXT Touch.
+2. Ext JS
+3. Ext Direct (used to call RPC)
+4. JSBuilder, to build Ext JS and Sechna Touch application. it use **build and builds** folder from SDK.
+   the purpose of JSBuilder is, to build minified version of our application.
 
 ##Ext JS core methods
 
@@ -12,8 +30,14 @@
 
 #Ext Core classess
 
+ ####Ext JS 4.0 Class Ststem,
+
+   * Dynamic class loading
+   * multiple inheritance via mixin
+   * dependency injection
+
  Ext-JS class system has set **pre-processor** and set of **post-processors**
- 
+
 | CLASS | desc |
 |--------|--------|
 |   **Ext.ClassManager**     |   which is responsible for creatting class and associte it with a name     |
@@ -23,6 +47,8 @@
 |   **Ext.DomQuery**     |   this class responsible for query dom element     |
 |   **Ext.DomHelper**     |   used to create dom element and html fragment    |
 |   **Ext.ComponentQuery**     |   use to query DOM tree using selector    |
+|   **Ext.MessageBox**     |   it class name and its alias is **Ext.Msg**    |
+| LocalStorageProxy | it store data in HTML 5 local storage, rather than ext js's store|
 
 # Ext Application specific class
 
@@ -46,6 +72,8 @@
 |      									  |                          | Ext.panel.Panel |                     |one of the container, can contain panel and other ui widgets|
 |      									  |                          | Ext.grid.Panel |                      |it is just grid container.|
 |       								  |                          |                 | Ext.form.Panel		 | this can have any of form field to get user input |
+|       								  |                          |                 | Ext.form.Basic		 | responsible for form data population, validation |
+
 |       								  |                          | Ext.panel.Tool          | 					 | have 25 predefined icon |
 |       								  |        					 |                 		   |  Ext.window.Window, | it subclass to Panel, it is floating panel |
 |       								  |        					 | Ext.container.ViewPort  |     | it occupy entier brower window and listen for resize events |
@@ -56,7 +84,13 @@
 |       								  |        					 |                         | Ext.form.field.Text  	| responsible for manage text value |
 |       								  |        					 |                         | Ext.form.field.Number   | responsible for manage number value |
 
+1. The panel is a workhorse of Ext JS
+2. Ext JS uses HTML and CSS to build UI controls and widgets.
+
+
+
 # UI Layout Classes
+
 
 | class Name |    Class Name |   |Description|
 |------------|---------------|---|-----------|
@@ -68,12 +102,15 @@
 | 			 | HBoxs    	 |   |           |
 | 			 | VBox     	 |   |           |
 | 			 | Border     	 |   |           |
+| 			 | Dock laout	 |   |           |
+| 			 | ToolbarLayout |   |           |
 | 			 | Dock     	 |   |           |
-| 			 | Field Component Layout ( replacement for FormLayout)  | | |
+| 			 | Dock     	 |   |           |
+| 			 | Field Layout  | | |
 
 # UI Widget Events
 
-*  Events are fired by either by user or lifecyle of a UI widget 
+*  Events are fired by either by user or lifecyle of a UI widget
 *  UI components has set of *lifecycle* events
 *  UI component cross 3-phases(creation, render, destrection). each phase has several steps.
 
@@ -85,11 +122,11 @@
 
 
 1. FloatingManager
-2. 
-3. 
+2.
+3.
 5.     
 4. ComponentQuery
-    
+
 
 
 13. Store
