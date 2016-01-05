@@ -2,21 +2,15 @@ Angular JS
 
   Predefined objects
 
-	  $routeScope
-	  $scope
- $q
+$routeScope
+$scope
+$valid
+
+$log - custom logger object
 
 
-	  $valid
-	  $provide
-	  $injector	 
-	  $resource
 
-	  $log
-
-	  $q.deferred
-$httpProvider
+** Event Objects **
 $boradcast
-
-
-102 175 9141
+$emit
+$on
