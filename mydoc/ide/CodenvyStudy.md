@@ -3,7 +3,7 @@
 1. configured by reciper file
 1. self-contained exeuction environment
 
-**Docker** is a new container technology. Codenvy uses, Docuker for build, run and debug the projcts.
+**Docker** is a new container technology. Codenvy uses, Docuker for build, run and debug the projects. WE can call it as **machine image** as well.  Each Project Type has an associated set of machine images that are instantiated at Runtime to execute Builders and Runners.
 
 **Project Type**
   Project type play important role, for content of recipe file. it is used to configure project, docker environment
