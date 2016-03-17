@@ -1977,8 +1977,8 @@
                 mapping in controller</td>
               <td  align="left"  valign="bottom">@RequestMapping</td>
               <td  align="left"  valign="bottom">&nbsp;method</td>
-              <td  align="left"  valign="bottom">&nbsp;produces</td>
-              <td  align="left"  valign="bottom">&nbsp;consumes</td>
+              <td  align="left"  valign="bottom">&nbsp;</td>
+              <td  align="left"  valign="bottom">&nbsp;</td>
               <td  align="left"  valign="bottom">&nbsp;</td>
             </tr>
             <tr>
@@ -1993,8 +1993,8 @@
               <td  align="left"  height="17"  valign="bottom">specify the
                 request paramters</td>
               <td  align="left"  valign="bottom">@RequestParam</td>
-              <td  align="left"  valign="bottom">&nbsp;value</td>
-              <td  align="left"  valign="bottom">defaultValue </td>
+              <td  align="left"  valign="bottom">&nbsp;</td>
+              <td  align="left"  valign="bottom">&nbsp;</td>
               <td  align="left"  valign="bottom">&nbsp;</td>
               <td  align="left"  valign="bottom">&nbsp;</td>
             </tr>
@@ -2006,58 +2006,6 @@
               <td  align="left"  valign="bottom">&nbsp;</td>
               <td  align="left"  valign="bottom">&nbsp;</td>
               <td  align="left"  valign="bottom">&nbsp;</td>
-            </tr>
-            <tr>
-              <td><br>
-              </td>
-              <td>@EnableWebMvc</td>
-              <td><br>
-              </td>
-              <td><br>
-              </td>
-              <td><br>
-              </td>
-              <td><br>
-              </td>
-            </tr>
-            <tr>
-              <td><br>
-              </td>
-              <td>@EnableWebSecurity</td>
-              <td><br>
-              </td>
-              <td><br>
-              </td>
-              <td><br>
-              </td>
-              <td><br>
-              </td>
-            </tr>
-            <tr>
-              <td><br>
-              </td>
-              <td>@EnableWebMvcSecurity</td>
-              <td><br>
-              </td>
-              <td><br>
-              </td>
-              <td><br>
-              </td>
-              <td><br>
-              </td>
-            </tr>
-            <tr>
-              <td><br>
-              </td>
-              <td>@AuthenticationPrincipal</td>
-              <td><br>
-              </td>
-              <td><br>
-              </td>
-              <td><br>
-              </td>
-              <td><br>
-              </td>
             </tr>
             <tr>
               <td>
@@ -2073,18 +2021,6 @@
               </td>
               <td><br>
               </td>
-              <td><br>
-              </td>
-              <td><br>
-              </td>
-              <td><br>
-              </td>
-              <td><br>
-              </td>
-            </tr>
-            <tr>
-              <td>introduced in spring 4.0</td>
-              <td>@RestController</td>
               <td><br>
               </td>
               <td><br>
