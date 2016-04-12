@@ -6,13 +6,14 @@
 1. **$dirty**, predefined object for a form field, true when user touched 
 1. **$pristine**, predefined object for a form field, true by default.
 1. **$error**, predefined object for a form field, validation error message
-1. **$routeScope**, it is master scope object
+1. **$routeScope**, it is super scope object, all of $scope object are child to it.
+1. **$boradcast**, to communicate the info from $share without passing it as argument
 
 
 
 
 
 ** Event Objects **
-$boradcast
+
 $emit
 $o

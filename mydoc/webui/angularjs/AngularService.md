@@ -30,9 +30,8 @@ object and it can be used by controller, directives, filters and even other serv
 1. **$q** used for deferred/promise objects
 1. **$apply** notify the *digest cycle* manually or *keypressdownevent*.(helps in two-way binding)
 1. **$watch** has list of expressions for a given $scope.(helps in two-way binding) 
+1. **$compile**, used for compile directives
+1. **$httpBackend**, used to mock *$http* service during testing the application
 
 $resource - communicate server via RESTful method.
-$httpBackend
-
-$compile
 $digest - its a loop
