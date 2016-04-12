@@ -11,6 +11,7 @@ it just emulate OOPs.
 Ext JS provide, a lot of DOM utilities and widgets.
 Component Model, gives lifecyle to UI widgets ( **Initiated, Rendered, Destoryed** )
 Container Model, manage the child widgets.
+[tested]
 
 ###Other Product of Sencha
 
