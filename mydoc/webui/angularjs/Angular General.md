@@ -19,16 +19,12 @@
 
 1. Dependency injection, so easy to unit testing any component ( not use "new" operator )
 1. Directive, a reusable component
+1. Module based organization of code
 1. Layered architecture, to separate the concern like MVC
 1. data handling for display by filters, expression and form validation using directives
-1. two way data binding between model and view
+1. two way data binding between model and view thats how avoid a lot of boiler plate code
 1. **Compilation**, is the process, to traverse DOM tree by angular and looks for special kind of attribute/element
 1. Use of Controller-as syntax to reduce direct use of $scope.
 1. have many node.js based tool for dependency resolve, testing, delivery of application.
 1. it protect the application against XSS  using ng-bind-html
 1. it provide support for html-fragmentation  using ng-include
-
-
-
-
-
