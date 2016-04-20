@@ -5,7 +5,7 @@
 1. keep **$controller** size as much as minimum / lightweight
 2. Use controller-as syntx in view, to easy from where a variable is coming either from controller itself or from $scope. controller-as variable is defined in current $scope and $scope itself has inheritance hierarchy with $rootScope. So it helps we no need to pass $scope object as parameter to controller function itself. we would access using "this" itself.
 3. dont write any even simple logic in view
-4. Controller, should not know each other and its view it controlling.
+4. Controller, should not know each other and also its view it controlling.
 5. in **ng-model**, use dot notation like user.name, user.password rather than simply name and password, it decouples view and controller by avoiding use of $scope
 
 ## $scope
@@ -23,5 +23,10 @@
 1. to avoid minify error, use inline array in all service, controller methods
 2. Model objects should be sourced from services rather than controller itself.
 3. Manipulation of any DOM, should be through link function of directive
-4. use <a> tag rather than use of combination of <ng-click> and $location
-5. **one-way** binding, use if no need of **two-way** binding, since it is costly.
+4. use [tag rather than use of combination of
+
+  <ng-click> and $location</ng-click>]()
+
+[- **one-way** binding, use if no need of **two-way** binding, since it is costly.]()
+
+[]()
