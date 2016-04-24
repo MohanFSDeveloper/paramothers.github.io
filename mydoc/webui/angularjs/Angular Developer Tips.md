@@ -17,6 +17,7 @@
 5. Better read directly from **$scope**, object in View
 6. use **$rootScope**, for share global variable with in the module, since it is super most $scope object in AngularJS
 7. better access **$rootScope** object by module's _run_ method
+8. attach minimum properties and function to $scope object. it should be lightweight
 
 ## others
 
