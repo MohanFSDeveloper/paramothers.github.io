@@ -34,5 +34,6 @@ Once service defined in anyone of the way, it available for across application a
 20. **$boradcast**, to communicate the info from $share without passing it as argument, send event from top to bottom $scope objects hierarchy.
 21. **$emit**, send event from child $scope to parent ($rootScope)
 22. **$on**, register for a particular event on a $scope objects.
+23. **$interval**, it call a specific function at specified interval. it is wrapper of *window.interval*
 
 $resource - communicate server via RESTful method.
